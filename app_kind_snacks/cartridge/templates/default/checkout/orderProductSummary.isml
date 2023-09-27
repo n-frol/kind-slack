@@ -1,0 +1,27 @@
+<isset name="miniCart" value="${false}" scope="page" />
+<div class="card order-product-summary c-sidebar-product-summary__card">
+    <div class="card-body c-sidebar-product-summary__container">
+
+        <isloop items="${pdict.order.shipping}" var="shippingModel" status="shipmentLoopState">
+            <isif condition="${!empty(shippingModel.productLineItems.items)}">
+                <isif condition="${shipmentLoopState.first}">
+                    <div class="product-summary-block">
+                </isif>
+                <div class="shipment-block c-sidebar-product-summary__shipment-block checkout_product_cards">
+                    <h2 class="multi-shipping h4 mb-0"></h2>
+
+                    <isinclude template="checkout/orderProductSummaryCards" />
+
+                    <isif condition="${pdict.order.shipping.length > 1}">
+                        <div class="multi-shipping c-sidebar-product-summary__multi-shipping" data-shipment-summary="${shippingModel.UUID}">
+                            <isinclude template="checkout/shipping/shippingCard" />
+                        </div>
+                    </isif>
+                </div>
+                <isif condition="${shipmentLoopState.last}">
+                    </div>
+                </isif>
+            </isif>
+        </isloop>
+    </div>
+</div>

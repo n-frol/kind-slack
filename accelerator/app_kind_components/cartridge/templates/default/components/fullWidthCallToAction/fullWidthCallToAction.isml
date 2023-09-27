@@ -1,0 +1,44 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/fullWidthCallToAction/fullWidthCallToAction_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container">
+            <div class="row">
+    </isif>
+        <div class="c-full-width-cta ${assetID} th-kind-full-width-cta s-graphical-asset">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container">
+                    <div class="row">
+            </isif>
+                        <div class="c-full-width-cta__wrapper col-12"><!-- dwMarker="content" dwContentID="${assetID}" -->
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-full-width-cta__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-full-width-cta__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-full-width-cta__links s-graphical-asset__links">
+
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div><!-- END_dwmarker -->
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

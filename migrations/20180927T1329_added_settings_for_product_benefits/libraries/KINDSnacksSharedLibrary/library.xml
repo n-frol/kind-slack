@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="benefit_0gTransFat">
+        <display-name xml:lang="x-default">Og Trans Fat</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', '0g trans fat')$"&gt;find other 0g trans fat snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_5gSugarOrLess">
+        <display-name xml:lang="x-default">5g Sugar or Less</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;you want something sweet but probably not 40g of sugar sweet...&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', '5g sugar or less)$"&gt;find other 5g sugar or less snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_goodSourceOfFiber">
+        <display-name xml:lang="x-default">Good Source of Fiber</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'good source of fiber')$"&gt;find other good source of fiber snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_lowGlycemicIndex">
+        <display-name xml:lang="x-default">Low Glycemic Index</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'low glycemic index')$"&gt;find other low glycemic index snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_lowSodium">
+        <display-name xml:lang="x-default">Low Sodium</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'low sodium')$"&gt;find other low sodium snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_sample-1">
+        <display-name xml:lang="x-default">Sample 1</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

@@ -1,0 +1,22 @@
+<img class="alternative_benefit_image" src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+<a target="_blank" href="${pdict.url}" class="alternative_benefit_text">
+    ${pdict.copy}
+</a>
+
+<style>
+    .alternating_benefits_item {
+        margin-bottom: 24px;
+    }
+    .alternative_benefit_image {
+        margin-right: 13px;
+    }
+    .alternative_benefit_text {
+        font-size: 16px;
+        line-height: 32px;
+        font-family: medium;
+    }
+    .alternative_benefit_text:hover {
+        text-decoration: underline;
+        color: inherit;
+    }
+</style>

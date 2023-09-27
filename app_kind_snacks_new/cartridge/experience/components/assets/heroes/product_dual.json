@@ -1,0 +1,102 @@
+{
+    "name": "Product Dual Banner",
+    "description": "A banner component with a video or image background and text content",
+    "group": "Banners",
+    "attribute_definition_groups": [
+        {
+            "id": "media",
+            "name": "Media Content",
+            "description": "The media content to show in this component",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Desktop Image Media",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "image_mobile",
+                    "name": "Mobile Image Media",
+                    "type": "image",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "textcontent",
+            "name": "Text Content",
+            "description": "The text content to show in this component",
+            "attribute_definitions": [
+                {
+                    "id": "product",
+                    "name": "Product",
+                    "type": "product",
+                    "required": true
+                },
+                {
+                    "id": "showstars",
+                    "name": "Show Stars",
+                    "type": "boolean",
+                    "required": true
+                },
+                {
+                    "id": "eyebrow",
+                    "name": "Eyebrow",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "name",
+                    "name": "Name Override",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description",
+                    "name": "Description Override",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Text",
+                    "name": "CTA 1 Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Link",
+                    "name": "CTA 1 Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Aria",
+                    "name": "CTA 1 Aria Label",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"benefits",
+            "name":"Benefit Items",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}
+

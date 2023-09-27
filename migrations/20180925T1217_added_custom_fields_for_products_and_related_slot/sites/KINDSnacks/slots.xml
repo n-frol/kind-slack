@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="product-global-display" context="global" configuration-id="sample_product-global-display" default="true" assigned-to-site="false">
+        <template>slots/html/htmlSlotContainer.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <html>
+                <body xml:lang="x-default">free shipping on orders over $40</body>
+            </html>
+        </content>
+    </slot-configuration>
+</slot-configurations>

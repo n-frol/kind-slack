@@ -1,0 +1,232 @@
+<isdecorate template="application/MenuFrame">
+<iscontent type="text/html" charset="UTF-8">
+<isinclude template="inc/Modules">
+
+<!-- Page Navigator -->
+<isset name="TOP_URL"   value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentHttpParameterMap.CurrentMenuItemId)}" scope="PAGE">
+<ISBreadcrumb name1="${pdict.CurrentHttpParameterMap.mainmenuname.stringValue}" url1="${TOP_URL.toString()}" name2="Mapping Manager (Beta)">
+<hr/>
+<!-- EO Page Navigator -->
+<h1 class="overview_title">Mapping Manager (Beta)</h1>
+<h2 class="table_title_description">
+	The Mapping Manager provides you with an overview of key/value maps as they exist in your environment, import and export the maps.<br/>
+	Please be aware that deleting or changing maps may harm your solution, so please handle it with care. 
+</h2>
+
+<isif condition="${!empty(pdict.messages)}">
+	<h3>Messages</h3>
+	<ul>
+		<li>
+			${pdict.importMassages.join('</li><li>')}
+		</li>
+	</ul>
+</isif>
+
+<table style="width:90%" class="n w e s aldi">
+	<tr style="vertical-align: top;">
+		<th class="table_title aldi left">Available Mappings / Export</th>
+	</tr>
+	<tr>
+		<td class="infobox" style="vertical-align: top;">
+			<isif condition="${!empty(pdict.MappingInfos)}">
+				<table style="width:90%">
+					<tr>
+						<th align="left">
+							Name
+						</th>
+						<th align="right">
+							Key Count
+						</th>
+						<th align="right">
+							Value Headers
+						</th>
+						<th align="right">
+							Record Count
+						</th>
+						<!---<th align="right">
+							Total Size
+						</th>--->
+						<th align="right">
+							Action
+						</th>
+					</tr>
+					<isloop iterator="${pdict.MappingInfos}" var="mappingInfo">
+						<tr>
+							<td align="left">
+								${mappingInfo.name}
+							</td>
+							<td align="right">
+								${mappingInfo.keyCount}
+							</td>
+							<td align="right">
+								${mappingInfo.headers.join('; ')}
+							</td>
+							<td align="right">
+								${mappingInfo.count}
+							</td>
+							<!---<td align="right">
+								${mappingInfo.size.toFixed()}
+							</td>--->
+							<td align="right">
+								<form action="${URLUtils.url('MappingManager-Export')}" method="post">
+									<input type="hidden" name="mappingName" value="${mappingInfo.name}"/>
+									<button type="submit">Export</button>
+								</form>
+							</td>
+						</tr>
+					</isloop>
+				</table>
+			<iselse>
+				There are currently no key/value maps available.
+			</isif>
+		</td>
+	</tr>
+	<isif condition="${pdict.RequestResult && pdict.RequestResult.Status && pdict.RequestResult.Status.error}">
+		<tr>
+			<td colspan="5"> <div class="error">${pdict.RequestResult.Status.message}</div></td>
+		</tr>
+	</isif>
+</table>
+
+<table style="width:90%" class="n w e s aldi">
+	<tr style="vertical-align: top;">
+		<th class="table_title aldi left">Files</th>
+	</tr>
+	<tr>
+		<td class="infobox" style="vertical-align: top;">
+			<form action="${URLUtils.url('MappingManager-Upload')}" method="post" enctype="multipart/form-data" id="mappingManagerUpload">
+				<table style="width:90%">
+					<tr>
+						<td align="right" class="fielditem2">
+							<span>Select File:</span>
+						</td>
+						<td>
+							<input type="file" name="uploadFileName" id="uploadFileName" />
+						</td>
+						<td>
+							<button type="submit">Upload</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: top;">
+			<isif condition="${!empty(pdict.FileList)}">
+				<table style="width:90%">
+					<tr>
+						<th align="left">File Name</th>
+						<th align="right">File Size</th>
+						<th align="right">Last Modified</th>
+						<th align="right">Actions</th>
+					</tr>
+					<isloop items="${pdict.FileList}" var="file" >
+						<tr>
+							<td align="left">
+								<span>${file.name}</span>
+							</td>
+							<td align="right">
+								${file.length()}
+							</td>
+							<td align="right">
+								${new Date(file.lastModified())}
+							</td>
+							<td align="right">
+								<form action="${URLUtils.url('MappingManager-Delete')}" method="post">
+									<input type="hidden" name="fileName" value="${file.name}"/>
+									<button type="submit">Delete</button>
+								</form>
+							</td>
+						</tr>
+					</isloop>
+				</table>
+			<iselse/>
+				There are currently no files available.
+			</isif>
+		</td>
+	</tr>
+</table>
+
+<table style="width:90%" class="n w e s aldi">
+	<tr style="vertical-align: top;">
+		<th class="table_title aldi left">Import</th>
+	</tr>
+	<tr>
+		<td class="infobox" style="vertical-align: top;">
+			<form action="${URLUtils.url('MappingManager-Import')}" method="post" id="mappingManagerImport">
+				<table>
+					<tr>
+						<td align="right" class="fielditem2">
+							<span>Select File:</span>
+						</td>
+						<td>
+							<isif condition="${!empty(pdict.CSVFileList)}">
+								<select name="fileName">
+									<isloop items="${pdict.CSVFileList}" var="file">
+										<option>${file.name}</option>
+									</isloop>
+								</select>
+							<iselse>
+								There are currently no files available.
+							</isif>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="fielditem2">
+							<span>Mapping Name:</span>
+						</td>
+						<td>
+							<input type="text" name="mappingName" id="mappingName" />
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="fielditem2">
+							<span>Import Mode:</span>
+						</td>
+						<td>
+							<select name="importMode" id="importMode">
+								<option>MERGE</option>
+								<option>REPLACE</option>
+								<option>DELETE</option>
+							</select>
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td align="right" class="fielditem2">
+							<span>Number of Keys:</span>
+						</td>
+						<td>
+							<select name="keyCount" id="keyCount">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+							</select>
+						</td>
+						<td>
+							<button type="submit">Start Import</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+	<isif condition="${pdict.RequestResult && pdict.RequestResult.Status && pdict.RequestResult.Status.error}">
+		<tr>
+			<td colspan="5"> <div class="error">${pdict.RequestResult.Status.message}</div></td>
+		</tr>
+	</isif>
+</table>
+
+
+</isdecorate>

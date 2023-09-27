@@ -1,0 +1,22 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isscript>
+    var ContentMgr = require('dw/content/ContentMgr');
+    var ArrayList = require('dw/util/ArrayList');
+
+    var folderIDtips = contentAsset.custom.contentGeneratorFolderID || dw.system.Site.current.getCustomPreferenceValue('contentGeneratorFolderIDtips');
+    var folderTips = ContentMgr.getFolder(folderIDtips);
+    var contentAssets = folderTips.getOnlineContent();
+    var tipMessages = new ArrayList();
+
+    Object.keys(contentAssets).forEach(function (tip) {
+        tipMessages.push(contentAssets[tip].description);
+    });
+</isscript>
+<script>
+    var tipMessages = [];
+    <isloop items="${contentAssets}" var="tip">
+        tipMessages.push('<isprint value="${tip.description}" encoding="jshtml" />');
+    </isloop>
+</script>
+

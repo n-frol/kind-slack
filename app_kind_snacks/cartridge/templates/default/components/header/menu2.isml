@@ -1,0 +1,156 @@
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+<nav class="navbar st-primary-nav__navbar navbar-expand-md bg-inverse col-12">
+    <div class="close-menu st-primary-nav__close-menu clearfix d-lg-none">
+        <div class="back">
+            <a href="${'#0'}" class="st-primary-nav__close-menu__link backarrow" role="button">
+                ${Resource.msg('link.header.menu.back', 'common', null)}
+            </a>
+        </div>
+    </div>
+    <div class="menu-group st-primary-nav__menu-group" aria-label="Main menu" role="navigation">
+        <ul class="nav navbar-nav st-primary-nav__menu" role="menu">
+            <isif condition="${siteID === "KINDSnacks"}">
+                <li class="nav-item st-primary-nav__item">
+                    <a class="nav-link st-primary-nav__link js-content-asset-link" href="${URLUtils.url('Product-Show', 'pid', 'MBYOB')}" title="Build Your Own Box" data-site-section="Header">Build Your Own Box</a>
+                </li>
+            </isif>
+            <li class="nav-item dropdown st-primary-nav__item st-shop-navigation js-shop-nav" role="menuitem">
+                <span class="nav-link st-primary-nav__link dropdown-toggle st-primary-nav__dropdown-toggle headermenu"
+                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <isif condition="${siteID === "CreativeSnacks"}">
+                        <img alt="" class="nomobile" src="${URLUtils.staticURL('/images/TopNav_Icons_Flair.png')}" style="padding-bottom: 20px; margin-right: -2px; margin-bottom: -5px; margin-top: -5px;" title="" />
+                    </isif>
+                    ${Resource.msg('global.header.shop', 'common', null)}
+                </span>
+                <div class="dropdown-menu st-primary-nav__dropdown st-shop-navigation__menu s-shop-navigation__menu js-shop-navigation__menu"
+                    role="menu" aria-hidden="true">
+                    <div class="menuwraps shopmenu">
+                        <div class="left-menu">
+                            <h3>${Resource.msg('global.header.products', 'common', null)}</h3>
+                            <ul>
+                                <isloop items="${dw.catalog.CatalogMgr.getCatalog("kind-snacks-storefront").getRoot().getOnlineSubCategories()}" var="category">
+                                    <isscript>
+                                    var c = category;
+                                    var def = dw.catalog.CatalogMgr.getCategory("kind-nut-bars");
+                                    </isscript>
+                                    <isset name="responsiveImage"
+                                        value="${responsiveImageUtils.getResponsiveImage(c.custom.menu_image, 400)}"
+                                        scope="page" />
+                                    <isset name="responsiveImageDefault"
+                                        value="${responsiveImageUtils.getResponsiveImage(def.custom.menu_image, 400)}"
+                                        scope="page" />
+                                    <isif condition="${c.custom.showInMenu}">
+                                        <li class="nav-item js-gtm-nav-category-click" role="menuitem"
+                                            data-img="${responsiveImage.imageUrlDefault}"
+                                            data-overlay="${c.custom.overlayText}" data-name="${c.displayName}"
+                                            data-id="${category.ID}"
+                                            data-url="${URLUtils.url('Search-ShowMenu', 'cgid', category.ID)}">
+                                            <isif condition="${c.custom.badge == "new"}">
+                                                <img class="badge_image"
+                                                    src="${URLUtils.staticURL('/images/badgeNew.png')}"
+                                                    alt="${category.displayName}" />
+                                            </isif>
+                                            <a href="${URLUtils.url('Search-Show', 'cgid', category.ID)}">
+                                                <isprint value="${c.displayName}" encoding="off" />
+                                            </a>
+                                        </li>
+                                    </isif>
+                                </isloop>
+                                <li class="nav-item shopall" role="menuitem" style="display:none">
+                                    <a href="${URLUtils.url('Search-Show', 'cgid', "all-snacks")}">
+                                        ${Resource.msg('nav.dropdown.shop.all', 'common', null)}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mid-menu">
+                            <h3 class="mid-name">${def.displayName}</h3>
+                            <div class="mid-suggest"></div>
+                                <a class="img-link" href="${URLUtils.url('Search-Show', 'cgid', 'kind-nut-bars')}" />
+                                    <div class="image-wrap">
+                                        <img src="${responsiveImageDefault.imageUrlDefault}" alt="none" class="mid-image" />
+                                        <div class="mid-overlay">
+                                            <isif condition="${siteID === "CreativeSnacks"}">
+                                                <div class="">
+                                                    ${Resource.msg('nav.dropdown.shop.all', 'common', null)}
+                                                    <img alt="" class="shop-all-arrow" src="${URLUtils.staticURL('/images/vector-arrow-right.png')}" />
+                                                </div>
+                                            <iselse/>
+                                                <div class="mid-overlaytext">
+                                                    <isprint value="${def.custom.overlayText}" encoding="off" />
+                                                </div>
+                                            </isif>
+                                        </div>
+                                    </div>
+                                </a>
+                        </div>
+                        <div class="right-menu">
+                            <isslot id="right-menu-mobile" description="Menu Right Mobile" context="global" />
+                        </div>
+                    </div>
+            </li>
+
+            <li class="nav-item dropdown st-primary-nav__item st-shop-navigation js-shop-nav" role="menuitem">
+                <span class="nav-link st-primary-nav__link dropdown-toggle st-primary-nav__dropdown-toggle headermenu aboutmenu"
+                      role="button" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                    ${Resource.msg('label.header.about', 'common', null)}
+                </span>
+                <div class="dropdown-menu st-primary-nav__dropdown st-shop-navigation__menu s-shop-navigation__menu js-shop-navigation__menu"
+                     role="menu" aria-hidden="true">
+                    <iscontentasset aid="about-us-menu" />
+                </div>
+            </li>
+
+            <div class="s-header-nav js-header-nav">
+                <isif condition="${siteID === "kind_b2b"}">
+                    <isslot id="header-navigation-b2b" context="global" description="header menu item" />
+                <iselseif condition="${siteID === "CreativeSnacks"}" />
+                    <iscontentasset aid="header-navigation-cs" />
+                <iselseif condition="${siteID === "KINDSnacks"}" />
+                <ul>
+                    <li class="nav-item"><a class="nav-link js-content-asset-link" href="${URLUtils.url('Product-Show', 'pid', 'MBYOB')}" title="Build Your Own Box" data-site-section="Header">Build Your Own Box</a></li>
+                    <li>
+                    <li class="nav-item"><a class="nav-link js-content-asset-link" href="${URLUtils.url('Page-Show', 'cid', 'subscriptions')}" title="Subscriptions" data-site-section="Header">Subscriptions</a></li>
+                    <li class="nav-item"><a class="nav-link js-content-asset-link" href="${URLUtils.url('Page-Show', 'cid', 'rewards')}" title="Rewards" data-site-section="Header">Rewards</a>
+                    </li>
+                </ul>
+                </isif>
+            </div>
+
+            <div class="menu-callout onlymobile">
+                <isslot id="menu-callout" description="Menu Callout" context="global" />
+            </div>
+
+            <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />
+            <isinclude url="${URLUtils.url('Page-Locale', 'mobile', true)}" />
+        </ul>
+        <div class="iphonepad"></div>
+    </div>
+</nav>
+<style>
+.menuhead {
+    font-size: 18px !important;
+    padding-left: 40px !important;
+    font-family: "HelveticaNeue", Helvetica, sans-serif;
+    margin-bottom: 0px !important;
+    font-weight: 700 !important;
+    line-height: 40px !important;
+    padding-top: 15px !important;
+    text-decoration: underline !important;
+    padding: 0px !important;
+}
+body {
+  width: 100vw;
+  -webkit-overflow-scrolling: touch;
+}
+@media screen and (max-width: 440px) {
+    .navbar {
+        overflow-x:hidden;
+    }
+}
+</style>

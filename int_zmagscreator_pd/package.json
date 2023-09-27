@@ -1,0 +1,5 @@
+{
+    "cartridgeVersion": "19.1.0",
+    "cartridgeArchitecture": "SiteGenesis with Controllers",
+    "hooks": "./cartridge/scripts/hooks.json"
+}

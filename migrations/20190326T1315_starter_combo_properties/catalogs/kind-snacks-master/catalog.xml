@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="vbyob20">
+        <custom-attributes>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="vbyob40">
+        <custom-attributes>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="mchocolatecombo">
+        <short-description xml:lang="x-default">a selection of bars with chocolate in every bite</short-description>
+    </product>
+
+    <product product-id="mfruitflavors">
+        <short-description xml:lang="x-default">think blueberry, cranberry, mango, apple and more!</short-description>
+    </product>
+
+    <product product-id="mnaturalprotein">
+        <short-description xml:lang="x-default">protein bars that don’t taste&#13;
+like ones</short-description>
+    </product>
+
+</catalog>

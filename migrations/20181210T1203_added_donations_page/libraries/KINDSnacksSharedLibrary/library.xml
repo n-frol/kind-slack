@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="donations">
+        <display-name xml:lang="x-default">Donations</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/donations</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h1 style="text-align: center;"&gt;donations&lt;/h1&gt;&#13;
+&#13;
+&lt;p&gt;Thank you for your interest in making KIND&amp;reg; snacks a part of your event! We love to support causes that align with our mission to spread kindness one kind act, and one KIND&amp;reg; snack at a time. Please note that due to the high volume of applications we unfortunately are not able to fulfill all product donation requests. However, we will do our best to review your application as soon as possible and get back to you in a timely manner. Thank you for your interest in our products and being a part of the KIND community.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Disclaimers:&lt;br /&gt;&#13;
+We do not donate to religious or political organizations.&lt;br /&gt;&#13;
+We are unable to provide cash sponsorships for events, athletes, teams or leagues.&amp;nbsp;&lt;br /&gt;&#13;
+We are unable to accommodate personal requests including in-kind or financial sponsorship for an individual or their team during an event or race.&amp;nbsp;&lt;br /&gt;&#13;
+We require all requests to be submitted at least 60 days prior to your event.&lt;br /&gt;&#13;
+We are unable to donate outside of the contiguous US and Canada.&lt;br /&gt;&#13;
+Donated product cannot be resold, except for auction or raffle.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;If you do not receive a response within 2 weeks of your submission, we will be unable to accommodate your request.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-5">
+        <display-name xml:lang="x-default">Footer Column 5</display-name>
+        <display-name xml:lang="fr-FR">Liens À propos en pied de page</display-name>
+        <display-name xml:lang="it-IT">Link Informazioni su a piè di pagina </display-name>
+        <display-name xml:lang="ja-JP">フッターの企業情報リンク</display-name>
+        <display-name xml:lang="zh-CN">页脚关于链接</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'our-mission')$"&gt;Our Mission&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="KIND foundation"&gt;KIND foundation&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="http://www.howkindofyou.com/" target="_blank" title="Follow the tag!"&gt;#kindawesome&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'donations')$" title="Donations"&gt;donations&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="fr-FR">&lt;h3&gt;&lt;a class="title" href="#"&gt;À propos&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Aller à À propos de nous"&gt;À propos de nous&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Aller à Déclaration de confidentialité"&gt;Confidentialité&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="Aller à Conditions générales"&gt;Conditions générales&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="Aller à Carrières"&gt;Carrières&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="it-IT">&lt;h3&gt;&lt;a class="title" href="#"&gt;Informazioni su&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Vai a Chi siamo"&gt;Chi siamo&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Vai a Privacy"&gt;Privacy&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="Vai a Termini"&gt;Termini&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="Vai a Lavora con noi"&gt;Lavora con noi&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="ja-JP">&lt;h3&gt;&lt;a class="title" href="#"&gt;企業情報&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="「Commerce Cloud について」に移動する"&gt;Commerce Cloud について&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="「プライバシー」に移動する"&gt;プライバシー&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="「利用条件」に移動する"&gt;利用条件&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="「採用情報」に移動する"&gt;採用情報&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="zh-CN">&lt;h3&gt;&lt;a class="title" href="#"&gt;关于&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="前往关于我们"&gt;关于我们&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="前往隐私"&gt;隐私政策&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="前往条款"&gt;条款&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="前往招聘"&gt;招聘&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

@@ -1,0 +1,926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="creative-snacks-storefront">
+    <header>
+        <image-settings>
+            <internal-location base-path="/"/>
+            <view-types>
+                <view-type>large</view-type>
+                <view-type>medium</view-type>
+                <view-type>small</view-type>
+                <view-type>swatch</view-type>
+            </view-types>
+            <alt-pattern>${productname}</alt-pattern>
+            <title-pattern>${productname}</title-pattern>
+        </image-settings>
+    </header>
+
+    <category category-id="root">
+        <display-name xml:lang="x-default">Creative Snacks Catalog</display-name>
+        <online-flag>true</online-flag>
+        <template/>
+        <page-attributes/>
+        <refinement-definitions>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="flavor" system="false">
+                <display-name xml:lang="x-default">flavor</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="benefits" system="false">
+                <display-name xml:lang="x-default">benefits</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="occasion" system="false">
+                <display-name xml:lang="x-default">occasions</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="texture" system="false">
+                <display-name xml:lang="x-default">crunchiness</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+                <bucket-definitions>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">soft</display-name>
+                        <value-list xml:lang="x-default">soft, soft-chewy</value-list>
+                        <description xml:lang="x-default">soft</description>
+                    </attribute-bucket>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">chewy</display-name>
+                        <value-list xml:lang="x-default">chewy-crunchy,chewy, soft-chewy</value-list>
+                        <description xml:lang="x-default">chewy</description>
+                    </attribute-bucket>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">crunchy</display-name>
+                        <value-list xml:lang="x-default">crunchy, chewy-crunchy, crunchy-hard</value-list>
+                        <description xml:lang="x-default">crunchy</description>
+                    </attribute-bucket>
+                </bucket-definitions>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="protein" system="false">
+                <display-name xml:lang="x-default">protein</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="dietaryFiber" system="false">
+                <display-name xml:lang="x-default">fiber</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="addedSugar" system="false">
+                <display-name xml:lang="x-default">added sugars</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+        </refinement-definitions>
+    </category>
+
+    <category category-id="all-snacks">
+        <display-name xml:lang="x-default">All Snacks</display-name>
+        <online-flag>false</online-flag>
+        <parent>root</parent>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">All Snacks | KIND Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">all-snacks</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="marketingTileAPosition">3.0</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="almond-clusters">
+        <display-name xml:lang="x-default">Almond Clusters</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>CoconutSnacks_Cartwheel-336 1.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Almond Clusters | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="badge">new</custom-attribute>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">almond-clusters</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">coconutSnacks__0000_coco-chips-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="coconut-snacks">
+        <display-name xml:lang="x-default">Coconut Snacks</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>CoconutSnacks_Cartwheel-336 1.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Coconut Snacks | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">coconut-snacks</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">coconutSnacks__0000_coco-chips-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="coconut-snacks-1">
+        <display-name xml:lang="x-default">Coconut Snacks (copy)</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>CoconutSnacks_Cartwheel-336 1.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Coconut Snacks | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">coconut-snacks</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">coconutSnacks__0000_coco-chips-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="drizzlers">
+        <display-name xml:lang="x-default">Drizzlers</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>ProductLines_Thumbnails_2020Frozen.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Drizzlers | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">drizzlers</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">drizzlers__0000_apple-cinnamon-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="marketingTileAPosition">3.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileBPosition">7.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileCPosition">6.0</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+        <refinement-definitions>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="benefits" system="false">
+                <display-name xml:lang="x-default">benefits</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="texture" system="false">
+                <display-name xml:lang="x-default">crunchiness</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+                <bucket-definitions>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">soft</display-name>
+                        <value-list xml:lang="x-default">soft, soft-chewy</value-list>
+                        <description xml:lang="x-default">soft</description>
+                    </attribute-bucket>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">chewy</display-name>
+                        <value-list xml:lang="x-default">chewy-crunchy,chewy, soft-chewy</value-list>
+                        <description xml:lang="x-default">chewy</description>
+                    </attribute-bucket>
+                    <attribute-bucket>
+                        <display-name xml:lang="x-default">crunchy</display-name>
+                        <value-list xml:lang="x-default">crunchy, chewy-crunchy, crunchy-hard</value-list>
+                        <description xml:lang="x-default">crunchy</description>
+                    </attribute-bucket>
+                </bucket-definitions>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="protein" system="false">
+                <display-name xml:lang="x-default">protein</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="flavor" system="false">
+                <display-name xml:lang="x-default">flavor</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="occasion" system="false">
+                <display-name xml:lang="x-default">occasions</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="dietaryFiber" system="false">
+                <display-name xml:lang="x-default">fiber</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="addedSugar" system="false">
+                <display-name xml:lang="x-default">added sugars</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>show-values</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+        </refinement-definitions>
+    </category>
+
+    <category category-id="drizzlers-1">
+        <display-name xml:lang="x-default">Drizzlers (copy)</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>ProductLines_Thumbnails_2020Frozen.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Drizzlers | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">drizzlers</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">drizzlers__0000_apple-cinnamon-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="marketingTileAPosition">3.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileBPosition">7.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileCPosition">6.0</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+        <refinement-definitions>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="benefits" system="false">
+                <display-name xml:lang="x-default">benefits</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="texture" system="false">
+                <display-name xml:lang="x-default">texture</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="protein" system="false">
+                <display-name xml:lang="x-default">protein</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+        </refinement-definitions>
+    </category>
+
+    <category category-id="drizzlers-1-1">
+        <display-name xml:lang="x-default">Drizzlers</display-name>
+        <online-flag>true</online-flag>
+        <parent>drizzlers-1</parent>
+        <thumbnail>ProductLines_Thumbnails_2020Frozen.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Drizzlers | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">drizzlers</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">drizzlers__0000_apple-cinnamon-front.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="marketingTileAPosition">3.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileBPosition">7.0</custom-attribute>
+            <custom-attribute attribute-id="marketingTileCPosition">6.0</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+        <refinement-definitions>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="benefits" system="false">
+                <display-name xml:lang="x-default">benefits</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="texture" system="false">
+                <display-name xml:lang="x-default">texture</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+            <refinement-definition type="attribute" bucket-type="values" attribute-id="protein" system="false">
+                <display-name xml:lang="x-default">protein</display-name>
+                <value-set>search-result</value-set>
+                <sort-mode>value-name</sort-mode>
+                <sort-direction>ascending</sort-direction>
+                <unbucketed-values-mode>hide</unbucketed-values-mode>
+                <cutoff-threshold>5</cutoff-threshold>
+            </refinement-definition>
+        </refinement-definitions>
+    </category>
+
+    <category category-id="granola-clusters">
+        <display-name xml:lang="x-default">Granola Clusters</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>ProductLines_Thumbnails_2020Frozen.png</thumbnail>
+        <template>rendering/search/searchResultsV2</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Creative Snacks Granola Clusters | Creative Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="categorySlug" xml:lang="x-default">granola-clusters</custom-attribute>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="homepage_carousel_image">CS.com_Granola_Single_PackagingUpdateCS_Granola_ChocBananaNut_Single.jpg</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">false</custom-attribute>
+            <custom-attribute attribute-id="menu_image">CoconutSnacks_Cartwheel-336 1.png</custom-attribute>
+            <custom-attribute attribute-id="overlayText">shop all protein bars  &lt;img alt="" height="10" src="ProductLines_Thumbnails_2020Frozen.png?$staticlink$" title="" width="10" /&gt;</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="showInTable">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <product product-id="41475">
+        <ean/>
+        <upc>602652414756</upc>
+        <unit/>
+        <unit-quantity>0</unit-quantity>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <display-name xml:lang="x-default">Apple Cinnamon Raisin Granola Clusters</display-name>
+        <long-description xml:lang="x-default">Perfect anytime of day, our Apple Cinnamon Raisin Granola Clusters pack a classic trio of flavor into every bite. Made in small batches in our bakery, these wholesome snacks are filled with whole grain oats, dried apples and raisins, and flavored with cinnamon and vanilla.</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>true</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <tax-class-id>standard</tax-class-id>
+        <brand>Creative Snacks</brand>
+        <manufacturer-sku>41475</manufacturer-sku>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="addedSugar" xml:lang="x-default">16</custom-attribute>
+            <custom-attribute attribute-id="allergenInformation" xml:lang="x-default">Contains Eggs and Wheat.</custom-attribute>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="backgroundColor" xml:lang="x-default">#eda900</custom-attribute>
+            <custom-attribute attribute-id="calcium">2</custom-attribute>
+            <custom-attribute attribute-id="calories" xml:lang="x-default">130</custom-attribute>
+            <custom-attribute attribute-id="cholesterol" xml:lang="x-default">0</custom-attribute>
+            <custom-attribute attribute-id="cholesterolDailyValue">0</custom-attribute>
+            <custom-attribute attribute-id="dietaryFiber" xml:lang="x-default">2</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="featuredIngredients">Whole Grain Oats, Brown Sugar (Sugar, Cane Syrups), Fully Refined Canola Oil, Raisins, Dried Apples (Apples, Sugar), Egg Whites, Honey, Flour (Unbleached Wheat Flour, Malted Barley Flour, Niacin, Iron, Thiamine Mononitrate, Riboflavin, Folic Acid), Molasses, Water, Apple Juice Concentrate,</custom-attribute>
+            <custom-attribute attribute-id="fiberDailyValue">7</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="iron">6</custom-attribute>
+            <custom-attribute attribute-id="isHiddenComponents">true</custom-attribute>
+            <custom-attribute attribute-id="potassium" xml:lang="x-default">2</custom-attribute>
+            <custom-attribute attribute-id="productClassID" xml:lang="x-default">CGR</custom-attribute>
+            <custom-attribute attribute-id="productType" xml:lang="x-default">bags</custom-attribute>
+            <custom-attribute attribute-id="protein" xml:lang="x-default">2</custom-attribute>
+            <custom-attribute attribute-id="saturatedFat" xml:lang="x-default">0</custom-attribute>
+            <custom-attribute attribute-id="saturatedFatDailyValue">0</custom-attribute>
+            <custom-attribute attribute-id="servingsize">1/3 cup (35g)</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">6count</custom-attribute>
+            <custom-attribute attribute-id="sodium" xml:lang="x-default">50</custom-attribute>
+            <custom-attribute attribute-id="sodiumDailyValue">3</custom-attribute>
+            <custom-attribute attribute-id="sugars" xml:lang="x-default">10</custom-attribute>
+            <custom-attribute attribute-id="sugarsDailyValue">8</custom-attribute>
+            <custom-attribute attribute-id="tileHoverEnable">true</custom-attribute>
+            <custom-attribute attribute-id="totalCarb" xml:lang="x-default">22</custom-attribute>
+            <custom-attribute attribute-id="totalCarbsDailyValue">8</custom-attribute>
+            <custom-attribute attribute-id="totalFat" xml:lang="x-default">4</custom-attribute>
+            <custom-attribute attribute-id="totalFatDailyValue">5</custom-attribute>
+            <custom-attribute attribute-id="totalItemQuantity" xml:lang="x-default">6.0</custom-attribute>
+            <custom-attribute attribute-id="transFat" xml:lang="x-default">0</custom-attribute>
+            <custom-attribute attribute-id="vitamind">0</custom-attribute>
+        </custom-attributes>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <category-assignment category-id="all-snacks" product-id="24983"/>
+
+    <category-assignment category-id="all-snacks" product-id="26686"/>
+
+    <category-assignment category-id="all-snacks" product-id="26687"/>
+
+    <category-assignment category-id="all-snacks" product-id="26688"/>
+
+    <category-assignment category-id="all-snacks" product-id="26689"/>
+
+    <category-assignment category-id="all-snacks" product-id="26690"/>
+
+    <category-assignment category-id="all-snacks" product-id="26691"/>
+
+    <category-assignment category-id="all-snacks" product-id="26693"/>
+
+    <category-assignment category-id="all-snacks" product-id="27235"/>
+
+    <category-assignment category-id="all-snacks" product-id="27237"/>
+
+    <category-assignment category-id="all-snacks" product-id="27614"/>
+
+    <category-assignment category-id="all-snacks" product-id="27625"/>
+
+    <category-assignment category-id="all-snacks" product-id="27626"/>
+
+    <category-assignment category-id="all-snacks" product-id="27630"/>
+
+    <category-assignment category-id="all-snacks" product-id="27878"/>
+
+    <category-assignment category-id="all-snacks" product-id="27881"/>
+
+    <category-assignment category-id="all-snacks" product-id="28131"/>
+
+    <category-assignment category-id="all-snacks" product-id="28132"/>
+
+    <category-assignment category-id="all-snacks" product-id="28136"/>
+
+    <category-assignment category-id="all-snacks" product-id="28456"/>
+
+    <category-assignment category-id="all-snacks" product-id="28457"/>
+
+    <category-assignment category-id="all-snacks" product-id="28458"/>
+
+    <category-assignment category-id="all-snacks" product-id="28459"/>
+
+    <category-assignment category-id="all-snacks" product-id="28508"/>
+
+    <category-assignment category-id="all-snacks" product-id="41059"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17111"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17117"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17118"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17119"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17121"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17124"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17125"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17128"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17150"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17156"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17179"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17181"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17190"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17193"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17224"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17226"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17227"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17228"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17715"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17750"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17751"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17752"/>
+
+    <category-assignment category-id="all-snacks" product-id="M17758"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18052"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18053"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18054"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18055"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18056"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18057"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18070"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18421"/>
+
+    <category-assignment category-id="all-snacks" product-id="M18629"/>
+
+    <category-assignment category-id="all-snacks" product-id="M19982"/>
+
+    <category-assignment category-id="all-snacks" product-id="M19983"/>
+
+    <category-assignment category-id="all-snacks" product-id="M19984"/>
+
+    <category-assignment category-id="all-snacks" product-id="M19985"/>
+
+    <category-assignment category-id="all-snacks" product-id="M20800"/>
+
+    <category-assignment category-id="all-snacks" product-id="M20801"/>
+
+    <category-assignment category-id="all-snacks" product-id="M20802"/>
+
+    <category-assignment category-id="all-snacks" product-id="M20803"/>
+
+    <category-assignment category-id="all-snacks" product-id="M20805"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24201"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24202"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24203"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24205"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24210"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24211"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24443"/>
+
+    <category-assignment category-id="all-snacks" product-id="M24480"/>
+
+    <category-assignment category-id="all-snacks" product-id="M25877"/>
+
+    <category-assignment category-id="all-snacks" product-id="M25878"/>
+
+    <category-assignment category-id="all-snacks" product-id="M25879"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26185"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26186"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26187"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26188"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26672"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26674"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26695"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26696"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26697"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26698"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26699"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26700"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26704"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26705"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26706"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26707"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26709"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26710"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26711"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26712"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26713"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26969"/>
+
+    <category-assignment category-id="all-snacks" product-id="M26970"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27000"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27169"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27170"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27171"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27172"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27236"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27361"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27362"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27369"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27524"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27620"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27740"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27877"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27879"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27880"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27882"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27883"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27884"/>
+
+    <category-assignment category-id="all-snacks" product-id="M27966"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28195"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28203"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28204"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28205"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28347"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28348"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28349"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28496"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28497"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28499"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28501"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28502"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28503"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28504"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28505"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28506"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28507"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28510"/>
+
+    <category-assignment category-id="all-snacks" product-id="M28511"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29639"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29640"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29641"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29642"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29643"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29644"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29645"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29646"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29647"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29734"/>
+
+    <category-assignment category-id="all-snacks" product-id="M29942"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40015"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40120"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40121"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40122"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40123"/>
+
+    <category-assignment category-id="all-snacks" product-id="M40125"/>
+
+    <category-assignment category-id="all-snacks" product-id="M41062"/>
+
+    <category-assignment category-id="all-snacks" product-id="M41063"/>
+
+    <category-assignment category-id="all-snacks" product-id="M41064"/>
+
+    <category-assignment category-id="all-snacks" product-id="M41065"/>
+
+    <category-assignment category-id="coconut-snacks" product-id="41460"/>
+
+    <category-assignment category-id="coconut-snacks" product-id="41464"/>
+
+    <category-assignment category-id="coconut-snacks-1" product-id="41460"/>
+
+    <category-assignment category-id="coconut-snacks-1" product-id="41464"/>
+
+    <category-assignment category-id="drizzlers" product-id="41461"/>
+
+    <category-assignment category-id="drizzlers" product-id="41461-1"/>
+
+    <category-assignment category-id="drizzlers" product-id="41463"/>
+
+    <category-assignment category-id="drizzlers" product-id="41463-1">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="drizzlers" product-id="41464"/>
+
+    <category-assignment category-id="drizzlers-1" product-id="41461"/>
+
+    <category-assignment category-id="drizzlers-1" product-id="41461-1"/>
+
+    <category-assignment category-id="drizzlers-1" product-id="41463"/>
+
+    <category-assignment category-id="drizzlers-1" product-id="41463-1"/>
+
+    <category-assignment category-id="drizzlers-1" product-id="41464"/>
+
+    <category-assignment category-id="drizzlers-1-1" product-id="41461"/>
+
+    <category-assignment category-id="drizzlers-1-1" product-id="41461-1"/>
+
+    <category-assignment category-id="drizzlers-1-1" product-id="41463"/>
+
+    <category-assignment category-id="drizzlers-1-1" product-id="41463-1"/>
+
+    <category-assignment category-id="drizzlers-1-1" product-id="41464"/>
+
+    <category-assignment category-id="granola-clusters" product-id="41471"/>
+
+    <category-assignment category-id="granola-clusters" product-id="41472"/>
+
+    <category-assignment category-id="granola-clusters" product-id="41472-1"/>
+
+    <category-assignment category-id="granola-clusters" product-id="41473"/>
+
+    <category-assignment category-id="root" product-id="41460">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41461">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41461-1">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41463">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41463-1"/>
+
+    <category-assignment category-id="root" product-id="41464">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41471">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41472">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41472-1">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="41473">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="701642841463">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="701642841463M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="883360541464">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="883360541464M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="883360541471">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="883360541471M">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <recommendation source-id="41464" source-type="product" target-id="41461" type="1"/>
+
+    <recommendation source-id="41464" source-type="product" target-id="41463" type="1"/>
+
+    <recommendation source-id="41464" source-type="product" target-id="41461-1" type="1"/>
+
+    <recommendation source-id="41464" source-type="product" target-id="41463-1" type="1"/>
+
+    <recommendation source-id="coconut-snacks" source-type="category" target-id="41463" type="1"/>
+
+    <recommendation source-id="coconut-snacks" source-type="category" target-id="41463-1" type="1"/>
+
+    <recommendation source-id="coconut-snacks" source-type="category" target-id="41461" type="1"/>
+
+    <recommendation source-id="coconut-snacks" source-type="category" target-id="41461-1" type="1"/>
+
+    <recommendation source-id="coconut-snacks-1" source-type="category" target-id="41464" type="1"/>
+
+    <recommendation source-id="drizzlers" source-type="category" target-id="41464" type="1"/>
+
+    <recommendation source-id="drizzlers" source-type="category" target-id="41463" type="1"/>
+
+    <recommendation source-id="drizzlers" source-type="category" target-id="41463-1" type="1"/>
+
+    <recommendation source-id="drizzlers" source-type="category" target-id="41461" type="1"/>
+
+    <recommendation source-id="drizzlers" source-type="category" target-id="41461-1" type="1"/>
+
+</catalog>

@@ -1,0 +1,29 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isset name="asset" value="${pdict.content}" scope="page" />
+<isset name="assetID" value="${asset.ID}" scope="page" />
+
+<div class="container st-container--padded">
+    <isif condition="${!empty(pdict.success)}">
+        <div class="row page-offset-bottom">
+            <div class="col-12">
+                <iscontentasset aid="contact-form-submitted" />
+            </div>
+        </div>
+    </isif>
+    <isif condition="${!empty(asset.custom.body)}">
+        <div class="row">
+            <div class="col-12 c-faq-child s-faq-child">
+                <isprint value="${asset.custom.body}" encoding="off" />
+            </div>
+        </div>
+    </isif>
+    <isif condition="${empty(pdict.success)}">
+        <div class="row page-offset-top">
+            <div class="col-12">
+                <iscontentasset aid="contact-form-instructions" />
+                <isinclude template="contact/contactForm" />
+            </div>
+        </div>
+    </isif>
+</div>

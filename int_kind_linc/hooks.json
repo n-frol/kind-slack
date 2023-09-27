@@ -1,0 +1,20 @@
+{
+    "hooks": [
+        {
+            "name": "app.kind.linc.order",
+            "script": "./cartridge/scripts/hooks/order.js"
+        },
+        {
+            "name": "dw.ocapi.shop.order.afterPATCH",
+            "script": "./cartridge/scripts/hooks/order/afterPATCH.js"
+        },
+        {
+            "name": "app.kind.linc.fulfillment",
+            "script": "./cartridge/scripts/hooks/order.js"
+        },
+        {
+            "name": "app.kind.linc.cancel.order",
+            "script": "./cartridge/scripts/hooks/order.js"
+        }
+    ]
+}

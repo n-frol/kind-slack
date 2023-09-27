@@ -1,0 +1,20 @@
+<isdecorate template="common/layout/page">
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isset name="byobNav" value="${dw.content.ContentMgr.getContent('byob-navigation')}" scope="page" />
+
+
+<isif condition="${!empty(byobNav) && !empty(byobNav.template)}">
+    <isscript>
+        pdict.content = byobNav; // Isset with scope="pdict" is deprecated, so do this instead
+    </isscript>
+
+    <isset name="byobRoot" value="${dw.system.Site.current.getCustomPreferenceValue('byobRootCategoryID')}" scope="page" />
+    <iscomment>Provide the active nav js a way of determining if a child of the BYOB category should inherit its active state</iscomment>
+    <isif condition="${!empty(byobRoot)}">
+        <div class="js-active-nav-data" data-active-nav-target="${URLUtils.https('Search-Show', 'cgid', byobRoot)}"></div>
+    </isif>
+    <isinclude template="${byobNav.template}" />
+</isif>
+
+</isdecorate>

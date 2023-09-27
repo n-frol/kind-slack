@@ -1,0 +1,51 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/orderHistory.js');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+    <div class="c-account-dashboard__order-history">
+        <div>
+            <h1 class="c-account-dashboard__order-history__heading title title-display-banner">${Resource.msg('label.orderhistory','account',null)}</h1>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-4 col-md-3 col-xl-2">
+                    <div class="c-account-dashboard__order-history__filter__wrapper form-group">
+                        <select class="c-account-dashboard__order-history__filter form-control custom-select order-history-select">
+                            <isloop items="${pdict.filterValues}" var="filterValue">
+                                <option
+                                    value="${filterValue.optionValue}"
+                                    <isif condition="${pdict.orderFilter === filterValue.displayValue
+                                        || filterValue.displayValue === Resource.msg('orderhistory.sixmonths.option','order',null)
+                                        || filterValue.displayValue === Resource.msg('orderhistory.twelvemonths.option','order',null)}"> selected</isif>>
+                                        ${filterValue.displayValue}
+
+                                </option>
+                            </isloop>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="c-account-dashboard__order-history__list row justify-content-center">
+                <isif condition="${pdict.orders.length > 0}" >
+                    <div class="container order-list-container">
+                        <isinclude template="account/order/orderList"/>
+                    </div>
+                <iselse/>
+                    <div class="c-account-dashboard__order-history__no-orders">
+                        ${Resource.msg('label.orderhistory.empty','account',null)}
+                    </div>
+                </isif>
+            </div>
+
+            <div class="c-account-dashboard__bottom row justify-content-center ">
+                <div class="col-sm-12 col-md-3 text-center">
+                    <a href="${URLUtils.url('Account-Show')}" class="c-account-dashboard__btn btn btn-outline-primary">
+                        ${Resource.msg('link.profile.backtomyaccount','account',null)}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

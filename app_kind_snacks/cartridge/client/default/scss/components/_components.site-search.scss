@@ -1,0 +1,113 @@
+/* ============================================================================
+Search
+============================================================================ */
+
+/**
+ * Styles for SFRA search bar
+ */
+
+$ns: c-site-search;
+
+.#{$ns} {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid $primary;
+    font-family: $font-family-primary;
+    height: auto;
+    position: absolute;
+        left: 0;
+    width: 100vw;
+    z-index: 1;
+
+    @include media-breakpoint-down(md) {
+        display: block;
+    }
+    @include media-breakpoint-up(md) {
+        left: -45px;
+    }
+    @include media-breakpoint-up(lg) {
+        left: 50%;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        transform: translateX(-50%);
+    }
+
+    &__row {
+        margin: 0;
+    }
+    &__form {
+        display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+        width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+    }
+    &__icon {
+        &__img {
+            height: 28px;
+            width: 28px;
+
+            @include media-breakpoint-up(lg) {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
+    &__input {
+        font-size: 14px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 20px;
+        }
+
+        // .c-site-search__input.c-site-search__input--search
+        &#{&}--search {
+            background-color: transparent;
+            border: none;
+            color: $grey4;
+            flex: 0 1 100%;
+            font-size: 14px;
+            font-weight: $font-weight-bold;
+            height: auto;
+            max-width: calc(100% - 32px); // Fallback for IE
+            padding: 0;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 20px;
+                padding: 0 10px;
+            }
+
+            &::placeholder {
+                color: inherit;
+                font-size: inherit;
+            }
+        }
+    }
+    &__close {
+        @include background-svg($svg-close-bold);
+
+        background-position: center center;
+        background-size: 32px auto;
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+    }
+    &__suggestions-wrapper {
+        border-bottom: none;
+        position: absolute;
+            left: 0;
+            top: 100%;
+        max-height: calc(100vh - 100% - 54px); // Fallback max-height of 100vh minus search bar and header bar
+        overflow-y: auto;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            border-bottom: 2px solid $primary;
+        }
+    }
+
+}
+
+

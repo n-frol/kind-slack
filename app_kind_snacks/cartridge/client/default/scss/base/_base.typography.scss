@@ -1,0 +1,163 @@
+/* ============================================================================
+Typography
+============================================================================ */
+
+/**
+ * Base typography styles for both body copy and headings
+ */
+
+body,
+.base-copy {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $primary;
+    font-family: $font-family-secondary;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.3;
+    line-height: 28px;
+
+    @include pxl-media($md-view-up) {
+        font-size: 16px;
+    }
+}
+
+.body-secondary {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $primary;
+    font-family: $font-family-secondary;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3;
+    line-height: 28px;
+}
+
+.headline-display-banner {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $primary;
+    font-family: $font-family-primary;
+    font-size: 80px;
+    font-weight: 700;
+    letter-spacing: -4.5;
+    line-height: 69px;
+}
+
+h1,
+.h1 {
+    @include pxl-heading('h1');
+
+    &.product-name {
+        font-size: 40px;
+        line-height: 1.05;
+        margin-bottom: 10px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 28px;
+        }
+        @include media-breakpoint-up(lg) {   
+            font-size: 30px;
+            line-height: 30px;
+        }
+    }
+}
+
+h2,
+.h2 {
+    @include pxl-heading('h2');
+}
+// Re-useable way to inherit styles from h2 without having to maintain them at all browser sizes
+.h2-md {
+    @include media-breakpoint-up(md) {
+        @include pxl-heading('h2');
+    }
+}
+
+h3,
+.h3 {
+    @include pxl-heading('h3');
+
+    & a.title, .title {
+        font-size: 18px;
+    }
+}
+h4,
+.h4 {
+    @include pxl-heading('h4');
+}
+
+.title {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $primary;
+    font-family: $font-family-primary;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -1.5px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    @include media-breakpoint-up(md) {
+        font-size: 30px;
+    }
+}
+
+.title-display-banner {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: $primary;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    font-family: $font-family-primary;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    margin: 60px 0 32px 0;
+    padding: 0 0 0 0;
+    text-transform: lowercase;
+}
+
+.subtitle {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $primary;
+    font-family: $font-family-primary;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 24px;
+}
+.subtext {
+    font-family: $font-family-primary;
+    font-size: 14px;
+}
+
+caption,
+.caption {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgba($primary, .5);
+    font-family: $font-family-secondary;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3;
+    line-height: 24px;
+}
+
+.page-header {
+    margin-bottom: 20px;
+
+    &--secondary {
+        text-align: center;
+    }
+
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+footer {
+    font-family: $font-family-primary;
+}

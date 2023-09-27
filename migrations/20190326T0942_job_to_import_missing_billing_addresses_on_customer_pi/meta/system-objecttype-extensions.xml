@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Category">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="navActiveBackgroundColor">
+                <display-name xml:lang="x-default">Nav Active Background Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="customAttributes">
+                <display-name xml:lang="x-default">Custom</display-name>
+                <attribute attribute-id="sizeChartID"/>
+                <attribute attribute-id="showInMenu"/>
+                <attribute attribute-id="enableCompare"/>
+                <attribute attribute-id="catBannerID"/>
+                <attribute attribute-id="headerMenuOrientation"/>
+                <attribute attribute-id="headerMenuBanner"/>
+                <attribute attribute-id="alternativeUrl"/>
+                <attribute attribute-id="navigationLabel"/>
+                <attribute attribute-id="isConfigurationCategory"/>
+                <attribute attribute-id="navActiveBackgroundColor"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="byobRootCategoryID">
+                <display-name xml:lang="x-default">BYOB Root Category ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Storefront Configs">
+                <display-name xml:lang="x-default">Storefront Configurations</display-name>
+                <attribute attribute-id="listPriceDefault"/>
+                <attribute attribute-id="GoogleVerificationTag"/>
+                <attribute attribute-id="buildNotificationEmailList"/>
+                <attribute attribute-id="enableStorePickUp"/>
+                <attribute attribute-id="countryCode"/>
+                <attribute attribute-id="customerServiceEmail"/>
+                <attribute attribute-id="mapAPI"/>
+                <attribute attribute-id="niceInContactUrl"/>
+                <attribute attribute-id="visibleBenefits"/>
+                <attribute attribute-id="isEinsteinEnabled"/>
+                <attribute attribute-id="contentGeneratorFolderIDtips"/>
+                <attribute attribute-id="byobAllProductsCategoryID"/>
+                <attribute attribute-id="byobRootCategoryID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

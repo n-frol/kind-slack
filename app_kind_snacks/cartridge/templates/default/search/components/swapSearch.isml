@@ -1,0 +1,32 @@
+<iscomment> BYOB Search Bar - Shown on PLP for BYOB </iscomment>
+<isset name="Site" value="${require('dw/system/Site')}" scope="page" />
+<isset name="byobCat" value="${Site.current.getCustomPreferenceValue('byobRootCategoryID')}" scope="page" />
+<div class="c-search-byob c-search-byob__plp">
+    <button>
+        <span class="c-search-byob__icon">
+            <img src="${URLUtils.staticURL('/images/search-byob.png')}" class="c-search-byob__navbar--utilities__icon__img" alt="Search the site" />
+        </span>
+    </button>
+    <div class="c-search-byob__form-container col-md-3">
+        <form role="search" action="${URLUtils.url('Search-Show')}" class="js-byob-search" method="get" name="simpleSearch">
+            <input class="form-control"
+                type="search"
+                name="q"
+                value=""
+                placeholder="${Resource.msg('label.byob.search', 'product', null)}"
+                autocomplete="off"
+                aria-label="${Resource.msg('label.byob.search', 'product', null)}" />
+            <input type="hidden" value="${pdict.locale}" name="lang"/>
+            <input type="hidden" name="isbyob" value="true"/>
+            <input type="hidden" name="isswap" value="true"/>
+
+            <isif condition="${!empty(pdict.productSearch.category)}">
+                <input type="hidden" name="cgid" value="${pdict.productSearch.category.id}" />
+            </isif>
+        </form>
+    </div>
+
+    <div class="search-button">
+        <i class="fa fa-search"></i>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<iscomment>
+	renders google tag manager
+</iscomment>
+<ismodule template="google/googletagmanager"
+	name="googletagmanager"
+	attribute="datalayer"
+/>
+<iscomment>
+    renders google tag manager noscript
+</iscomment>
+<ismodule template="google/components/noscript"
+          name="googletagmanagernoscript"
+/>
+
+
+<iscomment>
+	remarketing related tags (criteo, adwords, etc)
+</iscomment>
+<ismodule template="google/components/gtmremarketing"
+	name="gtmremarketing"
+	attribute="pagetype"
+	attribute="categoryid"
+/>
+
+
+<iscomment>
+	renders google tag manager conversion tracking
+</iscomment>
+<ismodule template="google/components/purchase"
+	name="googletagmanagerpurchase"
+	attribute="orderin"
+/>
+
+
+<iscomment>
+	renders google tag manager add to cart action
+</iscomment>
+<ismodule template="google/components/addtocart"
+	name="googletagmanageraddtocart"
+	attribute="productlineitem"
+/>
+

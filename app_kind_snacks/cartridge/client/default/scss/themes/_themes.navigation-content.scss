@@ -1,0 +1,41 @@
+/* ============================================================================
+    Navigation Content
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the navigation content template
+ */
+
+$ns: th-kind-navigation-content;
+$component: st-navigation-content;
+$scope: s-navigation-content;
+
+.#{$ns} {
+
+    // Media Grid Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__navigation {
+                font-family: $font-family-primary;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+        .#{$scope} {
+            &__navigation {
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        color: inherit;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<search xmlns="http://www.demandware.com/xml/impex/search2/2010-02-19">
+    <searchable-attributes>
+        <searchable-attribute>
+            <attribute-path>category.displayName</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>content.custom.body</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>false</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>content.description</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>content.name</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.ID</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.addedSugar</attribute-path>
+            <boost>0.01</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.benefits</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.calories</attribute-path>
+            <boost>0.01</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.dietaryFiber</attribute-path>
+            <boost>0.01</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.flavor</attribute-path>
+            <boost>1.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.name</attribute-path>
+            <boost>2.0</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+        <searchable-attribute>
+            <attribute-path>product.custom.protein</attribute-path>
+            <boost>0.01</boost>
+            <auto-correction>true</auto-correction>
+        </searchable-attribute>
+    </searchable-attributes>
+    <stopword-list xml:lang="x-default">
+        <stopwords>a, an, and, are, as, at, be, but, by, for, if, in, into, is, it, no, not, of, on, or, s, such, t, that, the, their, then, there, these, they, this, to, was, will, with, x, ®, ™, kind</stopwords>
+    </stopword-list>
+    <synonym-list xml:lang="en-US">
+        <synonyms>and, &amp;</synonyms>
+        <synonyms>barbecue, bbq</synonyms>
+        <synonyms>build, byob, build your own box, build your own, custom box, custom, byo</synonyms>
+        <synonyms>fruit and nut, fruit &amp; nut, fruit and nut bar, fruit &amp; nut bar</synonyms>
+        <synonyms>granola, cluster, clusters</synonyms>
+        <synonyms>kind cube, cubes, cube, gift, gifts</synonyms>
+    </synonym-list>
+    <hypernym-list xml:lang="en-US">
+        <hypernym-rule>
+            <hyponyms>shirt, tshirt, sweatshirt, hat, jacket</hyponyms>
+            <hypernyms>clothes, clothing</hypernyms>
+        </hypernym-rule>
+    </hypernym-list>
+    <redirect-list>
+        <redirect>
+            <keywords xml:lang="x-default">careers, employment, jobs, interns, internship, internship, ambassador, human resources, hr, marketing, finance, job, apply</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <page-redirect page-id="careers"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">wholesale, bulk, b2b</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <url-redirect target-url="/wholesale"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">mission, foundation, empatico, nutrition</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <page-redirect page-id="our-mission"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">ingredients</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <page-redirect page-id="faqs-ingredients"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">contact, contact us, customer service, help, order status</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <url-redirect target-url="/contact-us"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">account, my account, order history</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>true</secure-flag>
+            <pipeline-redirect pipeline-name="Login-Show"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">delivery, shipping, timetables</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <page-redirect page-id="faqs-shipping"/>
+        </redirect>
+        <redirect>
+            <keywords xml:lang="x-default">about, about us, history, daniel, lubetzky, lubetsky</keywords>
+            <online-flag>true</online-flag>
+            <secure-flag>false</secure-flag>
+            <page-redirect page-id="about-us"/>
+        </redirect>
+    </redirect-list>
+    <common-phrase-list xml:lang="en-US">
+        <common-phrases match-mode="exact-match">nut free</common-phrases>
+    </common-phrase-list>
+    <index-settings>
+        <full-reindexing-schedule>
+            <date-from>2011-06-03Z</date-from>
+            <start-time>14:57:00.000Z</start-time>
+            <factor>1</factor>
+            <unit>days</unit>
+        </full-reindexing-schedule>
+        <full-reindexing-enabled>
+            <index-type>product</index-type>
+            <index-type>synonym</index-type>
+            <index-type>suggest</index-type>
+            <index-type>activedata</index-type>
+            <index-type>content</index-type>
+        </full-reindexing-enabled>
+        <incremental-reindexing-enabled>
+            <index-type>product</index-type>
+            <index-type>synonym</index-type>
+            <index-type>suggest</index-type>
+            <index-type>activedata</index-type>
+            <index-type>content</index-type>
+        </incremental-reindexing-enabled>
+        <indexed-locales>
+            <locale>x-default</locale>
+            <locale>en-US</locale>
+        </indexed-locales>
+        <stemming xml:lang="x-default">English</stemming>
+        <stemming xml:lang="en-US">English</stemming>
+    </index-settings>
+</search>
+

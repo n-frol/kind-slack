@@ -1,0 +1,47 @@
+<iscomment>
+    Fires Events: carts
+
+    This template renders a transaction datalayer and event push for google
+    tag manager to pick up.
+
+    This will be skipped if the transaction already exists on the pdict as that indicates
+    the datalayer was passed to the GTM tag at the start of the page (which is the ideal
+    scenario). If not, this renders the data layer and fires a 'cart' event'
+</iscomment>
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerEnabled')}">
+    <isif condition="${!empty(pdict.cartin) && (empty(pdict.DataLayer) || empty(pdict.DataLayer.ecommerce) || empty(pdict.DataLayer.ecommerce.cart))}">
+        <isscript>
+            var GTM = require('int_googletagmanager/cartridge/scripts/helpers/GTM');
+            var dataLayerObj = GTM.PurchaseHelper(pdict.cartin);
+        </isscript>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            dataLayer.push({
+                ecommerce: <isprint value="${JSON.stringify(dataLayerObj.ecommerce, null, 2)}" encoding="off">,
+                    <isscript>
+                        var productList = [];
+                        var productIDs = [];
+                        for (var i=0; i<dataLayerObj.ecommerce.cartin.products.length; i++) {
+                        var pli = dataLayerObj.ecommerce.cartin.products[i];
+                        productIDs.push(pli.id);
+                        productList.push({id: pli.id, price: parseFloat(pli.price), quantity: pli.quantity});
+                    }
+                    </isscript>
+                    <isif condition="${criteoEnabled}">
+                        'PageType': 'TransactionPage',
+                        'email': <isprint value="${JSON.stringify(pdict.cartin.customerEmail.toLowerCase(), null, 2)}" encoding="off">,
+                        'ProductTransactionProducts': <isprint value="${JSON.stringify(productList)}" encoding="off">,
+                            'TransactionID': <isprint value="${JSON.stringify(pdict.cartin.orderNo, null, 2)}" encoding="off">,
+                    </isif>
+                    <isif condition="${adwordsEnabled}">
+                        google_tag_params: {
+                        ecomm_pagetype: 'purchase',
+                        ecomm_prodid: <isprint value="${JSON.stringify(productIDs)}" encoding="off">,
+                        ecomm_totalvalue: ${pdict.cartin.totals.subTotalDecimalIncludingOrderLevelDiscounts}
+                        }
+                        </isif>
+                    });
+                        dataLayer.push({'event': 'purchase'});
+        </script>
+    </isif>
+</isif>

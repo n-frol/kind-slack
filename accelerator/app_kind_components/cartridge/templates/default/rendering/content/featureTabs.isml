@@ -1,0 +1,38 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+    var ArrayList = require('dw/util/ArrayList');
+</isscript>
+
+<isif condition="${!empty(pdict.content)}">
+    <isset name="slotcontent" value="${pdict.content}" scope="page" />
+    <isset name="parentGraphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(slotcontent)}" scope="page" />
+    <isset name="parentHeading" value="${parentGraphicalAsset.heading}" scope="page" />
+    <isset name="parentBody" value="${parentGraphicalAsset.body}" scope="page" />
+
+    <isif condition="${'childrenContentAssetIDS' in slotcontent.custom && !empty(slotcontent.custom.childrenContentAssetIDS)}">
+        <isscript>
+            // Since we'll have to loop through twice, store data to make the process as efficient as possible
+            var assets = new ArrayList();
+        </isscript>
+
+        <isloop items="${slotcontent.custom.childrenContentAssetIDS}" var="assetID" status="loopStatus">
+            <isset name="contentAsset" value="${dw.content.ContentMgr.getContent(assetID)}" scope="page" />
+            <isif condition="${!empty(contentAsset)}">
+                <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+
+                <isif condition="${!empty(graphicalAsset)}">
+
+                    <isscript>
+                        assets.push({
+                            contentAsset: contentAsset,
+                            graphicalAsset: graphicalAsset,
+                            assetID: assetID
+                        });
+                    </isscript>
+
+                    <isinclude template="components/featureTabs/featureTabs_nav" />
+                </isif>
+            </isif>
+        </isloop>
+    </isif>
+</isif>

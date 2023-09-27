@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="ProductList">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="ogPublicID">
+                <display-name xml:lang="x-default">OrderGroove Public ID</display-name>
+                <description xml:lang="x-default">OrderGroove Public ID</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="BYOBConfiguration">
+                <display-name xml:lang="x-default">BYOB Configuration</display-name>
+                <attribute attribute-id="boxSize"/>
+                <attribute attribute-id="boxSku"/>
+                <attribute attribute-id="ogPublicID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveAPIUserHashKey">
+                <description xml:lang="x-default">Hash Key for authenticating to OrderGroove's programmatic API.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveAPIUserID">
+                <display-name xml:lang="x-default">OrderGroove API User ID</display-name>
+                <description xml:lang="x-default">User ID for authenticating to OrderGroove's programmatic API.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove Configurations</display-name>
+                <attribute attribute-id="OrderGrooveEnable"/>
+                <attribute attribute-id="OrderGrooveMerchantID"/>
+                <attribute attribute-id="OrderGrooveMerchantHashKey"/>
+                <attribute attribute-id="OrderGrooveAPIUserID"/>
+                <attribute attribute-id="OrderGrooveAPIUserHashKey"/>
+                <attribute attribute-id="OrderGrooveBasicUser"/>
+                <attribute attribute-id="OrderGrooveBasicPass"/>
+                <attribute attribute-id="OrderGrooveStaticDomain"/>
+                <attribute attribute-id="OrderGrooveEmail"/>
+                <attribute attribute-id="OrderGrooveAddresses"/>
+                <attribute attribute-id="OrderGrooveShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSecondaryShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSecondaryShippingMethodStates"/>
+                <attribute attribute-id="OrderGrooveSession"/>
+                <attribute attribute-id="OrderGrooveShipping"/>
+                <attribute attribute-id="OrderGrooveBilling"/>
+                <attribute attribute-id="OrderGrooveLabel"/>
+                <attribute attribute-id="OrderGrooveToken"/>
+                <attribute attribute-id="OrderGrooveCardHolder"/>
+                <attribute attribute-id="OrderGrooveCardNumber"/>
+                <attribute attribute-id="OrderGrooveCardType"/>
+                <attribute attribute-id="OrderGrooveCardExpiration"/>
+                <attribute attribute-id="OrderGrooveSubscription"/>
+                <attribute attribute-id="OrderGrooveTracking"/>
+                <attribute attribute-id="OrderGrooveDiscountType"/>
+                <attribute attribute-id="OrderGrooveDiscountValue"/>
+                <attribute attribute-id="OrderGrooveEnableFreeShippingThreshold"/>
+                <attribute attribute-id="OrderGrooveFreeShippingThreshold"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

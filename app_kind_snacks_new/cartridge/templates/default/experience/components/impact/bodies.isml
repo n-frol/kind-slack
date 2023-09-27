@@ -1,0 +1,129 @@
+<div class="bodies_section impact_section">
+    <isinclude template="experience/components/impact/two_column_bodies_1" />
+    <img class="farmer_market desktop" src="${URLUtils.staticURL('/images/impact/grid3/Group 3227.png')}" alt="Impact" class="bodies_section_2" />
+    <img class="farmer_market mobile" src="${URLUtils.staticURL('/images/impact/grid5/fmmobile.png')}" alt="Impact" class="bodies_section_2" />
+
+    <div class="centerme">
+        <div class="big">
+            nutrition from whole ingredients
+        </div>
+        <div class="para">
+            When it comes to snacking, people feel like they have to choose between what they should eat and what they want to eat. We’re building a kinder, healthier world by inspiring Americans to eat nutritious, whole ingredients when they can – whether that’s by eating a handful of nuts or enjoying the nuts in a KIND<sup>®</sup> Dark Chocolate Nuts and Sea Salt bar. That’s why we launched the Secret KIND Farmers Market, a pop-up nutrition initiative, to create a space that makes getting nutrition from whole, real foods easy, tasty, and fun. At Secret KIND Farmers Market events in 2022 and 2023, visitors entered through hidden doors in New York City and Houston and uncovered secret experiences, while shopping fresh, whole ingredients free-of-charge.        </div>
+    </div>
+    <div style="margin-bottom:80px"></div>
+    <img class="farmer_market desktop" src="${URLUtils.staticURL('/images/impact/Group_3228.png')}" alt="Impact" class="bodies_section_2" />
+    <img class="farmer_market mobile" src="${URLUtils.staticURL('/images/impact/grid4/image 177.png')}" alt="Impact" class="bodies_section_2" />
+    <div class="centerme">
+        <div class="para fs25">
+            Visitors participated in an interactive and educational experience while learning about our longstanding nutrition commitment at the Secret KIND Farmers Market
+        </div>
+    </div>
+    <div style="margin-bottom: 60px"></div>
+    <isinclude template="experience/components/impact/bodies_grid_1" />
+    <isinclude template="experience/components/impact/bodies_dyk" />
+    <isinclude template="experience/components/impact/bodies_nc" />
+    <div class="kristin">
+        <div class="desktop flex">
+            <img src="${URLUtils.staticURL('/images/impact/Rectangle 24.png')}" alt="Impact" class="bodies_section_2" />
+            <div class="quote">
+"Consumers are faced with a multitude of food choices throughout the day. The priority should be to select whole, recommended foods. Our goal is to have a positive impact on diet quality by providing a nutrient-dense food, like nuts or whole grains, as the first ingredient in our products and offering nutrition education so consumers can make empowered eating decisions."
+                <div class="person">
+                <div class="persont" style="font-family: 'medium'">
+                Kristin Rubin, PhD, Global Head of Nutrition at KIND
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="mobile">
+            <div class="quote">
+                "Consumers are faced with a multitude of food choices throughout the day. The priority should be to select whole, recommended foods. Our goal is to have a positive impact on diet quality by providing a nutrient-dense food, like nuts or whole grains, as the first ingredient in our products and offering nutrition education so consumers can make empowered eating decisions."
+                <div class="person">
+                    <img src="${URLUtils.staticURL('/images/impact/Rectangle 24.png')}" alt="Impact" class="bodies_section_2" />
+                    <div class="persont">
+                        Kristin Rubin, PhD, Global Head of Nutrition at KIND
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centerme">
+        <div class="head">
+            welcome to the KIND Kitchen: evolving healthy snacking
+        </div>
+        <div class="copy">
+            We’re working to reimagine how to deliver nutrient-dense ingredients in craveable snacks. We continued to push the snack category forward in 2022 with new options to add to your breakfast that deliver recommended foods, like whole grains.
+        </div>
+    </div>
+    <div style="width: 100%; text-align: center;">
+        <img class="desktop" style="margin:auto; margin-bottom: 80px;" src="${URLUtils.staticURL('/images/impact/grid3/Group 3146.png')}" usemap="#image-map">
+
+        <map name="image-map">
+            <area target="" alt="" title="" href="/bars/cereal-bars/" coords="478,607,37,124" shape="rect">
+            <area target="" alt="" title="" href="/granola/healthy-grains-clusters/" coords="756,356,1197,844" shape="rect">
+        </map>
+
+        <img style="margin-bottom: 40px;z" class="mobile" src="${URLUtils.staticURL('/images/impact/grid5/Group 3278.png')}" usemap="#image-map2">
+
+        <map name="image-map2">
+            <area target="" alt="" title="" href="/bars/cereal-bars/" coords="21,92,366,473" shape="rect">
+            <area target="" alt="" title="" href="/granola/healthy-grains-clusters/" coords="22,954,375,1341" shape="rect">
+        </map>
+    </div>
+    <isinclude template="experience/components/impact/bodies_grid_2" />
+    <div style="margin-top: 60px"></div>
+    <isinclude template="experience/components/impact/bodies_section_3" />
+    <div style="margin-top: 30px"></div>
+    <img style="margin:auto; margin-top: 60px;" src="${URLUtils.staticURL('/images/impact/grid3/Frame 31.png')}" alt="Impact" class="desktop bodies_section_2" />
+    <img src="${URLUtils.staticURL('/images/impact/grid5/timelinemobile.png')}" alt="Impact" class="mobile bodies_section_2" />
+    <div class="inthenews">
+        in the news...
+    </div>
+    <isinclude template="experience/components/impact/bodies_grid_3" />
+</div>
+
+<style>
+    map {
+        curosr: pointer;
+    }
+    desktop.flex {
+        display: flex;
+    }
+    @media screen and (max-width: 440px) {
+        .para {
+            padding: 0px 20px;
+        }
+        .kristin {
+            padding: 40px 20px !important;
+        }
+        .kristin img {
+            width: 40%;
+            display: inline-block;
+            float:left;
+        }
+        .kristin .person {
+            width: 100%;
+            display: inline-block;
+        }
+        .persont {
+            width: 50%;
+            display: inline-block;
+        }
+    }
+    .para.fs25 {
+        font-family: main !important;
+    }
+    .centerme .head {
+        font-size: 48px;
+        line-height: 54px;
+        font-family: main;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+    .centerme .copy {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+</style>

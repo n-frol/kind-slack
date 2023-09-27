@@ -1,0 +1,87 @@
+{
+  "name": "1 Row, 2 Column, Landscape Settable Width",
+  "group": "layouts",
+  "attribute_definition_groups": [
+    {
+      "id": "widthgroup",
+      "attribute_definitions": [
+        {
+          "id": "width",
+          "name": "Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol1",
+          "name": "Width Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol2",
+          "name": "Width Columns 2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthmobile",
+          "name": "Width Mobile Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "maxheight",
+          "name": "Max Height",
+          "type": "string",
+          "required": false
+        },
+          {
+              "id": "center",
+              "name": "center",
+              "type": "boolean",
+              "required": false
+          },
+          {
+              "id": "hungrykind",
+              "name": "Hungry Kind Format",
+              "type": "boolean",
+              "required": false
+          },
+          {
+              "id": "hungrykind_1",
+              "name": "Left Right Format",
+              "type": "boolean",
+              "required": false
+          }
+      ]
+    }
+  ],
+  "region_definitions": [
+      {
+        "id":"column1",
+        "name":"Column 1",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column2",
+        "name":"Column 2",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      }
+  ]
+}

@@ -1,0 +1,39 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_QIWI.isml --->
+<isset name="qiwiFields" value="${ pdict.forms.billingForm.qiwi }" scope="page"/>
+
+<fieldset class="paymentoperator-qiwi-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ qiwiFields.accountholdername.mandatory === true }>required</isif>
+            ${ qiwiFields.accountholdername.htmlName }">
+                <label class="form-control-label" for="qiwi_accountholdername">${ Resource.msg('qiwi.accountholdername','paymentoperator',null) }</label>
+                <div class="qiwi-accountholdername-wrapper">
+                    <input type="text" class="form-control accountholdername" id="qiwi_accountholdername"
+                           value=""
+                    <isprint value=${ qiwiFields.accountholdername.attributes } encoding="off"/>
+                    autocomplete="accountholdername"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ qiwiFields.mobilenumber.mandatory === true }>required</isif>
+            ${ qiwiFields.mobilenumber.htmlName }">
+                <label class="form-control-label" for="qiwi_mobilenumber">${ Resource.msg('qiwi.mobilenumber','paymentoperator',null) }</label>
+                <div class="qiwi-mobilenumber-wrapper">
+                    <input type="text" class="form-control mobilenumber" id="qiwi_mobilenumber"
+                           value=""
+                    <isprint value=${ qiwiFields.mobilenumber.attributes } encoding="off"/>
+                    autocomplete="mobilenumber"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

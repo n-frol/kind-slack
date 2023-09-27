@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="cat-banner-cs-granola-clusters">
+        <display-name xml:lang="x-default">Creative Snacks - Granola Clusters Category Banner</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#9F1A4C</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundImageMobile">images/category-banners/PLP_Lifestyle_Image_Core.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">Just one bite of our Granola Clusters and you’ll recognize the homemade taste. Creative Snacks Granola Clusters combine whole grain oats, nuts and fruit into bite-sized clusters.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Creative Snacks Granola Clusters &lt;sup&gt;®&lt;/sup&gt; Bars</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/category-banners/PLP_Lifestyle_Image_Core.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">flex</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

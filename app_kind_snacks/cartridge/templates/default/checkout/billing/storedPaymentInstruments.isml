@@ -1,0 +1,72 @@
+<isscript>
+    var formHelpers = require('/int_computop/cartridge/scripts/computop/helpers/formHelpers');
+    var customerPaymentInstruments = pdict.customer.customerPaymentInstruments
+    var filteredData = formHelpers.filterApplePayPaymentInstrument(customerPaymentInstruments);
+</isscript>
+
+<isloop items="${filteredData}" var="paymentInstrument" status="loopSate">
+    <isif condition="${paymentInstrument.creditCardType !== 'PayPal' && paymentInstrument.paymentMethod !== 'DW_APPLE_PAY'}">
+        <isscript>
+            var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+            var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+            var isSelected = false;
+
+            if (!empty(selectedPaymentInstrument)) {
+                isSelected = selectedPaymentInstrument.maskedCreditCardNumber === paymentInstrument.maskedCreditCardNumber
+                    && selectedPaymentInstrument.expirationMonth === paymentInstrument.creditCardExpirationMonth
+                    && selectedPaymentInstrument.expirationYear === paymentInstrument.creditCardExpirationYear
+            }
+        </isscript>
+        <div class="saved-payment-instrument row c-checkout-billing__saved-payment-instrument subtext ${(loopSate.first && empty(selectedPaymentInstrument)) || isSelected ? 'selected-payment c-checkout-billing__saved-payment-instrument--selected' : ''}" data-uuid="${paymentInstrument.UUID}">
+            <div class="form-group required saved-security-code c-checkout-billing__saved-payment-instrument__code col-6">
+                <img class="card-image ${loopSate.first || isSelected ? 'checkout-hidden' : ''}"
+                    src="${paymentInstrument.cardTypeImage.src}"
+                    alt="${paymentInstrument.cardTypeImage.alt}"
+                >
+                <div class="security-code-input ${loopSate.first || isSelected ? '' : 'checkout-hidden'}">
+                    <label class="form-control-label" for="saved-payment-security-code">${Resource.msg('label.credit.card-security.code','checkout',null)}</label>
+                    <span class="info-icon">
+                        <img src="${URLUtils.staticURL('/images/icon-tooltip-black.svg')}" class="c-tooltip__icon" alt="${Resource.msg('label.tooltip.cvv', 'common', null)}" />
+                        <div class="tooltip">
+                            ${Resource.msg('tooltip.security.code','creditCard',null)}
+                        </div>
+                    </span>
+
+                    <isscript>
+                        var type = paymentInstrument.creditCardType.toLowerCase();
+                        if (type === 'visa' || type === 'master card' || type === 'discover') {
+                            var cvvMinLength = '3';
+                            var cvvMaxLength = '3';
+                        } else {
+                            var cvvMinLength = '4';
+                            var cvvMaxLength = '4';
+                        }
+                    </isscript>
+
+                    <input type="text" class="form-control saved-payment-security-code" id="saved-payment-security-code" minlength="${cvvMinLength}" maxlength="${cvvMaxLength}">
+                    <div class="invalid-feedback">${Resource.msg('error.message.security.code.invalid', 'checkout', null)}</div>
+                </div>
+            </div>
+            <div class="saved-payment-information c-checkout-billing__saved-payment-instrument__info col-6">
+                <div class="saved-credit-card-type">
+                    <span>
+                        ${Resource.msg('msg.payment.type.credit', 'confirmation', null)}
+                        ${paymentInstrument.creditCardType}
+                        <isif condition="${!empty(pdict.defaultPaymentInstrument) && pdict.defaultPaymentInstrument === paymentInstrument.UUID}">
+                            (${Resource.msg('card.default', 'checkout', null)})
+                        </isif>
+                    </span>
+                </div>
+                <div class="saved-credit-card-number">
+                    ${paymentInstrument.maskedCreditCardNumber}
+                </div>
+                <div class="saved-credit-card-expiration-date">
+                    <span>
+                        ${Resource.msg('msg.card.type.ending', 'confirmation', null)}
+                        ${paymentInstrument.creditCardExpirationMonth}/${paymentInstrument.creditCardExpirationYear}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </isif>
+</isloop>

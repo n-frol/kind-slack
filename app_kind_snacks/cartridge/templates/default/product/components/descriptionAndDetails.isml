@@ -1,0 +1,58 @@
+<div class="container st-container st-container--narrow st-product-description-info__container--description st-product-description-info__section">
+    <div class="row st-product-description-info__row--description">
+        <div class="st-product-description-info__col--description">
+            <div class="description c-product-description s-product-description">
+                <isinclude template="product/components/description" />
+            </div>
+
+            <isif condition="${isBundle && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}">
+                <isinclude template="product/components/bundleItems" />
+            </isif>
+
+            <isif condition="${!empty(product.components) && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}">
+                <isinclude template="product/components/componentItems" />
+            </isif>
+
+            <isif condition="${!empty(product.occasion)}">
+                <div class="c-product-good-for s-product-good-for">
+                    <isinclude template="product/components/occasion" />
+                </div>
+            </isif>
+            
+            <div class="c-product-nutrition">
+                <isinclude template="product/components/nutrition" />
+                <isinclude template="product/components/nutritionChart" />
+            </div>
+
+            <iscomment>Mobile only version of benefits block</iscomment>
+            <isif condition="${!empty(product.benefits)}">
+                <div class="container d-lg-none st-product-description-info__section c-product-benefits__info-section v2">
+                    <div class="row">
+                        <div class="c-product-benefits s-product-benefits">
+                            <h2 class="c-product-benefits__heading">
+                                ${Resource.msg('label.keybenefits', 'product', null)}
+                            </h2>
+                            <isinclude template="product/components/benefits" />
+                        </div>
+                    </div>
+                </div>
+            </isif>
+
+            <isif condition="${!empty(product.texture) && !empty(product.texture.value)}">
+                <div class="c-product-texture-bar c-product-texture-bar--${product.texture}">
+                    <h2 class="st-product-description-info__heading c-product-texture-bar__heading">${Resource.msg('label.texture', 'product', null);}</h2>
+                    <isinclude template="product/components/texture" />
+                </div>
+            </isif>
+
+        </div>
+        <isif condition="${!empty(product.benefits)}">
+            <div class="c-product-benefits s-product-benefits hidden-md-down">
+                <h2 class="c-product-benefits__heading">
+                    ${Resource.msg('label.benefits', 'product', null)}
+                </h2>
+                <isinclude template="product/components/benefits" />
+            </div>
+        </isif>
+    </div>
+</div>

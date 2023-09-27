@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="CustomerGroup">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="customerClassCode">
+                <display-name xml:lang="x-default">Customer Class Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="customerClassCodeID">
+                <display-name xml:lang="x-default">Customer Class Code ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="taxDetails">
+                <display-name xml:lang="x-default">Tax Details</display-name>
+                <attribute attribute-id="customerClassCode"/>
+                <attribute attribute-id="customerClassCodeID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="productClassID">
+                <display-name xml:lang="x-default">Product Class ID</display-name>
+                <description xml:lang="x-default">The product tax class ID within the Vertex O-series interface.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="taxDetails">
+                <display-name xml:lang="x-default">Tax Details</display-name>
+                <attribute attribute-id="productClassID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="vertexIsEnabled">
+                <display-name xml:lang="x-default">Is Vertex Enabled?</display-name>
+                <description xml:lang="x-default">If the service is not enabled, then the fallback SFCC tax tables will be used for tax calculation purposes.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="vertexCompanyCode">
+                <display-name xml:lang="x-default">Vertex Compay Code</display-name>
+                <description xml:lang="x-default">The company code field used to authorize API calls to the Vertex tax calculation service.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>00001</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="vertexCustomerClassCodeDefault">
+                <display-name xml:lang="x-default">Default Customer Class</display-name>
+                <description xml:lang="x-default">The default code used to calculate taxes for customers if they don't belong to one of the customer groups that will change their tax liability.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="vertexCustomerClassCodeDefaultID">
+                <display-name xml:lang="x-default">Vertex Default Customer Class Code</display-name>
+                <description xml:lang="x-default">The default customer code for calls to the Vertex API.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="vertexCustomerClasses">
+                <display-name xml:lang="x-default">Customer Classes for tax calculation.</display-name>
+                <description xml:lang="x-default">The customer classes for assigning tax liability to different types of customer transactions.</description>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="vertexDistributionDefaultID">
+                <display-name xml:lang="x-default">Default Distribution Center ID</display-name>
+                <description xml:lang="x-default">The distribution center ID can be used for looking up the DC's address from the associated SFCC store object.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Vertex">
+                <display-name xml:lang="x-default">Vertex General Configuration</display-name>
+                <attribute attribute-id="vertexIsEnabled"/>
+                <attribute attribute-id="vertexCompanyCode"/>
+                <attribute attribute-id="vertexCustomerClassCodeDefault"/>
+                <attribute attribute-id="vertexCustomerClassCodeDefaultID"/>
+                <attribute attribute-id="vertexDistributionDefaultID"/>
+                <attribute attribute-id="vertexCustomerClasses"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

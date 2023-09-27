@@ -1,0 +1,35 @@
+<isif condition="${!empty(pdict.content)}">
+    <isscript>
+        var getResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+        var GraphicalAssetUtils = require("*/cartridge/scripts/util/graphicalAssetUtils");
+
+        var altHeading = typeof altHeading === 'undefined' ? '' : altHeading; // Allow for an alternate header to be specified, but don't require it by making sure we don't get an error if it's not set
+    </isscript>
+
+    <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(pdict.content)}" scope="page" />
+    <isset name="assetID" value="${pdict.content.ID}" scope="page" />
+    <isset name="assetUUID" value="${pdict.content.UUID}" scope="page" />
+    <isif condition="${!empty(graphicalAsset)}">
+        <div class="c-simple-tile th-kind-simple-tile<isif condition="${!empty(graphicalAsset.image)}"> c-simple-tile--has-image</isif>">
+            <div class="c-simple-tile__wrapper col-12"><!-- dwMarker="content" dwContentID="${assetID}" -->
+                <isif condition="${!empty(altHeading) || !empty(graphicalAsset.heading)}">
+                    <h2 class="c-simple-tile__heading">
+                        <isprint value="${altHeading || graphicalAsset.heading}" encoding="off" />
+                    </h2>
+                </isif>
+                <isif condition="${!empty(graphicalAsset.body)}">
+                    <div class="c-simple-tile__body">
+                        <isprint value="${graphicalAsset.body}" encoding="off" />
+                    </div>
+                </isif>
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <div class="c-simple-tile__image-wrap">
+                        <isset name="responsiveImage" value="${getResponsiveImage(graphicalAsset.image, 255, null, '', 'jpg')}" scope="page" />
+
+                        <img src="${responsiveImage.imageUrlDefault}" srcset="${responsiveImage.imageUrlDefault}, ${responsiveImage.imageUrlLarge} 2x" alt="${graphicalAsset.heading || pdict.content.name}" class="c-simple-tile__image" />
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </isif>
+</isif>

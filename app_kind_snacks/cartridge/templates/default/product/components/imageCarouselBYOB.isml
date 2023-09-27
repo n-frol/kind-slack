@@ -1,0 +1,5 @@
+<isset name="image" value="${product.responsiveImages[0]}" scope="page" />
+<img src="${image.normal.imageUrlDefault}"
+    class="d-block c-product-primary-images__carousel__img c-product-primary-images--white js-product-primary-images__carousel__img ${product.indexLifestyleImage && product.indexLifestyleImage.toFixed() == loopStatus.index ? 'big' : 'img-fluid'}"
+    alt="${image.alt}" itemprop="image" sizes="(min-width: 800px) 50vw, 100vw" srcset="${image.small.imageUrlDefault + ' 375w, ' + image.small.imageUrlLarge + ' 750w, ' + image.normal.imageUrlDefault +
+                                                                                       ' 817w, ' + image.normal.imageUrlLarge + ' 1634w'}" />

@@ -1,0 +1,6 @@
+{
+    "mobile"  : 768,
+    "tablet"  : 1024,
+    "desktop" : 2000,
+    "fullwidth" : 1800
+}

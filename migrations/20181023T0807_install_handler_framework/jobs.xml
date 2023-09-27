@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+
+    <job job-id="CommunicationHandlers-Init" priority="0">
+        <description>For developer use, used to recreate communication handler configurations</description>
+        <parameters/>
+        <split sequential="false">
+            <flow>
+                <context site-id="SiteGenesis"/>
+                <template-ref template-id="template_139"/>
+            </flow>
+            <flow-template template-id="template_139">
+                <step step-id="communicationhandlers-init" type="custom.CommunicationHandlers-Init" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2017-06-19Z</date>
+                <time>08:25:07.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+</jobs>

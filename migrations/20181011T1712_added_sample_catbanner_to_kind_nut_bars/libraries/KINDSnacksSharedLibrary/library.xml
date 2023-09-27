@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="kindNutBarsBanner">
+        <display-name xml:lang="x-default">KIND Nut Bars</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p&gt;These bars are where our journey started and it was simple: whole ingredients like nuts, mixed with fruits and spices bound together with honey.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND® bars</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

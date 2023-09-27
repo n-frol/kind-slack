@@ -1,0 +1,8 @@
+
+<isif condition="${!empty(parentLinks)}">
+    <div class="row c-billboard-grid__parent-footer th-kind-billboard-grid__parent-footer page-offset-bottom">
+        <div class="col-12 col-md-4 text-center c-billboard-grid__parent-footer__links th-kind-billboard-grid__parent-footer__links s-graphical-asset__links">
+            <isprint value="${parentLinks}" encoding="off" />
+        </div>
+    </div>
+</isif>

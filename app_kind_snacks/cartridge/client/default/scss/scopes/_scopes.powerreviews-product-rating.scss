@@ -1,0 +1,56 @@
+/* ============================================================================
+Powerreviews Product Rating Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements injected into the page by PowerReviews
+ * for PDP page top rating content.
+ */
+
+$ns: s-powerreviews-product-rating;
+
+.#{$ns} {
+    .p-w-r {
+        margin: 0;
+
+        .pr-snippet-stars-reco-inline.pr-snippet-compact .pr-snippet-read-and-write {
+            margin-top: 0;
+        }
+
+        .pr-snippet-stars-reco-inline.pr-snippet-compact .pr-snippet-read-and-write a {
+            margin-right: 12px;
+            padding: 0 0 0 3px;
+        }
+
+        .pr-snippet-rating-decimal {
+            border: none;
+            color: inherit;
+            padding: 0px 4px;
+        }
+        .pr-snippet-stars-reco-inline.pr-snippet-compact .pr-snippet-review-count {
+            border-left: 1px solid $black;
+            padding: 0 0 0 4px;
+        }
+        .pr-snippet-read-and-write a,
+        .pr-snippet-read-and-write a:hover,
+        .pr-snippet-read-and-write a:visited,
+        .pr-snippet-read-and-write a:active {
+            color: $black;
+            text-transform: lowercase;
+        }
+        .pr-snippet-write-review-link {
+            text-decoration: underline;
+        }
+        .pr-snippet div {
+            vertical-align: inherit;
+        }
+        .pr-snippet-stars-reco-inline.pr-snippet-minimal .pr-snippet-stars-container {
+            display: inline;
+        }
+    }
+
+    #pr-reviewsnippet,
+    #pr-questionsnippet {
+        margin-bottom: 15px;
+    }  
+}

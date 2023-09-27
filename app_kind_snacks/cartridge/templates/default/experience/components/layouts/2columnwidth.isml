@@ -1,0 +1,119 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+    var theid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+</isscript>
+<isif condition="${pdict.center == true}">
+    <div class="row mx-n2 ${theid}" style="max-width:${pdict.width}; margin:auto;">
+        <isprint value="${pdict.regions.column1.setClassName("aligncenter region region_landscape-small col-" + pdict.col1width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+        <isprint value="${pdict.regions.column2.setClassName("aligncenter region region_landscape-small col-" + pdict.col2width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+    </div>
+</isif>
+<isif condition="${pdict.hungrykind == true}">
+<div class="row mx-n2 ${theid}" style="max-width:${pdict.width}; margin:auto;">
+    <isprint value="${pdict.regions.column1.setClassName("alignright region region_landscape-small col-" + pdict.col1width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+    <isprint value="${pdict.regions.column2.setClassName("alignleft region region_landscape-small col-" + pdict.col2width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+</div>
+</isif>
+<isif condition="${pdict.hungrykind_1 == true}">
+    <div class="row mx-n2 ${theid}" style="max-width:${pdict.width}; margin:auto;">
+        <isprint value="${pdict.regions.column1.setClassName("alignright onerow region region_landscape-small col-" + pdict.col1width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+        <isprint value="${pdict.regions.column2.setClassName("alignleft onerow region region_landscape-small col-" + pdict.col2width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+    </div>
+</isif>
+<isif condition="${pdict.center != true && pdict.hungrykind != true && pdict.hungrykind_1 != true}">
+    <div class="row mx-n2 ${theid}" style="max-width:${pdict.width}; margin:auto;">
+        <isprint value="${pdict.regions.column1.setClassName("region region_landscape-small col-" + pdict.col1width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+        <isprint value="${pdict.regions.column2.setClassName("region region_landscape-small col-" + pdict.col2width + " tab-6 mobile-" + pdict.columnmobile).render()}" encoding="off"/>
+    </div>
+</isif>
+
+<div class="flexbreak" />
+
+<style>
+    .col-6, .tab-6, .mobile-12 {
+        padding: 0px !important;
+    }
+    .aligncenter {
+        margin: auto;
+        text-align: center;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+    }
+    .alignright {
+        margin: auto;
+        text-align: center;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: right;
+    }
+    .onerow {
+        grid-template-columns: repeat(1, 1fr) !important;
+        grid-template-rows: repeat(1, 1fr) !important;
+    }
+    .alignleft {
+        margin: auto;
+        text-align: center;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: left;
+    }
+    @media screen and (max-width: 440px) {
+        .alignright, .alignleft {
+            display: block;
+            max-width: 100% !important;
+            margin-left: 60px !important;
+        }
+    }
+.page-designer-reference {
+    padding: 0px !important;
+}
+.region {
+    padding: 0px;
+    margin: 0px;
+}
+.region .experience-component {
+    display: flex;
+}
+@media screen and (max-width: 1024px) and (min-width:426px) {
+.tab-6 {
+        max-width: 50%;
+        width: 50%;
+        flex: 0 0 50%;
+    }
+}
+@media screen and (min-width:500px) {
+.${theid} {
+    height: ${pdict.maxheight};
+}
+}
+.youtubevideo {
+    height: 100%;
+}
+@media screen and (max-width:426px) {
+    .mobile-12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    /* height: 300px; */
+    }
+    .youtubevideo {
+        height: 300px;
+    }
+}
+</style>

@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/content.css');
+</isscript>
+
+<isif condition="${!empty(contentAsset) && !empty(assetBody)}">
+    <!-- dwMarker="content" dwContentID="${contentAsset.UUID}" -->
+    <isprint value="${assetBody}" encoding="off" />
+    <!-- END_dwmarker -->
+</isif>
+

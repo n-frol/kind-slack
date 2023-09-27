@@ -1,0 +1,8 @@
+<isscript>
+    // Make sure variable isn't undeclared, since an empty check wouldn't work
+    var productNameLarge = typeof productNameLarge === 'undefined' ? false : productNameLarge;
+</isscript>
+
+<div class="line-item-name c-product-card__header__name <isif condition="${productNameLarge}">c-product-card__header__name--large</isif>">
+    <span>${lineItem.productName}</span>
+</div>

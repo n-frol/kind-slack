@@ -1,0 +1,35 @@
+<isset name="isConfigCat"
+    value="${pdict.productSearch.isCategorySearch && pdict.productSearch.category.isConfigurationCategory}"
+    scope="page" />
+<div class="c-chips-box<isif condition=" ${isConfigCat}"> c-chips-box--config c-chips-box-no-margin </isif>">
+    <isloop items="${pdict.productSearch.refinements}" var="refinement">
+        <isif condition="${refinement.isAttributeRefinement || refinement.isPriceRefinement || refinement.isCategoryRefinement}">
+            <isset name="displayName" value="${refinement.displayName}" scope="page" />
+            <isif condition="${empty(displayName)}">
+                <isset name="displayName" value="${Resource.msg('label.refinement.generic', 'search', null)}"
+                    scope="page" />
+            </isif>
+
+            <isloop items="${refinement.values}" var="refinementValue">
+                <isif condition="${refinement.isCategoryRefinement && refinementValue.id === 'byob'}">
+                    <isset name="refinementSubcategories" value="${refinement.values[0].subCategories}" scope="page"/>
+                    <isloop items="${refinementSubcategories}" var="refinementSubcategory">
+                        <isif condition="${refinementSubcategory.selected}">
+                        <a href="${refinementSubcategory.url}" class="c-chips-box__item">${refinementSubcategory.displayValue}<span
+                                class="c-chips-box__item__close-icon"></span></a>
+                        </isif>
+                    </isloop>
+                </isif>
+                <isif condition="${!refinement.isCategoryRefinement && refinementValue.selected}">
+                    <isif condition="${displayName === 'flavor' || displayName === 'crunchiness'}">
+                        <a href="${refinementValue.url}" aria-label="${refinementValue.displayValue} ${Resource.msg('label.removefilter','product',null)}" class="c-chips-box__item">${refinementValue.displayValue}<span
+                            class="c-chips-box__item__close-icon"></span></a>
+                    <iselse>
+                        <a href="${refinementValue.url}" aria-label="${refinementValue.displayValue} ${displayName} ${Resource.msg('label.removefilter','product',null)}" class="c-chips-box__item">${refinementValue.displayValue} ${displayName} <span
+                            class="c-chips-box__item__close-icon"></span></a>
+                    </isif>
+                </isif>
+            </isloop>
+        </isif>
+    </isloop>
+</div>

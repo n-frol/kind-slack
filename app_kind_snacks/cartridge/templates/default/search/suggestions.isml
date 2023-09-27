@@ -1,0 +1,177 @@
+<isset name="cssNamespace"
+    value="${!empty(pdict.isByob) && pdict.isByob === true ? 'c-search-byob__suggestions' : 'c-suggestions'}"
+    scope="page" />
+
+<div class="suggestions ${cssNamespace}">
+    <div class="container">
+        <div class="row ${cssNamespace}__row clearfix">
+            <isif condition="${!empty(pdict.suggestions.product)}">
+                <isif condition="${pdict.suggestions.product.available && !empty(pdict.suggestions.product.products)}">
+                    <div class="${cssNamespace}__products">
+                        <div class="header ${cssNamespace}__header">
+                            <div>${Resource.msg('label.suggest.products', 'search', null)}</div>
+                        </div>
+                        <div class="items ${cssNamespace}__items ${cssNamespace}__product__items">
+                            <isloop items="${pdict.suggestions.product.products}" var="product">
+                                <div class="${cssNamespace}__item__wrap ${cssNamespace}__product__item__wrap">
+                                    <div class="item ${cssNamespace}__item ${cssNamespace}__product__item">
+                                        <div
+                                            class="${cssNamespace}__item__img-wrap ${cssNamespace}__product__item__img-wrap">
+                                            <a href="${product.url}" class="${cssNamespace}__product__item__img__link">
+                                                <isif condition="${!empty(product.responsiveImages)}">
+                                                    <isset name="responsiveImage" value="${product.responsiveImages[0]}"
+                                                        scope="page" />
+
+                                                    <isset name="imageUrl"
+                                                        value="${responsiveImage.normal.imageUrlDefault}"
+                                                        scope="page" />
+                                                    <isset name="imageSrcset"
+                                                        value="${responsiveImage.small.imageUrlDefault + ' 60w, ' + responsiveImage.small.imageUrlLarge + ' 120w, ' + responsiveImage
+                                                               .normal.imageUrlDefault + ' 230w, ' + responsiveImage.normal.imageUrlLarge + ' 460w'}"
+                                                        scope="page" />
+                                                    <iselse>
+                                                        <isset name="imageUrl"
+                                                            value="${URLUtils.staticURL('images/noimagelarge.png')}"
+                                                            scope="page" />
+                                                        <isset name="imageSrcset" value="" scope="page" />
+                                                </isif>
+
+                                                <img class="${cssNamespace}__product__item__img" alt="${product.name}"
+                                                    src="${imageUrl}" <isif condition="${!empty(imageSrcset)}">
+                                                srcset="${imageSrcset}"
+                </isif> />
+                </a>
+        </div>
+        <div class="name ${cssNamespace}__product__item__name-wrap">
+            <a href="${product.url}" class="name ${cssNamespace}__product__item__name">${product.name}</a>
+        </div>
+    </div>
+</div>
+</isloop>
+</div>
+</div>
+</isif>
+
+</isif>
+
+<div class="${cssNamespace}__sidebar">
+    <isif condition="${!empty(pdict.suggestions.product.phrases)}">
+        <div class="header ${cssNamespace}__header firstheader">
+            <div class="do-you-mean">${Resource.msg('label.suggest.doyoumean', 'search', null)}</div>
+        </div>
+        <div class="${cssNamespace}__dym dym_area">
+            <div class="items ${cssNamespace}__dym__items">
+                <isloop items="${pdict.suggestions.product.phrases}" var="phrase">
+                    <isif condition="${!phrase.exactMatch}">
+
+
+                        <div class="item term ${cssNamespace}__dym__item ${cssNamespace}__sidebar__item">
+                            <div class="justify-content-end">
+                                <div>
+                                    <a href="${URLUtils.url('Search-Show', 'q', phrase.value)}"
+                                        class="${cssNamespace}__dym__item__link ${cssNamespace}__sidebar__item__link">
+                                        &#8220;${phrase.value}&#8221;
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+        </div>
+    </isif>
+    <isif condition="${!empty(pdict.suggestions.category) && !empty(pdict.suggestions.category.categories) && pdict.suggestions.category
+                     .available}">
+        <div class="header ${cssNamespace}__header">
+            <div>
+                ${Resource.msg('label.suggest.categories', 'search', null)}
+            </div>
+        </div>
+
+        <div class="items">
+            <isloop items="${pdict.suggestions.category.categories}" var="category">
+                <div class="item ${cssNamespace}__sidebar__item">
+                    <div class="hidden-xs-down col-sm-2">
+                        <isif condition="${!empty(category.imageUrl)}">
+                            <a href="${category.url}">
+                                <img class="swatch-circle" alt="${category.name}" src="${category.imageUrl}" />
+                            </a>
+                        </isif>
+                    </div>
+                    <div class="name">
+                        <a href="${category.url}" class="${cssNamespace}__sidebar__item__link">${category.name}</a>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+    </isif>
+
+    <isif
+        condition="${!empty(pdict.suggestions.recent) && !empty(pdict.suggestions.recent.phrases) && pdict.suggestions.recent.available}">
+        <div class="header ${cssNamespace}__header">
+            <div>
+                ${Resource.msg('label.suggest.recent', 'search', null)}
+            </div>
+        </div>
+
+        <div class="items">
+            <isloop items="${pdict.suggestions.recent.phrases}" var="phrase">
+                <div class="item ${cssNamespace}__sidebar__item">
+                    <div class="col-xs-12 col-sm-12 name nopadding">
+                        <a href="${phrase.url}" class="${cssNamespace}__sidebar__item__link">${phrase.value}</a>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+    </isif>
+
+    <isif
+        condition="${!empty(pdict.suggestions.popular) && !empty(pdict.suggestions.popular.phrases) && pdict.suggestions.popular.available}">
+        <div class="header ${cssNamespace}__header">
+            <div>
+                ${Resource.msg('label.suggest.popular', 'search', null)}
+            </div>
+        </div>
+
+        <div class="items">
+            <isloop items="${pdict.suggestions.popular.phrases}" var="phrase">
+                <div class="item ${cssNamespace}__sidebar__item">
+                    <div class="col-xs-12 col-sm-12 name otherquery">
+                        <a href="${phrase.url}" class="${cssNamespace}__sidebar__item__link">${phrase.value}</a>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+    </isif>
+
+    <span class="d-sm-none more-below">
+        <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+    </span>
+
+    <input type="submit" class="btn btn-primary ${cssNamespace}__search" value="See All Results" />
+
+</div>
+</div>
+</div>
+</div>
+
+<style>
+    .nopadding {
+        padding: 0px !important;
+    }
+
+    .firstheader {
+        border-top: none !important;
+    }
+
+    .dym_area {
+        max-width: 100%;
+        float: none;
+        flex: 100%;
+        padding-left: 0px;
+    }
+
+    .otherquery {
+        padding-left: 0px;
+    }
+</style>

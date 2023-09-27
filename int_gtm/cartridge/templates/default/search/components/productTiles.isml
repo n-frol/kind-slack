@@ -1,0 +1,57 @@
+
+<isscript>
+    var isByob = typeof isByob !== 'undefined' ? isByob : null;
+    if (empty(isByob) && !empty(pdict.productSearch.isBYOBSearch)) {
+        isByob = pdict.productSearch.isBYOBSearch;
+    } else if (empty(isByob)) {
+        isByob = false;
+    }
+</isscript>
+
+<isset name="showAllSearchResults" value="${Resource.msg('label.search.show.all', 'gtm', null)}" scope="page" />
+
+<isloop items="${pdict.productSearch.productIds}" var="product" status="loopState">
+    <isif condition="${pdict.productSearch.category}">
+        <isset name="dwCategory" value="${dw.catalog.CatalogMgr.getCategory(pdict.productSearch.category.id)}" scope="page" />
+        <isif condition="${!empty(dwCategory) && dw.system.Site.getCurrent().name != "Kind B2B"}">
+            <isif condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[0]}">
+                <isslot id="marketing-tile-a" description="Marketing Tile A" context="category" context-object="${dwCategory}" />
+            <iselseif condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[1]}"/>
+                <isslot id="marketing-tile-b" description="Marketing Tile B" context="category" context-object="${dwCategory}" />
+            <iselseif condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[2]}"/>
+                <isslot id="marketing-tile-c" description="Marketing Tile C" context="category" context-object="${dwCategory}" />
+            </isif>
+        </isif>
+    </isif>
+    <div class="c-product-tile__wrap"
+        data-gridindex="${loopState.index}"
+        data-gridname="${pdict.productSearch.productListName}" data-gtm-item-list-name="${pdict.productSearch.category ? pdict.productSearch.category.id : showAllSearchResults}">
+        <isobject object="${product.productSearchHit}" view="searchhit">
+            <isif condition="${pdict.productSearch.category}">
+                <isif condition="${pdict.productSearch.category.isConfigurationCategory}">
+                    <iscomment> BYOB Category Search Tiles </iscomment>
+                    <isinclude url="${URLUtils.url('Tile-ConfigurationCategoryShow', 'pid', product.productID, 'swatches', true, 'ratings', true,
+                        'showQuickView', true, 'shortDescription', true, 'totalItemQuantity', true, 'texture', true,
+                        'badge', true, 'cgid', pdict.productSearch.category.id, 'compare', pdict.compareEnabled,
+                        'isbyob', isByob)}" />
+                <iselse/>
+                    <iscomment> General Category Search Tiles </iscomment>
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true,
+                        'showQuickView', true, 'shortDescription', true, 'totalItemQuantity', true, 'texture', true,
+                        'badge', true, 'cgid', pdict.productSearch.category.id, 'compare', pdict.compareEnabled, 'itemListName', pdict.productSearch.category.id, 'gtmProductIndex', loopState.index)}" />
+                </isif>
+            <iselse/>
+                <iscomment> Starter Combo Tiles </iscomment>
+                <isif condition="${!empty(pdict.productSearch.isUseSecondaryTile) && pdict.productSearch.isUseSecondaryTile}">
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true,
+                        'showQuickView', true, 'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge',
+                        true, 'template', 'product/starterComboTile', 'isbyob', true, 'itemListName', showAllSearchResults, 'gtmProductIndex', loopState.index)}" />
+                <iselse/>
+                    <iscomment> General Search Tiles </iscomment>
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true,
+                        'showQuickView', true, 'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge', true, 'itemListName', showAllSearchResults, 'gtmProductIndex', loopState.index)}" />
+                </isif>
+            </isif>
+        </isobject>
+    </div>
+</isloop>

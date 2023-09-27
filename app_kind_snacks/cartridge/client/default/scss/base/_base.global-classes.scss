@@ -1,0 +1,177 @@
+#main {
+    position: relative;
+    z-index: $z-index-main;
+}
+
+html,
+body {
+    // Needed for drawer menu
+}
+
+@media screen and (max-width: 600px) {
+    .chat-container {
+        height: 80% !important;
+        display: flex;
+        flex-flow: column;
+        bottom: 0;
+        position: absolute !important;
+    }
+}
+
+.chat-message-left {
+    background: black !important;
+}
+
+@media screen and (min-width: 441px) {
+    .bottom-right-container {
+        position: fixed;
+        left: 20px;
+        bottom: 20% !important;
+    }
+}
+
+.chat-message-left,
+.chat-message-right {
+    font-family: Helvetica !important;
+    font-size: 14px !important;
+}
+
+.chatter-chat-box textarea {
+    font-family: Helvetica !important;
+    font-size: 14px !important;
+}
+
+.floatrightdesk {
+    float: right;
+}
+
+@media screen and (max-width: 460px) {
+    .floatrightdesk {
+        float: none;
+    }
+}
+
+.action-button-container {
+    padding: 0;
+    border: 1px solid gray;
+    cursor: pointer;
+    border-radius: 5px !important;
+    background: white !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 175px;
+    position: fixed;
+    bottom: 40% !important;
+    box-shadow: 0px 3px 6px 0 #00000029;
+    transform: rotate(270deg);
+    height: 45px !important;
+    width: 105px !important;
+    left: -32px !important;
+}
+
+.quick-select-btn {
+    width: inherit !important;
+}
+
+.chatter-chat-box {
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif !important;
+}
+
+.action-button-text {
+    color: black !important;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif !important;
+    display: block !important;
+}
+
+.chat-icon {
+    display: none !important;
+}
+
+.pageheader {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+}
+
+html {
+    height: 100%;
+    // Needed for drawer menu
+    -webkit-overflow-scrolling: touch;
+
+    @include media-breakpoint-up(lg) {
+        overflow-y: none;
+    }
+
+    &.navbar-is-in {
+        overflow-y: hidden;
+
+        @include media-breakpoint-up(lg) {
+            overflow-y: none;
+        }
+    }
+}
+
+body {
+    right: 0;
+    transition: right 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    @include media-breakpoint-up(md) {
+        height: 100%;
+        overflow-y: none;
+    }
+
+    @include pxl-media($xl-view-up) {
+        transition: none;
+    }
+
+    &::before {
+        background-color: rgba(42, 35, 25, 0);
+        content: "";
+        display: none;
+        height: 100%;
+        position: absolute;
+        z-index: 10000;
+        width: 100%;
+
+        @include pxl-media($xl-view-up) {
+            display: none;
+        }
+    }
+
+}
+
+
+html.is-active {
+    background-color: rgba(0, 0, 0, .9);
+
+    body {
+        background-color: white;
+        height: 100%;
+        position: relative;
+        right: 235px;
+        width: 100%;
+
+        @include pxl-media($xl-view-up) {
+            height: auto;
+            right: 0;
+        }
+
+        &::before {
+            background-color: rgba(42, 35, 25, .7);
+            display: block;
+
+            @include pxl-media($xl-view-up) {
+                display: none;
+            }
+        }
+    }
+}
+
+.page {
+    background-color: $white;
+}

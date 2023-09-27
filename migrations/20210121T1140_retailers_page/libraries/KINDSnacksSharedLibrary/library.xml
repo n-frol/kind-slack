@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="retailers_creativesnacks">
+        <display-name xml:lang="x-default">Retailers Page (CS)</display-name>
+        <type>page.dynamiclayout</type>
+        <config>{"visibility" : [ ]}</config>
+        <visibility-mode xml:lang="x-default">visible</visibility-mode>
+        <data xml:lang="x-default">{ }</data>
+        <online-flag>false</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <searchable-flag site-id="CreativeSnacks">false</searchable-flag>
+        <page-attributes/>
+        <content-links>
+            <content-link content-id="868e1003265bfdc973164c93d7" type="page.dynamiclayout.main">
+                <position>1.0</position>
+            </content-link>
+            <content-link content-id="317fda45d51df5e46c7ab6d657" type="page.dynamiclayout.main">
+                <position>0.0</position>
+            </content-link>
+        </content-links>
+        <sitemap-included-flag site-id="CreativeSnacks">false</sitemap-included-flag>
+    </content>
+
+    <content content-id="868e1003265bfdc973164c93d7">
+        <type>component.assets.retailers_paragraph</type>
+        <config>{"visibility" : [ ]}</config>
+        <data xml:lang="x-default">{
+          "image_grid_content_asset" : "retailers-page-images",
+          "left_text" : "Selected Retailers",
+          "bottom_text" : "SOME RETAILERS MAY NOT CARRY ALL OF OUR PRODUCS",
+          "paragraph_pattern" : {
+            "path" : "pattern-retailers.png",
+            "focal_point" : {
+              "x" : 0.5,
+              "y" : 0.5
+            },
+            "meta_data" : {
+              "height" : 278,
+              "width" : 298
+            }
+          },
+          "right_text" : "GREAT PLACES TO &lt;br/&gt;\nBUY BETTER SNACKS"
+        }
+        </data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="317fda45d51df5e46c7ab6d657">
+        <type>component.assets.homepage_hero</type>
+        <config>{"visibility" : [ ]}</config>
+        <data xml:lang="x-default">{
+          "background_image" : {
+            "path" : "creative_snacks_intro.jpg",
+            "focal_point" : {
+              "x" : 0.5,
+              "y" : 0.5
+            },
+            "meta_data" : {
+              "height" : 940,
+              "width" : 2400
+            }
+          },
+          "background_color" : null,
+          "hero_text" : null,
+          "copy_text" : null,
+          "background_image_mobile" : null,
+          "hero_height" : "600px",
+          "button_link" : null,
+          "button_text" : null,
+          "content_image" : null
+        }</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+</library>

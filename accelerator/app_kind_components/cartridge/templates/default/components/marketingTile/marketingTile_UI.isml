@@ -1,0 +1,146 @@
+<style>
+    /**
+     * Background Image
+     */
+    <isif condition="${!empty(graphicalAsset.backgroundImage)}">
+        <isset name="responsiveBackgroundImage" value="${GetResponsiveImage(graphicalAsset.backgroundImage, 768, 1400)}" scope="page" />
+        <isif condition="${!empty(responsiveBackgroundImage)}">
+            .c-marketing-tile.${assetID} {
+                background-image: url('${responsiveBackgroundImage.imageUrlDefault}');
+            }
+            @media screen and (min-width: 768px) {
+                .c-marketing-tile.${assetID} {
+                    background-image: url('${responsiveBackgroundImage.imageUrlLarge}');
+                }
+            }
+        </isif>
+    </isif>
+
+    /*
+     * Aligment - removed, using bootstrap instead
+     */
+
+    /*
+     * Colors
+     */
+    <isif condition="${!empty(graphicalAsset.contentColor)}">
+        .c-marketing-tile.${assetID} {
+            color: ${graphicalAsset.contentColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.backgroundColor)}">
+        .c-marketing-tile.${assetID} {
+            background-color: ${graphicalAsset.backgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.headingColor)}">
+        .c-marketing-tile.${assetID} .c-marketing-tile__heading {
+            color: ${graphicalAsset.headingColor} !important;
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.bodyColor)}">
+        .c-marketing-tile.${assetID} .c-marketing-tile__body {
+            color: ${graphicalAsset.bodyColor} !important;
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonColor)}">
+        .c-marketing-tile.${assetID} .s-graphical-asset__links a {
+            border-color: ${graphicalAsset.primaryButtonColor};
+            color: ${graphicalAsset.primaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonBackgroundColor)}">
+        .c-marketing-tile.${assetID} .s-graphical-asset__links a {
+            background-color: ${graphicalAsset.primaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonColor)}">
+        .c-marketing-tile.${assetID} .s-graphical-asset__links a.secondary {
+            border-color: ${graphicalAsset.primaryButtonBackgroundColor};
+            color: ${graphicalAsset.secondaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonBackgroundColor)}">
+        .c-marketing-tile.${assetID} .s-graphical-asset__links a.secondary {
+            background-color: ${graphicalAsset.secondaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.mobileOnly) && graphicalAsset.mobileOnly}">
+        .c-marketing-tile.${assetID} {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .c-marketing-tile.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.tabletOnly) && graphicalAsset.tabletOnly}">
+        .c-marketing-tile.${assetID} {
+            display: none !important;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .c-marketing-tile.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+
+        .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex {
+            padding: 10px 10px 0;
+        }
+        .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex .c-marketing-tile__image-wrapper{
+            margin-left: -10px;
+            margin-right: -10px;
+            max-width: 50%;
+        }
+        .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex .c-marketing-tile__text-wrapper{
+            display: flex;
+            flex-direction: column;
+            height: 216px;
+            justify-content: center;
+        }
+        .th-kind-marketing-tile.c-marketing-tile .c-marketing-tile__wrapper_flex .c-marketing-tile__heading {
+            font-size: 22px;
+            line-height:22px;
+        }
+        @media (max-width: 544px) {
+            .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex {
+                display: flex;
+                align-items: center;
+                padding: 0;
+            }
+            .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex .c-marketing-tile__text-wrapper{
+                padding: 10px 30px;
+            }
+        }
+        @media (min-width: 545px) {
+        .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex .c-marketing-tile__image-wrapper{
+                position: absolute;
+                bottom: 0;
+                margin-right: 0;
+                max-width: 100%;
+            }
+        }
+        @media (min-width: 769px) {
+            .th-kind-marketing-tile.c-marketing-tile .c-marketing-tile__wrapper_flex .c-marketing-tile__heading {
+                font-size: 30px;
+                line-height:30px;
+            }
+            .c-marketing-tile.${assetID} .c-marketing-tile__wrapper_flex .c-marketing-tile__text-wrapper{
+                padding: 10px;
+            }
+        }
+
+</style>

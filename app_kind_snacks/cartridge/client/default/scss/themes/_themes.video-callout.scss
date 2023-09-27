@@ -1,0 +1,76 @@
+/* ============================================================================
+   Video Callout
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the video callout component
+ */
+
+$ns: th-kind-video-callout;
+$component: c-video-callout;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Video Callout Component
+    &.#{$component} {
+
+        .#{$component} {
+
+            &__content {
+                // Video Callout Heading
+                &__heading {
+                    font-family: $font-family-primary;
+                }
+
+                // Video Callout Heading
+                &__body {
+                    font-family: $font-family-secondary;
+                }
+
+                // Video Callout Links
+                &__links {
+                    font-family: $font-family-primary;
+                    font-size: 12px;
+                    letter-spacing: 1.5px;
+                }
+            }
+
+        }
+
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        iframe {
+            max-width: 100%;
+        }
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+                    background-color: transparent;
+                    border: 2px solid $primary;
+                    color: $primary;
+                    font-family: $font-family-primary;
+
+                    &:hover {
+                        background-color: $primary;
+                        border-color: $primary;
+                        color: $white;
+                        text-decoration: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

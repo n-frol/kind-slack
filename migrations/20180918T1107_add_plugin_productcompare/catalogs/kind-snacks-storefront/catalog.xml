@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+    <category category-id="kind-nut-bars">
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">true</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="sample_kind-protein">
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">true</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="sample_variety-packs">
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">true</custom-attribute>
+        </custom-attributes>
+    </category>
+</catalog>

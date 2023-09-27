@@ -1,0 +1,23 @@
+<div class="c-compare-bar container-fluid js-compare-bar hidden-lg-down" style="display: none;" aria-live="polite>
+    <div class="row">
+        <div class="c-compare-bar__inner container js-compare-bar-inner"
+            data-max-slots="${pdict.maxSlots}"
+            data-min-products-msg="${Resource.msg('text.productcompare.select2', 'product', null)}">
+            <form method="GET" class="compare-products-form" name="compare-products" action="${URLUtils.url('Compare-Show')}">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <div class="c-compare-bar__product-slots row align-items-center js-product-slots"></div>
+                    </div>
+                    <div class="col-2 c-compare-bar__action">
+                        <button type="submit" class="c-compare-bar__action__compare btn btn-primary compare">Compare</button>
+                    </div>
+                    <div class="col-2 c-compare-bar__action">
+                        <button class="c-compare-bar__action__clear-all btn btn-outline-primary clear-all">Clear All</a>
+                    </div>
+                </div>
+                <input type="hidden" name="cgid" />
+                <input type="hidden" name="backUrl" />
+            </form>
+        </div>
+    </div>
+</div>

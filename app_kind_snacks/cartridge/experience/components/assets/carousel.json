@@ -1,0 +1,53 @@
+{
+  "name": "Homepage Carousel",
+  "description": "Homepage Carousel",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "carousel_type",
+          "name": "Carousel Type",
+          "type": "enum",
+          "values": ["BYOB","Recommender", "CreativeSnacks"],
+          "default_value": "BYOB",
+          "required": false
+        },
+        {
+          "id": "headline",
+          "name": "Creative Snacks Heading",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "rootcat",
+          "name": "Root Category",
+          "type": "category",
+          "required": false
+        },
+        {
+          "id": "slidescount",
+          "name": "Slides to show",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "hide_slider_controls",
+          "name": "Hide Slider Controls",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "recommenderitems",
+          "name": "Recommender Products",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

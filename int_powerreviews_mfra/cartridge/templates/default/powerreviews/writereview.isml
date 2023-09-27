@@ -1,0 +1,41 @@
+<isdecorate template="common/layout/page">
+  <isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    var libPR = pdict.libPR;
+    var productId = pdict.Product.ID;
+  </isscript>
+
+  <div class="row pr-displaywrite">
+    <div class="col-sm-12">
+      <div id="pr-write"></div>
+    </div>
+  </div>
+  <script src="https://ui.powerreviews.com/stable/4.0/ui.js"></script>
+	<script>
+		POWERREVIEWS.display.render({
+			api_key: "${libPR.getApiKey()}",
+			locale:"${pdict.CurrentRequest.locale}",
+			merchant_group_id: "${libPR.getGroupId()}",
+			merchant_id: "${libPR.getMerchantId()}",
+			page_id: "${productId}",
+			structured_data_product_id: "${productId}",
+		    product:{
+            name: "<isprint value="${pdict.Product.getName()}" encoding="jshtml">",
+		        url: "${URLUtils.http('Product-Show')}?pid=${productId}",
+		        image_url: "${pdict.Product.getImage('large').getAbsURL()}",
+		        description: "${libPR.getProductDescription(pdict.Product)}",
+		        category_name: "<isprint value="${libPR.getCategories(pdict.Product)}" encoding="jshtml"/>",
+		        manufacturer_id: "${libPR.getManufacturerSKU(pdict.Product)}",
+		        upc: "${libPR.getUPC(pdict.Product)}",
+		        brand_name: "${libPR.getBrand(pdict.Product)}",
+		        price: "${libPR.getPrice(pdict.Product)}",
+		        in_stock: "${pdict.Product.getAvailabilityModel().isInStock()}"
+		    },
+        style_sheet: '${URLUtils.staticURL('/css/powerreviews.css')}',
+        components: {
+          Write: 'pr-write'
+        }
+		});
+	</script>
+
+</isdecorate>

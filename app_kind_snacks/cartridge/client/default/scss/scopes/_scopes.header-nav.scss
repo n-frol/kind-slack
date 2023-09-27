@@ -1,0 +1,85 @@
+/* ============================================================================
+Header Navigation Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements within the header-navigation content asset
+ */
+
+ $ns: s-header-nav;
+
+ .#{$ns} {
+    ul {
+        list-style: none;
+
+        @include media-breakpoint-up(lg) {
+            display: flex;
+                flex-wrap: wrap;
+        }
+
+        .dropdown-toggle::after {
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+        }
+
+        ul {
+            @extend .dropdown-menu;
+            @extend %st-primary-nav__dropdown;
+
+            a {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    li {
+        &:hover {
+            > ul {
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+        }
+    }
+    a:not(.st-primary-nav__close-menu__link) {
+        // For all intents and purposes, the links are members of class .st-primary-nav__link
+        // Only separated out to make the content asset easy for clients to edit
+        @extend %st-primary-nav__link;
+
+    }
+    .dropdown-menu {
+        @include media-breakpoint-down(md) {
+            height: 100%;
+        }
+
+        &.show {
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+        }
+
+        a {
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+        }
+    }
+    .dropdown-item ~ li > a {
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+            margin-bottom: 16px;
+            margin-top: 12px;
+        }
+    }
+
+    .show {
+        > a {
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+    }
+ }

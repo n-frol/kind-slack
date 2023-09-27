@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Category">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="isConfigurationCategory">
+                <display-name xml:lang="x-default">Configuration Category</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="customAttributes">
+                <display-name xml:lang="x-default">Custom</display-name>
+                <attribute attribute-id="sizeChartID"/>
+                <attribute attribute-id="showInMenu"/>
+                <attribute attribute-id="enableCompare"/>
+                <attribute attribute-id="catBannerID"/>
+                <attribute attribute-id="headerMenuOrientation"/>
+                <attribute attribute-id="headerMenuBanner"/>
+                <attribute attribute-id="alternativeUrl"/>
+                <attribute attribute-id="navigationLabel"/>
+                <attribute attribute-id="isConfigurationCategory"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

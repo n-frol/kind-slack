@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-empty-your-box-combo">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;If you add the starter combo to your box, your current items will be removed. Do you wish to continue?&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

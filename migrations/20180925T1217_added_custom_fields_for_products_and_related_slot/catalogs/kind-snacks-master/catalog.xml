@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="289-1">
+        <long-description xml:lang="x-default">Sweet cravings ✔ salty cravings ✔ healthy cravings ✔. Our best-selling bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent.</long-description>
+        <images>
+            <image-group view-type="large">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+        </images>
+        <custom-attributes>
+            <custom-attribute attribute-id="backgroundColor">#095c66</custom-attribute>
+            <custom-attribute attribute-id="badge">Best Seller</custom-attribute>
+            <custom-attribute attribute-id="containerType">Box</custom-attribute>
+            <custom-attribute attribute-id="productType">Bar</custom-attribute>
+            <custom-attribute attribute-id="totalItemQuantity">20.0</custom-attribute>
+        </custom-attributes>
+    </product>
+</catalog>

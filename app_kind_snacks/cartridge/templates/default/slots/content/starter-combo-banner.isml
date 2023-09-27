@@ -1,0 +1,28 @@
+<isif condition="${!empty(slotcontent)}">
+    <isscript>
+        var GraphicalAssetUtils = require("*/cartridge/scripts/util/graphicalAssetUtils");
+    </isscript>
+
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+
+        <div class="u-background__color-grey9 c-starter-combo-banner">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <isif condition="${!empty(graphicalAsset.heading)}">
+                            <h1 class="c-starter-combo-banner__heading">
+                                ${graphicalAsset.heading}
+                            </h1>
+                        </isif>
+                        <isif condition="${!empty(graphicalAsset.body)}">
+                            <div class="c-starter-combo-banner__body">
+                                <isprint value="${graphicalAsset.body}" encoding="off" />
+                            </div>
+                        </isif>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </isloop>
+</isif>

@@ -1,0 +1,112 @@
+<isset name="finalOrigPrice" value="${product.price}" scope="page" />
+<isset name="price" value="${finalOrigPrice.sales}" scope="page" />
+<isset name="contentAsset" value="${dw.content.ContentMgr.getContent('byob-og-tooltip')}" scope="page" />
+<isset name="byobPrice" value="${product.byobPrice}" scope="page" />
+
+<isif condition="${isQuickView}">
+    <div class="og-offer-byob clearfix" data-og-module="qv" data-og-product="*">
+    <iselse/>
+        <div class="og-offer-byob" data-og-module="pdp_nocontent" data-og-product="*">
+</isif>
+<isif condition="${!empty(pdict.product) && pdict.product.autoShipEligible && !empty(finalOrigPrice.ogPrice.value)}">
+    <div class="og-widget og-type-RadioWidget og-offer-84c0437ab71311eab77abc764e101db1 og-locale-${pdict.locale}">
+        <isif condition="${pdict.isAddedToCart}">
+            <div class="disable-pdp-options-add-to-cart"></div>
+        </isif>
+        <div class="og-option-row og-off-row js-og-option">
+            <div class="og-radio-cont">
+                <input type="radio" class="og-off-radio js-product-variant-og-on-selected js-one-time-offer"
+                    data-id="${product.id}" id="og-off-pdp_snackpack-${product.id}-1" name="og-subscribe-pdp_snackpack" value="0"
+                    ${pdict.isAddedToCart ? 'disabled' : ''}
+                    ${(pdict.ogEveryPeriod == '0' || pdict.ogEveryPeriod === null) && pdict.isProductSelected ? 'checked' : ''}>
+            </div>
+            <div class="og-off-group og-radio-group">
+                <label class="og-label js-on-label" for="og-off-pdp_snackpack-${product.id}-1">
+                    <div class="price">
+                        <span class="sales js-list-price--sales">
+                            ${price.formatted}
+                        </span>
+                        <strong>${Resource.msg('label.one-time-purchase', 'byob', null)}</strong>
+                    </div>
+                </label>
+            </div>
+        </div>
+        <div class="og-option-row og-on-row is-active js-og-option-row js-og-option">
+            <div class="og-radio-cont">
+                <input type="radio" class="og-on-radio js-product-variant-og-on-selected"
+                    name="og-subscribe-pdp_snackpack"
+                    value="1" data-id="${product.id}"
+                    id="og-on-pdp_snackpack-${product.id}-2"
+                    ${pdict.isAddedToCart ? 'disabled' : ''}
+                    ${(pdict.ogEveryPeriod !== '0' && pdict.ogEveryPeriod !== null) && pdict.isProductSelected ? 'checked' : ''}>
+            </div>
+            <div class="og-on-group og-radio-group">
+                <label class="og-label og-on-label js-on-label" for="og-on-pdp_snackpack-${product.id}-2">
+                    <span class="og-sub-textline1">
+                        <span class="snack-pack-price js-list-price--snack-pack" style="color: #61b4e4 !important;">
+                            <span>${byobPrice.sales.formatted}</span>
+                        </span>
+                        <strong>${Resource.msg('label.subscribe-to', 'byob', null)}</strong></span>
+                </label>
+                <section class="og-byob-details" ${pdict.ogEveryPeriod === '0' || pdict.ogEveryPeriod === null || !pdict.isProductSelected ? "style='display:none !important;'" : ''}>
+                    <div class="og-deliver-text">
+                        <span class="og-deliver-text-inner"><span class="og-li">${Resource.msg('label.delivery', 'byob', null)}</span></span>
+                        <span class="og-picker">
+                            <select name="byob-frequency"
+                                class="og-every-pdp_snackpack-${product.id} og-select js-frequency-select"
+                                style="display: none !important;" data-product-id="${product.id}">
+                                <isloop items=${pdict.byobSubscribeIntervals} var="interval">
+                                    <option value="${interval.ogEvery}_${interval.ogEveryPeriod}"
+                                        ${interval.ogEvery == pdict.ogEvery && interval.ogEveryPeriod == pdict.ogEveryPeriod ? 'selected' : ''}>
+                                        ${Resource.msgf('label.days', 'byob', null, interval.days)}
+                                    </option>
+                                </isloop>
+                            </select>
+                            <div tabindex="0" class="sculptor-dropdown og-every-pdp_snackpack-${product.id} og-select"
+                                role="combobox" aria-owns="og-list-uid-q2miqxjbn"
+                                aria-labelledby="og-label-uid-5chdztd6i og-option-uid-i8xxhu50s" aria-haspopup="true"
+                                aria-expanded="false" aria-activedescendant="og-option-uid-i8xxhu50s"
+                                data-value="${pdict.selectedDaysOption} days">
+                                <ul class="sculptor-dropdown-options" id="og-list-uid-q2miqxjbn" role="listbox"
+                                    aria-labelledby="og-label-uid-5chdztd6i">
+                                    <isloop items=${pdict.byobSubscribeIntervals} var="interval" status="loopstatus">
+                                        <li role="option" data-value-index="${loopstatus.index}"
+                                            data-value="${interval.ogEvery}_${interval.ogEveryPeriod}"
+                                            <isif condition="${interval.ogEvery == pdict.ogEvery && interval.ogEveryPeriod == pdict.ogEveryPeriod}">class="sculptor-option-selected"</isif> >
+                                            ${Resource.msgf('label.days', 'byob', null, interval.days)}
+                                        </li>
+                                    </isloop>
+                                </ul>
+                            </div>
+                        </span>
+                    </div>
+                    <br/>
+                </section>
+                <span class="og-see-details og-tooltip-el" data-og-event="showSeeDetails"
+                    aria-describedby="tooltip-uid-c7u9cqe6n">
+                    <span class="og-li serif"><span class="og-bull">•&nbsp;</span>${Resource.msg('label.free-shipping', 'byob', null)}</span><br>
+                    <span class="og-li serif"><span class="og-bull">•&nbsp;</span>${Resource.msg('label.free-snack', 'byob', null)}</span><br>
+                    <span class="og-li serif"><span class="og-bull">•&nbsp;</span>${Resource.msg('label.4th', 'byob', null)}</span><br>
+                    <span class="og-tooltip-trigger serif">
+                        <span class="og-bull">•&nbsp;</span>${Resource.msg('label.more-perks', 'byob', null)}
+                    </span>
+                    <isif condition="${!empty(contentAsset)}">
+                        <div class="og-tooltip og-tooltip-part js-byob-og-tooltip" role="tooltip"
+                            id="tooltip-uid-c7u9cqe6n">
+                            <div class="og-popup-main">
+                                <div class="tooltip-content-wrap">
+                                    <isprint value="${contentAsset.custom.body}" encoding="off" />
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+                    <div class="og-tooltip-pointer og-tooltip-part js-byob-og-tooltip-pointer"
+                        style="bottom: 20% !important; left: 10% !important;"></div>
+                </span>
+            </div>
+            <div class="og-details-expander og-details-expander-pdp_snackpack-27858" style="display: none !important;">
+            </div>
+        </div>
+    </div>
+</isif>
+</div>

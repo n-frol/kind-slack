@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="sample-variation-product">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <display-name xml:lang="x-default">Sweatshirt - Sample Variation Product</display-name>
+        <short-description xml:lang="x-default">Vintage vibes? Check. Everyday comfort? Check. Really, there's no better way to comfortably and stylishly sport your love for KIND than in this classic crew-neck sweatshirt.</short-description>
+        <long-description xml:lang="x-default">Vintage vibes? Check. Everyday comfort? Check. Really, there's no better way to comfortably and stylishly sport your love for KIND than in this classic crew-neck sweatshirt.</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>false</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/Screen Shot 2018-10-01 at 10.50.33 AM.png"/>
+            </image-group>
+            <image-group view-type="large">
+                <variation attribute-id="color" value="blck"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+                <image path="images/Screen Shot 2018-10-01 at 10.50.33 AM.png"/>
+            </image-group>
+            <image-group view-type="large">
+                <variation attribute-id="color" value="blue"/>
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/Screen Shot 2018-10-01 at 10.50.33 AM.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <variation attribute-id="color" value="blck"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <variation attribute-id="color" value="blue"/>
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <variations>
+            <attributes>
+                <variation-attribute attribute-id="color" variation-attribute-id="color">
+                    <variation-attribute-values>
+                        <variation-attribute-value value="blck">
+                            <display-value xml:lang="x-default">Black</display-value>
+                        </variation-attribute-value>
+                        <variation-attribute-value value="blue">
+                            <display-value xml:lang="x-default">Blue</display-value>
+                        </variation-attribute-value>
+                    </variation-attribute-values>
+                </variation-attribute>
+                <variation-attribute attribute-id="size" variation-attribute-id="size">
+                    <variation-attribute-values>
+                        <variation-attribute-value value="lg">
+                            <display-value xml:lang="x-default">Large</display-value>
+                        </variation-attribute-value>
+                        <variation-attribute-value value="md">
+                            <display-value xml:lang="x-default">Medium</display-value>
+                        </variation-attribute-value>
+                    </variation-attribute-values>
+                </variation-attribute>
+            </attributes>
+            <variants>
+                <variant product-id="sample-variation-product_blck_lg"/>
+                <variant product-id="sample-variation-product_blue_md"/>
+            </variants>
+        </variations>
+        <classification-category catalog-id="kind-snacks-storefront">sample_clothing</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="sample-variation-product_blck_lg">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <display-name xml:lang="x-default">Sweatshirt - Variation 1</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="color">blck</custom-attribute>
+            <custom-attribute attribute-id="size">lg</custom-attribute>
+        </custom-attributes>
+        <classification-category catalog-id="kind-snacks-storefront">sample_clothing</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="sample-variation-product_blue_md">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="color">blue</custom-attribute>
+            <custom-attribute attribute-id="size">md</custom-attribute>
+        </custom-attributes>
+        <classification-category>root</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <category-assignment category-id="root" product-id="sample_out-of-stock">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="sample-variation-product">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="sample-variation-product_blck_lg">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="sample-variation-product_blue_md">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

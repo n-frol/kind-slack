@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category-assignment category-id="0g-trans-fat" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="0g-trans-fat" product-id="sampleByob"/>
+
+    <category-assignment category-id="5g-sugar-or-less" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="5g-sugar-or-less" product-id="sampleByob"/>
+
+    <category-assignment category-id="all-products" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="all-products" product-id="sampleByob"/>
+
+    <category-assignment category-id="chocolate" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="chocolate" product-id="sampleByob"/>
+
+    <category-assignment category-id="dairy-free-recipe" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="dairy-free-recipe" product-id="sampleByob"/>
+
+    <category-assignment category-id="gluten-free" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="gluten-free" product-id="sampleByob"/>
+
+    <category-assignment category-id="good-source-fiber" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="good-source-fiber" product-id="sampleByob"/>
+
+    <category-assignment category-id="guilt-free-indulgence" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="guilt-free-indulgence" product-id="sampleByob"/>
+
+    <category-assignment category-id="kind-nut-bars" product-id="sampleBlockedAccess">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="kind-nut-bars" product-id="sampleByob">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="kosher" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="kosher" product-id="sampleByob"/>
+
+    <category-assignment category-id="low-glycemic-index" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="low-glycemic-index" product-id="sampleByob"/>
+
+    <category-assignment category-id="low-sodium" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="low-sodium" product-id="sampleByob"/>
+
+    <category-assignment category-id="make-lunch-interesting" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="make-lunch-interesting" product-id="sampleByob"/>
+
+    <category-assignment category-id="non-GMO" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="non-GMO" product-id="sampleByob"/>
+
+</catalog>

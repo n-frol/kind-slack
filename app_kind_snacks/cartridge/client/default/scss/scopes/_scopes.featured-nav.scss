@@ -1,0 +1,41 @@
+/* ============================================================================
+Featured Navigation Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements within the featured-navigation content asset
+ */
+
+ $ns: s-featured-nav;
+
+ .#{$ns} {
+    ul {
+        // For all intents and purposes, the links are members of class .st-shop-navigation__menu__list
+        // Only separated out to make the content asset easy for clients to edit
+        @extend .st-shop-navigation__menu__list;
+
+        font-family: $font-family-primary;
+        margin-bottom: 32px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            padding: 14px 0 0;
+
+            li {
+                font-size: 16px;
+                margin-bottom: 12px;
+            }
+        }
+    }
+    li {
+        margin-bottom: 8px;
+    }
+    a {
+        // For all intents and purposes, the links are members of class .st-shop-navigation__menu__link
+        // Only separated out to make the content asset easy for clients to edit
+        @extend .st-shop-navigation__menu__link;
+    }
+ }

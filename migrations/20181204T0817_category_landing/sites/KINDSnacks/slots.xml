@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="category-slot-a" context="category" context-id="benefits" configuration-id="benefits-cat-nav" default="true" assigned-to-site="true">
+        <template>slots/content/customNavigation.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="benefits-nav-asset"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="category-slot-a" context="category" context-id="flavors" configuration-id="flavors-cat-nav" default="true" assigned-to-site="true">
+        <template>slots/content/customNavigation.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="flavors-nav-asset"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="category-slot-b" context="category" context-id="benefits" configuration-id="benefits-grid-cat" default="true" assigned-to-site="true">
+        <template>slots/content/benefitsGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="benefit_0gTransFat"/>
+                <content-asset content-id="benefit_100WholeGrain"/>
+                <content-asset content-id="benefit_5gSugarOrLess"/>
+                <content-asset content-id="benefit_goodSourceOfFiber"/>
+                <content-asset content-id="benefit_goodSourceOfProtein"/>
+                <content-asset content-id="benefit_lowFat"/>
+                <content-asset content-id="benefit_lowGlycemicIndex"/>
+                <content-asset content-id="benefit_lowSodium"/>
+                <content-asset content-id="benefit_nonGmo"/>
+                <content-asset content-id="benefit_noAddedSugar"/>
+                <content-asset content-id="benefit_nutFreeRecipe"/>
+                <content-asset content-id="benefit_kosher"/>
+                <content-asset content-id="benefit_glutenFree"/>
+                <content-asset content-id="benefit_vegan"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="slotBody">Looking for fiber or protein? We've got it. Vegan or Kosher? We've got you covered there too.</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Benefits</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="category-slot-b" context="category" context-id="flavors" configuration-id="flavor-cat-banners" default="true" assigned-to-site="true">
+        <template>slots/content/flavorBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="chocolate"/>
+                <content-asset content-id="fruit"/>
+                <content-asset content-id="nut-butter"/>
+                <content-asset content-id="savory"/>
+                <content-asset content-id="spiced"/>
+                <content-asset content-id="sweet-salty"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="category-slot-c" context="category" context-id="flavors" configuration-id="flavor-cta" default="true" assigned-to-site="true">
+        <template>slots/content/fullWidthCallToAction.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="learn-more-ingredients"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+</slot-configurations>

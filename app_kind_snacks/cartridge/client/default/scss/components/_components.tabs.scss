@@ -1,0 +1,45 @@
+/* ============================================================================
+   Tabs
+   ============================================================================ */
+
+/**
+ * Styles tab elements
+ */
+
+ $ns: "c-tabs";
+
+.#{$ns} {
+
+    // For when we need a stronger selector
+    & &__item {
+        @include make-col(12);
+
+        text-align: left;
+    }
+    &__item {
+        &--active {
+            .#{$ns}__label {
+                &::after {
+                    @extend %radio-label-styles--checked;
+                }
+            }
+        }
+    }
+
+    // Bootstrap's tab functionality requires a very strict layout that doens't allow for a clickable label.  So we'll mimic one instead.
+    &__label {
+        @extend %radio-label-styles;
+
+        font-family: $font-family-primary;
+        padding-bottom: 0;
+        padding-top: 0;
+        text-decoration: none;
+        text-transform: lowercase;
+
+        &--paypal {
+            &__icon {
+                max-width: 68px;
+            }
+        }
+    }
+}

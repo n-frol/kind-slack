@@ -1,0 +1,27 @@
+<isscript>
+    var responsiveImageUtils = require('~/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+<a class="black" href="${URLUtils.url('Search-Show', 'cgid', pdict.category.ID)}">
+    <div class="category_slide_img_container" style="">
+    <img class="category_slide_img" data-hover-color="${pdict.category.custom.hovercolor}" data-hover="${pdict.image_hover.imageUrlDefault}" data-default="${pdict.image.imageUrlDefault}" src="${pdict.image.imageUrlDefault}" alt="${pdict.category.displayName}" />
+    </div>
+        <div class="category_slide_name caption">
+        <isprint value="${pdict.category.displayName}" encoding="off" />
+    </div>
+</a>
+
+<script>
+    $(document).on('mouseenter', '.category_slide_img', function() {
+        if (window.screen.width < 441) {
+            return;
+        }
+        $(this).attr('src', $(this).attr('data-hover'));
+        $(this).parent().css('background-color', $(this).attr('data-hover-color'));
+        $(this).css('background-color', $(this).attr('data-hover-color'));
+    });
+    $(document).on('mouseleave', '.category_slide_img', function() {
+        $(this).attr('src', $(this).attr('data-default'));
+        $(this).parent().css('background-color', '');
+        $(this).css('background-color', '');
+    });
+</script>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site xmlns="http://www.demandware.com/xml/impex/site/2007-04-30" site-id="KINDSnacks">
+    <name>KIND Snacks</name>
+    <currency>USD</currency>
+    <taxation>net</taxation>
+    <custom-cartridges>int_pixlee:int_jde:lib_utils:int_sfra_bugfixes:int_jiracollector:app_magnet:int_ordergroove:int_googletagmanager:int_vertex:int_loginradius:int_smartystreets:app_kind_components:app_kind_snacks:int_powerreviews_mfra:int_computop:plugin_productcompare:app_content_display_generators:app_storefront_base:int_marketing_cloud:int_handlerframework</custom-cartridges>
+</site>
+

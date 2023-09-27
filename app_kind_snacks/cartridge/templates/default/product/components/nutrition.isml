@@ -1,0 +1,18 @@
+    <div class="collapsible-sm nutrition-image">
+    <h2 class="title">${Resource.msg('label.nutritionalfacts', 'product', null)}</h2>
+    <div class="content">
+        <isif condition="${!empty(product.nutritionFactsImage)}">
+            <isscript>
+                var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+            </isscript>
+            <isset name="responsiveImage" value="${responsiveImageUtils.getResponsiveImage(product.nutritionFactsImage, 738)}" scope="page" />
+
+            <img src="${responsiveImage.imageUrlDefault}" srcset="${responsiveImage.imageUrlDefault + ', ' + responsiveImage.imageUrlLarge + ' 2x'}" alt="${product.nutritionFactsImage.alt}" class="c-product-nutrition__facts-image" />
+        </isif>
+        <isif condition="${!empty(product.nutritionNotes)}">
+            <div class="c-product-nutrition__notes">
+                ${product.nutritionNotes}
+            </div>
+        </isif>
+    </div>
+</div>

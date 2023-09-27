@@ -1,0 +1,73 @@
+<isif condition="${pdict.sellable !== false}">
+    <iscache type="relative" minute="0" hour="0">
+    <isscript>
+        let grps = session.getCustomer().getCustomerGroups();
+        let names = "Pending";
+        if(!empty(grps) && Object.prototype.hasOwnProperty.call(grps, 'map')) {
+            names = grps.map(function(g){
+                return g.ID;
+            });
+        }
+
+    </isscript>
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${pdict.isQuickView}" scope="page" />
+    <isset name="isBundle" value="${product.productType === 'bundle'}" scope="page" />
+    <isset name="wholesaler" value="${dw.system.Site.getCurrent().name === "Kind B2B"}" scope="page" />
+    <isset name="approvedWholesaler" value="${wholesaler && names.indexOf("Approved") > -1}" scope="page" />
+    <isset name="OGEnabled" value="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')}" scope="page" />
+    <isif condition="${empty(product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book'))}">
+        <isset name="snackPackMessage" value="${null}" scope="page" />
+    <iselse/>
+        <isset name="snackPackMessage" value="${product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book').priceInfo}" scope="page" />
+    </isif>
+
+    <isif condition="${wholesaler && !approvedWholesaler}">
+         <div class="quantity">
+            <isif condition="${!empty(product.totalItemQuantity)}">
+                (<isprint value="${product.totalItemQuantity}" style="INTEGER" encoding="off" />
+                <isif condition="${!empty(product.productTypeDetail)}">${product.productTypeDetail}</isif>
+                <isif condition="${!empty(product.containerType)}">
+                    ${Resource.msg('global.per', 'common', null)} ${product.containerType}
+                </isif>)
+            <iselse>
+                ${Resource.msg('global.quantity', 'common', null)}
+            </isif>
+        </div>
+        <isif condition="${names.indexOf("Denied") > -1 }">
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                <b>${Resource.msg('label.cart-and-ipay', 'byob', null)}
+                <a href="https://www.kindsnacks.com#login">www.kindsnacks.com.</a></b>
+                </div>
+            </div>
+            <iselseif condition="${names.indexOf("Pending") > -1 }">
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                <b>${Resource.msg('label.cart-and-ipay-approval', 'byob', null)}</b>
+                </div>
+            </div>
+            <iselse>
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                    <a href="${URLUtils.https('Home-Show')}#register" class="btn btn-primary" style="width:unset; margin-bottom:10px;">${Resource.msg('label.label.see-pricing', 'byob', null)}</a>
+                    <br/>
+                    <isif condition="${!session.isCustomerAuthenticated()}">
+                        ${Resource.msg('label.have-account', 'byob', null)} <a href="${URLUtils.https('Home-Show')}#login"> ${Resource.msg('label.log-in', 'byob', null)}</a>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    <iselseif condition="${!wholesaler || approvedWholesaler}">
+
+            <!-- Attributes -->
+            <isinclude template="product/components/mainAttributes" />
+
+            <isinclude template="product/components/pricing/byobOgWidget" />
+
+    </isif>
+<iselse>
+    <div style="min-width:370px">
+        <isprint value="${pdict.nfsmessage}" encoding="off" />
+    </div>
+</isif>

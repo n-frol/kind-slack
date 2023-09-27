@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="byob-category1">
+        <thumbnail>images/byob/see-all.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">orange</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category2">
+        <thumbnail>images/byob/byob-kids.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#88634b</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category3">
+        <thumbnail>images/byob/byob-bars.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#095c66</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category4">
+        <thumbnail>images/byob/byob-protein.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#f79455</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category5">
+        <thumbnail>images/byob/byob-hgb.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#f79455</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category6">
+        <thumbnail>images/byob/byob-breakfast.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#f79455</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category7">
+        <thumbnail>images/byob/byob-minis.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#d2a348</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category8">
+        <thumbnail>images/byob/byob-test.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <custom-attributes>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#ffde02</custom-attribute>
+        </custom-attributes>
+    </category>
+
+</catalog>

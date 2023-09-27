@@ -1,0 +1,26 @@
+/* ============================================================================
+Featured Container Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML user-created elements in the featured container template
+ */
+
+$ns: s-featured-container;
+
+.#{$ns} {
+    & &__links {
+        a {
+            display: block;
+            padding: 0;
+
+            .arrow-link {
+                display: block;
+
+                &::after {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

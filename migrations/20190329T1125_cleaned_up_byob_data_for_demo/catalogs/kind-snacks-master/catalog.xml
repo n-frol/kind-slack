@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="mbyob">
+        <long-description xml:lang="x-default">&lt;h2&gt;product description&lt;/h2&gt;&#13;
+&lt;p&gt;&#13;
+Building your own box lets you choose exactly which snacks you want, and how many of each. Your snacks, your way. &#13;
+&lt;/p&gt;</long-description>
+    </product>
+
+    <product product-id="mnaturalprotein">
+        <display-name xml:lang="x-default">Natural Protein</display-name>
+    </product>
+
+</catalog>

@@ -1,0 +1,185 @@
+@import '../globals/variables.scss';
+
+.eyebrow.product_dual {
+    left: 60px;
+    @include ipad {
+        left: 40px;
+    }
+    @include mobile {
+        top: 20px !important;
+    }
+}
+.dual_tout.name {
+    font-size: 48px;
+    line-height: 54px;
+    color: white;
+}
+.dual_tout.description {
+    font-size: 18px;
+    line-height: 24px;
+    color: white;
+    font-family: medium;
+}
+.benefit-wrapper {
+    max-width: 400px;
+}
+
+.benefits-container-single {
+    position:relative;
+    display: inline-block;
+    margin-right: 25px;
+    padding:10px;
+}
+.success-checkmark:after {
+    content: '✔';
+    position: absolute;
+    left:0px; top: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border: 2px solid #aaa;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+}
+.banner-wrapper {
+    display: flex;
+    @include mobile {
+        flex-direction: column-reverse;
+    }
+}
+
+.banner-left, banner-right {
+    width: 50%;
+    float:left;
+    position: relative;
+    height: 100vh;
+    background: black;
+    float: left;
+    height: unset;
+    width: 100%;
+    @include mobile {
+        position:relative;
+    }
+}
+
+.banner-left {
+    @include mobile {
+        width: 100% !important;
+        float: none !important;
+        height: auto !important;
+        background: black;
+        color: white;
+        top: -5px;
+        z-index: 20;
+    }
+    float:left;
+    position: relative;
+    height: unset;
+    width: 50%;
+    & .container {
+        position: absolute;
+        bottom: 80px;
+        padding-left: 66px;
+        max-width: 80%;
+        @include ipad {
+            padding-left: 40px;
+            bottom: 40px !important;
+        }
+        @include mobile {
+            bottom: -95px !important;
+            position: relative !important;
+            max-width: 100% !important;
+            padding-left: 20px;
+            padding: 0px 20px !important;
+            margin-bottom: 120px;
+        }
+    }
+}
+.banner-right {
+    @include mobile {
+        width: 100% !important;
+        float: none !important;
+        height: auto !important;
+        min-height: auto !important;
+    }
+    float:left;
+    position: relative;
+    height: unset;
+    background: grey;
+    float: left;
+    width: 50%;
+    position:relative;
+    min-height: 600px;
+    & img {
+        object-fit: cover;
+        height: unset;
+        max-height: 100%;
+        width: 100%;
+        min-height: 100%;
+        @include mobile {
+            object-fit: contain;
+            height: auto;
+            width: 100%;
+            min-height: unset !important;
+        }
+    }
+}
+
+.dual_tout {
+    &.name {
+        font-size: 48px;
+        line-height: 54px;
+        position: relative;
+        margin-bottom: 32px;
+        @include mobile {
+            font-size: 36px !important;
+            line-height: 42px !important;
+            margin-bottom: 25px;
+        }
+    }
+    &.description {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 32px;
+        @include mobile {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.product-banner-button {
+    @include mobile {
+        top: -40px;
+    }
+}
+
+.button-margin {
+    margin-top: 32px;
+}
+
+.benefits-container {
+        width: 100%;
+        padding: 10px;
+    @include mobile {
+        width: 100%;
+        padding: 10px;
+        display: inline-block;
+    }
+    &.benefit {
+        display: inline-block;
+        margin-right: 15px;
+        margin-left: 10px;
+    }
+}
+
+.button-margin {
+    @include mobile {
+        margin-top: 40px;
+    }
+}
+
+.product-banner-button {
+    color: black;
+}

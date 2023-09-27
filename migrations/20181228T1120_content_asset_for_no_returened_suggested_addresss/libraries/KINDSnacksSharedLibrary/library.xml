@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="instructions-address-not-allowed">
+        <display-name xml:lang="x-default">Address Not Found</display-name>
+        <description xml:lang="x-default">Displayed on the address verification pop-up modal when a user enters an address that can't be verified, and they have a product in their cart that requires a validated address (subscriptions) for purchase.</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>components/content/contentAssetSimpleWHeading</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">Hmm, looks like we couldn't find that address. Please head back to checkout, double check the details and try again!</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

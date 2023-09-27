@@ -1,0 +1,22 @@
+{
+    "name": "Benefit Item",
+    "description": "Item to go into marque",
+    "group": "Banners",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "text",
+                    "name": "Text",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

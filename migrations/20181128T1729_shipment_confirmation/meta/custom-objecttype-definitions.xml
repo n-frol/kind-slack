@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="ShipmentConfirmations">
+        <display-name xml:lang="x-default">Shipment Confirmations</display-name>
+        <description xml:lang="x-default">Manages the shipment confirmations that should be synchronized to Marketing Cloud. Upon synchronization, these objects will be removed.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>30</retention-days>
+        <key-definition attribute-id="shipmentID">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="orderNumber">
+                <display-name xml:lang="x-default">Order Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="productLineItems">
+                <display-name xml:lang="x-default">Product Line Items</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="trackingNumber">
+                <display-name xml:lang="x-default">Tracking Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="trackingURL">
+                <display-name xml:lang="x-default">Tracking URL</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="attributes">
+                <display-name xml:lang="x-default">Attributes</display-name>
+                <attribute attribute-id="shipmentID"/>
+                <attribute attribute-id="trackingURL"/>
+                <attribute attribute-id="trackingNumber"/>
+                <attribute attribute-id="orderNumber"/>
+                <attribute attribute-id="productLineItems"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+    <custom-type type-id="ShippingCarriers">
+        <display-name xml:lang="x-default">Shipping Carriers</display-name>
+        <description xml:lang="x-default">Manages the carrier codes and carrier details</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="carrierCode">
+            <display-name xml:lang="x-default">Carrier Code</display-name>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="trackingURL">
+                <display-name xml:lang="x-default">Tracking URL</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="attributes">
+                <display-name xml:lang="x-default">Attributes</display-name>
+                <attribute attribute-id="carrierCode"/>
+                <attribute attribute-id="trackingURL"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

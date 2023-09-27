@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="byob">
+        <product-listing-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="BYOB Robots"/>
+        </product-listing-page-meta-tag-rules>
+    </category>
+
+</catalog>

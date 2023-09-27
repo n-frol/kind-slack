@@ -1,0 +1,122 @@
+@import '../globals/variables.scss';
+
+.fullwidth_container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    &.onrails {
+        width: calc(100vw - 120px);
+        margin-left: 60px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        & img {
+            border-radius: 20px !important;
+            @include mobile {
+                border-radius: 0px !important;
+            }
+            @include ipad {
+
+            }
+        }
+        @include mobile {
+            width: 100vw !important;
+            margin-left: 0px !important;
+            border-radius: 0px !important;
+        }
+        @include ipad {
+            width: 100vw !important;
+            margin-left: 0px !important;
+            border-radius: 0px !important;
+        }
+    }
+    & video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    & .hero-image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        border-radius: 0px;
+        @include ipad {
+            border-radius: 0px;
+        }
+        @include mobile {
+            border-radius: 0px;
+        }
+    }
+    & .buttonPause, & .buttonPlay {
+        position:absolute;
+        top: 60px;
+        left: 60px;
+        background: transparent;
+        border: none;
+        border-radius: 50%;
+        width: unset;
+        & .playimg {
+            border-radius: 50%;
+        }
+        @include mobile {
+            top: 20px;
+            left: 20px;
+        }
+    }
+    & .buttonPlay {
+        display: none;
+    }
+    & .scroll_indicator_scroll {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        border-radius: 50%;
+        z-index: 1;
+        height: 60px;
+        width: 60px;
+        @include mobile {
+            display: none;
+        }
+    }
+    & .eyebrow {
+
+    }
+    & .content_container {
+        position: absolute;
+        bottom: 60px;
+        color: white;
+        left: 60px;
+        max-width: 557px;
+        @include mobile {
+            left: 0px !important;
+            margin-left: 20px;
+            margin-right: 20px;
+            bottom: 20px;
+            max-width: unset !important;
+            width: calc(100% - 40px);
+        }
+        & h1, & h2 {
+            margin-bottom: 32px;
+            @include mobile {
+                margin-bottom: 25px;
+            }
+        }
+        & .description {
+            margin-bottom: 32px;
+            @include mobile {
+                margin-bottom: 25px;
+            }
+        }
+        & .cta {
+            &.margin {
+                margin-right: 24px;
+            }
+            @include mobile {
+                left: 0px !important;
+                position: relative;
+                &.margin {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

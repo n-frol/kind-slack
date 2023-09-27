@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="30600">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="26199">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="30602">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="20306">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="17008">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="17019">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="17017">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="17004">
+        <searchable-flag>true</searchable-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isBlockGlobalSearch">true</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="chocolatecombo20">
+        <bundled-products>
+            <bundled-product product-id="24853">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="20002">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="25791">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="26199">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+    <product product-id="chocolatecombo40">
+        <bundled-products>
+            <bundled-product product-id="24853">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="20002">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="25791">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="26199">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+    <product product-id="fruitflavors20">
+        <bundled-products>
+            <bundled-product product-id="17008">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17019">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17017">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17004">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+    <product product-id="fruitflavors40">
+        <bundled-products>
+            <bundled-product product-id="17008">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17019">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17017">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="17004">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+    <product product-id="naturalprotein20">
+        <bundled-products>
+            <bundled-product product-id="30600">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="26199">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="30602">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="20306">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+    <product product-id="naturalprotein40">
+        <bundled-products>
+            <bundled-product product-id="30600">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="26199">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="30602">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="20306">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+    </product>
+
+</catalog>

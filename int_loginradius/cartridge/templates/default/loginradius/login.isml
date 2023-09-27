@@ -1,0 +1,55 @@
+<isinclude template="loginradius/loginRadiusInit" />
+<div class="loginradius-login">
+
+    <iscomment>
+        Forgot Password Link
+    </iscomment>
+    <isinclude template="account/components/forgotPassword" />
+    <isinclude template="account/password/requestPasswordResetModal"/>
+
+    <iscomment>
+        Login Section
+    </iscomment>
+    <section>
+        <isinclude template="loginradius/loginForm" />
+    </section>
+ <isif condition="${dw.system.Site.getCurrent().name != "Kind B2B"}">
+    <iscomment>
+        Social Login Section.
+    </iscomment>
+    <section>
+
+        <isif condition="${typeof siteID !== 'undefined' && siteID === "CreativeSnacks"}">
+            <p class="c-login-block__text-insert"><span>${Resource.msg('loginradius.or', 'loginradius', null)}</span></p>
+        <iselse/>
+            <p class="c-login-block__text-insert">${Resource.msg('loginradius.or', 'loginradius', null)}</p>
+        </isif>
+
+        <div class="alert alert-danger invalid-feedback loginradius-error loginradius-error--social-login js-loginradius-error-sociallogin"></div>
+
+        <div class="loginradius-social-login-interface-container"
+            data-lr-login-registration-url="${URLUtils.https('LoginRadius-Start')}"
+            data-lr-forwarding-url="${pdict.loginRadiusForwardingURL}">
+        </div>
+
+        <div id="js-loginradius-container-sociallogin"
+            class="loginradius-container--socliallogin js-loginradius-onload"
+            data-lr-login-registration-url="${URLUtils.https('LoginRadius-Start')}"
+            data-lr-forwarding-url="${pdict.loginRadiusForwardingURL}"
+            data-lr-type="socialLogin"
+            data-lr-enabled="${!empty(pdict.loginRadius.enabled) ? pdict.loginRadius.enabled : false}"
+            data-lr-api-key="${!empty(pdict.loginRadius.key) ? pdict.loginRadius.key : dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiKey")}">
+        </div>
+        </isif>
+
+        <iscomment>
+            Custom LoginRadius Interface
+        </iscomment>
+        <script type="text/html" id="loginradiuscustom_tmpl">
+            <a class="lr-provider-label btn btn-block btn-primary btn-outline-primary s-oauth-providers" href="javascript:void(0)" onclick="return LRObject.util.openWindow('<${'#'}= Endpoint ${'#'}>');" title="<${'#'}= Name ${'#'}>" alt="Sign in with <${'#'}=Name${'#'}>">
+            <${'#'}=Name${'#'}>
+        </a>
+        </script>
+    </section>
+
+</div>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="products-asset">
+        <display-name xml:lang="x-default">Products</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Browse all of our snacks made with whole ingredients.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Products</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_products_opt_1.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="flavors-asset">
+        <display-name xml:lang="x-default">Flavors</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Check out our variety of delicious flavors fit to satisfy any craving.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_flavors_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="occasions-asset">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">See how KIND fits into your everyday routine from morning to night.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Occasions</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_occasions_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefits-asset">
+        <display-name xml:lang="x-default">Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">See all the different benefits KIND products have to offer.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Benefits</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_benefits_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

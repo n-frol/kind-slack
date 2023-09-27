@@ -1,0 +1,26 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+
+<table>
+    <thead>
+    <th></th>
+    <th>Name</th>
+    <th>ID</th>
+    </thead>
+    <tbody>
+    <isloop items="${pdict.results.productIds}" var="prod">
+        <tr class="connected_result_item" data-id="${prod.productSearchHit.product.ID}">
+            <td>
+        <img src="${responsiveImageUtils.getResponsiveImage(prod.productSearchHit.product.getImages('large')[0], 100, 100, "", "jpg").imageUrlDefault}" alt="${prod.productSearchHit.product.name}" />
+            </td>
+            <td>
+            ${prod.productSearchHit.product.name}
+            </td>
+            <td>${prod.productSearchHit.product.ID}</td>
+        </tr>
+    </isloop>
+    </tbody>
+</table>
+
+

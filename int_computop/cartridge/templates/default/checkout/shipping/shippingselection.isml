@@ -1,0 +1,32 @@
+<!--- TEMPLATENAME: shippingselection.isml --->
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="checkout/pt_checkout">
+<isinclude template="util/modules"/>
+
+<iscomment>
+    This template visualizes the first step of the single shipping checkout
+    scenario for PaymentOperator express methods. It renders a form for the
+    shipping method selection. It is stored at a single shipment only.
+</iscomment>
+
+<iscomment>Report this checkout step (we need to report two steps)</iscomment>
+
+<isreportcheckout checkoutstep="${2}" checkoutname="${'ShippingAddress'}"/>
+<isreportcheckout checkoutstep="${3}" checkoutname="${'ShippingMethod'}"/>
+
+    <iscomment>checkout progress indicator</iscomment>
+    <ischeckoutprogressindicator step="1" rendershipping="${pdict.Basket.productLineItems.size() == 0 ? 'false' : 'true'}"/>
+
+    <form action="${URLUtils.continueURL()}" method="post" id="${pdict.CurrentForms.singleshipping.shippingAddress.htmlName}" class="checkout-shipping address form-horizontal">
+        <div id="shipping-method-list">
+            <isinclude url="${URLUtils.https('COShipping-UpdateShippingMethodList')}"/>
+        </div>
+        <fieldset>
+            <div class="form-row form-row-button">
+                <button class="button-fancy-large" type="submit" name="${pdict.CurrentForms.singleshipping.shippingAddress.save.htmlName}" value="${Resource.msg('global.continuecheckoutbrief','checkout',null)}"><span>${Resource.msg('global.continuecheckoutbrief','checkout',null)}</span></button>
+            </div>
+            <input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}"/>
+        </fieldset>
+    </form>
+
+</isdecorate>

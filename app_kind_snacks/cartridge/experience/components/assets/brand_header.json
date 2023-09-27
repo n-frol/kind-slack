@@ -1,0 +1,33 @@
+{
+  "name": "Brand Header",
+  "description": "Brand header",
+  "group": "Brand",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content Left",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "eyebrow",
+          "name": "Eyebrow Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header Text",
+          "type": "markup",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

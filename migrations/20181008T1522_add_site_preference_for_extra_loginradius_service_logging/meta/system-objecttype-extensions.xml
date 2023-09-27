@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="loginRadiusDebuggingEnabled">
+                <display-name xml:lang="x-default">Enable debug logging for the LoginRadius service</display-name>
+                <description xml:lang="x-default">Enables INFO level log messages output to the custom log category 'loginradius' with call params and results for LoginRadius service.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="LoginRadius">
+                <display-name xml:lang="x-default">LoginRadius General Information</display-name>
+                <attribute attribute-id="loginRadiusIsEnabled"/>
+                <attribute attribute-id="loginRadiusApiKey"/>
+                <attribute attribute-id="loginRadiusSiteName"/>
+                <attribute attribute-id="loginRadiusEmailVerificationCallbackURL"/>
+                <attribute attribute-id="loginRaidusSocialProviders"/>
+                <attribute attribute-id="loginRadiusUpdateProfile"/>
+                <attribute attribute-id="loginRadiusDebuggingEnabled"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

@@ -1,0 +1,44 @@
+/* ============================================================================
+PDP Ordergroove Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created by Ordergroove on the PDP
+ */
+
+ // Use importants to override other important styles
+
+$ns: s-pdp-og;
+
+.#{$ns} {
+    position: relative;
+
+    .sales,
+    .og-sale-price,
+    .snack-pack-price {
+        font-size: 20px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+        }
+        @include media-breakpoint-up(lg) {
+            font-size: 24px;
+        }
+    }
+    .strike-through {
+        color: $grey5;
+        font-size: 15px;
+        margin-right: 5px;
+        padding-top: 4px;
+        text-decoration: line-through;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 8px;
+        }
+    }
+    .promotion-callout {
+        font-family: $font-family-secondary;
+        font-size: 12px;
+        width: 100%;
+    }
+}

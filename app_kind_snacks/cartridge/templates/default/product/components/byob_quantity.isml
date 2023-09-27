@@ -1,0 +1,80 @@
+<isscript>
+    var templateClass = typeof templateClass === 'undefined' ? '' : templateClass; // Make sure templateClass is at least declared, so we don't have to add it to every template touching this one
+    var isByobTile = typeof isByobTile === 'undefined' ? false : isByobTile;
+    var qtyClass = !empty(templateClass) ? ' ' + templateClass + '__qty' : '';
+    var qtyInputClass = empty(templateClass) ? '' : ' ' + qtyClass + '__input';
+    var totalItemQuantity = typeof product !== 'undefined' &&
+        !empty(product.totalItemQuantity) ? product.totalItemQuantity : 1;
+    var minQuantity = !empty(pdict.product) && typeof pdict.product.minOrderQuantity !== 'undefined' ? product.minOrderQuantity : 1; // Make sure minQuantity is at least declared, so we don't have to add it to every template touching this one
+    var maxQuantity = typeof maxQuantity !== 'undefined' ? maxQuantity : 99; // Make sure maxQuantity is at least declared, so we don't have to add it to every template touching this one
+    let isByobItemInList = typeof byobItem !== 'undefined' ? byobItem : false;
+
+    var selectedQuantity = 0;
+    </isscript>
+<isscript>
+
+    // Set default quantity value.
+    var qty = Number(
+        empty(pdict.CurrentHttpParameterMap.quantity.stringValue) ?
+            1 : pdict.CurrentHttpParameterMap.quantity.stringValue
+    ).toFixed();
+
+    if (typeof product !== 'undefined' && !empty(product.selectedQuantity)) {
+           selectedQuantity = product.selectedQuantity;
+           qty = selectedQuantity;
+    } else if (typeof byobItem !== 'undefined' && !empty(byobItem.quantity)) {
+        selectedQuantity = byobItem.quantity.value;
+        qty = selectedQuantity;
+    } else if (typeof byobItem !== 'undefined' && Object.prototype.hasOwnProperty.call(byobItem, 'selectedQuantity') && !empty(byobItem.selectedQuantity)){
+        selectedQuantity = byobItem.selectedQuantity;
+        qty = selectedQuantity;
+    } else {
+        qty = selectedQuantity.toFixed(0);
+    }
+
+        </isscript>
+<isscript>
+
+     //var decrementDisabled = false;
+     //var incrementDisabled = false;
+
+    // Allows templates including this one to have a custom way to disable the button without affecting the others that use it
+    // Make sure incrementDisabled is at least declared, so we don't have to add it to every template touching this one
+    var decrementDisabled = typeof decrementDisabled !== 'undefined' ? decrementDisabled : false;
+    // Allows templates including this one to have a custom way to disable the button without affecting the others that use it
+    // Make sure incrementDisabled is at least declared, so we don't have to add it to every template touching this one
+    var incrementDisabled = typeof incrementDisabled !== 'undefined' ? incrementDisabled : false;
+
+
+    if (qty.toFixed() < minQuantity){
+        qty = minQuantity;
+    }
+
+</isscript>
+<isif condition="${isByobItemInList}">
+    <div class="quantity c-qty js-qty ${qtyClass} mini">
+<iselse>
+    <div class="quantity c-qty js-qty ${qtyClass} mini c-qty__add-to-box-btn--enabled">
+</isif>
+
+    <button aria-label="${Resource.msg('global.qty.decrement', 'common', null)}" type="button" data-gtm-update="${Resource.msg('label.remove.update', 'product', null)}" data-aria-label=" ${byobItem.productName}"
+            class="c-qty__btn c-qty__btn--decrease js-byob-qty__btn js-qty__btn--decrease"
+    value="-1"<isif condition="${decrementDisabled === true}"> </isif>>
+        <img src="${URLUtils.staticURL('/images/minus.svg')}" class="c-qty__btn__icon" alt="${Resource.msg('global.qty.decrement', 'common', null)}" />
+    </button>
+
+    <input type="number" min="${minQuantity}" max="${maxQuantity}" inputmode="numeric" pattern="[0-9]+"
+        class="c-qty__input input-text quantity-select js-byob-qty__input ${qtyInputClass}" name="Quantity" id="Quantity"
+        size="2" maxlength="3" value="${qty.toFixed(0)}" data-totalitemquantity="${totalItemQuantity}" aria-label="Quantity of ${byobItem.productName}" aria-valuetext="${qty.toFixed(0)}" aria-live="polite" />
+
+    <span class="c-qty__in-box-label">${Resource.msg('label.in-box', 'byob', null)}</span>      
+
+    <button aria-label="${Resource.msg('global.qty.increment', 'common', null)}" type="button" data-gtm-update="${Resource.msg('label.add.update', 'product', null)}"
+        class="c-qty__btn c-qty__btn--increase js-byob-qty__btn js-qty__btn--increase" value="1"
+        data-item-pid="${isByobTile ? pdict.itemPid : ''}" <isif condition="${incrementDisabled && incrementDisabled === true}"> disabled
+        </isif>>
+        <img src="${URLUtils.staticURL('/images/plus.svg')}" class="c-qty__btn__icon"
+            alt="${Resource.msg('global.qty.increment', 'common', null)}" />
+    </button>
+
+</div>

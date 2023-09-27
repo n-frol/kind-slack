@@ -1,0 +1,33 @@
+/* ============================================================================
+    Custom Navigation
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Custom Navigation template
+ */
+
+$ns: th-kind-custom-navigation;
+$component: c-custom-navigation;
+$scope: s-custom-navigation;
+
+.#{$ns} {
+
+    // Custom Navigation Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__navigation {
+                font-family: $font-family-primary;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    .#{$scope} {
+        a {
+            font-family: $font-family-primary;
+        }
+    }
+
+}

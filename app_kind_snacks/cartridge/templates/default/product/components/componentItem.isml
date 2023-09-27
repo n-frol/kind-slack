@@ -1,0 +1,31 @@
+<li class="product-detail bundle-item c-product-bundle__item" data-pid="${component.ID}">
+    <a href="<isprint value="${component.url}" encoding="htmldoublequote"/>" id="${component.id}" role="button" class="c-product-bundle__item__btn">
+        <isset name="imageSrcset" value="" scope="page" />
+
+        <isif condition="${!empty(component.image)}">
+            <isset name="imageUrl" value="${component.image.imageUrlDefault}" scope="page" />
+            <isset name="imageSrcset" value="${component.image.imageUrlDefault + ', ' + component.image.imageUrlLarge + ' 2x'}" scope="page" />
+        <iselse>
+            <isset name="imageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+        </isif>
+
+        <div class="c-product-bundle__item__img__wrap">
+            <img src="${imageUrl}" class="c-product-bundle__item__img" alt="${component.name}" <isif condition="${!empty(imageSrcset)}">srcset="${imageSrcset}"</isif> /><br />
+        </div>
+
+        <div class="product-name c-product-bundle__item__name">${component.name}</div>
+
+        <isif condition="${!empty(component.quantityDescription)}">
+            <div class="c-product-bundle__item__quantity">
+                <label class="quantity c-product-bundle__item__quantity__label" data-quantity="${component.quantityDescription}">
+                    <isprint value="${component.quantityDescription}" />
+                </label>
+            </div>
+        </isif>
+
+        <div class="product-number d-none">
+            ${Resource.msg('label.item', 'product', null)}
+            <span class="product-id" itemprop="productID" >${component.id}</span>
+        </div>
+    </a>
+</li>

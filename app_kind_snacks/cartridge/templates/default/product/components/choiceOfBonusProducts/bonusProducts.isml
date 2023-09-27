@@ -1,0 +1,91 @@
+<iscomment> Power Reviews Enabled - Site Pref </iscomment>
+<isset name="isPowerReviewsEnabled" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('PR_Online_Status')) ? dw.system.Site.current.getCustomPreferenceValue('PR_Online_Status') : false}" scope="page"/>
+
+<iscomment>Use isscript since apparently scope="pdict" is deprecated</iscomment>
+<isscript>
+    pdict.templateClass = pdict.templateClass || 'st-product-quickview-main';
+</isscript>
+                                            
+<isloop items="${pdict.products}" var="product" status="productLoopStatus">
+<isscript>
+                            var selectedBonusProducts = pdict.selectedBonusProducts;
+                            var selected = false;
+                            for(i = 0; i < selectedBonusProducts.length; i++){
+                                if(selectedBonusProducts[i].pid == product.id){
+                                    selected = true;
+                                    break; 
+                                }
+                            }
+                        </isscript>   
+      <div style="display:inline-block;" class="grid col-4 bonus-product-item ready-to-order choice-of-bonus-product" data-pid="${product.id}" data-ready-to-order="${product.readyToOrder}" data-optionID=""
+    style="<isif condition="${!empty(product.backgroundColor)}">${'--pdp-main__bg: ' + product.backgroundColor + '; '}</isif>
+        <isif condition="${!empty(product.imageNavigationColor)}">${'--image-nav-color: ' + product.imageNavigationColor + '; '}</isif>">
+             <div style="padding:10px;" class="primary-image bonus-product-image">
+                        <isif condition="${!empty(product.responsiveImages)}">
+                            <isset name="image" value="${product.responsiveImages[0]}" scope="page" />
+                            <div onclick="javascript:void(0);" href="${URLUtils.https('Product-Show', 'pid', product.id)}" target="_blank">
+                                <img src="${image.normal.imageUrlDefault}" class="d-block c-product-primary-images__carousel__img js-product-primary-images__carousel__img img-fluid" alt="${image.alt}" itemprop="image"/>
+                            </div>
+                        </isif>
+                    </div>    
+                    <h1 style="font-size:14px; padding:5px;" class="bonusname product-name c-product-details__name js-product-name">
+                                <div onclick="javascript:void(0);" href="${URLUtils.https('Product-Show', 'pid', product.id)}" target="_blank">${product.productName}</div>
+                            </h1>
+                            <div class="bonus-product-add-button">
+                            <div style="margin:auto;" class="col-sm-10 pl-0 pr-0">
+                            <isif condition="${selectedBonusProducts.length > 0}">
+                                <button style="line-height:30px;" class="btn btn-secondary btn-block btn-outline-primary select-bonus-product
+                                ${selected ? "selected" : "notpicked"}"
+                                    data-pid="${product.id}"
+                                    ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                                    <iselse>
+                                    <button style="line-height:30px;" class="btn btn-secondary btn-block btn-outline-primary select-bonus-product"
+                                    data-pid="${product.id}"
+                                    ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                            </isif>
+                                    <isif condition="${selected}">
+                                        ${Resource.msg('button.choiceofbonus.remove', 'product', null)}
+                                    <iselse>
+                                        ${Resource.msg('button.choiceofbonus.select', 'product', null)}
+                                    </isif>
+                                </button>                               
+                            </div>
+                        </div>
+        </div>
+</isloop>
+
+<style>
+    .bonus-product-item {
+        display:inline-block;
+    }
+</style>
+
+<div class="modal-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 selected-bonus-products">
+                <div class="bonus-summary">
+                    <span class="pre-cart-products">${pdict.selectedBonusProducts.length}</span> ${Resource.msgf('label.choiceofbonus.selectproducts', 'product', null, pdict.maxPids)}
+                </div>
+                <isloop items="${pdict.selectedBonusProducts}" var="selectedProduct" status="productLoopStatus">
+                    <div class="selected-pid row"
+                        data-pid="${selectedProduct.pid}"
+                        data-qty='<isprint value="${selectedProduct.submittedQty}" encoding="htmlsinglequote" formatter="#"/>'
+                        data-optionid="${selectedProduct.option.optionid}"
+                        data-option-selected-value="${selectedProduct.option.selectedvalue}" >
+                        <div class="col-11 bonus-product-name">${selectedProduct.name}</div>
+                        <div class="col-1"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </isloop>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <!--<div class="col-sm-3 hidden-xs-down"></div>-->
+            <div class="col-12 add-bonus-products-button">
+                <button class="btn btn-primary add-bonus-products" <isif condition="${pdict.selectedBonusProducts.length == 0}">disabled="disabled"</isif> >
+                        ${Resource.msg('button.selectbonus', 'common', null)}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

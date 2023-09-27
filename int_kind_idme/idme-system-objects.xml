@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="IDmeButtonCollapseTitle">
+                <display-name xml:lang="x-default">IDme Button Title</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeButtonDataHero">
+                <display-name xml:lang="x-default">Hero image</display-name>
+                <type>image</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeButtonDataLogo">
+                 <display-name xml:lang="x-default">Logo image</display-name>
+                <type>image</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeButtonDataText">
+                <display-name xml:lang="x-default">IDme Button Text</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeButtonIsActive">
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeButtonScopes">
+                <display-name xml:lang="x-default">IDme  policies</display-name>
+                <description xml:lang="x-default">A parameter that defines the policy you are requesting permission to access.
+                Possible values: (military , student, teacher, responder,government, employee, nurse, alumni)
+                </description>
+                <type>set-of-string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeClientID">
+                <display-name xml:lang="x-default">IDme Client ID</display-name>
+                <description xml:lang="x-default">This is your IDme Client Account ID</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeClientSecret">
+                <display-name xml:lang="x-default">IDme Client Secret</display-name>
+                <description xml:lang="x-default">This is your IDme Client Secret API Code</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeServiceEndpoint">
+                <display-name xml:lang="x-default">IDme Service Endpoint</display-name>
+                <description xml:lang="x-default">This is the top-level URL for the IDme Service Endpoint. Change this for calling the IDme Sandbox or Production servers.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="IDmeUsePopup">
+                <display-name xml:lang="x-default">IDme Use Popup</display-name>
+                <description xml:lang="x-default">Do you want the IDme validation to appear in a popup window, otherwise it will use a full page redirect.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="IDme">
+                <display-name xml:lang="x-default">IDme Settings</display-name>
+                <attribute attribute-id="IDmeButtonIsActive"/>
+                <attribute attribute-id="IDmeClientID"/>
+                <attribute attribute-id="IDmeClientSecret"/>
+                <attribute attribute-id="IDmeServiceEndpoint"/>
+                <attribute attribute-id="IDmeButtonScopes"/>
+                <attribute attribute-id="IDmeUsePopup"/>
+                <attribute attribute-id="IDmeButtonDataText"/>
+                <attribute attribute-id="IDmeButtonCollapseTitle"/>
+                <attribute attribute-id="IDmeButtonDataHero"/>
+                <attribute attribute-id="IDmeButtonDataLogo"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

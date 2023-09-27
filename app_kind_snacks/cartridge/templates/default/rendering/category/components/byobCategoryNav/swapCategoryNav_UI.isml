@@ -1,0 +1,12 @@
+<isset name="ns" value="c-byob-category-nav__item" scope="page" />
+
+<style>
+
+    <isif condition="${!empty(byobCategory.custom.navActiveBackgroundColor)}">
+        .${ns}--${byobCategory.ID}.is-active .${ns}__img-wrap::after,
+        .${ns}--${byobCategory.ID}:hover .${ns}__img-wrap::after {
+            background-color: ${byobCategory.custom.navActiveBackgroundColor};
+        }
+    </isif>
+
+</style>

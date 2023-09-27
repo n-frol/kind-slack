@@ -1,0 +1,34 @@
+// Classes and Elements for Login Card Nav styles
+
+a#password-reset {
+    color: $grey4;
+    font-family: $font-family-secondary;
+    text-transform: lowercase;
+}
+
+.desklogin .veiled {
+    margin-bottom: -20px;
+}
+
+a.nav-link,
+li a.nav-link {
+    color: $grey4;
+}
+
+a.nav-link.active.show,
+li a.nav-link.active,
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: $primary;
+}
+
+label[for="loginradius-login-emailid"]::before,
+    [for="loginradius-login-password"]::before,
+    [for="loginradius-registration-firstname"]::before,
+    [for="loginradius-registration-lastname"]::before,
+    [for="loginradius-registration-emailid"]::before,
+    [for="loginradius-registration-password"]::before,
+    [for="loginradius-registration-confirmpassword"]::before {
+        content: "* ";
+        color: $danger;
+}

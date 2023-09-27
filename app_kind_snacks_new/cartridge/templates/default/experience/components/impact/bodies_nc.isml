@@ -1,0 +1,118 @@
+<div class="bodies_nc">
+    <div class="left">
+    <img src="${URLUtils.staticURL('/images/impact/ncbig1.png')}" alt="Impact" class="bodies_section_2" />
+        <div class="head">
+            the KIND nutrition
+            collective is back
+        </div>
+        <div class="copy">
+            We’re reigniting conversation and community with 5,000+ Registered Dietitians. It’s all about real food, wholesome ingredients, and sound nutrition. Are you an RD interested in joining the KIND Nutrition Collective? Reach out to
+            <a
+                style="text-transform: none !important;" class="normallink" href="mailto:KINDRD@kindsnacks.com">KINDRD@kindsnacks.com</a> to learn more.
+        </div>
+</div>
+    <div class="right" style="position: relative;">
+        <img class="bottoml" src="${URLUtils.staticURL('/images/impact/grid3/Frame 3140.png')}" alt="Impact" class="bodies_section_2" />
+        <img class="bottomr" src="${URLUtils.staticURL('/images/impact/grid3/Frame 31402.png')}" alt="Impact" class="bodies_section_2" />
+        <img class="main_nc_img" src="${URLUtils.staticURL('/images/impact/Frame_3050.png')}" alt="Impact" class="bodies_section_2" />
+    </div>
+</div>
+
+<style>
+    .primary.padded {
+        padding: 19px 80px !important;
+    }
+    .normallink {
+        margin: 0px !important;
+        text-transform: none !important;
+    }
+    .bottoml {
+        position: absolute;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        bottom: 0px;
+        left: -50px;
+    }
+    .bottomr {
+        position: absolute;
+        margin-bottom: 0px !important;
+        margin-top: 0px !important;
+        bottom: 0px;
+        left: 130px;
+    }
+    .bodies_nc {
+        padding-bottom: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        background: #EDA900;
+    }
+
+    @media screen and (max-width: 440px) {
+        .beastpara {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+        }
+        .bluearea.orange {
+            width: calc(100% - 20px) !important;
+            margin-left: 20px !important;
+            max-width: unset !important;
+            margin-bottom: 40px !important;
+        }
+        .bodies_nc img {
+            width: calc(100% - 40px);
+            margin-left: 20px !important;
+            margin-top: 40px !important;
+            margin-bottom: 40px !important;
+        }
+        .big.welcome {
+            margin-bottom: 0px !important;
+        }
+        .welcome.bigger {
+            font-size: 52px !important;
+            line-height: 58px !important;
+        }
+        .swiper-wrapper {
+            margin-bottom: 60px !important;
+        }
+        .bodies_nc {
+            grid-template-columns: 1fr !important;
+        }
+        .bodies_nc .head, .bodies_nc .copy {
+            margin-left: 20px !important;
+            padding-right: 10px;
+        }
+
+        .bodies_nc a:not(.normallink) {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            margin-bottom: 40px !important;
+            margin-left: 20px !important;
+            margin-right: 20px !important;
+        }
+    }
+    .bodies_nc img {
+        margin-bottom: 80px;
+        margin-top: 60px;
+        margin-left: 60px;
+    }
+    .bodies_nc .head {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 30px;
+        font-family: main;
+        margin-left: 60px;
+    }
+    .bodies_nc .copy {
+        font-size: 18px;
+        line-height: 25px;
+        font-family: medium;
+        margin-bottom: 30px;
+        margin-left: 60px;
+    }
+    .bodies_nc a {
+        margin-left: 60px;
+        margin-bottom: 90px;
+    }
+</style>

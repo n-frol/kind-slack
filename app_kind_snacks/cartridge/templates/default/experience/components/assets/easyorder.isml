@@ -1,0 +1,201 @@
+<iscache type="relative" minute="0" hour="0">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.20/datatables.min.css" />
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/easyorder.js');
+</isscript>
+<isscript>
+    var grps = session.getCustomer().getCustomerGroups();
+    var cust = session.getCustomer();
+    var names = [];
+</isscript>
+<isloop items="${grps}" var="g">
+    <isscript>
+        names.push(g.ID.toLowerCase());
+    </isscript>
+</isloop>
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+
+<div class="ezorder-container">
+    <h1 class="ezheader">${pdict.header}
+    </h1>
+    <isif condition="${dw.system.Site.getCurrent().name != "Kind B2B" || // eslint-disable-line
+                     (dw.system.Site.getCurrent().ID == "kind_b2b" && session.isCustomerAuthenticated() && (names.indexOf("approved") >
+                         -1))}">
+        <div class="subtext">
+            ${pdict.copy}
+        </div>
+
+        <div class="ezerror"></div>
+
+        <div class="add-to-cart-messages  c-alert__alerts-container"></div>
+
+        <div class="ezsearch-container">
+            <label class="form-control-label" for="ezordersearch">Search</label>
+            <input id="ezordersearch"
+                class="ezsearch ezordersearch form-control search-fielda c-site-search__input c-site-search__input--search"
+                type="search" name="q" value="" />
+
+            <select class="pagelen">
+                <option>10</option>
+                <option>200000</option>
+            </select>
+        </div>
+
+        <div class="u-background__color-grey9 c-byob-category-nav__wrap">
+            <div class="container s-slick position-relative">
+                <div class="c-byob-category-nav js-slider" data-infinite="false" data-slidestoshow="6"
+                    data-slidestoscroll="6" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+                    data-slidestoscroll-768="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3"
+                    data-slidestoshow-768="1" data-slidestoshow-425="1" data-slidestoscroll-425="1" data-dots="true"
+                    data-arrows="true">
+                    <iscomment>Intentionally overwrites byobCategory</iscomment>
+                    <div class="is-active c-byob-category-nav__item-wrap text-center dataSearch" data-search="">
+                        <isinclude template="rendering/category/components/byobCategoryNav/byobCategoryNav_UI" />
+                        <a href="#"
+                            class="is-active c-byob-category-nav__item c-byob-category-nav__item--${byobCategory.ID} js-category-nav-item<isif condition="
+                            ${pdict.productSearch.category.id === byobCategory.ID}"> is-active
+    </isif>"
+    data-label="${byobCategory.displayName}">
+    <div class="c-byob-category-nav__item__img-wrap">
+        <img class="c-byob-category-nav__item__img"
+            src="https://www.kindsnacks.com/dw/image/v2/BCLS_PRD/on/demandware.static/-/Sites-kind-snacks-storefront/default/dwcb587cfa/BYOB_NavImages_All.png?sw=125"
+            alt="all snacks" />
+    </div>
+    <div class="c-byob-category-nav__item__name">
+        all snacks
+    </div>
+    </a>
+</div>
+
+<isloop items="${dw.catalog.CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories}" var="byobCategory">
+    <isif condition="${byobCategory.online && byobCategory.hasOnlineProducts() && byobCategory.custom.showInTable}">
+        <div class="c-byob-category-nav__item-wrap text-center dataSearch" data-search="${byobCategory.displayName}">
+            <isinclude template="rendering/category/components/byobCategoryNav/byobCategoryNav_UI" />
+            <a href="#"
+                class="c-byob-category-nav__item c-byob-category-nav__item--${byobCategory.ID} js-category-nav-item<isif condition="
+                ${pdict.productSearch.category.id === byobCategory.ID}"> is-active
+    </isif>"
+    data-label="${byobCategory.displayName}">
+    <isif condition="${!empty(byobCategory.thumbnail)}">
+        <div class="c-byob-category-nav__item__img-wrap">
+            <isset name="responsiveImage"
+                value="${responsiveImageUtils.getResponsiveImage(byobCategory.thumbnail, 125)}" scope="page" />
+            <img class="c-byob-category-nav__item__img" src="${responsiveImage.imageUrlDefault}"
+                alt="${byobCategory.displayName}" />
+        </div>
+    </isif>
+    <div class="c-byob-category-nav__item__name">
+        ${byobCategory.displayName}
+    </div>
+    </a>
+    </div>
+    </isif>
+</isloop>
+</div>
+<div class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+    <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions that
+        imageCarousel.js won't have access to</iscomment>
+    <button
+        class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--byob slick-prev d-none"
+        type="button" data-slide="prev">
+        <span
+            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow">
+        </span>
+        <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+    </button>
+
+    <button
+        class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--byob c-byob-category-nav__slider__controls__arrow slick-next d-none"
+        type="button" data-slide="next">
+        <span
+            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow">
+        </span>
+        <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+    </button>
+</div>
+</div>
+</div>
+<table class="ezordertable row-border responsive" id="example">
+    <thead>
+        <tr>
+            <th class="not-mobile" />
+            <th class="none">Cat</th>
+            <th class="all">name</th>
+            <th class="all">snack count</th>
+            <th class="all">price</th>
+            <th class="all">qty</th>
+            <th class="none">pid</th>
+        </tr>
+    </thead>
+    <tbody>
+        <isloop items="${pdict.productcategory.products}" var="p" status="loopstate">
+            <isloop items="${p.getVariants()}" var="v">
+                <isif condition="${v.custom.showOnPDPB2B && v.getAvailabilityModel().orderable}">
+                    <isscript>
+                        var minQuantity = v.minOrderQuantity.getDecimalValue();
+                    </isscript>
+                    <tr>
+                        <td>
+                            <img class="ezorder-img" src="${p.getImages('large').toArray()[0].getURL()}?sw=150"
+                                alt="${p.getImages('large').toArray()[0].getAlt()}" />
+                        <td>${p.primaryCategoryAssignment.category.displayName}</td>
+                        <td>${p.name}
+                            <img class="ezorder-quickview quickview"
+                                src="https://p7.hiclipart.com/preview/575/670/335/computer-icons-information-download-information.jpg"
+                                type="image" class="c-product-tile__image-container__quickview quickview"
+                                data-is-block-access="false" data-link="${URLUtils.url("Product-ShowQuickView")}?pid=${p.ID}" />
+                                <isif condition="${minQuantity > 1}">
+                                <br />
+                                <div class="minorderqty">This item has a minimum purchase quantity of ${minQuantity}.</div>
+                                </isif>
+
+                        </td>
+                        <td class="snackcount">${v.custom.totalItemQuantity.toFixed(0)} ${p.custom.productType}</td>
+                        <td class="price">$${v.getPriceModel().getPrice().decimalValue ?
+                                           v.getPriceModel().getPrice().decimalValue : "0.00"}</td>
+                        <td class="qtycell">
+                            <input oninput="validity.valid||(value=value.replace(/\D+/g, ''))" style="border:none"
+                                type="number" min="0" max="999.0" inputmode="numeric" pattern="[0-9]+"
+                                class="c-qty__input input-text quantity-select js-qty__input qty" name="Quantity"
+                                id="Quantity" size="2" value="0" maxlength="3" data-totalitemquantity="999.0"
+                                data-minqty="${minQuantity}">
+                        </td>
+                        <td>
+                            ${v.ID}
+                        </td>
+                    </tr>
+                </isif>
+            </isloop>
+        </isloop>
+    </tbody>
+    <tfoot>
+        <tr id="footerrow">
+            <th />
+            <th />
+            <th />
+            <th class="snacktotal">0 snacks</th>
+            <th class="pricetotal">$0.00</th>
+            <th class="qtytotal">0</th>
+        </tr>
+    </tfoot>
+</table>
+<button disabled class="primary-btn ezadd">Add to Cart</button>
+<div class="modal fade st-modal-quickview show" id="quickViewModal" role="dialog"></div>
+
+<iselse>
+    <div class="subtext qv-subtext">
+        ${pdict.copyrejected}
+    </div>
+    </div>
+    </isif>
+    </div>
+
+    <style>
+        .inputerror {
+            border: 2px solid red !important;
+        }
+    </style>

@@ -1,0 +1,170 @@
+/* ============================================================================
+   Slick Slider
+   ============================================================================ */
+
+/**
+ * Styles global slick slider elements than can take custom classes
+ */
+
+ $ns: "c-slick-slider";
+
+.homepage_rec .c-slick-slider__controls__next, .homepage_rec .c-recommendation__content .c-slick-slider__controls__prev {
+    top: 140px;
+}
+
+.#{$ns} {
+    overflow: hidden;
+
+    &__controls {
+        display: flex;
+            justify-content: center;
+        width: 100%;
+
+        &__arrow {
+            background-color: transparent;
+            border: 2px solid transparent;
+            cursor: pointer;
+            height: 28px;
+            min-height: 0;
+            min-width: 0;
+            opacity: .75;
+            position: absolute;
+                bottom: auto;
+                top: 50%;
+            transform: translateY(-50%) rotateZ(45deg);
+            width: 28px;
+            z-index: 2;
+
+            &:active,
+            &:hover {
+                background-color: transparent !important; // override the style from base.buttons without having an overly complex selector hierarchy
+                opacity: 1;
+            }
+
+            &--byob {
+                border: none !important; // Important because of a phantom border that insists on appearing on click
+                height: 22px;
+                padding-left: 0;
+                padding-right: 0;
+                transform: translateY(-50%);
+                width: 22px;
+            }
+        }
+        &__prev {
+            border-bottom-color: $black;
+            border-left-color: $black;
+            left: 5px;
+
+            @include media-breakpoint-up(md) {
+                left: -20px;
+            }
+            @include media-breakpoint-up(lg) {
+                left: 68px;
+            }
+
+            &:active,
+            &:hover {
+                border-bottom-color: $black;
+                border-left-color: $black;
+            }
+
+            &--home {
+                left: 0px;
+                top: 140px;
+            }
+
+            &--byob {
+                left: 23px;
+
+                @include media-breakpoint-up(md) {
+                    left: 15px;
+                }
+                @include media-breakpoint-up(lg) {
+                    left: 59px;
+                }
+            }
+        }
+        &__next {
+            border-right-color: $black;
+            border-top-color: $black;
+            right: 5px;
+
+            @include media-breakpoint-up(md) {
+                right: -20px;
+            }
+            @include media-breakpoint-up(lg) {
+                right: 68px;
+            }
+
+            &:active,
+            &:hover {
+                border-right-color: $black;
+                border-top-color: $black;
+            }
+
+            right: 0px;
+            top: 140px;
+
+            &--byob {
+                right: 23px;
+
+                @include media-breakpoint-up(md) {
+                    right: 15px;
+                }
+                @include media-breakpoint-up(lg) {
+                    right: 59px;
+                }
+            }
+        }
+
+        &__prev-inner {
+            &--byob {
+                border: 2px solid transparent;
+                border-bottom-color: $black;
+                border-left-color: $black;
+                height: 22px;
+                position: absolute;
+                    left: calc(50% + 2px);
+                    top: 50%;
+                transform: translate(-50%, -50%) rotateZ(45deg);
+                width: 22px;
+
+                @at-root .#{$ns}__controls__next--byob:active &,
+                .#{$ns}__controls__next--byob:hover & {
+                    border-bottom-color: $black;
+                    border-left-color: $black;
+                }
+            }
+        }
+        &__next-inner {
+            &--byob {
+                border: 2px solid transparent;
+                border-right-color: $black;
+                border-top-color: $black;
+                height: 22px;
+                position: absolute;
+                    left: calc(50% - 2px);
+                    top: 50%;
+                transform: translate(-50%, -50%) rotateZ(45deg);
+                width: 22px;
+
+                @at-root .#{$ns}__controls__next--byob:active &,
+                .#{$ns}__controls__next--byob:hover & {
+                    border-right-color: $black;
+                    border-top-color: $black;
+                }
+            }
+        }
+    }
+}
+
+.c-recommendation__content{
+    max-width: 85%;
+    margin: 0 auto;
+    .c-slick-slider__controls__prev {
+            left: -30px;
+    }
+    .c-slick-slider__controls__next {
+            right: -30px;
+    }
+}

@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/dual_product.css')}" />
+
+<div class="banner-wrapper">
+<div class="banner-left">
+    <div class="eyebrow product_dual">${pdict.eyebrow}</div>
+    <div class="container">
+        <isif condition="${pdict.showstars == true}">
+        <div class="yotpo bottomLine"
+             data-appkey="gM6nbHZs59SkWdrT0zMVhkIcYMLBlgc8x9oWMStq"
+             data-domain="Domain of the shop"
+             data-product-id="${pdict.product.ID}"
+             data-product-models="${pdict.product.ID}"
+             data-name="${pdict.product.name}}"
+             data-url="${pdict.product.URL}"
+             data-image-url="${pdict.product.image}"
+             data-description="${pdict.product.longDescription}"
+             data-bread-crumbs="none">
+        </div>
+        </isif>
+        <h2 class="dual_tout name"><isprint value="${pdict.name}" encoding="off" /> </h2>
+        <div class="dual_tout description"><isprint value="${pdict.description}" encoding="off" /> </div>
+
+            <isscript>
+                var carouselRegion = pdict.regions.benefits;
+                    carouselRegion.setClassName("benefit-wrapper");
+                // mark all pages as carousel
+                carouselRegion.setComponentClassName("benefits-container-single");
+            </isscript>
+            <isprint value="${carouselRegion.render()}" encoding="off"/>
+
+        <isif condition="${pdict.CTA1Text}">
+            <a href="${pdict.CTA1Link}" aria-labe="${pdict.CTA1Aria}" class="secondary normal product-banner-button">${pdict.CTA1Text}</a>
+        </isif>
+    </div>
+</div>
+<div class="banner-right">
+    <picture>
+        <srcset media="(max-width: 440px)" srcset="${pdict.image_mobile.src.desktop}" />
+        <img src="${pdict.image.src.desktop}" alt="${pdict.product.name}" />
+    </picture>
+</div>
+</div>
+<div style="clear:both"></div>

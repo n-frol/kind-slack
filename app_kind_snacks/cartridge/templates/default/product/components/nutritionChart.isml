@@ -1,0 +1,231 @@
+    <div class="collapsible-sm nutrition-chart-container">
+        <h2 class="title">${Resource.msg('label.nutritionalfacts', 'product', null)}</h2>
+        <div class="content">
+            <div class="nutrition-chart container aside-view">
+                <isif condition="${!empty(product.servingsize)}">
+                    <div class="row title-rows">
+                        <div class="col-7 font-weight-bold">
+                            Serving Size
+                        </div>
+                        <div class="col-5 font-weight-bold">
+                            ${product.servingsize}
+                        </div>
+                    </div>
+                    <div class="row title-rows">
+                        <div class="col-3 offset-7 small font-weight-bold">
+                            Amount / Serving
+                        </div>
+                        <div class="col-2 small pr-0 font-weight-bold">
+                            % Daily Value
+                        </div>
+                    </div>
+                </isif>
+                <div class="row data">
+                    <hr class="col-12">
+                    <isif condition="${!empty(product.calories)}">
+                        <div class="col-7 c-product-nutrition__label font-weight-bold">
+                            ${Resource.msg('label.calories', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item font-weight-bold">
+                            ${product.calories}
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    <isif condition="${!empty(product.totalFat)}">
+                        <div class="col-7 c-product-nutrition__label font-weight-bold">
+                            ${Resource.msg('label.totalfat', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.totalFat}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.totalFatDailyValue)}">
+                                ${product.totalFatDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+                    <isif condition="${!empty(product.saturatedFat)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.saturatedfat', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.saturatedFat}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.saturatedFatDailyValue)}">
+                                ${product.saturatedFatDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+                    <isif condition="${!empty(product.transFat)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.transfat', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.transFat}g
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    <isif condition="${!empty(product.polyunsaturatedFat)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.polyunsaturatedfat', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.polyunsaturatedFat}g
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    <isif condition="${!empty(product.monounsaturatedFat)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.monounsaturatedfat', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.monounsaturatedFat}g
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    
+                    <isif condition="${!empty(product.cholesterol)}">
+                        <div class="col-7 c-product-nutrition__label font-weight-bold">
+                            ${Resource.msg('label.cholesterol', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.cholesterol}mg
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.cholesterolDailyValue)}">
+                                ${product.cholesterolDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(product.sodium)}">
+                        <div class="col-7 c-product-nutrition__label font-weight-bold">
+                            ${Resource.msg('label.sodium', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.sodium}mg
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.sodiumDailyValue)}">
+                                ${product.sodiumDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(product.totalCarb)}">
+                        <div class="col-7 c-product-nutrition__label totalCarb font-weight-bold">
+                            ${Resource.msg('label.totalcarb', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.totalCarb}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.totalCarbsDailyValue)}">
+                                ${product.totalCarbsDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+                    <isif condition="${!empty(product.dietaryFiber)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label dietaryFiber">
+                            ${Resource.msg('label.dietaryfiber', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.dietaryFiber}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.fiberDailyValue)}">
+                                ${product.fiberDailyValue}%
+                            </isif>
+                        </div>
+                    </isif>
+                    <isif condition="${!empty(product.sugars)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.sugars', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.sugars}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item"></div>
+                    </isif>
+
+                    <isif condition="${!empty(product.sugarsDailyValue)}">
+                        <div class="pl-40 col-10 c-product-nutrition__label">
+                        ${Resource.msgf('label.sugars.includes', 'product', null, product.sugarsDailyValue)}
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.sugarsDailyPercentage)}">
+                                ${product.sugarsDailyPercentage}%
+                            </isif>
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(product.sugarAlcohol)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.sugaralcohol', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.sugarAlcohol}g
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    <isif condition="${!empty(product.addedSugar)}">
+                        <div class="pl-5 col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.addedsugar', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.addedSugar}g
+                        </div>
+                        <div class="col-2"></div>
+                    </isif>
+                    <isif condition="${!empty(product.protein)}">
+                        <div class="col-7 c-product-nutrition__label font-weight-bold">
+                            ${Resource.msg('label.protein', 'product', null)}
+                        </div>
+                        <div class="col-3 c-product-nutrition__item">
+                            ${product.protein}g
+                        </div>
+                        <div class="col-2 c-product-nutrition__item font-weight-bold">
+                            <isif condition="${!empty(product.proteinDailyPercentage)}">
+                                ${product.proteinDailyPercentage}%
+                            </isif>
+                        </div>
+                    </isif>
+                    <hr class="col-12">
+                    <isif condition="${!empty(product.vitamind)}">
+                        <div class="col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.vitamind', 'product', null)}
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-2 c-product-nutrition__item"> ${product.vitamind}%</div>
+                    </isif>
+                    <isif condition="${!empty(product.calcium)}">
+                        <div class="col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.calcium', 'product', null)}
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-2 c-product-nutrition__item"> ${product.calcium}%</div>
+                    </isif>
+                    <isif condition="${!empty(product.iron)}">
+                        <div class="col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.iron', 'product', null)}
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-2 c-product-nutrition__item"> ${product.iron}%</div>
+                    </isif>
+                    <isif condition="${!empty(product.potassium)}">
+                        <div class="col-7 c-product-nutrition__label">
+                            ${Resource.msg('label.potassium', 'product', null)}
+                        </div>
+                        <div class="col-3"></div>
+                        <div class="col-2 c-product-nutrition__item"> ${product.potassium}%</div>
+                    </isif>
+                    <hr class="col-12">
+                </div>
+            </div>
+            <div class="nutrition-chart-info">
+                <p> <strong>${Resource.msg('label.featuredingredients', 'product', null)}:</strong>  ${!empty(product.featuredIngredients) ? product.featuredIngredients : 'No information available'} </p>
+                <p> <strong>${Resource.msg('label.allergeninformation', 'product', null)}:</strong> ${!empty(product.allergenInformation) ? product.allergenInformation : 'No information available'} </p>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,14 @@
+<isif condition="${product.promotions}">
+    <isscript>
+        var activeProductPromotion = typeof activeProductPromotion === 'undefined' ? '' : activeProductPromotion; // Make sure variable is at least declared, so it's not required in every single template
+    </isscript>
+
+    <isloop items="${product.promotions}" var="promotion">
+        <iscomment>Active promo is being displayed with the OG price.  Don't show include it as a duplicate here</iscomment>
+        <isif condition="${empty(activeProductPromotion) || activeProductPromotion.ID !== promotion.id}">
+            <div class="callout" title="${promotion.details}" data-id="${promotion.id}">
+                <isprint value="${promotion.calloutMsg}" encoding="off" />
+            </div>
+        </isif>
+    </isloop>
+</isif>

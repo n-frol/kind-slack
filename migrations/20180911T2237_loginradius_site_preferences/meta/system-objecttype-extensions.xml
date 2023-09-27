@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="loginRadiusApiKey">
+                <display-name xml:lang="x-default">API Key</display-name>
+                <description xml:lang="x-default">API Key to access LoginRadius</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusDataChanged">
+                <display-name xml:lang="x-default">Successfully Updated User Details Message</display-name>
+                <description xml:lang="x-default">Message displayed when a user successfully updates their information.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusEmailSentMessage">
+                <display-name xml:lang="x-default">Email Sent Message</display-name>
+                <description xml:lang="x-default">Message displayed when an email is sent to a user</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusEmailVerificationCallbackURL">
+                <display-name xml:lang="x-default">LoginRadius Email Verification Callback URL</display-name>
+                <description xml:lang="x-default">Callback that is called when email verification action is performed by user.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusEmailVerified">
+                <display-name xml:lang="x-default">Email Verified Message</display-name>
+                <description xml:lang="x-default">Message displayed when an email has been verified</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusForgotEmailSent">
+                <display-name xml:lang="x-default">Forgot Password Email Sent Message</display-name>
+                <description xml:lang="x-default">Message displayed when an email is sent to a user to reset password</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusIsEnabled">
+                <display-name xml:lang="x-default">LoginRadius Enabled</display-name>
+                <description xml:lang="x-default">Enables/disables LoginRadius service on frontend.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusPasswordChanged">
+                <display-name xml:lang="x-default">Successfully Changed Password Message</display-name>
+                <description xml:lang="x-default">Message displayed when a user has changed their password via the change password interface.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusSiteName">
+                <display-name xml:lang="x-default">LoginRadius Site Name</display-name>
+                <description xml:lang="x-default">The Site Name passed to the LoginRadius API. This should be available in your LoginRadius settings.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRadiusUpdateProfile">
+                <display-name xml:lang="x-default">Update User Information on Login</display-name>
+                <description xml:lang="x-default">When set to 'true', the user's profile will be updated on login. Otherwise the profile will only be updated upon initial account creation.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginRaidusSocialProviders">
+                <display-name xml:lang="x-default">LoginRadius Social Providers</display-name>
+                <description xml:lang="x-default">List of social login providers that are enabled for the site.</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <select-multiple-flag>true</select-multiple-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Facebook</display>
+                        <value>facebook</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Twitter</display>
+                        <value>twitter</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Google</display>
+                        <value>google</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="LoginRadius">
+                <display-name xml:lang="x-default">LoginRadius General Information</display-name>
+                <attribute attribute-id="loginRadiusIsEnabled"/>
+                <attribute attribute-id="loginRadiusApiKey"/>
+                <attribute attribute-id="loginRadiusSiteName"/>
+                <attribute attribute-id="loginRadiusEmailVerificationCallbackURL"/>
+                <attribute attribute-id="loginRaidusSocialProviders"/>
+                <attribute attribute-id="loginRadiusUpdateProfile"/>
+            </attribute-group>
+            <attribute-group group-id="LoginRadiusInterface">
+                <display-name xml:lang="x-default">LoginRadius Interface Configuration</display-name>
+                <attribute attribute-id="loginRadiusEmailSentMessage"/>
+                <attribute attribute-id="loginRadiusForgotEmailSent"/>
+                <attribute attribute-id="loginRadiusPasswordChanged"/>
+                <attribute attribute-id="loginRadiusDataChanged"/>
+                <attribute attribute-id="loginRadiusEmailVerified"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="sample_folder">
+        <display-name xml:lang="x-default">Sample Folder</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+</library>

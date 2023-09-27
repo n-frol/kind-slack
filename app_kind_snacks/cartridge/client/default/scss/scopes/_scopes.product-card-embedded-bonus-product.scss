@@ -1,0 +1,55 @@
+/* ============================================================================
+Product Card Embedded Bonus Products
+============================================================================ */
+
+/**
+ * Establishes a scope and styles for card embedded bonus products
+ * Use a scope so we can use the established classes, and thus reduce code debt
+ */
+
+$ns: s-product-card-embedded-bonus-product;
+
+.#{$ns} {
+    .product-line-item-details {
+        line-height: 1.6;
+        padding-bottom: 15px;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 15px;
+        }
+
+        + .row {
+            display: flex;
+                justify-content: space-between;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            text-transform: lowercase;
+        }
+    }
+
+    .line-item-unit-price,
+    .line-item-total-price,
+    .line-item-quantity {
+        font-size: 14px;
+        line-height: 28px;
+        flex: 0 0 auto;
+        width: auto;
+
+        .unit-price-label,
+        .total-price-label {
+            color: $primary;
+        }
+    }
+    .line-item-quantity {
+        text-align: center;
+
+        .qty-card-quantity-count {
+            font-size: 12px;
+        }
+    }
+    .line-item-attributes,
+    .item-attributes {
+        color: $grey4;
+    }
+}

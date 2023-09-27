@@ -1,0 +1,35 @@
+<iscomment>
+    sitemap/sitemap.isml - Imported from SiteGenesis
+</iscomment>
+
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="common/layout/page">
+
+<isset name="ViewHelpers" value="${require('*/cartridge/scripts/util/viewHelpers')}" scope="page" />
+<isset name="topLevelCategory" value="${ViewHelpers.getTopLevelCategory()}" scope="page"/>
+
+    <h1>${Resource.msg('global.storename','locale',null)}</h1>
+
+    <isif condition="${topLevelCategory != null}">
+        <isloop items="${ViewHelpers.getSubcategoriesInMenuForCategory(topLevelCategory)}" var="topCat">
+            <isset name="subCatLayout" value="${ViewHelpers.getSubCategoriesLayout(topCat)}" scope="page"/>
+
+            <h2>
+                <a href="<isprint value="${ViewHelpers.getCategoryUrl(topCat)}" encoding="off"/>" title="${topCat.displayName}">
+                    <isprint value="${topCat.displayName}"/>
+                </a>
+            </h2>
+
+            <ul>
+                <isloop items="${subCatLayout.subCategories}" var="subCat" status="stat">
+                    <li>
+                        <a href="<isprint value="${ViewHelpers.getCategoryUrl(subCat)}" encoding="off"/>">
+                            <isprint value="${subCat.getDisplayName()}"/>
+                        </a>
+                    </li>
+                </isloop>
+            </ul>
+
+        </isloop>
+    </isif>
+</isdecorate>

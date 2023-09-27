@@ -1,0 +1,77 @@
+.veil {
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .underlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background-color: $grey9;
+    }
+}
+
+$spinner-size: 60px;
+$spinner-speed: 3s;
+
+.spinner {
+    width: $spinner-size;
+    height: $spinner-size;
+    text-align: center;
+    animation: sk-rotate $spinner-speed infinite ease-in-out;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: $spinner-size / 2 * -1;
+    margin-left: $spinner-size / 2 * -1;
+    transform-style: preserve-3d;
+}
+
+.dot1,
+.dot2 {
+    backface-visibility: hidden;
+    background-color: $fuel-yellow;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+        left: 0;
+        top: 0;
+    width: 100%;
+}
+
+.dot1 {
+    animation: square1-colors $spinner-speed infinite linear;
+        animation-timing-function: steps(1, end);
+}
+.dot2 {
+    animation: square2-colors $spinner-speed infinite linear;
+        animation-timing-function: steps(1, end);
+    background-color: $punch-red;
+    transform: rotateX(180deg);
+}
+
+@keyframes sk-rotate {
+    0% {transform: perspective(90px) rotateX(0deg) rotateY(0deg);}
+    25% {transform: perspective(90px) rotateY(180deg) rotateX(0deg); }
+    50% { transform: perspective(90px) rotateY(180deg) rotateX(180deg); }
+    75% {transform: perspective(90px) rotateY(360deg) rotateX(180deg); }
+    100% { transform: perspective(90px) rotateY(360deg) rotateX(0deg); }
+}
+@keyframes square1-colors {
+    0% {background-color: $fuel-yellow;}
+    25% {background-color: $lemon-ginger-green;}
+    50% {background-color: $lemon-ginger-green;}
+    75% {background-color: $fuel-yellow;}
+}
+@keyframes square2-colors {
+    0% {background-color: $punch-red;}
+    50% {background-color: $glacier-blue;}
+    100% {background-color: $glacier-blue;}
+}

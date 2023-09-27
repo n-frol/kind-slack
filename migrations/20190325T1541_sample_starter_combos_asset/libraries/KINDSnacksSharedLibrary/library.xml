@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="starter-combos">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/startercombo</template>
+        <page-attributes/>
+    </content>
+
+    <content content-id="nav-pick-a-starter-combo">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Page-Show', 'cid', 'starter-combos')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

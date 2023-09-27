@@ -1,0 +1,21 @@
+<isscript>
+    var variationHelpers = require('*/cartridge/scripts/helpers/variationHelpers.js');
+</isscript>
+
+<ul class="bundle-items c-product-bundle">
+    <isloop items="${lineItem.bundledProductLineItems}" var="productItem" status="loopState">
+        <isset name="bundledProduct" value="${productItem}" scope="page" />
+        <isinclude template="product/components/bundleItem" />
+    </isloop>
+</ul>
+
+<style>
+.bundle-item  {
+    border-bottom: none;
+}
+@media only screen and (min-width: 600px) {
+.c-product-bundle__item {
+    max-width:20%;
+}
+}
+</style>

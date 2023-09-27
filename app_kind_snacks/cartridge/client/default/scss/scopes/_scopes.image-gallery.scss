@@ -1,0 +1,27 @@
+/* ============================================================================
+Image Gallery
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created dynamically by the image gallery component and the elements within
+ */
+
+$ns: s-image-gallery;
+
+.#{$ns} {
+    .slick-list {
+
+        overflow: visible;
+        width: 100%;
+    }
+    .slick-slide {
+        max-height: 84vh;
+
+        > div {
+            height: 100%;
+        }
+    }
+    .slick-dots {
+        display: none !important; // Important to override display style put directly on the element by js
+    }
+}

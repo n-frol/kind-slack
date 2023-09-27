@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="urn:vertexinc:o-series:tps:6:0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0" xml:lang="en-us">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Version information</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="VersionRequestType">
+    <xsd:annotation>
+      <xsd:documentation>Request for version information</xsd:documentation>
+    </xsd:annotation>
+  </xsd:complexType>
+  <xsd:complexType name="VersionResponseType">
+    <xsd:annotation>
+      <xsd:documentation>Result of a version lookup</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="ProductVersions" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Versions of the various Vertex software products.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ProductVersion" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>Version identifier for the Vertex software product.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:simpleContent>
+                  <xsd:extension base="xsd:string">
+                    <xsd:attribute name="productName" type="xsd:string" use="optional">
+                      <xsd:annotation>
+                        <xsd:documentation>Title of the named product.</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:attribute>
+                  </xsd:extension>
+                </xsd:simpleContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LibraryVersions" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Versions of the named software library.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LibraryVersion" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>Version identifier for the named softwre library.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:simpleContent>
+                  <xsd:extension base="xsd:string">
+                    <xsd:attribute name="libraryName" type="xsd:string" use="optional">
+                      <xsd:annotation>
+                        <xsd:documentation>Name of the named library.</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:attribute>
+                    <xsd:attribute name="libraryOwner" type="xsd:string" use="optional">
+                      <xsd:annotation>
+                        <xsd:documentation>Owner of the named library.</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:attribute>
+                  </xsd:extension>
+                </xsd:simpleContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DatabaseVersions" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Versions of the various databases.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DatabaseVersion" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>Version identifier for the named database.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="SchemaVersion">
+                    <xsd:annotation>
+                      <xsd:documentation>Version identifier for each database subject area.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                      <xsd:simpleContent>
+                        <xsd:extension base="xsd:string"/>
+                      </xsd:simpleContent>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="PlatformVersion">
+                    <xsd:annotation>
+                      <xsd:documentation>Version identifier for the database platform.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                      <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                          <xsd:attribute name="vendorName" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                              <xsd:documentation>Vendor name for the TPS databases.</xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:attribute>
+                        </xsd:extension>
+                      </xsd:simpleContent>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="DriverVersion">
+                    <xsd:annotation>
+                      <xsd:documentation>Version identifier for the database driver.</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                      <xsd:simpleContent>
+                        <xsd:extension base="xsd:string">
+                          <xsd:attribute name="driverName" type="xsd:string" use="optional">
+                            <xsd:annotation>
+                              <xsd:documentation>Name of the database drvier.</xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:attribute>
+                        </xsd:extension>
+                      </xsd:simpleContent>
+                    </xsd:complexType>
+                  </xsd:element>
+                  <xsd:element name="DataContentVersions" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>Versions of the various data contents</xsd:documentation>
+                    </xsd:annotation>
+                    <xsd:complexType>
+                      <xsd:sequence>
+                        <xsd:element name="DataContentVersion" maxOccurs="unbounded">
+                          <xsd:annotation>
+                            <xsd:documentation>Version identifier for the data content.</xsd:documentation>
+                          </xsd:annotation>
+                          <xsd:complexType>
+                            <xsd:simpleContent>
+                              <xsd:extension base="xsd:string">
+                                <xsd:attribute name="contentName" type="xsd:string" use="optional">
+                                  <xsd:annotation>
+                                    <xsd:documentation>Name of the data content.</xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:attribute>
+                              </xsd:extension>
+                            </xsd:simpleContent>
+                          </xsd:complexType>
+                        </xsd:element>
+                      </xsd:sequence>
+                    </xsd:complexType>
+                  </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="logicalName" type="xsd:string" use="required">
+                  <xsd:annotation>
+                    <xsd:documentation>Logical name of the database.</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="OperatingSystemVersion" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Version identifier for the operating system.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+              <xsd:attribute name="operatingSystemName" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>Name of the operating system.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:simpleContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="JavaVirtualMachineVersion" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Version identifier for the Java Virtual Machine (JVM).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+              <xsd:attribute name="jvmName" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation>Name of the JVM.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:extension>
+          </xsd:simpleContent>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ServerInformation" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Additional details of the server environment. </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ServerDetail" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>A single detail about the server environment.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:simpleContent>
+                  <xsd:extension base="xsd:string">
+                    <xsd:attribute name="serverDetailName" type="xsd:string">
+                      <xsd:annotation>
+                        <xsd:documentation>The name of the server detail.</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:attribute>
+                  </xsd:extension>
+                </xsd:simpleContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DataManagementActivities" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>Recent data management activites.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="DataManagementActivity" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>A data management activity</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:sequence>
+                  <xsd:element name="StartTime" type="xsd:dateTime">
+                    <xsd:annotation>
+                      <xsd:documentation>Start date and time of activity. </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="EndTime" type="xsd:dateTime" minOccurs="0">
+                    <xsd:annotation>
+                      <xsd:documentation>End date and time of activity.</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                  <xsd:element name="Status" type="xsd:string">
+                    <xsd:annotation>
+                      <xsd:documentation>Status of the activity.</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:element>
+                </xsd:sequence>
+                <xsd:attribute name="activityName" type="xsd:string">
+                  <xsd:annotation>
+                    <xsd:documentation>The activity name.</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:attribute>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ConfigFileOverrides" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The Vertex configuration file parameters that the O Series System Administrator has overridden.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="ConfigFileOverride" maxOccurs="unbounded">
+              <xsd:annotation>
+                <xsd:documentation>The value for the overridden parameter that the O Series System Administrator has set.</xsd:documentation>
+              </xsd:annotation>
+              <xsd:complexType>
+                <xsd:simpleContent>
+                  <xsd:extension base="xsd:string">
+                    <xsd:attribute name="parameterName" type="xsd:string">
+                      <xsd:annotation>
+                        <xsd:documentation>The name of the parameter that the O Series System
+Administrator has overridden.</xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:attribute>
+                  </xsd:extension>
+                </xsd:simpleContent>
+              </xsd:complexType>
+            </xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

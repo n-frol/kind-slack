@@ -1,0 +1,129 @@
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+/**
+ * Styles the button compenent
+ */
+
+ // !imporatant used to overwrite ugly bootstrap
+
+@import "~kind/components/components.email-signup";
+
+$ns: c-email-signup;
+
+.#{$ns} {
+    &__form-outer {
+        width: 100%;
+    }
+
+    &__form {
+        margin-bottom: 11px;
+        max-width: none;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__button {
+        border-radius: 50%;
+        display: flex;
+            align-items: center;
+            justify-content: center;
+        height: 40px;
+        padding-left: 8px;
+        padding-right: 8px;
+        position: absolute;
+            left: auto;
+            right: 5px;
+            top: 50%;
+            z-index: 1;
+        transform: translateY(-50%);
+        width: 40px;
+
+        @include media-breakpoint-up(lg) {
+            right: 10px;
+        }
+
+        &:disabled {
+            background-color: $white;
+            opacity: 1;
+        }
+
+        &.is-success {
+            .#{$ns}__button__icon {
+                &--submit {
+                    display: none;
+                }
+
+                &--success {
+                    display: block;
+                }
+            }
+        }
+
+        &__icon {
+            &--success {
+                display: none;
+            }
+        }
+    }
+
+    &__input {
+        border-radius: 25px;
+        font-family: $font-family-primary-regular;
+        font-size: 15px;
+        font-weight: 500;
+        height: 50px;
+        line-height: 30px;
+        max-width: 100%;
+
+        @include media-breakpoint-up(lg) {
+            border-radius: 30px;
+            font-size: 16px;
+            height: 60px;
+            padding: 6px 25px;
+        }
+
+        &__group {
+            flex-basis: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    &__input-feedback {
+        &:not(:empty) {
+            background-color: black;
+            border-radius: 29px;
+            display: flex;
+                align-items: center;
+            font-size: 15px;
+            height: calc(100% - 2px); // Cover all but the border
+            padding-left: 25px;
+            padding-right: 52px;
+            position: absolute;
+                left: 1px;
+                top: 50%;
+            text-transform: none;
+            transform: translateY(-50%);
+            width: calc(100% - 2px); // Cover all but the border
+
+            @include media-breakpoint-up(lg) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__disclaimer {
+        font-family: $font-family-primary-regular;
+        font-size: 12px !important; // Override inline style
+        font-weight: 700;
+        line-height: 20px !important; // Override inline style
+        margin-bottom: 16px;
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 16px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<div class="row cart-and-ipay c-product-add-to-cart__inner">
+    <div class="col-sm-12" style="padding: 0px;">
+        <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+        <isif condition="${product.readyToOrder && product.available}">
+            <button class="add-to-cart btn btn-primary c-product-add-to-cart__btn" data-pid="${product.id}">
+                ${Resource.msg('button.addtocart', 'common', null)}
+            </button>
+            <iselse>
+                <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('showNotifyMe') == true}">
+                <a style="" class="notifyme btn btn-primary" data-toggle="modal"
+                   data-target="#notifymodal" data-name="${product.productName}" data-sku="${product.id}">
+                    ${Resource.msg('label.notify', 'common', null)}
+                </a>
+                    </isif>
+        </isif>
+    </div>
+</div>
+<style>
+    .notifyme {
+        width: 300px; color: white !important;
+    }
+    @media screen and (max-width:440px) {
+        .notifyme {
+            width: unset;
+        }
+    }
+</style>

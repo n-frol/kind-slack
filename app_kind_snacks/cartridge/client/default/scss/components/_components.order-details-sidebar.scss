@@ -1,0 +1,21 @@
+/* ============================================================================
+Order Details Sidebar
+============================================================================ */
+
+/**
+ * Establishes a scope and styles to override the sidebar specifically for the order details page
+ */
+
+$ns: c-order-details-sidebar;
+
+.#{$ns} {
+    padding-top: 0;
+
+    &__btn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: map-get($spacers, 6);
+        max-width: 76%;
+    }
+}

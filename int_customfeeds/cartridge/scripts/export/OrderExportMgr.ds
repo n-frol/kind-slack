@@ -1,0 +1,95 @@
+importPackage( dw.system );
+importPackage( dw.order );
+importPackage( dw.util );
+
+importScript( 'export/handlers/AbstractExportHandler.ds' );
+
+// Hack, because vars cannot be imported in DW, only functions
+function getOrderExportMgr() {
+    return OrderExportMgr;
+}
+
+/**
+ * Create a OrderExportMgr instance to export orders.
+ * 
+ * Register new handlers by calling registerExportHandler(handler).
+ */
+function OrderExportMgr(DaysToExportOrders){
+    this.logger = dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport');
+    this.handlers = [];
+    this.statistics = {
+            orders : 0
+    };
+    
+    var calendar : Calendar = new Calendar();
+    calendar.setTimeZone(System.getInstanceTimeZone());
+    calendar.setTime(new Date());
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    
+    try {
+        calendar.add(Calendar.DAY_OF_YEAR, parseInt(DaysToExportOrders) *-1);
+    } catch (e) {
+        // default is last one day
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+    }
+    
+    this.daysBack = calendar.getTime();
+}
+
+
+OrderExportMgr.prototype = {
+        /**
+         * Registers a new export handler which needs to be a subclass of
+         * {@link AbstractExportHandler}.
+         */
+        registerExportHandler : function(handler){
+            this.handlers.push(handler);
+        },
+        /**
+         * Runs the export and notifies all registered handlers for all
+         * products, catagories etc.
+         */
+        runExport : function(){
+            this.handleBeginExport();
+            this.handleOrders();
+            this.handleEndExport();
+        },
+        handleOrders : function() {	
+            var orders : SeekableIterator = null;
+        try {
+            // 2 => dw.order.Order.EXPORT_STATUS_READY
+            var a = this.daysBack;
+            orders = OrderMgr.searchOrders('creationDate >= {0} AND exportStatus = 2', 'creationDate ASC', this.daysBack);
+            for each (var order : Order in orders) {
+                this.handleOrder(order);
+            }
+        } finally {
+            if(orders != null) {
+                orders.close();
+            }
+        }
+        },
+        handleOrder : function(order : Order){
+            for each (var handler in this.handlers) {
+                handler.exportOrder(order);
+                handler = null;
+            }
+            this.statistics.orders++;
+        },
+        handleBeginExport: function(){
+            for each (var handler in this.handlers) {
+                handler.beginExport();
+                handler = null;
+            }
+        },
+        handleEndExport: function(){
+            for each (var handler in this.handlers) {
+                handler.endExport();
+                handler = null;
+            }
+            var msg = 'Export done (orders processed: ' + this.statistics.orders + ')';
+            this.logger.info(msg);
+        }
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="kind-nyc-office">
+        <display-name xml:lang="x-default">KIND NYC Office</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">work with us at our headquarters!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND NYC Office</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;View Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-field-team">
+        <display-name xml:lang="x-default">KIND Field Team</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#aa3333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">spread kindness throughout the country!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND Field Team</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;View Full-Time Positions&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;View Full-Time Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-international">
+        <display-name xml:lang="x-default">KIND International</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">work with us around the globe!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">#33aa33</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND International</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;View Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

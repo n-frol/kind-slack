@@ -1,0 +1,347 @@
+<isset name="donationsForm" value="${pdict.forms.contactForm}" scope="page" />
+<isset name="contactFields" value="${donationsForm.contactFields}" scope="page" />
+<isset name="addressFields" value="${donationsForm.addressFields}" scope="page" />
+<isset name="eventInfo" value="${donationsForm.eventInfo}" scope="page" />
+
+<form action="${URLUtils.url('Contact-SubmitForm')}" class="contact-form" method="GET" name="contact-form">
+    <h2 class="h4">${Resource.msg('heading.contactinfo', 'forms', null)}</h2>
+    <div class="form-group
+        ${contactFields.fullName.mandatory === true ? 'required' : ''}
+        ${contactFields.fullName.htmlName}">
+        <label class="form-control-label" for="contactFullName"  >
+            ${Resource.msg('label.input.name','forms',null)}
+        </label>
+        <input type="text" class="form-control contactFullName" id="contactFullName"
+            value="" <isprint value=${contactFields.fullName.attributes} encoding="off"/>
+            autocomplete="full-name" >
+        <div class="invalid-feedback"><isprint value="${contactFields.fullName.error}" ></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group
+                ${addressFields.phone.mandatory === true ? 'required' : ''}
+                ${addressFields.phone.htmlName}">
+                <label class="form-control-label" for="contactPhoneNumber">
+                    ${Resource.msg('field.shipping.address.phone','address',null)}
+                </label>
+                <input type="tel" class="form-control contactPhoneNumber" id="contactPhoneNumber"
+                    value="" <isprint value=${addressFields.phone.attributes} encoding="off"/>
+                        autocomplete="tel">
+                <div class="invalid-feedback"><isprint value="${contactFields.phone.error}" ></div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group
+                ${addressFields.email.mandatory === true ? 'required' : ''}
+                ${addressFields.email.htmlName}">
+                <label class="form-control-label" for="contactEmail">
+                    ${Resource.msg('field.shipping.address.email','address',null)}
+                </label>
+                <input type="email" class="form-control contactEmail" id="contactEmail"
+                    value="" <isprint value=${addressFields.email.attributes} encoding="off"/>
+                        autocomplete="email">
+                <div class="invalid-feedback"><isprint value="${addressFields.email.error}" ></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group
+        ${donationsForm.company.mandatory === true ? 'required' : ''}
+        ${donationsForm.company.htmlName}">
+        <label class="form-control-label" for="contactCompany"  >
+            ${Resource.msg('label.input.organization','forms',null)}
+        </label>
+        <input type="text" class="form-control contactCompany" id="contactCompany"
+            value="" <isprint value=${donationsForm.company.attributes} encoding="off"/>
+            autocomplete="company" >
+        <div class="invalid-feedback"><isprint value="${donationsForm.company.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${donationsForm.field501c3.mandatory === true ? 'required' : ''}
+        ${donationsForm.field501c3.htmlName}">
+        <label class="form-control-label" for="contact501c3">
+            ${Resource.msg('label.input.501c3','forms',null)}
+        </label>
+        <select class="form-control contact501c3 custom-select" id="contact501c3"
+            <isprint value=${donationsForm.field501c3.attributes} encoding="off"/>
+            >
+            <option value=""></option>
+            <isloop items=${donationsForm.field501c3.options} var="option">
+                <option id="${option.id}" value="${option.htmlValue}">${option.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${donationsForm.field501c3.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.address1.mandatory === true ? 'required' : ''}
+        ${addressFields.address1.htmlName}">
+        <label class="form-control-label" for="contactAddressOne">
+            ${Resource.msg('label.input.address.nopo','forms',null)}
+        </label>
+        <input type="text" class="form-control contactAddressOne" id="contactAddressOne"
+            value="" <isprint value=${addressFields.address1.attributes} encoding="off"/>
+            autocomplete="contact address-line1">
+        <div class="invalid-feedback"><isprint value="${addressFields.address1.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.city.mandatory === true ? 'required' : ''}
+        ${addressFields.city.htmlName}">
+        <label class="form-control-label" for="contactAddressCity">
+            ${Resource.msg('field.shipping.address.city','address',null)}
+        </label>
+        <input type="text" class="form-control contactAddressCity" id="contactAddressCity"
+            value="" <isprint value=${addressFields.city.attributes} encoding="off"/>
+            autocomplete="shipping address-level2">
+        <div class="invalid-feedback"><isprint value="${addressFields.city.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.states.stateCode.mandatory === true ? 'required' : ''}
+        ${addressFields.states.stateCode.htmlName}">
+        <label class="form-control-label" for="contactState">
+            ${Resource.msg('field.shipping.address.state','address',null)}
+        </label>
+        <select class="form-control contactState custom-select" id="contactState"
+            <isprint value=${addressFields.states.stateCode.attributes} encoding="off"/>
+            autocomplete="contact address-level1">
+            <isloop items=${addressFields.states.stateCode.options} var="state">
+                <option id="${state.id}" value="${state.htmlValue}">${state.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${addressFields.states.stateCode.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.postalCode.mandatory === true ? 'required' : ''}
+        ${addressFields.postalCode.htmlName}">
+        <label class="form-control-label" for="contactZipCode">
+            ${Resource.msg('field.shipping.address.zip.code','address',null)}
+        </label>
+        <input type="text" class="form-control contactZipCode" id="contactZipCode"
+            value="" <isprint value=${addressFields.postalCode.attributes} encoding="off"/>
+            autocomplete="contact postal-code">
+        <div class="invalid-feedback"><isprint value="${addressFields.postalCode.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.country.mandatory === true ? 'required' : ''}">
+        <input type="hidden" class="form-control country" id="country"
+            <isprint value="${addressFields.country.attributes}" encoding="off" />
+            value="US" />
+    </div>
+
+    <h2 class="h4">${Resource.msg('heading.eventinfo', 'forms', null)}</h2>
+
+    <div class="form-group
+        ${eventInfo['event-name'].mandatory === true ? 'required' : ''}
+        ${eventInfo['event-name'].htmlName}">
+        <label class="form-control-label" for="eventName">
+            ${Resource.msg('label.input.event.name','forms',null)}
+        </label>
+        <input type="text" class="form-control eventName" id="eventName"
+            value="" <isprint value=${eventInfo['event-name'].attributes} encoding="off"/>
+            autocomplete="contact event-name">
+        <div class="invalid-feedback"><isprint value="${eventInfo['event-name'].error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo['event-date'].mandatory === true ? 'required' : ''}
+        ${eventInfo['event-date'].htmlName}">
+        <label class="form-control-label" for="eventDate">
+            ${Resource.msg('label.input.event.date','forms',null)}
+        </label>
+        <input type="date" class="form-control eventDate" id="eventDate"
+            data-pattern-mismatch=" ${Resource.msg('error.message.parse.date','forms',null)}"
+            value="" <isprint value=${eventInfo['event-date'].attributes} encoding="off"/>
+            autocomplete="contact event-date">
+        <div class="invalid-feedback"><isprint value="${eventInfo['event-date'].error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo['event-city'].mandatory === true ? 'required' : ''}
+        ${eventInfo['event-city'].htmlName}">
+        <label class="form-control-label" for="contacteventCityProduct">
+            ${Resource.msg('label.input.event.city','forms',null)}
+        </label>
+        <input type="text" class="form-control eventCity" id="eventCity"
+            value="" <isprint value=${eventInfo['event-city'].attributes} encoding="off"/>
+            autocomplete="contact event-city">
+        <div class="invalid-feedback"><isprint value="${eventInfo['event-city'].error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo['event-stateCode'].mandatory === true ? 'required' : ''}
+        ${eventInfo['event-stateCode'].htmlName}">
+        <label class="form-control-label" for="eventState">
+            ${Resource.msg('label.input.event.state','forms',null)}
+        </label>
+        <select type="text" class="custom-select form-control eventState" id="eventState"
+            value="" <isprint value=${eventInfo['event-stateCode'].attributes} encoding="off"/>
+            >
+            <isloop items="${eventInfo['event-stateCode'].options}" var="state">
+                <option id="${state.id}" value="${state.htmlValue}">${state.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${eventInfo['event-stateCode'].error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo['event-postalCode'].mandatory === true ? 'required' : ''}
+        ${eventInfo['event-postalCode'].htmlName}">
+        <label class="form-control-label" for="eventZip">
+            ${Resource.msg('label.input.event.zip','forms',null)}
+        </label>
+        <input type="text" class="form-control eventZip" id="eventZip"
+            value="" <isprint value=${eventInfo['event-postalCode'].attributes} encoding="off"/>
+            autocomplete="contact event-zip">
+        <div class="invalid-feedback"><isprint value="${eventInfo['event-postalCode'].error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.description.mandatory === true ? 'required' : ''}
+        ${eventInfo.description.htmlName}">
+        <label class="form-control-label" for="eventDescription">
+            ${Resource.msg('label.input.event.description','forms',null)}
+        </label>
+        <textarea class="form-control eventDescription" id="eventDescription"
+            rows="6" <isprint value=${eventInfo.description.attributes} encoding="off"/>
+            autocomplete="contact event-description"></textarea>
+        <div class="invalid-feedback"><isprint value="${eventInfo.description.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.website.mandatory === true ? 'required' : ''}
+        ${eventInfo.website.mandatory.htmlName}">
+        <label class="form-control-label" for="eventWebsite">
+            ${Resource.msg('label.input.event.website','forms',null)}
+        </label>
+        <input type="url" class="form-control eventWebsite" id="eventWebsite"
+            value="" <isprint value=${eventInfo.website.mandatory.attributes} encoding="off"/>
+            autocomplete="contact event-website">
+        <div class="invalid-feedback"><isprint value="${eventInfo.website.mandatory.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.ageRange.mandatory === true ? 'required' : ''}
+        ${eventInfo.ageRange.htmlName}">
+        <label class="form-control-label" for="eventAgeRange">
+            ${Resource.msg('label.input.event.agerange','forms',null)}
+        </label>
+        <input type="text" class="form-control eventAgeRange" id="eventAgeRange"
+            value="" <isprint value=${eventInfo.ageRange.attributes} encoding="off"/>
+            autocomplete="contact event-age-range">
+        <div class="invalid-feedback"><isprint value="${eventInfo.ageRange.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.headcount.mandatory === true ? 'required' : ''}
+        ${eventInfo.headcount.htmlName}">
+        <label class="form-control-label" for="eventHeadcount">
+            ${Resource.msg('label.input.event.headcount','forms',null)}
+        </label>
+        <input type="text" class="form-control eventHeadcount" id="eventHeadcount"
+            value="" <isprint value=${eventInfo.headcount.attributes} encoding="off"/>
+            autocomplete="contact event-headcount">
+        <div class="invalid-feedback"><isprint value="${eventInfo.headcount.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.productRequest.mandatory === true ? 'required' : ''}
+        ${eventInfo.productRequest.htmlName}">
+        <label class="form-control-label" for="eventProductRequest">
+            ${Resource.msg('label.input.event.productrequest','forms',null)}
+        </label>
+        <select type="text" class="custom-select form-control eventProductRequest" id="eventProductRequest"
+            value="" <isprint value=${eventInfo.productRequest.attributes} encoding="off"/>
+            >
+            <isloop items="${eventInfo.productRequest.options}" var="product">
+                <option id="${product.id}" value="${product.htmlValue}">${product.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${eventInfo.productRequest.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.distribution.mandatory === true ? 'required' : ''}
+        ${eventInfo.distribution.htmlName}">
+        <label class="form-control-label" for="eventDistribution">
+            ${Resource.msg('label.input.event.distribution', 'forms', null)}
+        </label>
+        <textarea class="form-control eventDistribution" id="eventDistribution" rows="6"
+        <isprint value="${eventInfo.distribution.attributes}" encoding="off" />
+        ></textarea>
+        <div class="invalid-feedback"><isprint value="${eventInfo.distribution.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.kindnessOpportunities.mandatory === true ? 'required' : ''}
+        ${eventInfo.kindnessOpportunities.htmlName}">
+        <label class="form-control-label" for="eventKindnessOpportunities">
+            ${Resource.msg('label.input.event.kindnessopportunities', 'forms', null)}
+        </label>
+        <textarea class="form-control eventKindnessOpportunities" id="eventKindnessOpportunities" rows="6"
+        <isprint value="${eventInfo.kindnessOpportunities.attributes}" encoding="off" />
+        ></textarea>
+        <div class="invalid-feedback"><isprint value="${eventInfo.kindnessOpportunities.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.exclusivity.mandatory === true ? 'required' : ''}
+        ${eventInfo.exclusivity.htmlName}">
+        <label class="form-control-label" for="eventExclusivity">
+            ${Resource.msg('label.input.event.exclusivity','forms',null)}
+        </label>
+        <select class="form-control eventExclusivity custom-select" id="eventExclusivity"
+            <isprint value=${eventInfo.exclusivity.attributes} encoding="off"/>
+            >
+            <option value=""></option>
+            <isloop items=${eventInfo.exclusivity.options} var="option">
+                <option id="${option.id}" value="${option.htmlValue}">${option.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${eventInfo.exclusivity.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.pastSponsorship.mandatory === true ? 'required' : ''}
+        ${eventInfo.pastSponsorship.htmlName}">
+        <label class="form-control-label" for="eventPastSponsorship">
+            ${Resource.msg('label.input.event.pastsponsorship','forms',null)}
+        </label>
+        <select class="form-control eventPastSponsorship custom-select" id="eventPastSponsorship"
+            <isprint value=${eventInfo.pastSponsorship.attributes} encoding="off"/>
+            >
+            <option value=""></option>
+            <isloop items=${eventInfo.pastSponsorship.options} var="option">
+                <option id="${option.id}" value="${option.htmlValue}">${option.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${eventInfo.pastSponsorship.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${eventInfo.rightFit.mandatory === true ? 'required' : ''}
+        ${eventInfo.rightFit.htmlName}">
+        <label class="form-control-label" for="eventRightFit">
+            ${Resource.msg('label.input.event.rightfit', 'forms', null)}
+        </label>
+        <textarea class="form-control eventRightFit" id="eventRightFit" rows="6"
+        <isprint value="${eventInfo.rightFit.attributes}" encoding="off" />
+        ></textarea>
+        <div class="invalid-feedback"><isprint value="${eventInfo.rightFit.error}" ></div>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" class="form-control cid" id="cid"
+            value="${pdict.CurrentHttpParameterMap.cid.stringValue}" name="cid" />
+        <input type="hidden" class="form-control formid" id="formid"
+            value="donations" name="formid" />
+    </div>
+
+    <button type="submit" name="save" class="btn btn-save btn-block btn-primary u-width-auto">${Resource.msg('label.input.submit','forms',null)}</button>
+</form>

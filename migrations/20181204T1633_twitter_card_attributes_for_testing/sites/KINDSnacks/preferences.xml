@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <development>
+            <preference preference-id="tcDescription">KIND Snacks Online Store - Twitter Card Site Description</preference>
+            <preference preference-id="tcImage">images/about-us_ingredients_bar-heart_opt.png</preference>
+            <preference preference-id="tcTitle">KIND Snacks Online Store - Twitter Card Site Title</preference>
+            <preference preference-id="tcURL">https://www.kindsnacks.com/</preference>
+        </development>
+    </custom-preferences>
+</preferences>
+

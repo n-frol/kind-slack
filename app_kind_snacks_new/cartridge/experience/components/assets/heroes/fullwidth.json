@@ -1,0 +1,157 @@
+{
+    "name": "Full Width Banner",
+    "description": "A full width hero banner",
+    "group": "Banners",
+    "attribute_definition_groups": [
+        {
+            "id": "media",
+            "name": "Media Content",
+            "description": "The media content to show in this component",
+            "attribute_definitions": [
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values" : ["onrails","fullwidth"],
+                    "required": true
+                },
+                {
+                    "id": "showmode",
+                    "name": "Show Video or Image",
+                    "type": "enum",
+                    "values" : ["video","image"],
+                    "required": true
+                },
+                {
+                    "id": "video",
+                    "name": "Video Media",
+                    "type": "file",
+                    "required": false
+                },
+                {
+                    "id": "video_mobile",
+                    "name": "Video Media Mobile",
+                    "type": "file",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop Image Media",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "image_mobile",
+                    "name": "Mobile Image Media",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "show_gradient",
+                    "name": "Show Gradient",
+                    "type": "boolean",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "textcontent",
+            "name": "Text Content",
+            "description": "The text content to show in this component",
+            "attribute_definitions": [
+                {
+                    "id": "showscroll",
+                    "name": "Show scroll indicator",
+                    "type": "boolean",
+                    "required": true
+                },
+                {
+                    "id": "opacity",
+                    "name": "Opacity",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "eyebrow",
+                    "name": "Eyebrow Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline Text",
+                    "type": "text",
+                    "required": true
+                },
+                {
+                    "id": "headline_fontsize",
+                    "name": "Headline Text Size",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headline_lineheight",
+                    "name": "Headline Text Line Height",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headline_fontsize_mobile",
+                    "name": "Headline Text Size Mobile",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "headline_lineheight_mobile",
+                    "name": "Headline Text Line Height Mobile",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "description",
+                    "name": "Description Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Text",
+                    "name": "CTA 1 Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Link",
+                    "name": "CTA 1 Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "CTA1Aria",
+                    "name": "CTA 1 Label",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA2Text",
+                    "name": "CTA 2 Text",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "CTA2Link",
+                    "name": "CTA 2 Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "CTA2Aria",
+                    "name": "CTA 2 Label",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

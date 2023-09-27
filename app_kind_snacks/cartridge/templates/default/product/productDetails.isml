@@ -1,0 +1,48 @@
+<isdecorate template="common/layout/page">
+<isinclude template="/components/modules" sf-toolkit="off" />
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+
+    <style>
+        @media screen and (max-width: 440px) {
+            .page {
+                overflow-x: hidden;
+            }
+        }
+    </style>
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+
+    <isset name="isBundle" value="${pdict.isBundle}" scope="page" />
+    <isif condition="${isBundle}">
+        <isset name="bundle" value="${pdict.product}" scope="page" />
+        <isobject object="${product.raw}" view="detail"></isobject>
+    </isif>
+
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${product.productType === 'set'}" scope="page" />
+
+    <isset name="isBYOB" value="${product.isByobMaster}" scope="page" />
+
+    <isset name="cssVars" value="" scope="page" />
+    <isif condition="${!empty(product.backgroundColor)}">
+        <isset name="cssVars" value="${'--pdp-main__bg: ' + product.backgroundColor + ';'}" scope="page" />
+    </isif>
+    <isif condition="${!empty(product.imageNavigationColor)}">
+        <isset name="cssVars" value="${cssVars + ' --image-nav-color: ' + product.imageNavigationColor + ';'}" scope="page" />
+    </isif>
+
+    <isif condition="${isBYOB}">
+        <isinclude template="product/productObjectDetailsBYOB" />
+    <iselse/>
+        <isinclude template="product/productObjectDetails" />
+    </isif>
+    <isscript>
+    if (typeof product !== 'undefined' && !empty(product)) {
+        var p = dw.catalog.ProductMgr.getProduct(product.masterId)
+    }
+    </isscript>
+</isdecorate>

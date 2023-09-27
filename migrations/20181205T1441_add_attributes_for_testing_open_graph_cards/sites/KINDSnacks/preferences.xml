@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <development>
+            <preference preference-id="ogDescription">KIND Snacks Online Store - Site Description</preference>
+            <preference preference-id="ogImage">images/about-us_ingredients_bar-heart_opt.png</preference>
+            <preference preference-id="ogImageAlt">KIND Snacks Online Store - Site Image Alt Text</preference>
+            <preference preference-id="ogTitle">KIND Snacks Online Store - Site Title</preference>
+            <preference preference-id="ogURL">https://www.kindsnacks.com/</preference>
+        </development>
+    </custom-preferences>
+</preferences>
+

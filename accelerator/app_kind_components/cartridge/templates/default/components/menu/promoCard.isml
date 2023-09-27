@@ -1,0 +1,28 @@
+<isif condition="${!empty(pdict.content) && !empty(pdict.content.custom)}">
+    <isset name="promoCardContent" value="${pdict.content}" scope="page" />
+
+    <div class="c-promo-card">
+        <isif condition="${!empty(promoCardContent.custom.graphicalAssetImage)}">
+            <img src="${promoCardContent.custom.graphicalAssetImage.URL}" class="c-promo-card__img"
+            alt="${promoCardContent.custom.graphicalAssetImage.alt || promoCardContent.custom.graphicalAssetHeading || ''}" />
+        </isif>
+
+        <div class="c-promo-card__content">
+            <isif condition="${!empty(promoCardContent.custom.graphicalAssetHeading)}">
+                <h3 class="c-promo-card__heading">
+                    <isprint value="${promoCardContent.custom.graphicalAssetHeading}" />
+                </h3>
+            </isif>
+            <isif condition="${!empty(promoCardContent.custom.graphicalAssetBody)}">
+                <div class="c-promo-card__body">
+                    <isprint value="${promoCardContent.custom.graphicalAssetBody}" encoding="off" />
+                </div>
+            </isif>
+            <isif condition="${!empty(promoCardContent.custom.graphicalAssetLinks)}">
+                <div class="c-promo-card__links s-promo-card--links">
+                    <isprint value="${promoCardContent.custom.graphicalAssetLinks}" encoding="off" />
+                </div>
+            </isif>
+        </div>
+    </div>
+</isif>

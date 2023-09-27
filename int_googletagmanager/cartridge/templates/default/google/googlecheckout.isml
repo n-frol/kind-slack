@@ -1,0 +1,71 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isif condition="${pdict.order}">
+<!-- Start GoogleTagManager Checkout Template -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    window.order = {
+        affiliate: {
+            orderTracker: "${pdict.order.affiliateOrderTracker}",
+            orderTrackerType: "${pdict.order.affiliateOrderTrackerType}"
+        },
+        creationDate: new Date("${pdict.order.creationDate}").toISOString(),
+        currency: "${pdict.order.items.items[0].price.sales.currency || pdict.order.items.items[0].price.list.currency}",
+        customer: {
+            id: "${pdict.CurrentCustomer.ID}",
+            firstName: "${(pdict.order.shipping.length && pdict.order.shipping[0].shippingAddress) ? pdict.order.shipping[0].shippingAddress.firstName : ''}",
+            lastName: "${(pdict.order.shipping.length && pdict.order.shipping[0].shippingAddress) ? pdict.order.shipping[0].shippingAddress.lastName : ''}",
+            email: "${pdict.order.orderEmail}",
+            phone: "${(pdict.order.shipping.length && pdict.order.shipping[0].shippingAddress) ? pdict.order.shipping[0].shippingAddress.phone : ''}".replace(/\D/g,'')
+        }
+    };
+
+    if (window.order.affiliate.orderTracker === 'null') {
+        window.order.affiliate.orderTracker = '';
+    }
+    if (window.order.affiliate.orderTrackerType === 'null') {
+        window.order.affiliate.orderTrackerType = '';
+    }
+    if (window.order.creationDate === 'null') {
+        window.order.creationDate = '';
+    }
+    if (window.order.currency === 'null') {
+        window.order.currency = '';
+    }
+    if (window.order.customer.id === 'null') {
+        window.order.customer.id = '';
+    }
+    if (window.order.customer.firstName === 'null') {
+        window.order.customer.firstName = '';
+    }
+    if (window.order.customer.lastName === 'null') {
+        window.order.customer.lastName = '';
+    }
+    if (window.order.customer.email === 'null') {
+        window.order.customer.email = '';
+    }
+    if (window.order.customer.phone === 'null') {
+        window.order.customer.phone = '';
+    }
+
+    dataLayer.push({
+        customer: {
+            id: window.order.customer.id,
+            firstName: window.order.customer.firstName,
+            lastName: window.order.customer.lastName,
+            email: window.order.customer.email,
+            phone: window.order.customer.phone
+        },
+        order: {
+            affiliateOrderTracker: window.order.affiliate.orderTracker,
+            affiliateOrderTrackerType: window.order.affiliate.orderTrackerType,
+            creationDate: window.order.creationDate,
+            currency: window.order.currency
+        }
+    });
+
+</script>
+<!-- End GoogleTagManager Checkout Template -->
+</isif>
+

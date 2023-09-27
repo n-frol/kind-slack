@@ -1,0 +1,56 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/paymentInstruments.js');
+        assets.addCss('/css/account/payment.css');
+    </isscript>
+    <isinclude template="account/payment/deletePaymentModal"/>
+
+    <h1 class="title title-display-banner">${Resource.msg('page.heading.payments','payment',null)}</h1>
+
+    <iscomment> Computop Payment Operator - Error Messaging </iscomment>
+    <isinclude template="account/payment/paymentoperatorerror" />
+
+    <div class="container">
+
+        <isif condition="${empty(pdict.paymentInstruments)}">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <h3 class="title title-display-banner c-account-dashboard__no-entries">${Resource.msg('msg.no.saved.payment.methods.yet','payment',null)}</h3>
+                </div>
+            </div>
+        </isif>
+
+        <iscomment> Payment Instrument Loop </iscomment>
+        <isloop items="${pdict.paymentInstruments}" var="paymentInstrument">
+            <isif condition="${!empty(paymentInstrument.paymentMethod) && paymentInstrument.paymentMethod === 'DW_APPLE_PAY'}">
+                <iscomment> Apple Pay Credit Cards </iscomment>
+                <isinclude template="account/payment/applePayCard" />
+            <iselse/>
+                <isif condition="${!empty(paymentInstrument.creditCardType) && paymentInstrument.creditCardType === 'PayPal'}">
+                    <iscomment> PayPal Billing Agreement </iscomment>
+                    <isinclude template="account/payment/payPalPaymentCard" />
+                <iselse/>
+                    <iscomment> Credit Cards </iscomment>
+                    <isinclude template="account/payment/creditPaymentCard" />
+                </isif>
+            </isif>
+        </isloop>
+
+        <iscomment> Action Buttons </iscomment>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-8 c-account-dashboard__summary-page">
+                <div class="row c-account-dashboard__bottom">
+                    <div class="col">
+                        <a href="${URLUtils.url('Account-Show')}" class="btn btn-outline-primary c-account-dashboard__btn">
+                            <p class="text-center back-to-account-link">${Resource.msg('link.profile.backtomyaccount','account',null)}</p>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="${URLUtils.url('PaymentInstruments-AddPayment')}" class="btn btn-save btn-primary c-account-dashboard__btn">${Resource.msg('button.addnew','payment',null)}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

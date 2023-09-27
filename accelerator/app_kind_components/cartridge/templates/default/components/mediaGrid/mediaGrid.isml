@@ -1,0 +1,60 @@
+<isif condition="${loopstatus.first}">
+    <isif condition="${!empty(parentNav)}">
+        <isinclude template="components/customNavigation/customNavigation" />
+    </isif>
+
+    <div class="container c-media-grid th-kind-media-grid ${parentID} s-graphical-asset">
+        <isinclude template="components/mediaGrid/mediaGrid_header" />
+        <div class="row">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/mediaGrid/mediaGrid_UI" />
+    <div class="c-media-grid__item th-kind-media-grid__item ${assetID}">
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-media-grid__item__content
+                <isif condition="${graphicalAsset.contentXPosition.value === 'left'}">c-media-grid__item__content--left
+                    <iselseif condition="${graphicalAsset.contentXPosition.value === 'right'}">c-media-grid__item__content--right
+                    <iselseif condition="${graphicalAsset.contentXPosition.value === 'center'}">c-media-grid__item__content--center
+                </isif>
+            ">
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 611, 1222)}" scope="page" />
+                    <div class="c-media-grid__item__content__image-wrapper">
+                        <img class="c-media-grid__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+                <div class="c-media-grid__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-media-grid__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-media-grid__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-media-grid__item__content__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    </div>
+</isif>
+<isif condition="${loopstatus.last}">
+    </div>
+</div>
+</isif>

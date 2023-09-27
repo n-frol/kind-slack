@@ -1,0 +1,153 @@
+/* ============================================================================
+PDP Benefits
+============================================================================ */
+
+/**
+ * Establish styles for the benefits block on the PDP.
+ */
+
+$ns: c-product-benefits;
+
+.#{$ns} {
+    padding-bottom: $setting-gutter;
+    padding-top: 18px;
+    text-transform: lowercase;
+    position: relative;
+    /*@include media-breakpoint-up(lg) {
+        flex: 0 0 35%;
+        margin-right: -78px;
+        max-width: 35%;
+    }*/
+
+    &__info-section {
+        @include media-breakpoint-up(md) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    &__heading {
+        font-size: 30px;
+        letter-spacing: -1.5px;
+        margin-bottom: 8px;
+        text-transform: inherit;
+
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+            letter-spacing: -.5px;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__benefit {
+        margin-bottom: 5px;
+
+        & &__title {
+            display: block;
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: .1px;
+            line-height: 2.29;
+            margin-bottom: 0;
+        }
+        &__content {
+            background-color: $white;
+            line-height: 1.56;
+            margin-bottom: 10px;
+            margin-left: -18px;
+            margin-right: -18px;
+            padding: 16px 18px 20px;
+
+            &__body {
+                padding-bottom: 18px;
+            }
+        }
+    }
+    &__show-more-less {
+        font-size: 12px;
+        font-weight: $font-weight-bold;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+        &__less {
+            display: none;
+        }
+        .is-active &__more {
+            display: none;
+        }
+        .is-active &__less {
+            display: inline-block;
+        }
+    }
+    .collapsible {
+        .title, .card-header {
+            pointer-events: none;
+            &::after {
+                content: "";
+            }
+        }
+    }
+    .benefits_logo {
+        display: none;
+        margin: 0 auto;
+    }
+    .title.c-product-benefits__benefit__title::after,
+    .is-active .title::after,
+    .is-active .card-header::after {
+        display: none;
+    }
+}
+
+.#{$ns}.checkmark {
+    .title.c-product-benefits__benefit__title {
+        font-family: "HelveticaNeue-Medium", Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    .title.c-product-benefits__benefit__title::after,
+    .is-active .title::after,
+    .is-active .card-header::after {
+        content: "";
+        background: url(../images/checkmark.png) no-repeat center;
+        background-size: contain;
+        left: 0;
+        position: absolute;
+        top: 5px;
+        width: 27px;
+        height: 27px;
+        display: block;
+    }
+}
+
+.#{$ns}.show-icon {
+    .benefits_logo {
+        display: block;
+    }
+    .c-product-benefits__benefit {
+        text-align: center;
+        padding: 0 !important;
+        width: 115px;
+        display: inline-block;
+        margin: 0 20px 0 0;
+        vertical-align: top;
+    }
+    .c-product-benefits__benefit__title {
+        line-height: 1;
+    }
+}
+
+.v2 .#{$ns} {
+    padding: 0;
+    .c-product-benefits__benefit,
+    .c-product-benefits__benefit.is-active {
+        position: relative;
+        padding-left: 40px;
+    }
+    .content.c-product-benefits__benefit__content {
+        display: none!important;
+    }
+    @include media-breakpoint-up(md) {
+        padding-top: 30px;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+}

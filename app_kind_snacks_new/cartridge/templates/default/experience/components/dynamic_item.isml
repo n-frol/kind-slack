@@ -1,0 +1,58 @@
+<div class="dynamic_icon">
+    <img src="${pdict.icon.src.desktop}" alt="${pdict.headline}" />
+</div>
+<div class="dynamic_text_container">
+<div class="dynamic_head">
+    <isprint value="${pdict.headline}" encoding="off" />
+</div>
+<div class="dynamic_copy paragraph">
+    <isprint value="${pdict.copy}" encoding="off" />
+</div>
+</div>
+<a class="dynamic_link icon_copy large arrow" href="${pdict.url}"><isprint value="${pdict.cta}" encoding="off" /> <i class="fa-regular fa-arrow-down" style="color: #ffffff;
+    float: right;
+    position: relative;
+    font-weight: 900;"></i></a>
+<script>
+
+</script>
+
+<style>
+    .dynamic_text_container {
+        position: relative;
+    }
+    .icon_copy {
+        padding: 9px 8px !important;
+    }
+    .icon_copy .fa-arrow-down {
+        position: relative;
+        top: 5px;
+        right: 5px;
+    }
+    .icon_copy:hover .fa-arrow-down {
+        color: black !important;
+    }
+    .dynamic_icon {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    .dynamic_head {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+        letter-spacing: -.25px;
+        margin-bottom: 12px;
+        font-family: main;
+    }
+    .dynamic_copy {
+        margin-bottom: 32px;
+    }
+    .dynamic_link {
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+        width: 175px;
+        margin: auto;
+    }
+</style>

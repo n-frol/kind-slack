@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ab-tests xmlns="http://www.demandware.com/xml/impex/abtest/2010-04-01">
+    <ab-test test-id="Energy-Bars-ZMags-AB_Test">
+        <description>ZMags Test - category banner vs. ZMags page build on Energy Bars PLP</description>
+        <notification>
+            <email-to>pthompson@kindsnacks.com</email-to>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <tags>
+            <tag>zmags</tag>
+        </tags>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-05-29T13:00:00.000Z</start-date>
+            <end-date>2020-06-15T15:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <category-page-view>
+                    <category-id>energy-bars</category-id>
+                </category-page-view>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="ZMags">
+                <allocation-percent>50</allocation-percent>
+                <description>Zmags page build</description>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Evergreen-Header-Banner-Test">
+        <description>Evergreen header banner a/b test - Subscription Free Shipping, Adhoc/Subscription Free Shipping Thresholds, New Arrivals, 15% off BYOB</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-10-09T04:00:00.000Z</start-date>
+            <end-date>2020-10-19T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>25</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Free-Shipping-Thresholds">
+                <allocation-percent>25</allocation-percent>
+                <description>Free Shipping Subscriptions/Adhoc</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="Header-banner-evergreen-free-shipping"/>
+                </experiences>
+            </test-segment>
+            <test-segment segment-id="New-Arrivals">
+                <allocation-percent>25</allocation-percent>
+                <description>New Arrivals + Adhoc FS</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="header-banner-aug2020-sitewide-sale"/>
+                </experiences>
+            </test-segment>
+            <test-segment segment-id="Subscription-Free-Shipping">
+                <allocation-percent>25</allocation-percent>
+                <description>Free Shipping on all Subscriptions</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="header-banner-subscription-free-shipping"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Feb-2020-Sitewide-Header-Banner">
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-02-18T05:00:00.000Z</start-date>
+            <end-date>2020-02-24T05:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>50</allocation-percent>
+                <description>header banner all snacks</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="header-banner-feb-2020-sitewide-test-segment"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Feb-2020-Sitewide-Sale">
+        <description>A/B testing the landing page for the sitewide sale marketing banners.</description>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-02-18T05:00:00.000Z</start-date>
+            <end-date>2020-02-24T05:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>50</allocation-percent>
+                <description>Marketing Banner : Leading to All Snacks</description>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-a" slot-context="global" slot-configuration-id="marketing-banner-feb-2020-sitewide-test-segment"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Holiday-Gifting-Header-Banner-Test">
+        <description>A/B test for the header banner for the Gifting Launch (2019)
+
+Control: BYOB 25% off SC promo
+Test segment: Gift Shop</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-10-31T17:00:00.000Z</start-date>
+            <end-date>2019-11-25T05:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>50</allocation-percent>
+                <description>Gift Shop header banner</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="header-banner-kind-gift-shop"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="New A/B Test - 02/12/2020 4:24 PM">
+        <enabled-flag>false</enabled-flag>
+        <schedule>
+            <start-date>2020-02-19T00:00:00.000Z</start-date>
+            <end-date>2020-02-26T00:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>revenue</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>100</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>0</allocation-percent>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Predictive-Sort-AB-Test-May-2020">
+        <description>Testing the current catalog-wide sorting rule vs. predictive sorting</description>
+        <notification>
+            <email-to>pthompson@kindsnacks.com</email-to>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <tags>
+            <tag>predictive-sort</tag>
+        </tags>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-04-29T14:15:00.000Z</start-date>
+            <end-date>2020-04-29T19:45:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <category-page-view>
+                    <category-id>all-snacks</category-id>
+                    <category-id>healthy-grains-bars</category-id>
+                    <category-id>healthy-grains-clusters</category-id>
+                    <category-id>kids</category-id>
+                    <category-id>kind-breakfast-bars</category-id>
+                    <category-id>kind-nut-bars</category-id>
+                    <category-id>kind-protein</category-id>
+                    <category-id>nut-butter-filled</category-id>
+                    <category-id>pressed-by-KIND</category-id>
+                    <category-id>simple-crunch</category-id>
+                    <category-id>variety</category-id>
+                </category-page-view>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>50</allocation-percent>
+                <description>predictive-sort-rule</description>
+                <experiences>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="healthy-grains-clusters" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kids" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-breakfast-bars" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-nut-bars" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="nut-butter-filled" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-protein" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="pressed-by-KIND" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="simple-crunch" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="variety" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="all-snacks" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="healthy-grains-bars" rule-context="site"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Predictive-Sort-AB-Test-Sorting-Rule">
+        <description>Testing the current catalog-wide sorting rule vs. predictive sorting</description>
+        <notification>
+            <email-to>pthompson@kindsnacks.com</email-to>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>false</enabled-flag>
+        <schedule>
+            <start-date>2020-04-27T17:30:00.000Z</start-date>
+            <end-date>2020-04-28T03:45:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <category-page-view>
+                    <category-id>all-snacks</category-id>
+                    <category-id>healthy-grains-bars</category-id>
+                    <category-id>healthy-grains-clusters</category-id>
+                    <category-id>kids</category-id>
+                    <category-id>kind-breakfast-bars</category-id>
+                    <category-id>kind-nut-bars</category-id>
+                    <category-id>kind-protein</category-id>
+                    <category-id>nut-butter-filled</category-id>
+                    <category-id>pressed-by-KIND</category-id>
+                    <category-id>simple-crunch</category-id>
+                    <category-id>variety</category-id>
+                </category-page-view>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>50</allocation-percent>
+                <description>predictive-sort-rule</description>
+                <experiences>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="healthy-grains-clusters" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kids" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-breakfast-bars" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-nut-bars" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="kind-protein" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="nut-butter-filled" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="pressed-by-KIND" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="simple-crunch" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="variety" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="all-snacks" rule-context="site"/>
+                    <sorting-rule rule-id="best-matches-test-segment" category-id="healthy-grains-bars" rule-context="site"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Sept-2020-Buy-More-Save-More-Banner">
+        <description>September 2020 buy more, save more sale - header banner ab test</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2020-09-21T04:00:00.000Z</start-date>
+            <end-date>2020-09-24T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <immediately/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Sale-Header">
+                <allocation-percent>50</allocation-percent>
+                <description>Header Banner Calling Out Sitewide Sale</description>
+                <experiences>
+                    <slot-configuration slot-id="header-banner-m" slot-context="global" slot-configuration-id="header-banner-buy-more-save-more-ab-test"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="Sitewide-Sale-Marketing-Banner">
+        <description>A/B Test on the sitewide sale- 20% off $40+</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-11-25T18:30:00.000Z</start-date>
+            <end-date>2019-11-26T20:15:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <home-page-view/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="Test Segment B">
+                <allocation-percent>25</allocation-percent>
+                <description>Variety Packs landing page</description>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-a" slot-context="global" slot-configuration-id="marketing-banner-sitewide-sale-abtest-2"/>
+                </experiences>
+            </test-segment>
+            <test-segment segment-id="Test Segment A">
+                <allocation-percent>25</allocation-percent>
+                <description>Nut Bars landing page</description>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-a" slot-context="global" slot-configuration-id="marketing-banner-sitewide-sale-abtest-1"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="home-slot-b">
+        <description>home slot b a/b test- comparing current layout to four product categories.</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-10-02T04:00:00.000Z</start-date>
+            <end-date>2019-10-08T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>conversion-rate</key-metric>
+        <participation>
+            <trigger>
+                <home-page-view/>
+            </trigger>
+            <expiration>session</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="product-categories">
+                <allocation-percent>50</allocation-percent>
+                <description>four popular product categories</description>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-b" slot-context="global" slot-configuration-id="ab-test-product-categories"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="home-slot-b-updated">
+        <description>home slot b a/b test- comparing current layout to four product categories.</description>
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-10-08T04:00:00.000Z</start-date>
+            <end-date>2019-11-01T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <home-page-view/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="product-categories">
+                <allocation-percent>50</allocation-percent>
+                <description>four popular product categories</description>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-b" slot-context="global" slot-configuration-id="ab-test-product-categories"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="marketing-banner-ab-test-flash-sale">
+        <description>A/B Testing font and "shop now" button colors</description>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-10-07T04:00:00.000Z</start-date>
+            <end-date>2019-10-12T07:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <home-page-view/>
+            </trigger>
+            <expiration>never</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="color-font-button">
+                <allocation-percent>50</allocation-percent>
+                <experiences>
+                    <slot-configuration slot-id="home-slot-a" slot-context="global" slot-configuration-id="marketing-banner-flash-sale-vp-ab-test"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="sorting-rule-ab-test">
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-04-18T14:30:00.000Z</start-date>
+            <end-date>2019-06-18T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <category-page-view>
+                    <category-id>fruit-bites</category-id>
+                    <category-id>gear</category-id>
+                    <category-id>healthy-grains-bars</category-id>
+                    <category-id>healthy-grains-clusters</category-id>
+                    <category-id>kids</category-id>
+                    <category-id>kind-breakfast-bars</category-id>
+                    <category-id>kind-minis</category-id>
+                    <category-id>kind-nut-bars</category-id>
+                    <category-id>kind-protein</category-id>
+                    <category-id>nut-butter-filled</category-id>
+                    <category-id>pressed-by-KIND</category-id>
+                    <category-id>sweet-spicy</category-id>
+                </category-page-view>
+            </trigger>
+            <expiration>session</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="test-segment-a">
+                <allocation-percent>50</allocation-percent>
+                <experiences>
+                    <sorting-rule rule-id="most-popular" category-id="healthy-grains-clusters" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kids" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kind-breakfast-bars" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kind-minis" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kind-nut-bars" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kind-protein" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="nut-butter-filled" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="healthy-grains-bars" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="pressed-by-KIND" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="sweet-spicy" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="fruit-bites" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="gear" rule-context="site"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+    <ab-test test-id="sorting_rule_ab_test">
+        <notification>
+            <email-to>hhayes@kindsnacks.com</email-to>
+        </notification>
+        <enabled-flag>true</enabled-flag>
+        <schedule>
+            <start-date>2019-08-02T04:00:00.000Z</start-date>
+            <end-date>2019-08-16T04:00:00.000Z</end-date>
+        </schedule>
+        <key-metric>basket-rate</key-metric>
+        <participation>
+            <trigger>
+                <category-page-view>
+                    <category-id>healthy-grains-clusters</category-id>
+                    <category-id>healthy-grains-bars</category-id>
+                    <category-id>kind-breakfast-bars</category-id>
+                </category-page-view>
+            </trigger>
+            <expiration>session</expiration>
+        </participation>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+        <test-segments>
+            <control-segment>
+                <allocation-percent>50</allocation-percent>
+            </control-segment>
+            <test-segment segment-id="test_segment_a">
+                <allocation-percent>50</allocation-percent>
+                <experiences>
+                    <sorting-rule rule-id="most-popular" category-id="healthy-grains-bars" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="kind-breakfast-bars" rule-context="site"/>
+                    <sorting-rule rule-id="most-popular" category-id="healthy-grains-clusters" rule-context="site"/>
+                </experiences>
+            </test-segment>
+        </test-segments>
+    </ab-test>
+
+</ab-tests>

@@ -1,0 +1,17 @@
+/* ============================================================================
+Search
+============================================================================ */
+
+/**
+ * Styles for SFRA search bar
+ */
+
+@import '~kind/components/components.site-search';
+
+$ns: c-site-search;
+
+.#{$ns} {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}

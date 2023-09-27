@@ -1,0 +1,24 @@
+<isset value="${pdict.linkref}" scope="page" name="linkref" />
+<isdecorate template="common/layout/page">
+<div class="c-byob-redesign">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addCss('/css/search.css');
+
+        var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    </isscript>
+    <isset name="byobNav" value="${dw.content.ContentMgr.getContent('byob-navigation')}" scope="page" />
+    <isset name="isBYOBSearch" value="${!empty(pdict.productSearch) && !empty(pdict.productSearch.isBYOBSearch) ? pdict.productSearch.isBYOBSearch : 'oops'}" scope="page" />
+    <div class="js-byob-error-container d-none c-alert__alerts-container" data-byob-generic-error="${Resource.msg('error.update.technicalissue', 'search', null)}"></div>
+
+    <div class="c-byob-category-nav-bar">
+        <isinclude template="rendering/category/components/byobCategoryNav/swapCategoryNav" />
+    </div>
+
+    <isset name="catId" value="${dw.catalog.CatalogMgr.getCategory(pdict.category)}" scope="page" />
+
+    <isinclude template="rendering/search/searchResultsNoDecorator" />
+    <isinclude template="product/compareBar" />
+</div>
+</isdecorate>

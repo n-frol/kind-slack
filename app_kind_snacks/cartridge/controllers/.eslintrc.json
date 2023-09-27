@@ -1,0 +1,6 @@
+{
+    "globals": {
+        "empty": true,
+        "request": true
+    }
+}

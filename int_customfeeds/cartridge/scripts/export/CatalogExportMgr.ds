@@ -1,0 +1,192 @@
+importPackage( dw.system );
+importPackage( dw.catalog );
+importPackage( dw.util );
+
+importScript( 'export/handlers/AbstractExportHandler.ds' );
+
+// Hack, because vars cannot be imported in DW, only functions
+function getCatalogExportMgr() {
+    return CatalogExportMgr;
+}
+
+/**
+ * Create a CatalogExportmanager instance to export the catalog.
+ * 
+ * Register new handlers by calling registerExportHandler(handler).
+ */
+function CatalogExportMgr(){
+    this.logger = dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport');
+    this.exportMasters = false;
+    this.exportProducts = false;
+    this.exportCategories = false;
+    this.exportProductCategoryAssignments = false;
+    this.handlers = [];
+    this.statistics = {
+            categories : 0,
+            products : 0,
+            masters: 0,
+            categoryAssignments : 0	
+    };
+    
+    this.productSearchModel = new ProductSearchModel();
+}
+
+
+CatalogExportMgr.prototype = {
+        /**
+         * Registers a new export handler which needs to be a subclass of
+         * {@link AbstractExportHandler}.
+         */
+        registerExportHandler : function(handler){
+            this.handlers.push(handler);
+            this.exportMasters                    = this.exportMasters || handler.handlesMasters;
+            this.exportProducts                   = this.exportProducts || handler.handlesProducts;
+            this.exportCategories                 = this.exportCategories || handler.handlesCategories;
+            this.exportProductCategoryAssignments = this.exportProductCategoryAssignments || handler.handlesCategoryAssignments;
+        },
+        /**
+         * Runs the export and notifies all registered handlers for all
+         * products, catagories etc.
+         */
+        runExport : function(){
+            this.handleBeginExport();
+            var rootCategory : Category = CatalogMgr.getSiteCatalog().getRoot();
+            this.handleCategories(rootCategory);
+            
+            // We should iterate all products not relative to each category
+            // because product can be assigned to more than 1 category and then
+            // duplication appear
+            if (this.exportMasters || this.exportProducts) { 
+                this.handleProducts(rootCategory) 
+            };
+            this.handleEndExport();
+        },
+        handleCategories : function(category : Category){
+            if (category == null || !category.isOnline()) {
+                return;
+            }
+            if (this.exportCategories) { this.handleCategory(category) };
+            if (this.exportProductCategoryAssignments) { this.handleProductCategoryAssignments(category) };
+            for each (var cat in category.subCategories){
+                this.handleCategories(cat);
+            }
+        },
+        
+        handleProducts : function(category : Category) {
+            // do search and handle products (and assignements)
+            // when we encounter a new master we call handleMaster
+            
+            // search for available products
+            this.productSearchModel.setCategoryID(category.ID);
+            this.productSearchModel.setOrderableProductsOnly(false); //KIND-FX changed from true to false
+            this.productSearchModel.setRecursiveCategorySearch(true);
+            this.productSearchModel.search();
+            var orderableProductHits : Iterator = this.productSearchModel.getProductSearchHits();
+            var ap = this.productSearchModel.count;
+            
+            this.logger.info('Handle category ' + category.ID + ' with '+ap+' products.' );
+            
+            var lastMaster = null;
+            while (orderableProductHits.hasNext()) {
+                var productHit : ProductSearchHit = orderableProductHits.next();
+               // var product : Product = productHit.firstRepresentedProduct;
+                var product : Product = productHit.product;
+                this.logger.info('Handle product ' + product.ID);
+                var master  : Product = product.variant ? product.masterProduct : null;
+                if(this.exportMasters && master != null && lastMaster != master.ID){
+                    this.handleMaster(master, product);
+                    lastMaster = master.ID;
+                }
+                
+                if(this.exportProducts){
+                    if(product.bundle) //KIND-FX
+                    {
+                            this.handleProduct(product);
+                    }
+
+                    for each(var p in productHit.representedProducts){
+                        this.handleProduct(p);
+                    }
+                }
+            }
+        },
+        
+        /**
+         * Handles a model (called once per model)
+         * 
+         * @param {dw.catalog.Product} master The master representing the model
+         */
+        handleMaster : function(master : Product, product : Product) {
+            for each (var handler in this.handlers) {
+                handler.exportMaster(master, product);
+                // delete handler;
+                handler = null;
+            };
+            this.statistics.masters++;
+        },
+        
+        /**
+         * Handles product
+         * 
+         * @param {dw.catalog.Product} product
+         */
+        handleProduct : function(product : Product){
+            for each (var handler in this.handlers) {
+                handler.exportProduct(product);
+                // delete handler;
+                handler = null;
+            }
+            this.statistics.products++;
+        },
+        
+        /**
+         * Handles a category
+         * 
+         * @param {dw.catalog.Category} category
+         */
+        handleCategory : function(category : Category){
+            for each (var handler in this.handlers) {
+                handler.exportCategory(category);
+                // delete handler;
+                handler = null;
+            }
+            this.statistics.categories++;
+        },
+        
+        /**
+         * Handles category assignments
+         * 
+         * @param {dw.catalog.Category} category
+         */
+        handleProductCategoryAssignments : function(category : Category){
+            
+            // TODO write functional for this function
+            /*
+             * this.handlers.forEach(function(handler){
+             * handler.exportCategoryAssignments(pca); });
+             */
+            this.statistics.categoryAssignments++;
+        },
+        
+        handleBeginExport: function(){
+            for each (var handler in this.handlers) {
+                handler.beginExport();
+                // delete handler;
+                handler = null;
+            }
+        },
+        handleEndExport: function(){
+            for each (var handler in this.handlers) {
+                handler.endExport();
+                // delete handler;
+                handler = null;
+            }
+            var msg = 'Export done (categories processed: '+this.statistics.categories+', masters processed: '+this.statistics.masters+', products processed: '+this.statistics.products+')'
+            this.logger.info(msg);
+        }
+}
+
+if(typeof exports !== 'undefined')
+{
+	module.exports = CatalogExportMgr;
+}

@@ -1,0 +1,13 @@
+/* ============================================================================
+Images
+============================================================================ */
+
+/**
+ * 1. Assures that images are both responsive and are never larger than their
+ *    parent container.
+ */
+
+img {
+    height: auto;
+    max-width: 100%; /* [1] */
+}

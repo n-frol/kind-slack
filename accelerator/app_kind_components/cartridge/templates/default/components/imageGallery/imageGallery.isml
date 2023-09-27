@@ -1,0 +1,68 @@
+<isif condition="${loopstatus.first}">
+    <div class="c-image-gallery ${parentID} th-kind-image-gallery s-graphical-asset s-image-gallery">
+        <div class="container st-container--padded c-image-gallery__container">
+            <isinclude template="components/imageGallery/imageGallery_header" />
+            <div class="row c-image-gallery__slider js-slider s-slick" <isinclude template="product/components/slickSliderData" sf-toolkit="off">>
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <div class="c-image-gallery__item ${assetID} th-kind-image-gallery__item">
+        <isinclude template="components/imageGallery/imageGallery_UI" />
+            <div class="c-image-gallery__item__content
+                <isif condition="${graphicalAsset.contentXPosition.value === 'left'}">c-image-gallery__item__content--left
+                    <iselseif condition="${graphicalAsset.contentXPosition.value === 'right'}">c-image-gallery__item__content--right
+                    <iselseif condition="${graphicalAsset.contentXPosition.value === 'center'}">c-image-gallery__item__content--center
+                </isif>
+            ">
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 950, 1900, '', 'jpg')}" scope="page" />
+                    <div class="c-image-gallery__item__content__image-wrapper">
+                        <img class="c-image-gallery__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+
+                <div class="c-image-gallery__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-image-gallery__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-image-gallery__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-image-gallery__item__content__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+        </div>
+    </div>
+</isif>
+<isif condition="${loopstatus.last}">
+    </div>
+    <div class="c-image-gallery__controls c-image-gallery__controls--arrows-inline c-image-gallery__controls--variable-color js-slider__controls js-slider__controls--arrows-inline">
+        <iscomment>Hide arrows here so jQuery can get them.  Allows for generating buttons using SFRA functions that imageCarousel.js won't have access to</iscomment>
+        <button class="carousel-control-prev c-image-gallery__controls__prev js-slider__controls__prev slick-prev d-none" type="button" data-slide="prev">
+            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+            <img src="${URLUtils.staticURL('images/image-gallery-prev.png')}" alt="${Resource.msg('button.previous', 'common', null)}" />
+        </button>
+
+        <button class="carousel-control-next c-image-gallery__controls__next js-slider__controls__next slick-next d-none" type="button" data-slide="next">
+            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+            <img src="${URLUtils.staticURL('images/image-gallery-next.png')}" alt="${Resource.msg('button.next', 'common', null)}" />
+        </button>
+
+        </div>
+    </div>
+</div>
+</isif>

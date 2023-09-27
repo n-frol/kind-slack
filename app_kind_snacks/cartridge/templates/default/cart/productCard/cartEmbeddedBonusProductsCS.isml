@@ -1,0 +1,33 @@
+<isloop items="${lineItem.bonusProducts}" var="productLineItem" status="loopstate">
+    <isif condition="${loopstate.first}">
+        <div class="bonus-line-item-msg">${Resource.msg('text.lineitem.bonus.msg','cart',null)}:</div>
+    </isif>
+    <isinclude template="cart/productCard/cartNestedBonusProductCardCS" />
+</isloop>
+<div class="bundled-line-item clearfix"></div>
+
+<isif condition="${!empty(pdict.bonusDiscounts)}">
+    <isloop items="${pdict.bonusDiscounts}" var="bonusDiscount">
+        <isif condition="${bonusDiscount.promotion.tags.indexOf('minicart') > -1}">
+            <div class="cart-bonus-product-callout" data-addUrl="${dw.web.URLUtils.url('Cart-AddBonusProducts', 'pid', '').toString()}">
+                <p><isprint value="${bonusDiscount.promotion.details.markup}" encoding="off" /></p>
+            </div>
+        </isif>
+    </isloop>
+</isif>
+
+<isloop items="${lineItem.discountLineItems}" var="discountLineItem">
+    <div
+        style="display:none"
+        class="card bonus-product-button hidden" 
+        id="bonus-product-button"
+        data-duuid="${discountLineItem.uuid}"
+        data-pliuuid="${discountLineItem.pliuuid}"
+        data-maxpids="${discountLineItem.maxpids}"
+        data-pageStart="0"
+        data-pageSize="0"
+        data-url="${discountLineItem.url}"
+    >
+        <button class="btn btn-outline-primary">${discountLineItem.msg}</button>
+    </div>
+</isloop>

@@ -1,0 +1,74 @@
+/**
+ * Utility class to map a given field to a customer profile attribute value
+ * 
+ * @namespace
+ */
+var ProfileFieldMapper = function(){};
+
+/**
+ * Supported system attributes
+ */
+ProfileFieldMapper.SYSTEM_ATTRIBUTES = ['birthday', 'companyName', 'creationDate', 'customerNo',
+                                        'email', 'fax', 'firstName', 'gender', 'jobTitle', 'lastLoginTime',
+                                        'lastModified', 'lastName', 'lastVisitTime', 'nextBirthday', 
+                                        'phoneBusiness', 'phoneHome', 'phoneMobile', 'preferredLocale',
+                                        'salutation', 'secondName', 'suffix', 'taxID', 'taxIDType', 'title'];
+
+/**
+ * Returns the value of the profile for the given field. Field is either a
+ * system attribute or a custom attribute prefixed with 'custom.'
+ */
+ProfileFieldMapper.getField = function(profile : dw.customer.Profile, field : String, format : String){
+    // no field, can't do anything
+    if(empty(field) || profile == null){
+        return '';
+    }
+    try{
+        // now handle generic attributes
+        var result = '';
+        
+        // handle custom attributes
+        if(field.indexOf('custom.') == 0){
+            var cname = field.substr(7);
+            if(cname in profile.custom){
+                result = profile.custom[cname];
+            }
+        }
+        // handle system attributes
+        if(ProfileFieldMapper.SYSTEM_ATTRIBUTES.indexOf(field) > -1){
+            result = profile[field];
+        }
+        if(format && result instanceof Date){
+            result = dw.util.StringUtils.formatCalendar(new dw.util.Calendar(result), format);
+        }
+        return result;
+    }
+    catch(e){
+        dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').error('Error occured while mapping field {0} for customer profile {1}', field, profile.customerNo);
+    }
+    return null;
+};
+
+/**
+ * Parses a given field definition as string and return a field object
+ */
+ProfileFieldMapper.parseField = function(attributeAsStr : String){
+    var typeDef = dw.object.SystemObjectMgr.describe('Profile');
+    var field = attributeAsStr.split(/(?:\{\{| |\}\})/g).filter(function(t){ return !empty(t)})[0];
+    if(field.indexOf('var:') == 0){
+        field = field.substring(4).replace(':', '.');
+    }
+    var fieldAsJson = {}
+    if(attributeAsStr.indexOf('format="') > -1){
+        fieldAsJson.format = attributeAsStr.split('format="')[1].split('"')[0];
+}
+if(field.indexOf('custom.') == 0){
+    if(typeDef.getCustomAttributeDefinition(field.substr(7)) != null){
+        fieldAsJson.attribute = field;
+    }
+}else{
+    fieldAsJson.attribute = field;
+}
+dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').debug('Parsed mapping for field {0} to field {1}', attributeAsStr, JSON.stringify(fieldAsJson));
+return fieldAsJson;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SlotConfiguration">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="slotLinks">
+                <display-name xml:lang="x-default">Slot Links</display-name>
+                <type>html</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="customFields">
+                <display-name xml:lang="x-default">Custom Fields</display-name>
+                <attribute attribute-id="slotBackgroundColor"/>
+                <attribute attribute-id="slotHeading"/>
+                <attribute attribute-id="slotBody"/>
+                <attribute attribute-id="slotLinks"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

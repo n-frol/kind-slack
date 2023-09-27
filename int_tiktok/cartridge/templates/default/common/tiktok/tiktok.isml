@@ -1,0 +1,13 @@
+<isscript>
+    const TTOKCode = dw.system.Site.getCurrent().getCustomPreferenceValue('TIKTOKCode');
+</isscript>
+<isinclude template="components/definition"/>
+<isif condition="${!empty(TTOKCode)}">
+    <isif condition="${!empty(pdict.tiktokPageData) && pdict.tickTockAction === "PlaceAnOrder"}">
+        <istiktokpush tiktokdata="${pdict.tiktokPageData}" tiktokaction="${pdict.tickTockAction}"/>
+    </isif>
+    
+    
+    <script></script>
+    
+</isif>

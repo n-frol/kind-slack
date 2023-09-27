@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="autoShipEligible">
+                <display-name xml:lang="x-default">Auto Ship Eligible</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="discontinued">
+                <display-name xml:lang="x-default">Discontinued</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="impulseUpsell">
+                <display-name xml:lang="x-default">Impulse Upsell</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove</display-name>
+                <attribute attribute-id="autoShipEligible"/>
+                <attribute attribute-id="discontinued"/>
+                <attribute attribute-id="impulseUpsell"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveEnable">
+                <display-name xml:lang="x-default">Enable OrderGroove Integration</display-name>
+                <description xml:lang="x-default">Enables or disables OrderGroove touchpoints.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveStaticDomain">
+                <display-name xml:lang="x-default">OrderGroove Static Domain</display-name>
+                <description xml:lang="x-default">Domain used for front-end script tags.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>https://staging.static.ordergroove.com</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveMerchantHashKey">
+                <display-name xml:lang="x-default">OrderGroove Merchant Hash Key</display-name>
+                <description xml:lang="x-default">Key used to encode subscription information sent to OrderGroove and to decode order information from OrderGroove.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value></default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveMerchantID">
+                <display-name xml:lang="x-default">OrderGroove Merchant ID</display-name>
+                <description xml:lang="x-default">The OrderGroove merchant ID, provided by an OrderGroove client solutions partner.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value></default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveShippingMethod">
+                <display-name xml:lang="x-default">OrderGroove Shipping Method ID</display-name>
+                <description xml:lang="x-default">Shipping method ID that will be used for all OrderGroove order placement calls.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveEmail">
+                <display-name xml:lang="x-default">Enable OrderGroove Emails</display-name>
+                <description xml:lang="x-default">Enables or disables OrderGroove system emails during purchase post errors.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveAddresses">
+                <display-name xml:lang="x-default">List of Email Addresses for Notifications</display-name>
+                <description xml:lang="x-default">A list of email addresses to send notifications when errors occur during purchase post. Each address must conform to the RFC822 standard.</description>
+                <type>set-of-string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveSession">
+                <display-name xml:lang="x-default">Send OrderGroove Session</display-name>
+                <description xml:lang="x-default">Enables or disables the OrderGroove session ID (from cookie) in the purchase post.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveShipping">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Shipping Address</display-name>
+                <description xml:lang="x-default">Enables or disables the order's default shipping address in the purchase post.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveBilling">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Billing Address</display-name>
+                <description xml:lang="x-default">Enables or disables the order billing address in the purchase post.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveLabel">
+                <display-name xml:lang="x-default">Send OrderGroove the Payment Label</display-name>
+                <description xml:lang="x-default">Enables or disables the payment label in the purchase post.  The label could be a custom field added to the payment object or simply the UUID of the payment used.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveToken">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Payment Token</display-name>
+                <description xml:lang="x-default">Enables or disables the order payment token in the purchase post.  The token may actually be the customer ID to access the customer profile wallet.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveCardHolder">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Payment Card Holder</display-name>
+                <description xml:lang="x-default">Enables or disables the order payment account holder in the purchase post.  This is the account holder name of the first credit card payment instrument.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveCardNumber">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Payment Card Number</display-name>
+                <description xml:lang="x-default">Enables or disables the order payment account holder in the purchase post.  This is the account number of the first credit card payment instrument.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveCardType">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Payment Card Type</display-name>
+                <description xml:lang="x-default">Enables or disables the order payment card type in the purchase post.  This is the card type of the first credit card payment instrument.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveCardExpiration">
+                <display-name xml:lang="x-default">Send OrderGroove the Order Payment Expiration</display-name>
+                <description xml:lang="x-default">Enables or disables the order payment card type in the purchase post.  This is the expiration date of the first credit card payment instrument.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveSubscription">
+                <display-name xml:lang="x-default">Send OrderGroove Subscription Data</display-name>
+                <description xml:lang="x-default">Enables or disables subscription data in the purchase post.  This is only applicable in a custom implementation.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveTracking">
+                <display-name xml:lang="x-default">Send OrderGroove a Tracking Override</display-name>
+                <description xml:lang="x-default">Enables or disables a tracking override in the purchase post.  This is only applicable in a custom implementation.</description>
+                <type>boolean</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveOfferID">
+                <display-name xml:lang="x-default">Offer ID</display-name>
+                <description xml:lang="x-default">The offer ID to be sent within the tracking override in the purchase post.  This is only applicable in a custom implementation and supplied by OrderGroove.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value></default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveDiscountType">
+                <display-name xml:lang="x-default">Auto Delivery Product Discount Type</display-name>
+                <description xml:lang="x-default">The type of discount to apply to all auto delivery products in the cart based on the OrderGroove cookie.</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Amount</display>
+                        <value>Amount</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Percent</display>
+                        <value>Percent</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveDiscountValue">
+                <display-name xml:lang="x-default">Auto Delivery Product Discount Value</display-name>
+				<description xml:lang="x-default">The discount value amount based on the selected discount type to apply to all auto delivery products in the cart based on the OrderGroove cookie.</description>
+                <type>double</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>10.0</default-value>
+            </attribute-definition>
+		</custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove Configurations</display-name>
+                <attribute attribute-id="OrderGrooveEnable"/>
+                <attribute attribute-id="OrderGrooveMerchantID"/>
+                <attribute attribute-id="OrderGrooveMerchantHashKey"/>
+                <attribute attribute-id="OrderGrooveStaticDomain"/>
+                <attribute attribute-id="OrderGrooveEmail"/>
+                <attribute attribute-id="OrderGrooveAddresses"/>
+                <attribute attribute-id="OrderGrooveShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSession"/>
+                <attribute attribute-id="OrderGrooveShipping"/>
+                <attribute attribute-id="OrderGrooveBilling"/>
+                <attribute attribute-id="OrderGrooveLabel"/>
+                <attribute attribute-id="OrderGrooveToken"/>
+                <attribute attribute-id="OrderGrooveCardHolder"/>
+                <attribute attribute-id="OrderGrooveCardNumber"/>
+                <attribute attribute-id="OrderGrooveCardType"/>
+                <attribute attribute-id="OrderGrooveCardExpiration"/>
+                <attribute attribute-id="OrderGrooveSubscription"/>
+                <attribute attribute-id="OrderGrooveTracking"/>
+                <attribute attribute-id="OrderGrooveOfferID"/>
+                <attribute attribute-id="OrderGrooveDiscountType"/>
+                <attribute attribute-id="OrderGrooveDiscountValue"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    
+    <custom-type type-id="PurchasePostRetry">
+        <display-name xml:lang="x-default">Purchase Post Retry</display-name>
+        <description xml:lang="x-default">A queue for retrying orders that failed in the purchase post request.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>1</retention-days>
+        <key-definition attribute-id="orderNo">
+            <display-name xml:lang="x-default">Order Number</display-name>
+            <description xml:lang="x-default">The order number for retrying the purchase post request.</description>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="encryptedCardNumber">
+                <display-name xml:lang="x-default">Encrypted Card Number</display-name>
+                <description xml:lang="x-default">The encrypted account number of the first credit card payment instrument.  A job process is not able to access the order's decrypted credit card number for resending purposes so it is stored here.  This attribute will not be used for token implementations.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="sessionID">
+                <display-name xml:lang="x-default">Session ID</display-name>
+                <description xml:lang="x-default">The OrderGroove session ID from when the order was placed is based on a cookie.  Since the session ID is not saved with the order and does not need to be sent the OMS, it is stored here for resending purposes.  This attribute will not be used if disabled in the OrderGroove site preferences.</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>true</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove</display-name>
+                <attribute attribute-id="creationDate" system="true"/>
+                <attribute attribute-id="orderNo"/>
+                <attribute attribute-id="sessionID"/>
+                <attribute attribute-id="encryptedCardNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

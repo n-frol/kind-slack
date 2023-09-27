@@ -1,0 +1,36 @@
+<iscache type="relative" minute="0" hour="0">
+<div class="c-cart-totals__checkout-btn--checkout" tabindex="0">
+
+    <isset name="checkoutPath" value="${URLUtils.https('Checkout-Begin')}" scope="page" />
+    <isset name="isCart" value="${Object.hasOwnProperty.call(pdict, 'referer') ? pdict.referer.toLowerCase().indexOf('cart') > -1 : false}" scope="page" />
+    <isif condition="${typeof bonusProductRedirect !== 'undefined' && !empty(bonusProductRedirect) && bonusProductRedirect && !isCart}">
+        <isset name="checkoutPath" value="${URLUtils.https('Cart-Show')}" scope="page" />
+    </isif>
+
+    <a href="${checkoutPath}" class="btn btn-primary btn-block checkout-btn ${!empty(pdict.valid) && !empty(pdict.valid.error) && pdict.valid.error ? 'disabled' : ''}"
+        role="button" aria-pressed="true">
+        <isif condition="${siteID === 'CreativeSnacks'}">
+            ${Resource.msg('button.check.out','cart',null)}
+        <iselse/>
+            ${Resource.msg('button.checkout','cart',null)}
+        </isif>
+    </a>
+</div>
+
+<div class="c-cart-totals__checkout-btn--paypal doublebutton1" tabindex="0">
+    <isinclude url="${URLUtils.url('PaymentOperator-ExpressButtons')}" />
+</div>
+
+<iscomment>
+FR - Removed this isif because the isapplepay tag controls the button more accurately based on the getRequest result
+with the isif, there is a lag on the applepaysession variable (it has the previous value until a refresh)
+<isif condition="${session.custom.applepaysession === 'yes'}" >
+</iscomment>
+<div class="c-cart-totals__checkout-btn--applepay doublebutton2">
+    <div id="apple-pay-cart-button">
+        <isapplepay class="apple-pay-cart btn btn-block"></isapplepay>
+    </div>
+</div>
+<iscomment>
+</isif>
+</iscomment>

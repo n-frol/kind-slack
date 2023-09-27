@@ -1,0 +1,97 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+
+<div class="shipping-section st-checkout-shipping">
+    <div class="single-shipping">
+
+        <iscomment> Variable Declarations </iscomment>
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <isset name="site" value="${dw.system.Site.getCurrent()}" scope="page" />
+
+        <div class="card st-checkout-shipping__card st-checkout-main__card" data-shipment-uuid="${shippingModel.UUID}">
+            <div class="card-header st-checkout-shipping__header st-checkout-main__header">
+                <h2 class="st-checkout-shipping__heading st-checkout-main__heading h4">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+            </div>
+
+            <iscomment> Error messaging container </iscomment>
+            <div class="shipping-error"></div>
+
+            <iscomment> Toggle multiship checkbox </iscomment>
+            <isif condition="${!empty(site.getCustomPreferenceValue('isMultiShipActive')) ? site.getCustomPreferenceValue('isMultiShipActive') : false }">
+                <isinclude template="checkout/shipping/multiShipCheckbox" />
+            </isif>
+
+
+            <isinclude template="checkout/shipping/shipmentCard" />
+        </div>
+    </div>
+
+    <div class="multi-shipping c-checkout-multi-shipping">
+        <h3 class="st-checkout-main__sub-title subtitle d-md-none">
+            ${Resource.msg('heading.shipping.address', 'checkout', null)}:
+        </h3>
+        <isloop items="${pdict.order.shipping}" var="shippingModel" status="shipmentLoopState">
+            <isloop items="${shippingModel.productLineItems.items}" var="lineItem" status="loopState">
+                <div class="card c-checkout-multi-shipping__card" data-shipment-uuid="${shippingModel.UUID}">
+                    <div class="card-header c-checkout-multi-shipping__card__header">
+                        <isset name="productNameLarge" value="${true}" scope="page" />
+                        <isset name="productCardQtyPrice" value="${false}" scope="page" />
+                        <isinclude template="checkout/productCard/productCard" />
+                    </div>
+
+                    <isinclude template="checkout/shipping/shipmentCard" />
+                </div>
+            </isloop>
+        </isloop>
+
+        <iscomment>Reset value to be safe</iscomment>
+        <isset name="productNameLarge" value="${false}" scope="page" />
+        <isset name="productCardQtyPrice" value="${true}" scope="page" />
+    </div>
+</div>
+
+<iscomment>Address verification modal placeholder</iscomment>
+<div class="modal st-modal show select-address-modal js-select-address-modal d-none" id="select-address" role="dialog">
+    <div class="modal-dialog st-modal__dialog s-address-verification">
+        <div class="modal-content st-modal__content">
+            <div class="modal-header st-modal__header">
+                <div class="st-modal__close__wrap js-modal-dialog-destroy">
+                    <button type="button" class="close st-modal__close close" data-dismiss="modal"></button>
+                </div>
+            </div>
+            <div class="modal-body st-modal__body">
+                <iscomment> Entered Address VS Suggested Address </iscomment>
+                <div class="container js-instructions-address-verification mb-3">
+                    <iscontentasset aid="instructions-address-verification" />
+                </div>
+                <iscomment> Entered Address - NO suggested address </iscomment>
+                <div class="container js-instructions-address-unverified mb-3">
+                    <iscontentasset aid="instructions-address-unverified" />
+                </div>
+                <iscomment> Entered Address Not Allowed - NO suggested address </iscomment>
+                <div class="container js-instructions-address-not-allowed">
+                    <iscontentasset aid="instructions-address-not-allowed" />
+                </div>
+                <iscomment> Entered Address Not Allowed - SmartyStreets down </iscomment>
+                <div class="container js-instructions-address-cannot-validate">
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <iscontentasset aid="instructions-address-cannot-validate-cs" />
+                    <iselse/>
+                        <iscontentasset aid="instructions-address-cannot-validate" />
+                    </isif>
+                    
+                </div>
+                <div class="container">
+                    <div class="row js-select-address-types">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer st-modal__footer">
+                <div class="container c-address-verification__btn-container js-street-address-modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

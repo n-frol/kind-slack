@@ -1,0 +1,16 @@
+{
+    "hooks": [
+        {
+            "name": "dw.ocapi.shop.order.afterPATCH",
+            "script": "./cartridge/scripts/hooks/order/afterPATCH.js"
+        },
+        {
+            "name": "dw.ocapi.shop.order.afterPUT",
+            "script": "./cartridge/scripts/hooks/order/afterPUT.js"
+        },
+        {
+            "name": "app.setOrderPromotion",
+            "script": "~/cartridge/scripts/checkout/SetOrderPromotion.js"
+        }
+    ]
+}

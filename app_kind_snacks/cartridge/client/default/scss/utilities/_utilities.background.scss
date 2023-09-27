@@ -1,0 +1,25 @@
+/* ============================================================================
+   Utilities - Backgrounds
+   ============================================================================ */
+
+/**
+ * Re-useable styles for backgrounds
+ */
+
+$ns: u-background;
+
+@mixin background-color($name, $color) {
+    &-#{$name} {
+        background-color: $color;
+    }
+}
+
+.#{$ns} {
+    &__color {
+        // Loop through each color set in the $colors map and create a bg color for them
+        @each $name, $value in $colors {
+            @include background-color($name, $value)
+        }
+    }
+}
+

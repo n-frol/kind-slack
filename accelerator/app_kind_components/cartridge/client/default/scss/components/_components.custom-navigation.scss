@@ -1,0 +1,16 @@
+/* ============================================================================
+   Custom Navigation Content
+   ============================================================================ */
+
+/**
+ * Provides styles for the custom navigation template
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-custom-navigation;
+.#{$ns} {
+    &__content {
+        text-transform: lowercase;
+    }
+}

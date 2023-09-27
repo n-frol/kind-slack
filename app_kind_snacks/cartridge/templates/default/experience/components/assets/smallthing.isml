@@ -1,0 +1,174 @@
+<isscript>
+   var assets = require('*/cartridge/scripts/assets');
+   assets.addJs('/js/gifting.js');
+</isscript>
+<div class="double_small_container">
+    <div class="small_container small_container_first" id="${pdict.anchor}">
+        <div class="left">
+            <img src="${pdict.image.src.desktop}" alt="q" />
+        </div>
+        <div class="right">
+            <div class="rightcontainer">
+                <div class="flexbreak"></div>
+                <h3>
+                <isprint value="${pdict.headertext}" encoding="off" />
+                </h3>
+                <div class="flexbreak"></div>
+                <a href="test"><isprint value="${pdict.ctatext}" encoding="off" /></a>
+            </div>
+        </div>
+    </div>
+    <div class="small_container" id="${pdict.anchor2}">
+        <div class="left">
+            <img src="${pdict.image.src.desktop}" alt="q" />
+        </div>
+        <div class="right">
+            <div class="rightcontainer">
+                <div class="flexbreak"></div>
+                <h3>
+                <isprint value="${pdict.headertext2}" encoding="off" />
+                </h3>
+                <div class="flexbreak"></div>
+                <a href="test"><isprint value="${pdict.ctatext2}" encoding="off" /></a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.small_container .left img {
+}
+    .double_small_container {
+        max-width: 1280px;
+        margin: auto;
+    }
+
+    .banner-container {
+        position: relative;
+    }
+
+    .small_container .banner {
+        z-index: 999;
+        position: absolute;
+        top: -10px;
+        left: 0px;
+        right: 0px;
+        background: black;
+        padding: 5px;
+        margin-bottom: 0px !important;
+        color: white;
+        text-align: center;
+        font-family: HelveticaNeue-Bold;
+        width: 200px;
+        margin: auto;
+    }
+
+    @media only screen and (max-width: 1024px) and (min-width: 769px) {
+        .small_container h3 {
+            font-size: 28px !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 425px) {
+            .small_container h3 {
+                font-size:24px;
+            }
+    }
+
+    @media only screen and (max-width: 425px) {
+        .small_container {
+            width: 100% !important;
+            display:inline-block !important;
+        }
+
+        .banner-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0px;
+        }
+
+        .small_container .left {
+            width: 100% !important;
+        }
+
+        .small_container .right {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    .small_container .copy {
+        margin-bottom: 20px;
+        font-family: georgia;
+    }
+
+    .small_container h3 {
+        margin-bottom: 20px;
+    }
+
+    .small_container button {
+        margin-bottom: 10px;
+    }
+
+    .btn-light {
+        width: 200px;
+    }
+
+    .btn-light-white {
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .flexbreak {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .small_container {
+        width: 45.75%;
+        margin: auto;
+        float: left;
+        margin-bottom: 30px;
+        display:flex;
+    }
+
+    .small_container_first {
+        margin-right: 5%;
+    }
+
+    .small_container .left {
+        width: 50%;
+        display: inline-block;
+        float: left;
+        position: relative;
+    }
+
+    .small_container .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        background: black;
+        color: white;
+        height: auto;
+        text-align: center;
+        padding: 30px;
+        flex-wrap: wrap;
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .small_container .right .banner {
+        font-family: HelveticaNeue-Bold;
+        margin-bottom: 40px;
+    }
+
+    .small_container a {
+        font-family: HelveticaNeue-Bold;
+        color: white;
+        text-transform: uppercase;
+    }
+</style>

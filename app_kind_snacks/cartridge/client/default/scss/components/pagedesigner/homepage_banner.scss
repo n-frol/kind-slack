@@ -1,0 +1,326 @@
+.full_width_image .text-container {
+    width: 500px;
+    margin: auto;
+    display: grid;
+    align-items: center;
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: var(--alignment);
+    padding-right: 0px;
+}
+@media (max-width: 450px) {
+    .full_width_image .text-container {
+            padding: 20px 20px;
+            max-width: unset;
+            width: 100%;
+            left: -20px !important;
+            bottom: unset;
+            margin: 0px;
+            padding: 30px 0px;
+            margin: auto;
+            width: 320px;
+        }
+}
+@media screen and (min-width: 440px) and (max-width: 1199px) {
+    .full_width_image .text-container {
+    padding-top: 50px;
+    width: 400px;
+    }
+}
+.homepage_banner {
+    & .image_half {
+        width:100%;
+        object-fit:cover;
+        height: inherit;
+    }
+    letter-spacing:  unset !important;
+    grid-template-rows: auto;
+    font-family: $helvetica;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1em;
+    display: grid;
+    grid-template-columns: 53% repeat(1,minmax(385px,1fr));
+    grid-auto-rows: 1fr;
+    @media screen and (max-width:450px) {
+        grid-template-columns: repeat(1, minmax(107.6vw, 110vw));
+    }
+    & .full_width {
+        max-width:101%;
+        left: 0px;
+        @media screen and (min-width: 768px) and (max-width: 1240px) {
+            height: 425px;
+            width: 101%;
+        }
+        @media (max-width: 450px) {
+            left:-16px;
+            object-fit: unset;
+            width: 100%;
+            }
+    }
+
+    cursor: pointer;
+    &.grid-reverse {
+        direction: rtl;
+    }
+    &.fullscreen {
+        width: 100vw;
+    }
+    picture source,
+    img {
+        width: unset;
+        max-width: unset;
+        object-fit: cover;
+    }
+    & .eyebrow {
+        margin-bottom: 28px;
+        letter-spacing: .1em;
+        font-size:16px;
+        @media (max-width: 767px) {
+            font-size:16px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1240px) {
+            margin-bottom:0px;
+        }
+    }
+    & h2 {
+        padding-bottom:28px;
+        text-transform: none;
+        letter-spacing: unset !important;
+        line-height: 53px;
+        margin-bottom: 0px;
+        font-size: 55px;
+        letter-spacing: 0em;
+        @media (max-width: 767px) {
+            font-size:50px;
+            margin-bottom:0px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1240px) {
+            font-size: 50px;
+            line-height: 48px;
+            margin-bottom: 0px;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
+    & .copy {
+        font-weight: 700;
+        font-family: $helvetica-bold;
+        font-size:16px;
+        line-height: 22px;
+        margin-bottom: 36px;
+        letter-spacing: 0em;
+        @media (max-width: 767px) {
+            font-size:16px;
+            margin-bottom: 36px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1240px) {
+            margin-bottom:36px;
+        }
+    }
+    .backgrounded {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        direction: ltr;
+        & picture source,
+        img {
+        width: 100%;
+        max-width: unset;
+        object-fit: cover;
+    }
+        @media (min-width: 769px) {
+            padding-left: 60px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1240px) {
+            padding: 15px;
+        }
+        & .text-container {
+            width: 500px;
+            @media screen and (max-width: 450px) {
+                width: 320px !important;
+                padding-right:0px;
+                padding-left: 15px;
+                position: relative;
+            }
+            @media screen and (min-width: 450px) and (max-width: 1199px) {
+                width: 400px;
+                padding-right: 0px;
+                padding-left: 20px;
+            }
+        }
+    }
+    .btn {
+        width: 150px;
+        height: 50px;
+        min-height: 50px;
+        letter-spacing: .05em;
+        font-size: 14px;
+        padding: 3px;
+        @media screen and (max-width:500px) {
+        }
+        &:not(:last-child) {
+            margin-right: 50px;
+            @media screen and (max-width: 450px) {
+                margin-right:20px;
+            }
+        }
+        &:hover {
+            background: black;
+            color: white;
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1240px) {
+    .picture_container {
+        width: 120%;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__prev {
+    left: 68px;
+    top: 60px;
+    @media (max-width: 767px) {
+        left: 0px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        left: 5px;
+        top: 110px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1025px) {
+        top: 120px;
+        left: 58px;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__next {
+    top: 90px;
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        right: 5px;
+        top: 110px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1025px) {
+        top: 120px;
+        right: 58px;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__arrow--byob {
+    width: 32px;
+}
+.carousel-homepage-byob .c-byob-category-nav {
+    padding-bottom: 30px;
+}
+.experience-assets-carousel h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+.experience-assets-carousel .c-byob-category-nav__item {
+    font-weight: normal;
+    font-family: "HelveticaNeue", Helvetica, sans-serif;
+}
+.carousel-homepage-byob .c-byob-category-nav {
+    padding-top: 0px;
+}
+.carousel-homepage-byob .c-byob-category-nav__item__name:hover, .carousel-homepage-byob .c-byob-category-nav__item__img-wrap:hover {
+    color:black;
+}
+.namewithcaret {
+    font-weight: 700 !important;
+    line-height: 20px;
+    &:hover {
+        color:black;
+    }
+    &:after {
+        @include background-svg($svg-arrow-forward);
+            background-position: center top;
+            background-size: 100%;
+            border-left: none;
+            border-top: none;
+            height: 30px;
+            -webkit-transform: none;
+            transform: none;
+            width: 30px;
+            float:right;
+    }
+}
+.c-recommendation {
+    margin-top:0px;
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .picture_container {
+        width: 120%;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__prev {
+    left: 68px;
+    top: 90px;
+    @media (max-width: 767px) {
+        left: 0px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        left: 45px;
+        top: 110px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1025px) {
+        top: 120px;
+        left: 58px;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__next {
+    top: 90px;
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        right: 45px;
+        top: 110px;
+    }
+    @media screen and (min-width: 1024px) and (max-width: 1025px) {
+        top: 120px;
+        right: 58px;
+    }
+}
+.carousel-homepage-byob .c-slick-slider__controls__arrow--byob {
+    width: 32px;
+}
+.carousel-homepage-byob .c-byob-category-nav {
+    padding-bottom: 30px;
+}
+.experience-assets-carousel h1 {
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+.experience-assets-carousel .c-byob-category-nav__item {
+    font-weight: normal;
+    font-family: "HelveticaNeue", Helvetica, sans-serif;
+}
+.carousel-homepage-byob .c-byob-category-nav {
+    padding-top: 0px;
+}
+.carousel-homepage-byob .c-byob-category-nav__item__name:hover, .c-byob-category-nav__item__img-wrap:hover {
+    color:black;
+}
+.namewithcaret {
+    &:hover {
+        color:black;
+    }
+    &:after {
+        @include background-svg($svg-arrow-forward);
+            background-position: center top;
+            background-size: 100%;
+            border-left: none;
+            border-top: none;
+            height: 30px;
+            -webkit-transform: none;
+            transform: none;
+            width: 30px;
+            float:right;
+    }
+}
+.c-recommendation {
+    margin-top:0px;
+}

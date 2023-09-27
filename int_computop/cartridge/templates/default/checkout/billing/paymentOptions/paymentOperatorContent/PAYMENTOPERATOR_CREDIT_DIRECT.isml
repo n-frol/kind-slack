@@ -1,0 +1,184 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_CREDIT_DIRECT.isml --->
+<!--- register/authenticated user --->
+
+<img class="cards" id="visalogo" src="${URLUtils.staticURL('images/visa_logo_7.gif')}" alt="Visa" />
+<img class="cards" id="amexlogo" src="${URLUtils.staticURL('images/american_express_logo_8.gif')}" alt="AMEX" />
+<img class="cards" id="mastercardlogo" src="${URLUtils.staticURL('images/mastercard_logo_8.gif')}" alt="Mastercard" />
+
+<style>
+
+</style>
+
+<isscript>
+    var formHelpers = require('/int_computop/cartridge/scripts/computop/helpers/formHelpers');
+    var customerPaymentInstruments = pdict.customer.customerPaymentInstruments
+    var filteredData = formHelpers.filterApplePayPaymentInstrument(customerPaymentInstruments);
+</isscript>
+
+
+
+<isif condition="${ pdict.customer.registeredUser }">
+    <div class="user-payment-instruments c-checkout-billing__payment-instruments container ${pdict.customer.registeredUser && filteredData.length ? '' : 'checkout-hidden'}">
+        <!--- Stored user payments --->
+        <!--- TODO show stored customer payment instrument with property paymentOperatorCCNr --->
+        <div class="stored-payments">
+            <isinclude template="checkout/billing/storedPaymentInstruments" />
+        </div>
+
+        <!--- Add new credit card button --->
+        <div class="row">
+            <button class="btn btn-block add-payment c-checkout-billing__add-payment__btn btn-outline-primary btn-outline-primary" type="button">${Resource.msg('button.add.payment', 'checkout', null)}</button>
+        </div>
+    </div>
+</isif>
+
+<fieldset class="credit-card-form ${pdict.customer.registeredUser && filteredData.length ? 'checkout-hidden' : ''}">
+    <isset name="creditDirectFields" value="${ pdict.forms.billingForm.creditdirect }" scope="page" />
+    <isset name="creditDirectAttrs" value="${ !empty(creditDirectFields.cardNumber) && !empty(creditDirectFields.cardNumber.attributes) ? creditDirectFields.cardNumber.attributes : '' }" scope="page" />
+    <isset name="wrapperClassString" value="${'form-group' + (creditDirectFields.cardNumber.mandatory === true ? ' required ' : ' ') + creditDirectFields.cardNumber.htmlName}" scope="page" />
+
+    <!--- Hidden input for credit card type --->
+    <input type="hidden" class="form-control" id="creditDirectCardType"
+           name="${creditDirectFields.cardType.htmlName}"
+           value="" />
+
+    <iscomment> Name on Card </iscomment>
+    <div class="row c-form-elements__row">
+        <div class="col-12 c-form-elements__col">
+            <div class="form-group
+                <isif condition=${creditDirectFields.cardOwner.mandatory === true}>required</isif>
+                ${creditDirectFields.cardOwner.htmlName}">
+                <label class="form-control-label" for="cardOwner">${Resource.msg('label.input.creditcard.owner','forms',null)}</label>
+                <div class="card-number-wrapper">
+                    <input type="text" class="form-control cardOwner" aria-label="${Resource.msg('label.input.creditcard.owner','forms',null)}" id="cardOwner"
+                        value="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            ? pdict.order.billing.payment.selectedPaymentInstruments[0].owner||''
+                            : ''}"
+                        <isprint value=${creditDirectFields.cardOwner.attributes} encoding="off"/>
+                        autocomplete="cc-owner"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <iscomment> Card Number </iscomment>
+    <div class="row">
+        <div class="col-12">
+            <div class="${wrapperClassString}">
+                <label class="form-control-label" for="creditDirectCardNumber">${ Resource.msg('field.credit.card.number', 'creditCard', null) }</label>
+                <div class="card-number-wrapper">
+                    <input type="tel" class="form-control creditDirectCardNumber" id="creditDirectCardNumber"
+                            autocomplete="cc-number"
+                            <isprint value=${creditDirectAttrs} encoding="off">
+                    >
+                    <img class="cardtype" src="https://via.placeholder.com/100x50" alt="test" />
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <iscomment> Expiration Date Row </iscomment>
+    <div class="row">
+
+        <iscomment> Expiration Month </iscomment>
+        <div class="col-6">
+            <div class="form-group
+            <isif condition=${creditDirectFields.expirationMonth.mandatory === true}>required</isif>
+            ${creditDirectFields.expirationMonth.htmlName}">
+                <label class="form-control-label" for="expirationMonth">${Resource.msg('field.credit.card.expiration.month','creditCard',null)}</label>
+                <select class="form-control expirationMonth custom-select" aria-label="${Resource.msg('field.credit.card.expiration.month','creditCard',null)}" id="expirationMonth"
+                <isprint value=${creditDirectFields.expirationMonth.attributes} encoding="off"/> autocomplete="cc-exp-month">
+                <isloop items=${creditDirectFields.expirationMonth.options} var="month">
+                    <option id="${month.id}" value="${month.htmlValue}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            && month.id == pdict.order.billing.payment.selectedPaymentInstruments[0].expirationMonth}">
+                        selected
+                    </isif> >
+                    ${month.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <iscomment> Expiration Year </iscomment>
+        <div class="col-6">
+            <div class="form-group
+            <isif condition=${creditDirectFields.expirationYear.mandatory === true}>required</isif>
+            ${creditDirectFields.expirationYear.htmlName}">
+                <label class="form-control-label" for="expirationYear">${Resource.msg('field.credit.card.expiration.year','creditCard',null)}</label>
+                <select class="form-control expirationYear custom-select" aria-label="${Resource.msg('field.credit.card.expiration.year','creditCard',null)}" id="expirationYear"
+                <isprint value=${creditDirectFields.expirationYear.attributes} encoding="off"/> autocomplete="cc-exp-year">
+                <option value="${pdict.forms.billingForm.creditCardFields.expirationYear.options[0].htmlValue}">${pdict.forms.billingForm.creditCardFields.expirationYear.options[0].label}</option>
+                <isloop items=${pdict.expirationYears} var="year">
+                    <option id="${year.toFixed(0)}" value="${year.toFixed(0)}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            && year == pdict.order.billing.payment.selectedPaymentInstruments[0].expirationYear}">
+                        selected
+                    </isif> >
+                    <isprint value="${year}" formatter="####" /></option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <iscomment> Security Code (CCV) </iscomment>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group
+            <isif condition=${creditDirectFields.securityCode.mandatory === true}>required</isif>
+            ${ creditDirectFields.securityCode.htmlName }">
+                <label class="form-control-label" for="creditDirectSecurityCode">${Resource.msg('field.credit.card.security.code','creditCard',null)}</label>
+                <span class="info-icon">
+                <img src="${URLUtils.staticURL('/images/icon-tooltip-black.svg')}" class="c-tooltip__icon" alt="${Resource.msg('label.tooltip.cvv', 'common', null)}" />
+                <div class="tooltip">
+                    ${ Resource.msg('tooltip.security.code', 'creditCard', null) }
+                </div>
+            </span>
+
+                <input type="tel" class="form-control securityCode" id="creditDirectSecurityCode"
+                <isprint value=${ creditDirectFields.securityCode.attributes } encoding="off"/> >
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <iscomment> Save Card Checkbox </iscomment>
+    <isif condition="${pdict.customer.registeredUser}">
+        <div class="row">
+            <div class="col-6">
+                <div class="save-credit-card custom-control">
+                    <iscomment>
+                        // !!pcb 20190205 -- This is causing the payment not to be saved due to form serialization.
+                        <input type="checkbox" id="creditDirectSaveCreditCard" name="${ creditDirectFields.saveCard.htmlName }" value="true" <isif condition="${pdict.forceSave}">disabled</isif> checked>
+                    </iscomment>
+                    <input type="checkbox" id="creditDirectSaveCreditCard" name="${ creditDirectFields.saveCard.htmlName }" value="true" checked>
+                    <label class="custom-control-label" for="creditDirectSaveCreditCard">
+                        ${ creditDirectFields.saveCard.label }
+                    </label>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="default-payment-method custom-control">
+                    <input type="checkbox" id="creditDirectMakeDefault" name="${ creditDirectFields.makeDefault.htmlName }" value="true">
+                    <label class="custom-control-label" for="creditDirectMakeDefault">
+                        ${ creditDirectFields.makeDefault.label }
+                    </label>
+                </div>
+            </div>
+        </div>
+    </isif>
+
+    <isif condition="${pdict.customer.registeredUser}">
+        <button class="btn btn-block cancel-new-payment btn-outline-primary ${pdict.customer.registeredUser && filteredData.length ? '' : 'checkout-hidden'}" type="button">${Resource.msg('button.back.to.stored.payments', 'checkout', null)}</button>
+    </isif>
+</fieldset>

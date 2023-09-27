@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-d" context="folder" context-id="sample_folder_2" configuration-id="sample_billboard-grid" default="true" assigned-to-site="true">
+        <template>slots/content/billboardGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kind-nyc-office"/>
+                <content-asset content-id="kind-field-team"/>
+                <content-asset content-id="kind-international"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f6f6f6</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Come Join Us</custom-attribute>
+            <custom-attribute attribute-id="slotLinks">&lt;a href="$url('Home-Show')$"&gt;View All Positions&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

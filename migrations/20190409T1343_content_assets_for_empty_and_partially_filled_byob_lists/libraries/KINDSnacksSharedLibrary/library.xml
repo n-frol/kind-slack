@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="nothing-in-box">
+        <display-name xml:lang="x-default">Nothing in Box</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/simpleTile</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">theres nothing in your box yet, start adding some snacks!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">uh-oh</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/byob/Screen Shot 2019-04-09 at 11.21.49 AM.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="byob-almost-there-box">
+        <display-name xml:lang="x-default">Almost There</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/simpleTile</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">keep adding snacks to your box</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">almost there</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>
+

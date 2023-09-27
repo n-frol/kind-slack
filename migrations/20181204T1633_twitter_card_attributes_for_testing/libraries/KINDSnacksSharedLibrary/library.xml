@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <folder folder-id="flavors">
+        <display-name xml:lang="x-default">Flavors</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="tcDescription">KIND Snacks - Flavors Folder custom twitter card description</custom-attribute>
+            <custom-attribute attribute-id="tcImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="tcTitle">KIND Snacks - Flavors Folder custom twitter card title</custom-attribute>
+            <custom-attribute attribute-id="tcURL">https://www.kindsnacks.com/</custom-attribute>
+        </custom-attributes>
+    </folder>
+
+    <content content-id="chocolate">
+        <display-name xml:lang="x-default">Chocolate</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">who doesn't love a snack with chocolate?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Chocolate</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'chocolate')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="tcDescription">KIND Snacks - Chocolate asset twitter description</custom-attribute>
+            <custom-attribute attribute-id="tcImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="tcTitle">KIND Snacks - Who doesn't love chocolate?</custom-attribute>
+            <custom-attribute attribute-id="tcURL">https://www.kindsnacks.com/</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+</library>

@@ -1,0 +1,45 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    var rand = Math.floor(Math.random() * 10);
+</isscript>
+<div class="productTile_item ${(rand > 6) ? 'featured' : ''}" data-badges="${tileProduct.custom.badge.value}">
+    <div class="productTile_heading">
+    <div class="tilebadge">
+        ${tileProduct.custom.badge}
+    </div>
+    <div class="yotpo bottomLine floatright"
+         data-appkey="gM6nbHZs59SkWdrT0zMVhkIcYMLBlgc8x9oWMStq"
+         data-domain="Domain of the shop"
+         data-product-id="${tileProduct.ID}"
+         data-product-models="${tileProduct.ID}"
+         data-name="${tileProduct.name}}"
+         data-url="${tileProduct.URL}"
+         data-image-url="${tileProduct.image}"
+         data-description="${tileProduct.longDescription}"
+         data-bread-crumbs="none">
+    </div>
+    </div>
+    <div style="clear:both"></div>
+    <div>
+        <img class="productTile_img" src="${responsiveImageUtils.getResponsiveImage(tileProduct.getImages('large')[2], 275, 300, "", "png").imageUrlDefault}" alt="${tileProduct.name}" />
+        <div class="productTile_name">
+            ${tileProduct.name}
+    </div>
+    <div class="productTile_price">
+        ${tileProduct.priceModel.maxPrice.toFormattedString()} <span style="text-transform: capitalize">(${tileProduct.custom.multipack} ${tileProduct.custom.productType})</span>
+    </div>
+    </div>
+    <div class="featured_points">
+        <isloop items="${tileProduct.custom.benefits}" var="benefit">
+            <div class="featured_point">
+                ${benefit}
+            </div>
+        </isloop>
+    </div>
+    <a class="button quickshop" href="#no">Quick Shop</a>
+</div>
+<style>
+.productTile_heading {
+    display: flex;
+}
+</style>

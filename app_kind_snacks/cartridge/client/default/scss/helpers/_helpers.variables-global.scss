@@ -1,0 +1,167 @@
+// ============================================================================
+// Global Variables
+// ============================================================================
+
+
+// Typography
+// ============================================================================
+
+/// Primary font family of design
+/// @group Styling
+$font-family-primary: 'HelveticaNeue-Bold', Helvetica, sans-serif !default;
+$font-family-primary-regular: 'Helvetica Neue', Helvetica, sans-serif !default;
+
+/// Secondary font family of design
+/// @group Styling
+$font-family-secondary: 'Sentinel A', 'Sentinel B', Georgia, serif !default;
+
+
+$font-family-primary-byob: 'HelveticaNeue', Helvetica, sans-serif !default;
+$font-family-bold-byob: 'HelveticaNeue-Bold', Helvetica, sans-serif !default;
+
+// Layout
+// ============================================================================
+
+/// Page-level constraining and wrapping width
+/// @group Layout
+$wrapper-max-width: 960px !default;
+
+/// Sets the width of a single grid gutter.
+/// @group Layout
+$setting-gutter: 20px !default;
+$setting-gutter2: 60px !default;
+
+$em-base: 16px !default;
+
+$navbar-nav-link-padding-x: 0; // Zero out the default bootstrap padding variable
+
+
+// Color Names
+// ============================================================================
+
+// All color variable names should be named using
+// http://chir.ag/projects/name-that-color/
+//
+// For more information, please see https://davidwalsh.name/sass-color-variables-dont-suck
+
+// KIND Brand Specific Colors
+$fuel-yellow: #e6ad27;  // Yellow used in KIND logo
+$deep-sea-green: #095c66;
+$punch-red: #db342a; // // Red used in KIND logo --and-- Google color
+$success: #babf10;
+$lemon-ginger-green: #abb52a; // Green used in KIND logo
+$glacier-blue: #7eabbe; // Blue used in KIND logo
+$san-marino: #3e78a5; // Blue for Text link hover
+$picton-blue: #61b4e4; // Blue for Checkboxes and Radio buttons
+$alizarin-crimson: #d9272e; // Red used for danger errors
+$dark-yellow: #eca902; // dark yellow used for rating stars
+$grey-chips: #f1f0ef; // grey-chips used for background of chips
+$promo-red: #c00; // text color for promo callouts
+
+
+$white: #fff !default;
+$black: #000 !default;
+$green: #008827;
+$yellow: $fuel-yellow; // Yellow used in KIND logo
+$primary: $black !default;
+$secondary: $yellow;
+$green-aqua: $deep-sea-green;
+$light-green: $lemon-ginger-green; // Green used in KIND logo
+$red: $punch-red; // Red used in KIND logo
+$blue: $glacier-blue; // Blue used in KIND logo
+$success: $green !default; // Success alert
+$danger: $alizarin-crimson !default; // Danger alert
+
+$grey1: #f3f3f3 !default;
+$grey2: #e5e5e5;
+$grey3: #ccc !default;
+$grey4: #767676 !default;
+$grey5: #666 !default;
+$grey6: #444 !default;
+$grey7: #222 !default;
+$grey8: #333 !default;
+$grey9: #f2f2f2 !default;
+$grey10: #888888;
+$grey11: #DCDCDC !default;
+$grey12: #999;
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+$mid-grey: #919191;
+
+$light-gray: $grey1 !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey6 !default;
+$darker-gray: $grey7 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$menu-link: $grey6 !default;
+$close-menu-bg: $grey2 !default;
+$link-color: $dark-gray !default;
+$hr-border-color: $grey3 !default;
+
+// Social OAuth Colors
+$blumine: #1e518f; // Facebook
+
+// Map of colors defined here we may want to loop through elsewhere
+$colors: (
+    alizarin-crimson: $alizarin-crimson,
+    black: $black,
+    green: $green,
+    grey1: $grey1,
+    grey2: $grey2,
+    grey3: $grey3,
+    grey4: $grey4,
+    grey5: $grey5,
+    grey6: $grey6,
+    grey7: $grey7,
+    grey8: $grey8,
+    grey9: $grey9,
+    light-green: $light-green,
+    primary: $primary,
+    san-marino: $san-marino,
+    secondary: $secondary,
+    white: $white
+);
+
+// Recreate Bootstrap's spacers
+$spacer: 16px;
+
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.25,
+    5: $spacer * 1.5,
+    6: 30px,
+    7: $spacer * 3
+);
+
+// Animation
+// ============================================================================
+
+/// Primary transition
+/// @group Animation
+$transition-primary: all .25s ease !default;
+
+
+// Z-Index
+// ============================================================================
+
+$z-index-dialog: 9999;
+$z-index-header: 200;
+$z-index-main: 0;
+$z-index-tooltip: 999;
+
+
+// Header
+// ============================================================================
+
+$global-header-height: 60px !default;
+$global-header-height--md-up: 75px !default;
+
+/// Global Header Navigation Height
+/// @group styling
+/// This sets the height for the global header navigation. It is shared across multiple partials.
+$global-header-navigation-height: 54px !default;

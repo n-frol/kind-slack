@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Product">
+        <group-definitions>
+            <attribute-group group-id="ExternalSearch">
+                <display-name xml:lang="x-default">SEO Support</display-name>
+                <attribute attribute-id="pageTitle" system="true"/>
+                <attribute attribute-id="pageDescription" system="true"/>
+                <attribute attribute-id="pageURL" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="Order">
+                <display-name xml:lang="x-default">Sku Attributes</display-name>
+                <attribute attribute-id="UPC" system="true"/>
+                <attribute attribute-id="showOnPDP"/>
+                <attribute attribute-id="totalItemQuantity"/>
+                <attribute attribute-id="size"/>
+                <attribute attribute-id="gear-size"/>
+                <attribute attribute-id="weight"/>
+                <attribute attribute-id="isHiddenComponents"/>
+            </attribute-group>
+            <attribute-group group-id="productDetails">
+                <display-name xml:lang="x-default">Product Attributes</display-name>
+                <attribute attribute-id="productType"/>
+                <attribute attribute-id="containerType"/>
+                <attribute attribute-id="productClassID"/>
+                <attribute attribute-id="backgroundColor"/>
+                <attribute attribute-id="badge"/>
+                <attribute attribute-id="texture"/>
+                <attribute attribute-id="flavor"/>
+                <attribute attribute-id="occasion"/>
+                <attribute attribute-id="benefits"/>
+                <attribute attribute-id="featuredAssets"/>
+                <attribute attribute-id="nutritionFactsImage"/>
+                <attribute attribute-id="nutritionNotes"/>
+                <attribute attribute-id="featuredHeading"/>
+                <attribute attribute-id="notInProductLabel"/>
+                <attribute attribute-id="notInProductBody"/>
+            </attribute-group>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove</display-name>
+                <attribute attribute-id="autoShipEligible"/>
+                <attribute attribute-id="autoShipDiscount"/>
+                <attribute attribute-id="discontinued"/>
+                <attribute attribute-id="impulseUpsell"/>
+            </attribute-group>
+            <attribute-group group-id="Store">
+                <display-name xml:lang="x-default">Nutrition</display-name>
+                <attribute attribute-id="saturatedFat"/>
+                <attribute attribute-id="totalCarb"/>
+                <attribute attribute-id="totalFat"/>
+                <attribute attribute-id="sugarAlcohol"/>
+                <attribute attribute-id="transFat"/>
+                <attribute attribute-id="protein"/>
+                <attribute attribute-id="sugars"/>
+                <attribute attribute-id="dietaryFiber"/>
+                <attribute attribute-id="cholesterol"/>
+                <attribute attribute-id="addedSugar"/>
+                <attribute attribute-id="allergenInformation"/>
+                <attribute attribute-id="calories"/>
+                <attribute attribute-id="potassium"/>
+                <attribute attribute-id="sodium"/>
+                <attribute attribute-id="polyunsaturatedFat"/>
+            </attribute-group>
+            <attribute-group group-id="SearchRanking">
+                <display-name xml:lang="x-default">Sorting Rules</display-name>
+                <attribute attribute-id="searchPlacement" system="true"/>
+                <attribute attribute-id="searchRank" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="productFeed">
+                <display-name xml:lang="x-default">Product Feed</display-name>
+                <attribute attribute-id="includeInProductFeed"/>
+                <attribute attribute-id="productFeedTitle"/>
+                <attribute attribute-id="productFeedDescription"/>
+                <attribute attribute-id="productFeedImage"/>
+                <attribute attribute-id="productFeedLabel"/>
+                <attribute attribute-id="productFeedLabel1"/>
+                <attribute attribute-id="productFeedLabel2"/>
+                <attribute attribute-id="googleProductCategory"/>
+                <attribute attribute-id="productCondition"/>
+                <attribute attribute-id="unitBaseMeasure"/>
+                <attribute attribute-id="unitMeasure"/>
+            </attribute-group>
+            <attribute-group group-id="SiteMap">
+                <display-name xml:lang="x-default">Sitemap Attributes</display-name>
+                <attribute attribute-id="siteMapIncluded" system="true"/>
+                <attribute attribute-id="siteMapChangeFrequency" system="true"/>
+                <attribute attribute-id="siteMapPriority" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="Social">
+                <display-name xml:lang="x-default">Social</display-name>
+                <attribute attribute-id="tcTitle"/>
+                <attribute attribute-id="tcURL"/>
+                <attribute attribute-id="tcDescription"/>
+                <attribute attribute-id="tcImage"/>
+                <attribute attribute-id="facebookEnabled" system="true"/>
+                <attribute attribute-id="ogDescription"/>
+                <attribute attribute-id="ogImage"/>
+                <attribute attribute-id="ogImageAlt"/>
+                <attribute attribute-id="ogTitle"/>
+                <attribute attribute-id="ogURL"/>
+                <attribute attribute-id="pinterestEnabled" system="true"/>
+            </attribute-group>
+            <attribute-group group-id="Presentation">
+                <display-name xml:lang="x-default">Unused</display-name>
+            </attribute-group>
+            <attribute-group group-id="ChannelIntegration">
+                <display-name xml:lang="x-default">Unused</display-name>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

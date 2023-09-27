@@ -1,0 +1,8 @@
+{
+  "plugins": ["sitegenesis"],
+  "rules": {
+    "sitegenesis/no-global-require": ["error"],
+    "max-len": "off",
+    "key-spacing": "off"
+  }
+}

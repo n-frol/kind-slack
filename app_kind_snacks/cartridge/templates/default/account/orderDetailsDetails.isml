@@ -1,0 +1,48 @@
+<div class="confirm-details">
+    <div class="order-details">
+        <div class="row mb-6 order-details-block">
+            <div class="col-12 col-sm-6">
+                <h2 class="summary-section-label order-date-label h4">${Resource.msg('label.order.date', 'confirmation', null)}</h2>
+                <p class="summary-details order-date subtext"><isprint value="${pdict.order.creationDate}" style="DATE_LONG"/></p>
+            </div>
+            <div class="col-12 col-sm-6">
+
+                <h2 class="summary-section-label order-date-label h4">${Resource.msg('label.orderhistory.orderstatus', 'account', null)}</h2>
+                <p class="summary-details order-status">
+                    <span class="subtext"><isprint value="${pdict.order.orderStatus.displayValue}" /></span>
+                    <isif condition="${pdict.order.orderStatus.value === 4.2}">
+                        <a href="${URLUtils.https('Account-ShippingDetails', 'orderID', pdict.order.orderNumber, 'orderFilter', pdict.orderFilter)}" class="ml-2 u-text__helvetica-neue u-text__color-san-marino u-text__size-12">
+                            ${Resource.msg('link.shippingdetails', 'account', null)}
+                        </a>
+                    </isif>
+                </p>
+            </div>
+        </div>
+
+        <isset name="isConfirmationStage" value="${true}" scope="page"/>
+
+        <div class="row order-details-block">
+            <div class="col-12 col-sm-6">
+                <h2 class="h4">
+                    ${Resource.msg('heading.checkout.shipping', 'checkout', null)}
+                </h2>
+                <isinclude template="checkout/shipping/shippingSummary" />
+            </div>
+            <div class="col-12 col-sm-6">
+                <h2 class="h4">
+                    ${Resource.msg('label.payment', 'account', null)}
+                </h2>
+                <isinclude template="checkout/billing/billingSummary" />
+                <isif condition="${!empty(pdict.order.shipping[0]) && !empty(pdict.order.shipping[0].shippingAddress) && !empty(pdict.order.shipping[0].shippingAddress.email)}">
+                    <h3 class="subtitle st-checkout-main__sub-title">
+                        ${Resource.msg('label.profile.email', 'account', null)}:
+                    </h3>
+                    <div class="subtext">
+                        ${pdict.order.shipping[0].shippingAddress.email}
+                    </div>
+                </isif>
+            </div>
+        </div>
+
+    </div>
+</div>

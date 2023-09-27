@@ -1,0 +1,140 @@
+/* ============================================================================
+Ordergroove Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created by Ordergroove across the site
+ */
+
+ // Use importants to override other important styles
+
+$ns: s-ordergroove;
+
+.#{$ns} {
+    &__promo-callout {
+        width: 100%;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    .og-offer {
+        .og-widget {
+            z-index: 1 !important;
+            max-width: 100%!important;
+        }
+    }
+    .og-offer-mock {
+        opacity: .5;
+        pointer-events: none;
+    }
+}
+
+.order-groove-v2 {
+    margin: 5px 0 10px;
+    .standard-price,
+    .c-ordergroove-pricing,
+    .snack-pack-message {
+        display: inline-block;
+        max-width: none;
+        width: auto;
+        position: static;
+        font-size: 1.5rem;
+    }
+    .c-ordergroove-pricing__ad-hoc,
+    .c-ordergroove-pricing__subscription {
+        min-height: 0;
+        display: inline-block;
+        width: auto;
+        margin-right: 0;
+        padding: 0;
+    }
+    .snack-pack-price,
+    .og-sale-price {
+        color: #61b4e4 !important;
+    }
+    .snack-pack-price + .og-sale-price {
+        display: none;
+    }
+    .og-offer {
+        .snack-pack-message {
+            display: none;
+        }
+    }
+    .og-widget {
+        padding-bottom: 0!important;
+        .og-option-row {
+            padding-left: 5px!important;
+            min-height: 40px!important;
+            padding-top: 10px!important;
+            input[type="radio"].og-on-radio:checked::after,
+            input[type="radio"].og-off-radio:checked:after {
+                width: 100%!important;
+                background-color: transparent!important;
+            }
+            .og-bull,
+            .og-tooltip-trigger,
+            .og-li,
+            .og-sub-textline1 {
+                border: 1px solid white;
+                color: black!important;
+            }
+            &.is-active {
+                background: #eee!important;
+            }
+            .price {
+                line-height: 1.1!important;
+            }
+        }
+    }
+    .strike-through {
+        margin-right: 0;
+    }
+    .strike-through.sales {
+        color: black;
+    }
+    .snack-pack-message,
+    .c-qty__wrap {
+        color: #888;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+        font-size: 12px;
+    }
+    .snack-pack-message {
+        font-size: 14px;
+        margin-left: 5px;
+    }
+    .price {
+        font-size: 2rem;
+        @include media-breakpoint-up(md) {
+            font-size: 1.2rem;
+        }
+    }
+    &.is-disabled {
+        .og-widget .og-option-row {
+            .og-bull,
+            .og-tooltip-trigger,
+            .og-li,
+            .og-sub-textline1{
+                color: #888!important;
+            }
+            color: #888!important;
+            pointer-events: none;
+            input[type="radio"],
+            input[type="radio"]:checked {
+                background: #eee!important;
+                border-color: #eee!important;
+                box-shadow: none!important;
+            }
+        }
+        .og-iu {
+            background: #fff!important;
+            color: #000!important;
+            opacity: .65!important;
+            pointer-events: none;
+            &:hover {
+                border-color: #000 !important;
+            }
+        }
+    }
+}

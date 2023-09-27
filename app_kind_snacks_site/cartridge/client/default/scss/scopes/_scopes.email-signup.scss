@@ -1,0 +1,26 @@
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+/**
+ * Styles the button compenent
+ */
+
+$ns: s-email-signup;
+
+.#{$ns} {
+    color: white;
+    font-size: 14px;
+    letter-spacing: -0.3px;
+    padding-left: 0 !important;
+    text-align: center;
+    width: 100%;
+
+    p {
+        font-size: 22px;
+        font-weight: $font-weight-bold;
+        line-height: 28px;
+        margin-bottom: 16px;
+    }
+
+}

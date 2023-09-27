@@ -1,0 +1,15 @@
+/* ============================================================================
+Header - No menu
+============================================================================ */
+
+/**
+ * Establish styles for simplified (nomenu) version of the site header
+ */
+
+ @import '~kind/components/components.header-nomenu';
+
+$ns: "c-header-nomenu";
+
+.#{$ns} {
+    background-color: $white;
+}

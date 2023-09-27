@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="compare-show">
+        <display-name xml:lang="x-default">Compare-Show</display-name>
+        <description xml:lang="x-default">Provides metadata tags for the Compare-Show site page.</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes>
+        <page-title xml:lang="x-default">Compare KIND Snack Bars</page-title>
+        <page-description xml:lang="x-default">Compare KIND Snack Bars Side by Side</page-description>
+        <page-keywords xml:lang="x-default">compare,kind</page-keywords>
+        </page-attributes>
+    </content>
+    <content content-id="customerservice-contactus">
+        <display-name xml:lang="x-default">Customer Service - Contact Us</display-name>
+        <description xml:lang="x-default">Provides metadata tags for the Contact-Show site page.</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes>
+        <page-title xml:lang="x-default">Contact KIND Snacks Customer Service page title</page-title>
+        <page-description xml:lang="x-default">Contact KIND Snacks Customer Service page description</page-description>
+        <page-keywords xml:lang="x-default">customer service, contact us</page-keywords>
+        </page-attributes>
+    </content>
+</library>

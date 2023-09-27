@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="byob-test">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category1">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category2">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category3">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category4">
+        <thumbnail>images/byob/byob-protein.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category5">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category6">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category7">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+    <category category-id="byob-category8">
+        <template>rendering/category/byobConfiguration</template>
+    </category>
+
+</catalog>

@@ -1,0 +1,2095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="contact">
+        <display-name xml:lang="x-default">Have Questions?</display-name>
+        <description xml:lang="x-default">we have answers.</description>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/contact</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <folder folder-id="flavors">
+        <display-name xml:lang="x-default">Flavors</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <folder folder-id="media-center">
+        <display-name xml:lang="x-default">Media Center</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <folder folder-id="nutrition-collective">
+        <display-name xml:lang="x-default">Nutrition Collective</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="chocolate">
+        <display-name xml:lang="x-default">Chocolate</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">who doesn't love a snack with chocolate?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Chocolate</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'chocolate')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="fruit">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">think blueberry, cranberry, mango, apple and more!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Fruit</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_fruit_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'fruit')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="nut-butter">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">craving nut butter snacks? we've got you covered.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Nut Butter</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_nut-butter_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="savory">
+        <display-name xml:lang="x-default">Savory</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">looking for something a little less sweet? check out these bars.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Savory</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_savory_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="spiced">
+        <display-name xml:lang="x-default">Spiced</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">our sweet spiced snacks with cinnamon, vanilla &amp; more!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Spiced</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_spiced_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="sweet-salty">
+        <display-name xml:lang="x-default">Sweet &amp; Salty</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">just the right combination of sweetness with a dash of salt.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Sweet &amp; Salty</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_sweet-salty_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="flavors-content-grid">
+        <display-name xml:lang="x-default">Flavors</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Check out our variety of delicious flavors fit to satisfy any craving.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_flavors_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-ShowContent', 'fdid', 'flavors')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="occasions-content-grid">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">See how KIND fits into your everyday routine from morning to night.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Occasions</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_occasions_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Page-Show', 'cid', 'occasions')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefits-content-grid">
+        <display-name xml:lang="x-default">Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">See all the different benefits KIND products have to offer.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Benefits</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_benefits_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-ShowContent', 'fdid', 'benefits')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="occasions">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/navigationContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>explore-snack-times</value>
+                <value>fuel-your-morning-run</value>
+                <value>breakfast-at-home</value>
+                <value>add-some-fruit</value>
+                <value>make-lunch-interesting</value>
+                <value>healthy-on-the-go</value>
+                <value>after-school-snack</value>
+                <value>power-your-workout</value>
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="isTimelineTemplate">true</custom-attribute>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="cur-page"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="add-some-fruit">
+        <display-name xml:lang="x-default">add some fruit to your day</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#B41782</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">add some fruit to your day</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_fruit_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="make-lunch-interesting">
+        <display-name xml:lang="x-default">Make Lunch Interesting</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#095C66</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Make Lunch Interesting</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_lunch_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="healthy-on-the-go">
+        <display-name xml:lang="x-default">snack healthy while on-the-go</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#E1D74E</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">snack healthy while on-the-go</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_on-the-go_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="after-school-snack">
+        <display-name xml:lang="x-default">After School Snack</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#4DC1DF</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">After School Snack</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/Kids_Group_Shot_Still_withLunchbox_1122x748_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="power-your-workout">
+        <display-name xml:lang="x-default">Power For Your Workout</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#4B8B2A</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Power For Your Workout</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_workout_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="guilt-free-indulgence">
+        <display-name xml:lang="x-default">Guilt-free Indulgence</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#83603F</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Guilt-free Indulgence</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_guilt-free-indulgence_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="evening-snack">
+        <display-name xml:lang="x-default">Evening Snack</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262729</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Evening Snack</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_evening_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="learn-more-ingredients">
+        <display-name xml:lang="x-default">Learn more about our ingredients</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#095c66</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">take a look at everything we put in our snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">want to learn more about our delicious ingredients?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'ingredients')$" class="btn-outline-white"&gt;Ingredients A-Z&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefits-nav-asset">
+        <display-name xml:lang="x-default">Ways to snack custom nav - Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'benefits')$" class="cur-page"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="flavors-nav-asset">
+        <display-name xml:lang="x-default">Ways to snack custom nav - Flavors</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'flavors')$" class="cur-page"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kids">
+        <display-name xml:lang="x-default">Kids</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="s-knd-legacy"&gt;&#13;
+&lt;div id="kind-kids"&gt;&#13;
+&lt;div id="kidsnavbar"&gt;&#13;
+&lt;div class="meet"&gt;&lt;a href="#meet"&gt;meet the kind kids&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="story"&gt;&lt;a href="#story"&gt;story time&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="game"&gt;&lt;a href="#game"&gt;game time&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="grown"&gt;&lt;a href="#grown"&gt;for grown ups&lt;/a&gt;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div id="product-display-container"&gt;&#13;
+&lt;div class="chocolate-chips-bg" style="transform: translate(20px, -10px) scale(1.1);"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="prods clearfix"&gt;&#13;
+&lt;div class="kind-kids-logo"&gt;&lt;img alt="KINDS Kid Logo" src="images/kindkids/kindKidsLogo_NEG_Shadow.png?$staticlink$" title="" /&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;h1&gt;Chewy Granola Bars&lt;/h1&gt;&#13;
+&#13;
+&lt;div class="kidspackagecontainer"&gt;&#13;
+&lt;div class="p-items honey-oat-cnt" style="width: 182px; transform: translate3d(0px, 0px, 0px); left: 20px; top: 57px; z-index: auto;"&gt;&lt;a href="/products/kids/chewy-honey-oat-kids" style="border: none"&gt;&lt;img alt="Honey Oat 6 Pack" src="images/kindkids/Kids-HoneyOat_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;h4&gt;honey oat&lt;/h4&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="p-items choc-chip-cnt" style="left: 220px; top: 0px; width: 255px; z-index: 50; transform: matrix(1, 0, 0, 1, 0, 0);"&gt;&lt;a href="/products/kids/chewy-chocolate-chip-kids" style="border: none"&gt;&lt;img alt="Chocolate Chip 6 Pack" src="images/kindkids/Kids-Choc_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;h4&gt;CHOCOLATE CHIP&lt;/h4&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="p-items peanut-butter-cnt" style="top: 49px; width: 182px; left: 486px; z-index: auto; transform: matrix(1, 0, 0, 1, 0, 0);"&gt;&lt;a href="/products/kids/chewy-peanut-butter-chocolate-chip-kids" style="border: none"&gt;&lt;img alt="Peanut Butter Chocolate Chip 6 Pack" src="images/kindkids/Kids-PnutButtChoc_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;h4&gt;PEANUT BUTTER CHOCOLATE CHIP&lt;/h4&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="shop-btn-contain"&gt;&lt;button class="shop-btn pulser"&gt;Shop All&lt;/button&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div id="highlights_contain"&gt;&lt;img alt="Claims" class="claims" src="images/kindkids/claims-new.png?$staticlink$" style="transform-style: preserve-3d; transform: translate3d(0px, 0px, 0px);" /&gt;&#13;
+&lt;p class="nutrition-fact"&gt;*Per 23 grams, the leading kids granola bar contains 6.7 grams of sugar, KIND Kids&amp;trade; granola bar contains 5 grams&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;!-- Mobile Kids --&gt;&#13;
+&#13;
+&lt;div class="kidspackagecontainer-mobile"&gt;&#13;
+&lt;div class="p-items honey-oat-cnt" style="width: 182px; transform: translate3d(0px, 0px, 0px); left: 20px; top: 57px; z-index: auto;"&gt;&lt;a href="/products/kids/chewy-honey-oat-kids" style="border: none"&gt;&lt;img alt="Honey Oat 6 Pack" src="images/kindkids/Kids-HoneyOat_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="p-items choc-chip-cnt" style="left: 220px; top: 0px; width: 255px; z-index: 50; transform: matrix(1, 0, 0, 1, 0, 0);"&gt;&lt;a href="/products/kids/chewy-chocolate-chip-kids" style="border: none"&gt;&lt;img alt="Chocolate Chip 6 Pack" src="images/kindkids/Kids-Choc_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="p-items peanut-butter-cnt" style="top: 49px; width: 182px; left: 486px; z-index: auto; transform: matrix(1, 0, 0, 1, 0, 0);"&gt;&lt;a href="/products/kids/chewy-peanut-butter-chocolate-chip-kids" style="border: none"&gt;&lt;img alt="Peanut Butter Chocolate Chip 6 Pack" src="images/kindkids/Kids-PnutButtChoc_6pack.png?$staticlink$" /&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="shop-btn-contain-mobile"&gt;&lt;button class="shop-btn"&gt;Shop All&lt;/button&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div id="highlights_contain-mobile"&gt;&lt;img alt="Claims" class="claims" src="images/kindkids/claims-new.png?$staticlink$" style="transform-style: preserve-3d; transform: translate3d(0px, 0px, 0px);" /&gt;&#13;
+&lt;p class="nutrition-fact"&gt;*Per 23 grams, the leading kids granola bar contains 6.7 grams of sugar, KIND Kids&amp;trade; granola bar contains 5 grams&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="container meet-kind-kids-contain clearfix"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-lg-12" id="scene-2" style="width: 100%"&gt;&lt;a name="meet" style="padding: 20px; border: none"&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;h2 class="meet-header" id="animation-2" style="left: 0px;"&gt;Meet the Kind Kids&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="row superpowers" id="scene-3"&gt;&#13;
+&lt;div class="col-lg-2 col-md-6 col-xs-6"&gt;&#13;
+&lt;div class="column" id="column-1" style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -474);"&gt;&lt;img alt="Chip Character" class="kid-charact_choc_boy" src="images/kindkids/honey_boy_07.13.17.png?$staticlink$" /&gt;&#13;
+&lt;div class="bio"&gt;&#13;
+&lt;h3&gt;Chip&lt;/h3&gt;&#13;
+&#13;
+&lt;div class="section-one"&gt;&#13;
+&lt;h4&gt;SUPERPOWER&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Can move objects without touching them&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="section-two"&gt;&#13;
+&lt;h4 class="favorite"&gt;FAVORITE ACTIVITY&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Hanging out with his friends in his treehouse&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-2 col-md-6 col-xs-6"&gt;&#13;
+&lt;div class="column" id="column-2" style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);"&gt;&lt;img alt="Izzy Character" class="kid-charact_peanut_girl" src="images/kindkids/peanut_girl_07.13.17_8bit.png?$staticlink$" /&gt;&#13;
+&lt;div class="bio extra-margn"&gt;&#13;
+&lt;h3 class="overlap" style="margin-left: 12px;"&gt;IZZY&lt;/h3&gt;&#13;
+&#13;
+&lt;div class="section-one izzy"&gt;&#13;
+&lt;h4&gt;SUPERPOWER&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Super human speed&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="section-two"&gt;&#13;
+&lt;h4 class="favorite"&gt;favorite activity&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Spinning in circles until she gets dizzy&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-2 col-md-6 col-xs-6"&gt;&#13;
+&lt;div class="column" id="column-3" style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);"&gt;&lt;img alt="Jet Character" class="kid-charact_honey_boy" src="images/kindkids/Choc_boy_07.13.17_8bit.png?$staticlink$" /&gt;&#13;
+&lt;div class="bio"&gt;&#13;
+&lt;h3&gt;JET&lt;/h3&gt;&#13;
+&#13;
+&lt;div class="section-one"&gt;&#13;
+&lt;h4&gt;SUPERPOWER&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Can Fly&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="section-two"&gt;&#13;
+&lt;h4 class="favorite"&gt;favorite activity&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Doing tricks on the monkey bars at the playground&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-2 col-xs-6"&gt;&#13;
+&lt;div class="column" id="column-4" style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);"&gt;&lt;img alt="Kat Character" class="kid-charact_kat_girl" src="images/kindkids/kat_girl_07.13.17.png?$staticlink$" /&gt;&#13;
+&lt;div class="bio"&gt;&#13;
+&lt;h3&gt;KAT&lt;/h3&gt;&#13;
+&#13;
+&lt;div class="section-one"&gt;&#13;
+&lt;h4&gt;SUPERPOWER&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Can talk to animals&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="section-two"&gt;&#13;
+&lt;h4 class="favorite"&gt;favorite activity&lt;/h4&gt;&#13;
+&#13;
+&lt;p class="text-bio"&gt;Playing fetch with her dog&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="container-fluid clearfix" id="story-scene"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-sm-12" style="width: 100%;"&gt;&lt;a name="story" style="padding: 10px; border: none"&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;h2 class="story" id="story-ani" style="left: 0px;"&gt;Story Time&lt;/h2&gt;&#13;
+&#13;
+&lt;div class="parents-subtext"&gt;Hey parents, click on these stories to read with your kids.&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="row" id="story-scene-modal"&gt;&#13;
+&lt;div class="col-lg-6 col-xs-12"&gt;&#13;
+&lt;div class="trigger"&gt;&#13;
+&lt;div class="story-one" style="opacity: 1; top: 0px;"&gt;&#13;
+&lt;div class="tagline mobile"&gt;&#13;
+&lt;h2&gt;How it all began&lt;/h2&gt;&#13;
+&#13;
+&lt;div id="read-one"&gt;Read Now&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-6 col-xs-12"&gt;&#13;
+&lt;div class="triggertwo"&gt;&#13;
+&lt;div class="story-two" style="opacity: 1; top: 0px;"&gt;&#13;
+&lt;div class="tagline mobile"&gt;&#13;
+&lt;h2&gt;The magic Baseball&lt;/h2&gt;&#13;
+&#13;
+&lt;div id="read-two"&gt;Read Now&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;a name="game" style="padding: 10px; border: none"&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;div class="container-fluid clearfix"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-sm-12"&gt;&#13;
+&lt;h2 class="kind-kids-title"&gt;print kind kids games&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="print-container print-kids clearfix"&gt;&#13;
+&lt;div class="kids-games enlarge"&gt;&lt;img alt="Peanut Girl Character" class="peanut-girl-left" src="images/kindkids/peanut_girl_maze.png?$staticlink$" /&gt; &lt;img alt="" src="images/kindkids/new_maze_bg8bit.png?$staticlink$" /&gt;&#13;
+&lt;h2 class="maze-text"&gt;&lt;a class="gamelink" href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/kind_kids_maze.pdf" style="border: none" target="_blank"&gt;maze game&lt;/a&gt;&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="kids-games enlarge"&gt;&lt;img alt="" src="images/kindkids/puzzle_bg_8bit.png?$staticlink$" /&gt;&#13;
+&lt;h2 class="word-text"&gt;&lt;a class="gamelink" href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/kind_kids_crossword.pdf" style="border: none" target="_blank"&gt;Word Search&lt;/a&gt;&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="kids-games enlarge"&gt;&lt;img alt="" src="images/kindkids/new_number_bg8bit.pn?$staticlink$g" /&gt;&#13;
+&lt;h2 class="numb-text"&gt;&lt;a class="gamelink" href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/kind_kids_numbers_game.pdf" style="border: none" target="_blank"&gt;Number Game&lt;/a&gt;&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="kids-games enlarge"&gt;&lt;img alt="" src="images/kindkids/new_color_bg8bit.png?$staticlink$" /&gt; &lt;img alt="Chocolate Chip Girl Character" class="choc-girl-right" src="images/kindkids/choc_girl_coloring.png?$staticlink$" /&gt;&#13;
+&lt;h2 class="color-text"&gt;&lt;a class="gamelink" href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/kind_kids_coloring_page.pdf" style="border: none" target="_blank"&gt;Coloring Page&lt;/a&gt;&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="print-btn-contain"&gt;&lt;button class="print-btn pulser"&gt;print All&lt;/button&gt;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="container-fluid clearfix"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-sm-12"&gt;&#13;
+&lt;div class="kind-community auto-margin"&gt;&#13;
+&lt;p&gt;Welcome to the KIND community!&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Here at KIND, we think a little differently. Instead of &amp;ldquo;or&amp;rdquo; we say &amp;ldquo;and.&amp;rdquo; We choose healthy and tasty, convenient and wholesome, economically sustainable and socially responsible. We&amp;rsquo;re excited to tell you about KIND Kids &lt;sup style="margin-left: -7px;"&gt;&amp;trade;&lt;/sup&gt; bars &amp;ndash; we crafted them to be fun for kids and with nutritious ingredients that will make parents happy. Our delicious recipe contains 100% whole grains, including gluten free oats, sorghum and quinoa, without any artificial flavors, colors or preservatives!&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;We love making snacks for your whole family to enjoy, and we also love spreading kindness. Since 2004, our team has been on a mission to make the world a little kinder. Whether you snack with us or start making kindness top of mind by joining our KIND Movement, thanks for being a part of our journey.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Kindly yours,&lt;br /&gt;&#13;
+Daniel Lubetzky, Founder and CEO, KIND&lt;br /&gt;&#13;
+(and dad to four KIND kids!)&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;a name="grown" style="padding: 10px; border: none"&gt;&lt;/a&gt;&#13;
+&#13;
+&lt;div class="new-container"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-sm-12" style="&#13;
+    /* margin-left: 48%; */&#13;
+    /* margin-right: 48%; */&#13;
+"&gt;&#13;
+&lt;div class="get-involved"&gt;&#13;
+&lt;h1&gt;Hey Parents, Get involved&lt;/h1&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;img alt="" src="images/kindkids/Empatico_Exchange.jpg?$staticlink$" /&gt;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="container-fluid clearfix visit-empatico"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-sm-12"&gt;&#13;
+&lt;div class="empatico auto-margin"&gt;&#13;
+&lt;p&gt;Did you know that The KIND Foundation is committed to teaching future generations to act with kindness? Through an initiative called Empatico, the Foundation will connect millions of students worldwide.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;what it is&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Empatico is a free online learning tool that connects classrooms across the country and world! Through interactive technology, kids can explore what life is like for their peers. Empatico exchanges give them a unique opportunity to talk with kids from different backgrounds and places while practicing kindness, cooperation and critical thinking.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;availability&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Teachers of 7-11-year-old students are invited to test Empatico in their classroom today.&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;why 7-11-year-olds?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;At this age, kids are at a sensitive point in their development and have started asking questions about their place in the world. Giving them an opportunity to develop this curiosity and have positive experiences with different people can influence how they perceive others in the future.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="view-btn-contain"&gt;&lt;button class="print-btn pulser"&gt;Visit empatico.org&lt;/button&gt;&lt;/div&gt;&#13;
+&#13;
+&lt;div class="kidsmodal"&gt;&#13;
+&lt;div class="modal-content"&gt;&#13;
+&lt;div class="close-button-kids"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&#13;
+&lt;h2&gt;How it all began&lt;/h2&gt;&#13;
+&#13;
+&lt;div class="how-it-began-text"&gt;&#13;
+&lt;p&gt;Once upon a time there were four good friends; two boys, Chip and Jet; and two girls, Kat and Izzy. One afternoon, the four friends were hanging out at Chip&amp;rsquo;s treehouse, which had a wall of old-looking cabinets in the large main room, when Kat noticed a cabinet in the corner that had never been opened.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;It was a small cabinet with a carving of a giant flower with four petals. Chip said that he had tried to open it but it was always locked. They all stared more closely and then noticed that the petals actually appeared to be handprints. They each immediately placed their hands on the petals.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Suddenly there was a loud click and the cabinet door swung open. Inside was a small wooden box covered in letters and a handwritten note, both of which looked very old. Chip read the note out loud:&lt;/p&gt;&#13;
+&#13;
+&lt;p style="font-style: italic;"&gt;Opening the box is as simple as answering a riddle,&lt;br /&gt;&#13;
+Inside you&amp;rsquo;ll find something big, even though the box looks little:&lt;br /&gt;&#13;
+&amp;ldquo;What is as good to give as it is to get?&amp;rdquo;&lt;br /&gt;&#13;
+Spread the answer to people who will never forget.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;They all looked at each other deep in thought. Kat picked up the box to examine it. The top lid was covered in small wooden squares, each with a random letter on it. She pressed one with her finger and it moved down, like a keyboard. Many riddle answers were thrown out, including &amp;ldquo;toys,&amp;rdquo; &amp;ldquo;games,&amp;rdquo; &amp;ldquo;chocolate,&amp;rdquo; and &amp;ldquo;cake,&amp;rdquo; but none worked. They stared at the box in frustration without talking. Finally, after what seemed like hours, Izzy , the youngest of the kids, broke the silence by confidently uttering a single word: kindness.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;The lid flew open and the treehouse was filled with a blinding light and strong gust of wind that left as quickly as it came. &amp;ldquo;I feel a little funny, but it seems like we&amp;rsquo;re all ok,&amp;rdquo; said Kat, checking to make sure they were all okay. &amp;ldquo;Yeah, that was crazy,&amp;rdquo; responded a voice from the back of the room. Kat looked behind her, but there was no one there except her dog Mighty, a small Jack Russel Terrier, staring back at her. &amp;ldquo;Did anyone else hear that?&amp;rdquo; she asked. Three shaking heads answered no. Turning back to Mighty, she asked &amp;ldquo;Did you just talk to me?&amp;rdquo; &amp;ldquo;I&amp;rsquo;ve been talking to you for like, forever.&amp;rdquo; Mighty said, &amp;ldquo;I guess this is the just the first time you understood me- Jeez!&amp;rdquo;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Turning back to her friends, Kat said, &amp;ldquo;Guys, I think this is going to get interesting!&amp;rdquo;&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="kidsmodaltwo"&gt;&#13;
+&lt;div class="modal-content-two"&gt;&#13;
+&lt;div class="close-button-kids-two"&gt;&amp;nbsp;&lt;/div&gt;&#13;
+&#13;
+&lt;h2&gt;The Magic Baseball&lt;/h2&gt;&#13;
+&#13;
+&lt;div class="the-magic-baseball-text"&gt;&#13;
+&lt;p&gt;Chip and Kat were walking past the park one day when they saw a younger boy standing on the sidewalk by himself, staring longingly at kids picking teams on the baseball field.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;What&amp;rsquo;s wrong?&amp;rdquo;&lt;/span&gt; asked Kat.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;I want to play, but I&amp;rsquo;m afraid I&amp;rsquo;ll mess up,&amp;rdquo; &lt;/span&gt; the boy replied, as he tossed a ball into his glove.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;What&amp;rsquo;s your name?&amp;rdquo;&lt;/span&gt; Chip asked.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;Billy,&amp;rdquo;&lt;/span&gt; the boy said.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;A mischievous smirk came across Chip&amp;rsquo;s face as he put his arm around Billy&amp;rsquo;s shoulder. &lt;span style="font-style: italic;"&gt;&amp;ldquo;Do you trust me?&amp;rdquo;&lt;/span&gt; he asked Billy, who replied, &lt;span style="font-style: italic;"&gt;&amp;ldquo;I guess,&amp;rdquo;&lt;/span&gt; still a little unsure.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;Hey guys!&amp;rdquo;&lt;/span&gt; Chip yelled at the group of kids, &lt;span style="font-style: italic;"&gt;&amp;ldquo;Count Billy in, he&amp;rsquo;ll just be a minute.&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Chip turned and looked back at Billy, who&amp;rsquo;s eyes were as wide as plates. &lt;span style="font-style: italic;"&gt;&amp;ldquo;I&amp;rsquo;m going to let you in on a couple secrets,&amp;rdquo;&lt;/span&gt; Chip began, &lt;span style="font-style: italic;"&gt;&amp;ldquo;The first one is that Kat and I each have a superpower and mine is I can move things without touching them.&amp;rdquo; &lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;While he was talking, Chip pointed his hands at the baseball Billy was holding and it began to float out of his glove and then glided above their heads while spinning.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Billy&amp;rsquo;s jaw dropped open and he let out a &lt;span style="font-style: italic;"&gt;&amp;ldquo;Woah.&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt; &amp;ldquo;Here&amp;rsquo;s what we&amp;rsquo;ll do. I&amp;rsquo;m going to help you from the bleachers so that when you hit the ball it goes super far. And when you try to catch a ball, I&amp;rsquo;ll make it go right into your glove.&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Billy had closed his mouth and started nodding his head, &lt;span style="font-style: italic;"&gt;&amp;ldquo;Sounds awesome!&amp;rdquo;&lt;/span&gt; Then he asked, &lt;span style="font-style: italic;"&gt;&amp;ldquo;What&amp;rsquo;s the second secret?!&amp;rdquo;&lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;I&amp;rsquo;ll tell you after the game,&amp;rdquo; &lt;/span&gt; Chip said, &lt;span style="font-style: italic;"&gt;&amp;ldquo;Get in there, you&amp;rsquo;re going to do great.&amp;rdquo; &lt;/span&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Billy&amp;rsquo;s expression quickly changed from timid to confident. &lt;span style="font-style: italic;"&gt;&amp;ldquo;Alright!&amp;rdquo; &lt;/span&gt; he said, and went sprinting into the park.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Chip and Kat watched from the bleachers. Chip waved his hands when Billy was batting, and each time the ball popped off his bat and sailed into the outfield for a total of two doubles, a triple and a home run! In the field, Billy was equally as impressive, catching seven fly balls, including a diving catch that was the last out of the game. After celebrating the win with his team, Billy made his way to the bleachers.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;span style="font-style: italic;"&gt;&amp;ldquo;The second secret is even cooler.&amp;rdquo; &lt;/span&gt; Chip said, as his smirk reappeared. &lt;span style="font-style: italic;"&gt;&amp;ldquo;It&amp;rsquo;s that I wasn&amp;rsquo;t actually helping. You did that all by yourself&amp;mdash;you just need a little help believing you could do it.&amp;rdquo; &lt;/span&gt;&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us">
+        <display-name xml:lang="x-default">About Us</display-name>
+        <display-name xml:lang="fr-FR">À propos de nous</display-name>
+        <display-name xml:lang="it-IT">Chi siamo</display-name>
+        <display-name xml:lang="ja-JP">Commerce Cloud について</display-name>
+        <display-name xml:lang="zh-CN">关于我们</display-name>
+        <description xml:lang="x-default">It all started with a series of observations: eCommerce merchandising and marketing innovation is what generates revenue, yet most operations are spending 80% of their budgets simply maintaining current infrastructure. The pace of ecommerce accelerates daily, but most operations are scrambling only to stand still. Merchandisers and marketers are supremely frustrated, spending more time chasing outsourced providers and internal IT organizations than actually merchandising and marketing their own businesses. There had to be a better way...</description>
+        <description xml:lang="fr-FR">Tout a débuté par une série d'observations : dans l'e-commerce, l'innovation en matière de merchandising et de marketing est le générateur de recettes. Pourtant, la plupart des entreprises consacrent 80 % de leur budget au seul maintien de leur infrastructure actuelle. Alors que le rythme du commerce s'accélère chaque jour, la plupart des entreprises ont toutes les peines du monde à simplement se maintenir à jour. Les spécialistes du merchandising et du marketing sont d'autant plus frustrés qu'ils passent davantage de temps à rechercher des prestataires d'infogérance et des ressources informatiques internes qu'à déployer leurs propres actions de merchandising et de marketing. Cette situation n'était pas satisfaisante...</description>
+        <description xml:lang="it-IT">Tutto è iniziato da una serie di osservazioni: le innovazioni del modello e-commerce in materia di merchandising e marketing sono il motore che genera i profitti, tuttavia la maggior parte delle aziende spende ancora l'80% dei budget per la manutenzione dell'infrastruttura esistente. L'e-commerce ormai avanza inesorabilmente ogni giorno di più, mentre nelle aziende si fanno i salti mortali per cercare il modo di non adeguarsi ai cambiamenti. I venditori e gli esperti di marketing lavorano in continua frustrazione, costretti a correre dietro ai fornitori esterni e ai reparti IT interni, piuttosto che dedicarsi al merchandising e al marketing per la loro attività. Deve esserci una soluzione...</description>
+        <description xml:lang="ja-JP">始まりは現状を見つめるところから: eコマースによるマーチャンダイジングとマーケティングのイノベーションは、収益を生み出すものであるにもかかわらず、大部分の事業では予算の 80% を現在のインフラを保守するためだけに使っています。eコマースは日々加速しているのにもかかわらず、大部分の事業は混乱してただ立ち尽すのみです。マーチャンダイザーとマーケット担当者の葛藤は度合いを増し、実際に自社ビジネスのマーチャンダイジングとマーケティングを行うことよりも、外注先のプロバイダーや社内の IT 部門への対応に、より多くの時間を費やしています。他にもっとよい方法があるのではないか、私達はそう考えました。</description>
+        <description xml:lang="zh-CN">一系列观察结果表明：eCommerce销售和营销创新可以产生收益，而大多数企业仅仅为维持现有基础设施就要拿出80%的预算。eCommerce 的发展步伐日新月异，而大多数企业还是原地踏步。商家和营销人员要花费比实际销售和营销自己业务多得多的时间来追逐外包供应商和内部 IT 组织，对此他们感到无所适从。应该有一个更好的办法。</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/globalContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h1 class="content-header"&gt;About Us&lt;/h1&gt;&#13;
+&lt;h2&gt;It all started with a series of observations:&lt;/h2&gt;      &#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;eCommerce merchandising and marketing innovation is what generates revenue, yet most operations are spending 80% of their budgets simply maintaining current infrastructure.&lt;/li&gt;&#13;
+&lt;li&gt;The pace of eCommerce accelerates daily, yet most operations are scrambling only to stand still.&lt;/li&gt;&#13;
+&lt;li&gt;Merchandisers and marketers are supremely frustrated, spending more time chasing outsourced providers and internal IT organizations than actually merchandising and marketing their own businesses.&lt;/li&gt;&#13;
+&lt;/ul&gt; &#13;
+&lt;h2&gt;There had to be a better way...&lt;/h2&gt;          &#13;
+&lt;p&gt;So in 2004, we set out to find it. The vision&amp;mdash;then and now&amp;mdash;was clear: bring to market an enterprise-class eCommerce solution that would put more power and innovation in the hands of merchandisers and at the same time would remove the technical costs, risks and complexities of running an ecommerce operation. We took what we knew of great eCommerce merchandising (our founders have been in ecommerce since 1994) and applied to it the then-emerging advancements in Software-as-a-Service architectures and dynamic grid computing. Then we just worked hard. We stayed up late. We drank lots of coffee. And ultimately, in late 2005, we delivered the market&amp;rsquo;s first on-demand enterprise ecommerce platform.&lt;/p&gt;                &#13;
+&lt;h2&gt;Our customers could not be happier with the results.&lt;/h2&gt;       &#13;
+&lt;p&gt;With Commerce Cloud eCommerce, they're spending more time leading with merchandising and marketing. They're in complete control of their site, making changes and launching new storefronts whenever they like. They're spending more time developing their own proprietary innovations (versus building commodity functionality). They receive new software upgrades from Commerce Cloud continuously. And they never ever worry about site uptime, availability and security.&lt;/p&gt;&#13;
+&lt;p&gt;In short, they're free. Free to merchandise. Free to grow. Free to innovate. Free to change. Isn't that how eCommerce is supposed to be?&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&#13;
+For more information please browse our &lt;a title="About Us Content" href="$url(Search-ShowContent,fdid,about-us)$"&gt;About Us&lt;/a&gt; and  &lt;a title="About Us Content" href="$url(Search-ShowContent,fdid,customer-service)$"&gt;Customer Service&lt;/a&gt; pages.&#13;
+&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="fr-FR">&lt;h1 class="content-header"&gt;À propos de nous&lt;/h1&gt;&#13;
+&lt;h2&gt;Trois observations :&lt;/h2&gt;      &#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;Dans l'e-commerce, l'innovation en matière de merchandising et de marketing est le générateur de recettes. Pourtant, la plupart des entreprises consacrent 80 % de leur budget au seul maintien de leur infrastructure actuelle.&lt;/li&gt;&#13;
+&lt;li&gt;Alors que le rythme du commerce s'accélère chaque jour, la plupart des entreprises ont toutes les peines du monde à simplement se maintenir à jour.&lt;/li&gt;&#13;
+&lt;li&gt;Les spécialistes du merchandising et du marketing sont d'autant plus frustrés qu'ils passent davantage de temps à rechercher des prestataires d'infogérance et des ressources informatiques internes qu'à déployer leurs propres actions de merchandising et de marketing.&lt;/li&gt;&#13;
+&lt;/ul&gt; &#13;
+&lt;h2&gt;Cette situation n'était pas satisfaisante...&lt;/h2&gt;          &#13;
+&lt;p&gt;C'est pourquoi en 2004, nous nous sommes mis en quête de meilleures solutions. Notre vision &amp;mdash;à l'époque comme aujourd'hui&amp;mdash; était claire : proposer une solution e-commerce professionnelle, capable d'offrir davantage de puissance et d'innovation aux experts du merchandising, tout en supprimant les coûts techniques, les risques et la complexité liés à la gestion d'une activité d'e-commerce. Nous avons pris ce que nous considérions comme les grands principes du merchandising en matière d'e-commerce (nos fondateurs évoluent dans ce domaine depuis 1994) et les avons appliqués aux tous premiers progrès des architectures de logiciels comme service (Saas) et de l'informatique en grille dynamique. Puis nous avons travaillé dur. Nous n'avons pas compté nos heures supplémentaires. Nous avons avalé des litres de café. Et enfin, à la fin 2005, nous avons mis sur le marché la première plateforme d'e-commerce à la demande pour entreprises,&lt;/p&gt;                &#13;
+&lt;h2&gt;Des clients des plus satisfaits&lt;/h2&gt;       &#13;
+&lt;p&gt;Avec Commerce Cloud ecommerce, nos clients restent à la pointe dans leur domaine, avec des outils de merchandising et de marketing. Ils ont la maîtrise totale de leur site, apportent des changements et lancent de nouvelles boutiques en ligne, à leur gré. Ils se consacrent davantage au développement de leurs propres innovations (et non plus à personnaliser une fonctionnalité standard). Ils reçoivent en permanence de nouvelles mises à jour logicielles de Commerce Cloud. Ils n'ont jamais à se soucier des questions de fonctionnement, de disponibilité et de sécurité.&lt;/p&gt;&#13;
+&lt;p&gt;En résumé, ils sont libres. Libres de vendre. Libres de croître. Libres d'innover. Libres de changer. Ne pensez-vous pas que le commerce devrait-être comme cela ?&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&#13;
+Pour plus d'informations, rendez-vous sur nos pages &lt;a title="Contenu À propos de nous" href="$url(Search-ShowContent,fdid,about-us)$"&gt;À propos de nous&lt;/a&gt; et  &lt;a title="Contenu Service client" href="$url(Search-ShowContent,fdid,customer-service)$"&gt;Service client&lt;/a&gt;.&#13;
+&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="it-IT">&lt;h1 class="content-header"&gt;Chi siamo&lt;/h1&gt;&#13;
+&lt;h2&gt;Tutto è iniziato da una serie di osservazioni:&lt;/h2&gt;      &#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;Le innovazioni nei campi di merchandising e marketing e-commerce sono il motore che genera i profitti, tuttavia la maggior parte delle aziende spende ancora l'80% dei budget per la manutenzione dell'infrastruttura esistente.&lt;/li&gt;&#13;
+&lt;li&gt;L'e-commerce ormai avanza inesorabilmente ogni giorno di più, mentre nelle aziende si fanno i salti mortali per cercare il modo di non adeguarsi ai cambiamenti.&lt;/li&gt;&#13;
+&lt;li&gt;I venditori e gli esperti di marketing lavorano in continua frustrazione, costretti a correre dietro ai fornitori esterni e ai reparti IT interni, piuttosto che dedicarsi al merchandising e al marketing per la loro attività.&lt;/li&gt;&#13;
+&lt;/ul&gt; &#13;
+&lt;h2&gt;Deve esserci una soluzione...&lt;/h2&gt;          &#13;
+&lt;p&gt;Nel 2004 ci siamo decisi a trovarla. La filosofia alla base della nostra avventura era chiara allora come oggi: introdurre sul mercato una soluzione di e-commerce di livello aziendale che avrebbe portato potenziale e innovazione nelle mani dei venditori e che allo stesso tempo avrebbe abbattuto i costi tecnici, i rischi e le complessità di gestione di un'attività di e-commerce. Ci siamo basati sull'esperienza che avevamo nella vendita tramite piattaforme di e-commerce (i nostri fondatori lavorano in questo campo dal 1994) e l'abbiamo applicata alle allora emergenti innovazioni delle architetture SaaS (Software-as-a-Service) e del grid computing dinamico. Abbiamo lavorato sodo. facendo le ore piccole. Abbiamo bevuto tanti caffè. Ma poi alla fine del 2005, abbiamo rilasciato la prima piattaforma di e-commerce on-demand di livello aziendale.&lt;/p&gt;                &#13;
+&lt;h2&gt;I nostri clienti non potrebbero essere più soddisfatti dei risultati.&lt;/h2&gt;       &#13;
+&lt;p&gt;Con l'e-commerce di Commerce Cloud, i nostri clienti possono perfezionare la loro leadership nelle attività di merchandising e marketing. Dispongono del controllo completo del loro sito, possono apportare modifiche e aprire nuovi storefront come e quando vogliono. Possono dedicarsi allo sviluppo e all'innovazione di prodotti propri e non alla creazione di funzionalità. Ricevono gli aggiornamenti del software continuamente da Commerce Cloud E non devono mai preoccuparsi della funzionalità, della disponibilità e della sicurezza del sito.&lt;/p&gt;&#13;
+&lt;p&gt;In poche parole, sono totalmente liberi. Liberi di vendere. Liberi di crescere. Liberi di innovare. Liberi di cambiare. Non è questa l'essenza dell'e-commerce?&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&#13;
+Per ulteriori informazioni visita le pagine &lt;a title="Contenuto Chi siamo" href="$url(Search-ShowContent,fdid,about-us)$"&gt;Chi siamo&lt;/a&gt; e  &lt;a title="Contenuto Chi siamo" href="$url(Search-ShowContent,fdid,customer-service)$"&gt;Servizio clienti.&lt;/a&gt;  &#13;
+&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="ja-JP">&lt;h1 class="content-header"&gt;Commerce Cloud について&lt;/h1&gt;&#13;
+&lt;h2&gt;始まりは現状を見つめるところから。&lt;/h2&gt;      &#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;eコマースによるマーチャンダイジングとマーケティングのイノベーションは、収益を生み出すものであるにもかかわらず、大部分の事業では予算の 80% を現在のインフラを保守するためだけに使っています。&lt;/li&gt;&#13;
+&lt;li&gt;eコマースは日々加速しているのにもかかわらず、大部分の事業は混乱してただ立ち尽くしています。&lt;/li&gt;&#13;
+&lt;li&gt;マーチャンダイザーとマーケット担当者の葛藤は度合いを増し、実際に自社ビジネスのマーチャンダイジングとマーケティングを行うことよりも、外注先のプロバイダーや社内の IT 部門への対応に、より多くの時間を費やしています。&lt;/li&gt;&#13;
+&lt;/ul&gt; &#13;
+&lt;h2&gt;他にもっとよい方法があるのではないか、私達はそう考えました。&lt;/h2&gt;          &#13;
+&lt;p&gt;そして 2004 年、その方法を見つけるべく活動を開始したのです。ビジョンは、&amp;mdash; そのときも今も &amp;mdash; 明白でした。つまり、より大きな力と革新をマーチャンダイザーの手に委ねると同時に、eコマース事業を営むための技術的コスト、リスク、複雑さを排除するエンタープライズ規模の eコマースソリューションを市場にもたらすことです。私達が知っている優れた eコマースマーチャンダイジング (弊社の創設者は 1994 年から eコマースに携わっています) に基づき、当時めざましく台頭していた SaaS アーキテクチャと動的グリッドコンピューティングにそれを適用しました。後は努力に努力を重ね、夜遅くまで働き、コーヒーを何杯も飲みました。そして 2005 年の終わり、ついに市場初のオンデマンドエンタープライズ eコマースプラットフォームを世に出したのです。&lt;/p&gt;                &#13;
+&lt;h2&gt;結果は、顧客からの大絶賛でした。&lt;/h2&gt;       &#13;
+&lt;p&gt;Commerce Cloud eコマースを使用すれば、マーチャンダイジングとマーケティングに、より多くの時間を費やせます。サイトをすべて自分たちで管理し、いつでも変更を加え、新しいストアフロントを起ち上げることができます。そして、(一般的な機能の構築ではなく) 独自のイノベーションを推し進めることに多くの時間を費やせるようになります。Commerce Cloud から新しいソフトウェアアップグレードを継続的に受け取ることができるため、サイトのアップタイム、可用性、セキュリティについて一切心配しなくてよいのです。&lt;/p&gt;&#13;
+&lt;p&gt;つまり、自由を手に入れたということ。自由に商売を行い、自由に成長し、自由に革新を遂げ、自由に変化する。eコマースとはかくあるべきではないでしょうか?&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&#13;
+詳細については、 &lt;a title="企業情報コンテンツ" href="$url(Search-ShowContent,fdid,about-us)$"&gt;Commerce Cloud について&lt;/a&gt; および  &lt;a title="企業情報コンテンツ" href="$url(Search-ShowContent,fdid,customer-service)$"&gt;カスタマーサービス&lt;/a&gt; のページをお読みください。&#13;
+&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="zh-CN">&lt;h1 class="content-header"&gt;公司&lt;/h1&gt;&#13;
+&lt;h2&gt;一切皆因一系列的意见而开始：&lt;/h2&gt;      &#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;eCommerce 的销售和营销创新可以产生收益，而大多数企业仅仅为维持现有基础设施就要拿出 80% 的预算。&lt;/li&gt;&#13;
+&lt;li&gt;eCommerce 的发展步伐日新月异，而大多数企业只是原地踏步。&lt;/li&gt;&#13;
+&lt;li&gt;商家和营销人员要花费比实际销售和营销自己业务多得多的时间来追逐外包供应商和内部 IT 组织，对此他们感到无所适从。&lt;/li&gt;&#13;
+&lt;/ul&gt; &#13;
+&lt;h2&gt;应该有一个更好的办法。&lt;/h2&gt;          &#13;
+&lt;p&gt;于是，我们从 2004 年开始寻找更佳解决方案。&amp;mdash;当时和现在&amp;mdash;的愿景都很明确：为市场带来一个企业级的 eCommerce 解决方案，为商家提供更强大的能力的创新力，同时消除 eCommerce 企业运营的技术成本、风险和复杂性。我们启用了我们知道会很强大的 eCommerce 销售（我们的创始人自 1994 年便开始从事 eCommerce）并将其运用于当时新兴的“软件即服务”架构及动态网格计算中。然后我们不懈努力。我们昼夜不分。我们喝了很多咖啡。最终在 2005 年底，我们推出了市场上第一款按需企业 eCommerce 平台。&lt;/p&gt;                &#13;
+&lt;h2&gt;我们的客户对这些成就感到喜出望外。&lt;/h2&gt;       &#13;
+&lt;p&gt;通过 Commerce Cloud eCommerce，他们可以将更多的时间用于实现销售和营销的领先地位。他们可以完全掌控自己的站点，按照自己的喜好随时进行更改和建立新的网店。他们可以花更多的时间开发自己的专属创新（而不是建立商品功能）。他们不断从 Commerce Cloud 收到新的软件升级。他们永远不必担心站点运行、可用性和安全性。&lt;/p&gt;&#13;
+&lt;p&gt;总而言之，他们自由了。自由地销售。自由地成长。自由地创新。自由地更改。eCommerce 不正应该如此吗？&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&#13;
+有关更多信息，请浏览我们的 &lt;a title="“关于我们”网页内容" href="$url(Search-ShowContent,fdid,about-us)$"&gt;关于我们&lt;/a&gt; 与  &lt;a title="“关于我们”网页内容" href="$url(Search-ShowContent,fdid,customer-service)$"&gt;客户服务&lt;/a&gt; 页面。&#13;
+&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>about-us_featured-containers</value>
+                <value>life-at-kind</value>
+                <value>about-us_image-gallery</value>
+                <value>how-it-all-started</value>
+                <value>hungry-yet_link-grid</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="customCSSFile">css/aboutus.css</custom-attribute>
+        </custom-attributes>
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="cdp-title"/>
+            <page-meta-tag-rule rule-id="cdp-description"/>
+            <page-meta-tag-rule rule-id="cdp-name"/>
+            <page-meta-tag-rule rule-id="cdp-property"/>
+        </content-detail-page-meta-tag-rules>
+    </content>
+
+    <content content-id="about-us_featured-containers">
+        <display-name xml:lang="x-default">About Us Featured Containers</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/featuredContainer</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>about-us_featured-containers_for-your-body</value>
+                <value>about-us_featured-containers_for-your-taste-buds</value>
+                <value>about-us_featured-containers_for-your-world</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">do the kind thing for your body, your taste buds &amp; your world®</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_featured-containers_for-your-body">
+        <display-name xml:lang="x-default">do the kind thing for your body, your taste buds &amp; your world&lt;sup&gt;&amp;reg;&lt;/sup&gt;</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe if you can't pronounce an ingredient, it shouldn’t go into your body. Actually, it shouldn’t even go into your pantry. KIND&lt;sup&gt;&amp;reg;&lt;/sup&gt; products are made from nutritionally-dense ingredients like whole nuts, fruits and whole grains - no secret ingredients and no artificial flavors, preservatives or sweeteners. Nothing to hide&lt;sup&gt;&amp;reg;&lt;/sup&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">for your body</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/test/about-us_ingredients_grains_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="ingredients-a-z"&gt;&#13;
+        &lt;span class="arrow-link"&gt;ingredients A-Z&lt;/span&gt;&#13;
+        &lt;span class="arrow-link-subtext"&gt;learn more about what's in our snacks&lt;/span&gt;&#13;
+&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_featured-containers_for-your-taste-buds">
+        <display-name xml:lang="x-default">for your taste buds</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe that people don’t need to choose between health and taste when it comes to snacking. We use premium, better-for-you ingredients that are kind to your body without sacrificing quality or flavor.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">left</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">for your taste buds</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us_ingredients_strawberry_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;&#13;
+        &lt;span class="arrow-link"&gt;Shop by Flavor&lt;/span&gt;&#13;
+        &lt;span class="arrow-link-subtext"&gt;a variety of flavors to fit any craving&lt;/span&gt;&#13;
+&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_featured-containers_for-your-world">
+        <display-name xml:lang="x-default">For your World</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe in inspiring and celebrating kindness. By improving the way we live, eat and relate to one another, we hope to foster communities that are healthier, more empathetic and embrace our shared humanity.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">for your world</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us_ingredients_bar-heart_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Page-Show', 'cid', 'our-mission')$"&gt;&#13;
+        &lt;span&gt;Learn About our Mission&lt;/span&gt;&#13;
+&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-mission_image-gallery">
+        <display-name xml:lang="x-default">About Us Image Gallery</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/imageGallery</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>kindness-safari</value>
+                <value>giving-flowers</value>
+                <value>uplifting-message</value>
+                <value>entrepreneurship-summit-2016</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery">
+        <display-name xml:lang="x-default">About Us Image Gallery</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/imageGallery</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>about-us_image-gallery_1</value>
+                <value>about-us_image-gallery_2</value>
+                <value>about-us_image-gallery_3</value>
+                <value>about-us_image-gallery_4</value>
+                <value>about-us_image-gallery_5</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery_1">
+        <display-name xml:lang="x-default">About Us Image Gallery 1</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us/image-gallery/about-us_carousel_1_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery_2">
+        <display-name xml:lang="x-default">About Us Image Gallery 2</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/about-us_carousel_2_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery_3">
+        <display-name xml:lang="x-default">About Us Image Gallery 3</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/our-mission_carousel_1_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery_4">
+        <display-name xml:lang="x-default">About Us Image Gallery 4</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/our-mission_carousel_3_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="about-us_image-gallery_5">
+        <display-name xml:lang="x-default">About Us Image Gallery 5</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us/image-gallery/about-us_carousel_5_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="entrepreneurship-summit-2016">
+        <display-name xml:lang="x-default">2016 Entrepreneurship Summit</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">2016 Entrepreneurship Summit hosted by The KIND Foundation: the KIND Team supported this educational event by giving advice to socially-minded entrepreneurs.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/about-us_carousel_2_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="life-at-kind">
+        <display-name xml:lang="x-default">life at KIND</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/fullWidthCallToAction</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">See what our KIND team is up to or, better yet, join us!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyColor">rgb(102, 102, 102)</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">life at KIND</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Page-Show', 'cid', 'careers')$"&gt;Join our Team&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="how-it-all-started">
+        <display-name xml:lang="x-default">About Us Bios</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/bioBlock</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>about-daniel</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">how it all started</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="hungry-yet_link-grid">
+        <display-name xml:lang="x-default">Hungry Yet?</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/leaderboard</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">try our snacks in a variety of flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">hungry yet?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us_description-w-link_bar-fan_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;Shop Now&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="the-best">
+        <display-name xml:lang="x-default">the best</display-name>
+        <description xml:lang="x-default">you're the best</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="our-mission">
+        <display-name xml:lang="x-default">Our Mission</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/globalContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>tips-block</value>
+                <value>our-mission_image-gallery</value>
+                <value>our-mission_feature-tabs</value>
+                <value>do-the-kind-thing</value>
+                <value>our-mission_about-us</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-mission_about-us">
+        <display-name xml:lang="x-default">Our Mission About Us</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/fullWidthCallToAction</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">learn what KIND is all about</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">about us</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Page-Show', 'cid', 'about-us')$" class="btn-outline-black"&gt;Learn More&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-mission_feature-tabs">
+        <display-name xml:lang="x-default">Our Mission Feature Tabs</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/featureTabs</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>kind-foundation</value>
+                <value>kindawesome</value>
+                <value>kind-acts</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">Here’s how we bring our Movement to life. Not-only-for-profit®</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">do the KIND thing</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="tips-block">
+        <template>rendering/content/tipsBlock</template>
+    </content>
+
+    <content content-id="do-the-kind-thing">
+        <template>rendering/content/purchaseBlock</template>
+    </content>
+
+    <content content-id="promise">
+        <display-name xml:lang="x-default">Promises</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="main-container container page-offset-top s-knd-legacy"&gt;&#13;
+&lt;div&gt;&lt;img alt="KIND Promises Header" src="images/promise/2017_1127_KINDPromises_ImageEdit.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="KIND Promises"&gt;&lt;br&gt;&#13;
+&lt;h2&gt;our health and nutrition guiding principles&lt;/h2&gt;&#13;
+&lt;p&gt;&lt;br&gt;KIND has always been committed to bringing you wholesome and delicious snacks. We promise to always choose high quality ingredients over recipe short-cuts and provide snacks that are both healthy AND tasty – not one or the other. We work tirelessly to live up to our fans’ expectations. To demonstrate that continued dedication, we &lt;strong&gt;Promise&lt;/strong&gt; to…&lt;/p&gt;&#13;
+&lt;br&gt;&lt;img alt="Craft Snacks Made With Real Food" src="images/promise/real-food.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="Real Food"&gt;&lt;br&gt;We believe food shouldn’t be overly processed to attain an arbitrary nutrient profile or manipulated to the point that it loses its soul. Instead we obsess over creating recipes, using real food, that taste delicious and let the nutrition take care of itself. As we grow and evolve, we’ll continue to stay true to our mission: real food, wholesome ingredients, and sound nutrition.&lt;br&gt;&lt;br&gt; &lt;br&gt;&lt;img alt="Treat everyone and everything, including our ingredients, with iontegrity and kindness" src="images/promise/new-integrity.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="Integrity"&gt;&lt;br&gt;&lt;span&gt;We celebrate food by making snacks with ingredients that you can recognize, pronounce and enjoy. We aspire for maximum transparency and always strive to think long term, holistically and empathically as we evaluate all decisions on behalf of our KIND consumers and our community.&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&#13;
+&lt;br&gt;&lt;img alt="Achieve a balance of taste &amp;amp; health" src="images/promise/health-taste.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="Health &amp;amp; taste"&gt;&lt;br&gt;We believe that people don’t need to choose between health and taste when it comes to snacking. This means we’ll use as little sugar as possible without sacrificing the flavor and quality of our products. We don’t use high fructose corn syrup and you’ll never find artificial sweeteners or added sugar alcohols in our snacks, since they go against our philosophy of using premium, better-for-you ingredients that are &lt;strong&gt;KIND®&lt;/strong&gt; to your body. We prioritize making low glycemic snacks that bring together unique, high-quality ingredients to energize you, fill you up and keep you satisfied. The first and predominant ingredient in all of our snacks will always be a nutrient-dense food like nuts, whole grains or fruit.&lt;br&gt;&lt;br&gt;&#13;
+&lt;div&gt;&lt;img alt="The sugar in our snacks" src="images/promise/sugar.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="Sugar"&gt;&lt;br&gt;&#13;
+&lt;p&gt;In an effort to build on our commitment to transparency surrounding our products and their nutritionals, we’re sharing the added sugar content of the 60+ snacks across our portfolio, two years in advance of the deadline set by the U.S. Food &amp;amp; Drug Administration.&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#13;
+&lt;p&gt;Learn more about the sugar in our snacks here:&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#13;
+&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/kind-added-sugar.pdf" target="_blank"&gt;Added sugar content&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="http://kindassets.kindsnacks.com/sugarbythenumbers.jpg" target="_blank"&gt;How our snacks stack up&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="http://kindassets.kindsnacks.com.s3.amazonaws.com/kscom/Sugar_in_Our_Snacks_Chart_2018.pdf" target="_blank"&gt;The sugars that we use and why we use them&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="/media-center/press-releases/kind-becomes-first-national-snack-brand" target="_blank"&gt;Press release announcement&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;br&gt;&lt;br&gt;&lt;/div&gt;&#13;
+&lt;div class="button-container" style="text-align: center;"&gt;&lt;a href="/products"&gt;&lt;span&gt;EXPLORE OUR PRODUCTS&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+&lt;br&gt;&lt;br&gt;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers">
+        <display-name xml:lang="x-default">Careers</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/globalContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>a-job-youre-nuts-about</value>
+                <value>our-values</value>
+                <value>careers_benefits</value>
+                <value>careers_life-at-kind</value>
+                <value>come-join-us</value>
+                <value>careers_link-grid</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits">
+        <display-name xml:lang="x-default">snacks on snacks on snacks plus…</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/mediaGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>careers_benefits_time-off</value>
+                <value>careers_benefits_quality-benefits</value>
+                <value>careers_benefits_compensation-equity</value>
+                <value>careers_benefits_inspiring-workplace</value>
+                <value>careers_benefits_room-to-learn-grow</value>
+                <value>careers_benefits_hardship-support</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">snacks on snacks on snacks plus…</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_compensation-equity">
+        <display-name xml:lang="x-default">compensation &amp; equity</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;We offer competitive salaries, a bonus program and 401K matching with immediate vesting! You&amp;rsquo;ll also have the opportunity to own a piece of KIND through our equity program.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">compensation &amp; equity</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_compensation_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_hardship-support">
+        <display-name xml:lang="x-default">Hardship Support</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;Our Hardship Fund supports team members and their families in times of need. In the face of financial challenge, we'll be there to help get you back on your feet.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Hardship Support</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_hardship_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_inspiring-workplace">
+        <display-name xml:lang="x-default">Inspiring Workplace</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;Our team likes to have fun. We laugh a lot, enjoy each other&amp;rsquo;s company and set out to achieve ambitious goals. Above all, we care about each other.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Inspiring Workplace</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_workplace_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_quality-benefits">
+        <display-name xml:lang="x-default">Quality Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;Designed with health and wellness in mind, you and your family (including domestic partners) are eligible for medical, dental and vision options. We also help cover fitness fees.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Quality Benefits</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_benefits_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_room-to-learn-grow">
+        <display-name xml:lang="x-default">Room to Learn &amp; Grow</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;We know that when you grow, we grow. That&amp;rsquo;s why we support development for today and tomorrow through regular coaching, training, tuition reimbursements and more!&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Room to Learn &amp; Grow</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_development_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_benefits_time-off">
+        <display-name xml:lang="x-default">Time Off</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;Balance is important to us, and we want you to enjoy life&amp;rsquo;s moments &amp;ndash; from the routine to the remarkable. That&amp;rsquo;s why we offer flexible Paid Time Off and Paid Family Leave.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Time off</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/benefits/careers_card-grid_time-off_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="a-job-youre-nuts-about">
+        <display-name xml:lang="x-default">want a job you're nuts about?</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/videoCallout</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;h4&gt;what makes us KIND&lt;/h4&gt;&#13;
+&#13;
+&lt;p&gt;Here at KIND, we choose to say &amp;quot;AND&amp;quot; instead of &amp;quot;OR.&amp;quot; We seek to challenge assumptions, think creatively and avoid false compromises. We call this our &amp;ldquo;AND Philosophy&amp;rdquo; and it applies to everything we do. From the snacks we create to the kindness we spread, we never settle for &amp;quot;good enough.&amp;quot;&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyTwo">&lt;h4&gt;our culture&lt;/h4&gt;&#13;
+&#13;
+&lt;p&gt;You won't hear the word 'employee' around here. We're team members, working collaboratively towards our shared goal: To make healthy and tasty snacks the new norm, and make the world a little bit kinder. We're ambitious, we know, but we know it&amp;rsquo;s the nuts that change the world. Jerks need not apply.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">want a job you're nuts about?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetVideoURL">https://www.youtube.com/embed/mqyPWEU3LHk</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values">
+        <display-name xml:lang="x-default">Our Values</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/ctaGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>our-values_ownership</value>
+                <value>our-values_teamwork</value>
+                <value>our-values_drive-profit</value>
+                <value>our-values_transparency</value>
+                <value>our-values_solve-problems</value>
+                <value>our-values_caring</value>
+                <value>our-values_entrepreneurial</value>
+                <value>our-values_develop</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">These values are the foundation of our culture. They embody the philosophy that guides our team - encouraging us to tirelessly pursue our goals, and articulating the standards to which we hold ourselves. That's why we call them HUNGRY &amp; KIND.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Our Values</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_caring">
+        <display-name xml:lang="x-default">Caring</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/caring-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Caring&lt;/h3&gt;&#13;
+We recognize our shared humanity and treat others with respect</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_develop">
+        <display-name xml:lang="x-default">develop self &amp; others</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/self-others-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;develop self &amp; others&lt;/h3&gt;&#13;
+We have the humility to see our deficiencies and work to be better every day</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_drive-profit">
+        <display-name xml:lang="x-default">Drive Profie</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/drive-profit-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Drive Profit&lt;/h3&gt;&#13;
+We set and pursue ambitious goals with leadership and grit</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_entrepreneurial">
+        <display-name xml:lang="x-default">Entrepreneurial</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/entrepreneurial-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Entrepreneurial&lt;/h3&gt;&#13;
+We pursue our mission with tireless passion and constant innovation</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_ownership">
+        <display-name xml:lang="x-default">Ownership</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/keys-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Ownership&lt;/h3&gt;&#13;
+&#13;
+&lt;p&gt;We act as owners and hold ourselves accountable&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_solve-problems">
+        <display-name xml:lang="x-default">Solve Problems</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/solve-problems-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Solve Problems&lt;/h3&gt;&#13;
+We propose solutions, challenge conventions and champion the best ideas</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_teamwork">
+        <display-name xml:lang="x-default">Teamwork</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/team-work-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Teamwork&lt;/h3&gt;&#13;
+We achieve our goals together with positive attitude and family spirit</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="our-values_transparency">
+        <display-name xml:lang="x-default">Transparency</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-values/transparency-icon_1_5x.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;h3&gt;Transparency&lt;/h3&gt;&#13;
+We have the courage to be straightforward</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind">
+        <display-name xml:lang="x-default">life at KIND</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/imageGallery</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>careers_life-at-kind_1</value>
+                <value>careers_life-at-kind_2</value>
+                <value>careers_life-at-kind_3</value>
+                <value>careers_life-at-kind_4</value>
+                <value>careers_life-at-kind_5</value>
+                <value>careers_life-at-kind_6</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">life at KIND</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_1">
+        <display-name xml:lang="x-default">Life at KIND Image 1</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_1_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_2">
+        <display-name xml:lang="x-default">Life at KIND Image 1</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_2_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_3">
+        <display-name xml:lang="x-default">Life at KIND Image 3</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_3_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_4">
+        <display-name xml:lang="x-default">Life at KIND Image 4</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_4_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_5">
+        <display-name xml:lang="x-default">Life at KIND Image 5</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_5_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_life-at-kind_6">
+        <display-name xml:lang="x-default">Life at KIND Image 6</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262626</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/careers/life-at-kind/careers_carousel_6_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+     <content content-id="come-join-us">
+        <display-name xml:lang="x-default">Come Join Us</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/billboardGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>kind-nyc-office</value>
+                <value>kind-field-team</value>
+                <value>kind-international</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Come Join Us</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All Positions&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-field-team">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-international">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetContentColor"></custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="careers_link-grid">
+        <display-name xml:lang="x-default">Careers Link Grid</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/linkGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>about-us_link-grid</value>
+                <value>hungry-yet</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="media-center_archive">
+        <display-name xml:lang="x-default">Archive</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;find some of our favorite content from way back when&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Archive</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center/media-center_card-grid_archive_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="media-center"/>
+        </folder-links>
+    </content>
+
+    <content content-id="media-center_grid">
+        <display-name xml:lang="x-default">Media Center</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/mediaGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>press-releases</value>
+                <value>media-assets</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">red</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">find images, videos and more!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Media Center</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="media-center_media-assets">
+        <display-name xml:lang="x-default">Media Assets</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;download our logo and other KIND photos&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Media Assets</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center_card-grid_media-assets_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="media-center"/>
+        </folder-links>
+    </content>
+
+    <content content-id="media-center_media-inquiries">
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;have questions or are looking for some information?&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Media Inquiries</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center/media-center_card-grid_media-inquiries_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="mailto:communications@kindsnacks.com"&gt;CONTACT US&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="media-center"/>
+        </folder-links>
+    </content>
+
+    <content content-id="media-center_press-releases">
+        <display-name xml:lang="x-default">Press Releases</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;see the latest from us on healthy snacking!&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Press Releases</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center_card-grid_press-releases_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="media-center"/>
+        </folder-links>
+    </content>
+
+    <content content-id="media-center_videos">
+        <display-name xml:lang="x-default">Videos</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;check out some of the content we've been busy creating&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Videos</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center/media-center_card-grid_videos_V2_opt.png.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="media-center"/>
+        </folder-links>
+    </content>
+
+    <content content-id="nutrition-collective_welcome">
+        <display-name xml:lang="x-default">Welcome</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="main-container col1-layout s-knd-legacy nutritioncollective-welcome-index"&gt;&#13;
+                                                &lt;img alt="" id="title-image" src="images/nutritioncollective_big.png?$staticlink$"&gt;&#13;
+&lt;div class="welcome-content"&gt;&#13;
+&lt;div class="paragraph"&gt;&#13;
+&lt;div class="title"&gt;we love that you love nutrition.&lt;/div&gt;&#13;
+&lt;p&gt;You’re so passionate about nutrition that you’ve dedicated your life to it. And we think that’s amazing.&lt;/p&gt;&#13;
+&lt;p&gt;As it so happens, we’re committed to healthy eating too. That’s why we started the KIND Nutrition Collective, a community of registered dietitians who share our passion for inspiring people to live healthier lives. As a member, you’ll receive product samples, coupons, education materials and more. Apply to join now; we’ll bring the (nutritious) snacks!&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;audio controls="controls" style="display: none;"&gt;&lt;/audio&gt;&#13;
+&lt;div class="direction"&gt;&#13;
+	&lt;div class="direction-content"&gt;&#13;
+		&lt;div class="title"&gt; Sound good? &lt;/div&gt;&#13;
+		&lt;p&gt; Apply to the nutrition collective &lt;/p&gt;&#13;
+		&lt;a id="apply-link" class="btn u-width-auto" href="https://www.kindsnacks.com/nutritioncollective"&gt;Apply Now&lt;/a&gt;&lt;br /&gt;&#13;
+		&lt;a id="login-link" class="u-width-auto" href="$httpsUrl('Login-Show')$"&gt;ALREADY A MEMBER? LOGIN HERE&lt;/a&gt;&#13;
+	&lt;/div&gt;&#13;
+&lt;/div&gt;            &lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="nutrition-collective"/>
+        </folder-links>
+    </content>
+
+    <content content-id="globalPartnership">
+        <display-name xml:lang="x-default">Our New Global Partnership</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="page-offset-bottom s-knd-legacy main-container"&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;h2 class="text-center" style="color: #000;"&gt;our new global partnership&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row justify-content-center"&gt;&#13;
+&lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&lt;iframe frameborder="0" height="560" src="https://www.youtube.com/embed/NGZvMtM_hvk" style="width: 100%; height: 560px; border: 13px solid #4395c7;" width="315"&gt;&lt;/iframe&gt;&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row justify-content-center"&gt;&#13;
+&lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&#13;
+&lt;h2 class="opening-header text-center"&gt;words from Daniel Lubetzky to the KIND team&lt;/h2&gt;&#13;
+&lt;p&gt;KIND team, &lt;br&gt; &lt;br&gt; I started KIND back in 2004 to solve a problem I faced – I couldn’t find a healthy snack to take on the go or enjoy at my desk that was both delicious and good for me. In those early days, I carried my beat-up briefcase door-to-door to introduce retailers to the first fruit and nut bars. I never imagined that KIND would grow into what it has become today. Thanks to your commitment to excellence and embodiment of our values, we have since built KIND into an incredible brand and movement, created a new healthy snacking category and demonstrated that business can be a force for social good.&lt;/p&gt;&#13;
+&lt;p&gt;We have come a long way and have much to be proud of, but as we always say, we are just getting started. KIND has unlimited potential in a world that is becoming more aware of the importance of eating real, nutrient dense foods and that is in dire need of more kindness. With our formidable KIND platform, we are well positioned to bring healthy and tasty snacks to more people around the globe, disrupt new categories with products that adhere to our &lt;a href="/promise" title="KIND Promise" target="_blank"&gt;KIND Promise&lt;/a&gt;, and inspire kindness on a greater scale.&lt;/p&gt;&#13;
+&lt;p&gt;As I’ve shared with you, for the last year we have been actively exploring options to help us bring this vision to life. After a long and thoughtful process, we have determined that bringing on Mars as a strategic partner will best position us to achieve these ambitious goals on a global scale and fulfill KIND’s maximum potential. As part of the partnership, Mars will take a minority stake in KIND. We as a team will remain the majority shareholders, with me as the largest shareholder with a controlling stake in KIND. We will continue to operate independently as a privately held company with the same leadership and values, and with our headquarters remaining in New York.&lt;/p&gt;&#13;
+&lt;div class="essay_bio_toggle_wrapper"&gt;&lt;a href="#0" id="essay_bio_wrap_toggle"&gt;Click to Expand &lt;span class="expand-symbol"&gt;+&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+&lt;div id="essay_bio_wrap" style="display: none;"&gt;&#13;
+&lt;p&gt;Mars recognizes KIND’s enormous potential and will help us accelerate our global reach, extend the KIND Promise into new categories, and deepen our social impact. Like us, Mars is a privately held company, so like us, they are long-term oriented and able to make creative bets for the future. Most importantly, they have a history of operating with high integrity. Many of our values are aligned, like their principle of mutuality, which comes to life in the trust, respect and honesty that they share with their team and consumers. They are also a family-owned, principles-driven company with a &lt;a href="http://www.mars.com/global/sustainable-in-a-generation/our-approach-to-sustainability" target="_blank"&gt;proven track record&lt;/a&gt; of investing in the betterment of the communities where they operate, and we look forward to working with them to make this a better world for future generations.&lt;/p&gt;&#13;
+&lt;p&gt;Mars is eager to partner with KIND to bring our healthy and tasty snacks to more people around the world, further benefiting the communities in which they operate. To turbo-charge our international growth and category expansion, we’ll jointly leverage KIND’s proven playbook in healthy snacking and Mars’ best in class operational capabilities and global reach. Our small but mighty international team has made incredible progress over the years, and with this partnership, we will be able to expand the team and our international footprint even further.&lt;/p&gt;&#13;
+&lt;p&gt;The more that we grow KIND, the more that we’ll be able to deepen our social impact and redefine the role of business in society. This partnership will enable us to invest more resources in &lt;a href="https://empatico.org/" target="_blank"&gt;Empatico&lt;/a&gt; and other &lt;a href="/foundation" target="_blank"&gt;KIND Foundation&lt;/a&gt; initiatives to foster communities that are more empathetic and embrace our shared humanity. I personally intend to fund The KIND Foundation with a $25 million donation to further this work.&lt;/p&gt;&#13;
+&lt;p&gt;I am sure that you have plenty of questions. I look forward to answering them and connecting with all of you today at our town hall.&lt;/p&gt;&#13;
+&lt;p&gt;For now, I want to thank you for your partnership. We would never be where we are today without your tremendous efforts. I look forward to continuing on this exciting journey with all of you.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;p&gt;Warmest, &lt;br&gt; &lt;br&gt;Daniel Lubetzky&lt;/p&gt;&#13;
+&lt;div&gt;&#13;
+&lt;h3 class="opening-header text-center" style="font-weight: bold; font-size: 19px; letter-spacing: normal;"&gt;click here to read the full &lt;a href="$url('Page-Show', 'cid', 'global-partnership-announcement')$" target="_blank"&gt;press release&lt;/a&gt;.&lt;/h3&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row justify-content-center"&gt;&#13;
+&lt;h2 class="section-header-head"&gt;frequently asked questions&lt;/h2&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row justify-content-center"&gt;&#13;
+&lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&#13;
+&lt;div class="community-faq"&gt;&#13;
+&lt;p class="comm-question"&gt;Why is KIND entering a global partnership with Mars?&lt;/p&gt;&#13;
+&lt;p&gt;We’ve teamed up with Mars to bring KIND’s snacks and Promise to more people in more places. By partnering with a family-owned, principles-driven company like Mars, we're looking forward to continuing on our journey to empower more people to make healthy eating decisions across the globe.&lt;/p&gt;&#13;
+&lt;p class="comm-question"&gt;Are any of KIND’s products or ingredients changing because of this partnership?&lt;/p&gt;&#13;
+&lt;p&gt;Our recipes are staying the same, and our commitment to the KIND Promise, the nutrition principles that have guided our innovation since our founding, isn't changing. Since day one we’ve been committed to bringing you nutritious snacks without sacrificing taste. We’re going to continue doing this.&lt;/p&gt;&#13;
+&lt;p class="comm-question"&gt;Will you introduce new products?&lt;/p&gt;&#13;
+&lt;p&gt;KIND is always working on creating new snacks that are healthy and tasty, wholesome and convenient; however, we don't have anything specific to announce at the moment.&lt;/p&gt;&#13;
+&lt;p class="comm-question"&gt;Will your products still be available in my area? Where else will we see KIND products?&lt;/p&gt;&#13;
+&lt;p&gt;Yes, our snacks will still be available everywhere they are today. For our fans abroad, it’s likely you’ll start seeing KIND snacks in new places. We don’t have specifics on geographic expansion yet, but we’ll be in touch when we do!&lt;/p&gt;&#13;
+&lt;p class="comm-question"&gt;Why is Mars the right global partner for KIND?&lt;/p&gt;&#13;
+&lt;p&gt;Like KIND, Mars treats its consumers and team members with mutuality and empathy, operates with integrity, and believes in using its business for good. Mars’ global presence and expertise will also bring the KIND brand, products and mission to more people in more places around the world. For these reasons and more, they are the right partner.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact">
+                <position>1.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+    <content content-id="footer-column-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="#"&gt;Shop&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="Shop All Products"&gt;Shop All&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;li&gt;&lt;a href="https://wholesale.kindsnacks.com/customer/account/login/" title="Wholesale"&gt;Wholesale&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-2">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$httpsURL('Account-Show')$"&gt;Account&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$httpsURL('Account-Show')$" title="Go to My Account"&gt;My Account&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$httpsURL('Order-History')$" title="Go to Check Order"&gt;Check Order&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer-account --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-3">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Search-ShowContent', 'fdid', 'contact')$"&gt;Support&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'contact')$" title="Go to Contact Us"&gt;Contact Us &amp; FAQ&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_support --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-4">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'about-us')$" title="Go to About Us"&gt;About Us&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'careers')$" title="Go to Careers"&gt;Careers&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'media-center')$" title="Go to the Media Center"&gt;Media Center&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'nutrition-collective_welcome')$" title="Go to the Nutrition Collective"&gt;Nutrition Collective&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-5">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'our-mission')$"&gt;Our Mission&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="KIND foundation"&gt;KIND foundation&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="http://www.howkindofyou.com/" target="_blank" title="Follow the tag!"&gt;#kindawesome&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="Donations"&gt;donations&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="header-navigation">
+        <display-name xml:lang="x-default">Header Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+&lt;li class="nav-item"&gt;&#13;
+&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="nav-link" title="Ways to Snack"&gt;Ways to Snack&lt;/a&gt;&#13;
+&lt;/li&gt;&#13;
+&lt;li class="nav-item"&gt;&#13;
+&lt;a href="$url('Page-Show', 'cid', 'our-mission')$" class="nav-link" title="Our Mission"&gt;Our Mission&lt;/a&gt;&#13;
+&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="snack-club">
+        <display-name xml:lang="x-default">Snack Club</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="main-container s-knd-legacy col1-layout page-offset-top"&gt;&#13;
+&lt;div class="std"&gt;&#13;
+&lt;div class="snack-club"&gt;&#13;
+&lt;section class="snack-header"&gt;&#13;
+&lt;div class="container-narrow text-center"&gt;&#13;
+&lt;h1&gt;join the KIND Snack Club&lt;/h1&gt;&#13;
+&#13;
+&lt;p&gt;subscribe to our snacks and save - here's how it works:&lt;/p&gt;&#13;
+&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-lg-4 col-md-4 col-xs-12"&gt;&lt;img alt="" height="140px" src="images/snack-club_three-tile_pick_opt.png?$staticlink$" title="" width="204px" /&gt;&#13;
+&lt;div class="snack-content"&gt;&#13;
+&lt;h3&gt;pick your favorite snacks&lt;/h3&gt;&#13;
+&#13;
+&lt;p&gt;Not sure which are your favorite? Don't worry - we have variety packs.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-4 col-md-4 col-xs-12"&gt;&lt;img alt="" height="140px" src="images/snack-club_three-tile_schedule_opt.png?$staticlink$" title="" width="140px" /&gt;&#13;
+&lt;div class="snack-content"&gt;&#13;
+&lt;h3&gt;tell us when you want your snacks&lt;/h3&gt;&#13;
+&#13;
+&lt;p&gt;Every month? Every two months? You pick.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-4 col-md-4 col-xs-12"&gt;&lt;img alt="" height="151px" src="images/snack-club_three-tile_delivery_opt.png?$staticlink$" title="" width="139px" /&gt;&#13;
+&lt;div class="snack-content"&gt;&#13;
+&lt;h3&gt;snacks delivered to your door&lt;/h3&gt;&#13;
+&#13;
+&lt;p&gt;No store, no hassle. Need to skip a month? No problem.&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&#13;
+&lt;section class="section-gray snack-benefits"&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-lg-5 col-md-5 col-xs-12 left-title"&gt;&#13;
+&lt;h1&gt;KIND Snack Club benefits&lt;/h1&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-7 col-md-7 col-xs-12"&gt;&#13;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&#13;
+&#13;
+&lt;ul&gt;&#13;
+	&lt;li&gt;&#13;
+	&lt;div class="img-container"&gt;&lt;img alt="" src="images/snack-club/tags-icon_1_5x2.png?$staticlink$" title="" /&gt;&lt;/div&gt;&#13;
+&#13;
+	&lt;div&gt;&#13;
+	&lt;h3&gt;discounts&lt;/h3&gt;&#13;
+&#13;
+	&lt;p&gt;Take 16% off our kindsnacks.com retail pricing when you subscribe to our snacks.&lt;/p&gt;&#13;
+	&lt;/div&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li&gt;&#13;
+	&lt;div class="img-container"&gt;&lt;img alt="" src="images/snack-club/award-icon_1_5x.png?$staticlink$" title="" /&gt;&lt;/div&gt;&#13;
+&#13;
+	&lt;div&gt;&#13;
+	&lt;h3&gt;surprises&lt;/h3&gt;&#13;
+&#13;
+	&lt;p&gt;Free snacks, new swag, tickets to a local event. We could tell you but that&amp;rsquo;d ruin it.&lt;/p&gt;&#13;
+	&lt;/div&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li&gt;&#13;
+	&lt;div class="img-container"&gt;&lt;img alt="" src="images/snack-club/broadcast-icon_1_5x.png?$staticlink$" /&gt;&lt;/div&gt;&#13;
+&#13;
+	&lt;div&gt;&#13;
+	&lt;h3&gt;early access&lt;/h3&gt;&#13;
+&#13;
+	&lt;p&gt;We love introducing new products and you&amp;rsquo;ll be the first one to try&amp;rsquo;em.&lt;/p&gt;&#13;
+	&lt;/div&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li&gt;&#13;
+	&lt;div class="img-container"&gt;&lt;img alt="" src="images/snack-club/mail-icon_1_5x.png?$staticlink$" title="" /&gt;&lt;/div&gt;&#13;
+&#13;
+	&lt;div&gt;&#13;
+	&lt;h3&gt;free shipping&lt;/h3&gt;&#13;
+&#13;
+	&lt;p&gt;Order enough snacks and we'll pick up the cost of shipping.&lt;/p&gt;&#13;
+	&lt;/div&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li&gt;&#13;
+	&lt;div class="img-container"&gt;&lt;img alt="" src="images/snack-club/message-icon_1_5x.png?$staticlink$" /&gt;&lt;/div&gt;&#13;
+&#13;
+	&lt;div&gt;&#13;
+	&lt;h3&gt;snack chat&lt;/h3&gt;&#13;
+&#13;
+	&lt;p&gt;Have a new flavor request? A new product idea? Let your dedicated KIND team member know.&lt;/p&gt;&#13;
+	&lt;/div&gt;&#13;
+	&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="snack-links text-center u-text__font-primary"&gt;&#13;
+&lt;p&gt;own a business and want to sell KIND?&amp;nbsp; &amp;nbsp;&lt;a href="/wholesale"&gt;learn how to here&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&#13;
+&lt;section class="section-black snack-subscription text-center"&gt;&#13;
+&lt;div class="container-narrow"&gt;&#13;
+&lt;h4&gt;ready to join the club?&lt;/h4&gt;&#13;
+&lt;a class="button btn btn-outline-light u-width-auto" href="$url('Page-Show', 'cid', 'products')$"&gt;SHOP NOW&lt;/a&gt;&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&#13;
+&lt;section class="snack-questions"&gt;&#13;
+&lt;div class="container"&gt;&#13;
+&lt;div class="row"&gt;&#13;
+&lt;div class="col-lg-5 col-md-5 col-xs-12 left-title"&gt;&#13;
+&lt;h1&gt;frequently asked questions&lt;/h1&gt;&#13;
+&lt;/div&gt;&#13;
+&#13;
+&lt;div class="col-lg-7 col-md-7 col-xs-12"&gt;&#13;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&#13;
+&#13;
+&lt;ul class="faq_list"&gt;&#13;
+	&lt;li class="collapsible" id="question0"&gt;&#13;
+	&lt;h3 class="title"&gt;can I cancel my subscription at any time?&lt;/h3&gt;&#13;
+&#13;
+	&lt;p class="answer content"&gt;Of course! There's no commitment here. Cancel, skip or pause your subscription whenever you please.&lt;/p&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li class="question collapsible" id="question1"&gt;&#13;
+	&lt;h3 class="title"&gt;is there a minimum number of snacks I have to subscribe to?&lt;/h3&gt;&#13;
+&#13;
+	&lt;p class="answer content"&gt;Nope! Subscribe to any number of boxes you'd like!&lt;/p&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li class="question collapsible" id="question2"&gt;&#13;
+	&lt;h3 class="title"&gt;can I edit my subscription?&lt;/h3&gt;&#13;
+&#13;
+	&lt;p class="answer content"&gt;You bet you can! Want to try a new snack? Add it to your subscription or swap one of your current products. Have too many or too little snacks? Update your frequency. Moved to a new address and need your snacks delivered there? No problem, we have you covered!&lt;/p&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li class="question collapsible" id="question3"&gt;&#13;
+	&lt;h3 class="title"&gt;is there free shipping?&lt;/h3&gt;&#13;
+&#13;
+	&lt;p class="answer content"&gt;Yes, yes there is! Subscribe to over $40 in snacks and shipping is on us!&lt;/p&gt;&#13;
+	&lt;/li&gt;&#13;
+	&lt;li class="question collapsible" id="question4"&gt;&#13;
+	&lt;h3 class="title"&gt;can I join the Snack Club to buy snacks for my office?&lt;/h3&gt;&#13;
+&#13;
+	&lt;p class="answer content"&gt;Of course! Your employees will thank you.&lt;/p&gt;&#13;
+	&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&#13;
+&lt;section class="section-gray snack-footer text-center"&gt;&#13;
+&lt;div class="container-narrow u-text__font-primary"&gt;&#13;
+&lt;h1&gt;not sure what to try?&lt;/h1&gt;&#13;
+&#13;
+&lt;p&gt;enjoy 20 products with this exclusive variety pack!&lt;/p&gt;&#13;
+&lt;img alt="" src="images/homepage_dual-cta-tout_give-kind-a-try_20180824.png?$staticlink$" title="" /&gt;&#13;
+&lt;p&gt;classic snack pack&lt;/p&gt;&#13;
+&lt;a class="button btn u-width-auto" href="https://www.kindsnacks.com/snack-pack"&gt;TRY NOW&lt;/a&gt;&lt;/div&gt;&#13;
+&lt;/section&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="terms-of-use">
+        <display-name xml:lang="x-default">Terms &amp; Conditions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/genericHtmlPage</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;&lt;strong&gt;June 03, 2014&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;h2&gt;&lt;br /&gt;&#13;
+Terms &amp;amp; Conditions&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;KIND Terms of Use&lt;/strong&gt;&amp;nbsp;Your use of the web sites on which these terms reside (including, without limitation, mobile websites) (collectively, the &amp;ldquo;Site&amp;rdquo;), and the content and services at this Site are subject to these Terms of Use (or &amp;ldquo;Terms&amp;rdquo;), which we may update from time to time.&amp;nbsp;&lt;strong&gt;Please read these Terms carefully before using this Site.&lt;/strong&gt;&amp;nbsp;The Site is owned or controlled by&amp;nbsp;&lt;strong&gt;KIND LLC&lt;/strong&gt;&amp;nbsp;(or &amp;ldquo;KIND&amp;rdquo;). By accessing this Site in any way, including, without limitation, browsing this Site, using any services, and/or submitting information to KIND, you agree to and are bound by the terms, conditions, policies and notices contained in these Terms.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+The terms &amp;ldquo;we,&amp;rdquo; &amp;ldquo;us&amp;rdquo; and &amp;ldquo;our&amp;rdquo; refer to KIND and any of its affiliated companies as appropriate to the context. &amp;ldquo;You&amp;rdquo; refers to any person accessing and/or using the Site.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+From time to time we may update this Site and these Terms. Your use of this Site after we post any changes to these Terms constitutes your agreement to those changes. You agree to review these Terms periodically to ensure that you are familiar with the most recent version. KIND may, in its sole discretion, and at any time, discontinue this Site or any part thereof, with or without notice, or may prevent your use of this Site with or without notice to you. You agree that you do not have any rights in this Site and that KIND will have no liability to you if this Site is discontinued or your ability to access the Site or any content you may have posted on the Site is terminated.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;KIND Content&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+Content on this Site that is provided by KIND or its licensors, including certain graphics, photographs, images, screen shots, text, digitally downloadable files, trademarks, logos, product and program names, slogans, and the compilation of the foregoing (&amp;ldquo;KIND Content&amp;rdquo;) is the property of KIND and its licensors, and is protected under trademark, copyright, and other intellectual property laws. Nothing contained on this Site should be construed as granting any license or right to download or use any KIND Content.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+You agree not to download, display or use any KIND Content located on the Site for any purpose, in connection with products or services that are not those of KIND, in any other manner that is likely to cause confusion among consumers, that disparages or discredits KIND and/or its licensors, that dilutes the strength of KIND&amp;rsquo;s or its licensor&amp;rsquo;s property, or that otherwise infringes KIND&amp;rsquo;s or its licensors&amp;rsquo; intellectual property rights. You further agree to in no other way misuse any KIND Content that appears on this Site.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Use of the Site and Posting Policy&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+The following requirements apply to your use of the Site: (a) you will not use any electronic communication feature of the Site for any purpose that is unlawful, tortious, abusive, intrusive on another&amp;rsquo;s privacy, harassing, libelous, defamatory, embarrassing, obscene, threatening, or hateful, all as determined by KIND in its sole and absolute discretion; (b) you will not upload, post, reproduce, or distribute any information, software, or other material protected by copyright or any other intellectual property right (as well as rights of publicity and privacy) without first obtaining the permission of the owner of such rights; (c) you will not collect or store personal data about other users; (d) you will not use the Site for any commercial purpose not expressly approved by KIND in writing; (e) you will not upload, post, email, or otherwise transmit any advertising or promotional materials or any other form of solicitation or unauthorized communication; (f) you will not upload, post, email, or otherwise transmit any material that contains viruses or any other computer code, files, or programs which might interrupt, limit, or interfere with the functionality of any computer software or hardware or telecommunications equipment.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+From time to time on certain areas of our Site you may be able to submit photos, written posts and certain other materials (&amp;ldquo;User Content&amp;rdquo;). By using these features, you agree that you will not post any content that is unlawful, harmful, tortious, defamatory, libelous, obscene, invasive of the privacy of another person, threatening, harassing, abusive, hateful, racist, infringing, pornographic, violent or otherwise objectionable or inappropriate as determined by KIND; that you will not post any content that contains personal information about any individual, violates the privacy/publicity of any other individual or entity, or anything that you are under a contractual obligation to keep private or confidential; that you will not impersonate any person or organization, including without limitation, the personnel of KIND, or misrepresent an affiliation with another person or organization; you will not post any content that contains viruses, corrupted files, or any other similar software or programs that may adversely affect the operation of the Site, or feature of the Site. You further understand and agree that you have no ownership rights in any User Content you submit to us, to any account you may have with us or other access to the Site or features therein. KIND may cancel your account and delete all User Content associated with your account at any time, and without notice, if KIND deems that you have violated these Terms, the law, or for any other reason. KIND assumes no liability for any information removed from our Site, and reserves the right to permanently restrict access to the Site or a user account. For greater certainty, and without limiting the effect of the foregoing, KIND reserves the right, in its sole and absolute discretion, to modify, edit or remove any User Content, or to request a user to modify or edit his or her User Content, if a complaint or notice of allegedly infringing materials is received with respect to the User Content, or for any other reason.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+By displaying, publishing, or otherwise posting any User Content on or through the Site, you hereby irrevocably grant to KIND a non-exclusive, fully sub-licensable, non-revocable, worldwide, fully-paid, royalty free license to use, modify, publicly perform, publicly display, broadcast, publish, reproduce, and distribute such User Content in any and all media now known or hereinafter developed without the requirement to make payment to you or to any third party or the need to seek your or any third party permission. Further, you waive all moral rights in and to all User Content that you post on, upload or otherwise submit to or through, the Site in favor of KIND. This license and waiver of rights includes the right to host, index, cache, distribute, and tag any User Content, as well as the right to sublicense User Content to third parties, including other users, for use on other media or platforms known or hereinafter developed, such as for use on mobile phones, in video or music software computer programs. You continue to retain all ownership rights you hold in your User Content, and you retain any right to use your User Content in any way you choose, subject to these Terms and the license described herein. You represent and warrant that you own all of the User Content submitted, displayed, published or posted by you on the Site and otherwise have the right to grant the license set forth herein, and the displaying, publishing or posting of any content you submit, and our use thereof does not and will not violate the privacy rights, publicity rights, copyrights, trademark rights, patents, contract rights or any other intellectual property rights or other rights of any person or entity.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+You agree to indemnify and hold KIND, its parents, subsidiaries, officers, employees, and website contractors and each of their officers, employees and agents harmless from any claims, damages and expenses, including reasonable attorneys&amp;rsquo; fees and costs, related to your violation of these Terms, including the above Posting Policy, or any violations thereof by your dependents or which arises from the use of any content including User Content that you submitted, posted, or otherwise provided to KIND or this Site.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Accounts, Passwords, and Security&lt;/strong&gt;&amp;nbsp;Certain areas of the Site require registration or otherwise ask you to provide information to participate in certain features or access certain content. If you elect not to provide such information, you may not be able to access certain content or participate in certain features of the Site, or any features at all.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+If the Site requires you to create an account or otherwise submit information, you must complete the specified process by providing us with current, complete, and accurate information as requested by the applicable registration form. It is your responsibility to maintain the currency, completeness, and accuracy of your registration data, and any loss caused by your failure to do so is your responsibility. During the registration process, you will be asked to enter your name and valid e-mail address and choose a password. It is entirely your responsibility to maintain the confidentiality of your password and account. Additionally, you are entirely responsible for any and all activities that occur under your account. You agree to notify KIND immediately of any unauthorized use of your account. You further agree not to email, post, or otherwise disseminate any user ID, password, or other information which provides you access to the Site. KIND is not liable for any loss that you may incur as a result of someone else using your password or account, either with or without your knowledge, and is not responsible for any delay in shutting down your account after you have reported a breach of security to us.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Use of Credit Card&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+If you wish to purchase any product or service made available through the Site, you may be asked to supply certain information relevant to your transaction, including without limitation your credit card number, the expiration date of your credit card, your billing address, and your shipping information. YOU REPRESENT AND WARRANT THAT YOU HAVE THE LEGAL RIGHT TO USE ANY CREDIT CARD(S) UTILIZED IN CONNECTION WITH ANY TRANSACTION. By submitting such information, you grant us or the third party collecting that information on our behalf the right to provide such information to third parties for purposes of facilitating the completion of transactions initiated by you or on your behalf. Verification of information may be required prior to the acknowledgment or completion of any transaction.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Representations and Limitations of Liability&lt;/strong&gt;&amp;nbsp;To the extent permitted by the applicable law, KIND makes no representations about the reliability of the features of this Site, the KIND Content, User Content, or any other Site feature, and disclaims all liability in the event of any service failure. You acknowledge that any reliance on such material or systems will be at your own risk. KIND makes no representations regarding the amount of time that any KIND Content or User Content will be preserved.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+KIND does not endorse, verify, evaluate or guarantee any information provided by users and nothing shall be considered as an endorsement, verification or guarantee of any User Content. You shall not create or distribute information, including but not limited to advertisements, press releases or other marketing materials, or include links to any sites which contain or suggest an endorsement by KIND without the prior review and written approval of KIND.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+THIS SITE IS PROVIDED ON AN &amp;ldquo;AS IS, AS AVAILABLE&amp;rdquo; BASIS. TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THOSE OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, ARE MADE WITH RESPECT TO THIS SITE, OR ANY INFORMATION , CONTENT, MATERIALS OR PRODUCTS (INCLUDING SOFTWARE) THEREIN. UNDER NO CIRCUMSTANCES, INCLUDING NEGLIGENCE, SHALL KIND (INCLUDING ITS OFFICERS, DIRECTORS, EMPLOYEES, SUPPLIERS OR PROGRAMMERS) BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES THAT RESULT FROM THE USE OF OR INABILITY TO USE THIS SITE OR ANY PRODUCTS OR SERVICES AVAILABLE THEREON, NOR SHALL KIND BE RESPONSIBLE FOR ANY DAMAGES WHATSOEVER THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES, ERRORS, DEFECTS, DELAYS IN OPERATION OR TRANSMISSION, OR ANY FAILURE OF PERFORMANCE WHETHER OR NOT CAUSED BY EVENTS BEYOND KIND&amp;rsquo;S REASONABLE CONTROL, INCLUDING BUT NOT LIMITED TO ACTS OF GOD, COMMUNICATIONS LINE FAILURE, THEFT, DESTRUCTION, OR UNAUTHORIZED ACCESS TO THIS SITE&amp;rsquo;S RECORDS, PROGRAMS, OR SERVICES. UNDER NO CIRCUMSTANCES, INCLUDING BUT NOT LIMITED TO A NEGLIGENT ACT, WILL KIND OR ITS AFFILIATES OR AGENTS BE LIABLE FOR ANY DAMAGE OF ANY KIND THAT RESULTS FROM THE USE OF, OR THE INABILITY TO USE, THE SITE, EVEN IF KIND HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. YOU DOWNLOAD ALL MATERIAL AT YOUR OWN RISK. SOME JURISDICTIONS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR EXCLUSION OF LIABILITY FOR CERTAIN TYPES OF DAMAGES; AS A RESULT, THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU IN WHOLE OR IN PART.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+ANY PRODUCTS AND/OR SERVICES DESCRIBED ON THE SITE ARE OFFERED IN JURISDICTIONS WHERE THEY MAY BE LEGALLY OFFERED FOR SALE. THE INFORMATION ON THE SITE IS NOT AN OFFER OR SOLICITATION BY ANYONE IN ANYONE IN ANY JURISDICTION IN WHICH AN OFFER OR SOLICITATION CANNOT LEGALLY BE MADE, OR TO ANY PERSON TO WHOM IT IS UNLAWFUL TO MAKE A SOLICITATION.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Third Party Websites&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+This Site may hyperlink to sites not maintained by or related to KIND. Such hyperlinks are provided as a service to users and are not sponsored by or affiliated with this Site or KIND, and KIND does not endorse and makes no representations or warranties about the content, completeness, or accuracy of those third party sites. Information you submit at a third party site accessible from this Site is subject to the terms of that site&amp;rsquo;s privacy policy, and KIND has no control over how your information is collected, used, or otherwise handled.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Jurisdiction&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+The Site is controlled and operated by KIND from within the United States, and is not intended to subject KIND to the laws or jurisdiction of any country other than that of the United States. We may limit the availability of the Site, in whole or in part, to any person, geographic area or jurisdiction we choose, at any time and in our sole discretion. These Terms will be governed by and construed in accordance with the laws of New York without regard to conflicts of laws principles, except with respect to residents of Quebec, these Terms will be governed by and construed in accordance with the laws of Quebec. By using this Site, you consent to the jurisdiction of, and agree that any and all disputes regarding these Terms will be brought exclusively before, the courts located in New York County, New York.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+&lt;strong&gt;Miscellaneous&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+Both you and KIND acknowledge and agree that no partnership is formed and neither of you nor KIND has the power or the authority to obligate or bind the other.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+YOU AGREE THAT, TO THE EXTENT PERMITTED BY APPLICABLE LAW, ANY AND ALL DISPUTES, CLAIMS, AND CAUSES OF ACTION ARISING OUT OF OR CONNECTED WITH THIS SITE AND/OR THESE TERMS, WILL BE RESOLVED INDIVIDUALLY, WITHOUT RESORT TO ANY FORM OF CLASS ACTION. These Terms operate to the fullest extent permissible by law.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+On certain areas of our Site, you may be given the ability to provide us with personally identifiable information. Please read our Privacy Policy for more information about our information collection and use practices.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+The failure of KIND to comply with these Terms because of an act of God, war, fire, riot, terrorism, earthquake, actions of federal, state, provincial/territorial, or local governmental authorities or for any other reason beyond the reasonable control of KIND, shall not be deemed a breach of these Terms.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+If KIND fails to act with respect to your breach or anyone else&amp;rsquo;s breach on any occasion, KIND is not waiving its right to act with respect to future or similar breaches.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+If any provision of these Terms shall be unlawful, void or for any reason unenforceable, then that provision shall be deemed severable from these terms of use and shall not affect the validity and enforceability of any remaining provisions.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+These Terms constitute a binding agreement between you and KIND, and are accepted by you upon your use of the Site or your account. These Terms constitute the entire agreement between you and KIND regarding the use of the Site and your account. By using the Site you represent that you are capable of entering into a binding agreement, and that you agree to be bound by these Terms.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;&lt;br /&gt;&#13;
+If you breach any provision of these Terms or our Privacy Policy you may no longer use the Site. We may, in our sole discretion, change, suspend or terminate, temporarily or permanently, the Site or any part thereof or any of its features at any time, for any reason, without any notice or liability to you or any other entity. If these Terms or your permission to use the Site is terminated by us for any reason, the agreement formed by your acceptance of these Terms will nevertheless continue to apply and be binding upon you in respect of your prior use of the Site and anything relating to or arising from such use. If you are dissatisfied with the Site or with these Terms or Privacy Policy, then your sole and exclusive remedy is to discontinue using the Site. The KIND Content, Representations, and Limitations of Liability, Indemnity Jurisdiction and Miscellaneous provisions in this agreement shall survive any termination of this agreement.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="daniel-lubetzky">
+        <display-name xml:lang="x-default">Daniel Lubetzky</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/genericHtmlPage</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="std"&gt;&lt;br&gt;&lt;br&gt;&#13;
+&lt;h1 style="text-align: center;"&gt;Daniel Lubetzky&lt;/h1&gt;&#13;
+&lt;p style="text-align: center;"&gt;&lt;br&gt;KIND Snacks Founder &amp;amp; CEO&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#13;
+&lt;img alt="Daniel Lubetzky Portrait" src="images/daniel-lubetzky_portrait_opt.png?$staticlink$" style="display: block; margin-left: auto; margin-right: auto;" title="Daniel Lubetzky: KIND Snacks founder &amp;amp; CEO"&gt;&#13;
+&lt;div class="container" style="max-width: 618px; padding: 0px;"&gt;&#13;
+&lt;p&gt;Daniel Lubetzky, founder and CEO of &lt;strong&gt;KIND&lt;/strong&gt;, is on a mission to make the world a little kinder one snack and act at a time. Maker of delicious and nutritious foods, KIND created a new healthy snacking category with the introduction of its first fruit &amp;amp; nut bars in 2004. Established as not-&lt;strong&gt;&lt;em&gt;only&lt;/em&gt;&lt;/strong&gt;-for-profit, KIND is also committed to using its business as a vehicle for social change. Its &lt;strong&gt;KIND Movement&lt;/strong&gt; inspires everyday acts of kindness (five million and counting!), and &lt;a href="foundation" style="text-transform: none;" title="The KIND Foundation" target="_blank"&gt;&lt;strong&gt;The KIND Foundation&lt;/strong&gt;&lt;/a&gt; works to create kinder, more empathetic communities. Most recently, the Foundation unveiled &lt;strong&gt;&lt;a href="https://empatico.org/" style="text-transform: none;" title="Emaptico" target="_blank"&gt;Empatico&lt;/a&gt;&amp;nbsp;&lt;/strong&gt;– an idea that Daniel conceived more than a decade ago. Empatico is a $20MM multi-year initiative that will broaden kids' world views through meaningful interactions with peers across the globe.&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#13;
+&lt;p&gt;Drawing on his experiences with KIND and more than two decades in the food industry, Daniel founded an independent organization called &lt;a href="https://www.feedthetruth.org/" style="text-transform: none;" title="Feed The Truth"&gt;&lt;strong&gt;Feed the Truth&lt;/strong&gt;&lt;/a&gt; in 2017. This nonprofit seeks to improve public health by making truth, transparency and integrity the foremost values in today’s food system. A social entrepreneur working to build bridges between people, Daniel is also the founder of &lt;strong&gt;PeaceWorks Inc.&lt;/strong&gt;, a business that fosters cooperative ventures among neighbors in the Middle East. Additionally, he co-founded &lt;strong&gt;Maiyet&lt;/strong&gt;, a fashion brand that partners with artisans to promote entrepreneurship in developing economies, and the &lt;strong&gt;OneVoice Movement&lt;/strong&gt;, an international grassroots effort that amplifies the voices of moderate Israelis and Palestinians seeking to end the conflict.&lt;br&gt;&lt;br&gt;&lt;/p&gt;&#13;
+His commitment to creating economically sustainable and socially impactful business has been lauded by BusinessWeek, Time, Fast Company and Entrepreneur. Daniel has also been recognized by the World Economic Forum and the Skoll Foundation, and in 2015 President Barack Obama and Commerce Secretary Penny Pritzker named him a Presidential Ambassador for Global Entrepreneurship. In 2017, Daniel was celebrated as a Common Ground awardee for his accomplishments in conflict resolution, community building and peacebuilding. He is the author of the New York Times bestseller &lt;a href="http://www.kindsnacks.com/products/kind-gear/do-the-kind-thing-book" style="text-transform: none;" title="Do The KIND Thing | Book by Daniel Lubetzky | KIND Snacks" target="_blank"&gt;&lt;em&gt;&lt;strong&gt;Do the KIND Thing&lt;/strong&gt;&lt;/em&gt;&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&#13;
+&lt;p&gt;Daniel is married with four children and enjoys spending time with his family and practicing magic.&lt;/p&gt;&#13;
+&lt;br&gt;&lt;br&gt;&lt;a href="https://www.facebook.com/LubetzkyDaniel/" style="border-bottom: 0px;" target="_blank"&gt;&lt;img alt="Facebook icon" src="https://images.kindsnacks.com/wysiwyg/cms/facebook_dl.png" title="Facebook icon"&gt;&lt;/a&gt;&amp;nbsp;&lt;a href="https://twitter.com/DanielLubetzky" style="border-bottom: 0px;" target="_blank"&gt;&lt;img alt="Twitter icon" src="https://images.kindsnacks.com/wysiwyg/cms/twitter_dl.png" title="Twitter icon"&gt;&lt;/a&gt;&amp;nbsp;&lt;a href="https://www.linkedin.com/in/daniel-lubetzky-7965699b/" style="border-bottom: 0px;" target="_blank"&gt;&lt;img alt="LinkedIn icon" src="https://images.kindsnacks.com/wysiwyg/cms/linkedin_dl.png" title="LinkedIn icon"&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-utility-navigation">
+        <display-name xml:lang="x-default">Footer Utility Navigation</display-name>
+        <display-name xml:lang="fr-FR">Droit d'auteur pied de page</display-name>
+        <display-name xml:lang="it-IT">Copyright a piè di pagina </display-name>
+        <display-name xml:lang="ja-JP">フッターの著作権表示</display-name>
+        <display-name xml:lang="zh-CN">页脚版权</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="legal-links"&gt;&lt;a href="$url('Page-Show', 'cid', 'terms-of-use')$"&gt;Terms &amp; Conditions&lt;/a&gt;&lt;a href="#0"&gt;Privacy Statement&lt;/a&gt;&lt;a href="#0"&gt;CA Supply Chain Act&lt;/a&gt;&lt;a href="#0"&gt;About the Ads&lt;/a&gt;&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

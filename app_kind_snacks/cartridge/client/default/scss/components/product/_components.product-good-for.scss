@@ -1,0 +1,51 @@
+/* ============================================================================
+Product "Good For"
+============================================================================ */
+
+/**
+ * Styles for the "Good For" block on the PDP
+*/
+
+$ns: c-product-good-for;
+
+.#{$ns} {
+    display: flex;
+    margin-bottom: 29px;
+    text-transform: lowercase;
+
+    &__heading {
+        flex: 0 0 74px;
+        font-family: $font-family-primary;
+        font-size: 18px;
+        letter-spacing: -0.5px;
+        line-height: 1.33;
+        margin-right: 8px;
+        text-transform: inherit;
+    }
+
+    &__link {
+        display: inline-block;
+        font-size: 16px;
+        letter-spacing: .2px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &::after {
+            background-color: black;
+            content: "";
+            display: block;
+            height: 2px;
+            position: relative;
+                top: -2px;
+            width: 100%;
+        }
+
+        & + & {
+            margin-left: 3px;
+        }
+    }
+}
+

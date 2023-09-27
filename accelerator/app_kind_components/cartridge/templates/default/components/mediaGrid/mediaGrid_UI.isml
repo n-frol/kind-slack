@@ -1,0 +1,59 @@
+<style>
+    <isset name="ns" value="${'c-media-grid'}" scope="page" />
+
+    /*
+     * Colors
+     */
+    <isif condition="${!empty(parentBG)}">
+        .${ns}.${parentID} {
+            background-color: ${parentBG};
+        }
+    </isif>
+    <isif condition="${!empty(graphicalAsset.contentColor)}">
+        .${ns}__item.${assetID} {
+            color: ${graphicalAsset.contentColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.backgroundColor)}">
+         .${ns}__item.${assetID} .${ns}__item__content {
+             background-color: ${graphicalAsset.backgroundColor};
+         }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.headingColor)}">
+          .${ns}__item.${assetID} .${ns}__item__content__heading {
+              color: ${graphicalAsset.headingColor} !important;
+          }
+    </isif>
+
+      <isif condition="${!empty(graphicalAsset.bodyColor)}">
+          .${ns}__item.${assetID} .${ns}__item__content__body {
+              color: ${graphicalAsset.bodyColor} !important;
+          }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.mobileOnly) && graphicalAsset.mobileOnly}">
+         .${ns}__item.${assetID} {
+             display: none !important;
+         }
+
+        @media (max-width: 768px) {
+        .${ns}__item.${assetID} {
+            display: block !important;
+        }
+    }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.tabletOnly) && graphicalAsset.tabletOnly}">
+         .${ns}__item.${assetID} {
+             display: none !important;
+         }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .${ns}__item.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+</style>

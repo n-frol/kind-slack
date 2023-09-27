@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="occasions">
+        <custom-attributes>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="active"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

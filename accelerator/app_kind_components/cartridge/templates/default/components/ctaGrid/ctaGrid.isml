@@ -1,0 +1,54 @@
+<isif condition="${loopstatus.first}">
+    <div class="c-cta-grid ${parentID} th-kind-cta-grid s-graphical-asset">
+        <div class="container st-container st-container--padded">
+            <isinclude template="components/ctaGrid/ctaGrid_header" />
+            <div class="row justify-content-around">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/ctaGrid/ctaGrid_UI" />
+    <div class="c-cta-grid__item th-kind-cta-grid__item ${assetID}"><!-- dwMarker="content" dwContentID="${assetID}" -->
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-cta-grid__item__content">
+                <div class="c-cta-grid__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-cta-grid__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-cta-grid__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.image)}">
+                        <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 500, null, '', 'jpg')}" scope="page" />
+                        <div class="c-cta-grid__item__content__image__wrapper">
+                            <img class="c-cta-grid__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                                srcset="${responsiveImage.imageUrlDefault},
+                                                        ${responsiveImage.imageUrlLarge} 2x"
+                                alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-cta-grid__item__content__links s-graphical-asset__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    </div><!-- END_dwmarker -->
+</isif>
+<isif condition="${loopstatus.last}">
+        </div>
+    </div>
+</div>
+</isif>

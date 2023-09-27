@@ -1,0 +1,87 @@
+<isset name="productCopy" value="${pdict.product}" scope="page"/>
+<isset name="product" value="${pdict.product}" scope="page"/>
+<isset name="isBundle" value="${false}" scope="page"/>
+<isset name="isQuickView" value="${true}" scope="page"/>
+<isset name="isProductSet" value="${false}" scope="page" />
+
+<isif condition="${!empty(product.backgroundColor)}">
+    <isset name="cssVars" value="${'--pdp-main__bg: ' + product.backgroundColor + ';'}" scope="page" />
+</isif>
+<div class="product-quickview st-modal-quickview__product product-${product.productType} col product-wrapper product-detail"
+    style="<isif condition="${!empty(product.backgroundColor)}">${'--pdp-main__bg: ' + product.backgroundColor + '; '}</isif>
+        <isif condition="${!empty(product.imageNavigationColor)}">${'--image-nav-color: ' + product.imageNavigationColor + '; '}</isif>"
+    data-pid="${product.id}">
+        <iscomment> Power Reviews Enabled - Site Pref </iscomment>
+        <isset name="isPowerReviewsEnabled" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('PR_Online_Status')) ? dw.system.Site.current.getCustomPreferenceValue('PR_Online_Status') : false}" scope="page"/>
+
+        <div class="st-product-top ${pdict.templateClass}">
+            <div class="container st-product-top__container ${pdict.templateClass}__container ${pdict.templateClass}__container--${product.category.id} no-offset show-badge">
+
+                <div class="row st-product-top__row ${pdict.templateClass}__row ${pdict.templateClass}__row--${product.category.id}<isif condition="${isBundle}"> product-bundle</isif>">
+                    <!-- Product Images Carousel -->
+                    <isinclude template="product/components/imageCarousel" />
+
+                    <isif condition="${!empty(product.badge) && !empty(product.badge.value)}">
+                        <div class="badge round-button">
+                            <div class="round-button-circle">
+                                <span class="round-button">${product.badge}</span>
+                            </div>
+                        </div>
+                    </isif>
+
+                    <div class="c-product-details st-product-top__section ${pdict.templateClass}__section ${pdict.templateClass}__section--details ${pdict.templateClass}__section--details--${product.category.id}">
+                        <!---Breadcrumbs--->
+
+                        <iscomment>Scope for product breadcrumbs because we need to maintain the same styles across multiple templates
+                        Alternatives feel too complicated, since pageBreadcrumbs is used across nearly the entire site
+                        </iscomment>
+                        <div class="product-breadcrumb st-product-top__breadcrumb ${pdict.templateClass}__breadcrumb s-product-breadcrumbs">
+                            <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                        </div>
+
+                        <!-- Product Name -->
+                        <h1 class="product-name c-product-details__name js-product-name st-modal-quickview__product__name"><span class="value" itemprop="name" content="${product.productName}">${product.productName}</span></h1>
+                        <span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}"></span>
+                        <span class="value" itemprop="sku" content="${product.masterId}"></span>
+
+                        <iscomment> Power Reviews Stars & Write A Review Link </iscomment>
+                        <isif condition="${isPowerReviewsEnabled}" >
+                            <div class="s-powerreviews s-powerreviews-product-rating">
+                                <div id="${dw.util.UUIDUtils.createUUID()}" data-pwr-itemid="${product.masterId || product.id}" class="mb-2"></div>
+                                <isinclude template="product/components/productRating" />
+                            </div>
+                        </isif>
+
+                        <isif condition="${!empty(product.texture) && !empty(product.texture.value) && product.texture.value !== '0'}">
+                            <div class="texture-bar-box texture-bar-box--${product.texture.value} st-modal-quickview__product__texture-bar">
+                                <div class="texture-bar-box__bar">
+                                    <span class="texture-bar-box__bar__point isFirst"></span>
+                                    <span class="texture-bar-box__bar__point texture-bar-box__bar__point--active"></span>
+                                    <span class="texture-bar-box__bar__point isLast"></span>
+                                </div>
+                                <div class="texture-bar-box__title">${product.texture}</div>
+                            </div>
+                        </isif>
+
+                        <div class="c-product-details__description s-quickview__product-description st-modal-quickview__product__description">
+                            <isprint value="${product.longDescription}" encoding="off" />
+                        </div>
+
+                        <div class="st-product-description-info__container--description__wrap st-product-description-info__container--description__wrap--plp">
+                            <div class="container st-container st-product-description-info__container--description st-product-description-info__section <isif condition="${pdict.isByob}">plp-wrapper</isif>">
+                                <isinclude template="product/components/descriptionAndDetails2" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <iscomment>Make sure bundle item details get included when appropriate, so that adding to the cart works as expected</iscomment>
+        <isif condition="${!empty(product.bundledProducts) && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}">
+            <div class="d-none">
+                <isinclude template="product/components/bundleItems" />
+            </div>
+        </isif>
+</div>

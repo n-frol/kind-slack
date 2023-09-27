@@ -1,0 +1,166 @@
+<isinclude template="components/modules" />
+<isscript>
+var ContentMgr = require('dw/content/ContentMgr');
+</isscript>
+<section id="donation-confirmation-wrapper" style="background:none; border:0px">
+    
+    <div id="donation-confirmation" class="${pdict.changeup.config.checkout_display.displayClass}">
+        
+        <isif condition="${pdict.changeup.config.donation_type_actor != 'merchant'}">
+            <div class="donation-check" style="display:none;">
+                <span role="checkbox" id="donation-checkbox" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" aria-checked="${pdict.changeup.agreedToDonate ? 'true' : 'false'}" tabindex="0" class="${pdict.changeup.agreedToDonate ? 'checked' : ''}" aria-label="${Resource.msg('aria.label.donationconfirm', 'accessibility', null)}"></span>
+            </div>
+			<input type="checkbox" class="custom-control-input" id="donation-check-fake" name="donation-check-fake"
+				value="true" />
+			<label class="donation-check-fake-label" for="donation-check-fake" style="text-transform:none;">
+				${ContentMgr.getContent("changeup-donation-confirmation-customer").custom.body}
+			</label>
+        </isif>
+        
+        <isif condition="${pdict.changeup.config.checkout_display.showDefaultLogo}">
+            <div class="charity-image">
+                <img src="${pdict.changeup.config.default_charity.logo.url}" alt="${pdict.changeup.config.default_charity.display}"/>
+            </div>
+        </isif>
+        
+        <div class="donation-totals">
+            <isif condition="${pdict.changeup.config.donation_display_type == 'actual'}">
+                <div id="donation-total"><isprint value="${pdict.changeup.amount}" /></div>
+            <iselse>
+                <div id="donation-total"><isprint value="${pdict.changeup.percentOfTotal}" /></div>
+            </isif>
+        </div>
+    </div>
+
+	    <div id="donation-confirmation" class="${pdict.changeup.config.checkout_display.displayClass}">
+		
+	<div class="${pdict.changeup.config.supersize_toggle == false ? 'd-none': ''} nopad" id="donation-confirmation-supersize">
+		
+		<!-- FIRST OPTION -->		
+			<isif condition="${pdict.changeup.config.supersize_option == 'single'}">
+			<input type="checkbox" class="custom-control-input" id="donation-check-fake-supersize" name="donation-check-fake-supersize"
+				value="true" />
+			<label class="donation-check-fake-label" for="donation-check-fake-supersize" style="text-transform:none;">
+				${ContentMgr.getContent("changeup-charity-supersize-header").custom.body}
+			</label>
+			<div class="donation-totals don-total">
+				<div id="donation-total">${ '$ ' + parseFloat(pdict.changeup.config.supersize.single.value, 10).toFixed(2).toString()}</div>
+			</div>
+			<iselse>
+			<div class="st-checkout-main__sub-title subtitle c-checkout-multi-shipping__hidden notoppad">
+				<isprint value="${ContentMgr.getContent("changeup-charity-supersize-header").custom.body}" encoding="off" />
+				</div>
+			</isif>	
+			
+		<div style="display:none" class="single-option supersize-header ${pdict.changeup.config.supersize_option == 'single' ? '': 'd-none'}">	
+			<div class="donation-check">
+				<span role="checkbox" id="donation-checkbox-supersize" data-value="${pdict.changeup.config.supersize.single.value}" 
+				data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" 
+				aria-checked="${((pdict.changeup.config.supersize_toggle && pdict.changeup.config.supersize_option == 'single') && ( pdict.changeup.supersize_value && pdict.changeup.supersize_value != '')) ? 'true' : 'false'}" tabindex="0" class="${((pdict.changeup.config.supersize_toggle && pdict.changeup.config.supersize_option == 'single') && ( pdict.changeup.supersize_value && pdict.changeup.supersize_value != '')) ? 'checked' : ''}" aria-label="${Resource.msg('aria.label.donationconfirm', 'accessibility', null)}"></span>
+			</div>
+			<div class="donation-messages">
+				<div class="donation-msg-sp"><iscontentasset aid="changeup-charity-supersize-header" /></div>
+			</div>
+		</div>
+		<!-- SECOND OPTION -->
+		<div class="three-options ${pdict.changeup.config.supersize_option == 'three' ? '': 'd-none'}">
+			<div style="display:none" class="donation-messages">
+				<div class="donation-msg-sp"><iscontentasset aid="changeup-charity-supersize-header" /></div>
+			</div>
+			<div class="d-flex" style="margin-bottom: 40px;">
+				<div class="donation-button-group row w-100 ml-0">
+					<button id='three_options_no' type="button" style='font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: 700;' class="donation-button col-3 ${!session.custom.supersize_value || session.custom.supersize_value == '' || session.custom.supersize_value == 0 ? 'active' : ''}" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}"  data-value="0">${Resource.msg('supersize.buttonothanks', 'changeup', null)}</button>
+					<button id="three_options_value_one" type="button" class="donation-button col-3 ${ session.custom.supersize_value == pdict.changeup.config.supersize.three.value_one ? 'active' : ''}" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="${pdict.changeup.config.supersize.three.value_one}">${ '$' + parseFloat(pdict.changeup.config.supersize.three.value_one, 10).toFixed(2).toString()}</button>
+					<button id="three_options_value_two" type="button" class="donation-button col-3 ${ session.custom.supersize_value == pdict.changeup.config.supersize.three.value_two ? 'active' : ''}" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="${pdict.changeup.config.supersize.three.value_two}">${ '$' + parseFloat(pdict.changeup.config.supersize.three.value_two, 10).toFixed(2).toString()}</button>
+					<button id="three_options_value_three" type="button" class="donation-button col-3 ${ session.custom.supersize_value == pdict.changeup.config.supersize.three.value_three ? 'active' : ''}" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="${pdict.changeup.config.supersize.three.value_three}">${ '$ ' + parseFloat(pdict.changeup.config.supersize.three.value_three, 10).toFixed(2).toString()}</button>
+				</div>
+			</div>
+		</div>
+		<!-- THIRD OPTION -->
+		<div class="third-option  ${pdict.changeup.config.supersize_option == 'two_plus' ? '': 'd-none'}">
+        	<div style="display:none" class="donation-messages">
+			<isprint value="${ContentMgr.getContent("changeup-charity-supersize-header").custom.body}" encoding="off" />
+			</div>
+			<div class="two-plus-options" style="margin-bottom: 40px;">
+				<div class="donation-button-group">
+					<button id="two_plus_options_no" style="font-size:9px;" type="button" class="donation-button ${!session.custom.supersize_value || session.custom.supersize_value == '' || session.custom.supersize_value == 0 ? 'active' : ''}" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="0">${Resource.msg('supersize.buttonothanks', 'changeup', null)}</button>
+					<button id="two_plus_options_value_one" type="button" class="donation-button ${session.custom.supersize_value == pdict.changeup.config.supersize.two_plus.value_one ? 'active' : '' }" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="${pdict.changeup.config.supersize.two_plus.value_one}">${ '$' + parseFloat(pdict.changeup.config.supersize.two_plus.value_one, 10).toFixed(2).toString()}</button>
+					<button id="two_plus_options_value_two" type="button" class="donation-button ${session.custom.supersize_value == pdict.changeup.config.supersize.two_plus.value_two ? 'active' : '' }" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" data-value="${pdict.changeup.config.supersize.two_plus.value_two}">${ '$' + parseFloat(pdict.changeup.config.supersize.two_plus.value_two, 10).toFixed(2).toString()}</button>
+				</div>
+				<div class="supersize-or-third flex-inline" >&nbsp;${Resource.msg('supersize.buttonselectseparator', 'changeup', null)}&nbsp;</div>
+				<isif condition="${typeof pdict.changeup.config.supersize.two_plus.value_plus == 'number'}">
+					<select class="supersize-select flex-inline ${pdict.changeup.config.supersize.two_plus.value_plus == session.custom.supersize_value  ? 'active' : '' }" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" name="two_plus_plus" id="two_plus_plus" form="carform">
+						<option value="${pdict.changeup.config.supersize.two_plus.value_plus}"<isif condition="${session.custom.supersize_value == pdict.changeup.config.supersize.two_plus.value_plus}">selected</isif>>${'$ ' + parseFloat(pdict.changeup.config.supersize.two_plus.value_plus, 10).toFixed(2).toString()}</option>
+					</select>
+				<iselse/>
+				<select class="supersize-select flex-inline ${pdict.changeup.config.supersize.two_plus.value_plus.split(',').indexOf(session.custom.supersize_value) != -1  ? 'active' : '' }" data-url="${URLUtils.https('ChangeUp-UpdateDonationConfirmation')}" name="two_plus_plus" id="two_plus_plus" form="carform">
+					<isloop items="${pdict.changeup.config.supersize.two_plus.value_plus.split(',')}" var="option" status="loopstatus">
+						<option value="${option}"<isif condition="${session.custom.supersize_value == option}">selected</isif>>${'$ ' + parseFloat(option, 10).toFixed(2).toString()}</option>
+					</isloop>
+				</select>
+				</isif>
+			</div>
+		</div>
+	</div>
+	</div>
+
+<div class="donation-messages">
+	<isprint value="${ContentMgr.getContent("changeup-donation-submessage-customer").custom.body}" encoding="off" />
+</div>
+    <isif condition="${pdict.changeup.config.show_charities_at_checkout}">
+    	<div id="donation-featured-charities">
+    		<ul id="charity-tiles">
+    			<isif condition="${pdict.changeup.config.default_charity}">
+		            <li class="tile default">
+		                <div class="tile-content">
+		                    <isif condition="${!empty(pdict.changeup.config.default_charity.logo.url)}">
+	                            <img src="${pdict.changeup.config.default_charity.logo.url}" alt="${pdict.changeup.config.default_charity.display}" />
+	                        <iselse/>
+	                        	<div class="image-placeholder"> </div>
+	                        </isif>
+		                    <p class="charity-name">${pdict.changeup.config.default_charity.name}</p>
+		                </div>
+		            </li>
+	            </isif>
+	            <isloop items="${pdict.changeup.config.featured_charities}" var="charity" status="loopstatus">
+				
+	                <li class="tile featured">
+	                    <div class="tile-content">
+	                        <isif condition="${!empty(charity.logo.url)}">
+	                            <img src="${charity.logo.url}" alt="${charity.display}" />
+	                        <iselse/>
+	                        	<div class="image-placeholder"> </div>
+	                        </isif>
+	                        <p class="charity-name">${charity.name}</p>
+	                    </div>
+	                </li>
+	            </isloop>
+	        </ul>
+    	</div>
+    </isif>
+</section>
+
+<style>
+.notoppad {
+	padding-top:0px !important;
+}
+.don-total {
+	float: right;
+}
+.donation-button, .supersize-select {
+	background: white !important;
+	color: black !important;
+}
+.donation-button.active, .supersize-select.active {
+	background:black !important;
+	color:white !important;
+}
+.nopad {
+	padding: 0px !important;
+}
+.supersize-or-third {
+	color:black !important;
+}
+</style>

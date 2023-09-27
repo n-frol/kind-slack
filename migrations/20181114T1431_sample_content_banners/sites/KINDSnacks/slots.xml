@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-e" context="folder" context-id="sample_folder_3" configuration-id="sample_content-banner" default="true" assigned-to-site="true">
+        <template>slots/content/contentBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="explore-snack-times"/>
+                <content-asset content-id="fuel-your-morning-run"/>
+                <content-asset content-id="breakfast-at-home"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

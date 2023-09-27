@@ -1,0 +1,15 @@
+/* ============================================================================
+FAQ Child Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles for user-generated content in faq-child templates
+ */
+
+$ns: s-faq-child;
+
+.#{$ns} {
+    ul {
+        list-style: none;
+    }
+}

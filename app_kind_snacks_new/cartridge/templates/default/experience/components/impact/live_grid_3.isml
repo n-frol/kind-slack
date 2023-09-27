@@ -1,0 +1,64 @@
+<div class="planet_grid_7 desktop">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/rec2818.png')}" alt="Impact Planet Grid 7 Image" />
+    </div>
+    <div class="griditem">
+        <div class="head">
+            "The key ingredient is that we’re living our purpose by making sure each individual team member has a chance to contribute to creating a kinder world in a way that is meaningful and authentic to them."
+        </div>
+        <div class="copy">Jennifer Stites, Chief HR Officer at KIND</div>
+    </div>
+</div>
+
+<div class="planet_grid_7 mobile" style="display:none;">
+    <div class="quote" style="padding-left: 20px; padding-right: 20px;">
+        <div class="head">
+            “The key ingredient is that we’re living our purpose by making sure each individual team member has a chance to contribute to creating a kinder world in a way that is meaningful and authentic to them.”
+        </div>
+        <div class="person">
+            <img style="width: 40%; margin-right: 20px;" src="${URLUtils.staticURL('/images/impact/grid3/rec2818.png')}" alt="Impact Planet Grid 7 Image" />
+            <div class="persont" style="position: relative; top: 0px; color:#939393; font-size: 16px; font-family:medium">
+                Jennifer Stites, Chief HR Officer at KIND
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .headitem {
+        font-size: 48px;
+        line-height: 54px;
+        color: black;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .planet_grid_7 {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto;
+        grid-gap: 60px;
+        padding: 50px 0;
+        align-items: center;
+    }
+    .planet_grid_7 .griditem:first-child {
+        justify-self: center;
+    }
+    .planet_grid_7 .griditem:last-child {
+        justify-self: flex-start;
+    }
+    .planet_grid_7 .head {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: main;
+        max-width: 85%;
+    }
+    .planet_grid_7 .copy {
+        color: #939393;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+    }
+</style>

@@ -1,0 +1,698 @@
+<isdecorate template="common/layout/page">
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/snackclub.js');
+    </isscript>
+    <div class="pagehero">
+        <div class="pageherotext">
+            <h2>
+                KIND Subscriptions
+            </h2>
+            <div class="pageherosubtext">
+                Love snacks? You've come to the right place. When you subscribe, you'll get your favorite snacks delivered to your door at 10% off kindsnacks.com retail pricing.
+                <br />
+                <br />
+                Existing members, <a href="${URLUtils.url("Login-Show")}" style="font-weight:bold" href="">log in here</a>
+            </div>
+        </div>
+    </div>
+        <div class="cornerbanner ribbon" style="font-family: HelveticaNeue-Bold;
+    text-align: left;
+    text-align: left;
+    line-height: 21px;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    height: 66px;
+">
+            flexible deliveries & easy order reminders
+        </div>
+    <div class="hereshowitworks">
+        <div class="content">
+            <div class="byobopen">
+                <img src="${URLUtils.staticURL('/images/8db3f0c3-7c41-4368-9657-baad2d16c05a.png')}" alt="byobopen" />
+            </div>
+            <div class="byobtext">
+                <h3>
+                    here's how it works
+                </h3>
+                <div class="subtext">
+                    <ol>
+                        <li>
+                            Build your own box and fill it with your favorites or shop from our full assortment
+                            of healthy and tasty snacks.
+                        </li>
+                        <li>
+                            Tell us how often you want to receive your snacks. Every month? Every two months? Update your subscription to fit your preferences.
+                        </li>
+                        <li>
+                            We'll deliver them straight to your door. Craving something different? We've made it easy
+                            to swap your snacks or skip an upcoming order.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="twobox">
+        <div class="left">
+            <img src="${URLUtils.staticURL('/images/649a0b35-1709-4210-9230-867a584801e4.png')}" alt="byobopen" />
+            <div class="content">
+                <h3>
+                    subscribe to your favorite snacks
+                </h3>
+                <div class="subtext">
+                    Already have a tried-and-true favorite? Choose how often you'd like to receive it and we'll take
+                    care of the rest.
+                </div>
+                <button onclick="window.location.href ='${URLUtils.url('Page-Show', 'cid', 'products-page')}'" class="btn-light-white">shop all snacks</button>
+            </div>
+        </div>
+        <div class="right">
+            <img src="${URLUtils.staticURL('/images/bec0f385-3737-466a-aad8-47ec83df81e8.png')}" alt="byobopen" />
+            <div class="content">
+                <h3>
+                    get started by building your own box
+                </h3>
+                <div class="subtext">
+                    Build your own custom variety pack and fill it with your favorites from our full assortment of tasty
+                    and healthy snacks.
+                </div>
+                <button onclick="window.location.href ='${URLUtils.url('Product-Show', 'pid', 'MBYOB')}'" class="btn-light-white">choose your size</button>
+            </div>
+        </div>
+    </div>
+    <div class="perksbox">
+        <img class="perksimg" src="${URLUtils.staticURL('/images/cd38e6f7-edd6-4a2e-b8e7-953e469d25ea.png')}"
+            alt="byobopen" />
+        <div class="perkslist">
+            <h3 style="text-transform:none">Subscription perks</h3>
+            <img class="perkslistimg" src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_discounts.png')}"
+                alt="a" />
+            <div class="perklistpoint">
+                <h5>discounts</h5>
+                <span>
+                    Get 10% off kindsnacks.com retail pricing on your subscription purchases.
+                </span>
+            </div>
+            <img class="perkslistimg" src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_freeshipping.png')}"
+                alt="a" />
+            <div class="perklistpoint">
+                <h5>free shipping</h5>
+                <span>
+                    Free shipping on subscription orders of $20 or more
+                </span>
+            </div>
+            <img class="perkslistimg" src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_freesamples.png')}"
+                alt="a" />
+            <div class="perklistpoint">
+                <h5>free samples</h5>
+                <span>
+                    We'll include one of our favorite snacks – on us! – with every recurring order.
+                </span>
+            </div>
+            <img class="perkslistimg" src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_earlyaccess.png')}"
+                alt="a" />
+            <div class="perklistpoint">
+                <h5>early access</h5>
+                <span>
+                    Early access to new products, because we're too excited to not share!
+                </span>
+            </div>
+            <img class="perkslistimg"
+                src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_completeflexibility.png')}" alt="a" />
+            <div class="perklistpoint">
+                <h5>order flexibility</h5>
+                <span>
+                    Decide when you want your snacks and skip a delivery when the timing doesn't work.
+                </span>
+            </div>
+            <img class="perkslistimg" src="${URLUtils.staticURL('/images/SnackClub_LP_benefits_easyreminders.png')}"
+                alt="a" />
+            <div class="perklistpoint">
+                <h5>easy reminders</h5>
+                <span>
+                    Sign up for email or text alerts before your next order ships, for easy order management.
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="fanfavs">
+        <isscript>
+            var recommendedProducts = [];
+            recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17751"));
+            recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M20800"));
+            recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M28507"));
+        </isscript>
+        <div class="c-recommendation">
+            <h2 class="c-recommendation__title">
+                try our fan favorites
+            </h2>
+            <div class="c-recommendation__content">
+                <isset name="products" value="${recommendedProducts}" scope="page" />
+                <isinclude template="components/products" />
+            </div>
+        </div>
+    </div>
+    <div class="manage">
+        <h3 class="managetext">manage account</h3>
+        <button onclick="window.location.href ='${URLUtils.url('Login-Show')}'" class="btn-light-white">Log In</button>
+    </div>
+    <div class="faq">
+        <div class="left">
+            <h3 style="font-size:40px;">frequently asked questions</h3>
+        </div>
+        <div class="right">
+            <ul class="faq_list">
+                <li class="collapsible" id="question0">
+                    <h3 class="title">can I cancel my subscription at any time?</h3>
+                    <p class="answer content">Of course! There's no commitment here. Skip or cancel your subscription before your next order date.</p>
+                </li>
+                <li class="question collapsible" id="question1">
+                    <h3 class="title">is there a minimum number of snacks I have to subscribe to?</h3>
+                    <p class="answer content">Nope! Subscribe to any number of boxes you'd like!</p>
+                </li>
+                <li class="question collapsible" id="question2">
+                <h3 class="title">can i edit my subscriptions anytime?</h3>
+                    <p class="answer content">You bet you can! Want to try a new snack? Add it to your subscription or
+                        swap one of your current products. Have too many or too little snacks? Update your frequency.
+                        Moved to a new address and need your snacks delivered there? No problem, we have you covered!
+                    </p>
+                </li>
+                <li class="question collapsible" id="question3">
+                    <h3 class="title">is there free shipping?</h3>
+                    <p class="answer content">Yes, yes there is! Subscribe to $20 or more in snacks and shipping is on us!</p>
+                </li>
+                <li class="question collapsible" id="question4">
+                    <h3 class="title">can i subscribe to buy snacks for my office?</h3>
+                    <p class="answer content">Of course! Your employees will thank you.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+    .safari_ribbon {
+        font-size:19px !important;
+    }
+    @media only screen 
+and (min-width : 375px) 
+and (max-width : 812px) { 
+    .twobox button {
+        left: 0px;
+    }
+    .perklistpoint {
+        width:85% !important;
+    }
+    .perkslistimg {
+        width: 10% !important;
+    }
+    .perksbox {
+        height: 900px !important;
+    }
+
+}
+    .collapsible {
+        border-bottom:1px solid #ccc;
+    }
+    h5 {
+        font-family:"HelveticaNeue-Bold", Helvetica, sans-serif;
+    }
+    .faq {
+        padding-top:20px;
+        padding-bottom:20px;
+    }
+    .faq ul {
+    }
+    .faq h3 {
+        position: relative;
+        font-size: 60px;
+        line-height: 1.1em;
+    }
+        .btn-light-white {
+            width: 200px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            cursor:pointer;
+        }
+
+        .manage {
+            margin: auto;
+            max-width: 1500px;
+            background: black;
+            color: white;
+            padding: 35px;
+            text-align: center;
+        }
+
+        .managetext {
+            margin-right: 30px;
+            display: inline-block;
+        }
+
+        .faq {
+            text-align: center;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        .faq .left,
+        .faq .right {
+            width: 49%;
+            display: inline-block;
+        }
+
+        .faq .right {
+            text-align: left;
+        }
+
+        .faq .left {
+    top: 0px;
+    float: left;
+        }
+
+        .faq .right h3 {
+            font-size: 20px;
+            position: relative;
+            width:90%;
+            letter-spacing: -1px;
+        }
+
+        .fanfavs {
+            margin: auto;
+            max-width: 1500px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .perkslist {
+            width: 49%;
+            display: inline-block;
+            line-height: 1em;
+            position: relative;
+            top: 30px;
+        }
+
+        .perkslist h3 {
+            width: 50%;
+            margin-bottom: 30px;
+        }
+
+        .perkslist span {
+            font-size: 16px;
+        }
+
+        .perkslist h5 {
+            font-weight: bold;
+        }
+
+        .perkslistimg {
+            display: inline-block;
+            position: relative;
+            top: -20px;
+            margin-right: 10px;
+            width: 5%;
+        }
+
+        .perklistpoint {
+            width: 90%;
+            margin-bottom:25px;
+            display: inline-block;
+        }
+
+        .perksbox {
+            max-width: 1500px;
+            background: #ddd;
+            margin: auto;
+            height:620px;
+        }
+
+        .perksimg {
+            position: relative;
+            display: inline-block;
+            width: 49%;
+            float:left;
+        }
+
+        .twobox .btn-light-white {
+            margin-top: 25px;
+        }
+
+        .twobox {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            margin-bottom:60px;
+        }
+
+        .twobox .left {
+            width: 45%;
+            display: inline-block;
+            margin-right: 5%;
+        }
+
+        .twobox .right {
+            width: 45%;
+            display: inline-block;
+        }
+
+        .twobox .left .content {
+            background: black;
+            color: white;
+            padding: 40px;
+        }
+
+        .twobox .right .content {
+            background: black;
+            color: white;
+            padding: 40px;
+        }
+
+        .hereshowitworks .content .subtext ol {
+            counter-reset: item;
+        }
+
+        .hereshowitworks .content .subtext li {
+            display: block;
+            margin-bottom: 2.5em;
+            margin-left: 2em;
+            line-height: 1em;
+    font-family: georgia;
+    font-size: 1.1em;
+        }
+
+        .hereshowitworks .content .subtext li::before {
+            display: inline-block;
+            content: counter(item) "";
+            counter-increment: item;
+            width: 2em;
+            margin-left: -2.1em;
+            font-size: 2em;
+            position: relative;
+            top: 10px;
+            left: 15px;
+            font-family: HelveticaNeue-Bold,Helvetica,sans-serif;
+        }
+
+        .hereshowitworks {
+            position: relative;
+            max-width: 1500px;
+            margin:auto;
+        }
+
+        .twobox .subtext {
+            font-family: georgia;
+            font-size:16px;
+        }
+
+        .hereshowitworks .content {
+            width: 1000px;
+            margin: auto;
+        }
+
+        .hereshowitworks .content .byobopen {
+            width: 57%;
+            display: inline-block;
+        }
+
+        .hereshowitworks .content .byobtext {
+            width: 42%;
+            display: inline-block;
+            position: relative;
+            top: 100px;
+        }
+
+        .hereshowitworks .content .byobtext h3 {
+            margin-bottom: 30px;
+        }
+
+        .cornerbanner {
+            background: black;
+            color: white;
+            position: absolute;
+            right: 0px;
+            width: 210px;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .pagehero {
+            margin: auto;
+            max-width: 100%;
+            position: relative;
+            height: 540px;
+            width: 100%;
+            background: url("${URLUtils.staticURL('/images/fa0916d2-0211-49e5-9f86-e608eb3e4848.png')}");
+        }
+
+        .pageherotext {
+            width: 620px;
+            position: absolute;
+            top: 150px;
+            left: 200px;
+        }
+
+        .pageherotext h2 {
+            text-transform: none;
+            line-height:35px;
+            padding-bottom:25px;
+        }
+
+        .pageherosubtext {
+            width: 420px;
+        }
+
+        /** Protrait Phone */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+      .perksbox {
+          height: 750px !important;
+      }
+      .pagehero {
+          height: 300px;
+      }
+      .pageherotext {
+          top:20px;
+      }
+      .collapsible.is-active > .content, .collapsible.is-active > .card-body {
+          padding: 10px;
+      }
+      .faq .right {
+          top:10px !important;
+      }
+      .faq h3 {
+          top: 0px;
+          font-size: 40px;
+      }
+            .pageherosubtext,
+            .pageherotext {
+                width: 100%;
+                left:0px;
+                padding:25px;
+                line-height:1.2em;
+            }
+            .pageherosubtext {
+                position: relative;
+                top:-30px;
+                left:-20px !important;
+            }
+
+            .pagehero {
+background: url("${URLUtils.staticURL('/images/a5878072-b5ad-4247-bf35-03686b2a05b7.png')}");
+            }
+
+            .hereshowitworks .content .byobopen {
+                display: none;
+            }
+
+            .hereshowitworks .content .subtext li {
+                line-height: 1em;
+                width: 110px;
+                display: inline-block;
+                float: left;
+                padding:6px;
+                margin-left: .5em;
+            }
+
+            .hereshowitworks .content .subtext li::before {
+                margin-right: 20px;
+                margin-left: 0px;
+                top: -20px;
+            }
+            .byobtext .subtext {
+                text-align:center;
+            }
+            .twobox .subtext {
+                display: none;
+            }
+            .twobox h3 {
+                    font-size: 20px;
+    line-height: 1.2em;
+    height:50px;
+            }
+            .twobox button {
+                font-size: 9px;
+    width: 160px;
+    position:relative;
+    left:-10px;
+            }
+            .twobox .left, .twobox .right {
+                width: 49.4%;
+                margin-right: 0%;
+            }
+            .twobox .right .content, .twobox .left .content {
+                padding:20px !important;
+            }
+            .perksimg {
+                display:none;
+            }
+            .perkslist {
+                width: 100%;
+                padding: 15px;
+                top:0px;
+                height:500px;
+                padding-top:30px;
+                padding-bottom:30px;
+            }
+            .managetext {
+                margin-right: 0px;
+            }
+            .perkslist h3 {
+                line-height:1.2em;
+                font-size: 30px;
+                text-align:left;
+                width: 100%;
+            }
+            .faq .left, .faq .right {
+                position: relative;
+                top: 0px;
+                width: 100%;
+            }
+            .faq .right h3 {
+                font-size: 18px;
+                    line-height: 1.33;
+    font-weight: 100;
+    padding: 10px;
+    letter-spacing: -1px;
+            }
+            .hereshowitworks {
+                height: 420px;
+            }
+            .hereshowitworks h3 {
+                text-align:center;
+                position:relative;
+                left:-20px;
+            }
+        }
+
+        @media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  
+{
+    .pageherotext {
+        left: 50px;
+        top:100px;
+    }
+    .hereshowitworks .content .byobopen {
+        width:30%;
+    }
+    .perkslist h3 {
+        width: 100%;
+    }
+    .perksbox {
+        height: 700px;
+    }
+    .pagehero {
+        height: 400px;
+            background: url(/on/demandware.static/Sites-KINDSnacks-Site/-/default/dw81c56277/images/a5878072-b5ad-4247-bf35-03686b2a05b7.png);
+    }
+    .twobox .right {
+        width: 49.5%;
+    }
+    .twobox .left {
+        width: 49.5%;
+        margin-right: 0%;
+    }
+    .perksimg {
+        top:150px;
+    }
+    .pageherotext h2 {
+        width: 330px;
+        line-height: 45px;
+    }
+}
+
+        /** Ipad Pro */
+        @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+            .perksimg {
+                top: 0px;
+            }
+            .hereshowitworks .content .byobopen {
+                width: 55%;
+            }
+            .faq .right h3 {
+                font-size: 18px;
+            }
+
+            .perkslist h3 {
+                width: 75%;
+            }
+
+            .perksimg {
+                top: 50px;
+            }
+
+            .twobox .right .content h3 {
+                font-size: 35px;
+            }
+
+            .pageherotext {
+                left: 100px;
+            }
+
+            .pagehero {
+                background: url(/on/demandware.static/Sites-kind_b2b-Site/-/default/dw524fabec/images/c430c40a-2cf0-45f2-8192-0645b726005a.png) -200px;
+            }
+        }
+    </style>
+    <style>
+        .collapsible .title::after,
+        .collapsible .card-header::after {
+            display: inline-block;
+            height: 17px;
+            margin-left: 11px;
+            width: 16px;
+            content: "+";
+            background-image: unset;
+            position: absolute;
+            right: -10%;
+            top: 0px;
+        }
+
+        .collapsible.is-active>.title::after,
+        .collapsible.is-active>.card-header::after {
+            background-image: unset;
+            content: "-";
+        }
+
+        .collapsible {
+            list-style-type: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .ribbon {
+            font-size:19px;
+        }
+
+        .ribbon:before {
+            content: '';
+            border: 33px solid black;
+            border-left-color: transparent;
+            border-left-width: 14px;
+            position: absolute;
+            top: 0;
+            left: -45px;
+        }
+    </style>
+</isdecorate>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="header-navigation">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+&lt;li class="nav-item"&gt;&#13;
+&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="nav-link" title="Ways to Snack"&gt;Ways to Snack&lt;/a&gt;&#13;
+&lt;/li&gt;&#13;
+&lt;li class="nav-item"&gt;&#13;
+&lt;a href="$url('Page-Show', 'cid', 'snack-club')$" class="nav-link"&gt;Snack Club&lt;/a&gt;&#13;
+&lt;/li&gt;&#13;
+&lt;li class="nav-item"&gt;&#13;
+&lt;a href="$url('Page-Show', 'cid', 'our-mission')$" class="nav-link" title="Our Mission"&gt;Our Mission&lt;/a&gt;&#13;
+&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+    <content content-id="have-a-favorite">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;Shop All&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="$url('Page-Show', 'cid', 'snack-club')$" class="link"&gt;Learn About Snack Club&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

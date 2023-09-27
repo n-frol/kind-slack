@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="fuel-your-morning-run">
+        <display-name xml:lang="x-default">Fuel Your Morning Run</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#732181</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">fuel for your morning run</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_run_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'fuel-your-morning-run')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="breakfast-at-home">
+        <display-name xml:lang="x-default">breakfast at home</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#61B4E4</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">breakfast at home</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_breakfast_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'breakfast-at-home')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="explore-snack-times">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#095C66</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">center</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">see all the ways you can eat KIND® Snacks every day</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="#fuel-your-morning-run"&gt;Explore Snack Times&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

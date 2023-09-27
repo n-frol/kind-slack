@@ -1,0 +1,21 @@
+{
+  "name": "Scrolling Dropdown",
+  "description": "Dropdown that scolls to an anchor",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component, CSV format as follows --- text:anchor,text:anchor",
+      "attribute_definitions": [
+        {
+          "id": "text",
+          "name": "Content",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+
+
+    <field formid="orderNumber" label="label.input.ordernumber" type="string" mandatory="false" binding="orderNumber"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="upc" label="label.input.upc" type="string" mandatory="false" binding="upc"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="product" label="label.input.product" type="string" mandatory="false" binding="product"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="batchCode" label="label.input.batchcode" type="string" mandatory="false" binding="batchCode"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="bestByDate" label="label.input.bestbydate" type="string" mandatory="false" binding="bestByDate"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="purchaseDate" label="label.input.purchasedate" type="string" mandatory="false" binding="purchaseDate"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="storeName" label="label.input.storename" type="string" mandatory="false" binding="storeName"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="storeAddress" label="label.input.storeaddress" type="string" mandatory="false" binding="storeAddress"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+</form>

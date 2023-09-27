@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="instructions-general-error">
+        <display-name xml:lang="x-default">instructions-general-error</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h1 class="st-error__title title"&gt;oops&lt;/h1&gt;&#13;
+&lt;div class="st-error__instructions"&gt;For technical reasons, your request could not be handled properly at this time. We apologize for any inconvenience.&lt;/div&gt;&#13;
+&lt;div class="st-error__instructions"&gt;To ease the frustration of this 404 error, have a compliment.&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

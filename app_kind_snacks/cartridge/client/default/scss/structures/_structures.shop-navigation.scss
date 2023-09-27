@@ -1,0 +1,84 @@
+/* ============================================================================
+Shop navigation
+============================================================================ */
+
+/**
+ * Establish styles for the shop navigation menu
+ * Dropdown from the "shop" nav item including the featured nav and category nav
+ */
+
+ $ns: st-shop-navigation;
+
+ .#{$ns} {
+    & &__menu {
+        box-shadow: none;
+    }
+    &__menu {
+        background-color: $white;
+        margin-top: 0;
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 35px;
+            left: -60px !important; // Important because of the strength of interfering style, which can't really be done away with
+            overflow: visible;
+            width: 775px;
+        }
+
+        &::before {
+            background-color: $white;
+            box-shadow: 0 3px 5px rgba(43, 36, 25, 0.4);
+            content: '';
+            display: none;
+            position: absolute;
+                bottom: 0;
+                top: 0;
+            width: 775px;
+            z-index: -1;            
+
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+
+        &__container {
+            // Using breakpoint down because we need to override the base container styles, but only at small sizes.  Otherwise we don't want to override them
+            @include media-breakpoint-down(md) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            @include media-breakpoint-up(lg) {
+                margin-left: 0;
+                margin-right: 0;
+                overflow: visible;
+                position: relative;
+                    z-index: 2;
+            }
+        }
+        &__row {
+            justify-content: center;
+            margin-left: 0;
+            margin-right: 0;
+
+            @include media-breakpoint-up(lg) {
+                flex-wrap: nowrap;
+            }
+        }
+        &__list {
+            list-style: none;
+        }
+        &__link {
+            border-bottom: 3px solid transparent;
+            color: inherit;
+            font-family: $font-family-primary;
+            padding-bottom: 1px;
+            text-decoration: none;
+
+            &:hover {
+                border-bottom-color:#000;
+            }
+        }
+        .close-button {
+            display: none;
+        }
+    }
+}

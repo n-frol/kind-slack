@@ -1,0 +1,146 @@
+<isscript>
+    function randomString(length) {
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+
+        if (! length) {
+            length = Math.floor(Math.random() * chars.length);
+        }
+
+        var str = '';
+        for (var i = 0; i < length; i++) {
+            str += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return str;
+    }
+    var randomid = randomString(10);
+</isscript>
+<link rel="stylesheet" href="${URLUtils.staticURL('css/fullwidth2.css')}">
+<div class="fullwidth_container ${pdict.theme}">
+    <isif condition="${pdict.showmode == 'video'}">
+        <video alt="Header Video" onclick="toggleVideo(this)" class="hero-video" autoplay loop muted playsinline>
+            <source src="${pdict.video.httpsURL}" type="video/mp4" />
+            <source src="${pdict.video_mobile.httpsURL}" type="video/mp4" media="all and (max-width: 440px)" />
+        </video>
+        <button class="buttonPlay" aria-label="Play">
+            <svg style="${pdict.opacity}" class="svgplay" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="17.5" fill="black" fill-opacity="0.01" stroke="#FEFEFE"/>
+                <path d="M24.1211 18L15.4811 24.2354L15.4811 11.7646L24.1211 18Z" fill="white"/>
+            </svg>
+        </button>
+        <button class="buttonPause" aria-label="Pause">
+            <svg style="${pdict.opacity}" class="svgpause" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="17.5" fill="black" fill-opacity="0.01" stroke="#FEFEFE"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 12C14.5523 12 15 12.4477 15 13V23C15 23.5523 14.5523 24 14 24C13.4477 24 13 23.5523 13 23V13C13 12.4477 13.4477 12 14 12Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.668 12C22.2203 12 22.668 12.4477 22.668 13V23C22.668 23.5523 22.2203 24 21.668 24C21.1157 24 20.668 23.5523 20.668 23V13C20.668 12.4477 21.1157 12 21.668 12Z" fill="white"/>
+            </svg>
+        </button>
+    </isif>
+    <isif condition="${pdict.showmode == 'image'}">
+        <picture class="hero-background">
+            <source media="(max-width:440px)" srcset="${pdict.image_mobile.src.mobile}">
+            <img class="hero-image" src="${pdict.image.src.desktop}" alt="${pdict.image.alt}"/>
+        </picture>
+    </isif>
+    <isif condition="${pdict.showscroll}">
+        <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down to next section" class="scroll_indicator_scroll">
+            <svg style="${pdict.opacity}" class="svgpause" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M30 59C46.0163 59 59 46.0163 59 30C59 13.9837 46.0163 1 30 1C13.9837 1 1 13.9837 1 30C1 46.0163 13.9837 59 30 59ZM30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60Z" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.3445 34.3431L30.9805 40.7071C30.59 41.0976 29.9569 41.0976 29.5663 40.7071L23.2024 34.3431C22.8118 33.9526 22.8118 33.3195 23.2024 32.9289C23.5929 32.5384 24.2261 32.5384 24.6166 32.9289L29.2734 37.5858L29.2734 22H31.2734L31.2734 37.5858L35.9303 32.9289C36.3208 32.5384 36.954 32.5384 37.3445 32.9289C37.735 33.3195 37.735 33.9526 37.3445 34.3431Z" fill="white"/>
+            </svg>
+        </a>
+    </isif>
+    <isif condition="${pdict.showgradient == true}">
+        <div id="hero_gradiant" class="image_gradient ${pdict.theme}"></div>
+    </isif>
+    <isif condition="${pdict.eyebrow}">
+        <h3 class="eyebrow">
+            <isprint value="${pdict.eyebrow}" encoding="off" />
+        </h3>
+    </isif>
+    <div class="content_container" id="text_container">
+        <isif condition="${pdict.theme == "onrails"}">
+            <h2 class="${randomid}" style=""><isprint value="${pdict.headline}" encoding="off" /></h2>
+        <iselse>
+            <h1 class="${randomid}" style="letter-spacing: -1px !important;"><isprint value="${pdict.headline}" encoding="off" /></h1>
+        </isif>
+        <isif condition="${pdict.description}">
+            <div class="description paragraph large">
+                <isprint value="${pdict.description}" encoding="off" />
+            </div>
+        </isif>
+        <isif condition="${pdict.CTA1Text}">
+            <a aria-label="${pdict.CTA1Aria}" href="${pdict.CTA1Link}" class="cta margin normal secondary">
+                <isprint value="${pdict.CTA1Text}" encoding="off" />
+            </a>
+        </isif>
+        <isif condition="${pdict.CTA2Text}">
+            <a style="${pdict.opacity}" aria-label="${pdict.CTA2Aria}" href="${pdict.CTA2Link}" class="cta transparent primary">
+                <isprint value="${pdict.CTA2Text}" encoding="off" />
+            </a>
+        </isif>
+    </div>
+</div>
+
+<style>
+    .${randomid} {
+        font-size: ${pdict.headline_fontsize}; line-height:${pdict.headline_lineheight}
+    }
+    @media screen and (max-width: 864px) {
+        .${randomid} {
+            font-size: ${pdict.headline_fontsize_mobile}; line-height:${pdict.headline_lineheight_mobile}
+        }
+    }
+    .primary.transparent:hover {
+        text-decoration: none !important;
+    }
+    .svgpause, .svgplay {
+        color: white;
+        background: rgba(0,0,0,.6);
+        border-radius: 50%;
+    }
+</style>
+
+<isif condition="${pdict.showmode == 'video'}">
+    <script>
+        $(document).on("click", ".scroll_indicator_scroll", function() {
+            $('html,body').animate({ scrollTop: $(this).closest(".experience-component").prop("scrollHeight")}, 800);
+        });
+
+        var v = document.getElementsByClassName('hero-video')[0];
+        var grad = document.getElementById('hero_gradiant');
+        var cont = document.getElementById("text_container");
+        var play = document.getElementsByClassName('buttonPlay')[0];
+        var pause = document.getElementsByClassName('buttonPause')[0];
+        /* play button */
+        document.getElementsByClassName('buttonPlay')[0].addEventListener('click',function(e){
+            v.play();
+            play.style.display = "none";
+            pause.style.display = "block";
+        },true);
+        /* pause button */
+        document.getElementsByClassName('buttonPause')[0].addEventListener('click',function(e){
+            v.pause();
+            pause.style.display = "none";
+            play.style.display = "block";
+        },true);
+
+        grad.addEventListener('click',function(e){
+           toggleVideo(v);
+        },true);
+        cont.addEventListener('click',function(e){
+            toggleVideo(v);
+        },true);
+
+        function toggleVideo(player)
+        {
+            player.paused ? player.play() : player.pause();
+            if (player.paused) {
+                play.style.display = "block";
+                pause.style.display = "none";
+            } else {
+                play.style.display = "none";
+                pause.style.display = "block";
+            }
+        }
+    </script>
+</isif>

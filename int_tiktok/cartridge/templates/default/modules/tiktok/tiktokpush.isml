@@ -1,0 +1,8 @@
+<isif condition="${pdict.tiktokdata}">
+  <script>
+    ttq.track("<isprint value="${pdict.tiktokaction}" encoding="off" />",
+    <isprint value="${JSON.stringify(pdict.tiktokdata)}" encoding="off" />
+    );
+
+  </script>
+</isif>

@@ -1,0 +1,135 @@
+<div class="blue_grid">
+    <div>
+    <div class="blue_section">
+        <img src="${URLUtils.staticURL('/images/impact/Layer_1.png')}" alt="Impact" class="bodies_section_2" />
+    <div class="head">
+        Did you know?
+    </div>
+    <div class="copy">
+        According to the CDC, only 12% of American adults are eating enough fruits and vegetables.
+    </div>
+</div>
+    </div>
+    <div class="quote_section" style="border-radius: 20px">
+        <img src="${URLUtils.staticURL('/images/impact/Rectangle 25.png')}" alt="Impact" class="bodies_section_2" />
+        <div class="quote">
+            <img style="margin-bottom: 20px" src="${URLUtils.staticURL('/images/impact/grid6/blackquote2.png')}" alt="Impact" class="bodies_section_2" />
+            <div>
+                We will always embrace our responsibility of inspiring and educating consumers to make better-informed nutrition choices – and what better way to do it than with an extra helping of secrets and fun?&rdquo;
+                <div class="person">
+                Kelly Solomon, Chief Marketing Officer at KIND
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="quote_section mobile" style="display:none;">
+        <div class="quote">
+            <img style="margin-bottom: 20px" src="${URLUtils.staticURL('/images/impact/grid6/blackquote2.png')}" alt="Impact" class="bodies_section_2" />
+            <br/>
+
+            We will always embrace our responsibility of inspiring and educating consumers to make better-informed nutrition choices – and what better way to do it than with an extra helping of secrets and fun?&rdquo;
+            <br/>
+            <img src="${URLUtils.staticURL('/images/impact/Rectangle 25.png')}" style="width:40%; position: relative;
+    top: -6px;" alt="Impact" class="bodies_section_2" />
+            <div class="person">
+                Kelly Solomon, Chief Marketing Officer at KIND
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .quote_section {
+            display: none !important;
+        }
+        .quote_section.mobile {
+            display: block !important;
+            border-radius: 20px;
+        }
+    }
+    .quote_section .person {
+        font-size: 18px;
+        line-height: 22px;
+        font-family: medium;
+        margin-top: 20px;
+    }
+    .quote_section {
+        background: #F3F3F3;
+        padding: 30px;
+        display: flex;
+    }
+    .quote_section img {
+        border-radius: 20px;
+        margin-right: 30px;
+        height: fit-content;
+    }
+    .quote_section .quote {
+        font-size: 30px;
+        line-height: 36px;
+        font-family: main;
+    }
+    .blue_grid {
+        margin-bottom: 80px;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-gap: 40px;
+        margin-top: 100px;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    @media screen and (max-width: 440px) {
+        .quote_section img {
+            margin-right: 20px !important;
+        }
+        .quote_section .quote {
+            font-size: 20px !important;
+            line-height: 26px !important;
+        }
+        .blue_section .copy {
+            max-width: 60% !important;
+        }
+        .quote_section .person {
+            display: inline-block;
+            width: 46%;
+        }
+        .centerme .head {
+            font-size: 38px !important;
+            line-height: 44px !important;
+            font-family: main;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .blue_grid {
+            display: grid;
+            grid-template-columns: 1fr !important;
+            grid-gap: 20px;
+            margin-left: 20px !important;
+            width: calc(100% - 40px) !important;
+        }
+    }
+    .blue_section {
+        background: #0E5986;
+        border-radius: 20px;
+        padding: 30px;
+    }
+    .blue_section img {
+        float: left;
+    }
+    .blue_section .head {
+        font-size: 28px;
+        line-height: 30px;
+        font-family: main;
+        color: white;
+        margin-bottom: 14px;
+    }
+    .blue_section .copy {
+        font-size: 18px;
+        line-height: 22px;
+        font-family: medium;
+        color: white;
+        max-width: 70%;
+        display: inline-block;
+    }
+</style>

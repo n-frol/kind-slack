@@ -1,0 +1,61 @@
+/* ============================================================================
+Header Banner
+============================================================================ */
+
+/**
+ * Establish styles for the header banner above the header itself
+ * This is the element that can be slid closed
+ */
+
+$ns: c-header-banner;
+
+.#{$ns} {
+    background-color: $secondary;
+    line-height: 20px;
+    color: $primary;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: $banner-padding;
+    padding-bottom: $banner-padding;
+
+    @include media-breakpoint-down(md) {
+        position: relative;
+        z-index: 52;
+        .close-button {
+            right: -5px !important;
+        }
+    }
+
+    .container {
+        @include media-breakpoint-down(sm) {
+            padding-left: 15px;
+            padding-right: 26px;
+        }
+    }
+    .close-button {
+        height: 24px;
+        width: 24px;
+        position: relative;
+        right: 15px;
+        top: -4px;
+
+        .close {
+            background-image: none;
+            height: 100%;
+            min-height: 0;
+            min-width: 0;
+            opacity: 1;
+            width: 100%;
+
+            &:hover,
+            &:active {
+                background-color: inherit;
+            }
+        }
+    }
+
+    .content {
+        margin-right: 1.5em;
+    }
+}

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="contact-us-cs">
+        <display-name xml:lang="x-default">Have Questions?</display-name>
+        <description xml:lang="x-default">we have answers.</description>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/contact</template>
+        <parent>root</parent>
+        <page-attributes>
+            <page-title xml:lang="x-default">Contact US | Ceative Snacks</page-title>
+            <page-description xml:lang="x-default">Have a question about products, orders or something else? Check our FAQ or contact our team.</page-description>
+            <page-url xml:lang="x-default">contact-us-cs</page-url>
+        </page-attributes>
+        <sitemap-included-flag>true</sitemap-included-flag>
+    </folder>
+
+    <content content-id="cs-footer-column-3">
+        <display-name xml:lang="x-default">Footer Column 3</display-name>
+        <display-name xml:lang="fr-FR">Liens Assistance en pied de page</display-name>
+        <display-name xml:lang="it-IT">Link assistenza a piè di pagina</display-name>
+        <display-name xml:lang="ja-JP">フッターのサポートリンク</display-name>
+        <display-name xml:lang="zh-CN">页脚支持链接</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Search-ShowContent', 'fdid', 'contact-us')$"&gt;Support&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'contact-us-cs')$" title="Go to Contact Us"&gt;Contact Us &amp; FAQ&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="/"&gt;Shipping&lt;/a&gt;&lt;/li&gt;       &#13;
+                &lt;li&gt;&lt;a href="/"&gt;Returns&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="faqs-partnership-cs">
+        <display-name xml:lang="x-default">Our New Global Partnership</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/contentAssetBasic</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">KIND - Our New Global Partnership</page-title>
+            <page-description xml:lang="x-default">KIND Snacks announces global partnership. Minority investment to accelerate KIND's global growth.</page-description>
+            <page-url xml:lang="x-default">partnership</page-url>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="page-offset-bottom s-knd-legacy main-container"&gt;&#13;
+                &#13;
+                &lt;div class="container"&gt;&#13;
+                &lt;h2 class="text-center" style="color: #000;"&gt;our new global partnership&lt;/h2&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &lt;div class="container"&gt;&#13;
+                &lt;div class="row justify-content-center"&gt;&#13;
+                &lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&lt;iframe frameborder="0" height="560" src="https://www.youtube.com/embed/NGZvMtM_hvk" style="width: 100%; height: 560px; border: 13px solid #4395c7;" width="315"&gt;&lt;/iframe&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &lt;div class="container"&gt;&#13;
+                &lt;div class="row justify-content-center"&gt;&#13;
+                &lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&#13;
+                &#13;
+                &lt;h2 class="opening-header text-center"&gt;words from Daniel Lubetzky to the KIND team&lt;/h2&gt;&#13;
+                &lt;p&gt;KIND team, &lt;br&gt; &lt;br&gt; I started KIND back in 2004 to solve a problem I faced – I couldn’t find a healthy snack to take on the go or enjoy at my desk that was both delicious and good for me. In those early days, I carried my beat-up briefcase door-to-door to introduce retailers to the first fruit and nut bars. I never imagined that KIND would grow into what it has become today. Thanks to your commitment to excellence and embodiment of our values, we have since built KIND into an incredible brand and movement, created a new healthy snacking category and demonstrated that business can be a force for social good.&lt;/p&gt;&#13;
+                &lt;p&gt;We have come a long way and have much to be proud of, but as we always say, we are just getting started. KIND has unlimited potential in a world that is becoming more aware of the importance of eating real, nutrient dense foods and that is in dire need of more kindness. With our formidable KIND platform, we are well positioned to bring healthy and tasty snacks to more people around the globe, disrupt new categories with products that adhere to our &lt;a href="/promise" title="KIND Promise" target="_blank"&gt;KIND Promise&lt;/a&gt;, and inspire kindness on a greater scale.&lt;/p&gt;&#13;
+                &lt;p&gt;As I’ve shared with you, for the last year we have been actively exploring options to help us bring this vision to life. After a long and thoughtful process, we have determined that bringing on Mars as a strategic partner will best position us to achieve these ambitious goals on a global scale and fulfill KIND’s maximum potential. As part of the partnership, Mars will take a minority stake in KIND. We as a team will remain the majority shareholders, with me as the largest shareholder with a controlling stake in KIND. We will continue to operate independently as a privately held company with the same leadership and values, and with our headquarters remaining in New York.&lt;/p&gt;&#13;
+                &lt;div class="essay_bio_toggle_wrapper"&gt;&lt;a href="#0" id="essay_bio_wrap_toggle"&gt;Click to Expand &lt;span class="expand-symbol"&gt;+&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;&#13;
+                &#13;
+                &lt;div id="essay_bio_wrap" style="display: none;"&gt;&#13;
+                &lt;p&gt;Mars recognizes KIND’s enormous potential and will help us accelerate our global reach, extend the KIND Promise into new categories, and deepen our social impact. Like us, Mars is a privately held company, so like us, they are long-term oriented and able to make creative bets for the future. Most importantly, they have a history of operating with high integrity. Many of our values are aligned, like their principle of mutuality, which comes to life in the trust, respect and honesty that they share with their team and consumers. They are also a family-owned, principles-driven company with a &lt;a href="http://www.mars.com/global/sustainable-in-a-generation/our-approach-to-sustainability" target="_blank"&gt;proven track record&lt;/a&gt; of investing in the betterment of the communities where they operate, and we look forward to working with them to make this a better world for future generations.&lt;/p&gt;&#13;
+                &lt;p&gt;Mars is eager to partner with KIND to bring our healthy and tasty snacks to more people around the world, further benefiting the communities in which they operate. To turbo-charge our international growth and category expansion, we’ll jointly leverage KIND’s proven playbook in healthy snacking and Mars’ best in class operational capabilities and global reach. Our small but mighty international team has made incredible progress over the years, and with this partnership, we will be able to expand the team and our international footprint even further.&lt;/p&gt;&#13;
+                &lt;p&gt;The more that we grow KIND, the more that we’ll be able to deepen our social impact and redefine the role of business in society. This partnership will enable us to invest more resources in &lt;a href="https://empatico.org/" target="_blank"&gt;Empatico&lt;/a&gt; and other &lt;a href="/foundation" target="_blank"&gt;KIND Foundation&lt;/a&gt; initiatives to foster communities that are more empathetic and embrace our shared humanity. I personally intend to fund The KIND Foundation with a $25 million donation to further this work.&lt;/p&gt;&#13;
+                &lt;p&gt;I am sure that you have plenty of questions. I look forward to answering them and connecting with all of you today at our town hall.&lt;/p&gt;&#13;
+                &lt;p&gt;For now, I want to thank you for your partnership. We would never be where we are today without your tremendous efforts. I look forward to continuing on this exciting journey with all of you.&lt;/p&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &lt;p&gt;Warmest, &lt;br&gt; &lt;br&gt;Daniel Lubetzky&lt;/p&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &lt;div&gt;&#13;
+                &lt;h3 class="opening-header text-center" style="font-weight: bold; font-size: 19px; letter-spacing: normal;"&gt;click here to read the full &lt;a href="$url('Page-Show', 'cid', 'global-partnership-announcement')$" target="_blank"&gt;press release&lt;/a&gt;.&lt;/h3&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &#13;
+                &lt;div class="container"&gt;&#13;
+                &lt;div class="row justify-content-center"&gt;&#13;
+                &lt;h2 class="section-header-head"&gt;frequently asked questions&lt;/h2&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &#13;
+                &lt;div class="container"&gt;&#13;
+                &lt;div class="row justify-content-center"&gt;&#13;
+                &lt;div class="col-xs-12 col-md-8 col-md-offset-2"&gt;&#13;
+                &lt;p style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-weight: bold; font-style: normal; font-stretch: normal; line-height: 0.92; color: rgba(0, 0, 0, 0.87); padding-bottom: 5px;"&gt;Why is KIND entering a global partnership with Mars?&lt;/p&gt;&#13;
+                &lt;p&gt;We’ve teamed up with Mars to bring KIND’s snacks and Promise to more people in more places. By partnering with a family-owned, principles-driven company like Mars, we're looking forward to continuing on our journey to empower more people to make healthy eating decisions across the globe.&lt;/p&gt;&#13;
+                &#13;
+                &lt;p style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-weight: bold; font-style: normal; font-stretch: normal; line-height: 0.92; color: rgba(0, 0, 0, 0.87); padding-bottom: 5px;"&gt;Are any of KIND’s products or ingredients changing because of this partnership?&lt;/p&gt;&#13;
+                &lt;p&gt;Our recipes are staying the same, and our commitment to the KIND Promise, the nutrition principles that have guided our innovation since our founding, isn't changing. Since day one we’ve been committed to bringing you nutritious snacks without sacrificing taste. We’re going to continue doing this.&lt;/p&gt;&#13;
+                &#13;
+                &lt;p style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-weight: bold; font-style: normal; font-stretch: normal; line-height: 0.92; color: rgba(0, 0, 0, 0.87); padding-bottom: 5px;"&gt;Will you introduce new products?&lt;/p&gt;&#13;
+                &lt;p&gt;KIND is always working on creating new snacks that are healthy and tasty, wholesome and convenient; however, we don't have anything specific to announce at the moment.&lt;/p&gt;&#13;
+                &#13;
+                &lt;p style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-weight: bold; font-style: normal; font-stretch: normal; line-height: 0.92; color: rgba(0, 0, 0, 0.87); padding-bottom: 5px;"&gt;Will your products still be available in my area? Where else will we see KIND products?&lt;/p&gt;&#13;
+                &lt;p&gt;Yes, our snacks will still be available everywhere they are today. For our fans abroad, it’s likely you’ll start seeing KIND snacks in new places. We don’t have specifics on geographic expansion yet, but we’ll be in touch when we do!&lt;/p&gt;&#13;
+                &#13;
+                &lt;p style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif;font-weight: bold; font-style: normal; font-stretch: normal; line-height: 0.92; color: rgba(0, 0, 0, 0.87); padding-bottom: 5px;"&gt;Why is Mars the right global partner for KIND?&lt;/p&gt;&#13;
+                &lt;p&gt;Like KIND, Mars treats its consumers and team members with mutuality and empathy, operates with integrity, and believes in using its business for good. Mars’ global presence and expertise will also bring the KIND brand, products and mission to more people in more places around the world. For these reasons and more, they are the right partner.&lt;/p&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;&#13;
+                &lt;/div&gt;
+                </custom-attribute>
+            </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact-us-cs">
+                <position>8.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+    <content content-id="faqs-allergens-cs">
+        <display-name xml:lang="x-default">Allergens</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/faqChild</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Allergen FAQs | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Learn about the ingredients in our snacks</page-description>
+            <page-url xml:lang="x-default">allergen-questions</page-url>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+                &lt;li&gt;&#13;
+                    &lt;h4&gt;are KIND® snacks gluten free?&lt;/h4&gt;&#13;
+                    &lt;p class="answer"&gt;For all products that make a “Gluten Free” claim, we complete testing to ensure they meet FDA’s requirements for “Gluten Free.”&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;are there KIND® products that do not contain nuts?&lt;/h4&gt;&#13;
+                    &lt;p class="answer"&gt;We have multiple product lines that have nut free recipes. Bear in mind that all of our products are made in a facility that processes tree nuts, peanuts, soy and sesame.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;how does KIND avoid cross-contamination?&lt;/h4&gt;&#13;
+                    &lt;p class="answer"&gt;Our manufacturing facilities follow strict regulations and product safety programs, which include regularly conducting U.S.&#13;
+                FDA-grade cleanings as well as testing to prevent cross-contamination.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;p&gt;&lt;/p&gt;				&lt;ul&gt;&#13;
+			    &lt;/ul&gt;&lt;/ul&gt;</custom-attribute>
+            </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact-us-cs">
+                <position>9.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+    <content content-id="faqs-ingredients-cs">
+        <display-name xml:lang="x-default">Ingredients</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/faqChild</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Product Ingredients FAQ | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Learn about the ingredients in our snacks</page-description>
+            <page-url xml:lang="x-default">ingredient-questions</page-url>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+                    &lt;li&gt;&#13;
+                    &lt;h4&gt;are KIND® products organic?&lt;/h4&gt;&#13;
+                    &lt;p&gt;We are not currently pursuing organic certification for our snacks. Our top priority is to invest in high quality, premium ingredients, while keeping our products accessible. We work closely with our suppliers to ensure that their standards are in line with KIND’s brand values.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;where are KIND® snacks made?&lt;/h4&gt;&#13;
+                    &lt;p&gt;All KIND® snacks are made in the United States.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;are KIND® products vegan?&lt;/h4&gt;&#13;
+                    &lt;p&gt;Most of our nut and whole grain-based products contain honey, which may not fall within some vegan diets. All of our Pressed by KIND® and Fruit Bites flavors are vegan, as well as most of our KIND Healthy Grains® clusters (excluding Oats &amp;amp; Honey Clusters with Toasted Coconut and Almond Butter Whole Grain Clusters).&#13;
+                &lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;are KIND® products non GMO?&lt;/h4&gt;&#13;
+                    &lt;p&gt;All KIND® snacks do not contain genetically engineered ingredients. The Non-GMO Project seal appears on the majority of our KIND Healthy Grains® and Pressed by KIND® products. Some of our other snacks are pending Non-GMO Project certification.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;are KIND® products Kosher?&lt;/h4&gt;&#13;
+                    &lt;p&gt;KIND® snacks are certified Kosher by the Orthodox Union. KIND snacks that are Kosher and do not contain dairy are marked with an OU symbol, whereas those that are Kosher and contain dairy OR are exposed to dairy during the production process are marked OU-D.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;how much sugar do KIND® products contain?&lt;/h4&gt;&#13;
+                    &lt;p&gt;The total sugar content across all of our snacks range from 4-21 grams. We’ve maintained a longstanding commitment to creating snacks with as little sugar as possible without using artificial sweeteners or sugar alcohols. Our best-selling snack line, KIND® Nuts &amp;amp; Spices, contains 5 grams of sugar or less per serving, which is 50% less sugar than the average nutrition bar.&lt;p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;				&lt;ul&gt;&#13;
+                            &lt;/ul&gt;&lt;/ul&gt;
+            </custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact-us-cs">
+                <position>11.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+    <content content-id="faqs-ordering-cs">
+        <display-name xml:lang="x-default">Ordering</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/faqChild</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Order FAQ | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Have a question about ordering from our site? Learn more here.</page-description>
+            <page-url xml:lang="x-default">order-questions</page-url>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+                &lt;li&gt;&#13;
+                    &lt;h4&gt;what forms of payment do you accept?&lt;/h4&gt;&#13;
+                    &lt;p&gt;We currently accept Visa, Mastercard and American Express.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;when will my credit card be charged?&lt;/h4&gt;&#13;
+                    &lt;p&gt;Your credit card will be charged when your order is shipped.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;is it safe for me to use my credit card on your site?&lt;/h4&gt;&#13;
+                    &lt;p&gt;KIND has taken security measures in order to safeguard against the loss, misuse and alteration of information under our control. When making purchases through our secure server, you are protected by Secure Socket Layer (“SSL”) technology, used by most browsers, including Internet Explorer, Firefox, Safari and Google Chrome. This technology allows us to utilize advanced encryption in order to protect the information transmitted between your computer and our server. Any personal information you enter on our website, including your name and credit card information, is securely dispatched over the Internet.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;what is your refund/return policy?&lt;/h4&gt;&#13;
+                    &lt;p&gt;Due to the nature of the product, we are unable to accept product returns. If you would like to submit a claim due to damaged or defective product, please contact our team at CustomerService@KINDSnacks.com immediately upon receipt of your order. Please reach out to our team within fifteen (15) days of your receipt of the product.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;where can I find KIND® products?&lt;/h4&gt;&#13;
+                    &lt;p&gt;KIND is sold at retailers nationwide. The KIND store is open 24/7 – just visit kindsnacks.com/products&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;where can I find KIND® products internationally?&lt;/h4&gt;&#13;
+                    &lt;p&gt;In addition to the U.S., KIND® bars are sold in Mexico, Canada and the UK. We also have a modest distribution business in more than 10 other countries, including France, Belgium, Puerto Rico, the Netherlands and New Zealand.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;why doesn't my store carry my favorite flavor?&lt;/h4&gt;&#13;
+                    &lt;p&gt;If your store doesn’t carry your favorite flavor, we recommend that you request it through the store manager. Please also feel free to provide us with the store and location, so that we might forward this on to our sales team for further investigation. And remember, you can always order from kindsnacks.com!&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;&lt;li&gt;&#13;
+                    &lt;h4&gt;how do I get KIND to sponsor my event?&lt;/h4&gt;&#13;
+                    &lt;p&gt;Feel free to request a product donation for your event at kindsnacks.com/donations.&lt;/p&gt;&#13;
+                &lt;/br&gt;&#13;
+                &lt;/li&gt;				&lt;ul&gt;
+            </custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact-us-cs">
+                <position>12.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+    <content content-id="faqs-promotions-cs">
+        <display-name xml:lang="x-default">Promotions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/faqChild</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">Promotions FAQ | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Learn about coupons, promotions and offers on our snacks.</page-description>
+            <page-url xml:lang="x-default">promotion-questions</page-url>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+                &lt;li&gt;&#13;
+                &lt;h4&gt;do you offer discounts or promotions?&lt;/h4&gt;&#13;
+            &#13;
+                &lt;p&gt;We occasionally offer discounts and coupons codes. Be sure to subscribe to our emails to be up-to-date on the latest promotion. Also, you can subscribe to your favorite snacks and receive 10% off kindsnacks.com retail pricing on subscription orders.&lt;/p&gt;&#13;
+                &lt;/li&gt;&#13;
+            &lt;li&gt;&#13;
+                &lt;h4&gt;do you offer a discount for military, first responders, nurses and doctors?&lt;/h4&gt;&#13;
+                &lt;p&gt;KIND is honored to offer 15% off sitewide for military, first responders, nurses and doctors. Verify with ID.me at checkout.&lt;/p&gt;&#13;
+            &#13;
+            &lt;/li&gt;&#13;
+                &lt;li&gt;&#13;
+                &lt;h4&gt;what should I do if I have questions or issues regarding the ID.me discount?&lt;/h4&gt;&#13;
+            &#13;
+                &lt;p&gt;Please visit the &lt;a href="https://help.id.me/hc/en-us/categories/200162894-Verifying-My-Group-Military-Student-"&gt;ID.me FAQ page&lt;/a&gt; for the most up-to-date information. To contact the ID.me member support team, email &lt;a href="mailto:help@id.me"&gt;help@id.me&lt;/a&gt;, submit a &lt;a href="https://help.id.me/hc/en-us"&gt;support ticket&lt;/a&gt; or interact with the chat bot in the ID.me pop up at checkout.&lt;/p&gt;&#13;
+                &lt;/li&gt;&#13;
+            &lt;/ul&gt;
+            </custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact-us-cs">
+                <position>13.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+</library>

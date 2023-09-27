@@ -1,0 +1,45 @@
+/* ============================================================================
+Cart empty
+============================================================================ */
+
+/**
+ * Styles for the cart empty message
+*/
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-cart-empty;
+
+.#{$ns} {
+    height: 485px;
+    padding-top: 144px;
+
+    @include media-breakpoint-up(md) {
+        height: 610px;
+        padding-top: 227px;
+    }
+
+    &__message {
+        font-size: 60px;
+        line-height: 0.86;
+        letter-spacing: -4.5px;
+        margin: 0;
+        padding-bottom: 100px;
+        text-align: center;
+        @include media-breakpoint-up(lg) {
+            font-size: 80px;
+        }
+    }
+    &__btn-box {
+        text-align: center;
+       &__continue-shopping {
+           line-height: 30px;
+           max-width: 300px;
+           min-height: 42px;
+           @include media-breakpoint-up(lg) {
+               line-height: 36px;
+               min-height: 48px;
+           }
+       }
+    }
+}

@@ -1,0 +1,72 @@
+<div class="b2bwhyitem">
+    <div class="left">
+        <img src="${pdict.image.src.desktop}" alt="item" />
+    </div>
+    <div class="right">
+        <h4>${pdict.head}</h4>
+        <p>${pdict.copy}</p>
+    </div>
+</div>
+
+<style>
+    .b2bwhyitem {
+        color: white;
+        position: relative;
+        display: grid;
+        margin-bottom: 70px;
+    }
+
+    .b2bwhyitem h4 {
+        font-size: 20px;
+        letter-spacing:normal;
+    }
+
+    .b2bwhyitem .left {
+        position: absolute;
+        left: 0px;
+        top: 5px;
+    }
+
+    .b2bwhyitem .left img {
+        width: 45px;
+    }
+
+
+    @media screen and (min-width:1025px) {
+        .b2bwhyitem .right {
+            position: relative;
+            left: 60px;
+            max-width: 330px;
+        }
+    }
+
+    @media screen and (min-width:400px) and (max-width:1024px) {
+        .b2bwhyitem .right {
+            position: relative;
+            left: 20px;
+            max-width: 310px;
+        }
+         .b2bwhyitem {
+            border-left: 3px solid;
+        }
+        .b2bwhyitem .left {
+            display:none;
+        }
+    }
+
+    @media screen and (max-width:440px) {
+        .b2bwhyitem {
+            border-left: 3px solid;
+        }
+        .b2bwhyitem .right {
+    left: 20px;
+    max-width: 330px;
+    position: relative
+        }
+
+        .b2bwhyitem .left img {
+            display:none;
+            width: 45px;
+        }
+    }
+</style>

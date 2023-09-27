@@ -1,0 +1,2 @@
+<div class="success-checkmark"></div>
+<div style="margin-left: 20px;" class="benefit">${pdict.text}</div>

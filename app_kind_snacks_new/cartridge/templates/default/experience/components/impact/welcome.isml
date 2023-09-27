@@ -1,0 +1,12 @@
+<div class="welcome_section impact_section" style="display:block">
+    <isinclude template="experience/components/impact/two_column_1" />
+    <isinclude template="experience/components/impact/two_column_2" />
+    <isinclude template="experience/components/impact/welcome_section_3" />
+</div>
+
+<style>
+    .stickymove {
+        position: relative;
+        top:-85px;
+    }
+</style>

@@ -1,0 +1,19 @@
+<div class="payment-details">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment">
+        <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+            <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+        <iselseif condition="${ payment.paymentMethod.indexOf('PAYMENTOPERATOR_') > -1 }"/>
+            <isscript>
+                var methodTemplates = [
+                    'PAYMENTOPERATOR_CREDIT_DIRECT',
+                    'PAYMENTOPERATOR_EASYCREDIT'
+                ];
+                var paymentTemplate = 'checkout/billing/paymentOptions/paymentOperatorSummary';
+                if (methodTemplates.indexOf(payment.paymentMethod) > -1) {
+                    paymentTemplate += '/' + payment.paymentMethod.toUpperCase();
+                }
+            </isscript>
+            <isinclude template="${ paymentTemplate }" />
+        </isif>
+    </isloop>
+</div>

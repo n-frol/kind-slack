@@ -1,0 +1,35 @@
+{
+    "name": "Alternating Benefit",
+    "description": "Carousel",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "url",
+                    "name": "URL",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

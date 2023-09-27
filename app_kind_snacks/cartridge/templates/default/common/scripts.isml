@@ -1,0 +1,103 @@
+<script>//common/scripts.isml</script>
+<isscript>
+    var Site = require('dw/system/Site');
+    var currentSite = Site.getCurrent();
+</isscript>
+
+<isscript>
+    var theurl = URLUtils.https('Home-Show');
+    var facebooktitle = "";
+    if (pdict.catName) {
+    if (dw.system.Site.current.getCustomPreferenceValue('seoappend') != null)
+    {
+        facebooktitle = pdict.catName + " " + dw.system.Site.current.getCustomPreferenceValue('seoappend');
+    }
+    else
+    {
+        facebooktitle = pdict.catName;
+    }
+    }
+    else
+    {
+        if (dw.system.Site.current.getCustomPreferenceValue('seoappend') != null)
+        {
+            facebooktitle = pdict.CurrentPageMetaData.title + " " + dw.system.Site.current.getCustomPreferenceValue('seoappend');
+        }
+        else
+        {
+            facebooktitle = pdict.CurrentPageMetaData.title;
+        }
+    }
+    var theaction = request.httpPath.substring(request.httpPath.lastIndexOf('/') + 1)
+    var paramsarray = request.httpParameterMap;
+
+    if (paramsarray.get('pid') != '')
+    {
+        theparam = paramsarray.get('pid').stringValue;
+        theurl = URLUtils.https('Product-Show', 'pid', theparam);
+    }
+    else if (paramsarray.get('cid') != '')
+    {
+        theparam = paramsarray.get('cid').stringValue;
+        theurl = URLUtils.https('Page-Show', 'cid', theparam);
+    } else if (paramsarray.get('cgid') != '') {
+        theparam = paramsarray.get('cgid').stringValue;
+        theurl = URLUtils.https('Search-Show', 'cgid', theparam);
+    }
+</isscript>
+
+<isinclude url="${URLUtils.url('Page-OgSettings', 'productSettings', pdict.productSettings)}" />
+<isinclude url="${URLUtils.url('Page-FacebookPageView', 'data', facebooktitle, 'theurl', theurl)}" />
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/main.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/jquery.hotspot.js')}"></script>
+<script defer type="text/javascript" src="${URLUtils.staticURL('/js/uaTracking.js')}"></script>
+<isif
+    condition="${!empty(currentSite.getCustomPreferenceValue('OrderGrooveEnable')) && currentSite.getCustomPreferenceValue(
+               'OrderGrooveEnable')}">
+    <isif
+        condition="${!empty(currentSite.getCustomPreferenceValue('OrderGrooveStaticDomain')) && !empty(currentSite.getCustomPreferenceValue(
+                   'OrderGrooveMerchantID'))}">
+        <script defer type="text/javascript"
+            src="${currentSite.getCustomPreferenceValue('OrderGrooveStaticDomain') + '/' + currentSite.getCustomPreferenceValue(
+                 'OrderGrooveMerchantID') + '/main.js'}"></script>
+    </isif>
+</isif>
+
+<iscomment>Autoswap enabled check</iscomment>
+<script>
+        window.swapEnabled = "${currentSite.getCustomPreferenceValue("byob_AutoSwapReplacementEnabled")}";
+</script>
+
+<iscomment>Klaviyo list config</iscomment>
+<isset name="isKlaviyoEnabled"
+    value="${!empty(dw.system.Site.current.getCustomPreferenceValue('klaviyo_enabled')) ? dw.system.Site.current
+           .getCustomPreferenceValue('klaviyo_enabled') : false}"
+    scope="page" />
+<isif condition="${isKlaviyoEnabled}">
+    <script>
+        window.g_ListID = "${currentSite.getCustomPreferenceValue('klaviyo_subscribelist')}";
+    </script>
+</isif>
+
+<iscomment> Talkable Integration
+    FFR Removal of Talkable
+    <isinclude url="${URLUtils.url('Talkable-Head')}" />
+</iscomment>
+<isloop items="${ require('*/cartridge/scripts/assets.js').scripts }" var="script">
+    <script defer type="text/javascript" src="${script.src}"
+    <isif condition="${script.integrity != null}">integrity="${script.integrity}" crossorigin="anonymous"></isif>
+    >
+    </script>
+</isloop>
+
+
+<isscript>
+    var hookHelper = require('int_handlerframework/cartridge/scripts/template/hookHelper');
+    hookHelper.callHook('app.template.afterFooter', null, {
+        pdict: pdict
+    });
+</isscript>
+
+<script>
+
+</script>

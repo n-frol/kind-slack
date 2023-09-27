@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="chocolatecombo20">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">20count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplechocolatecomboitem3">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem1">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem4">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem2">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="chocolatecombo40">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">40count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplechocolatecomboitem3">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem1">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem4">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplechocolatecomboitem2">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="fruitflavors20">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">20count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplefruitflavorsitem2">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem1">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem3">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem4">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="fruitflavors40">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">40count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplefruitflavorsitem2">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem1">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem3">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplefruitflavorsitem4">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="mchocolatecombo">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/byob/Screen Shot 2019-03-20 at 10.39.27 AM.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+        </custom-attributes>
+        <variations>
+            <attributes>
+                <shared-variation-attribute attribute-id="size" variation-attribute-id="size"/>
+            </attributes>
+            <variants>
+                <variant product-id="chocolatecombo20"/>
+                <variant product-id="chocolatecombo40"/>
+            </variants>
+        </variations>
+        <classification-category>root</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="mfruitflavors">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/byob/Screen Shot 2019-03-20 at 10.44.18 AM.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+        </custom-attributes>
+        <variations>
+            <attributes>
+                <shared-variation-attribute attribute-id="size" variation-attribute-id="size"/>
+            </attributes>
+            <variants>
+                <variant product-id="fruitflavors20"/>
+                <variant product-id="fruitflavors40"/>
+            </variants>
+        </variations>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="mnaturalprotein">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/byob/Screen Shot 2019-03-20 at 10.44.29 AM.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+        </custom-attributes>
+        <variations>
+            <attributes>
+                <shared-variation-attribute attribute-id="size" variation-attribute-id="size"/>
+            </attributes>
+            <variants>
+                <variant product-id="naturalprotein20"/>
+                <variant product-id="naturalprotein40"/>
+            </variants>
+        </variations>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="naturalprotein20">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">20count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplenaturalproteinitem4">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem3">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem1">
+                <quantity>5.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem2">
+                <quantity>5.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="naturalprotein40">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">true</custom-attribute>
+            <custom-attribute attribute-id="size">40count</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="samplenaturalproteinitem4">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem3">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem1">
+                <quantity>10.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="samplenaturalproteinitem2">
+                <quantity>10.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplechocolatecomboitem1">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+        </custom-attributes>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplechocolatecomboitem2">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+        </custom-attributes>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplechocolatecomboitem3">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+        </custom-attributes>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplechocolatecomboitem4">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Chocolate Combo Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="autoShipEligible">false</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">false</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+        </custom-attributes>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplefruitflavorsitem1">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplefruitflavorsitem2">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplefruitflavorsitem3">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplefruitflavorsitem4">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Fruit Flavors Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplenaturalproteinitem1">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Natural Protein Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplenaturalproteinitem2">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Natural Protein Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplenaturalproteinitem3">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Natural Protein Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="samplenaturalproteinitem4">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Natural Protein Item</display-name>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+</catalog>

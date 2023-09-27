@@ -1,0 +1,64 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_EPS.isml --->
+<isset name="epsFields" value="${ pdict.forms.billingForm.eps }" scope="page"/>
+
+<isscript>
+    var isPPRO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorUsePPRO');
+</isscript>
+
+<isif condition="${ isPPRO }">
+    <fieldset class="paymentoperator-eps-form">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                <isif condition=${ epsFields.accountholdername.mandatory === true }>required</isif>
+                ${ epsFields.accountholdername.htmlName }">
+                    <label class="form-control-label" for="eps_accountholdername">${ Resource.msg('eps.accountholdername','forms',null) }</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="eps_accountholdername"
+                               value=""
+                        <isprint value=${ epsFields.accountholdername.attributes } encoding="off"/>
+                        autocomplete="accountholdername"
+                        >
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                <isif condition=${ epsFields.iban.mandatory === true }>required</isif>
+                ${ epsFields.iban.htmlName }">
+                    <label class="form-control-label" for="eps_iban">${ Resource.msg('eps.iban','forms',null) }</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="eps_iban"
+                               value=""
+                        <isprint value=${ epsFields.iban.attributes } encoding="off"/>
+                        autocomplete="iban"
+                        >
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                <isif condition=${ epsFields.bic.mandatory === true }>required</isif>
+                ${ epsFields.bic.htmlName }">
+                    <label class="form-control-label" for="eps_bic">${ Resource.msg('eps.bic','forms',null) }</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="eps_bic"
+                               value=""
+                        <isprint value=${ epsFields.bic.attributes } encoding="off"/>
+                        autocomplete="bic"
+                        >
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</isif>

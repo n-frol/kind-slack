@@ -1,0 +1,29 @@
+<iscomment>
+
+Template Notes:
+
+- This template is intended to be referenced from an <isinclude> tag within an <isloop> in another
+  source template.  The <isloop> is expected to have a "status" attribute, named "attributeStatus".
+- ${attributeStatus.last} is checked to see whether a particular attribute row should include the
+  Quantity drop-down menu
+
+</iscomment>
+
+<div class="attribute c-product-variation-attribute__inner">
+
+        <!-- Attribute Values Drop Down Menu -->
+        <select class="custom-select form-control c-product-variation-attribute__select select-${attr.id}" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
+            <option value="${attr.resetUrl}">
+                ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
+            </option>
+            <isloop items="${attr.values}" var="attrValue">
+                <option value="${attrValue.url}" data-attr-value="${attrValue.value}"
+                    ${!attrValue.selectable ? 'disabled' : ''}
+                    ${attrValue.selected ? 'selected' : ''}
+                >
+                    ${attrValue.displayValue}
+                </option>
+            </isloop>
+        </select>
+
+</div>

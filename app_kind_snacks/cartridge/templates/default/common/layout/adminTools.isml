@@ -1,0 +1,37 @@
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('useAdminToolbar') == true}">
+<div style="margin:auto;">
+    <button style="width:unset;" class="toggleHotspotAdmin">Hotspot Admin</button>
+</div>
+
+<div class="hotspot_admin" style="display:none;">
+    Attach editor to this image:
+    <div class="attach_hotspot_to">
+
+    </div>
+    <h4>Hotspots</h4>
+    <div class="hotspotlist">
+        <table class="hotspottable">
+            <thead>
+            <th>Image Index</th>
+            <th>Hotspot Index</th>
+            <th>X</th>
+            <th>Y</th>
+            <th>Header Text</th>
+            <th></th>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <button class="generateHotspotCode">Generate Hotspot Code</button>
+    <div class="hotspotcode"></div>
+</div>
+    <div style="display:none" class="connected_input_url" data-url="${URLUtils.url('Product-ConnectedProducts')}"></div>
+    <div style="display:none" class="connected_input_search" data-url="${URLUtils.url('Product-ConnectedSearch')}"></div>
+    <label for="connected_input">Connected Prods (CSV)</label>
+    <input style="width: 500px" name="connected_input" class="connected_input" />
+    <label for="connected_search">Search for Products</label>
+    <input class="connected_search" name="connected_search"></input>
+    <div style="overflow:auto; max-height: 300px;" class="connected_results"></div>
+</isif>

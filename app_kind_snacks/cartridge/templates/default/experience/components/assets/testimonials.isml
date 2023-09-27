@@ -1,0 +1,86 @@
+<div class="test_desktop" style="background:#F2F2F2">
+    <h2
+        style="color:#61B3E4; text-align:center; letter-spacing:normal; font-size:40px; padding-top: 20px; padding-bottom:20px;">
+        hear from the team</h2>
+    <div class="testimonials" style="position:relative">
+        <div class="testimonial">
+            <img src="${pdict.image.src.desktop}" />
+            <div class="name">${pdict.name}</div>
+            <div class="titlee">${pdict.title}</div>
+            <div class="quote">${pdict.quote}</div>
+        </div>
+        <div class="testimonial">
+            <img src="${pdict.image2.src.desktop}" />
+            <div class="name">${pdict.name2}</div>
+            <div class="titlee">${pdict.title2}</div>
+            <div class="quote">${pdict.quote2}</div>
+        </div>
+        <div class="testimonial">
+            <img src="${pdict.image3.src.desktop}" />
+            <div class="name">${pdict.name3}</div>
+            <div class="titlee">${pdict.title3}</div>
+            <div class="quote">${pdict.quote3}</div>
+        </div>
+    </div>
+</div>
+
+<style>
+.careerslider .s-slick .slick-list {
+    padding-bottom:0px;
+}
+</style>
+
+<div class="test_mobile">
+    <h2 style="color:#61B3E4; text-align:center; letter-spacing:normal;">hear from the team</h2>
+    <div class="byob-category-nav__wrap carousel-homepage-byob careerslider">
+        <div class="container s-slick position-relative">
+            <div class="c-byob-category-nav js-slider" data-infinite="true" data-slidestoshow="${pdict.slidescount}"
+                data-slidestoscroll="${pdict.slidescount}" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+                data-slidestoscroll-768="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3"
+                data-slidestoshow-768="1" data-dots="true" data-arrows="false">
+                <iscomment>Intentionally overwrites byobCategory</iscomment>
+                <div class="testimonial">
+                    <img src="${pdict.image.src.desktop}" />
+                    <div class="name">${pdict.name}</div>
+                    <div class="titlee">${pdict.title}</div>
+                    <div class="quote">${pdict.quote}</div>
+                </div>
+                <div class="testimonial">
+                    <img src="${pdict.image2.src.desktop}" />
+                    <div class="name">${pdict.name2}</div>
+                    <div class="titlee">${pdict.title2}</div>
+                    <div class="quote">${pdict.quote2}</div>
+                </div>
+                <div class="testimonial">
+                    <img src="${pdict.image3.src.desktop}" />
+                    <div class="name">${pdict.name3}</div>
+                    <div class="titlee">${pdict.title3}</div>
+                    <div class="quote">${pdict.quote3}</div>
+                </div>
+            </div>
+            <div
+                class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions
+                    that
+                    imageCarousel.js won't have access to</iscomment>
+                <button
+                    class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev d-none"
+                    type="button" data-slide="prev">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                </button>
+
+                <button
+                    class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next d-none"
+                    type="button" data-slide="next">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

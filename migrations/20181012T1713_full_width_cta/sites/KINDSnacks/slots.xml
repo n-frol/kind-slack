@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="home-slot-b" context="global" configuration-id="test-full-width-cta" default="true" assigned-to-site="true">
+        <template>slots/content/fullWidthCallToAction.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-full-width-cta"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+</slot-configurations>

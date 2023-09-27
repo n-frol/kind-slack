@@ -1,0 +1,16 @@
+/**
+ * Service class for easy credit socket payment steps
+ */
+
+/* Script includes */
+var AbstractComputopService = require( "./AbstractComputopService" );
+
+var EasyCreditService = AbstractComputopService.extend(
+{
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorEasyCreditDirectGatewayPath');
+    }
+});
+//Export the configured service singleton
+module.exports = (new EasyCreditService()).getService();

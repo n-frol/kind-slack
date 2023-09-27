@@ -1,0 +1,51 @@
+<isscript>
+    var productId = product.masterId;
+</isscript>
+
+<isobject object="${product.raw}" view="detail">
+    <div class="product-detail product-wrapper"
+        data-pid="${product.id}"
+        data-byob="${product.masterId === 'MBYOB'}"
+        itemid="${productId}"
+        itemprop="itemReviewed"
+        id="pr-${productId}"
+        itemscope itemtype="http://schema.org/Product">
+
+       <isinclude template="product/productDetailsTop2" />
+
+        <div class="description-and-detail st-product-description-info">
+            <isif condition="${pdict.showDescriptionAndDetails || isBundle}">
+                <div class="st-product-description-info__container--description__wrap">
+                    <isinclude template="product/components/descriptionAndDetails2" />
+                </div>
+            </isif>
+            <div class="container pl-0 pr-0 mb-7">
+                <div class="row">
+                    <div class="col-12 pl-0 pr-0">
+                        <isinclude template="widgets/pdpwidget" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <iscomment> Yotpo Reviews - Read Reviews Section </iscomment>
+        
+        <div class="container u-margin-top-sm u-margin-bottom-xxl">
+            <isinclude template="widget/yotpoReviewsWidget" />
+        </div>
+
+        <isinclude template="/product/components/confirmEmptyByobList" sf-toolkit="off" />
+
+        <div class="container">
+            <isset name="listName" value="${'PDP Recommendations'}" scope="page"/>
+            <isif condition="${dw.system.Site.current.getCustomPreferenceValue('isEinsteinEnabled')}">
+                <isscript>
+                    var recProduct = dw.catalog.ProductMgr.getProduct(product.id);
+                </isscript>
+                <isslot id="recommended-products" description="Recommended products" context-object="${recProduct.isVariant() ? recProduct.masterProduct : recProduct}" context="global" />
+            <iselse/>  
+                <isinclude template="product/components/recommendations" />
+            </isif>
+        </div>
+    </div>
+</isobject>

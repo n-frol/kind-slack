@@ -1,0 +1,39 @@
+{
+    "name": "Einstein Custom",
+    "description": "Einstein Custom",
+    "group": "Homepage",
+    "attribute_definition_groups": [
+        {
+            "id": "rec_type",
+            "name": "Recommender Type",
+            "description": "The content to show in this component",
+            "attribute_definitions": [
+                {
+                    "id": "rec_type",
+                    "name": "Recommender Type",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "force_infront",
+                    "name": "SKUs at front",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "categories",
+                    "name": "Categories",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "max_slides",
+                    "name": "max_slides",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,108 @@
+<isscript>
+    var ArrayList = require('dw/util/ArrayList');
+    var exclusiveskus : ArrayList = new ArrayList(dw.system.Site.getCurrent().getCustomPreferenceValue("exclusiveSKUs"));
+</isscript>
+<isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}"  scope="page"/>
+<isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page"/>
+<isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page"/>
+<isset name="enableEditItemLink" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('cartShowEditLink')) ? dw.system.Site.current.getCustomPreferenceValue('cartShowEditLink') : false}" scope="page"/>
+<isif condition="${(pdict.byoberror && lineItem.isByobMaster) || (!exclusiveskus.contains(lineItem.id) && pdict.errormessage)}">
+<div class="c-cart-product-info error-card card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}" data-url="${URLUtils.https('BYOB-UpdateOGFrequencyFromCartPage', 'boxid', lineItem.boxId).toString()}">
+<iselse>
+<div class="c-cart-product-info card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}" data-url="${URLUtils.https('BYOB-UpdateOGFrequencyFromCartPage', 'boxid', lineItem.boxId).toString()}">
+</isif>
+    <!--- name and remove buttons --->
+    <isinclude template="cart/productCard/cartProductCardHeader" />
+
+    <div class="row ${bonuslineitemrow} js-cart-item justify-content-between align-items-start">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-row c-product-card__details">
+                    <isif condition="${!lineItem.isBlockedAccess}">
+                        <isif condition="${lineItem.isByobMaster && !empty(lineItem.boxId)}">
+                            <a href="${URLUtils.url('Product-EditBox', 'bid', lineItem.boxId)}" class="c-cart-product-info__item-image item-image">
+                        <iselse>
+                            <a href="${URLUtils.url('Product-Show', 'pid', variationHelpers.getVisibleProductID(lineItem.id))}" class="c-cart-product-info__item-image item-image">
+                        </isif>
+                    <iselse>
+                        <div class="c-cart-product-info__item-image item-image">
+                    </isif>
+                        <isset name="lineItemImageSrcset" value="" scope="page" />
+                        <isif condition="${!empty(lineItem.responsiveImages) && !empty(lineItem.responsiveImages[0])}">
+                            <isset name="lineItemImageUrl" value="${lineItem.responsiveImages[0].normal.imageUrlDefault}" scope="page" />
+                            <isset name="lineItemImageSrcset" value="${lineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + lineItem.responsiveImages[0].normal.imageUrlLarge + ' 2x'}" scope="page" />
+                        <iselse/>
+                            <isset name="lineItemImageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+                        </isif>
+
+                        <img class="product-image" src="${lineItemImageUrl}" alt="${!empty(lineItem.images.large) ? lineItem.images.large[0].alt : lineItem.displayName}"
+                            title="${!empty(lineItem.images.large) ? lineItem.images.large[0].title : lineItem.displayName}"
+                            <isif condition="${!empty(lineItemImageSrcset)}"> srcset="${lineItemImageSrcset}"</isif>>
+                    <isif condition="${!lineItem.isBlockedAccess}">
+                        </a>
+                    <iselse>
+                        </div>
+                    </isif>
+                    <div class="c-cart-product-info__item-attributes item-attributes">
+                        <isloop items="${lineItem.variationAttributes}" var="attribute">
+                            <isif condition="${attribute.isVisible}">
+                                <div class="c-cart-product-info__item-attributes__attribute col-12 line-item-attributes ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</div>
+                            </isif>
+                        </isloop>
+                        <isloop items="${lineItem.options}" var="option">
+                            <isif condition="${!!option}" >
+                                <div class="lineItem-options-values" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">
+                                    <div class="c-cart-product-info__item-attributes__attribute line-item-attributes">${option.displayName}</div>
+                                </div>
+                            </isif>
+                        </isloop>
+
+                        <div class="col-12">
+                            <isinclude template="cart/productCard/cartProductCardAvailability" />
+                        </div>
+
+                        <iscomment> Action Links </iscomment>
+                        <div class="c-product-card-header__btn-wrapper col-12">
+                            <iscomment> Edit Item Link </iscomment>
+                            <isif condition="${enableEditItemLink}">
+                                <isif condition="${lineItem.isByobMaster && !empty(lineItem.boxId)}">
+                                    <div class="c-product-card-header__btn c-product-card-header__btn--edit product-edit">
+                                        <a href="${URLUtils.url('Product-EditBox', 'bid', lineItem.boxId)}" class="c-product-card-header__btn--edit__link mr-2" title="${Resource.msg('link.edit.item', 'cart',null)}" aria-label="${Resource.msg('link.edit.item', 'cart',null)} ${lineItem.productName}" >
+                                            ${Resource.msg('link.edit.item', 'cart', null)}
+                                        </a>
+                                    </div>
+                                </isif>
+                            </isif>
+                            <iscomment> Remove From Cart Button </iscomment>
+                            <isif condition="${!lineItem.isBonusProductLineItem}">
+                                <div>
+                                    <button type="button" class="c-product-card-header__btn c-product-card-header__btn--remove remove-product" data-toggle="modal"
+                                            data-target="#removeProductModal" data-pid="${lineItem.id}"
+                                            data-name="${lineItem.productName}"
+                                            data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                                            data-uuid="${lineItem.UUID}"
+                                            aria-label="remove">
+                                        <span aria-hidden="true">remove</span>
+                                    </button>
+                                </div>
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-lg-none"></div>
+
+        <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable') == true}">
+            <div class="s-cart-og order-groove-v2 s-ordergroove">
+                <div class="og-offer" data-og-module="sc" data-og-product="${lineItem.id}"></div>
+            </div>
+        </isif>
+
+        <isinclude template="cart/productCard/cartProductCardProductPrice" />
+    </div>
+
+    <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+        <isinclude template="cart/productCard/cartEmbeddedBonusProducts" />
+    </isif>
+</div>

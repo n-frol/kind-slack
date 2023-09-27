@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shipping xmlns="http://www.demandware.com/xml/impex/shipping/2007-03-31">
+    <shipping-method method-id="001" default="true">
+        <display-name xml:lang="x-default">Ground</display-name>
+        <display-name xml:lang="fr-FR">Transport terrestre</display-name>
+        <display-name xml:lang="it">Via terra</display-name>
+        <display-name xml:lang="it-IT">Via terra</display-name>
+        <display-name xml:lang="ja-JP">通常便</display-name>
+        <display-name xml:lang="zh-CN">陆路</display-name>
+        <description xml:lang="x-default">Order received within 7-10 business days</description>
+        <description xml:lang="fr-FR">Commande reçue en 7 à 10 jours ouvrés</description>
+        <description xml:lang="it">Ricezione ordine entro 7-10 giorni lavorativi</description>
+        <description xml:lang="it-IT">Ricezione ordine entro 7-10 giorni lavorativi</description>
+        <description xml:lang="ja-JP">ご注文の商品を 7 ～ 10 営業日以内にお届け</description>
+        <description xml:lang="zh-CN">在 7-10 个工作日内收到订单</description>
+        <online-flag>true</online-flag>
+        <tax-class-id>standard</tax-class-id>
+        <price-table>
+            <amount order-value="0">0</amount>
+            <amount order-value="0.01">5.99</amount>
+            <amount order-value="100">7.99</amount>
+            <amount order-value="200">9.99</amount>
+            <amount order-value="500">15.99</amount>
+        </price-table>
+        <product-cost-groups>
+            <product-cost-group>
+                <products>
+                    <included-products>
+                        <condition-group>
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
+                                <category-id>electronics-televisions</category-id>
+                            </category-condition>
+                        </condition-group>
+                    </included-products>
+                </products>
+                <cost-per-item>
+                    <surcharge>25.00</surcharge>
+                </cost-per-item>
+            </product-cost-group>
+            <product-cost-group>
+                <products>
+                    <included-products>
+                        <condition-group>
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
+                                <category-id>womens-jewelry</category-id>
+                            </category-condition>
+                        </condition-group>
+                    </included-products>
+                </products>
+                <cost-per-item>
+                    <surcharge>10.00</surcharge>
+                </cost-per-item>
+            </product-cost-group>
+        </product-cost-groups>
+        <excluded-addresses>
+            <included-addresses>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>shipment.shippingAddress.stateCode</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>AA</string>
+                        <string>AB</string>
+                        <string>AE</string>
+                        <string>AP</string>
+                        <string>AK</string>
+                        <string>AS</string>
+                        <string>BC</string>
+                        <string>GU</string>
+                        <string>HI</string>
+                        <string>MB</string>
+                        <string>NB</string>
+                        <string>NL</string>
+                        <string>NT</string>
+                        <string>NS</string>
+                        <string>NU</string>
+                        <string>ON</string>
+                        <string>PE</string>
+                        <string>PR</string>
+                        <string>QC</string>
+                        <string>SK</string>
+                        <string>VI</string>
+                        <string>YT</string>
+                    </condition>
+                </condition-group>
+            </included-addresses>
+        </excluded-addresses>
+        <custom-attributes>
+            <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">7-10 Business Days</custom-attribute>
+        </custom-attributes>
+        <currency>USD</currency>
+    </shipping-method>
+
+    <shipping-method method-id="EUR001" default="true">
+        <display-name xml:lang="x-default">Ground</display-name>
+        <display-name xml:lang="fr-FR">Transport terrestre</display-name>
+        <display-name xml:lang="it">Via terra</display-name>
+        <display-name xml:lang="it-IT">Via terra</display-name>
+        <display-name xml:lang="ja-JP">通常便</display-name>
+        <display-name xml:lang="zh-CN">陆路</display-name>
+        <description xml:lang="x-default">Order received within 7-10 business days</description>
+        <description xml:lang="fr-FR">Commande reçue en 7 à 10 jours ouvrés</description>
+        <description xml:lang="it">Ricezione ordine entro 7-10 giorni lavorativi</description>
+        <description xml:lang="it-IT">Ricezione ordine entro 7-10 giorni lavorativi</description>
+        <description xml:lang="ja-JP">ご注文の商品を 7 ～ 10 営業日以内にお届け</description>
+        <description xml:lang="zh-CN">在 7-10 个工作日内收到订单</description>
+        <online-flag>true</online-flag>
+        <tax-class-id>standard</tax-class-id>
+        <price-table>
+            <amount order-value="0.0">0.0</amount>
+            <amount order-value="0.01">5.99</amount>
+            <amount order-value="100.0">7.99</amount>
+            <amount order-value="200.0">9.99</amount>
+            <amount order-value="500.0">15.99</amount>
+        </price-table>
+        <product-cost-groups>
+            <product-cost-group>
+                <products>
+                    <included-products>
+                        <condition-group>
+                            <category-condition catalog-id="electronics-m-catalog" operator="is equal">
+                                <category-id>electronics-televisions</category-id>
+                            </category-condition>
+                        </condition-group>
+                    </included-products>
+                </products>
+                <cost-per-item>
+                    <surcharge>25.00</surcharge>
+                </cost-per-item>
+            </product-cost-group>
+            <product-cost-group>
+                <products>
+                    <included-products>
+                        <condition-group>
+                            <category-condition catalog-id="storefront-catalog-m-en" operator="is equal">
+                                <category-id>womens-jewelry</category-id>
+                            </category-condition>
+                        </condition-group>
+                    </included-products>
+                </products>
+                <cost-per-item>
+                    <surcharge>10.00</surcharge>
+                </cost-per-item>
+            </product-cost-group>
+        </product-cost-groups>
+        <excluded-addresses>
+            <included-addresses>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>shipment.shippingAddress.stateCode</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>AA</string>
+                        <string>AB</string>
+                        <string>AE</string>
+                        <string>AP</string>
+                        <string>AK</string>
+                        <string>AS</string>
+                        <string>BC</string>
+                        <string>GU</string>
+                        <string>HI</string>
+                        <string>MB</string>
+                        <string>NB</string>
+                        <string>NL</string>
+                        <string>NT</string>
+                        <string>NS</string>
+                        <string>NU</string>
+                        <string>ON</string>
+                        <string>PE</string>
+                        <string>PR</string>
+                        <string>QC</string>
+                        <string>SK</string>
+                        <string>VI</string>
+                        <string>YT</string>
+                    </condition>
+                </condition-group>
+            </included-addresses>
+        </excluded-addresses>
+        <custom-attributes>
+            <custom-attribute attribute-id="estimatedArrivalTime" xml:lang="x-default">7-10 Business Days</custom-attribute>
+        </custom-attributes>
+        <currency>EUR</currency>
+    </shipping-method>
+
+</shipping>

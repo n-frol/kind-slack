@@ -1,0 +1,18 @@
+/**
+ * Inserts content into body pseudo element as a flag to JS for current viewport
+ * size to align CSS with JS. Required by viewport-is.js
+ */
+
+ body::after {
+    content: 'mobile';
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        content: 'tablet';
+    }
+
+    @include media-breakpoint-up(lg) {
+        content: 'desktop';
+    }
+
+}

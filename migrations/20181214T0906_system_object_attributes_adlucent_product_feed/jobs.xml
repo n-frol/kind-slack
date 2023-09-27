@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Adlucent-ProductFeeds" priority="0">
+        <description>Exports all products with the includeInProductFeed flag set to true.</description>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="adlucentProductFeed" type="custom.batch.adlucentProductFeed" enforce-restart="false">
+                <description>Ad Lucent product feed</description>
+                <parameters>
+                    <parameter name="directory">int_batch</parameter>
+                    <parameter name="prefix">adlucent-feed</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2018-12-17Z</date>
+                <time>17:54:57.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

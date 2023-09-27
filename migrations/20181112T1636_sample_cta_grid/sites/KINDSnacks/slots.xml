@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="sample_folder_3" configuration-id="sample_cta-grid" default="true" assigned-to-site="true">
+        <template>slots/content/ctaGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="try-20-snacks"/>
+                <content-asset content-id="have-a-favorite"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#ddd</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

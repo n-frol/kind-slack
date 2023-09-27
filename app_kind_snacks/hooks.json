@@ -1,0 +1,24 @@
+{
+    "hooks": [
+        {
+            "name": "app.mail.sendMail",
+            "script": "~/cartridge/scripts/hooks/hookLogger"
+        },
+        {
+            "name": "app.facebook.facebookEvents",
+            "script": "~/cartridge/scripts/hooks/facebook"
+        },
+        {
+            "name": "app.validate.basket",
+            "script": "./cartridge/scripts/hooks/validateBasket"
+        },
+        {
+            "name": "dw.extensions.applepay.getRequest",
+            "script": "./cartridge/scripts/applePay.js"
+        },
+        {
+            "name": "kind.checkout.fraud.prevention",
+            "script": "./cartridge/scripts/hooks/fraudPrevention"
+        }
+    ]
+}

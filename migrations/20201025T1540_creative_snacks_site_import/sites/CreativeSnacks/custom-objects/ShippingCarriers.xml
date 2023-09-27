@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="ShippingCarriers" object-id="FEDEX">
+        <object-attribute attribute-id="trackingURL">https://www.fedex.com/apps/fedextrack/?action=track&amp;trackingnumber={trackingNumber}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="ShippingCarriers" object-id="LASG">
+        <object-attribute attribute-id="trackingURL">https://www.lasership.com/track.php?track_number_input={trackingNumber}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="ShippingCarriers" object-id="UPS">
+        <object-attribute attribute-id="trackingURL">http://wwwapps.ups.com/WebTracking/processInputRequest?HTMLVersion=5.0&amp;error_carried=true&amp;tracknums_displayed=5&amp;TypeOfInquiryNumber=T&amp;loc=en_US&amp;InquiryNumber1={trackingNumber}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="ShippingCarriers" object-id="USPS">
+        <object-attribute attribute-id="trackingURL">https://tools.usps.com/go/TrackConfirmAction?tLabels={trackingNumber}</object-attribute>
+    </custom-object>
+
+</custom-objects>

@@ -1,0 +1,50 @@
+<iscomment>
+    File: product/componenets/productList/byobListItem.isml
+    Description: Rendering template for display of the BYOB ProductList.
+    CSS Namespace: c-byob-product-list
+</iscomment>
+
+<isscript>
+    var selectedQuantity = typeof byobItem !== 'undefined' &&
+        !empty(byobItem.selectedQuantity) ? byobItem.selectedQuantity : 0;
+    selectedQuantity = typeof byobItem !== 'undefined' &&
+        !empty(byobItem.quantity) ? byobItem.quantity.value : 0;
+</isscript>
+<div class="c-byob-product-list__item c-byob-product-list__item--active js-byob-list-item"
+    data-itemid="${byobItem.id}"
+    data-itemname="${byobItem.productName}"
+    data-quantity="${byobItem.selectedQuantity.toFixed()}">
+
+    <div class="c-byob-product-list__item__details">
+        <iscomment> Item - Product Quantity </iscomment>
+        <div class="c-byob-product-list__item__quantity">
+            ${byobItem.selectedQuantity.toFixed()}
+        </div>
+
+        <iscomment> Item - Product Image </iscomment>
+        <div class="c-byob-product-list__item__image">
+            <isinclude template="product/components/productList/swapListItemImage" />
+        </div>
+
+        <iscomment> Item - Product Name </iscomment>
+        <div class="c-byob-product-list__item__name" itemprop="name">
+            ${byobItem.productName}
+        </div>
+
+       
+    </div>
+
+
+    <iscomment> Item - Product Actions </iscomment>
+    <div class="c-byob-product-list__item__actions">
+        <iscomment> Item Actions - Remove Item </iscomment>
+        <span class="c-byob-product-list__item__action c-byob-product-list__item__action--remove" style="display:none;">
+            <button type="button" class="js-byob-remove-item c-byob-product-list__item__action__btn"
+            data-toggle="modal" data-target="${'#'}byob-list-remove-modal"
+            data-pids='["${byobItem.id}"]'
+            data-remove-url='${URLUtils.https('BYOB-List', 'action', 'remove', 'isAjax', true, 'pids', '["' + byobItem.id + '"]')}'>
+                ${Resource.msg('button.byob.remove', 'product', null)}
+            </button>
+        </span>
+    </div>
+</div>

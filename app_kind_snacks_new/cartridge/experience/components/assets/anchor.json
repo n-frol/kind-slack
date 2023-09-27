@@ -1,0 +1,29 @@
+{
+    "name": "Anchor",
+    "description": "Anchor",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "jumpto",
+                    "name": "Jump To",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

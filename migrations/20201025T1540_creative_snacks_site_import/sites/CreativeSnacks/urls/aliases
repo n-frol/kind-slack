@@ -1,0 +1,21 @@
+{
+    "__version": "1",
+    "settings": {
+        "http-host": "dev05.creativesnacks.com",
+        "https-host": "dev05.creativesnacks.com"
+    },
+    "dev05.kindsnacks.com": [
+        {
+            "apply-to-host-only-request-with-params": "true",
+            "pipeline": "Home-Show"
+        },
+        {
+            "entry-point-destination": [
+                "host"
+            ],
+            "entry-point-pipelines": [
+                "Home-Show"
+            ]
+        }
+    ]
+}

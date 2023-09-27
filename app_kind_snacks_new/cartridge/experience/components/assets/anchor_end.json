@@ -1,0 +1,23 @@
+{
+    "name": "Anchor End",
+    "description": "Anchor End",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "section",
+                    "name": "Jump to Section",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

@@ -1,0 +1,66 @@
+/* ============================================================================
+   Leaderboard
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the leaderboard component
+ */
+
+ $ns: th-kind-leaderboard;
+ $component: c-leaderboard;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // leaderboard Component
+     &.#{$component} {
+
+         .#{$component} {
+
+             // leaderboard Heading
+             &__heading {
+                 font-family: $font-family-primary;
+             }
+
+             // leaderboard Heading
+             &__body {
+                 font-family: $font-family-secondary;
+             }
+
+             // leaderboard Links
+             &__links {
+                 font-family: $font-family-primary;
+                 font-size: 12px;
+                 letter-spacing: 1.5px;
+             }
+
+         }
+
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+
+         .#{$scope} {
+
+             // Graphical Asset Links
+             &__links {
+
+                 a {
+                    background-color: transparent;
+                    border: 2px solid $primary;
+                    color: $primary;
+
+                     &:hover {
+                         text-decoration: none;
+                     }
+
+                 }
+
+             }
+
+         }
+
+     }
+
+ }

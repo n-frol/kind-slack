@@ -1,0 +1,193 @@
+<isset name="isByob"
+    value="${(!empty(pdict.productSearch) && !empty(pdict.productSearch.isBYOBSearch) && pdict.productSearch.isBYOBSearch)}"
+    scope="page" />
+
+<isscript>
+    var isAttributeRefinementAvailable = false;
+    var isPriceRefinementAvailable = false;
+    var productSearchRefinements = pdict.productSearch.refinements;
+    for (var i = 0; i < productSearchRefinements.length; i++) {
+        var refinement = productSearchRefinements[i];
+        if (!isAttributeRefinementAvailable && refinement.isAttributeRefinement) {
+            isAttributeRefinementAvailable = refinement.isAttributeRefinement;
+        }
+        if (!isPriceRefinementAvailable && refinement.isPriceRefinement) {
+            isPriceRefinementAvailable = refinement.isPriceRefinement;
+        }
+    }
+</isscript>
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<isset name="isConfigCat"
+    value="${(pdict.productSearch.isCategorySearch || !empty(pdict.productSearch.category)) && pdict.productSearch.category
+           .isConfigurationCategory}"
+    scope="page" />
+
+<div class="search-results c-search-results v2">
+
+    <isif condition="${isConfigCat}">
+        <div class="container">
+                <div class="row align-items-end">
+                    <div class="js-switch-filters c-search-results__bar__switch-filters col-6 col-md-3">
+                        <span
+                            class="c-search-results__bar__switch-filters__switch-filter c-search-results__bar__switch-filters__switch-filter--config is-hide-filters js-hide-filters">
+                            ${Resource.msg('label.refinement.hide', 'search', null)}
+                        </span>
+                        <span
+                            class="c-search-results__bar__switch-filters__switch-filter c-search-results__bar__switch-filters__switch-filter--config is-show-filters js-show-filters">
+                            ${Resource.msg('label.refinement.show', 'search', null)}
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-6 text-center">
+                        <h1 class="configuration-category-header c-search-results__category-heading mb-0">
+                            ${pdict.productSearch.category.name}
+                        </h1>
+                    </div>
+                </div>
+        </div>
+    </isif>
+    <div class="tab-pane active" id="product-search-results" role="tabpanel" aria-expanded="true">
+        <div class="container">
+            <isif condition="${isAttributeRefinementAvailable || isPriceRefinementAvailable}">
+                <div class="row grid-header c-search-results__bar justify-content-between justify-content-md-start justify-content-xl-between position-relative ${isConfigCat ? 'c-search-results__bar--config' : ''}">
+                    <div class="js-switch-filters c-search-results__bar__switch-filters col-6 col-md-3 col-sm-2 col-xl-2 d-none">
+                        <isif
+                            condition="${(!pdict.productSearch.isCategorySearch && empty(pdict.productSearch.category)) || !pdict.productSearch.category
+                                    .isConfigurationCategory}">
+                            <span class="c-search-results__bar__switch-filters__switch-filter is-hide-filters js-hide-filters">
+                                ${Resource.msg('label.refinement.hide', 'search', null)}
+                            </span>
+                            <span class="c-search-results__bar__switch-filters__switch-filter is-show-filters js-show-filters">
+                                ${Resource.msg('label.refinement.show', 'search', null)}
+                            </span>
+                        </isif>
+                    </div>
+                    <div class="result-count c-search-results__bar__result-count text-center col-md-6 d-none">
+                        <isinclude template="search/resultsCount" />
+                    </div>
+        <iselseif condition="${pdict.productSearch.productIds.length === 0}">
+                <div class="row grid-header justify-content-center c-search-results__bar">
+                    <div class="js-switch-filters c-search-results__bar__switch-filters col-6 col-md-3 col-sm-2 col-xl-2 d-none">
+                    </div>
+                    <div class="result-count c-search-results__bar__result-count text-center col-md-6 d-none">
+                        <span class="c-search-results__bar__result-count__count">
+                            ${Resource.msg('label.noresultsfor', 'search', null)} ${pdict.productSearch.searchKeywords}
+                        </span>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 col-xl-2 c-search-results__sort">
+                    </div>
+         <iselse>
+                        <div class="row grid-header justify-content-between justify-content-md-end c-search-results__bar">
+                            <div class="result-count c-search-results__bar__result-count text-center col-md-6 col-xl-8 d-none">
+                                <isinclude template="search/resultsCount" />
+                            </div>
+         </isif>
+                    
+                    <isif condition="${pdict.productSearch.productIds.length > 0}">
+                                
+                                    <div class="col-6 col-sm-8 col-md-9 col-xl-10 ${isByob ? ' c-search-byob__results' : ''}">
+                                                    <isif condition="${isAttributeRefinementAvailable || isPriceRefinementAvailable}">
+                                                        <!--- Refinement bar --->
+                                                        <isinclude url="${pdict.refineurl}" />
+                                                    </isif>
+                                    </div>
+                                
+                                <div class="col-6 col-sm-4 col-md-3 col-xl-2 c-search-results__sort">
+                                    <isinclude template="search/sortOrderMenu" />
+                                </div>
+                                <div class="col-6 col-sm-4 text-right d-md-none order-sm-3 filter-results-container">
+                                    <isif condition="${isAttributeRefinementAvailable || isPriceRefinementAvailable}">
+                                        <button type="button"
+                                            class="filter-results c-search-results__bar__filter-results col-12 no-border text-left">
+                                            Filter
+                                        </button>
+                                    </isif>
+                                </div>
+                            </isif>
+
+                            <div class="col-12">
+                                <isinclude template="search/refinements/chips" />
+                            </div>
+                        </div>
+
+                        <!--- BYOB Search --->
+                        <isif condition="${isByob}">
+                            <isset name="byobAllProductsCat"
+                                value="${dw.system.Site.current.getCustomPreferenceValue('byobRootCategoryID')}"
+                                scope="page" />
+                            <isset name="isByobAllProductsCat"
+                                value="${!empty(byobAllProductsCat) && pdict.productSearch.category.id === byobAllProductsCat}"
+                                scope="page" />
+
+                            <isif condition="${isByobAllProductsCat}">
+                                <isinclude template="search/components/byobSearch" />
+                            </isif>
+                        </isif>
+            </div><!-- end row -->
+        </div><!-- end container -->
+                
+        <isif condition="${pdict.productSearch.productIds.length > 0}">
+ 
+        <isif condition="${catId}">
+        <isslot id="category-slot-f" context="category" description="Category Slot F" context-object="${catId}" />
+    </isif>
+            <div class="container">
+                <div class="row justify-content-md-end position-relative${isByob ? ' c-search-byob__results' : ''}">
+     
+                                <div class="c-search-results__content-box js-content-box col-12">
+                                    <div class="c-search-results__content-box__container container">
+                                        <!--- Product Grid --->
+                                        <div class="row product-grid js-byob-grid product-grid-v2 d-flex align-items-stretch" itemtype="http://schema.org/SomeProducts"
+                                            itemid="#product" data-box-sku="${pdict.boxSku || ''}">
+                                            <isinclude template="search/productGrid" />
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+            </div>
+        </isif>
+
+        <!--- Content Grid --->
+        <div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-expanded="false">
+            <div id="content-search-results" class="row content-grid-header justify-content-center">
+            </div>
+        </div>
+     </div>
+</div>
+<div class="container">
+    <isif condition="${dw.catalog.CatalogMgr.getCategory(pdict.category).custom.seohead != null}">
+    <h3 style="padding-top:10px">${dw.catalog.CatalogMgr.getCategory(pdict.category).custom.seohead}</h3>
+    <p><isprint value="${dw.catalog.CatalogMgr.getCategory(pdict.category).custom.seobody}" encoding="off" /></p>
+</isif>
+</div>
+</div>
+
+<isslot id="category-slot-g" context="category" description="Category Slot G" context-object="${catId}" />
+
+<div class="container">
+    <isset name="listName" value="${'PLP Recommendations'}" scope="page"/>
+    <isif condition="${dw.system.Site.current.getCustomPreferenceValue('isEinsteinEnabled')}">
+        <div class="plp_recommendations">
+            <isslot id="plp-einstein" context="global" description="plp einstein carousel" />
+        </div>
+    <iselse/>
+        <isinclude template="product/components/PLPrecommendations" />
+    </isif>
+</div>
+
+<style>
+@media screen and (max-width: 440px) {
+.modal-background {
+    display: none !important;
+}
+.refinement-bar {
+    margin-top:95px;
+    z-index: 2;
+}
+.header-bar button.close {
+    padding-left: 15px;
+}
+}
+</style>

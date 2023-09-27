@@ -1,0 +1,22 @@
+<ul class="c-refinements__values values">
+    <isloop items="${categories}" var="category">
+        <li class="c-refinements__values__item">
+            <a href="${category.url}" class="c-refinements__values__item__link">
+                <!--- Radio button --->
+                <isif condition="${category.selected}">
+                    <span class="c-refinements__values__item__link__custom-radio-checked is-checked"></span>
+                <iselse>
+                    <span class="c-refinements__values__item__link__custom-radio"></span>
+                </isif>
+
+                <!--- Label --->
+                <span title="${category.title}" class="${category.selected ? 'selected' : ''}">
+                    ${category.displayValue}
+                </span>
+            </a>
+            <!--- Process subcategories --->
+            <isset name="categories" value="${category.subCategories}" scope="page" />
+            <isinclude template="search/refinements/categories" />
+        </li>
+    </isloop>
+</ul>

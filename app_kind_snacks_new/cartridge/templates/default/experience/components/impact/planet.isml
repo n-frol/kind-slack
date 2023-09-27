@@ -1,0 +1,113 @@
+<div class="impact_section planet_section">
+    <isinclude template="experience/components/impact/planet_grid_1" />
+    <isinclude template="experience/components/impact/planet_grid_2" />
+    <isinclude template="experience/components/impact/planet_grid_3" />
+    <div class="greyarea">
+        <isinclude template="experience/components/impact/planet_grid_4" />
+    </div>
+    <style>
+        .fullwidth.marginbot.desktop {
+            width: calc(100% - 120px) !important;
+            margin-left: 60px !important;
+            position: relative;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            top: 900px;
+            position: absolute;
+        }
+        .margintop {
+            margin-top: 60px !important;
+            margin-bottom: 60px !important;
+        }
+    </style>
+    <div class="centerme margintop">
+        <div class="head">
+            pollinating kindness
+        </div>
+        <div class="copy">
+            KIND Almond Acres Initiative is just one way we’re working towards sourcing our ingredients more sustainably. We started this journey when we committed to supporting and advocating for pollinator health – because without bees, there would be no almonds! Here are some milestones we’ve met in pursuit of that goal:
+        </div>
+    </div>
+    <isinclude template="experience/components/impact/planet_grid_8" />
+    <div class="greyarea">
+        <isinclude template="experience/components/impact/planet_grid_6" />
+    </div>
+
+    <div class="centerme smaller">
+        <div class="head smaller">
+            We increased intermodal transportation of our finished goods by almost 17% in 2022 compared to 2021.
+        </div>
+    </div>
+    <img class="desktop" style="margin:auto; margin-bottom: 40px;" src="${URLUtils.staticURL('/images/impact/grid5/intermodal-cars_desktop.png')}" alt="Impact Two Column 1 Image" />
+    <img style="margin: auto; margin-bottom:30px;" class="mobile" src="${URLUtils.staticURL('/images/impact/grid5/intermodal-cars_mobile.png')}" alt="Impact Two Column 1 Image" />
+
+    <div class="blackarea fixpadding">
+        <isinclude template="experience/components/impact/planet_grid_7" />
+    </div>
+    <div class="centerme">
+        <div class="header2">rethinking packaging</div>
+        <div class="para2">
+            Let’s be transparent. We’re on a mission to create a kinder and healthier world and while we have a lot to be proud of, we know there’s always a bigger challenge to meet – especially when it comes to our
+            <a class="normallink" href="/our-mission-rethinking-packaging.html">packaging</a>.
+        </div>
+    </div>
+    <img class="railedimg desktop" src="${URLUtils.staticURL('/images/impact/grid3/Group 3115.png')}" alt="Impact Two Column 2 Image" />
+    <img style="margin-bottom: 40px;" class="mobile" src="${URLUtils.staticURL('/images/impact/grid3/paper-wrapper_mobile.png')}" alt="Impact Two Column 2 Image" />
+    <div class="centerme">
+        <div class="header3">
+            The reason we’re calling this a test is because we don’t yet know if this is the best way forward when it comes to the future of our packaging. But we do know it’s a good first step in learning how we might reduce our plastic usage. The results from this exploratory pilot test will help KIND determine how to scale plastic alternatives in the future.        </div>
+    </div>
+    <isinclude template="experience/components/impact/planet_final" />
+
+</div>
+
+<style>
+    .centerme .head.smaller {
+        font-size: 25px !important;
+        line-height: 30px !important;
+        font-family: main;
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .marginbot {
+        margin-bottom: 60px;
+    }
+    .railedimg {
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .centerme .header3 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 36px;
+        color: black;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .centerme .header2 {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 54px;
+        color: black;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .centerme .para2 {
+        margin: 0 auto;
+        font-size: 18px;
+        line-height: 24px;
+        color: black;
+        font-family: main;
+        text-align: center;
+        max-width: 700px;
+    }
+    .blackarea {
+        background-color: #000000;
+        padding: 50px 0;
+        margin-bottom: 60px;
+    }
+    .greyarea {
+        background-color: #EDEDED;
+        padding: 50px 0;
+    }
+</style>

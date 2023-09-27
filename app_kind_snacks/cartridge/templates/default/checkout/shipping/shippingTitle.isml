@@ -1,0 +1,1 @@
+<p class="summary-section-label shipping-addr-label st-checkout-main__sub-title subtitle">${Resource.msg('label.order.shipping.address', 'confirmation', null)}</p>

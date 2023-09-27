@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="starter-combos">
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="BYOB Starter Combo Robots"/>
+        </content-detail-page-meta-tag-rules>
+    </content>
+
+</library>

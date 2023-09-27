@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="trackedLastModified">
+                <display-name xml:lang="x-default">Tracked Last Modified</display-name>
+                <type>datetime</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="redShiftCustomerModifiedDelay">
+                <display-name xml:lang="x-default">Customer Export Last Modified Delay in Milliseconds</display-name>
+                <description xml:lang="x-default">Since the last modified date has to be written to a custom attribute, the business needs to identify a gap of time between the last tracked modified date and the modified date, where the last tracked modified date will not be updated. This is to prevent all customers ending up with a new last tracked modified date every time the job runs.</description>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>120000.0</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Redshift">
+                <display-name xml:lang="x-default">Redshift Configuration</display-name>
+                <attribute attribute-id="redShiftOrderCollectionTime"/>
+                <attribute attribute-id="redShiftModifiedDelay"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

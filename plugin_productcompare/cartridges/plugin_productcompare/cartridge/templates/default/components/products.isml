@@ -1,0 +1,22 @@
+<div class="s-slick">
+    <div class="c-recommendation__slider js-slider js-recommendation-slider" data-autoplay="false" data-dots="true" data-arrows="true">
+        <isloop items="${products}" var="product">
+            <div>
+                <isobject object="${product}" view="recommendation">
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'showQuickView', true)}" />
+                </isobject>
+            </div>
+        </isloop>
+    </div>
+    <div class="c-recommendation__slider__controls js-slider__controls controls-black">
+        <iscomment>Hide arrows here so jQuery can get them.  Allows for generating buttons using SFRA functions that imageCarousel.js won't have access to</iscomment>
+        <button class="carousel-control-prev c-recommendation__slider__controls__arrow c-recommendation__slider__controls__prev js-slider__controls__prev slick-prev d-none" type="button" data-slide="prev">
+            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+        </button>
+
+        <button class="carousel-control-next c-recommendation__slider__controls__arrow c-recommendation__slider__controls__next js-slider__controls__next slick-next d-none" type="button" data-slide="next">
+            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+        </button>
+
+    </div>
+</div>

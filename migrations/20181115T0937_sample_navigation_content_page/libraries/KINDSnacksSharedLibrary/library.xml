@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="occasions">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/navigationContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>explore-snack-times</value>
+                <value>fuel-your-morning-run</value>
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="isTimelineTemplate">true</custom-attribute>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="cur-page"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

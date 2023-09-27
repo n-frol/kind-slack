@@ -1,0 +1,19 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+    <isset name="catId" value="${pdict.category.id}" scope="page" />
+    <isinclude template="search/components/catHeader" />
+
+    <div class="container product-comparison">
+        <div class="row">
+            <div class="col-2 back-to-results">
+                <a class="btn btn-outline-primary" href="${pdict.backUrl}">Back to results</a>
+            </div>
+        </div>
+        <isinclude template="product/compareAttributes"/>
+    </div>
+</isdecorate>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="recaptcha.http">
+        <url>https://www.google.com/recaptcha/api/siteverify</url>
+        <user-id/>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service service-id="recaptcha.http">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>StandardHTTP</profile-id>
+        <credential-id>recaptcha.http</credential-id>
+    </service>
+
+</services>

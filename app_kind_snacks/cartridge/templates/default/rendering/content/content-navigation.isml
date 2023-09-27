@@ -1,0 +1,77 @@
+<isif condition="${!empty(pdict.content)}">
+    <isscript>
+        var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    </isscript>
+    <isset name="asset" value="${pdict.content}" scope="page" />
+    <isset name="assetID" value="${asset.ID}" scope="page" />
+
+    <div class="c-product-details__steps--grey-wrapper">
+        <isinclude template="rendering/category/components/byobCategoryNav/stepContainer" />
+        <div class="c-product-details__wrap">
+            <h1 class="product-name c-product-details__name js-product-name c-product-details__name-byob">
+                <span class="value" itemprop="name" content="${Resource.msg('label.byob-title', 'byob', null)}">${Resource.msg('label.byob-title', 'byob', null)}</span>
+            </h1>
+
+            <div class="value c-product-details__description" itemprop="description"
+                content="${Resource.msg('label.byob-description', 'byob', null)}">
+                ${Resource.msg('label.byob-description', 'byob', null)}
+            </div>
+
+            <span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}"></span>
+            <span class="value" itemprop="sku" content="${typeof product !== 'undefined' ? product.masterId : ''}"></span>
+
+            <isif condition="${typeof product !== 'undefined' && !empty(product.badge) && !empty(product.badge.value)}">
+                <div class="st-product-top__callout badge_callout ${pdict.templateClass}__callout">
+                    ${product.badge}
+                </div>
+            </isif>
+        </div>
+
+        <div class="c-product-details__step-title c-product-details__step-title--step2 c-byob-redesign__step2-title">
+            <h1>${Resource.msg('label.step2-title', 'byob', null)}</h1>
+        </div>
+
+        <isif condition="${!empty(asset.custom.childrenContentAssetIDS)}">
+            <div class="c-content-nav c-content-nav--step2">
+                <isloop items="${asset.custom.childrenContentAssetIDS}" var="childId" status="loopStatus">
+                    <isset name="childAsset" value="${dw.content.ContentMgr.getContent(childId)}" scope="page" />
+                    <div class="c-content-nav__item js-select-option" data-gtm-pack-type="${childAsset.custom.graphicalAssetHeading}">
+
+                        <iscomment> LINK AND HEADING </iscomment>
+                        <isif
+                            condition="${childAsset.custom.graphicalAssetHeading && childAsset.custom.graphicalAssetURL}">
+                            <input type="hidden" class="js-snackbox-url"
+                                value="${childAsset.custom.graphicalAssetURL}" />
+
+                            <div class="c-product-details__image-border--step2">
+                                <div class="c-product-details__img-badge--step2">
+                                    <h2 class="c-content-nav__item__heading">${childAsset.custom.graphicalAssetHeading}
+                                    </h2>
+                                </div>
+                        </isif>
+
+                        <iscomment> IMAGE </iscomment>
+
+                        <div class="content-navigation-img c-byob-redesign__content-navigation-img">
+                            <isset name="image" value="${childAsset.custom.graphicalAssetImage}" scope="page" />
+                            <isset name="responsiveImageNormal"
+                                value="${responsiveImageUtils.getResponsiveImage(image, 798, null, '', 'jpg')}"
+                                scope="page" />
+
+                            <img src="${responsiveImageNormal.imageUrlDefault}" class="c-product-witb__slide__image"
+                                alt="${image.title}" />
+                        </div>
+                    </div>
+                    <iscomment> TEXT UNDER IMAGE </iscomment>
+                    <isif condition="${childAsset.custom.graphicalAssetBody}">
+                        <isprint value="${childAsset.custom.graphicalAssetBody}" encoding="off" />
+                    </isif>
+            </div>
+            </isloop>
+    </div>
+    <div class="c-product-add-to-cart--flex-wrapper c-product-add-to-cart c-product-add-to-cart-byob-btn">
+        <button class="byob-pick-your-snacks add-to-cart js-gtm-continue js-snackbox-continue-btn btn btn-primary c-product-add-to-cart--get-started__btn"
+            data-url="" data-gtm-pack-type="" disabled>${Resource.msg('label.continue', 'byob', null)}</button>
+    </div>
+</isif>
+</isif>

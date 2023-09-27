@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="GoogleVerificationTag">aIn6BwsIqOha3iZpGMumiJWL4neYCv0-QBhAOYrUcuA</preference>
+            <preference preference-id="OrderGrooveAddresses">
+                <value>test@pixelmedia.com</value>
+            </preference>
+            <preference preference-id="OrderGrooveBilling">false</preference>
+            <preference preference-id="OrderGrooveCardExpiration">true</preference>
+            <preference preference-id="OrderGrooveCardHolder">true</preference>
+            <preference preference-id="OrderGrooveCardNumber">false</preference>
+            <preference preference-id="OrderGrooveCardType">true</preference>
+            <preference preference-id="OrderGrooveDiscountType">Percent</preference>
+            <preference preference-id="OrderGrooveDiscountValue">16.0</preference>
+            <preference preference-id="OrderGrooveEmail">false</preference>
+            <preference preference-id="OrderGrooveEnable">true</preference>
+            <preference preference-id="OrderGrooveLabel">false</preference>
+            <preference preference-id="OrderGrooveMerchantHashKey">R-VH}w)3kiM#ca-vfsoaBqp=9{]HmA_)</preference>
+            <preference preference-id="OrderGrooveMerchantID">4f14cabc853711e8bd25bc764e1107f2</preference>
+            <preference preference-id="OrderGrooveSession">true</preference>
+            <preference preference-id="OrderGrooveShipping">true</preference>
+            <preference preference-id="OrderGrooveShippingMethod">001</preference>
+            <preference preference-id="OrderGrooveStaticDomain">https://staging.static.ordergroove.com</preference>
+            <preference preference-id="OrderGrooveSubscription">false</preference>
+            <preference preference-id="OrderGrooveToken">true</preference>
+            <preference preference-id="OrderGrooveTracking">false</preference>
+        </development>
+    </custom-preferences>
+</preferences>
+

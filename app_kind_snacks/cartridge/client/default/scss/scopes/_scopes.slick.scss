@@ -1,0 +1,134 @@
+/* ============================================================================
+Slick Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created by the Slick Carousel
+ */
+
+$ns: s-slick;
+
+.#{$ns} {
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-list {
+        overflow: hidden;
+    }
+
+    .slick-slide {
+        display: flex;
+            align-items: center;
+
+        > div {
+            width: 100%;
+        }
+    }
+
+    .slick-dots {
+        cursor: pointer;
+        display: flex;
+        list-style-type: none;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+
+
+        li {
+            line-height: 1;
+            display: inline-block;
+        }
+        button {
+            @extend %c-product-primary-images__indicator;
+
+            font-size: 0;
+            line-height: 1;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .slick-active {
+            button {
+                &::after {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        &.variable-color {
+            button {
+                border-color: var(--image-nav-color, $white);
+            }
+
+            .slick-active {
+                button {
+                    &::after {
+                        background-color: var(--image-nav-color, $white);
+                    }
+                }
+            }
+        }
+    }
+    .controls-black {
+        button {
+            border-color: $black;
+        }
+        .slick-active {
+            button {
+                &::after {
+                    background-color: $black;
+                }
+            }
+        }
+    }
+
+    &--variety {
+        @include media-breakpoint-up(md) {
+            height: 100%;
+        }
+
+        .slick-slider,
+        .slick-list,
+        .slick-track,
+        .slick-slide,
+        .slick-slide > div,
+        .carousel-item {
+            @include media-breakpoint-up(md) {
+                height: 100%;
+            }
+        }
+
+        .slick-slide {
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: auto;
+
+                @include media-breakpoint-up(md) {
+                    max-width: 780px; // The effective max-width of a non-variety image for images beyond the first slide
+                }
+            }
+            // With infinite scroll on, targeting the first slide in terms of HTML order won't work.  So we need to get the slick index
+            // Also apply to first slick clone after the last non-clone, which will be the duplicate of the first slide
+            &[data-slick-index="0"],
+            &:not(.slick-cloned) + .slick-cloned {
+                img {
+                    height: 100%;
+                    max-width: none;
+                    width: auto;
+                }
+                .carousel-item {
+                    padding-bottom: 77%;
+
+                    @include media-breakpoint-up(md) {
+                        padding-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

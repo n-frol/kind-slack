@@ -1,0 +1,23 @@
+<!--- TEMPLATENAME: zmagschannelsnippet.isml --->
+<iscomment>
+	This is included in the HTML head to enable Zmags Creator experiences.
+
+	This template reads a site preference to construct a JavaScript element
+	loading the client-side code to enable Zmags Creator on the page.
+</iscomment>
+
+<isscript>
+	var snippet = require('~/cartridge/scripts/ZmagsCreator').getSnippetParts();
+</isscript>
+
+<!--- Prints the Zmags Creator channel snippet. --->
+<!-- BEGIN Zmags Creator channel snippet -->
+<isif condition="${snippet !== null && !empty(snippet.attributeNames)}">
+    <script type="text/javascript" data-cartridge-version="${snippet.cartridgeVersion}" data-cartridge-architecture="${snippet.cartridgeArchitecture}" <isloop items="${snippet.attributeNames}" status="loopStatus"> <isprint value="${snippet.attributeNames[loopStatus.index]}" encoding="htmlcontent">="<isprint value="${snippet.attributeValues[loopStatus.index]}" encoding="htmldoublequote">"</isloop>></script>
+<iselse/>
+	<!--
+		Attention!! 
+		Zmags Creator channel snippet is empty or invalid, please configure in Site Preferences. 
+	-->
+</isif>
+<!-- END Zmags Creator channel snippet -->

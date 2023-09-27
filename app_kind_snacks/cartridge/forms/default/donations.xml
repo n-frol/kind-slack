@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+
+    <include formid="addressFields" name="address"/>
+    <include formid="contactFields" name="contact"/>
+
+    <field formid="company" label="label.input.company" type="string" mandatory="true" binding="company"
+        max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="field501c3" label="label.input.501cs" type="string" mandatory="true" binding="field501c3"
+           missing-error="error.message.required">
+        <options>
+            <option optionid="no" label="select.option.yesno.no" value="no"/>
+            <option optionid="yes" label="select.option.yesno.yes" value="yes"/>
+        </options>
+    </field>
+
+    <group formid="eventInfo">
+        <field formid="event-name" label="label.input.event.name" type="string" mandatory="true" binding="name"
+		max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+        <field formid="event-date" label="label.input.event.date" type="string" mandatory="true" binding="date"
+            max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"
+            regexp="/[0-9]{2}\-[0-9]{2}\-[0-9]{4}/" parse-error="error.message.parse.date"/>
+        <field formid="event-city" label="label.input.event.city" type="string" mandatory="true" binding="city"
+            max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+         <field formid="event-stateCode" label="label.input.state" type="string" mandatory="true" binding="stateCode" missing-error="error.message.required" value-error="address.field.invalid" parse-error="error.message.required">
+		<options>
+			<option optionid="" 	label="resource.select" 		value=""/>
+
+			<!-- regular US states -->
+			<option optionid="AL" 	label="state.us.alabama" 		value="AL"/>
+			<option optionid="AK" 	label="state.us.alaska" 		value="AK"/>
+			<option optionid="AS" 	label="state.us.americansamoa" 	value="AS"/>
+			<option optionid="AZ" 	label="state.us.arizona" 		value="AZ"/>
+			<option optionid="AR" 	label="state.us.arkansas" 		value="AR"/>
+			<option optionid="CA" 	label="state.us.california" 	value="CA"/>
+			<option optionid="CO" 	label="state.us.colorado" 		value="CO"/>
+			<option optionid="CT" 	label="state.us.connecticut" 	value="CT"/>
+			<option optionid="DE" 	label="state.us.delaware" 		value="DE"/>
+			<option optionid="DC" 	label="state.us.dc" 			value="DC"/>
+			<option optionid="FL" 	label="state.us.florida" 		value="FL"/>
+			<option optionid="GA" 	label="state.us.georgia" 		value="GA"/>
+			<option optionid="GU" 	label="state.us.guam" 			value="GU"/>
+			<option optionid="HI" 	label="state.us.hawaii" 		value="HI"/>
+			<option optionid="ID" 	label="state.us.idaho" 			value="ID"/>
+			<option optionid="IL"	label="state.us.illinois" 		value="IL"/>
+			<option optionid="IN"	label="state.us.indiana" 		value="IN"/>
+			<option optionid="IA"	label="state.us.iowa" 			value="IA"/>
+			<option optionid="KS"	label="state.us.kansas" 		value="KS"/>
+			<option optionid="KY"	label="state.us.kentucky" 		value="KY"/>
+			<option optionid="LA"	label="state.us.louisiana" 		value="LA"/>
+			<option optionid="ME"	label="state.us.maine" 			value="ME"/>
+			<option optionid="MD"	label="state.us.maryland" 		value="MD"/>
+			<option optionid="MA"	label="state.us.massachusetts"	value="MA"/>
+			<option optionid="MI"	label="state.us.michigan" 		value="MI"/>
+			<option optionid="MN"	label="state.us.minnesota" 		value="MN"/>
+			<option optionid="MS"	label="state.us.mississippi" 	value="MS"/>
+			<option optionid="MO"	label="state.us.missouri" 		value="MO"/>
+			<option optionid="MT"	label="state.us.montana" 		value="MT"/>
+			<option optionid="NE"	label="state.us.nebraska" 		value="NE"/>
+			<option optionid="NV"	label="state.us.nevada" 		value="NV"/>
+			<option optionid="NH"	label="state.us.newhampshire" 	value="NH"/>
+			<option optionid="NJ"	label="state.us.newjersey" 		value="NJ"/>
+			<option optionid="NM"	label="state.us.newmexico" 		value="NM"/>
+			<option optionid="NY"	label="state.us.newyork" 		value="NY"/>
+			<option optionid="NC"	label="state.us.northcarolina" 	value="NC"/>
+			<option optionid="ND"	label="state.us.northdakota" 	value="ND"/>
+			<option optionid="OH"	label="state.us.ohio" 			value="OH"/>
+			<option optionid="OK"	label="state.us.oklahoma" 		value="OK"/>
+			<option optionid="OR"	label="state.us.oregon" 		value="OR"/>
+			<option optionid="PA"	label="state.us.pennsylvania" 	value="PA"/>
+			<option optionid="PR"	label="state.us.puertorico" 	value="PR"/>
+			<option optionid="RI"	label="state.us.rhodeisland" 	value="RI"/>
+			<option optionid="SC"	label="state.us.southcarolina" 	value="SC"/>
+			<option optionid="SD"	label="state.us.southdakota" 	value="SD"/>
+			<option optionid="TN" 	label="state.us.tennessee" 		value="TN"/>
+			<option optionid="TX" 	label="state.us.texas" 			value="TX"/>
+			<option optionid="UT" 	label="state.us.utah" 			value="UT"/>
+			<option optionid="VT" 	label="state.us.vermont" 		value="VT"/>
+			<option optionid="VI" 	label="state.us.virginislands"	value="VI"/>
+			<option optionid="VA" 	label="state.us.virginia" 		value="VA"/>
+			<option optionid="WA" 	label="state.us.washington" 	value="WA"/>
+			<option optionid="WV" 	label="state.us.westvirginia" 	value="WV"/>
+			<option optionid="WI" 	label="state.us.wisconsin" 		value="WI"/>
+			<option optionid="WY" 	label="state.us.wyoming" 		value="WY"/>
+
+			<!-- APO/FPO -->
+			<option optionid="AE" 	label="state.us.armedforcesafrica" 		value="AE"/>
+			<option optionid="AA" 	label="state.us.armedforcesamerica" 	value="AA"/>
+			<option optionid="AE" 	label="state.us.armedforcescanada" 		value="AE"/>
+			<option optionid="AE" 	label="state.us.armedforceseurope" 		value="AE"/>
+			<option optionid="AE" 	label="state.us.armedforcesmiddleeast" 	value="AE"/>
+			<option optionid="AP" 	label="state.us.armedforcespacific" 	value="AP"/>
+
+			<!-- Other -->
+			<option optionid="OTHER" label="state.us.other" 				value="OTHER"/>
+		</options>
+	</field>
+         <field formid="event-postalCode" label="label.input.event.zipcode" type="string" mandatory="true" min-length="5" max-length="10"
+            regexp="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+            binding="postalCode"
+            range-error="error.message.between5and10"
+            missing-error="error.message.required"
+            parse-error="error.message.parse.zip"/>
+        <field formid="description" label="label.input.event.description" type="string" mandatory="true" binding="description"
+            max-length="1000" missing-error="error.message.required" range-error="error.message.lessthan1000"/>
+        <field formid="website" label="label.input.event.website" type="string" mandatory="false" binding="website"
+            max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+        <field formid="ageRange" label="label.input.event.agerange" type="string" mandatory="true" binding="ageRange"
+            max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+        <field formid="headcount" label="label.input.event.headcount" type="string" mandatory="true" binding="headcount"
+            max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+        <field formid="productRequest" label="label.input.event.productrequest" type="string" mandatory="false" binding="productRequest"
+           missing-error="error.message.required">
+            <options>
+                <option optionid="" label="" value=""/>
+                <option optionid="KINDBars" label="select.option.kindbars" value="KIND Bars®"/>
+                <option optionid="KINDKidsBars" label="select.option.kindkidsbars" value="KIND Kids™ bars"/>
+                <option optionid="KINDProtein" label="select.option.kindprotein" value="KIND Protein™"/>
+                <option optionid="KINDHealthyGrainsBars" label="select.option.kindhealthygrains" value="KIND Healthy Grains® bars"/>
+                <option optionid="KINDHealthyGrainsClusters" label="select.option.healthygrainsclusters" value="KIND Healthy Grains® Clusters"/>
+                <option optionid="KINDBreakfastBars" label="select.option.breakfastbars" value="KIND® Breakfast bars"/>
+                <option optionid="PressedByKIND" label="select.option.pressedbykind" value="Pressed by KIND® bars"/>
+            </options>
+        </field>
+        <field formid="distribution" label="label.input.event.distribution" type="string" mandatory="true" binding="distribution"
+            max-length="1000" missing-error="error.message.required" range-error="error.message.lessthan1000"/>
+        <field formid="kindnessOpportunities" label="label.input.event.kindnessopportunities" type="string" mandatory="true" binding="kindnessOpportunities"
+            max-length="1000" missing-error="error.message.required" range-error="error.message.lessthan1000"/>
+        <field formid="rightFit" label="label.input.event.rightfit" type="string" mandatory="true" binding="rightFit"
+            max-length="1000" missing-error="error.message.required" range-error="error.message.lessthan1000"/>
+        <field formid="exclusivity" label="label.input.event.exclusivity" type="string" mandatory="true" binding="exclusivity"
+           missing-error="error.message.required">
+            <options>
+                <option optionid="no" label="select.option.yesno.no" value="no"/>
+                <option optionid="yes" label="select.option.yesno.yes" value="yes"/>
+            </options>
+        </field>
+        <field formid="pastSponsorship" label="label.input.event.pastsponsorship" type="string" mandatory="true" binding="pastSponsorship"
+           missing-error="error.message.required">
+            <options>
+                <option optionid="no" label="select.option.yesno.no" value="no"/>
+                <option optionid="yes" label="select.option.yesno.yes" value="yes"/>
+            </options>
+        </field>
+    </group>
+
+</form>

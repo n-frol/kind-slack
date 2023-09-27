@@ -1,0 +1,12 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+<isif condition="${pdict.AutoShip == true && paymentOption.ID == 'PAYMENTOPERATOR_PAYPAL'}">
+	<iscontinue/>
+</isif>
+    <!--- dotsource PaymentOperator --->
+    <isscript>
+        var expressMethods = require('*/cartridge/scripts/computop/util/Checkout').EXPRESS_PAYMENT_METHODS;
+    </isscript>
+    <isif condition="${ empty(expressMethods) || expressMethods.indexOf(paymentOption.ID) === -1 }">
+        <isinclude template="checkout/billing/paymentOptions/paymentOperatorTab" />
+    </isif>
+</isloop>

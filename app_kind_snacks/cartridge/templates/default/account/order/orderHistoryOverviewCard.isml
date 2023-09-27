@@ -1,0 +1,80 @@
+<div class="c-account-dashboard__order-history__card js-order-history js-order-items card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-9">
+                <div class="row">
+                    <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                        <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.dateordered','account',null)}</p>
+                        <p class="c-account-dashboard__order-history__info__value"><isprint value="${order.creationDate}"/></p>
+                    </div>
+                    <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                        <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.orderstatus','account',null)}:</p>
+                        <p class="c-account-dashboard__order-history__info__value">${order.orderStatus.displayValue}</p>
+                    </div>
+                    <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                        <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.ordernumber','account',null)}</p>
+                        <p class="c-account-dashboard__order-history__info__value js-order-number"><isprint value="${order.orderNumber}"/></p>
+                    </div>
+                    <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                        <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.shippedto','account',null)}</p>
+                        <p class="c-account-dashboard__order-history__info__value">${order.shippedToFirstName} ${order.shippedToLastName}</p>
+                    </div>
+                    <isif condition="${!empty(order.items.items)}">
+                        <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                            <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.items','account',null)}</p>
+                            <isloop items="${order.items.items}" var="item">
+                                <isif condition="${empty(item.boxId) || item.isByobMaster}">
+                                <div class="c-account-dashboard__order-history__info__value js-order-item js-product-detail product-detail" data-pid="${item.id}" data-is-byob-master="${item.isByobMaster ? 'true' : 'false'}" data-is-exclude-to-add-basket="${item.price.sales.value > 0 ? 'false': 'true'}">
+                                        <isprint value="${item.productName}" />
+                                        <isif condition="${item.isByobMaster}">
+                                            <isif condition="${!empty(item.raw.variationModel) && !empty(item.raw.variationModel.getProductVariationAttribute('size'))}">
+                                                (<isprint value="${item.raw.variationModel.getSelectedValue(item.raw.variationModel.getProductVariationAttribute('size')).displayValue}" />)
+                                            </isif>
+                                            <isif condition="${pdict.boxContents.hasOwnProperty(item.boxId)}">
+                                                <ul class="d-none">
+                                                    <isloop items="${pdict.boxContents[item.boxId]}" var="boxContentItem">
+                                                        <li class="bundle-item"><span class="product-id">${boxContentItem.id}</span><label class="quantity" data-quantity="${boxContentItem.quantity}">${boxContentItem.quantity}</label></li>
+                                                    </isloop>
+                                                </ul>
+                                            </isif>
+                                        </isif>
+                                        <isif condition="${!empty(item.subscriptionType)}">
+                                            <div class="c-account-dashboard__order-history__info__subscription-type">
+                                                <isprint value="${Resource.msg('global.snackclubsubscription', 'common', null)}" /><br>
+                                                <isif condition="${item.subscriptionType === '1'}">
+                                                    <isprint value="${Resource.msgf('subscription.single.frequency', 'account', null, item.subscriptionType)}" />
+                                                <iselse>
+                                                    <isprint value="${Resource.msgf('subscription.frequency', 'account', null, item.subscriptionType)}" />
+                                                </isif>
+                                            </div>
+                                        </isif>
+                                        <span class="d-none product-id">${item.id}</span>
+                                        <input class="quantity-select" type="hidden" value="${item.quantity}" />
+                                        <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddMultipleProducts')}">
+                                        <input type="hidden" class="js-forward-url" value="${URLUtils.url('Cart-Show')}">
+                                    </div>
+                                </isif>
+                            </isloop>
+                        </div>
+                    </isif>
+                    <div class="c-account-dashboard__order-history__info col-12 col-md-4">
+                        <p class="c-account-dashboard__order-history__info__label">${Resource.msg('label.orderhistory.ordertotal','account',null)}</p>
+                        <p class="c-account-dashboard__order-history__info__value">${order.priceTotal}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+                <a class="c-account-dashboard__order-history__action btn btn-primary pull-right" href="${URLUtils.url('Order-Details', 'orderID', order.orderNumber, 'orderFilter', pdict.orderFilter)}">${Resource.msg('link.orderdetails','account',null)}</a>
+                <isif condition="${!empty(order.confirmedShipments)}">
+                    <a class="c-account-dashboard__order-history__action btn btn-outline-primary pull-right" href="${URLUtils.https('Account-ShippingDetails', 'orderID', order.orderNumber, 'orderFilter', pdict.orderFilter)}">${Resource.msg('link.shippingdetails','account',null)}</a>
+                </isif>
+                <isif condition="${!empty(order.items.items)}">
+                    <a class="c-account-dashboard__order-history__action btn btn-outline-primary pull-right js-reorder" href="${'#'}" data-order-number="${order.orderNumber}">${Resource.msg('link.reorder','account',null)}</a>
+                </isif>
+                <isif condition="${order.orderStatus.displayValue == 'COMPLETED'}">
+                <a target="_blank" class="c-account-dashboard__order-history__action btn btn-outline-primary pull-right" href="${URLUtils.https('Order-Invoice', 'orderId', order.orderNumber)}" data-order-number="${order.orderNumber}">${Resource.msg('link.invoice','account',null)}</a>
+                </isif>
+            </div>
+        </div>
+    </div>
+</div>

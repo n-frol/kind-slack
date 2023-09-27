@@ -1,0 +1,32 @@
+<li class="product-detail bundle-item c-product-bundle__item" data-pid="${bundledProduct.id}">
+    <a href="${URLUtils.url('Product-Show', 'pid', productItem.id)}" encoding="htmldoublequote" id="${bundledProduct.id}" role="button" 
+    class="c-product-bundle__item__btn">
+        <isset name="imageSrcset" value="" scope="page" />
+
+        <isif condition="${!empty(bundledProduct.responsiveImages)}">
+            <isset name="imageUrl" value="${bundledProduct.responsiveImages[0].normal.imageUrlDefault}" scope="page" />
+            <isset name="imageSrcset" value="${bundledProduct.responsiveImages[0].normal.imageUrlDefault + ', ' + bundledProduct.responsiveImages[0].normal.imageUrlLarge + ' 2x'}" scope="page" />
+        <iselse>
+            <isset name="imageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+        </isif>
+
+        <div class="c-product-bundle__item__img__wrap">
+            <img src="${imageUrl}" class="c-product-bundle__item__img" alt="${bundledProduct.name}" <isif condition="${!empty(imageSrcset)}">srcset="${imageSrcset}"</isif> /><br />
+        </div>
+        <div class="product-name c-product-bundle__item__name">${bundledProduct.productName}</div>
+        <div class="c-product-bundle__item__quantity">
+            <label class="quantity c-product-bundle__item__quantity__label" data-quantity="${bundledProduct.selectedQuantity}">
+                <isif condition="${!empty(bundledProduct.bundleItemQuantity)}">
+                    <isprint value="${bundledProduct.bundleItemQuantity}" style="INTEGER" />
+                    <isif condition="${!empty(bundledProduct.productTypeDetail)}">
+                        <isprint value="${bundledProduct.productTypeDetail}" />
+                    </isif>
+                </isif>
+            </label>
+        </div>
+        <div class="product-number d-none">
+            <isset name="productNumberId" value="${bundledProduct.id}" scope="page" />
+            <isinclude template="product/components/productNumber" />
+        </div>
+    </a>
+</li>

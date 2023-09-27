@@ -1,0 +1,18 @@
+'use strict';
+
+/**
+ * Service class for applepay gateway transaction
+ */
+
+/* Script includes */
+var AbstractComputopService = require( "./AbstractComputopService" );
+
+var ApplePayService = AbstractComputopService.extend(
+{
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorApplePayGatewayPath');
+    }
+});
+//Export the configured service singleton
+module.exports = (new ApplePayService()).getService();

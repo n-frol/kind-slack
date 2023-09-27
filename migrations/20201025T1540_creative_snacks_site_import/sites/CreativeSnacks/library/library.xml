@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31">
+    <folder folder-id="root">
+        <online-flag>true</online-flag>
+        <page-attributes/>
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="cdp-title"/>
+        </content-detail-page-meta-tag-rules>
+        <sitemap-included-flag>true</sitemap-included-flag>
+    </folder>
+
+    <folder folder-id="pages">
+        <display-name xml:lang="x-default">Pages</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+</library>

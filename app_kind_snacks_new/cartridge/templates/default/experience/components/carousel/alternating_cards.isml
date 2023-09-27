@@ -1,0 +1,78 @@
+ <isif condition="${pdict.regions.cards.region.size > 0}">
+<isscript>
+    var three_column_cards = pdict.regions.cards;
+    three_column_cards.setClassName("cards_wrapper");
+    three_column_cards.setComponentClassName("cards_item");
+</isscript>
+<isprint value="${three_column_cards.render()}" encoding="off"/>
+</isif>
+<style>
+    .cards_wrapper img {
+        border-radius: 16px;
+    }
+    .cards_wrapper {
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .alternating_cards_header {
+        text-align: center;
+        max-width: 675px;
+        margin: auto;
+        font-size: 48px;
+        line-height: 54px;
+        letter-spacing: -1px;
+        font-family: main;
+    }
+    .cards_wrapper, .cards_item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cards-wrapper .cards_item img {
+        border-radius: 16px;
+    }
+    .cards_item:nth-child(1n) div {
+        flex-direction: row;
+    }
+    .cards_item:nth-child(1n) .alt_card_right {
+        padding: 0px 50px;
+    }
+    .cards_item:nth-child(2n) div {
+        flex-direction: row-reverse;
+    }
+    .cards_item:nth-child(2n) .alt_card_right {
+        padding: 0px 50px;
+    }
+    @media screen and (max-width: 768px) {
+        .cards_item:nth-child(1n) div {
+            flex-direction: column;
+        }
+        .cards_item:nth-child(2n) div {
+            flex-direction: column;
+        }
+        .cards_item:nth-child(1n) .alt_card_right {
+            padding: 0px 0px !important;
+        }
+        .cards_item:nth-child(2n) .alt_card_right {
+            padding: 0px 0px !important;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .cards_wrapper img {
+            margin-bottom: 20px;
+        }
+        .alt_card_left {
+            text-align: center;
+        }
+        .cards_wrapper, .cards_item {
+            align-items: flex-start;
+        }
+        .cards_item:nth-child(1n) .alt_card_right {
+            padding: 0px 20px;
+        }
+        .cards_item:nth-child(2n) .alt_card_right {
+            padding: 0px 20px;
+        }
+    }
+</style>

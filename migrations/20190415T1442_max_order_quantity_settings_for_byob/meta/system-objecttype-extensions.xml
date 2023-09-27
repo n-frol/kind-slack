@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="maxOrderQuantity">
+                <display-name xml:lang="x-default">Maximum Order Quantity</display-name>
+                <description xml:lang="x-default">An optional maximum quantity of which this product can be ordered in a single transaction</description>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Order">
+                <display-name xml:lang="x-default">Sku Attributes</display-name>
+                <attribute attribute-id="UPC" system="true"/>
+                <attribute attribute-id="showOnPDP"/>
+                <attribute attribute-id="totalItemQuantity"/>
+                <attribute attribute-id="size"/>
+                <attribute attribute-id="weight"/>
+                <attribute attribute-id="isHiddenComponents"/>
+                <attribute attribute-id="unit" system="true"/>
+                <attribute attribute-id="minOrderQuantity" system="true"/>
+                <attribute attribute-id="stepQuantity" system="true"/>
+                <attribute attribute-id="maxOrderQuantity"/>
+                <attribute attribute-id="taxClassID" system="true"/>
+                <attribute attribute-id="EAN" system="true"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

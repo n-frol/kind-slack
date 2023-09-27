@@ -1,0 +1,18 @@
+
+<isscript>
+    pdict.templateClass = typeof pdict.templateClass === 'undefined' ? '' : pdict.templateClass;  // Make sure template class is defined, since empty() doesn't check for it
+</isscript>
+
+<div class="row">
+    <div class="col">
+        <ol class="breadcrumb<isif condition="${!empty(pdict.templateClass)}"> ${pdict.templateClass}__breadcrumb__list</isif>">
+            <isloop items="${pdict.breadcrumbs}" var="breadcrumbValue">
+                <li class="breadcrumb-item">
+                    <a href="${breadcrumbValue.url}" class="breadcrumb-link">
+                        <isprint value="${breadcrumbValue.htmlValue}" encoding="off" />
+                    </a>
+                </li>
+            </isloop>
+        </ol>
+    </div>
+</div>

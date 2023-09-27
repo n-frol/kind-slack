@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="products">
+        <display-name xml:lang="x-default">Products</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template>rendering/category/categorylanding</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+</catalog>

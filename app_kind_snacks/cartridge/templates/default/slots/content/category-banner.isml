@@ -1,0 +1,32 @@
+<isif condition="${!empty(slotcontent)}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isset name="assetStyles" value="" scope="page" />
+        <isif condition="${!empty(contentAsset.custom.graphicalAssetBackgroundColor)}">
+            <isset name="assetStyles" value="${assetStyles + 'background-color: ' + contentAsset.custom.graphicalAssetBackgroundColor + '; '}" scope="page" />
+        </isif>
+        <isif condition="${!empty(contentAsset.custom.graphicalAssetContentColor)}">
+            <isset name="assetStyles" value="${assetStyles + 'color: ' + contentAsset.custom.graphicalAssetContentColor + '; '}" scope="page" />
+        </isif>
+         <isset name="image" value="false" scope="page" />
+        <isif condition="${!empty(contentAsset.custom.graphicalAssetImage)}">
+            <isset name="image" value="${contentAsset.custom.graphicalAssetImage.URL}" scope="page" />
+        </isif>
+        <div class="c-cat-banner__inner ${image ? 'd-flex align-items-center' : ''}" style="${assetStyles}; height:unset;">
+            <div class="c-cat-banner__${image ? 'container-fluid' : 'container'}">
+                <div class="row c-cat-banner__row">
+                    <div class="text-wrapper">
+                        <h1 class="c-cat-banner__heading" <isif condition="${!empty(contentAsset.custom.graphicalAssetHeadingColor)}">
+                        style="color: ${contentAsset.custom.graphicalAssetHeadingColor}"</isif>><isprint value="${contentAsset.custom.graphicalAssetHeading}" encoding="off"/></h1>
+                        <div class="c-cat-banner__content" <isif condition="${!empty(contentAsset.custom.graphicalAssetBodyColor)}">style="color: ${contentAsset.custom.graphicalAssetBodyColor}"</isif>>
+                            <isprint value="${contentAsset.custom.graphicalAssetBody}" encoding="off"/>
+                        </div>
+                    </div>
+                    <isif condition="${!empty(image)}">
+                        <div class="image-wrapper d-none d-md-block" style="background-image:url('${image}');">
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </isloop>
+</isif>

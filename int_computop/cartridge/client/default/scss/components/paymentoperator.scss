@@ -1,0 +1,40 @@
+@import "~kind/sfra/variables";
+
+.form-check {
+    &.required {
+        .form-check-label::after {
+            content: "*";
+            color: $danger;
+        }
+        .form-check-input {
+            &.is-invalid {
+                outline: 1px solid red;
+            }
+        }
+    }
+}
+.form-group-multiple {
+    &.required .form-control-label::before {
+        content: "*";
+        color: $danger;
+    }
+}
+
+.card {
+  .order-total-summary {
+    .easycredit-interest-rates {
+      .order-receipt-label {
+        span {
+          white-space: normal;
+        }
+      }
+    }
+  }
+}
+
+/* highlight paymento operator saved cards */
+.paymentoperator-card {
+  .card {
+    border: 1px solid red;
+  }
+}

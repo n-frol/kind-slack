@@ -1,0 +1,13 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_PAYPALEXPRESS.isml --->
+<iscomment>
+    Template for rendering PaymentOperator PayPal Express payment information on checkout overview.
+</iscomment>
+
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+
+<div>
+    <img src="${URLUtils.staticURL('/images/PP_logo_h_150x38.png')}"
+        style="width: 147px"
+        alt="${Resource.msg('paymentmethod.paypal.alttext', 'paymentoperator', null)}"
+    />
+</div>

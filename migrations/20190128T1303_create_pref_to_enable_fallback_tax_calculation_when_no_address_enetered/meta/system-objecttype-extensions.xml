@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="vertexNoAddressFallbackCalculate">
+                <display-name xml:lang="x-default">Enable fallback SFCC tax calculation before an address is entered.</display-name>
+                <description xml:lang="x-default">This pref controls what happens instead of the API lookup call if no address has been entered. If set to true, then the default SFCC tables will be used. If false, the taxes will be set to 0.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+           <attribute-group group-id="Vertex">
+                <display-name xml:lang="x-default">Vertex General Configuration</display-name>
+                <attribute attribute-id="vertexIsEnabled"/>
+                <attribute attribute-id="vertexCompanyCode"/>
+                <attribute attribute-id="vertexCustomerClassCodeDefault"/>
+                <attribute attribute-id="vertexCustomerClassCodeDefaultID"/>
+                <attribute attribute-id="vertexDistributionDefaultID"/>
+                <attribute attribute-id="vertexCustomerClasses"/>
+                <attribute attribute-id="vertexNoAddressFallbackCalculate"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

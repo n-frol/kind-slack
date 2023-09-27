@@ -1,0 +1,16 @@
+<isscript>
+    // Account for the possibility of response being undeclared
+    var responses = typeof responses === 'undefined' ? '' : responses
+</isscript>
+
+<isif condition="${!empty(responses)}">
+    <div class="add-to-cart-messages  c-alert__alerts-container">
+        <isloop items="${responses}" var="response">
+            <isset name="messageType" value="${response.error ? 'alert-danger c-alert--danger' : 'alert-success c-alert--success'}" scope="page" />
+
+            <div class="alert c-alert ${messageType} add-to-basket-alert text-center" role="alert">
+                ${response.message}
+            </div>
+        </isloop>
+    </div>
+</isif>

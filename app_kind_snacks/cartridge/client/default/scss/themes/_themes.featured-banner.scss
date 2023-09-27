@@ -1,0 +1,44 @@
+/* ============================================================================
+   Featured Banner
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Featured Banner component
+ */
+
+ $ns: th-kind-featured-banner;
+ $component: c-featured-banner;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Featured Banner Component
+     &.#{$component} {
+
+         .#{$component} {
+
+            &__eyebrow {
+                font-family: $font-family-primary;
+            }
+             // Featured Banner Heading
+             &__heading {
+                 font-family: $font-family-primary;
+             }
+
+             // Featured Banner Heading
+             &__body {
+                 font-family: $font-family-secondary;
+             }
+
+             // Featured Banner Links
+             &__links {
+                 font-family: $font-family-primary;
+                 font-size: 12px;
+                 letter-spacing: 1.5px;
+             }
+
+         }
+
+     }
+
+ }

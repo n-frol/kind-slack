@@ -1,0 +1,83 @@
+/* ============================================================================
+Variation Attribute
+============================================================================ */
+
+/**
+ * Establish styles for the PDP variation attributes.
+ */
+
+ $ns: c-product-variation-attribute;
+
+ .#{$ns} {
+     display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+     margin: $setting-gutter 0;
+     position: relative;
+
+     @include media-breakpoint-up(md) {
+         flex-wrap: nowrap;
+
+         &.is-active {
+             align-items: flex-start;
+         }
+     }
+
+     &__inner {
+         width: 100%;
+
+         @include media-breakpoint-up(md) {
+             width: auto;
+         }
+     }
+     &__select {
+         border: none;
+         border: 1px solid $primary;
+         color: $primary;
+         font-family: 'HelveticaNeue', Helvetica, sans-serif;
+         font-size: 16px;
+         //height: 46px !important; // important because bootstrap applies an overly strong scope
+         min-height: 0;
+         padding-left: 5px;
+         padding-right: 22px;
+         width: 100%;
+
+         @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+            background-position: right 11px;
+         }
+         @include media-breakpoint-up(md) {
+             margin-right: $setting-gutter;
+             width: 175px;
+         }
+         @include media-breakpoint-up(lg) {
+             width: 196px;
+         }
+
+         // Combat unneeded zooming on iOS
+         &:hover,
+         &:active,
+         &:focus {
+             font-size: 16px;
+         }
+     }
+     &__size-chart {
+         background-color: $white;
+         font-size: 12px;
+         line-height: 1.6;
+         max-width: 100%;
+         padding-top: 10px;
+
+
+         @include media-breakpoint-up(md) {
+             line-height: 28px;
+             padding-top: 6px;
+             position: absolute;
+                 top: 0;
+                 left: 195px;
+                 z-index: 1;
+         }
+         @include media-breakpoint-up(lg) {
+             left: 216px;
+         }
+     }
+ }

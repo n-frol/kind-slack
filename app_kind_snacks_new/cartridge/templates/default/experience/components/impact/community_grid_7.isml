@@ -1,0 +1,72 @@
+<div class="comm_grid_7">
+    <div class="griditem" style="background: #EDA900">
+        <img src="${URLUtils.staticURL('/images/impact/img-3604.png')}" alt="Impact" class="comm_grid_6_img" />
+        <div class="head">
+            $200,000
+            <div class="copy">
+                donated to World Central Kitchen to help provide nutritious food to Ukraine
+            </div>
+        </div>
+    </div>
+    <div class="griditem" style="background: #61B3E4">
+        <img src="${URLUtils.staticURL('/images/impact/img_3604.png')}" alt="Impact" class="comm_grid_6_img" />
+        <div class="head">
+            $13,600
+            <div class="copy">
+                raised for charities supporting Ukraine through KIND’s 2:1 matching program
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .comm_grid_7 {
+            grid-template-columns: 1fr !important;
+            width: 100% !important;
+            top: -50px !important;
+        }
+    }
+    .comm_grid_7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        grid-gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+        grid-auto-rows: 1fr;
+        position: relative;
+        top: -100px;
+        z-index: 50;
+    }
+    .comm_grid_7 .griditem {
+        background: #F3F3F3;
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .comm_grid_7 img {
+        display: inline-block;
+        float: left;
+        object-fit: contain;
+    }
+    .comm_grid_7 .head, .comm_grid_7 .copy {
+        text-align: left;
+    }
+    .comm_grid_7 .head {
+        font-size: 44px;
+        line-height: 40px;
+        font-family: main;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .comm_grid_7 .copy {
+        font-size: 18px;
+        font-family: medium;
+        line-height: 24px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,.3);
+    }
+</style>

@@ -1,0 +1,265 @@
+<isscript>
+    function randomString(length) {
+        var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+
+        if (! length) {
+            length = Math.floor(Math.random() * chars.length);
+        }
+
+        var str = '';
+        for (var i = 0; i < length; i++) {
+            str += chars[Math.floor(Math.random() * chars.length)];
+        }
+        return str;
+    }
+    var randomid = randomString(10);
+    var colcount = pdict.columnscount;
+    var colcountmobile = (pdict.columnscountmobile) ? parseInt(pdict.columnscountmobile).toFixed(0) : 1;
+    var colcounttablet = (pdict.columnscountipad) ? parseInt(pdict.columnscountipad).toFixed(0) : 2;
+</isscript>
+
+<div class="wrapperforbg ${randomid}">
+<isif condition="${!pdict.mobile_carousel}">
+<isscript>
+    var three_column_cards = pdict.regions.slides;
+    three_column_cards.setClassName("three_column_wrapper " + randomid);
+    three_column_cards.setComponentClassName("three_column_item");
+</isscript>
+<isprint value="${three_column_cards.render()}" encoding="off"/>
+    </div>
+<iselse>
+    <div class="three_column_desktop">
+    <isscript>
+        var three_column_cards = pdict.regions.slides;
+        three_column_cards.setClassName("three_column_wrapper " + randomid);
+        three_column_cards.setComponentClassName("three_column_item");
+    </isscript>
+    <isprint value="${three_column_cards.render()}" encoding="off"/>
+    </div>
+    <div class="three_column_mobile ${randomid}" style="position:relative;">
+        <isscript>
+            var three_column_cards_mobile = pdict.regions.slides;
+            three_column_cards_mobile.setClassName("swiper-wrapper");
+            three_column_cards_mobile.setComponentClassName("swiper-slide");
+        </isscript>
+        <isprint value="${three_column_cards_mobile.render()}" encoding="off"/>
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-pagination"></div>
+
+        <!-- scrollbar -->
+        <div class="swiper-scrollbar ${randomid}"></div>
+
+        <!-- buttons -->
+        <div class="swiper-button-prev-kind">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.36612 18.8839L0.411165 10.9289C-0.0769903 10.4408 -0.0769902 9.64932 0.411165 9.16116L8.36612 1.20621C8.85427 0.718057 9.64573 0.718058 10.1339 1.20621C10.622 1.69437 10.622 2.48583 10.1339 2.97398L3.06282 10.045L10.1339 17.1161C10.622 17.6043 10.622 18.3957 10.1339 18.8839C9.64573 19.372 8.85427 19.372 8.36612 18.8839Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="swiper-button-next-kind">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.63388 1.11612L10.5888 9.07107C11.077 9.55922 11.077 10.3507 10.5888 10.8388L2.63388 18.7938C2.14573 19.2819 1.35427 19.2819 0.866117 18.7938C0.377961 18.3056 0.377961 17.5142 0.866117 17.026L7.93719 9.95495L0.866117 2.88388C0.377961 2.39573 0.377961 1.60427 0.866117 1.11612C1.35427 0.627961 2.14573 0.627961 2.63388 1.11612Z" fill="black"/>
+            </svg>
+    </div>
+</iselse>
+</isif>
+</div>
+
+<style>
+    .wrapperforbg.${randomid} {
+        background: ${pdict.bgcolor};
+    }
+    @media screen and (max-width: 768px) {
+        .swiper-button-next-kind, .swiper-button-prev-kind {
+            display: none;
+        }
+        .description_comp.stacked, .header_comp.stacked {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+            margin: auto;
+        }
+    }
+    .swiper-button-lock {
+        display: block !important;
+    }
+    .swiper-button-next-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        right: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 1;
+    }
+    .swiper-button-next-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .swiper-button-prev-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        left: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 0;
+    }
+    .swiper-button-prev-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<script>
+    var randomid = Math.floor(Math.random() * 1000000000);
+    var mh = 0;
+    var adjust = 0;
+    if (window.innerWidth < 768) {
+        adjust = 40;
+    }
+    $('.wrapperforbg.${randomid} .social_desktop_top:visible').each(function() {
+        if ($(this).height() > mh) { mh = $(this).height(); }
+    });
+    if (mh > 0) {
+        $('.social_desktop_top').each(function(){
+            $(this).height(mh - (adjust));
+        });
+    }
+    sliders[randomid] = new Swiper('.three_column_mobile.${randomid}', {
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 20,
+        grabCursor: true,
+        paginationClickable: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next-kind',
+            prevEl: '.swiper-button-prev-kind',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar.${randomid}',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "1.4",
+    });
+</script>
+
+<style>
+    .three_column_mobile {
+        display: none;
+    }
+    .three_column_desktop {
+        display: block;
+    }
+    @media screen and (max-width: 768px) {
+        .three_column_mobile {
+            display: block !important;
+            overflow-x: hidden;
+            width: calc(100% - 40px);
+            margin-left: 20px;
+        }
+        .three_column_desktop {
+            display: none !important;
+        }
+        .three_column_description {
+            padding-bottom: 40px;
+        }
+    }
+    .three_column_mobile .swiper-slide {
+        text-align: center;
+    }
+    .goleft {
+        float: left;
+        margin-left: 60px;
+        max-width: 40%;
+    }
+    .goright {
+        float: right;
+        margin-right: 60px;
+    }
+    @media screen and (max-width: 440px) {
+        .goleft {
+            float: none;
+            margin-left: 0;
+            width: calc(100% - 40px);
+            max-width: 100% !important;
+            text-align: left !important;
+            margin-bottom: 24px !important;
+            margin-left: 20px;
+        }
+        .goright {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+            max-width: 100% !important;
+            float: none;
+            margin-right: 0;
+            text-align: left !important;
+        }
+    }
+    .three_column_description.goright {
+        max-width: 35%;
+    }
+    .three_column_headline {
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: -1px;
+        text-align: center;
+        margin-bottom: 80px;
+        font-family: main;
+    }
+    @media screen and (max-width: 440px) {
+        .three_column_headline {
+            margin-bottom: 40px;
+        }
+    }
+    .three_column_headline.stacked {
+        margin-bottom: 20px;
+    }
+    .three_column_description.stacked {
+        max-width: 500px;
+        margin-bottom: 70px;
+    }
+    .three_column_wrapper.${randomid} {
+        display: grid;
+        grid-template-columns: repeat(${colcount}, 1fr);
+        width: calc(100% - 120px);
+        margin: 0 auto;
+        text-align: center;
+        grid-column-gap: ${pdict.gridgap};
+        max-width: ${pdict.maxwidth};
+    }
+    @media screen and (max-width: 440px) {
+        .three_column_wrapper.${randomid} {
+            grid-template-columns: repeat(${pdict.columnscountmobile}, 1fr) !important;
+            width: calc(100% - 40px);
+            margin-left: 20px;
+        }
+        .three_column_image.flyout {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+        .three_column_wrapper.${randomid} {
+            grid-template-columns: repeat(${pdict.columnscountipad}, 1fr) !important;
+        }
+    }
+</style>

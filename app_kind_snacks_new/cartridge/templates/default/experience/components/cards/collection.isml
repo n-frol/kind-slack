@@ -1,0 +1,250 @@
+<div stlye="clear:both;"></div>
+<div class="card_wrapper" style="color:white;">
+    <div class="card_content upperleft ${pdict.themeul}" style="background: #0078AB">
+        <img class="card_img ${pdict.themeul}" src="${pdict.imageul.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themeul}">
+            <h2>
+                <isprint value="${pdict.headerul}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionul}">
+                <div class="card_description">
+                    <isprint value="${pdict.descriptionul}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctaul}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctaul}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+    <div class="card_content upperright">
+        <img class="card_img ${pdict.themeur}" src="${pdict.imageur.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themeur}">
+            <h2 style="padding: 10px;">
+                <isprint value="${pdict.headerur}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionur}">
+                <div class="card_description" style="padding:10px;">
+                    <isprint value="${pdict.descriptionur}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctaur}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctaur}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+    <div class="card_content bottomleft">
+        <img class="card_img" src="${pdict.imagebl.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themebl}">
+            <h2>
+                <isprint value="${pdict.headerbl}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionbl}">
+                <div class="card_description">
+                    <isprint value="${pdict.descriptionbl}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctabl}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctabl}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+    <div class="card_content bottomright" style="background: #93282C;">
+        <img class="card_img" src="${pdict.imagebr.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themebr}">
+            <h2>
+                <isprint value="${pdict.headerbr}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionbr}">
+                <div class="card_description">
+                    <isprint value="${pdict.descriptionbr}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctabr}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctabr}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+</div>
+
+<!-- Slider main container -->
+<div class="swiper cards" style="padding-left:15px;">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="card_content swiper-slide">
+            <img class="card_img" src="${pdict.imageul.src.desktop}" alt="${pdict.product.name}" />
+            <div>
+                <h2>
+                    <isprint value="${pdict.headerul}" encoding="off"/>
+                </h2>
+                <isif condition="${pdict.descriptionul}">
+                    <div class="card_description">
+                        <isprint value="${pdict.descriptionul}" encoding="off"/>
+                    </div>
+                </isif>
+            </div>
+        </div>
+        <div class="card_content swiper-slide">
+            <img class="card_img" src="${pdict.imageur.src.desktop}" alt="${pdict.product.name}" />
+            <div>
+                <h2>
+                    <isprint value="${pdict.headerur}" encoding="off"/>
+                </h2>
+                <isif condition="${pdict.descriptionur}">
+                    <div class="card_description">
+                        <isprint value="${pdict.descriptionur}" encoding="off"/>
+                    </div>
+                </isif>
+            </div>
+        </div>
+        <div class="card_content swiper-slide">
+            <img class="card_img" src="${pdict.imagebl.src.desktop}" alt="${pdict.product.name}" />
+            <div>
+                <h2>
+                    <isprint value="${pdict.headerbl}" encoding="off"/>
+                </h2>
+                <isif condition="${pdict.descriptionbl}">
+                    <div class="card_description">
+                        <isprint value="${pdict.descriptionbl}" encoding="off"/>
+                    </div>
+                </isif>
+            </div>
+        </div>
+        <div class="card_content swiper-slide">
+            <img class="card_img" src="${pdict.imagebr.src.desktop}" alt="${pdict.product.name}" />
+            <div>
+                <h2>
+                   <isprint value="${pdict.headerbr}" encoding="off"/>
+                </h2>
+                <isif condition="${pdict.descriptionbr}">
+                    <div class="card_description">
+                        <isprint value="${pdict.descriptionbr}" encoding="off"/>
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<style>
+    .card_text_Full{
+        position: absolute;
+        bottom: 10%;
+        left: 5%;
+    }
+    .card_text_BGImage {
+        position: relative;
+        top: -30px;
+    }
+    .upperleft {
+        position: relative;
+        top: 170px;
+        left: 5%;
+    }
+    .upperright {
+        position: relative;
+        top: 30px;
+        right: -120px;
+        padding: 0px !important;
+    }
+    .bottomleft {
+        position: relative;
+        top: -260px;
+        left: 5%;
+        padding: 0px !important;
+    }
+    .bottomright {
+        position: relative;
+        top: 60px;
+        right: -120px;
+    }
+
+    @media screen and (max-width: 440px) {
+        .card_wrapper {
+            display: none !important;
+        }
+        .swiper.cards {
+            display: block !important;
+        }
+        .card_content {
+            height: unset;
+        }
+    }
+    .swiper.cards {
+        display: none;
+    }
+    .card_wrapper {
+        position: relative;
+        margin:auto;
+        display: block;
+    }
+    .card_wrapper h2 {
+        width: 70%;
+        font-size: 36px;
+        padding-left:30px;
+    }
+    .card_content {
+        width: 40%;
+        background: #abc;
+        border-radius: 20px;
+        padding: 15px;
+        display: inline-block;
+    }
+    .card_img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .card_description {
+        width: 80%;
+        font-size: 18px;
+        padding: 0px 30px 50px;
+    }
+</style>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: false,
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+            spaceBetween: 20,
+            breakpoints: {
+                1920: {
+                    slidesPerView: 3
+                },
+                992: {
+                    slidesPerView: 3
+                },
+                320: {
+                    slidesPerView: 1.3
+                }
+            },
+        });
+    </script>

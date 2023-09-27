@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="mbyob">
+        <variations>
+            <attributes>
+                <shared-variation-attribute attribute-id="size" variation-attribute-id="size"/>
+            </attributes>
+            <variants>
+                <variant product-id="vbyob20" default="true"/>
+                <variant product-id="vbyob40"/>
+            </variants>
+        </variations>
+    </product>
+
+</catalog>

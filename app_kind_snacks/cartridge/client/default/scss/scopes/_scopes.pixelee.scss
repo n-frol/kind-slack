@@ -1,0 +1,18 @@
+/* ============================================================================
+Slick Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created in BM or by Pixelee widgets
+ */
+
+$ns: s-pixelee;
+
+.#{$ns} {
+    margin-top: 31px;
+
+    img {
+        margin-left: 6px;
+        margin-right: 6px;
+    }
+}

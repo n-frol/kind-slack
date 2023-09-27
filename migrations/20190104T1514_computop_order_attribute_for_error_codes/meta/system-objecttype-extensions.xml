@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorResponseCode">
+                <display-name xml:lang="x-default">Payment Operator Response Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="PaymentOperatorPayment">
+                <display-name xml:lang="x-default">PaymentOperator Payment</display-name>
+                <attribute attribute-id="paymentOperatorPaymentData"/>
+                <attribute attribute-id="paymentOperatorPayUErrorText"/>
+                <attribute attribute-id="paymentOperatorPayUCodeExt"/>
+                <attribute attribute-id="paymentOperatorPayID"/>
+                <attribute attribute-id="paymentOperatorPaymentXID"/>
+                <attribute attribute-id="paymentOperatorPPRefNr"/>
+                <attribute attribute-id="paymentOperatorPPTransactionID"/>
+                <attribute attribute-id="paymentOperatorPPPayerStatus"/>
+                <attribute attribute-id="paymentOperatorPPBillingAgreementId"/>
+                <attribute attribute-id="paymentOperatorResponseCode"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="289-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="featuredAssets">
+                <value>featured_almonds</value>
+                <value>featured_sample</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="featuredHeading">What's in the Bar?</custom-attribute>
+            <custom-attribute attribute-id="notInProductBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie efficitur nisl, in laoreet purus auctor in. Sed quis ipsum id orci ultricies laoreet vitae nec nulla. Aenean consequat, eros sed tempor gravida, purus purus pretium mauris, in sagittis tortor arcu eget est. Duis et posuere lectus.</custom-attribute>
+            <custom-attribute attribute-id="notInProductLabel">What's not in this bar?</custom-attribute>
+        </custom-attributes>
+    </product>
+</catalog>

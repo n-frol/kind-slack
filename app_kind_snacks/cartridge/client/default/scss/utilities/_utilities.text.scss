@@ -1,0 +1,50 @@
+/* ============================================================================
+   Utilities - Text
+   ============================================================================ */
+
+/**
+ * Text style classes make it easy to edit the style
+ * of a string of text
+ */
+
+ @mixin text-color($name, $color) {
+    &-#{$name} {
+        color: $color;
+    }
+}
+
+$ns: u-text;
+
+.#{$ns} {
+    &__font-primary {
+        font-family: $font-family-primary;
+
+        &--lowercase {
+            text-transform: lowercase;
+        }
+    }
+    &__helvetica-neue {
+        font-family: "HelveticaNeue", Helvetica, sans-serif;
+    }
+    &__color {
+        @each $name, $value in $colors {
+            @include text-color($name, $value)
+        }
+
+        &-red {
+            color: red !important;
+        }
+    }
+    &__size {
+        &-12 {
+            font-size: 12px;
+        }
+    }
+    &-align-center {
+        text-align: center;
+    }
+    &-bold {
+        font-weight: 700;
+    }
+}
+

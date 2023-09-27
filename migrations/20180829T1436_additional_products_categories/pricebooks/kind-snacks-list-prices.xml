@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31">
+    <pricebook>
+        <header pricebook-id="kind-snacks-list-prices">
+            <currency>USD</currency>
+            <display-name xml:lang="x-default">KIND Snacks List Prices</display-name>
+            <online-flag>true</online-flag>
+        </header>
+
+        <price-tables>
+            <price-table product-id="1266">
+                <amount quantity="1.0">47.62</amount>
+            </price-table>
+
+            <price-table product-id="290">
+                <amount quantity="1">17.88</amount>
+            </price-table>
+
+        </price-tables>
+    </pricebook>
+</pricebooks>

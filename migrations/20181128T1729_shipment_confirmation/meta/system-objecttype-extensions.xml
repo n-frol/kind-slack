@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="confirmedShipments">
+                <display-name xml:lang="x-default">Confirmed Shipments</display-name>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="JDE">
+                <display-name xml:lang="x-default">JDE</display-name>
+                <attribute attribute-id="isExportedJDE"/>
+                <attribute attribute-id="confirmedShipments"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

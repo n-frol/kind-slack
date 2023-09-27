@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-e" context="folder" context-id="sample_folder_2" configuration-id="sample_link-grid" default="true" assigned-to-site="true">
+        <template>slots/content/linkGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="about-us_link-grid"/>
+                <content-asset content-id="hungry-yet"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

@@ -1,0 +1,54 @@
+/* ============================================================================
+   Link Grid
+   ============================================================================ */
+
+/**
+ * Provides styles for link grid components
+ */
+
+$ns: c-link-grid;
+
+.#{$ns} {
+    &__item {
+        @include make-col(12);
+
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include media-breakpoint-up(md) {
+            @include make-col(6);
+        }
+
+        // Link Grid Wrapper
+        &__content {
+            display: flex;
+                justify-content: center;
+            margin-bottom: 64px;
+            padding-top: 20px;
+            text-align: center;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+                padding-top: 0;
+            }
+
+            // Link Grid Heading
+            &__heading {
+                font-size: 24px;
+                line-height: .95em;
+            }
+
+            // Link Grid Body
+            &__body {
+                margin-top: 5px;
+            }
+
+            // Link Grid Links {
+            &__links {
+                font-size: 12px;
+                line-height: 1.8;
+                margin-top: 15px;
+        }
+        }
+    }
+}

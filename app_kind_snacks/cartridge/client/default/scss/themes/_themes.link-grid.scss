@@ -1,0 +1,67 @@
+/* ============================================================================
+   Link Grid
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the link grid component
+ */
+
+ $ns: th-kind-link-grid;
+ $component: c-link-grid;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Link Grid Component
+     &.#{$component} {
+
+         .#{$component} {
+
+             // Link Grid Heading
+             &__heading {
+                 font-family: $font-family-primary;
+             }
+
+             // Link Grid Heading
+             &__body {
+                 font-family: $font-family-secondary;
+             }
+
+             // Link Grid Links
+             &__links {
+                 font-family: $font-family-primary;
+                 font-size: 12px;
+                 letter-spacing: 1.5px;
+             }
+
+         }
+
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+
+         .#{$scope} {
+
+             // Graphical Asset Links
+             &__links {
+
+                 a {
+                    background-color: transparent;
+                    border: 2px solid $primary;
+                    color: $primary;
+                    font-family: $font-family-primary;
+
+                     &:hover {
+                         text-decoration: none;
+                     }
+
+                 }
+
+             }
+
+         }
+
+     }
+
+ }

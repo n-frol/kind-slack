@@ -1,0 +1,14 @@
+/*
+* Service class for PaypalExpress completion call
+*/
+/* Script includes */
+var AbstractComputopService = require('./AbstractComputopService');
+
+var PaypalExpressService = AbstractComputopService.extend({
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorPayPalExpressCompletionGatewayPath');
+    }
+});
+//Export the configured service singleton
+module.exports = (new PaypalExpressService()).getService();

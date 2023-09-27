@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SlotConfiguration">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="slickArrowClasses">
+                <display-name xml:lang="x-default">Custom classes for slick arrpws</display-name>
+                <description xml:lang="x-default">Currently used only on the customizable recs template</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="slickDotsClasses">
+                <display-name xml:lang="x-default">Custom classes for slick dots</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="slickWrapperClasses">
+                <display-name xml:lang="x-default">Custom classes for slick wrapper</display-name>
+                <description xml:lang="x-default">Used on customizable recommendations template</description>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="slick">
+                <display-name xml:lang="x-default">Slick Custom Fields</display-name>
+                <attribute attribute-id="slickDotsClasses"/>
+                <attribute attribute-id="slickWrapperClasses"/>
+                <attribute attribute-id="slickArrowClasses"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+        <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="enableInfiniteScroll">
+                <display-name xml:lang="x-default">Enable Infinite Scroll</display-name>
+                <description xml:lang="x-default">This Boolean toggles the option for infinite scrolling or pagination from within the search grid.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="slickRecommendationsJSON">
+                <display-name xml:lang="x-default">Slick configuration for all recommendation sliders</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Storefront Configs">
+                <display-name xml:lang="x-default">Storefront Configurations</display-name>
+                <attribute attribute-id="listPriceDefault"/>
+                <attribute attribute-id="GoogleVerificationTag"/>
+                <attribute attribute-id="buildNotificationEmailList"/>
+                <attribute attribute-id="enableStorePickUp"/>
+                <attribute attribute-id="countryCode"/>
+                <attribute attribute-id="customerServiceEmail"/>
+                <attribute attribute-id="mapAPI"/>
+                <attribute attribute-id="niceInContactUrl"/>
+                <attribute attribute-id="visibleBenefits"/>
+                <attribute attribute-id="isEinsteinEnabled"/>
+                <attribute attribute-id="contentGeneratorFolderIDtips"/>
+                <attribute attribute-id="cppakey"/>
+                <attribute attribute-id="isMultiShipActive"/>
+                <attribute attribute-id="enableInfiniteScroll"/>
+                <attribute attribute-id="slickRecommendationsJSON"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="tileHoverEnable">
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="tileHoverIndex">
+                <display-name xml:lang="x-default">Index of alt image to show on hover</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="tileIndex">
+                <display-name xml:lang="x-default">Index of initial image to show on product tile</display-name>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="storefrontAttributes">
+                <display-name xml:lang="x-default">Storefront Attributes</display-name>
+                <attribute attribute-id="isBlockGlobalSearch"/>
+                <attribute attribute-id="tileHoverIndex"/>
+                <attribute attribute-id="tileHoverEnable"/>
+                <attribute attribute-id="tileIndex"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="Content">
+            <custom-attribute-definitions>
+                <attribute-definition attribute-id="graphicalAssetWrapper">
+                    <display-name xml:lang="x-default">Wrapper</display-name>
+                    <type>enum-of-string</type>
+                    <localizable-flag>false</localizable-flag>
+                    <site-specific-flag>false</site-specific-flag>
+                    <mandatory-flag>false</mandatory-flag>
+                    <externally-managed-flag>false</externally-managed-flag>
+                    <value-definitions>
+                        <value-definition default="true">
+                            <display xml:lang="x-default">Full</display>
+                            <value>full</value>
+                        </value-definition>
+                        <value-definition>
+                            <display xml:lang="x-default">Contained</display>
+                            <value>contained</value>
+                        </value-definition>
+                        <value-definition>
+                            <display xml:lang="x-default">Flex</display>
+                            <value>flex</value>
+                        </value-definition>
+                    </value-definitions>
+                </attribute-definition>
+            </custom-attribute-definitions>
+    </type-extension>
+
+</metadata>

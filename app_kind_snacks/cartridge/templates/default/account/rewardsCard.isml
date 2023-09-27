@@ -1,0 +1,13 @@
+<div class="card c-account-dashboard__card-body">
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">rewards</div>
+    </div>
+    <div class="card-body card-info-group" style="text-align:left;">
+<div class="yotpo-widget-instance" data-yotpo-instance-id="${dw.system.Site.current.getCustomPreferenceValue('yotpo_my_activity_account_id')}"></div>    </div>
+</div>
+
+<style>
+.yotpo-logged-in-view {
+    text-align:left !important;
+}
+</style>

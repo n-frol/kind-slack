@@ -1,0 +1,57 @@
+{
+  "name": "Split Header",
+  "description": "Split Header",
+  "group": "B2B",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Left Column",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "deskwidthl",
+          "name": "Desktop Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "deskwidthr",
+          "name": "Desktop Width Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "ipadl",
+          "name": "Ipad Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "ipadr",
+          "name": "Ipad Width Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "mobible",
+          "name": "Mobile Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "mobiler",
+          "name": "Mobile Width Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "rightimage",
+          "name": "Right Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

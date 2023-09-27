@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="COPowerReviews" object-id="COPowerReviewsKINDSnacks">
+        <object-attribute attribute-id="PowerReview_Order_Action">1</object-attribute>
+        <object-attribute attribute-id="PowerReview_Order_LastRun">2019-01-31T20:42:01.000+0000</object-attribute>
+    </custom-object>
+
+</custom-objects>

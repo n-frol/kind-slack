@@ -1,0 +1,132 @@
+/* ============================================================================
+BYOB Product Tiles
+============================================================================ */
+
+/**
+ * Styles for the Search – BYOB Product Tiles
+*/
+
+$ns: c-byob-product-tile;
+
+.#{$ns} {
+    align-content: initial;
+    align-items: flex-start;
+
+    &--out-of-stock {
+        pointer-events: none;
+
+        .#{$ns} {
+            &__tile-body,
+            &__footer {
+                opacity: 0.4;
+            }
+        }
+    }
+    &--active,
+    &:hover {
+        border-color: $primary;
+    }
+
+    &:hover {
+        .#{$ns} {
+            &__image-container {
+                &__quickview {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    // Create stronger selector
+    & &__tile-body {
+        padding-left: 27px;
+        padding-right: 27px;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+    }
+    &__tile-body {
+        &__footer {
+            margin-bottom: 5px;
+            margin-left: -2px;
+            margin-right: -2px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 10px;
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+    }
+    &__image-container {
+        min-height: 125px;
+        overflow: visible !important; // Important to override existing important style.  Visible is safe because the image is constrained to 100% width, and the height of the container scales up with the height of the image
+
+        &__quickview {
+            background-color: transparent;
+            cursor: pointer;
+            height: auto;
+            line-height: 1;
+            min-height: 0;
+            min-width: 0;
+            padding: 0;
+            position: absolute;
+            left: -6px;
+            top: 12px;
+            text-transform: none;
+            width: auto;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: transparent !important; // Important because of the strength of the selector it's overriding
+            }
+
+            &__icon {
+                height: 32px;
+                width: 32px;
+            }
+        }
+    }
+    &__pdp-link {
+        padding-bottom: 5px;
+    }
+    &__footer {
+        align-self: flex-end;
+        padding-left: 11px;
+        padding-right: 11px;
+        width: 100%;
+
+        &__callout {
+            min-height: 24px;
+            padding-top: 9px;
+        }
+    }
+    &__qty-wrap {
+        margin-bottom: 4px;
+    }
+    &__qty {
+        justify-content: center;
+
+        &__input {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+    &__out-of-stock {
+        margin-right: 0;
+        min-height: 28px;
+    }
+
+    &__plp {
+        border: 1px solid black;
+        background: white;
+        height: 220px;
+    }
+}

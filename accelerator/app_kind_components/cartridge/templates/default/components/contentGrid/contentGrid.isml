@@ -1,0 +1,62 @@
+<isif condition="${loopstatus.first}">
+    <div class="c-content-grid ${parentID} th-kind-content-grid s-graphical-asset">
+        <div class="container st-container st-container--padded">
+            <isinclude template="components/contentGrid/contentGrid_header" />
+            <div class="row">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/contentGrid/contentGrid_UI" />
+    <isif condition="${!empty(graphicalAsset.assetURL)}">
+        <a href="${graphicalAsset.assetURL}" class="c-content-grid__item c-content-grid__item--link ${assetID} th-kind-content-grid__item th-kind-content-grid__item--link"><!-- dwMarker="content" dwContentID="${contentAsset.UUID}" -->
+    <iselse>
+        <div class="c-content-grid__item ${assetID} th-kind-content-grid__item"><!-- dwMarker="content" dwContentID="${contentAsset.UUID}" -->
+    </isif>
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-content-grid__item__content
+                <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-content-grid__item__content--${graphicalAsset.contentXPosition.value}</isif>">
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 225)}" scope="page" />
+                    <div class="c-content-grid__item__content__image-wrapper">
+                        <img class="c-content-grid__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+                <div class="c-content-grid__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-content-grid__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-content-grid__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-content-grid__item__content__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div><!-- END_dwmarker -->
+        </isif>
+    <isif condition="${!empty(graphicalAsset.assetURL)}">
+        </a>
+    <iselse>
+        </div>
+    </isif>
+</isif>
+<isif condition="${loopstatus.last}">
+        </div>
+    </div>
+</div>
+</isif>

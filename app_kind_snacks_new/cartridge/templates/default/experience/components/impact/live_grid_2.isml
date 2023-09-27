@@ -1,0 +1,126 @@
+<div class="live_grid_2">
+    <div class="bodies_grid_item" style="background: #D8262E">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Group 3208.png')}" alt="Impact" />
+        <div class="bodies_grid_head white" style="color: white">
+            Over 55,000 hours
+        </div>
+        <div class="bodies_grid_copy" style="color: white">
+            spent volunteering since KIND’s founding
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #61B3E4">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/image 124.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            360 Frozen bars
+        </div>
+        <div class="bodies_grid_copy">
+            consumed every month at HQ
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #EDA900;">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Group 3209.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            19 KIND minis
+        </div>
+        <div class="bodies_grid_copy">
+            born in 2022
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #B9BE10;">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Group 3207.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            500+ waffles
+        </div>
+        <div class="bodies_grid_copy">
+            made on Waffle Wednesdays at HQ
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #D8262E;">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Layer512.png')}" alt="Impact" />
+        <div class="bodies_grid_head" style="color:white;">
+            775 KINDOS
+        </div>
+        <div class="bodies_grid_copy" style="color:white">
+            (like kudos, but the KIND way) exchanged between team members
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #EDA900;">
+        <img class="frontimg" src="${URLUtils.staticURL('/images/impact/grid4/image 126.png')}" alt="Impact" />
+        <img class="footpic" src="${URLUtils.staticURL('/images/impact/grid4/feet.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            53 million steps
+        </div>
+        <div class="bodies_grid_copy">
+            during our Kindness Around the Globe challenge
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .bodies_grid_item {
+        position: relative;
+    }
+    .frontimg {
+        position: relative;
+        z-index: 1;
+    }
+    .footpic {
+        position: absolute;
+        left: 0;
+        height: unset;
+        z-index: 0;
+        top: 90px;
+    }
+    @media screen and (max-width: 440px) {
+        .live_grid_2 {
+            grid-template-columns: 1fr !important;
+            margin-top: 0px !important;
+            grid-gap: 20px !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            margin-bottom: 80px;
+        }
+        .live_grid_4 .head {
+            max-width: 100% !important;
+        }
+    }
+    .live_grid_2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 20px;
+        margin-left: 60px;
+        width: calc(100% - 120px);
+        margin-bottom: 40px;
+    }
+    .bodies_grid_item {
+        text-align: center;
+        padding: 30px 0px;
+        border-radius: 20px;
+    }
+    .bodies_grid_head.white {
+        border-bottom: 2px solid white;
+    }
+    .bodies_grid_head {
+        font-size: 56px;
+        line-height: 60px;
+        font-family: main;
+        text-align: left;
+        border-bottom: 2px solid;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .swiper-slide img {
+        border-radius: 20px;
+    }
+    .bodies_grid_copy {
+        font-size: 22px;
+        line-height: 24px;
+        text-align: left;
+        padding: 0px 30px;
+        font-family: main;
+    }
+</style>

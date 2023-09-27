@@ -1,0 +1,4 @@
+{
+    "hooks": "./cartridge/scripts/computop/hooks.json",
+	"coreCartridge": "app_storefront_base"
+}

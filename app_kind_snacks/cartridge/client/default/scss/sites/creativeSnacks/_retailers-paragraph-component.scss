@@ -1,0 +1,157 @@
+/* ============================================================================
+Creative Snacks - Retailers component
+============================================================================ */
+
+/**
+ * Styles for Creative Snacks site
+*/
+$ns: creative-snacks;
+
+.#{$ns} {
+    .retailers_paragraph_wrapper {
+        background-position: center;
+        background-repeat: repeat;
+        width: 100%;
+        padding: 75px 0 25px 0;
+    }
+    
+    .retailers_paragraph_wrapper .retailers_paragraph_container {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 0;
+    }
+    .retailers_paragraph_wrapper .retailers_paragraph_container svg {
+        width: 75px;
+    }
+    
+    .side_text_wrapper {
+        width: 45%;
+        text-align: center;
+    }
+    .retailers_cart_icon_wrapper {
+        width: 10%;
+        text-align: center;
+    }
+    
+    .retailers_paragraph_wrapper .baseline_text {
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+    
+    }
+    .retailers_paragraph_wrapper .baseline_text h2 {
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1.224489796;
+        font-weight: 400;
+        font-size: 1.55rem;
+        color: #666;
+    }
+    
+    .retailers_cart_icon {
+        border-radius: 50%;
+        background: rgba(187, 189, 192, 0.3);
+        padding: 30px 8px;
+        margin: 0 15px;
+    }
+    
+    .retailers_image_grid {
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: row-reverse;
+        max-width: 60%;
+        width: 60%;
+        padding: 30px;
+    }
+    
+    .retailers_image_grid img {
+        margin: 15px;
+    }
+    .icon-button-scroll-left, .icon-button-scroll-right {
+        width: 30px;
+        fill: #a11f2e;
+        margin: 0 5px 5px;
+    }
+    
+    h2.left-side-text {
+        font-size: 3.35rem;
+        color: #c72a2b;
+    }
+    
+    h2.right-side-text {
+        font-size: 1.4375rem;
+        font-weight: normal;
+        word-spacing: 0.30rem;
+        color: #58585b;
+    }
+    .retailers-image-grid {
+        text-align: center;
+    }
+    
+    @media (min-width: 1025px) {
+        .retailers_image_grid {
+            max-width: 80%;
+            width: 80%;
+        }
+    }
+    
+    @media (max-width: 1024px) and (min-width: 768px) {
+        .left-side-text-wrapper {
+            padding-top: 5px;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        .retailers_image_grid {
+            max-width: 100%;
+            width: 100%;
+        }
+    
+        .retailers_paragraph_wrapper {
+            padding: 0;
+        }
+    
+        .retailers_paragraph_wrapper .retailers_paragraph_container {
+            background: none;
+            flex-direction: column;
+        }
+    
+        .side_text_wrapper {
+            width: 100%;
+            margin: 25px 0;
+        }
+    
+        .retailers_cart_icon_wrapper {
+            width: 100%;
+            margin: 10px;
+        }
+    
+        .retailers_paragraph_wrapper .baseline_text {
+            margin-top: 0;
+            flex-direction: column;
+            align-items: center;
+        }
+        .icon-button-scroll-left, .icon-button-scroll-right {
+            width: 45px;
+        }
+    
+        .retailers_image_grid {
+            padding: 30px 10px;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .retailers_image_grid {
+            padding: 30px 0;
+        }
+        .retailers-image-grid img {
+            margin: 10px 5px;
+        }
+    }
+}

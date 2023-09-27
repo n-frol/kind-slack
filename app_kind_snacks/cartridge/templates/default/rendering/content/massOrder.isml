@@ -1,0 +1,26 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<iscache type="relative" minute="0" hour="0">
+
+<isscript>
+var prods = [];
+prods[] = dw.catalog.ProductMgr.getProduct("M17751");
+prods[] = dw.catalog.ProductMgr.getProduct("M17751");
+</isscript>
+
+<isdecorate template="common/layout/page">
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+            <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        <isloop items="${dw.catalog.ProductMgr.getProduct("M17751")}" var="item">
+            <tr>
+<td>${item.getName()}</td>
+            </tr>
+        </isloop>
+        </tbody>
+    </table>
+</isdecorate>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-og-tooltip">
+        <display-name xml:lang="x-default">BYOB OG Tooltip</display-name>
+        <description xml:lang="x-default">This content asset is a subscription tooltip for 'plus more perks'.</description>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h4&gt;&lt;strong&gt;subscription perks include:&lt;/strong&gt;&lt;/h4&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;ndash;&amp;nbsp;10% off kindsnacks.com pricing&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;ndash;&amp;nbsp;free shipping on subscription orders $20+&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;ndash;&amp;nbsp;free bar in recurring subscription orders&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;ndash;&amp;nbsp;first to know about new products&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;ndash;&amp;nbsp;convenient delivery of your favorite snacks&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&amp;nbsp;&lt;/p&gt;&#13;
+                &#13;
+                &lt;p&gt;&lt;a href="/snack-club.html"&gt;learn more about subscriptions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

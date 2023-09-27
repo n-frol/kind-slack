@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-congrats-filled-box">
+        <display-name xml:lang="x-default">Filled Box</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/simpleTile</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">make room in your box to continue browsing bars</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">congrats on filling your box</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

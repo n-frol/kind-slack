@@ -1,0 +1,83 @@
+/* ============================================================================
+Cart product Info
+============================================================================ */
+
+/**
+ * Styles for the Cart Product Info
+*/
+
+// !imporatant used to overwrite styles of classes that have chain of parent classes
+
+$ns: c-cart-product-info;
+
+.#{$ns} {
+    border: none;
+    font-family: $font-family-primary;
+    margin-bottom: 21px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 12px;
+    padding: 0 !important;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 14px !important;
+        margin-top: 14px;
+        padding-top: 24px !important;
+    }
+
+    &__wrap {
+        @include media-breakpoint-up(md) {
+            flex-basis: 67.5%;
+            max-width: 67.5%;
+        }
+    }
+
+    & + & {
+        border-top: 2px solid $black;
+        padding-top: 28px !important;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 32px !important;
+        }
+    }
+    & &__item-image {
+        height: auto;
+
+        @include media-breakpoint-up(md) {
+            min-height: 120px;
+            width: 130px;
+        }
+
+        &--bundled {
+            @include media-breakpoint-up(md) {
+                min-height: 100px;
+            }
+        }
+    }
+    &__item-image {
+        display: flex;
+            align-items: center;
+    }
+    &__item-attributes {
+        align-self: flex-start;
+        display: flex !important;
+            align-items: center;
+            flex-wrap: wrap;
+        margin-left: -5px;
+        margin-right: -5px;
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(md) {
+            align-self: center;
+        }
+
+        &__attribute {
+            letter-spacing: -0.4px;
+            line-height: 22px;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

@@ -1,0 +1,140 @@
+/* ============================================================================
+Primary Nav Navigation Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements provided in BM within the primary nav
+ */
+
+ $ns: s-primary-nav;
+
+ .#{$ns} {
+    &--dropdown {
+        .content-asset {
+            display: contents;
+        }
+
+        .collapsible-md {
+            > .title {
+                @include media-breakpoint-down(md) {
+                    position: relative;
+                }
+
+                &::after {
+                    @include media-breakpoint-down(md) {
+                        @include background-svg($svg-open-circle);
+
+                        background-size: cover;
+                        content: '';
+                        height: 30px;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 30px;
+                    }
+                }
+
+                a {
+                    &:hover {
+                        @include media-breakpoint-up(lg) {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+            &.is-active {
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 14px;
+                }
+
+                > .title {
+                    &::after {
+                        @include media-breakpoint-down(md) {
+                            @include background-svg($svg-close-circle);
+
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        h3,
+        h4 {
+
+            @include media-breakpoint-up(md) {
+                min-height: 0;
+            }
+
+            &,
+            &:is(.collapsible-md > *) {
+                font-size: 22px;
+                line-height: 30px !important; // Override overly specific selector
+                margin-bottom: 14px;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 18px;
+                    line-height: 1.33 !important;
+                    margin-bottom: 12px;
+                }
+            }
+
+            &:is(.is-active > *) {
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 12px;
+                }
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        ul {
+            list-style: none;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 14px;
+            }
+        }
+
+        li {
+            margin-bottom: 6px;
+
+            a {
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 28px;
+                text-decoration: none;
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        a {
+            &:hover {
+                color: $red2;
+
+                &:not(:is(.title *)) { // Style dropdown control links separately
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &--flavors {
+        li {
+            margin-bottom: 20px;
+
+            img {
+                border-radius: 6px;
+                margin-right: 12px;
+                max-height: 38px;
+                max-width: 38px;
+            }
+        }
+    }
+}

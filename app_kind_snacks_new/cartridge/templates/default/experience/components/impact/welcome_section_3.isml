@@ -1,0 +1,203 @@
+<div class="welcome_section_3">
+    <div class="welcome_headline_3">
+        our mission
+    </div>
+    <div class="welcome_copy_3">creating a kinder and healthier world - <br/>
+        one act, one snack at a time</div>
+    <div class="welcome_3_grid">
+        <div class="griditem">
+            <img src="${URLUtils.staticURL('/images/impact/ilu.png')}" alt="Impact Welcome Section 3 Image 1" />
+            <div class="medium">kinder to our</div>
+            <div class="bigger">bodies</div>
+            <a data-s="bodies_section" href="javascript:void(0);" class="welcomelink primary dark left">READ MORE</a>
+        </div>
+        <div class="griditem" style="position: relative">
+            <img class="moveupmore" style="max-height: unset;" src="${URLUtils.staticURL('/images/impact/image_82.png')}" alt="Impact Welcome Section 3 Image 1" />
+            <div class="textmoveup">
+            <div class="medium">kinder to our</div>
+            <div class="bigger">communities</div>
+            <a data-s="community_section" href="javascript:void(0);" class="welcomelink primary dark left">READ MORE</a>
+            </div>
+        </div>
+        <div class="griditem">
+            <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3186.png')}" alt="Impact Welcome Section 3 Image 1" />
+            <div class="medium">kinder to our</div>
+            <div class="bigger">planet</div>
+            <a data-s="planet_section" href="javascript:void(0);" class="welcomelink primary dark left">READ MORE</a>
+        </div>
+    </div>
+    <div class="welcome_3_grid_2">
+        <div class="copy">
+            <div class="para">LIVE KIND<sup>&reg;</sup></div>
+            <a class="welcomelink primary dark" data-s="live_section" href="javascript:void(0)" class="primary dark welcomelink">READ MORE</a>
+        </div>
+        <div class="containeddiv">
+            <img class="grid_2_img desktop" src="${URLUtils.staticURL('/images/impact/grid3/ILU2.png')}" alt="Impact Welcome Section 3 Image 1" />
+            <img class="grid_2_img mobile" src="${URLUtils.staticURL('/images/impact/grid5/ILUmobile.png')}" alt="Impact Welcome Section 3 Image 1" />
+        </div>
+    </div>
+</div>
+<style>
+    .textmoveup {
+        position: relative;
+        top: 340px;
+    }
+    .welcome_3_grid_2 {
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        padding-bottom: 60px;
+        border-radius: 20px;
+    }
+    .welcomelink {
+        padding: 19px 70px !important;
+    }
+    .containeddiv {
+        border-radius: 20px;
+        max-height: 400px;
+        height: 400px;
+        overflow: hidden;
+        background: white;
+    }
+    .copy .para {
+        font-size: 56px;
+        line-height: 44px;
+        font-family: main;
+    }
+    .welcome_3_grid_2 .copy {
+        position: absolute;
+        bottom: 120px;
+        left: 120px;
+        text-align: left;
+    }
+    .welcome_3_grid img {
+        max-height: 340px;
+    }
+    .moveupmore {
+        position: absolute !important;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: -110px !important;
+    }
+    .primary.left {
+        float: left;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    .grid_2_img {
+        float: right;
+        position: relative;
+        top: -50px;
+        right: -110px;
+    }
+    .welcome_3_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 40px;
+        width: calc(100% - 120px);
+        margin: auto;
+        padding-bottom: 40px;
+    }
+    @media screen and (max-width: 440px) {
+        .textmoveup {
+            top: 0px !important;
+        }
+        .moveupmore {
+            top: -15px !important;
+            position: relative !important;
+        }
+        .welcome_3_grid_2 a {
+            width: unset !important;
+            padding: 20px 80px;
+        }
+        .welcome_3_grid {
+            grid-template-columns: 1fr;
+            width: calc(100% - 40px);
+            grid-gap: 20px;
+        }
+        .grid_2_img {
+            right: 0px !important;
+            margin-bottom: 20px;
+            float: none;
+            border-radius: 50%;
+            height: 400px;
+            width: 100%;
+            margin-left: 0px;
+            object-fit: cover;
+            background: orange;
+            order: 1;
+        }
+        .welcome_3_grid .griditem .medium, .welcome_3_grid .griditem .bigger {
+            text-align: center;
+            margin-left: 0px;
+        }
+        .primary.left {
+            float: none;
+            margin-left: 0px;
+            margin-bottom: 30px;
+            width: unset !important;
+            padding: 20px 80px;
+        }
+        .welcome_3_grid_2 {
+            display: grid;
+            width: calc(100% - 40px);
+            background: white;
+            margin-left: 20px;
+        }
+        .welcome_3_grid_2 .copy {
+            position: relative;
+            bottom: unset;
+            left: unset;
+            text-align: center;
+            margin-bottom: 30px;
+            order: 2;
+        }
+    }
+    .welcome_3_grid .griditem {
+        background: white;
+        border-radius: 16px;
+    }
+    .griditem img {
+        position: relative;
+        top: -15px;
+    }
+    .griditem .medium {
+        font-size: 36px;
+        line-height: 44px;
+        font-family: main;
+        text-align: left;
+        margin-left: 30px;
+    }
+    .griditem .bigger {
+        font-size: 56px;
+        line-height: 44px;
+        font-family: main;
+        text-align: left;
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+    .welcome_section_3 {
+        background: #EDA900;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 40px;
+    }
+    .welcome_headline_3 {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 20px !important;
+        font-family: main;
+        max-width: 775px;
+        margin: auto;
+        padding-top: 100px;
+        margin-bottom: 20px;
+    }
+    .welcome_copy_3 {
+        font-size: 32px;
+        line-height: 30px;
+        font-family: main;
+        max-width: 775px;
+        margin: auto;
+        margin-bottom: 120px;
+    }
+</style>

@@ -1,0 +1,10 @@
+
+<isif condition="${lineItem.id == 'changeup-donation'}">
+        <span class="value" content="${lineItem.priceTotal.price}">
+            ${lineItem.priceTotal.price}
+        </span>    
+<iselse/>
+        <isset name="isLowPrice" value="${}" scope="page" />
+        <isinclude template="/product/components/pricing/default" />
+</isif>
+

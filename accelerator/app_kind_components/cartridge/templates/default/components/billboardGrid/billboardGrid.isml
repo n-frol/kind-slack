@@ -1,0 +1,56 @@
+<isif condition="${loopstatus.first}">
+    <div class="c-billboard-grid th-kind-billboard-grid ${parentID} s-graphical-asset">
+        <div class="container">
+            <isinclude template="components/billboardGrid/billboardGrid_header" />
+            <div class="row">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/billboardGrid/billboardGrid_UI" />
+    <div class="c-billboard-grid__item th-kind-billboard-grid__item ${assetID}">
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-billboard-grid__item__content">
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 400)}" scope="page" />
+                    <div class="c-billboard-grid__item__content__image-wrapper">
+                        <img class="c-billboard-grid__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault} 1x,
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+                <div class="c-billboard-grid__item__content__wrapper">
+                    <div class="c-billboard-grid__item__content__heading-body-wrap">
+                        <isif condition="${!empty(graphicalAsset.heading)}">
+                            <h4 class="c-billboard-grid__item__content__heading">
+                                <isprint value="${graphicalAsset.heading}" encoding="off" />
+                            </h4>
+                        </isif>
+                        <isif condition="${!empty(graphicalAsset.body)}">
+                            <div class="c-billboard-grid__item__content__body">
+                                <isprint value="${graphicalAsset.body}" encoding="off" />
+                            </div>
+                        </isif>
+                    </div>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-billboard-grid__item__content__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    </div>
+</isif>
+<isif condition="${loopstatus.last}">
+        </div>
+        <isinclude template="components/billboardGrid/billboardGrid_footer" />
+    </div>
+</div>
+</isif>

@@ -1,0 +1,7 @@
+<p class="line-item-pricing-info">
+    <span class="line-item-total-text qty-card-quantity-label">
+    ${Resource.msg('field.selectquantity','cart',null)}
+    </span><br/>
+    <span class="pricing qty-card-quantity-count c-product-card__qty-price__qty__amt"><isprint value="${lineItem.quantity}" formatter="##" /></span>
+    <input type="hidden" class="quantity-select" value="${lineItem.quantity}" />
+</p>

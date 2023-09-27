@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Redshift-CustomerFeed" priority="0">
+        <description/>
+        <parameters>
+            <parameter name="DIRECTORY">customers</parameter>
+            <parameter name="PREFIX">KINDSnacksCustomers</parameter>
+        </parameters>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="export-customers" type="custom.batch.ExportCustomers" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="directory" job-parameter-ref="DIRECTORY"/>
+                    <parameter name="prefix" job-parameter-ref="PREFIX"/>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="upload-to-sftp" type="custom.batch.UploadFilesToFTP" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="servicename">batch.ftp</parameter>
+                    <parameter name="directory" job-parameter-ref="DIRECTORY"/>
+                    <parameter name="prefix" job-parameter-ref="PREFIX"/>
+                    <parameter name="remotepath">incoming/</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-12-12Z</date>
+                <time>21:05:24.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Redshift-OrderFeed" priority="0">
+        <description/>
+        <parameters>
+            <parameter name="DIRECTORY">order</parameter>
+            <parameter name="prefix">KINDSnacksOrders</parameter>
+        </parameters>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="export-orders-job" type="custom.batch.ExportOrders" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="directory" job-parameter-ref="DIRECTORY"/>
+                    <parameter name="prefix" job-parameter-ref="prefix"/>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="upload-to-sftp" type="custom.batch.UploadFilesToFTP" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="servicename">batch.ftp</parameter>
+                    <parameter name="directory" job-parameter-ref="DIRECTORY"/>
+                    <parameter name="prefix" job-parameter-ref="prefix"/>
+                    <parameter name="remotepath">incoming</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-recurring enabled="false">
+                <recurrence>
+                    <date-from>2018-12-01Z</date-from>
+                    <start-time>11:00:00.000Z</start-time>
+                    <interval>1h</interval>
+                    <day-of-week>
+                        <weekday>Thursday</weekday>
+                        <weekday>Monday</weekday>
+                        <weekday>Sunday</weekday>
+                        <weekday>Friday</weekday>
+                        <weekday>Tuesday</weekday>
+                        <weekday>Wednesday</weekday>
+                        <weekday>Saturday</weekday>
+                    </day-of-week>
+                </recurrence>
+            </run-recurring>
+        </triggers>
+    </job>
+</jobs>

@@ -1,0 +1,75 @@
+<div class="comm_grid_5">
+    <img src="${URLUtils.staticURL('/images/impact/Rectangle 2818.png')}" alt="Impact" class="comm_grid_5_img" />
+    <div class="quote">
+    "We don't just work here to make a profit, but to make a difference in the world. Our teammates are truly kind and want to help one another. Being transparent, going out of your way to help others, understanding that it's not just what we do, but how we do it—that’s all part of the culture at KIND."
+        <div class="person">
+            Tom Trocola-Barone<br/>
+            Senior Manager, Office Operations &<br/> Experience and Culture Champion at KIND
+        </div>
+    </div>
+</div>
+
+<div class="comm_grid_5 mobile">
+    <div class="quote">
+"We don't just work here to make a profit, but to make a difference in the world. Our teammates are truly kind and want to help one another. Being transparent, going out of your way to help others, understanding that it's not just what we do, but how we do it—that’s all part of the culture at KIND."
+        <div class="person">
+            <img src="${URLUtils.staticURL('/images/impact/Rectangle 2818.png')}" alt="Impact" class="comm_grid_5_img" />
+            <div class="persont">
+            Tom Trocola-Barone<br/>
+            Senior Manager, Office Operations &<br/> Experience and Culture Champion at KIND
+        </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .comm_grid_5 {
+            display: none !important;
+        }
+        .comm_grid_5.mobile {
+            display: block !important;
+            margin: 0px !important;
+            padding: 20px 20px !important;
+        }
+        .comm_grid_5.mobile img {
+            width: 40% !important;
+            display: inline-block;
+        }
+        .persont {
+            display: inline-block;
+            width: 49%;
+        }
+        .comm_grid_5 .person {
+            align-items: flex-start;
+            display: flex;
+        }
+    }
+    .comm_grid_5 {
+        display: flex;
+        align-items: center;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        background: black;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-right: 180px;
+        padding-left: 180px;
+    }
+    .comm_grid_5 img {
+        margin-right: 30px;
+    }
+    .comm_grid_5 .quote {
+        font-size: 30px;
+        line-height: 36px;
+        font-family: main;
+        color: white;
+    }
+    .comm_grid_5 .person {
+        font-size: 22px;
+        line-height: 25px;
+        font-family: medium;
+        margin-top: 20px;
+        color: #939393;
+    }
+</style>

@@ -1,0 +1,351 @@
+<!--- TEMPLATENAME: paymentoperatorpaymentmethods.isml --->
+<style>
+    .payment-method-options .form-row       { margin-bottom: 0; width: 90%; }
+    .payment-method-options .form-row input { margin-bottom: 0; }
+</style>
+<iscomment>Displays the Payment operator payment methods and their respective input fields</iscomment>
+
+<isscript>
+var listPaygateChinaAccounts = require('/int_computop/cartridge/scripts/computop/util/Settings').getPaygateChinaActiveBankList();
+</isscript>
+
+
+<div id="PaymentMethod_PAYMENTOPERATOR_CREDIT" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_CREDIT'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_CREDIT">
+    <iscomment>display select box with stored credit cards if customer is authenticated</iscomment>
+    <isif condition="${pdict.CurrentCustomer.authenticated && !empty(pdict.ApplicableCreditCards)
+                    && dw.system.Site.getCurrent().getCustomPreferenceValue('paymentOperatorCreditCardUseOldCards')}">
+
+        <div class="form-row">
+
+            <label class="label">${Resource.msg('billing.selectcreditcard','checkout',null)}</label>
+            <div class="field-wrapper">
+                <select name="${pdict.CurrentForms.billing.paymentMethods.creditCardList.htmlName}" id="creditCardListPaymentOperator" class="input-select">
+                    <option value="newcard" selected="selected">Enter new card after order submission</option>
+                    <isloop items="${pdict.ApplicableCreditCards}" var="creditCardInstr">
+                        <isif condition="${creditCardInstr.custom.paymentOperatorCCNr}">
+                            <option value="${creditCardInstr.UUID}">xxxxxxxxxxxxx<isprint value="${creditCardInstr.custom.paymentOperatorCCNr.substring(13)}"/> - <isprint value="${creditCardInstr.custom.paymentOperatorCCBrand}"/> - ${Resource.msg('billing.creditcardlistexp','checkout',null)} ${creditCardInstr.custom.paymentOperatorCCExpiry}</option>
+                        </isif>
+                    </isloop>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row form-row-button">
+            <button id="credit-card-select-go" name="${pdict.CurrentForms.billing.creditCardSelect.htmlName}" type="submit" value="Go" class="simple-submit">${Resource.msg('global.select','locale',null)}</button>
+        </div>
+
+    </isif>
+    <isinputfield formfield="${ pdict.CurrentForms.billing.paymentMethods.paymentoperatorcreditcard.creditcarduuid }" type="hidden" label="false"/>
+</div>
+
+
+<div id="PaymentMethod_PAYMENTOPERATOR_CREDIT_DIRECT" class="payment-method <isif condition="${empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_CREDIT_DIRECT'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_CREDIT_DIRECT">
+    <iscomment>display select box with stored credit cards if customer is authenticated</iscomment>
+    <isif condition="${pdict.CurrentCustomer.authenticated && !empty(pdict.ApplicableCreditCards)}">
+        <div class="form-row">
+            <label class="label">${Resource.msg('billing.selectcreditcard','checkout',null)}</label>
+            <div class="field-wrapper">
+                <select name="${pdict.CurrentForms.billing.paymentMethods.creditCardList.htmlName}" id="cdpmCreditCardList" class="input-select">
+                    <option value="" selected="selected">${Resource.msg('billing.creditcardlistselect','checkout',null)}</option>
+                    <isloop items="${pdict.ApplicableCreditCards}" var="creditCardInstr">
+                        <option value="${creditCardInstr.UUID}">(<isprint value="${creditCardInstr.creditCardType}"/>) <isprint value="${creditCardInstr.maskedCreditCardNumber}"/> - ${Resource.msg('billing.creditcardlistexp','checkout',null)} <isprint value="${creditCardInstr.creditCardExpirationMonth}" formatter="00" />.<isprint value="${creditCardInstr.creditCardExpirationYear}" formatter="0000" /></option>
+                    </isloop>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row form-row-button">
+            <button id="credit-card-select-go" name="${pdict.CurrentForms.billing.creditCardSelect.htmlName}" type="submit" value="Go" class="simple-submit">Select</button>
+        </div>
+
+        <iscomment>
+            <isloop items="${pdict.ApplicableCreditCards}" var="creditCardInstr">
+                <a href="${URLUtils.https('COBilling-UpdateCreditCardSelection', 'creditCardUUID', creditCardInstr.UUID)}">
+                    (<isprint value="${creditCardInstr.creditCardType}"/>)
+                    <isprint value="${creditCardInstr.maskedCreditCardNumber}"/>
+                    - ${Resource.msg('billing.creditcardlistexp','checkout',null)}
+                    <isprint value="${creditCardInstr.creditCardExpirationMonth}" formatter="00" />
+                    .<isprint value="${creditCardInstr.creditCardExpirationYear}" formatter="0000" />
+                </a>
+            </isloop>
+        </iscomment>
+    </isif>
+
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.creditdirect.owner}" type="input"/>
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.creditdirect.type}" type="select"/>
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.creditdirect.number}" type="input" dynamicname="true"/>
+
+    <div class="form-row required">
+        <label>
+            <span class="required-indicator">${Resource.msg('billing.requiredindicator','checkout',null)}</span>
+            <span>${Resource.msg('billing.creditcardlistexpdate', 'checkout', null)}</span>
+        </label>
+        <isscript>
+            var packageJson   = require('~/package.json');
+            var coreCartridge = packageJson.coreCartridge;
+            var currentCountry = require(coreCartridge + '/cartridge/scripts/util/Countries').getCurrent(pdict);
+        </isscript>
+        <isdynamicform formobject="${pdict.CurrentForms.billing.paymentMethods.creditdirect.expiration}" formdata="${currentCountry.dynamicForms.expirationInfo}"/>
+    </div>
+
+    <isscript>
+        var help = {
+            label: Resource.msg('billing.linkcvn', 'checkout', null),
+            cid: 'checkout-security-code'
+        };
+    </isscript>
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.creditdirect.cvn}" type="input" rowclass="cvn" dynamicname="true" help="${help}"/>
+
+    <isif condition="${pdict.CurrentCustomer.authenticated}">
+        <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.creditdirect.saveCard}" type="checkbox"/>
+    </isif>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_DIRECT_DEBIT_SEPA (Direct Debit Sepa) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_DIRECT_DEBIT_SEPA" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_DIRECT_DEBIT_SEPA'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_DIRECT_DEBIT_SEPA">
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.directdebitsepa.accountholdername}" type="input"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.directdebitsepa.bankname}" type="input"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.directdebitsepa.iban}" type="input"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.directdebitsepa.bic}" type="input"/>
+</div>
+
+<!--- PAYMENTOPERATOR_KLARNA (Klarna) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_KLARNA" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_KLARNA'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_KLARNA">
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.year}" type="select"  xhtmlclass="year"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.month}" type="select"  xhtmlclass="month"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.day}" type="select"  xhtmlclass="day"/>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.ssn}" type="input"  />
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.mobilenumber}" type="input"  />
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.housenumber}" type="input"  />
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.gender}" type="select"  />
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.companyorperson}" type="select"  />
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.klarna.reference}" type="input"  />
+</div>
+
+<!--- PAYMENTOPERATOR_ONLINE_TRANSFER (sofortueberweisung) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_ONLINE_TRANSFER" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_ONLINE_TRANSFER'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_ONLINE_TRANSFER">
+    <iscomment>sofortüberweisung comes without form inputs</iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PAYPAL (paypal) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PAYPAL" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PAYPAL'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PAYPAL">
+    <iscomment>paypal comes without form inputs</iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_GIROPAY (giropay) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_GIROPAY" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_GIROPAY'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_GIROPAY">
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.giropay.accountholdername}" type="input" />
+    <isscript>
+        var isEVO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorGiropayVendor') == 'EVO';
+    </isscript>
+    <isif condition="${ isEVO }">
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.giropay.accountnumber}" type="input" />
+    </isif>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_IDEAL (ideal) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_IDEAL" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_IDEAL'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_IDEAL">
+    <isscript>
+        var isPPRO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorUsePPRO');
+    </isscript>
+    <isif condition="${ !isPPRO } ">
+        <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.ideal.issuerid}" type="select" />
+    </isif>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_POSTFINANCE (PostFinance) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_POSTFINANCE" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_POSTFINANCE'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_POSTFINANCE">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_TRUSTPAY (TrustPay) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_TRUSTPAY" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_TRUSTPAY'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_TRUSTPAY">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_POLI (POLi) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_POLI" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_POLI'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_POLI">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PRZELEWY24 (Przelewy24) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PRZELEWY24" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PRZELEWY24'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PRZELEWY24">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_QIWI (QIWI) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_QIWI" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_QIWI'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_QIWI">
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.qiwi.accountholdername}" type="input" />
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.qiwi.mobilenumber}" type="input" />
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_SKRILL (skrill) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_SKRILL" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_SKRILL'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_SKRILL">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PAYGATE_CHINA (Paygate China) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PAYGATE_CHINA" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PAYGATE_CHINA'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PAYGATE_CHINA">
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paygatechina.accbank}" type="select" />
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_MASTERPASS (Masterpass) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_MASTERPASS" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_MASTERPASS'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_MASTERPASS">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_ALIPAY (Alipay) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_ALIPAY" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_ALIPAY'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_ALIPAY">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PAYU (PayU CEE) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PAYU" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PAYU'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PAYU">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_EPS (EPS) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_EPS" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_EPS'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_EPS">
+    <isscript>
+        var isPPRO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorUsePPRO');
+    </isscript>
+    <isif condition="${ isPPRO } ">
+	    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.eps.accountholdername}" type="input" />
+	    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.eps.iban}" type="input" />
+	    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.eps.bic}" type="input" />
+    </isif>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_TELEINGRESO (Teleingreso) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_TELEINGRESO" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_TELEINGRESO'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_TELEINGRESO">
+    <iscomment>empty </iscomment>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PAYMORROW_INVOICE (PayMorrow) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PAYMORROW_INVOICE" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PAYMORROW_INVOICE'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PAYMORROW_INVOICE">
+
+	<p class="form-caption"><iscomment>TODO</iscomment></p>
+	<isif condition="${empty(pdict.CurrentCustomer.profile) || empty(pdict.CurrentCustomer.profile.birthday)}">
+	<div class="birthday-fields form-row">
+		<div class="form-label-text"><span class="required-indicator">&#8226;</span>Date of Birth:</div>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowbml.year_pm}" type="select" rowclass="year"/>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowbml.month_pm}" type="select" rowclass="month"/>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowbml.day_pm}" type="select" rowclass="day"/>
+	</div>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowbml.gender_pm}" type="select" rowclass="gender"/>
+	</isif>
+
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowbml.termsandconditions}" type="checkbox"/>
+
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_PAYMORROW_SDD (PayMorrow) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_PAYMORROW_SDD" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_PAYMORROW_SDD'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_PAYMORROW_SDD">
+
+	<p class="form-caption"><iscomment>TODO</iscomment></p>
+
+	<isif condition="${empty(pdict.CurrentCustomer.profile) || empty(pdict.CurrentCustomer.profile.birthday)}">
+	<div class="birthday-fields form-row">
+		<div class="form-label-text"><span class="required-indicator">&#8226;</span>Date of Birth:</div>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.year_pm}" type="select" rowclass="year"/>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.month_pm}" type="select" rowclass="month"/>
+		<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.day_pm}" type="select" rowclass="day"/>
+	</div>
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.gender_pm}" type="select" rowclass="gender"/>
+
+	</isif>
+
+	<isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.iban}" type="input" rowclass="iban"/>
+
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.sepaaccepted}" type="checkbox"/>
+
+    <isinputfield formfield="${pdict.CurrentForms.billing.paymentMethods.paymorrowsdd.termsandconditions}" type="checkbox"/>
+	<div class="clear"><!-- empty --></div>
+</div>
+
+<!--- PaymentMethod_PAYMENTOPERATOR_EASYCREDIT (easyCredit) --->
+<div id="PaymentMethod_PAYMENTOPERATOR_EASYCREDIT" class="payment-method <isif condition="${!empty(pdict.selectedPaymentID) && pdict.selectedPaymentID=='PAYMENTOPERATOR_EASYCREDIT'}">payment-method-expanded</isif>" data-method="PAYMENTOPERATOR_EASYCREDIT">
+    <iscomment>empty </iscomment>
+</div>
+
+<script type="text/javascript">
+    var selectCCPaymentOperator;
+    var billingForm;
+    var form = {};
+    var hasDataInitialized = false;
+    var paymorrowiframeinit = false;
+
+
+    function initPaymentOperatorVars() {
+        selectCCPaymentOperator =  "${URLUtils.https('PaymentOperator-SelectPseudoCreditCard').toString()}";
+        billingForm = "${pdict.CurrentForms.billing.htmlName}";
+        form.ccContainer = $("#PaymentMethod_PAYMENTOPERATOR_CREDIT");
+        form.ccList = $("#creditCardListPaymentOperator");
+        form.creditcarduuid = form.ccContainer.find("[name$='_creditcarduuid']");
+        //$("#" + billingForm).find(".error-message").toggleClass("error-message").filter("span").remove();
+        $("#" + billingForm).find(".error").toggleClass("error");
+        elemPaygateChinaAccBank = $('${"#" + pdict.CurrentForms.billing.paymentMethods.paygatechina.accbank.htmlName}');
+    }
+
+    function bindCreditCardPopulationHandler() {
+        // select credit card from list
+        form.ccList.val(form.creditcarduuid.val());
+        form.ccList.on("change", function () {
+            form.creditcarduuid.val($(this).val());
+        });
+    }
+
+    function populatePaygateChinaForm(){
+		<isloop items="${listPaygateChinaAccounts}" var="account">
+			elemPaygateChinaAccBank.append($('<option>', {
+			    value: '${account.value}',
+			    text: '${account.displayValue}'
+			}));
+		</isloop>
+	}
+
+    function loadedDocumentAction (e) {
+        if(hasDataInitialized) {
+            return;
+        }
+        initPaymentOperatorVars();
+        bindCreditCardPopulationHandler();
+        populatePaygateChinaForm();
+        var hasDataInitialized = true;
+    }
+
+
+    function paymorrowInit (e) {
+        if(paymorrowiframeinit) {
+            return;
+        }
+
+        var deviceurl = Urls.payMorrowDeviceID;
+        var gateurl = "${dw.system.Site.current.getCustomPreferenceValue('paymentOperatorPaymorrowDeviceIDIframeUrl').displayValue}";
+        $.ajax({
+            url: deviceurl,
+            success: function (data) {
+                if(!data) {
+                    return false;
+                }
+                if (gateurl + data.deviceid) {
+                    var iframe = document.createElement('iframe');
+                    iframe.id="paymorrow-if";
+                    iframe.style="width: 1px; height: 1px; border: 0; overflow: hidden; display:none !important; visibility:hidden !important; z-index:-9999 !important;";
+                    iframe.src = encodeURI(gateurl + data.deviceid);
+                    document.body.appendChild(iframe);
+                }
+            }
+        });
+
+
+        paymorrowiframeinit = true;
+
+    }
+
+    // since DW moved jQuery implementation from htmlhead_UI to footer_UI, jQuery(document).ready() cannot be used anymore
+    document.addEventListener("load", loadedDocumentAction, false);
+    document.addEventListener("DOMContentLoaded", loadedDocumentAction, false);
+    document.getElementById("is-PAYMENTOPERATOR_PAYMORROW_SDD").addEventListener("click", paymorrowInit, false);
+    document.getElementById("is-PAYMENTOPERATOR_PAYMORROW_INVOICE").addEventListener("click", paymorrowInit, false);
+</script>

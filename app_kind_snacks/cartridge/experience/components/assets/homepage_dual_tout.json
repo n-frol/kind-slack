@@ -1,0 +1,94 @@
+{
+  "name": "Homepage Dual Tout",
+  "description": "Homepage Dual Tout",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "left",
+      "name": "Left Side",
+      "description": "The content to show in this components left side",
+      "attribute_definitions": [
+        {
+          "id": "guardrailed",
+          "name": "Guard Rails?",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "extra_class",
+          "name": "Extra Wrapper Class",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "link",
+          "name": "link",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "small_image",
+          "name": "Small Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_mobile",
+          "name": "Small Image Mobile",
+          "type": "image",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "right",
+      "name": "Right Side",
+      "description": "The content to show in this components right side",
+      "attribute_definitions": [
+        {
+          "id": "link_r",
+          "name": "link_r",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "header_r",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy_r",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "small_image_r",
+          "name": "Small Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_mobile_r",
+          "name": "Small Image Mobile",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

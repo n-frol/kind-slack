@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="featured_almonds">
+        <display-name xml:lang="x-default">Almonds</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Undoubtedly the hero of KIND's pantry, we use only perfectly whole, smooth California almonds and roast them to perfection.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">Featured Ingredients</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Almond</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/Screen Shot 2018-09-27 at 5.48.09 PM.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="featured_sample">
+        <display-name xml:lang="x-default">Sample 1</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">What's in the bar? Tell me what's in the bar.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">Sample</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">What's in the bar?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/Screen Shot 2018-09-27 at 5.48.09 PM.png</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

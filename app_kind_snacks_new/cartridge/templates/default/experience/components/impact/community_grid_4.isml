@@ -1,0 +1,95 @@
+<div class="bodies_grid_15">
+    <div class="bodies_grid_item" style="background: #EDA900; display:none">
+        <img src="${URLUtils.staticURL('/images/impact/image 78.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            7446
+            <div style="margin-top:20px"></div>
+            <span class="small small">acts of kindess</span>
+        </div>
+        <div class="bodies_grid_copy smaller">
+            inspired by mr beast and kind
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #D8262E">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Group 3074.png')}" alt="Impact" />
+        <div class="bodies_grid_head white" style="color:white;">
+            5.3m
+            <div style="margin-top:20px"></div>
+            <span class="small small" style="color:white;">views</span>
+        </div>
+        <div class="bodies_grid_copy smaller" style="color:white;">
+            and 11,000 comments on MrBeast’s World Kindness Day video sponsored by KIND
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #B9BE10;">
+        <img style="" src="${URLUtils.staticURL('/images/impact/grid4/Group 3075.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            100k
+            <div style="margin-top:20px"></div>
+            <span class="small small">KIND bars</span>
+        </div>
+        <div class="bodies_grid_copy smaller">
+            donated to Beast Philanthropy
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #61B3E4;">
+        <img style="margin-top: 40px; margin-bottom: 40px;" src="${URLUtils.staticURL('/images/impact/grid4/image 67.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            160
+            <div style="margin-top:20px"></div>
+            <span class="small small">KIND team members</span>
+        </div>
+        <div class="bodies_grid_copy smaller">
+            volunteered for 10 charities across the country
+        </div>
+    </div>
+</div>
+
+<style>
+    .small.small {
+        font-size: 24px;
+        line-height: 24px;
+        font-family: medium;
+    }
+    @media screen and (max-width: 440px) {
+        .bodies_grid_15 {
+            display: grid;
+            grid-template-columns: 1fr !important;
+            grid-gap: 20px;
+            margin-left: 20px !important;
+            width: calc(100% - 40px) !important;
+        }
+    }
+    .bodies_grid_15 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        margin-left: 60px;
+        width: calc(100% - 120px);
+        margin-bottom: 60px;
+    }
+    .bodies_grid_item {
+        text-align: center;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 522px;
+    }
+    .bodies_grid_head.white {
+        border-bottom: 1px soild white;
+    }
+    .bodies_grid_head {
+        font-size: 56px;
+        line-height: 60px;
+        font-family: main;
+        text-align: left;
+        border-bottom: 2px solid;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+    }
+    .bodies_grid_copy.smaller {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: left;
+        font-family: main;
+    }
+</style>

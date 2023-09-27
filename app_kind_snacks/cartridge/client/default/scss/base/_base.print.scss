@@ -1,0 +1,30 @@
+@media print {
+
+    // Hide global header and footer for print
+    .st-global-header,
+    .st-global-footer {
+        display: none;
+    }
+
+    // Hide Secondary Content
+    #secondary {
+        display: none;
+    }
+
+    // Hide Live Person
+    body .LPMcontainer {
+        display: none !important;
+    }
+
+    // Layout for Order Confirmation
+    .orderdetails .orderdetails-table.item-list td {
+        display: inline-block;
+        width: 30%;
+    }
+
+    .orderdetails .orderdetails-table.item-list td.order-payment-summary {
+        width: 40%;
+    }
+
+
+}

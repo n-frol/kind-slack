@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Product">
+        <group-definitions>
+            <attribute-group group-id="productDetails">
+                <display-name xml:lang="x-default">Product Details</display-name>
+                <attribute attribute-id="imageNavigationColor"/>
+                <attribute attribute-id="containerType"/>
+                <attribute attribute-id="totalItemQuantity"/>
+                <attribute attribute-id="productType"/>
+                <attribute attribute-id="badge"/>
+                <attribute attribute-id="benefits"/>
+                <attribute attribute-id="nutritionFactsImage"/>
+                <attribute attribute-id="nutritionNotes"/>
+                <attribute attribute-id="featuredHeading"/>
+                <attribute attribute-id="notInProductLabel"/>
+                <attribute attribute-id="notInProductBody"/>
+                <attribute attribute-id="featuredAssets"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

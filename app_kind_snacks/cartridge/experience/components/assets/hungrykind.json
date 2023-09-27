@@ -1,0 +1,42 @@
+{
+  "name": "Hungry Kind Box",
+  "description": "Hungry Kind Box",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "icon",
+          "name": "Icon",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Background Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

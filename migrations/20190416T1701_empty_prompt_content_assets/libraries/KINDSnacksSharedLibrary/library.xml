@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-empty-your-box">
+        <display-name xml:lang="x-default">Empty Your Box Prompt</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">This action will empty your box.  Are you sure?</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="byob-remove-from-box">
+        <display-name xml:lang="x-default">Remove From Box Prompt</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">This will remove the selected product from your box.  Are you sure?</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

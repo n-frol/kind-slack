@@ -1,0 +1,23 @@
+<isdecorate template="common/layout/checkout"/>
+
+<!----------------------------------------------------------------------------------->
+<!-- Load Static Assets -->
+<!----------------------------------------------------------------------------------->
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/checkout.js');
+    assets.addCss('/css/checkout/checkout.css');
+</isscript>
+
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<h1 class="page-title">
+    ${Resource.msg('iframe.checkout.authorization','paymentoperator',null)}
+</h1>
+<div id="checkout-main" class="container data-checkout-stage">
+    <iframe src="${ pdict.PaymentOperatorUrl }" width="550px" height="450px"></iframe>
+</div>
+
+</isdecorate>

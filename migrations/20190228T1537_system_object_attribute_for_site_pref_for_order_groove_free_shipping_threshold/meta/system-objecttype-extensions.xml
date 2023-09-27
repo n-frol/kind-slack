@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveEnableFreeShippingThreshold">
+                <display-name xml:lang="x-default">Enable free shipping for orders over configured threshold</display-name>
+                <description xml:lang="x-default">Enable free shipping for orders over configured threshold set in OrderGrooveFreeShippingThreshold site preference.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveFreeShippingThreshold">
+                <display-name xml:lang="x-default">OrderGroove order total that triggers free shipping.</display-name>
+                <description xml:lang="x-default">Any OrderGroove order with a merchandize total above the amount configured will receive free shipping as long as OrderGrooveEnableFreeShippingThreshold is set to true.</description>
+                <type>int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>40</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove Configurations</display-name>
+                <attribute attribute-id="OrderGrooveEnable"/>
+                <attribute attribute-id="OrderGrooveMerchantID"/>
+                <attribute attribute-id="OrderGrooveMerchantHashKey"/>
+                <attribute attribute-id="OrderGrooveBasicUser"/>
+                <attribute attribute-id="OrderGrooveBasicPass"/>
+                <attribute attribute-id="OrderGrooveStaticDomain"/>
+                <attribute attribute-id="OrderGrooveEmail"/>
+                <attribute attribute-id="OrderGrooveAddresses"/>
+                <attribute attribute-id="OrderGrooveShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSecondaryShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSecondaryShippingMethodStates"/>
+                <attribute attribute-id="OrderGrooveSession"/>
+                <attribute attribute-id="OrderGrooveShipping"/>
+                <attribute attribute-id="OrderGrooveBilling"/>
+                <attribute attribute-id="OrderGrooveLabel"/>
+                <attribute attribute-id="OrderGrooveToken"/>
+                <attribute attribute-id="OrderGrooveCardHolder"/>
+                <attribute attribute-id="OrderGrooveCardNumber"/>
+                <attribute attribute-id="OrderGrooveCardType"/>
+                <attribute attribute-id="OrderGrooveCardExpiration"/>
+                <attribute attribute-id="OrderGrooveSubscription"/>
+                <attribute attribute-id="OrderGrooveTracking"/>
+                <attribute attribute-id="OrderGrooveDiscountType"/>
+                <attribute attribute-id="OrderGrooveDiscountValue"/>
+                <attribute attribute-id="OrderGrooveEnableFreeShippingThreshold"/>
+                <attribute attribute-id="OrderGrooveFreeShippingThreshold"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

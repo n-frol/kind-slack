@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="press-releases">
+        <display-name xml:lang="x-default">Press Releases</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;see the latest from us on healthy snacking!&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Press Releases</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center_card-grid_press-releases_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="media-assets">
+        <display-name xml:lang="x-default">Media Assets</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;download our logo and other KIND photos&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Media Assets</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center_card-grid_media-assets_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="videos">
+        <display-name xml:lang="x-default">Videos</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;check out some of the content we've been busy creating&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Videos</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/media-center_card-grid_videos_V2_opt.png.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p class="text-center"&gt;&#13;
+&lt;a href="$url('Home-Show)$"&gt;GO&lt;/a&gt;&#13;
+&lt;p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

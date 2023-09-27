@@ -1,0 +1,93 @@
+importPackage( dw.system );
+importPackage( dw.customer );
+importPackage( dw.util );
+
+importScript( 'export/handlers/AbstractExportHandler.ds' );
+
+// Hack, because vars cannot be imported in DW, only functions
+function getProfileExportMgr() {
+    return ProfileExportMgr;
+}
+
+/**
+ * Create a ProfileExportMgr instance to export profiles.
+ * 
+ * Register new handlers by calling registerExportHandler(handler).
+ */
+function ProfileExportMgr(DaysToExportCustomers){
+    this.logger = dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport');
+    this.handlers = [];
+    this.statistics = {
+            profiles : 0
+    };
+    
+    var calendar : Calendar = new Calendar();
+    calendar.setTimeZone(System.getInstanceTimeZone());
+    calendar.setTime(new Date());
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    
+    try {
+        calendar.add(Calendar.DAY_OF_YEAR, parseInt(DaysToExportCustomers) *-1);
+    } catch (e) {
+        // default is last one day
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+    }
+    
+    this.daysBack = calendar.getTime();
+}
+
+
+ProfileExportMgr.prototype = {
+        /**
+         * Registers a new export handler which needs to be a subclass of
+         * {@link AbstractExportHandler}.
+         */
+        registerExportHandler : function(handler){
+            this.handlers.push(handler);
+        },
+        /**
+         * Runs the export and notifies all registered handlers for all
+         * products, catagories etc.
+         */
+        runExport : function(){
+            this.handleBeginExport();
+            this.handleProfiles();
+            this.handleEndExport();
+        },
+        handleProfiles : function() {	
+            var profiles : SeekableIterator = null;
+        try {
+            profiles = CustomerMgr.searchProfiles('lastModified >= {0}', 'lastModified asc', this.daysBack); 
+            for each (var profile : Profile in profiles) {
+                this.handleProfile(profile);
+            }
+        } finally {
+            if(profiles != null) {
+                profiles.close();
+            }
+        }
+        },
+        handleProfile : function(profile : Profile){
+            for each (var handler in this.handlers) {
+                handler.exportProfile(profile);
+                handler = null;
+            }
+            this.statistics.profiles++;
+        },
+        handleBeginExport: function(){
+            for each (var handler in this.handlers) {
+                handler.beginExport();
+                handler = null;
+            }
+        },
+        handleEndExport: function(){
+            for each (var handler in this.handlers) {
+                handler.endExport();
+                handler = null;
+            }
+            var msg = 'Export done (profiles processed: ' + this.statistics.profiles + ')';
+            this.logger.info(msg);
+        }
+}

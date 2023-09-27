@@ -1,0 +1,37 @@
+<!--- TEMPLATENAME: pdpwidget.isml --->
+
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeEnabled')}">
+	<isset name="pixleeApiKey" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeApiKey')}" scope="page" />
+    <isset name="pixleeAccountId" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeAccountID')}" scope="page" />
+    <isset name="pixleeWidgetId" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('PixleeWidgetId')}" scope="page" />
+
+	<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('SkuReference') == 'Product ID'}">
+	    <isset name="productSku" value="${pdict.product.masterId || pdict.product.id}" scope="page">
+	<iselse/>
+	    <isset name="productSku" value="${pdict.product.manufacturerSKU}" scope="page">
+	</isif>
+
+	<!-- To include PDP widgets, publish one from the Pixlee Control Panel and: -->
+	<!-- 1) Uncomment the following code block -->
+	<!-- 2) Fill in accountId and WidgetId below -->
+
+	<iscontent type="text/html" charset="UTF-8" compact="true"/>
+	<div id="pixlee_container"></div>
+	<script type="text/javascript">
+		window.PixleeAsyncInit = function() {
+			Pixlee.init({apiKey:"${pixleeApiKey}"});
+			Pixlee.addProductWidget({
+				accountId: ${pixleeAccountId},
+				widgetId: ${pixleeWidgetId},
+				skuId:"${productSku}",
+				AB:true}
+			);
+		};
+	</script>
+	<script src="//assets.pixlee.com/assets/pixlee_widget_1_0_0.js"></script>
+
+    <div class="s-pixelee">
+        <iscontentasset aid="ugc-sharing" />
+    </div>
+
+</isif>

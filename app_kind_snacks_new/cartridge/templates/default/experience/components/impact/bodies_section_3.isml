@@ -1,0 +1,267 @@
+<div class="bodies_section_3" style="position: relative;">
+    <img class="banana" src="${URLUtils.staticURL('/images/impact/grid7/banana.png')}" alt="Impact" class="bodies_section_2" />
+    <img class="apple" src="${URLUtils.staticURL('/images/impact/grid7/apple.png')}" alt="Impact" class="bodies_section_2" />
+    <img class="grapes" src="${URLUtils.staticURL('/images/impact/grid7/grapes.png')}" alt="Impact" class="bodies_section_2" />
+    <img class="cherrybw" src="${URLUtils.staticURL('/images/impact/grid7/cherrybw.png')}" alt="Impact" class="bodies_section_2" />
+    <div class="head">
+        our historic journey of
+        redefining "healthy" continues
+    </div>
+    <div class="copy">
+        We have been on a multi-year journey to redefine “healthy” as a regulatory term. For us, “healthy” is more than just a word on a label – it reflects our promise to craft snacks made with wholesome ingredients and empower our community to make more informed food choices.    </div>
+    <img class="cherry" src="${URLUtils.staticURL('/images/impact/image 127.png')}" alt="Impact" class="bodies_section_2" />
+    <div class="head2">
+        In 2015, we petitioned the U.S. Food and Drug Administration (FDA) to update the definition of “healthy” to reflect current nutrition science.
+    </div>
+    <div class="copy2">
+        Seven years later, in 2022, the FDA proposed an updated definition that reflects changes we advocated for, including:
+    </div>
+    <div class="boxes mobile" style="display: none;">
+        <div class="box1">
+            <img src="${URLUtils.staticURL('/images/impact/image 130.png')}" alt="Impact" class="bodies_section_2" />
+            An emphasis on nutrient-dense food groups for their contribution to a healthy diet
+        </div>
+        <div class="box2">
+            <img src="${URLUtils.staticURL('/images/impact/image 148.png')}" alt="Impact" class="bodies_section_2" />
+            The addition of nutrient thresholds to help ensure that foods bearing the "healthy" claim do not contain excess saturated fat, sodium, or added sugars
+        </div>
+        <div style="width: 100%;"></div>
+        <div class="box3">
+            <img src="${URLUtils.staticURL('/images/impact/Group 3199.png')}" alt="Impact" class="bodies_section_2" />
+            <img src="${URLUtils.staticURL('/images/impact/Group 3200.png')}" alt="Impact" class="bodies_section_2" />
+            <b>on the front lines</b>
+            <br/>
+            <span style="font-weight: normal">
+In February 2023, we hosted nearly 1,400 RDNs to discuss the FDA’s proposed rule and implications for their work in partnership with Oldways, a food and nutrition nonprofit.        </span>
+        </div>
+    </div>
+    <div class="boxes desktop">
+    <div class="box1">
+        <img src="${URLUtils.staticURL('/images/impact/image 130.png')}" alt="Impact" class="bodies_section_2" />
+        An emphasis on nutrient-dense food groups for their contribution to a healthy diet
+    </div>
+    <div class="box2">
+        <img src="${URLUtils.staticURL('/images/impact/image 148.png')}" alt="Impact" class="bodies_section_2" />
+        The addition of nutrient thresholds to help ensure that foods bearing the "healthy" claim do not contain excess saturated fat, sodium, or added sugars
+    </div>
+        <div style="width: 100%;"></div>
+    <div class="box3">
+        <img src="${URLUtils.staticURL('/images/impact/Group 3199.png')}" alt="Impact" class="bodies_section_2" />
+        <img src="${URLUtils.staticURL('/images/impact/Group 3200.png')}" alt="Impact" class="bodies_section_2" />
+        <b>on the front lines</b>
+        <br/>
+        <span style="font-weight: normal">
+            In February 2023, we hosted nearly 1,400 RDNs to discuss the FDA’s proposed rule and implications for their work in partnership with Oldways, a food and nutrition nonprofit.
+        </span>
+    </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .bodies_section_3 .copy2 {
+            margin-bottom: 80px !important;
+        }
+    }
+    .mobile .box1, .mobile .box2, .mobile .box3 {
+        min-width: unset !important;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        margin-bottom: 80px;
+        padding: 30px;
+        position: relative;
+        z-index: 1000;
+    }
+    .mobile .box3 {
+        margin-top: 20px;
+        left: 0px !important;
+    }
+    .mobile .box3 img:nth-child(2) {
+        position: absolute;
+        right: 20px !important;
+        top: -570px !important;
+        width: 100px;
+    }
+    .mobile .box2 img {
+        position: absolute;
+        left: 0px;
+        z-index: 0;
+        top: -150px;
+    }
+    .mobile .box3 img:nth-child(1) {
+        position: absolute;
+        bottom: -110px;
+        right: 0px;
+        left: unset !important;
+    }
+    .mobile .box1 img {
+        position: absolute;
+        top: 380px;
+        right: 30px;
+        z-index: 55;
+        left: unset !important;
+    }
+    .mobile .box2 {
+        position: relative;
+        z-index: 1;
+        margin-top: 40px;
+    }
+    .cherrybw {
+        display: none;
+    }
+    .banana {
+        position: absolute;
+        right: -100px;
+        top: 200px;
+    }
+    .apple {
+        position: absolute;
+        top: 800px;
+        left: 100px;
+    }
+    .grapes {
+        position: absolute;
+        left: -100px;
+        top: 170px;
+    }
+    .cherry {
+        position: relative;
+        top: -20px;
+    }
+    @media screen and (max-width: 440px) {
+        .cherrybw {
+            position: absolute;
+            display: block;
+            right: 100px;
+            top: -170px;
+            display: block !important;
+        }
+        .grapes {
+            position: absolute;
+            left: 90px;
+            top: -240px;
+        }
+        .banana {
+            position: absolute;
+            right: 310px;
+            top: -120px;
+        }
+        .apple {
+            position: absolute;
+            top: -100px;
+            left: 270px;
+        }
+    }
+    .box1, .box2, .box3 {
+        position: relative;
+    }
+    .boxes.desktop {
+        display: flex;
+        align-items: flex-end;
+        flex-flow: wrap;
+    }
+    .box1 {
+        width: 45%;
+        background: #EDA900;
+        padding: 30px;
+        font-size: 20px;
+        line-height: 25px;
+        font-family: medium;
+        text-align: left;
+        color: white;
+        border-radius: 20px;
+        min-width: 440px;
+        margin-right: 10px;
+    }
+    .box1 img {
+        position: absolute;
+        top: -70px;
+        left: -50px;
+    }
+    .box2 {
+        width: 45%;
+        min-width: 440px;
+        border-radius: 20px;
+        color: white;
+        background: #61B3E4;
+        padding: 30px;
+        font-size: 20px;
+        line-height: 25px;
+        font-family: medium;
+        text-align: left;
+    }
+    .box2 img {
+        position: absolute;
+        right: -80px;
+        top: -70px;
+        z-index: 1;
+    }
+    .box3 {
+        margin-top: 20px;
+        position: relative;
+        left: 40%;
+        width: 45%;
+        border-radius: 20px;
+        padding: 30px;
+        color: white;
+        background: black;
+        font-size: 20px;
+        line-height: 25px;
+        font-family: medium;
+        text-align: left;
+    }
+    .box3 img:nth-child(1) {
+        position: absolute;
+        bottom: -50px;
+        left: -90px;
+    }
+    .box3 img:nth-child(2) {
+        position: absolute;
+        right: -160px;
+        top: -30px;
+    }
+    .bodies_section_3 {
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+        position: relative;
+    }
+    .bodies_section_3 .head {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 30px;
+        font-family: main;
+        letter-spacing: -1px;
+        margin-top: 30px;
+    }
+    .bodies_section_3 .copy {
+        font-size: 18px;
+        line-height: 25px;
+        font-family: medium;
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width: 440px) {
+        .bodies_section_3 .head {
+            font-size: 28px !important;
+            line-height: 34px !important;
+            margin-top: 150px !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+        }
+        .bodies_section_3 .copy, .bodies_section_3 .copy2 {
+            padding: 0px 20px;
+        }
+    }
+    .bodies_section_3 .head2 {
+        font-size: 26px;
+        line-height: 30px;
+        margin-bottom: 30px;
+        font-family: main;
+    }
+    .bodies_section_3 .copy2 {
+        font-size: 18px;
+        line-height: 25px;
+        font-family: medium;
+        margin-bottom: 30px;
+    }
+</style>

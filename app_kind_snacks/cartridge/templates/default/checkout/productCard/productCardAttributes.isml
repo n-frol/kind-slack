@@ -1,0 +1,53 @@
+<div class="c-product-card__details__attributes item-attributes c-product-card_creative__details__attributes">
+    <isif condition="${siteID === "CreativeSnacks"}">
+        <div class="line-item-header">
+            <isif condition="${!empty(miniCart) && miniCart}">
+                <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+            <iselse/>
+                <isinclude template="checkout/productCard/productCardProductName" />
+            </isif>
+        </div>
+    </isif>
+    <isif condition="${!empty(lineItem.subscriptionType)}">
+        <div class="c-product-card__details__subscription">
+            <isif condition="${lineItem.subscriptionType === '1'}">
+                <isprint value="${Resource.msgf('subscription.single.frequency', 'account', null, lineItem.subscriptionType)}" />
+            <iselse>
+                <isprint value="${Resource.msgf('subscription.frequency', 'account', null, lineItem.subscriptionType)}" />
+            </isif>
+        </div>
+    </isif>
+    <isloop items="${lineItem.variationAttributes}" var="attribute">
+        <isif condition="${attribute.isVisible}">
+            <div class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</div>
+        </isif>
+    </isloop>
+    <div class="item-options">
+        <isloop items="${lineItem.options}" var="option">${option.displayName}</isloop>
+    </div>
+    <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')==true}">
+        <isif condition="${!empty(pdict.isConfirmStage) && pdict.isConfirmStage==true}">
+            <div class="og-offer" data-og-module="conf" data-og-product="${lineItem.id}"></div>
+        <iselseif condition=${miniCart} />
+            <div class="og-offer" data-og-module="cart_flydown" data-og-product="${lineItem.id}"></div>
+        <iselse/>
+            <div class="og-offer" data-og-module="or" data-og-product="${lineItem.id}"></div>
+        </isif>
+    </isif>
+    <isif condition="${(pdict.order && !pdict.order.orderStatus) || (!empty(miniCart) && miniCart)}">
+        <isinclude template="cart/productCard/cartProductCardAvailability" />
+    </isif>
+
+    <isif condition="${!empty(lineItem.totalItemQuantity)}">
+        <div class="line-item-attributes creative-bags-per-item">
+            <isprint value="${lineItem.totalItemQuantity}" style="INTEGER" encoding="off" />
+            <isif condition="${!empty(lineItem.productTypeDetail)}">
+                ${lineItem.productTypeDetail}
+
+                <isif condition="${!empty(lineItem.containerType)}">
+                    ${Resource.msg('global.per', 'common', null) + ' ' + lineItem.containerType}
+                </isif>
+            </isif>
+        </div>
+    </isif>
+</div>

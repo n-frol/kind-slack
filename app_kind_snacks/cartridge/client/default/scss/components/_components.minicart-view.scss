@@ -1,0 +1,75 @@
+/* ============================================================================
+mini Cart view
+============================================================================ */
+
+/**
+ * Styles for mini-Cart view
+*/
+$ns: c-minicart-view;
+/**
+ * use !important - in global style this class has chain of parent classes
+*/
+.#{$ns} {
+    border: 2px solid $black;
+    font-family: $font-family-primary;
+    max-height: calc(100vh - 75px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 0 20px 20px !important;
+    text-transform: lowercase;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 24px !important;
+    }
+
+    &__header {
+        display: block;
+        margin-bottom: 24px;
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+        &__row {
+            background-color: $primary;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-bottom: 5px;
+            padding-top: 5px;
+        }
+    }
+    & &__close {
+        @include background-svg($svg-close-white);
+
+        background-position: 0 center;
+        background-size: 115%;
+        height: 32px;
+        margin-right: 0 !important; // Style being overridden is importanted
+        width: 32px;
+    }
+    &__content {
+        &__title {
+            color: $grey7;
+            font-family: $font-family-primary !important;
+            font-size: 24px !important;
+        }
+        &__view-link {
+            font-size: 16px;
+            line-height: 30px;
+        }
+        &__product-summary {
+            &__card {
+                border-bottom: 2px solid $primary;
+                margin-bottom: 7px;
+                padding-bottom: 7px;
+            }
+        }
+    }
+    &__footer {
+        &__label {
+            color: $black;
+            font-size: 14px !important;
+            padding-bottom: 15px;
+        }
+    }
+}

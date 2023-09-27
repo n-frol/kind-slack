@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcext xmlns="http://www.demandware.com/xml/impex/dcext/2016-04-05" site-id="CreativeSnacks">
+    <apple-pay instance-type="development">
+        <enabled-flag>true</enabled-flag>
+        <merchant-id>merchant.com.kindsnacks.applepay.test</merchant-id>
+        <display-name>KIND Snacks Apple Pay Test Merchant ID</display-name>
+        <country-code>US</country-code>
+        <merchant-capabilities>
+            <capability-3ds/>
+        </merchant-capabilities>
+        <supported-networks>
+            <amex/>
+            <master-card/>
+            <visa/>
+        </supported-networks>
+        <required-shipping-address-fields>
+            <email/>
+            <name/>
+            <phone/>
+            <postal-address/>
+        </required-shipping-address-fields>
+        <required-billing-address-fields>
+            <name/>
+            <postal-address/>
+        </required-billing-address-fields>
+        <https-redirect>false</https-redirect>
+        <inject-mini-cart>true</inject-mini-cart>
+        <inject-cart>true</inject-cart>
+        <psp-api-enabled-flag>false</psp-api-enabled-flag>
+        <psp-api-version>v1</psp-api-version>
+        <psp-basic-auth-flag>true</psp-basic-auth-flag>
+        <psp-password>f2dKh7yauw08QtYTf3nzJwmcAYNu09k0i0iPmWEDQjU=</psp-password>
+        <psp-jws-flag>false</psp-jws-flag>
+    </apple-pay>
+    <apple-pay instance-type="staging">
+        <enabled-flag>true</enabled-flag>
+        <merchant-id>merchant.com.kindsnacks.applepay.test</merchant-id>
+        <display-name>KIND Snacks Apple Pay Test Merchant ID</display-name>
+        <country-code>US</country-code>
+        <merchant-capabilities>
+            <capability-3ds/>
+        </merchant-capabilities>
+        <supported-networks>
+            <amex/>
+            <master-card/>
+            <visa/>
+        </supported-networks>
+        <required-shipping-address-fields>
+            <email/>
+            <name/>
+            <phone/>
+            <postal-address/>
+        </required-shipping-address-fields>
+        <required-billing-address-fields>
+            <name/>
+            <postal-address/>
+        </required-billing-address-fields>
+        <https-redirect>false</https-redirect>
+        <inject-mini-cart>true</inject-mini-cart>
+        <inject-cart>true</inject-cart>
+        <psp-api-enabled-flag>false</psp-api-enabled-flag>
+        <psp-api-version>v1</psp-api-version>
+        <psp-basic-auth-flag>true</psp-basic-auth-flag>
+        <psp-password>wnzisCE/UOiQw8b6IvM7d+xY+Ja6fPFx0iS/UOVuKT8=</psp-password>
+        <psp-jws-flag>false</psp-jws-flag>
+    </apple-pay>
+    <apple-pay instance-type="production">
+        <enabled-flag>true</enabled-flag>
+        <merchant-id>merchant.com.kindsnacks.applepay</merchant-id>
+        <display-name>KIND Snacks</display-name>
+        <country-code>US</country-code>
+        <merchant-capabilities>
+            <capability-3ds/>
+        </merchant-capabilities>
+        <supported-networks>
+            <amex/>
+            <master-card/>
+            <visa/>
+        </supported-networks>
+        <required-shipping-address-fields>
+            <email/>
+            <name/>
+            <phone/>
+            <postal-address/>
+        </required-shipping-address-fields>
+        <required-billing-address-fields>
+            <name/>
+            <postal-address/>
+        </required-billing-address-fields>
+        <https-redirect>false</https-redirect>
+        <inject-mini-cart>true</inject-mini-cart>
+        <inject-cart>true</inject-cart>
+        <psp-api-enabled-flag>false</psp-api-enabled-flag>
+        <psp-api-version>v1</psp-api-version>
+        <psp-basic-auth-flag>true</psp-basic-auth-flag>
+        <psp-password>3Iq8EgeiykH57PsXU4ofVq6bdCn3kFAPdAH/DAEXXpc=</psp-password>
+        <psp-jws-flag>false</psp-jws-flag>
+    </apple-pay>
+</dcext>
+

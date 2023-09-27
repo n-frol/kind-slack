@@ -1,0 +1,76 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_DIRECT_DEBIT_SEPA.isml --->
+<isset name="directDebitFields" value="${ pdict.forms.billingForm.directdebitsepa }" scope="page"/>
+
+<fieldset class="paymentoperator-directdebit-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ directDebitFields.accountholdername.mandatory === true }>required</isif>
+                ${ directDebitFields.accountholdername.htmlName }">
+                <label class="form-control-label" for="directdebit_accountholdername">${ Resource.msg('directdebit.accountholdername','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="directdebit_accountholdername"
+                           value=""
+                    <isprint value=${ directDebitFields.accountholdername.attributes } encoding="off"/>
+                    autocomplete="accountholdername"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ directDebitFields.bankname.mandatory === true }>required</isif>
+                ${ directDebitFields.bankname.htmlName }">
+                <label class="form-control-label" for="directdebit_bankname">${ Resource.msg('directdebit.bankname','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="directdebit_bankname"
+                           value=""
+                    <isprint value=${ directDebitFields.bankname.attributes } encoding="off"/>
+                    autocomplete="bankname"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ directDebitFields.iban.mandatory === true }>required</isif>
+                ${ directDebitFields.iban.htmlName }">
+                <label class="form-control-label" for="directdebit_iban">${ Resource.msg('directdebit.iban','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="directdebit_iban"
+                           value=""
+                    <isprint value=${ directDebitFields.iban.attributes } encoding="off"/>
+                    autocomplete="iban"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ directDebitFields.bic.mandatory === true }>required</isif>
+                ${ directDebitFields.bic.htmlName }">
+                <label class="form-control-label" for="directdebit_bic">${ Resource.msg('directdebit.bic','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="directdebit_bic"
+                           value=""
+                    <isprint value=${ directDebitFields.bic.attributes } encoding="off"/>
+                    autocomplete="bic"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

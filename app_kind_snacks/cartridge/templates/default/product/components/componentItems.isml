@@ -1,0 +1,6 @@
+<ul class="bundle-items c-product-bundle">
+    <isloop items="${product.components}" var="component" status="loopState">
+        <isinclude template="product/components/componentItem" />
+    </isloop>
+</ul>
+

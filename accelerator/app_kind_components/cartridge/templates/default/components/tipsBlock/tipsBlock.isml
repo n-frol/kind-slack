@@ -1,0 +1,44 @@
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/tipsBlock/tipsBlock_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container st-container--padded">
+            <div class="row">
+    </isif>
+        <div class="c-tips-block ${assetID} th-kind-tips-block s-graphical-asset">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container">
+                    <div class="row">
+            </isif>
+                        <div class="c-tips-block__wrapper col-12">
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-tips-block__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-tips-block__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <isinclude template="components/tipGeneratorScripts" />
+                                <div class="c-tips-block__tip js-tip-msg">
+                                    <iscomment>Initial "tip"</iscomment>
+                                    ${Resource.msg('label.tipsblock', 'common', null)}
+                                </div>
+                                <button class="c-tips-block__links s-graphical-asset__links js-generate-tip js-generate-tip--rotate">
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </button>
+                            </isif>
+                        </div>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

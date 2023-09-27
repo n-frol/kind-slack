@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category-assignment category-id="root" product-id="mfruitflavors">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="mnaturalprotein">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="root" product-id="mbyob">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <recommendation source-id="vbyob20" source-type="product" target-id="chocolatecombo20" type="3"/>
+
+    <recommendation source-id="vbyob40" source-type="product" target-id="chocolatecombo40" type="3"/>
+
+    <recommendation source-id="vbyob20" source-type="product" target-id="fruitflavors20" type="3"/>
+
+    <recommendation source-id="vbyob40" source-type="product" target-id="fruitflavors40" type="3"/>
+
+    <recommendation source-id="vbyob20" source-type="product" target-id="naturalprotein20" type="3"/>
+
+    <recommendation source-id="vbyob40" source-type="product" target-id="naturalprotein40" type="3"/>
+
+</catalog>

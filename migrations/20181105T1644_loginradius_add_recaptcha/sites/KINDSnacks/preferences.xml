@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="loginRadiusGoogleRecaptchaSiteKey">6Ld2qRAUAAAAAKEZ_o-LUMqDAJB1-_fxipS4N7_e</preference>
+        </development>
+        <staging>
+            <preference preference-id="loginRadiusGoogleRecaptchaSiteKey">6Ld2qRAUAAAAAKEZ_o-LUMqDAJB1-_fxipS4N7_e</preference>
+        </staging>
+    </custom-preferences>
+</preferences>
+

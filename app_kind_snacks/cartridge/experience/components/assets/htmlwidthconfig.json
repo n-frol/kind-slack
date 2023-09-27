@@ -1,0 +1,36 @@
+{
+    "name": "Html Width Config",
+    "description": "Just html",
+    "group": "Homepage",
+    "attribute_definition_groups": [
+      {
+        "id": "textcontent",
+        "name": "Text Content",
+        "description": "The content to show in this component",
+        "attribute_definitions": [
+          {
+            "id": "html",
+            "name": "The html",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "parentheight",
+            "name": "Parent Height",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "width",
+            "name": "Container Width",
+            "type": "enum",
+            "values": ["Railed","Full"],
+            "default_value": "Railed",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }
+  

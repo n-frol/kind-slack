@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="urn:vertexinc:o-series:tps:6:0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0" xml:lang="en-us">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved
+ </xsd:documentation>
+  </xsd:annotation>
+  <xsd:include schemaLocation="tax/VertexInc-Common.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Accrual.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-AccrualSync.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-APInvoiceSync.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-ARBillingSync.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-AssetMovement.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-BuyerInputTax.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Delete.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-DistributeTaxProcurement.xsd">
+    <xsd:annotation>
+      <xsd:documentation/>
+      <xsd:documentation>The request used to accept a combined total tax amount for a purchase and distribute that tax to the appropriate jurisdictions. The combined rates for the taxing jurisdictions are used with the total tax amount to determine the taxable base and then redistribute the calculated taxes to each level for remittance. Vertex Central rules in effect as of the date in the documentDate attribute are used. If records for jurisdiction registration, product exception, or customer exception or exemption are dated on or before that date, they are used in the calculation process. Distribute Consumer Use Tax transactions are written to the Tax Journal.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:include>
+  <xsd:include schemaLocation="indirect/VertexInc-DistributeTax.xsd">
+    <xsd:annotation>
+      <xsd:documentation>The request used to accept a combined total tax amount for a purchase and distribute that tax to the appropriate jurisdictions. The combined rates for the taxing jurisdictions are used with the total tax amount to determine the taxable base and then redistribute the calculated taxes to each level for remittance. Vertex Central rules in effect as of the date in the documentDate attribute are used. If records for jurisdiction registration, product exception, or customer exception or exemption are dated on or before that date, they are used in the calculation process. Distribute Sales Tax transactions are written to the Tax Journal.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:include>
+  <xsd:include schemaLocation="indirect/VertexInc-ERS.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-InventoryRemoval.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Invoice.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-InvoiceVerification.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-PurchaseOrder.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Quotation.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Reversal.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Rollback.xsd"/>
+  <xsd:include schemaLocation="indirect/VertexInc-Exists.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-FindChangedTaxAreaRequest.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-FindChangedTaxAreaResponse.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-ChangedTaxAreaRequest.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-ChangedTaxAreaResponse.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-FindTaxAreasRequest.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-FindTaxAreasResponse.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-TaxAreaRequest.xsd"/>
+  <xsd:include schemaLocation="taxgis/VertexInc-TaxAreaResponse.xsd"/>
+  <xsd:include schemaLocation="version/VertexInc-Version.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Vertex Envelope composite message. Declaration of structure and data types.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:element name="VertexEnvelope">
+    <xsd:annotation>
+      <xsd:documentation>Vertex envelope containing transaction information. </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Login" type="LoginType"/>
+        <xsd:choice>
+          <xsd:element name="AccrualRequest" type="AccrualRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Accrual Request message. This request initiates a self-accrual
+calculation.This situation occurs when the buyer must remit tax on tangible personal property or services (used or consumed)
+ when tax due on the transaction has not been paid.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="AccrualResponse" type="AccrualResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Accrual Response message. This response returns the results of a
+self-accrual calculation. This situation occurs when the buyer must remit tax on tangible personal property or services (used or consumed)
+ when tax due on the transaction has not been paid.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="AccrualSyncRequest" type="AccrualSyncRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Accrual Synchronization Request message. This request initiates the reconciliation process for Accrual transactions between Vertex O Series and your host system. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="AccrualSyncResponse" type="AccrualSyncResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Accrual Synchronization Response message. This response returns  the calculation results for the reconciliation process for Accrual
+ transactions between Vertex O Series and your host system. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="APInvoiceSyncRequest" type="APInvoiceSyncRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Accounts Payable Invoice Synchronization Request message. This request initiates the reconcilation of Accounts Payable invoices between Vertex O Series and your host system.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="APInvoiceSyncResponse" type="APInvoiceSyncResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Accounts Payable Invoice Synchronization Response message.
+This response returns the calculation results for the reconcilation
+process of Accounts Payable invoices between Vertex O Series and your host system. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ARBillingSyncRequest" type="ARBillingSyncRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Accounts Receivable Billing Synchronization Request message. This request initiates the reconcilation of Accounts Receivable
+transactions between Vertex O Series and your host system.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ARBillingSyncResponse" type="ARBillingSyncResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Accounts Receivable Billing Synchronization Response message. This response returns the calculation results for the reconcilation process of Accounts Receivable transactions between Vertex O Series and your host system.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="AssetMovementRequest" type="AssetMovementRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Asset Movement Request message. This request initiates the calculation of consumer use tax on the movement of fixed assets from one tax jurisdiction to another. Whenever an asset is moved, the tax rates and rules forthe new
+location must be compared with the tax rates and rules for the old location. Reciprocity rules, which vary by tax jurisdiction, may need to be applied in these situations.
+
+You can also use this message to initiate the calculation of value
+added tax on movement of fixed assets from one tax jurisdiction to another. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="AssetMovementResponse" type="AssetMovementResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Asset Movement Response message. This response returns the calculation results for consumer use tax
+or value added tax on the movement of fixed assets from one tax
+jurisdiction to another.  </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="BuyerInputTaxRequest" type="BuyerInputTaxRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Buyer Input Tax Request message. This request initiates the recording of Input value added tax paid to a seller or Import value added tax paid to customs or a third party. This message performs no
+calculation. It is used only to record the tax payment in the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="BuyerInputTaxResponse" type="BuyerInputTaxResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Buyer Input Tax Response message. This response returns the status of the recording of Input value added tax paid to a seller or Import value added tax paid to customs or a third party.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DeleteRequest" type="DeleteRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Delete Request message. This message initiates the process of
+deleting transactions from Vertex O Series.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DeleteResponse" type="DeleteResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Delete Response message. This message returns the status of
+the transactions marked for deletion in Vertex O Series.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DistributeTaxProcurementRequest" type="DistributeTaxProcurementRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Distribute Tax Procurement Request message. This request initiates a Distribute Procurement calculation.
+It accepts a combined total tax amount for a purchase and distributes that tax to the appropriate jurisdictions. The
+Calculation Engine uses the total tax amount with the combined
+rates for the taxing jurisdictions to determine the taxable base, and then redistributes the calculated taxes to each level for remittance.
+
+Use this request for a tax-only adjustment (debit or credit) to reconcile a tax underpayment or overpayment. The Calculation
+Engine uses the Vertex Central taxability rules that are effective
+on the date specified in the documentDate attribute. The Calculation Engine processes records for jurisdiction registration,
+product exception or customer exception, or customer exemption if
+they are dated on or before that date.
+
+A Distribute Tax Procurement transaction impacts revenue unless you designate it as a tax-only adjustment. The Calculation Engine
+writes Distribute Tax Procurement transaction results to the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DistributeTaxProcurementResponse" type="DistributeTaxProcurementResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Distribute Tax Procurement Response message. This response returns the
+results of a Distribute Tax Procurement calculation. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DistributeTaxRequest" type="DistributeTaxRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Distribute Tax Request message. This request initiates a Distribute Tax calculation.
+It accepts a combined total tax amount for a purchase
+and distributes that tax to the appropriate jurisdictions.
+The Calculation Engine uses the total tax amount with
+the combined rates for the taxing jurisdictions to
+determine the taxable base, and then redistributes the
+calculated taxes to each level for remittance.
+
+Use this request for a tax-only adjustment (debit or credit) to reconcile a tax underpayment or overpayment.
+The Calculation Engine uses the Vertex Central rules that are effective on the date specified in the documentDate attribute. The Calculation Engine processes records for jurisdiction registration, product exception,
+or customer exception or customer exemption if they are
+dated on or before that date.
+
+A Distribute Tax transaction impacts revenue unless
+you designate it as a tax-only adjustment. The Calculation
+Engine writes Distribute Tax transactions to the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="DistributeTaxResponse" type="DistributeTaxResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Distribute Tax Response message. This response returns the results of a Distribute Tax calculation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ERSRequest" type="ERSRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Evaluated Receipts Settlement (ERS) Request message. This request initiates an ERS calculation.
+
+Use the ERS request to calculate tax when a formalized agreement between the buyer and seller places the tax calculation burden on the buyer.
+In these situations, the seller does not issue an invoice. Instead, the buyer
+relies on pre-established terms (represented in a purchase order
+or other agreement) to calculate the tax due and remit payment directly
+to the seller. You must have a current knowledge of the seller's tax status (for example, where the seller is registered or has nexus) to assess tax at the proper rate.
+
+In instances where the seller is not registered or does not have nexus in a taxing jurisdiction, the buyer determines the tax due and remits this Consumer Use Tax directly to the jurisdiction.
+
+In Vertex Central, set ERS in the Procurement Business Event, in the
+Vendors > General tab, by checking the check box labeled Use Self-Billing.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ERSResponse" type="ERSResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Evaluated Receipts Settlement (ERS) Response message. This response returns the results of an ERS calculation. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InventoryRemovalRequest" type="InventoryRemovalRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Inventory Removal Request message. This request initiates an Inventory Removal calculation.
+
+Use the Inventory Removal message to calculate Consumer Use Tax when you are withdrawing inventory for a specific internal project or task.
+Consumer Use Tax that results from an Inventory Removal transaction
+should be accrued at the final destination location of the inventory.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InventoryRemovalResponse" type="InventoryRemovalResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Inventory Removal Response message. This response returns the
+results of an Inventory Removal calculation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InvoiceRequest" type="InvoiceRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Invoice Request message.  This request initiates tax calculation on an invoice. Use this message to calculate tax at the time of shipping, billing, or invoicing from the seller's perspective.
+Because tax liability is typically incurred at the point of invoicing. Invoice transactions are written to the Tax Journal. </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InvoiceResponse" type="InvoiceResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Invoice Response message. This response returns the
+results of an Invoice calculation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InvoiceVerificationRequest" type="InvoiceVerificationRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Invoice Verification Request message. This request initiates an Invoice Verification calculation.
+
+Use the Invoice Verification message to verify tax on incoming invoices to the buyer for tangible personal property, rentals, and leases. The invoice is recreated from the seller's perspective to validate that the proper tax has been applied.
+
+The Invoice Verification message compares the total vendor-charged or
+supplier-charged tax amount from the original invoice to the Vertex-calculated tax amount. The Calculation Engine validates user-defined verification thresholds for tolerances at the transaction
+level. The Calculation Engine returns an indicator to the host system for
+undercharges and overcharges outside these settings. The invoice may display no tax if the buyer has filed a direct pay permit with the vendor or supplier.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="InvoiceVerificationResponse" type="InvoiceVerificationResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Invoice Verification Response message. This response returns the results of an Invoice Verification calculation.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="PurchaseOrderRequest" type="PurchaseOrderRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Purchase Order Request message. This message initiates a Purchase Order request.
+
+Use a Purchase Order message to estimate the tax on intended purchases by a Buyer. The intended purchase of goods or services, including tax, is used as input to generate the purchase order. The ultimate use of the goods or services typically dictates the taxability of the purchase.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="PurchaseOrderResponse" type="PurchaseOrderResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Purchase Order Response message. This response returns the results of a Purchase Order tax calculation on an intended purchase by the Buyer.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="QuotationRequest" type="QuotationRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Quotation Request message. This message initiates a Quotation request.
+Use the Quotation message to estimate taxes on a proposed sale, rental, or lease of goods or services by the Seller.
+Quotations may be called from a CRM, Mobile Sale, Order Entry, or Internet Sale application. Quotation transactions are subject to change until an invoice is finalized. Consequently, Quotation transactions are not written to the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="QuotationResponse" type="QuotationResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Quotation Response message. This response returns the results of a Quotation tax calculation on an intended sale, rental, or lease by the Seller.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ReversalRequest" type="ReversalRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Reversal Request message. This request initiates a process to reverse
+a financial transaction that has been posted to the Tax Journal in O Series.
+
+You must specify the customer-defined Transaction ID that identifies the transaction to both the host system and O Series. A reversal creates a new transaction with taxable amounts that are the opposite value of the taxable amounts in the original transaction. The sum of the taxable amounts in the original transaction and the reversal transaction is 0.0.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="ReversalResponse" type="ReversalResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Reversal Response  message. This response returns identifying
+information for the generated, offsetting transaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="RollbackRequest" type="RollbackRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Rollback request message. The Rollback Request message initiates a
+process to revert a previously synchronized O Series transaction to the
+state it was in before it was synchronized. Synchronization is the
+process by which O Series and your host system identify the correct
+status of a shared financial transaction. Transaction statuses are Active, Inactive, or Deleted.
+
+You must specify the customer-defined Transaction ID that identifies
+the transaction to both the host system and O Series. This identifier is used for to all sychronizations of that transaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="RollbackResponse" type="RollbackResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Roll Back Response message.This response returns identifying
+information for the rolled-back transaction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="TransactionExistsRequest" type="TransactionExistsRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Transaction Exists Request message. This message initiates a Transaction Exists Request that determines whether a transaction with a specified transaction ID is present in the Vertex O Series Tax Journal. Note: Transactions flagged as Deleted are considered to NOT exist in the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="TransactionExistsResponse" type="TransactionExistsResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Transaction Exists Response message. This response returns the specified transaction identifier and an transactionExistsIndicator. This indicator  identifies whether that transaction exists in the Tax Journal.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="FindChangedTaxAreaIdsRequest" type="FindChangedTaxAreaIdsRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Find Changed Tax Area Ids Request message. This request initiates a Find Changed Tax Area IDs request.
+
+Use the Find Changed Tax Area IDs message to identify Tax Area IDs that have changed within a specified date range.
+</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="FindChangedTaxAreaIdsResponse" type="FindChangedTaxAreaIdsResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Find Changed Tax Area Ids Response message. This response returns the Changed Tax Area IDs within the specified date range.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="IsTaxAreaChangedRequest" type="IsTaxAreaChangedRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Is Tax Area Changed Request message. This message initiates an Is Tax Area Changed request.
+
+Use the Is Tax Area Changed event to determine whether a specified Tax Area ID has changed within a specified date range</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="IsTaxAreaChangedResponse" type="IsTaxAreaChangedResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Is Tax Area Changed Response message. This message returns Yes or No to indicate whether the specified Tax Area changed within the specified date range.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="TaxAreaRequest" type="TaxAreaRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Tax Area Request message. This message initiates a single Tax Area lookup requested by an external system. Use the Tax Areas Request message to send a query to retrieve a single  tax jurisdiction lookup. For example, you could use this event to retrieve the Tax Area IDs for a single postal address.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="TaxAreaResponse" type="TaxAreaResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Tax Area Response message. This response returns the retrieved tax jurisdiction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="FindTaxAreasRequest" type="FindTaxAreasRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Find Tax Areas Request message. This message initiates a Find Tax Areas request.
+
+Use the Find Tax Areas Request message to send a batch query to retrieve multiple tax jurisdiction lookups. For example, you could use this event to retrieve the Tax Area IDs for multiple postal addresses.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="FindTaxAreasResponse" type="FindTaxAreasResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Find Tax Areas Response message. This response returns the retrieved tax jurisdictions.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="VersionRequest" type="VersionRequestType">
+            <xsd:annotation>
+              <xsd:documentation>The Version Request message. This message initiates a request for Vertex O Series version information.
+
+Use the Version Request message to retrieve version information from Vertex O Series for Vertex Product Support. Vertex Product Support uses this information in diagnostic and troubleshooting activities.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="VersionResponse" type="VersionResponseType">
+            <xsd:annotation>
+              <xsd:documentation>The Version Response message. This message returns Vertex O Series version information.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:choice>
+        <xsd:element name="ApplicationData" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation>Logging information for this transaction.</xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Sender" type="xsd:string" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>Identifies the application that created the request message. This can be the logical location of the application and/or database server, the application, or the task that was processing to create the request message.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="MessageLogging" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>A group of logging parameters.</xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="OverrideLoggingThreshold" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:annotation>
+                        <xsd:documentation>When present, registers a logging threshold for the transaction. When request-handling is complete, this logging threshold is unregistered.</xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:simpleContent>
+                          <xsd:extension base="LogLevelType">
+                            <xsd:attribute name="thresholdScope" type="xsd:string" use="optional">
+                              <xsd:annotation>
+                                <xsd:documentation>Names a package scope for the threshold override. If absent, override threshold is global.</xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:attribute>
+                          </xsd:extension>
+                        </xsd:simpleContent>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                  <xsd:attribute name="returnLogEntries" type="xsd:boolean" use="optional">
+                    <xsd:annotation>
+                      <xsd:documentation>Indicates whether to return the LogEntry elements in the response.</xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="LogEntry" type="LogEntryType" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation>A group of log entry data.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="ResponseTimeMS" type="xsd:decimal" minOccurs="0">
+                <xsd:annotation>
+                  <xsd:documentation>The processing time in milliseconds. Use this information for
+troubleshooting performance issues.</xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:simpleType name="LogLevelType">
+    <xsd:annotation>
+      <xsd:documentation>Log levels indicate the severity of an error. The following log levels are listed from most severe to least severe.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="FATAL">
+        <xsd:annotation>
+          <xsd:documentation>Logs any system condition or event that jeopardizes system
+integrity, such as allocation failures, disk space errors, or major
+database problems. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ERROR">
+        <xsd:annotation>
+          <xsd:documentation>Logs all abnormal events that are neither warnings nor fatal.
+Use this setting in a production environment.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="WARNING">
+        <xsd:annotation>
+          <xsd:documentation>Logs any system condition or event that is abnormal but poses
+no risk to stability, performance, or answer quality.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="OPS">
+        <xsd:annotation>
+          <xsd:documentation>Logs major system events, such as starting up or shutting
+down of major system components or services.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TRACE">
+        <xsd:annotation>
+          <xsd:documentation>Logs entry and exit points of substantial classes and services.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DEBUG">
+        <xsd:annotation>
+          <xsd:documentation>Logs a detailed description of software execution. Use this setting only if you are working in a development environment.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SUPPORT">
+        <xsd:annotation>
+          <xsd:documentation>Logs pertinent details to enhance Vertex Product Support troubleshooting.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="LogEntryType">
+    <xsd:annotation>
+      <xsd:documentation>Log  entry type indicates the type of log entry.
+</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="Message" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>The exception message text.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Exception" type="xsd:string" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation>The exception name.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+    <xsd:attribute name="logLevel" type="LogLevelType" use="required">
+      <xsd:annotation>
+        <xsd:documentation>The specific log level for this entry.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="instanceId" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The service instance that processed the request.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="threadId" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The thread that processed the request.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="className" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation>The class that generated the log entry.</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+</xsd:schema>

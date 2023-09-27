@@ -1,0 +1,33 @@
+{
+  "name": "Brand Triple Image",
+  "description": "Brand Triple Image",
+  "group": "Brand",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content Left",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Text",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "link",
+          "name": "Link",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

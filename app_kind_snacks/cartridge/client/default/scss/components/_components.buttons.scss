@@ -1,0 +1,81 @@
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+/**
+ * Styles the button compenent
+ */
+
+$ns: btn;
+
+.#{$ns} {
+    background-color: $primary;
+    border-radius: 0%;
+    border: 2px solid transparent;
+    box-shadow: none !important;
+    color: $white;
+    display: inline-block;
+    font-family: $font-family-primary;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 40px;
+    min-height: 52px;
+    min-width: 52px;
+    padding: auto 100%;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        color: $primary;
+        background-color: $grey3;
+        border: 2px solid transparent;
+    }
+
+    &:focus {
+        transition-duration: .35s;
+    }
+
+    &--auto-width {
+        width: auto;
+    }
+}
+
+// Black button with white text, no border
+.#{$ns}-primary {
+    background-color: $primary;
+    color: $white;
+}
+
+// White button with black text, black border
+.#{$ns}-outline-primary {
+    background-color: $white;
+    color: $primary;
+    border: 2px solid $primary;
+}
+
+// White button with black text, no border
+.#{$ns}-light {
+    background-color: $white;
+    color: $primary;
+}
+
+.#{$ns}-outline-light {
+    background-color: transparent;
+    border: 2px solid $white;
+    color: $white;
+}
+
+// Green button with white text, white border
+.#{$ns}-outline-secondary {
+    background-color: $deep-sea-green;
+    border: solid 2px $white;
+    color: $white;
+}

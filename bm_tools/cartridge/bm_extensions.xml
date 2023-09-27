@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+
+	<!-- =============================================================== -->
+	<!-- ==                                                           == -->
+	<!-- ==  ADMINISTRATION MENU EXTENSIONS                           == -->
+	<!-- ==                                                           == -->
+	<!-- =============================================================== -->
+	<!--
+	A custom menu item in the Administration section
+-->
+	<menuitem id="customadminmenuextension_tools" position="99999"
+		site="false">
+		<name xml:lang="x-default">Tool Box</name>
+		<short_description xml:lang="x-default">This menu item contains some interesting tools. Version:  1.0.4</short_description>
+		<description xml:lang="x-default">This menu item contains some interesting tools. Version:  1.0.4</description>
+		<icon>icons/star_yellow_add.gif</icon>
+	</menuitem>
+
+	<menuaction id="customsubmenu_tools_fsBrowser" menupath="customadminmenuextension_tools"
+		position="100" site="false">
+		<name xml:lang="x-default">Total File Demander</name>
+		<short_description xml:lang="x-default">This extension allows for browsing remote file systems.</short_description>
+		<description xml:lang="x-default">This extension allows for browsing remote file systems.</description>
+		<!-- no icon specified -->
+		<exec pipeline="TFD" node="Start" />
+		<sub-pipelines>
+			<pipeline name="TFD-Start" />
+			<pipeline name="TFD-RemoteFS" />
+			<pipeline name="TFD-LocalFS" />
+			<pipeline name="TFD_JSON-LocalFileOperations" />
+			<pipeline name="TFD_JSON-RemoteFileOperations" />
+			<pipeline name="TFD_JSON-Copy" />
+			<pipeline name="TFD-UploadFileToLocaleFS" />
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="Total File Demander" />
+			<parameter name="mainmenuname" value="Tool Box" />
+		</parameters>
+		<icon>icons/star_yellow_new.gif</icon>
+	</menuaction>
+
+	<menuaction id="customsubmenu_tools_httpBrowser" menupath="customadminmenuextension_tools"
+		position="101" site="false">
+		<name xml:lang="x-default">Browse Remote - Http</name>
+		<short_description xml:lang="x-default">This extension allows for sending http get requests and shoing the result
+		</short_description>
+		<description xml:lang="x-default">This extension allows for sending http get requests and showing the result
+		</description>
+		<!-- no icon specified -->
+		<exec pipeline="BrowseRemote" node="Http" />
+		<sub-pipelines>
+			<pipeline name="BrowseRemote-Http" />
+			<pipeline name="BrowseRemote-GetURI" />
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="Browse Remote - Http" />
+			<parameter name="mainmenuname" value="Tool Box" />
+		</parameters>
+		<icon>icons/star_yellow_new.gif</icon>
+	</menuaction>
+
+	<menuaction id="customsubmenu_tools_bmsession" menupath="customadminmenuextension_tools"
+		position="102" site="false">
+		<name xml:lang="x-default">BM Session Keep Alive</name>
+		<short_description xml:lang="x-default">This extension allows for keeping the Business Manager session expiring</short_description>
+		<description xml:lang="x-default">This extension allows for keeping the Business Manager session from expiring</description>
+		<!-- no icon specified -->
+		<exec pipeline="BMSession" node="KeepAlive" />
+		<sub-pipelines>
+			<pipeline name="BMSession-KeepAlive" />			
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="BM Session - Keep Alive" />
+			<parameter name="mainmenuname" value="Tool Box" />
+		</parameters>
+		<icon>icons/star_yellow_new.gif</icon>
+	</menuaction>
+
+	<menuaction id="customsubmenu_tools_terminal" menupath="customadminmenuextension_tools"
+		position="102" site="false">
+		<name xml:lang="x-default">Terminal</name>
+		<short_description xml:lang="x-default">This extension provides you with an easy way to test expressions on the server.</short_description>
+		<description xml:lang="x-default">This extension provides you with an easy way to test expressions on the server.</description>
+		<!-- no icon specified -->
+		<exec pipeline="Terminal" node="Start" />
+		<sub-pipelines>
+			<pipeline name="Terminal-Start" />			
+			<pipeline name="Terminal-Eval" />			
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="Terminal" />
+			<parameter name="mainmenuname" value="Tool Box" />
+		</parameters>
+		<icon>icons/star_yellow_new.gif</icon>
+	</menuaction>
+
+	<menuaction id="customsubmenu_map_manager" menupath="customadminmenuextension_tools"
+		position="102" site="false">
+		<name xml:lang="x-default">Mapping Manager</name>
+		<short_description xml:lang="x-default">This extension provides you with an easy way to view, import and export yous key/value maps.</short_description>
+		<description xml:lang="x-default">This extension provides you with an easy way to view, import and export yous key/value maps.</description>
+		<!-- no icon specified -->
+		<exec pipeline="MappingManager" node="Show" />
+		<sub-pipelines>
+			<pipeline name="MappingManager-Show" />			
+			<pipeline name="MappingManager-Export" />			
+			<pipeline name="MappingManager-Import" />			
+			<pipeline name="MappingManager-Upload" />			
+			<pipeline name="MappingManager-Delete" />			
+		</sub-pipelines>
+		<parameters>
+			<parameter name="menuname" value="Map" />
+			<parameter name="mainmenuname" value="Tool Box" />
+		</parameters>
+		<icon>icons/star_yellow_new.gif</icon>
+	</menuaction>
+
+</extensions>

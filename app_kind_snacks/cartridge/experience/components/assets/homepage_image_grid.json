@@ -1,0 +1,51 @@
+{
+    "name": "Homepage 4 Image Grid",
+    "description": "Homepage 4 Image Grid",
+    "group": "Homepage",
+    "attribute_definition_groups": [
+      {
+        "id": "shared",
+        "name": "Shared Content",
+        "description": "Shared Attributes",
+        "attribute_definitions": [
+          {
+            "id": "hero_text",
+            "name": "Hero Text",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "copy_text",
+            "name": "Copy",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "image_first",
+            "name": "First Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "image_second",
+            "name": "Second Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "image_third",
+            "name": "Third Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "image_fourth",
+            "name": "Fourth Image",
+            "type": "image",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

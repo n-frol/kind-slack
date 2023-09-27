@@ -1,0 +1,47 @@
+<isdecorate template="common/layout/page">
+
+    <iscomment>Klaviyo account login</iscomment>
+    <isset name="Session" value="${dw.system.Session}" scope="page" />
+    <isset name="isKlaviyoEnabled" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('klaviyo_enabled')) ? dw.system.Site.current.getCustomPreferenceValue('klaviyo_enabled') : false}" scope="page" />
+    <isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+    
+    <isif condition="${isKlaviyoEnabled}">
+        <script>
+            var user = {
+                emailid:   "${session.customer.profile.email}"
+            }
+            var klaviyoPush = setInterval(() => {             
+                if(_learnq != null) {
+                    _learnq.push(["identify", {
+                                "$email": user.emailid
+                            }]);
+                    _learnq.push(["track", "Logged Into Account", {} ])  
+                    clearInterval(klaviyoPush);           
+                }
+            }, 1000);
+        </script>
+    </isif>
+
+    <isif condition="${!empty(pdict.reportingURLs) && pdict.reportingURLs}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/dashboard.css');
+    </isscript>
+
+    <div class="c-account-dashboard">
+        <h1 class="title title-display-banner">
+            <isif condition="${siteID === 'CreativeSnacks'}">
+                ${Resource.msg('page.title.myaccount','account',null)}
+            <iselse/>
+                ${Resource.msg('page.heading.account','account',null)}
+            </isif>
+        </h1>
+    </div>
+
+    <div class="container c-account-dashboard">
+        <isinclude template="account/dashboardProfileCards"/>
+    </div>
+</isdecorate>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="loginradius.http.credentials">
+        <url>https://api.loginradius.com/</url>
+        <user-id>4c67bb9f-3bc0-45e1-8c9f-c486aba5f5a3</user-id>
+        <password masked="true">f1c94a08-0979-4d16-abcc-95a09aff9c96</password>
+    </service-credential>
+</services>

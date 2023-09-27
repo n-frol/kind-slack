@@ -1,0 +1,32 @@
+{
+    "name": "Three Column Slide",
+    "group": "carousels",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "headline",
+                    "name": "slide title",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "name": "slide description",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "image",
+                    "name": "slide image",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+
+    ]
+}

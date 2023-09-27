@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="sample_clothing">
+        <display-name xml:lang="x-default">Clothing</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+            <custom-attribute attribute-id="sizeChartID">sample_size-chart</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category-assignment category-id="sample_clothing" product-id="sample-variation-product">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="sample_clothing" product-id="sample-variation-product_blck_lg">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="sample_clothing" product-id="sample-variation-product_blue_md">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

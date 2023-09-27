@@ -1,0 +1,36 @@
+/* ============================================================================
+Address Verification
+============================================================================ */
+
+/**
+ * Styles for address verification
+ */
+
+$ns: c-address-verification;
+
+.#{$ns} {
+    &__btn {
+        margin-bottom: 1em;
+        min-width: 201px;
+        width: 100%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 0;
+            max-width: 45%;
+            width: auto;
+        }
+    }
+
+    &__btn-container {
+        display: block;
+
+        @include media-breakpoint-up(sm) {
+            display: flex;
+                justify-content: space-between;
+        }
+    }
+}

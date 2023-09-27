@@ -1,0 +1,19 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isdecorate template="common/layout/page">
+    <isif condition="${'childrenContentAssetIDS' in pdict.content.custom && !empty(pdict.content.custom.childrenContentAssetIDS)}">
+        <isloop items="${pdict.content.custom.childrenContentAssetIDS}" var="asset">
+            <isset name="content" value="${dw.content.ContentMgr.getContent(asset)}" scope="page">
+            <isif condition="${!empty(content)}">
+                <isscript>
+                    var tpl = new dw.util.Template(content.template || 'content/contentAssetInclude');
+                    var p = new dw.util.HashMap();
+                    p.put("content", content);
+                    var body = tpl.render(p);
+                </isscript>
+
+                <isprint value="${body.text}" encoding="off"/>
+            </isif>
+        </isloop>
+    </isif>
+</isdecorate>

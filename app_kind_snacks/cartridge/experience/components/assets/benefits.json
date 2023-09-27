@@ -1,0 +1,33 @@
+{
+  "name": "Benefits",
+  "description": "Benefits",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "shared",
+      "name": "Shared Content",
+      "description": "Shared Attributes",
+      "attribute_definitions": [
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,80 @@
+// OAuth Button Classes and Elements for OAuth and loginRadius
+
+$ns: s-oauth-providers;
+
+.#{$ns} {
+    border: solid 2px transparent;
+    color: $white;
+    padding-right: 40px;
+
+    &::before {
+        font-family: FontAwesome;
+    }
+
+    &--google,
+    &.oauth-google,
+    &[title="Google"] {
+        background-color: $punch-red;
+
+        &::before {
+            content: "\f1a0";
+                font-size: 16px;
+                float: left;
+                padding-left: 10px;
+        }
+    }
+
+    &--facebook,
+    &.oauth-facebook,
+    &[title="Facebook"] {
+        background-color: $blumine;
+
+        &::before {
+            content: "\f09a";
+                font-size: 16px;
+                float: left;
+                padding-left: 10px;
+        }
+    }
+
+    &:hover,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+        background-color: $grey3;
+        color: $primary;
+    }
+
+    &:focus {
+        transition-duration: .35s;
+    }
+
+}
+
+// Create height for spinners
+.loginradius-container--login,
+.loginradius-container--registration {
+    min-height: 150px;
+}
+
+// General button treatment within loginRadius
+
+.loginradius-submit, .lr-provider-label {
+        margin: 16px 0 16px 0;
+}
+
+.loginradius--form-element-content {
+    margin-bottom: 19px;
+}
+
+.loginradius-container--resetpassword {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.submit-loginradius-reset-password {
+    margin-bottom: 0;
+}

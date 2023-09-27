@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="1266">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Snack Pack</display-name>
+        <short-description xml:lang="x-default">&lt;h3&gt;what's in the snack pack?&lt;/h3&gt;&#13;
+&#13;
+&lt;p class="short-dsc"&gt;Enjoy 20 delicious snacks with our online-exclusive Snack Pack! This perfect mix of KIND favorites is ready for all your daily snacking needs.&lt;br /&gt;&#13;
+&lt;br /&gt;&#13;
+Like to start your day with whole grains? Try KIND&amp;reg; Breakfast bars or KIND Healthy Grains&amp;reg; clusters. Need to snack healthy while on the go? Enjoy KIND&amp;reg; bars, KIND Healthy Grains&amp;reg; bars and Pressed by KIND&amp;reg; bars! Looking for plant-based protein? Try KIND Protein&amp;trade; bars.&lt;br /&gt;&#13;
+&lt;br /&gt;&#13;
+Plus, all of our snacks are crafted with delicious, wholesome ingredients like nuts, fruits and whole grains to keep your body and your taste buds happy!&lt;/p&gt;</short-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/26670-mobile-variety-snack-pack_20180824.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/26670-mobile-variety-snack-pack_20180824.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/26670-mobile-variety-snack-pack_20180824.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <image path="images/26670-mobile-variety-snack-pack_20180824.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <classification-category catalog-id="kind-snacks-storefront">variety-packs</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="290">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <display-name xml:lang="x-default">Peanut Butter Dark Chocolate</display-name>
+        <short-description xml:lang="x-default">Guilty of grabbing a spoon and eating peanut butter straight out of the jar? We certainly are - which is why we created this nut bar coated in roasted peanut butter and smothered in dark chocolate. Leave the jar in the cabinet and take the taste of peanut butter wherever you go.</short-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <classification-category catalog-id="kind-snacks-storefront">kind-nut-bars</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+</catalog>

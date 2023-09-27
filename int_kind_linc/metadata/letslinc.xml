@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="lincClientSecret">
+                <display-name xml:lang="x-default">Client Secret Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lincClientShopId">
+                <display-name xml:lang="x-default">Shop id / Platform Id</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lincEnableDev">
+                <display-name xml:lang="x-default">Enable/Disable Development</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="lincServiceEndpoint">
+                <display-name xml:lang="x-default">Service Url</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="LetsLinc">
+                <display-name xml:lang="x-default">LetsLinc</display-name>
+                <attribute attribute-id="lincClientSecret"/>
+                <attribute attribute-id="lincServiceEndpoint"/>
+                <attribute attribute-id="lincClientShopId"/>
+                <attribute attribute-id="lincEnableDev"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

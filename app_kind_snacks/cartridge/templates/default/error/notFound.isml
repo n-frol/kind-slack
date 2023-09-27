@@ -1,0 +1,12 @@
+<isinclude template="components/modules" sf-toolkit="off" />
+
+<isdecorate template="common/layout/page">
+    <div class="st-error">
+        <img src="${URLUtils.staticURL('/images/exclamation.svg')}" alt="${Resource.msg('heading.error.general', 'error', null)}" />
+        <iscontentasset aid="instructions-404" />
+        <div class="container st-error__compliment-generator">
+            <isinclude template="error/complimentGenerator" />
+        </div>
+        <isslot id="error-404-a" description="Recommended products" context="global" />
+    </div>
+</isdecorate>

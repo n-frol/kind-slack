@@ -1,0 +1,49 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+    <isif condition="${paymentOption.ID === 'CREDIT_CARD'}">
+        <isinclude template="checkout/billing/paymentOptions/creditCardContent" />
+    <iselse/>
+        <!--- dotsource PaymentOperator --->
+        <isinclude template="checkout/billing/paymentOptions/paymentOperatorContent" />
+    </isif>
+
+</isloop>
+
+<!--- dotsource paymentoperator config --->
+<script type="text/javascript">
+    var paymentOperatorConfig = <isprint value="${ require('int_computop/cartridge/scripts/computop/util/Settings').getPaymentOperatorConfig() }" encoding="off"/>;
+</script>
+
+<isscript>
+    var CustomCOHelpers = require('*/cartridge/scripts/checkout/customCheckoutHelpers');
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var defaultInstrument = CustomCOHelpers.getCustomerDefaultPaymentInstrument(customer);
+    var defaultMethod = !empty(defaultInstrument) && !empty(defaultInstrument.paymentMethod) ?
+        defaultInstrument.paymentMethod : 'PAYMENTOPERATOR_CREDIT_DIRECT';
+    if (defaultMethod === 'PayPal') {
+        defaultMethod = 'PAYMENTOPERATOR_PAYPAL';
+    }
+
+
+    var activePaymentMethod = selectedPaymentInstrument ? selectedPaymentInstrument.paymentMethod : defaultMethod;
+
+    // Saved credit cards use the default CREDIT_CARD payment method type
+    // for saving in the wallet.
+    if (activePaymentMethod === 'CREDIT_CARD') {
+        activePaymentMethod = 'PAYMENTOPERATOR_CREDIT_DIRECT';
+    }
+    // Saved credit cards use the default DW_APPLE_PAY payment method type
+    // for saving in the wallet. Convert it to CREDIT_CARD
+    if (activePaymentMethod === 'DW_APPLE_PAY') {
+        activePaymentMethod = 'PAYMENTOPERATOR_CREDIT_DIRECT';
+    }
+</isscript>
+
+
+<!--- dotsource custom: defaults to PAYMENTOPERATOR_CREDIT_DIRECT --->
+<isif condition="${ pdict.order.billing.payment.applicablePaymentMethods.length > 0 }">
+    <input type="hidden" class="form-control"
+           name="${ pdict.forms.billingForm.paymentMethod.htmlName }"
+           value="${ activePaymentMethod }"
+    />
+</isif>

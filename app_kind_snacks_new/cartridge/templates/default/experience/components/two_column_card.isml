@@ -1,0 +1,217 @@
+<div class="two_column_card_container">
+    <isif condition="${pdict.headline}">
+        <div class="two_column_card_head">
+            <isprint value="${pdict.headline}" encoding="off" />
+        </div>
+    </isif>
+    <isif condition="${pdict.copy}">
+        <div class="two_column_card_copy">
+            <isprint value="${pdict.copy}" encoding="off" />
+        </div>
+    </isif>
+    <div class="two_columns ${pdict.direction}">
+    <div class="left-container" style="background: ${pdict.backgroundcolor.value}">
+        <div class="t_container ${pdict.inner_align}">
+        <div class="innerheadline ${randomid} ${pdict.inner_align}" style="color: ${pdict.textcolor.value}">
+            <isprint value="${pdict.innerheadline}" encoding="off" />
+          </div>
+        <div class="innercopy ${pdict.inner_align_t}" style="color: ${pdict.textcolor.value}">
+            <isprint value="${pdict.innercopy}" encoding="off" />
+            </div>
+    </div>
+    </div>
+    <div class="right-container">
+        <picture>
+            <source media="(max-width: 768px)" srcset="${pdict.imagemobile.src.desktop}">
+            <img style="max-width: 100%;" src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+        </picture>
+    </div>
+    </div>
+</div>
+
+<style>
+    .innerheadline {
+        font-size: 48px;
+        line-height: 54px;
+        padding-bottom: 32px;
+        max-width: 450px;
+        margin:auto;
+        width: 470px;
+        font-family: main;
+        letter-spacing: -1px;
+        text-align: ${pdict.inner_align_t};
+    }
+    .innerheadline.left, .innercopy.left {
+        margin: 0;
+    }
+    .innercopy.center {
+        margin: auto;
+        text-align: center;
+    }
+    .innercopy.left {
+        text-align: left;
+    }
+    .innercopy {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 450px;
+        margin:auto;
+        font-family: medium;
+    }
+    .two_columns {
+        width: calc(100% - 120px);
+        margin-left: 120px;
+        position: relative;
+        right: 60px;
+        display: flex;
+        align-items: stretch;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        min-height: 540px;
+    }
+    .two_columns.reverse {
+        flex-direction: row-reverse;
+    }
+    .right-container img {
+        max-height: 100%;
+        min-height: 100%;
+        height: unset;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 0px 16px 16px 0px;
+    }
+    @media screen and (max-width: 864px) {
+        .right-container img {
+            max-height: 610px;
+            height: unset !important;
+        }
+
+        .two_columns {
+            width: 100%;
+            margin-left: 0;
+            right: 0px;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .two_column_card_container .right-container {
+            width: calc(100% - 40px) !important;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .two_column_card_container .left-container {
+            width: 100% !important;
+            color: white;
+            background: black;
+            height: 375px;
+            position: relative;
+            top: -5px;
+            border-radius: 0px !important;
+        }
+        .t_container {
+            padding-left: 20px;
+            padding-right: 20px;
+            width: calc(100% - 40px);
+            position: relative;
+            top: 0px;
+            left: 0;
+            transform: none;
+        }
+        .innerheadline {
+            width: unset !important;
+            max-width: unset !important;
+            font-size: 36px;
+            line-height: 42px;
+        }
+.right-container img {
+    border-radius: 0px;
+}
+    }
+    @media screen and (min-width: 864px) and (max-width: 1024px) {
+        .two_columns {
+            width: calc(100% - 120px);
+            margin-left: 120px;
+            min-height: 560px;
+        }
+        .right-container img {
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0px 20px 20px 0px;
+        }
+    }
+    .two_column_card_container .right-container {
+        width: 50%;
+        display: inline-block;
+    }
+    .two_column_card_container .left-container {
+        width: 50%;
+        color: white;
+        background: black;
+        position: relative;
+        border-radius: 16px 0px 0px 16px;
+    }
+    @media screen and (max-width: 440px) {
+        two_column_card_container {
+            flex-direction: row-reverse;
+        }
+        .two_columns {
+            width: 100%;
+            margin-left: 0;
+            position: relative;
+            right: 0;
+            flex-direction: column-reverse;
+        }
+        .two_column_card_container .right-container {
+            width: 100%;
+            display: inline-block;
+        }
+        .two_column_card_container .left-container {
+            width: 100%;
+            color: white;
+            background: black;
+            position: relative;
+            top: -5px;
+            border-radius: 0px;
+            height: auto;
+        }
+        .t_container {
+            position: relative;
+            padding: 40px 20px 80px 50px;
+            top: unset;
+            left: unset;
+            transform: none;
+        }
+    }
+    .two_column_card_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 0 0;
+        margin: 0 0 0 0;
+    }
+    .two_column_card_head {
+        font-family: main;
+        font-size: 48px;
+        line-height: 54px;
+        text-align: center;
+        letter-spacing: -1px;
+        max-width: 550px;
+        margin-bottom: 32px;
+    }
+    @media screen and (max-width: 864px) {
+        .two_column_card_head {
+            font-size: 36px;
+            line-height: 42px;
+        }
+    }
+    .two_column_card_copy {
+        font-size: 18px;
+        line-height: 24px;
+        max-width: 350px;
+        text-align: center;
+        margin-bottom: 80px;
+        font-family: medium;
+    }
+</style>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="search-results">
+        <display-name xml:lang="x-default">Search Results</display-name>
+        <display-name xml:lang="fr-FR">Connexion à Mon compte</display-name>
+        <display-name xml:lang="it-IT">Il mio account - Accesso</display-name>
+        <display-name xml:lang="ja-JP">マイアカウントログイン</display-name>
+        <display-name xml:lang="zh-CN">我的账户登录名</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Find Your Snacks | KIND Snacks</page-title>
+            <page-title xml:lang="fr-FR">Connexion à Mon compte KIND Snacks</page-title>
+            <page-title xml:lang="it-IT">Il mio account KIND Snacks - Accesso</page-title>
+            <page-title xml:lang="ja-JP">マイ KIND Snacks アカウントログイン</page-title>
+            <page-title xml:lang="zh-CN">我的 KIND Snacks 账户登录名</page-title>
+        </page-attributes>
+    </content>
+</library>

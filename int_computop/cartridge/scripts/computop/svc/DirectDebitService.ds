@@ -1,0 +1,16 @@
+/**
+ * Service class for method direct debit sepa
+ */
+
+/* Script includes */
+var AbstractComputopService = require( "./AbstractComputopService" );
+
+var DirectDebitService = AbstractComputopService.extend(
+{
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorDirectDebitGatewayPath');
+    }
+});
+//Export the configured service singleton
+module.exports = (new DirectDebitService()).getService();

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances>
+            <preference preference-id="niceInContactUrl">https://home-c6.incontact.com/inContact/ChatClient/ChatClient.aspx?poc=8b26db68-b016-42b0-ab7e-ec47e6ee09df&amp;bu=4594724</preference>
+        </all-instances>
+    </custom-preferences>
+</preferences>
+

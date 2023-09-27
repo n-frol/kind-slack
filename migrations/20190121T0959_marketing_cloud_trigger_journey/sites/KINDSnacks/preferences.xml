@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances>
+            <preference preference-id="mcWelcomeCouponDataExtensionExternalKey">7C04FD9C-D152-417E-AE37-18DC33D66EE6</preference>
+            <preference preference-id="mcWelcomeCouponEventDefinitionKey">APIEvent-8ca55986-56ea-7ed7-9285-2cbd020f6041</preference>
+        </all-instances>
+    </custom-preferences>
+</preferences>
+

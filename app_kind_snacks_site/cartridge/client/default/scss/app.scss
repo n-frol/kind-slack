@@ -1,0 +1,545 @@
+/* ============================================================================
+   KIND Snacks
+   ============================================================================ */
+
+/**
+ * KIND Snacks, by @pixelmedia
+ */
+
+/**
+ * CONTENTS
+ * ============================================================================
+ *
+ * RESETS
+ * Box-Sizing..........................A better box-sizing reset
+ * Normalize...........................While not a true reset, but gives level playing field
+ * Reset...............................A simple reset that compliments normalize
+ *
+ * HELPERS
+ * Variables Global....................Layout, Fonts, Colors, etc
+ * em..................................Mixin to convert px to em
+ * Strip Units.........................Strips the unit from the number
+ * String Replace......................Replace search with replace in string
+ * Is Even.............................Checks if a number is even
+ * Variables Media.....................Media query variables
+ * New Breakpoints.....................Function returns a media context
+ * Breakpoint Classes..................Mixin class assigned values based on breakpoints
+ * Clearfix............................Mixin for micro clearfix
+ * Media...............................Mixin for media queries
+ * Headings............................Mixin for headings
+ * Lists...............................Mixin for lists
+ * Visually Hidden.....................Mixin to hide using accessible method
+ * Svg URL.............................Mixins for making svgs accessible to CSS
+ * Inline SVG..........................SASS variables with SVGs
+ *
+ * BASE SFRA
+ * SFRA........................Imports base SFRA styles
+ *
+ * BASE
+ * JS Media Flags......................Inserts content into pseudo element as a flag for JS
+ * Global Classes......................Styles global classes
+ * Typography..........................Base typography styles
+ * Form Elements.......................Base form elements styles
+ * Buttons.............................Base button styles to overwrite default browser styles
+ * Images..............................Responsive image
+ * Link................................Base link style
+ * Modals..............................Base modal styles as needed
+ * Table...............................Base table style
+ * Fonts...............................Fonts as set in helpers.variables-global
+ *
+ * BASE SG
+ * Site Genesis........................Imports base site genesis styles
+ *
+ * COMPONENTS
+ * Hamburger Menu......................Styles for a basic hamburger style three line menu button
+ * Minicart............................Styles for the minicart icon and related elements
+ * Header Banner.......................Styles for the site's "slide up" header banner
+ * Buttons.............................Overwrite Bootstrap btn styles using the predefined btn classes
+ * Featured Nav........................Styles for the featured navigation within the shop nav
+ * Promo Card..........................Styles for the promo card primarily used in primary nav
+ * Top Level Cat Nav...................Styles for the category navigation within the shop nav
+ * No-menu Header......................Styles for the simplified (nomenu) version of the site header
+ * Sticky elements.....................Styles for dynamically sticky elements
+ * Forms...............................Overwrite Bootstrap form input styles using the some predefined SFRA Bootstrap classes
+ * Tabs................................Styles for tab elements
+ * Page Header With Login..............Styles for the inline page header with possible login block
+ * Search..............................Styles for the SFRA search bar
+ * Product Summary.....................Styles for the sidebar order summaries
+ * Suggestions.........................Styles for the search suggestions
+ * Account Dashboard...................Styles for the Account Dashboard
+ * Login Block.........................Styles for the Account Login page
+ * Rotation Message....................Styles for the popup encouraging mobile users to rotate to landscape mode
+ *  PDP
+ *  What's in the Bar...............Styles for the what's in the bar block on the PDP
+ *  Primary Images..................Styles for the primary image block on PDPs
+ *  Details.........................Styles for the main details of the PDP
+ *  Variation Attribute.............Styles for the PDP variation attributes
+ *  Out of Stock....................Styles for the out of stock blck on the PDP
+ *  Add to Cart.....................Styles for the add to cart block on the PDP
+ *  Benefits........................Styles for the benefits block on the PDP
+ *  Description.....................Styles for the description block on the PDP
+ *  Bundle..........................Styles for the bundled products block on the PDP
+ *  Good For........................Styles for the "Good For" block on the PDP
+ *  Nutrition.......................Styles for the nutrition block on the PDP
+ *  Texture Bar.....................Styles for the texture bar on the PDP
+ *  OrderGroove Pricing.............Styles for the "floating" OrderGroove pricing on the PDP
+ * Quantity Field...................Styles for custom quantity fields with plus and minus buttons
+ * Email Signup Pre-Footer..........Establish styles for the Email Signup Pre-Footer
+ * BYOB Product Tiles...............Styles for the BYOB Search – Product Tiles
+ * Starter Combo Tiles..............Styles for BYOB starter combo tiles
+ * Product Tiles....................Styles for the Search – Product Tiles
+ * Texture-bar......................Styles for the the texture bar on the product tile
+ * Category Banner..................Styles for the category banner
+ * Refinements......................Styles for the search – Refinements
+ * Refinement Bar...................Styles for the search Refinement Bar
+ * Recommendation...................Styles the recommended products block on the PDP and on the card
+ * Search results...................Styles for the Search results
+ * Chips box........................Styles for chips on Page-layout
+ * Cart-empty.......................Styles for the cart-empty message
+ *  Checkout
+ *  Header.............................Styles for the checkout page header
+ *  Shipping Address...................Styles for the checkout page shipping address
+ *  Shipping Method....................Styles for the checkout page shipping method
+ *  Shipping Gift......................Styles for the checkout page shipping gift area
+ *  Multi Shipping.....................Styles for the checkout page multiple shipping addresses area
+ *  Billing...................Styles for the checkout page payment area
+ *  Price Summary......................Styles for the checkout page price summary
+ * View minicart....................Styles for mini-cart view
+ * Product Card........................Styles for product Card
+ * Search results.....................Styles for the Search results
+ * Chips box...........................Styles for chips on Page-layout
+ * Cart-empty..........................Styles for the cart-empty message
+ * Cart Promo Code..................Styles for Coupon component
+ * Cart Coupon Display..............Styles for Coupon Display
+ * Content Navigation...............Styles for the content navigation component
+ * Approaching Discounts............Styles for Approaching Discounts
+ * BYOB Category Nav................Styles for the BYOB Category Nav component
+ * Compare-bar......................Styles for the compare-bar component on the PLP
+ * Compliment Generator.............Styles for the compliment generator on the error pages
+ * Slick Slider.....................Styles global slick slider elements than can take custom classes
+ * Tooltip..........................Styles for tooltip elements
+ * Alert............................Styles for alert pop-ups
+ * Cart Product Card Product Price.....Styles for Cart Product Card Product Price
+ * Quantity Form.......................Styles for custom selector
+ * Product-card-header..............Styles for Cart Product Card header
+ * Cart Product Info................Styles for Cart product info
+ * Cart Totals......................Styles for Cart Totals
+ * Order Details Sidebar...............Styles for the checkout sidebar specific to the order details page
+ * Icon Buttons.....................Syles for icon type buttons
+ * Forward "Navigation".............Styles buttons, links, and button-like elements that point to somewhere next, have a sub-tree, etc. that are effecitvely leading forward
+ * Address Verification.............Styles for address verification
+ * Locale Switcher.....................Styles for the locale switcher component
+ *
+ * STRUCTURES
+ * Header..............................Styles for the global site header
+ * Primary Nav.........................Styles for the site's primary navigation within the header
+ * Shop Nav............................Styles for the shop navigation within the header
+ * Containers..........................Custom style sets for containers
+ * Rows................................Custom style sets for rows
+ * Modal...............................Styles for modal elements
+ * Product Top.........................Global styles for the product top/main area regardless of the template source
+ * PDP Main............................Styles for the top/main area of the pdp
+ * Compare.............................Styles for the main area of the compare products page
+ * Error...............................Styles for the main area of the 404 error page
+ * Product Quickview Main..............Styles for the top/main area of the product quickview
+ * PDP Description and Info............Styles for the description and various info blocks of the PDP
+ * Main with Sidebar...................Styles for main content areas adjacent to sidebars
+ * Sidebar.............................Styles for the sidebar when used
+ * Checkout Main.......................Styles for the main area of the checkout page
+ * Checkout Shipping...................Styles for the checkout page shipping area
+ * Quickview Modal.....................Styles for quickview modals
+ * Footer .............................Styles for the global footer
+ *
+ * SCOPES
+ * Sticky Header.......................Provides a scope for styles for the sticky header js
+ * Header Nav..........................Provides a scope for styles for the header-navigation content asset
+ * Featured Nav........................Provides a scope for styles for the featured-navigation content asset
+ * Primary Nav.........................Provides a scope for styles for the user-generated contentt in tthe primary nav
+ * Secondary Shop Nav..................Provides a scope for styles for the secondary-shop-navigation content asset
+ * Promo Card..........................Provides a scope for styles for the promo card asset
+ * Product Description.................Provides a scope for styles for the product description
+ * Product Benefits....................Provides a scope for styles for product benefit content assets
+ * Product Breadcrumbs.................Provides a scope for styles for the page breadcrumbs without having to alter the global template
+ * Slick Carousel......................Provides a scope for styles for the elements created by the Slick Carousel
+ * Pixelee.............................Provides a scope for styles for the elements created in BM or by Pixelee widgets
+ * Select2.............................Provides a scope for styles for the elements created by Select2
+ * Category Banner.....................Provides a scope for styles for category banner content assets
+ * FAQ Child...........................Provides a scope and styles for user-generated content in faq-child templates
+ * Image Gallery.......................Provieds a scope and styles for dynamic elements within the image gallery component
+ * Ordergroove.........................Provides a scope and styles for dynamic Ordergroove elements across the site
+ * Cart Ordergroove....................Provides a scope and styles for dynamic Ordergroove elements on the cart
+ * PDP Ordergroove.....................Provides a scope and styles for dynamic Ordergroove elements on the PDP
+ * Login Block.........................Classes and Elements for Login Card Nav styles
+ * Login Radius........................Provides scope styles for the loginRadius classes
+ * Address Verification................Provides a scope for styles for address verification content assets
+ * Quickview...........................Prvoides a scope and styles for dynamic content in quickview
+ * KIND Legacy Styles..................Styles imported from the old KIND site for components that are merely copied over rather than built out anew
+ * Email Signup Pre-Footer.............Establish styles for the Email Signup Pre-Footer
+ * Footer Scope........................Establish a scope and styles HTML elements within the footer
+  * Idme................................Provides a scope for styles for the elements Idme button
+ *
+ * UTILITIES
+ * Widths..............................Simple width helper classes
+ * Spacings............................Spacing utility classes
+ * Alignment...........................Float Items to the left and right
+ * Visually Hidden.....................Accessibily hides content
+ * Text................................Allows to add key text styles to strings of text
+ * Lists...............................Adds classes for list helpers
+ * Backgrounds.........................Re-useable classes for backgrounds
+ * Viewport Is.........................Inserts content into body pseudo element as a flag to JS for current viewport
+ *
+ * THEMES
+ * Benefits Grid...........................Handles benefits grid component styles
+ * Billboard Grid..........................Handles billboard grid component styles
+ * Bio Block...............................Handles bio block component styles
+ * Content Banner..........................Handles content banner component styles
+ * Content Grid............................Handles content grid component styles
+ * Custom Navigation.......................Handles custom navigation asset styles
+ * CTA Grid................................Handles cta grid component styles
+ * Marketing Banner........................Handles marketing banner component styles
+ * Featured Banner.........................Handles featured banner component styles
+ * Feature Tabs............................Handles feature tabs component styles
+ * Featured Container......................Handles featured container component styles
+ * Flavor Banner...........................Handles flavor banner component styles
+ * Glossary................................Handles glossary component styles
+ * Image Gallery...........................Handles image gallery component styles
+ * Leaderboard.............................Handles leaderboard component styles
+ * Link Grid...............................Handles link grid component styles
+ * Marketing Tile..........................Handles marketing tile component styles
+ * Media Grid..............................Handles media grid component styles
+ * Navigation Content......................Handles navigation content template styles
+ * Purchase Block..........................Handles purchase block component styles
+ * Simple Bannner..........................Handles simple tile component styles
+ * Tips Block..............................Handles tips block component styles
+ * Video Callout...........................Handles video callout component styles
+ *
+ */
+
+
+// RESETS
+// ============================================================================
+
+// Please Note: All partials inside the resets directory should be namespaced with resets.
+
+// Resets give us a better foundation when starting off. While normalize is not a full reset, it
+// does give us a level playing field across browsers.
+
+@import '~kind/resets/resets.box-sizing';
+@import '~kind/resets/resets.normalize';
+@import '~kind/resets/resets.reset';
+
+
+// HELPERS
+// ============================================================================
+
+// Please Note: All partials inside the helpers directory should be namespaced with helpers.
+
+// Helpers are made up of the global variables, mixins, and functions that are used within the
+// codebase.
+
+@import '~kind/helpers/helpers.variables-global';
+@import '~kind/helpers/helpers.em';
+@import '~kind/helpers/helpers.strip-units';
+@import '~kind/helpers/helpers.str-replace';
+@import '~kind/helpers/helpers.is-even';
+@import '~kind/helpers/helpers.variables-media';
+@import '~kind/helpers/helpers.new-breakpoints';
+@import '~kind/helpers/helpers.breakpoint-classes';
+@import '~kind/helpers/helpers.clearfix';
+@import '~kind/helpers/helpers.media';
+@import '~kind/helpers/helpers.headings';
+@import '~kind/helpers/helpers.lists';
+@import '~kind/helpers/helpers.visually-hidden';
+@import '~kind/helpers/svgUrl';
+@import '~kind/helpers/svgInline';
+
+
+// THIRD PARTY
+// ============================================================================
+
+// This includes third party styles for third party plugins.
+
+
+
+// BASE SG
+// ============================================================================
+
+// This includes the base SG styles in order that we may share variables and only output 1
+// stylesheet for production
+
+@import 'sfra/global';
+
+
+// BASE
+// ============================================================================
+
+// Please Note: All partials inside the base directory should be namespaced with base.
+
+/**
+ * Base files are more like normalizing partials. They are the only place where it is is ok to
+ * style properties based on an HTML element. If a partial falls outside of the base directory,
+ * you should not be styling HTML elements, only classes. The only excepion to this case is if
+ * it is a scope or a component that deals with content assets or slots.
+ */
+
+@import '~kind/base/base.js-media-flags';
+@import '~kind/base/base.global-classes';
+@import '~kind/base/base.typography';
+@import '~kind/base/base.form-elements';
+@import '~kind/base/base.buttons';
+@import '~kind/base/base.images';
+@import '~kind/base/base.link';
+@import '~kind/base/base.modal';
+@import '~kind/base/base.table';
+@import '~kind/base/base.fonts';
+
+
+// COMPONENTS
+// ============================================================================
+
+// Please Note: All partials inside the components directory should be namespaced with components.
+
+/**
+ * Components are concrete, implementation-specific pieces of UI. All of the changes you make to
+ * its styles should be detectable in the context you're currently looking at. Modifying these
+ * styles should be safe and have no side effects.
+ *
+ * Please namespace all component classes with c-.
+ *
+ * Do not remove the {{COMPONENTS}} Sass comment below as it is needed to scaffold
+ * out components.
+ */
+
+@import 'components/components.hamburger-menu';
+@import 'components/components.minicart';
+@import 'components/header/components.banner';
+@import "~kind/components/components.buttons";
+@import '~kind/components/components.featured-nav-items';
+@import 'components/components.promo-card';
+@import '~kind/components/components.top-level-cat-nav';
+@import 'components/components.header-nomenu';
+@import '~kind/components/components.sticky-elem';
+@import "~kind/components/components.form-elements";
+@import '~kind/components/components.tabs';
+@import '~kind/components/components.page-header-with-login';
+@import 'components/components.site-search';
+@import '~kind/components/components.sidebar-product-summary';
+@import '~kind/components/components.suggestions';
+@import '~kind/components/components.account-dashboard';
+@import '~kind/components/components.login-block';
+@import '~kind/components/components.rotationMessage';
+@import '~kind/components/applePay';
+
+// ------PDP
+
+@import '~kind/components/product/components.product-primary-images';
+@import '~kind/components/product/components.product-details';
+@import '~kind/components/product/components.product-variation-attribute';
+@import '~kind/components/product/components.product-out-of-stock';
+@import '~kind/components/product/components.product-add-to-cart';
+@import '~kind/components/product/components.product-description';
+@import '~kind/components/product/components.product-benefits';
+@import '~kind/components/product/components.product-bundle';
+@import '~kind/components/product/components.product-good-for';
+@import '~kind/components/product/components.product-nutrition';
+@import '~kind/components/product/components.product-texture-bar';
+@import '~kind/components/product/components.product-whats-in-the-bar';
+@import '~kind/components/product/components.product-ordergroove-pricing';
+
+// -----End PDP
+
+@import '~kind/components/components.qty';
+@import "components/components.email-signup";
+@import '~kind/components/components.product-tiles';
+@import '~kind/components/components.byob-product-list';
+@import '~kind/components/components.byob-product-tiles';
+@import '~kind/components/components.search-byob';
+@import '~kind/components/components.starter-combo-tile';
+@import '~kind/components/component.texture-bar';
+@import '~kind/components/components.cat-banner';
+@import "~kind/components/components.refinements";
+@import "~kind/components/components.refinement-bar";
+@import '~kind/components/components.product-card';
+@import '~kind/components/components.recommendation';
+@import "~kind/components/components.search-results";
+@import '~kind/components/components.faq-child';
+@import "~kind/components/components.chips-box";
+@import "~kind/components/cart/components.cart-empty";
+@import '~kind/components/checkout/components.checkout-billing';
+@import '~kind/components/checkout/components.checkout-shipping-address';
+@import '~kind/components/checkout/components.checkout-shipping-methods';
+@import '~kind/components/checkout/components.checkout-shipping-gift';
+@import '~kind/components/checkout/components.checkout-multi-shipping';
+@import '~kind/components/checkout/components.checkout-price-summary';
+@import '~kind/components/components.byob-category-nav';
+@import "~kind/components/components.compare-bar";
+@import '~kind/components/components.content-nav';
+@import "~kind/components/components.minicart-view";
+@import "~kind/components/components.product-card";
+@import "~kind/components/cart/components.cart-promo-code";
+@import "~kind/components/cart/components.cart-coupon-display";
+@import "~kind/components/cart/component.approaching-discounts";
+@import "~kind/components/components.compliment-generator";
+@import '~kind/components/components.tooltip';
+@import '~kind/components/components.slick-slider';
+@import '~kind/components/components.alert';
+@import "~kind/components/cart/components.cart-card-product-price";
+@import "~kind/components/cart/components.quantity-form";
+@import "~kind/components/cart/component.product-card-header";
+@import "~kind/components/cart/component.cart-product-info";
+@import "~kind/components/cart/component.cart-totals";
+@import '~kind/components/components.order-details-sidebar';
+@import '~kind/components/components.icon-button';
+@import '~kind/components/components.forward-nav';
+@import '~kind/components/components.address-verification';
+@import '~kind/components/components.locale-switcher';
+@import '~kind/components/components.starter-combo-banner';
+@import '~kind/components/components.starter-combo-alert';
+@import '~kind/components/components.pagedesigner';
+@import '~kind/components/components.byob-redesign';
+@import '~kind/components/components.byob-plp-redesign';
+
+// Structures
+// ============================================================================
+
+// Please Note: All partials inside the components directory should be namespaced with structures.
+
+/**
+ * Like components, structures are concrete, implementation-specific pieces of UI. All of the changes you make to
+ * its styles should be detectable in the context you're currently looking at. Modifying these
+ * styles should be safe and have no side effects. The difference between structures and components
+ * is that structures are made up of multiple components.
+ *
+ * Please namespace all component classes with st-.
+ */
+
+@import 'structures/structures.header';
+@import 'structures/structures.primary-nav';
+@import 'structures/structures.shop-navigation';
+@import '~kind/structures/structures.container';
+@import '~kind/structures/structures.row';
+@import '~kind/structures/structures.product-top';
+@import '~kind/structures/structures.pdp-main';
+@import '~kind/structures/structures.confirmation';
+@import '~kind/structures/structures.compare';
+@import '~kind/structures/structures.error';
+@import '~kind/structures/structures.modal';
+@import '~kind/structures/structures.product-quickview-main';
+@import '~kind/structures/structures.product-description-info';
+@import '~kind/structures/_structures.main-w-sidebar';
+@import '~kind/structures/structures.sidebar';
+@import '~kind/structures/checkout/structures.checkout-main';
+@import '~kind/structures/checkout/structures.checkout-shipping';
+@import '~kind/structures/structures.modal-quickview';
+@import 'structures/structures.global-footer';
+
+// SCOPES
+// ============================================================================
+
+// Please Note: All partial filenames inside this directory should be namespaced with scopes.
+
+/**
+ * Scopes create a new styling context. These should be used sparingly. they can be open to abuse
+ * and lead to poor CSS if not used wisely. The primary use case for scopes within an SFCC standup
+ * is to provide styles within a content asset or content slot. The secondary use case is when
+ * styling an SG component in order to easily style the SG classes that are in place.
+ *
+ * Please namespace all scope classes with s-
+ */
+
+@import '~kind/scopes/scopes.sticky-header';
+@import '~kind/scopes/scopes.header-nav';
+@import '~kind/scopes/scopes.featured-nav';
+@import 'scopes/scopes.primary-nav';
+@import '~kind/scopes/scopes.secondary-shop-nav';
+@import 'scopes/scopes.promo-card';
+@import '~kind/scopes/product/scopes.description';
+@import '~kind/scopes/product/scopes.good-for';
+@import '~kind/scopes/product/scopes.benefits';
+@import '~kind/scopes/product/scopes.breadcrumbs';
+@import '~kind/scopes/scopes.slick';
+@import '~kind/scopes/scopes.pixelee';
+@import '~kind/scopes/scopes.select2';
+@import '~kind/scopes/scopes.cat-banner';
+@import '~kind/scopes/scopes.faq-child';
+@import '~kind/scopes/scopes.image-gallery';
+@import '~kind/scopes/scopes.ordergroove';
+@import '~kind/scopes/scopes.idme';
+@import '~kind/scopes/scopes.cart-og';
+@import '~kind/scopes/scopes.pdp-og';
+@import '~kind/scopes/scopes.login-block';
+@import '~kind/scopes/scopes.login-radius';
+@import '~kind/scopes/scopes.product-card-embedded-bonus-product';
+@import '~kind/scopes/scopes.quickview';
+@import '~kind/scopes/scopes.address-verification';
+@import '~kind/scopes/scopes.knd-legacy';
+@import 'scopes/scopes.email-signup';
+@import 'scopes/scopes.global-footer';
+
+// UTILITIES
+// ============================================================================
+
+// Please Note: All partial filenames inside this directory should be namespaced with utilities.
+
+/**
+ * Utilities have a very specific role (often providing only one declaration) and should not be
+ * bound onto or changed. They can be reused and are not tied to any specific piece of UI.
+ *
+ * Please namespace all utility classes with u-
+ */
+
+@import '~kind/utilities/utilities.widths';
+@import '~kind/utilities/utilities.display';
+@import '~kind/utilities/utilities.spacings';
+@import '~kind/utilities/utilities.align';
+@import '~kind/utilities/utilities.visually-hidden';
+@import '~kind/utilities/utilities.text';
+@import '~kind/utilities/utilities.lists';
+@import '~kind/utilities/utilities.background';
+@import '~kind/utilities/utilties.viewport-is';
+
+// THEMES
+// ============================================================================
+
+// Please Note: All partial filenames inside this directory should be namespaced with themes.
+
+/**
+ * Theme partials are purely for adding thematic styles for components that are apart of overlay
+ * cartridges. Themes are unique in that they can target components, structures, and scope classes
+ * to apply thematic styles to the different contructs.
+ *
+ * Please namespace all theme classes with th-{themename}
+ */
+
+@import '~kind/themes/themes.benefits-grid';
+@import '~kind/themes/themes.billboard-grid';
+@import '~kind/themes/themes.bio-block';
+@import '~kind/themes/themes.content-banner';
+@import '~kind/themes/themes.content-grid';
+@import '~kind/themes/themes.cta-grid';
+@import '~kind/themes/themes.custom-navigation';
+@import '~kind/themes/themes.marketing-banner';
+@import '~kind/themes/themes.full-width-cta';
+@import '~kind/themes/themes.featured-banner';
+@import '~kind/themes/themes.feature-tabs';
+@import '~kind/themes/themes.featured-container';
+@import '~kind/themes/themes.flavor-banner';
+@import '~kind/themes/themes.glossary';
+@import '~kind/themes/themes.image-gallery';
+@import '~kind/themes/themes.leaderboard';
+@import '~kind/themes/themes.link-grid';
+@import '~kind/themes/themes.marketing-tile';
+@import '~kind/themes/themes.media-grid';
+@import '~kind/themes/themes.navigation-content';
+@import '~kind/themes/themes.purchase-block';
+@import '~kind/themes/themes.simple-tile';
+@import '~kind/themes/themes.tips-block';
+@import '~kind/themes/themes.video-callout';
+@import 'themes/themes.tabs-navigation';
+
+
+/**
+ * Overwrite styles for Creative Snacks site
+ */
+
+@import '~kind/sites/creativeSnacks/cs.app';

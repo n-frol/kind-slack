@@ -1,0 +1,103 @@
+<div class="homepage_image_grid__wrapper">
+    <div class="homepage_image_grid__container">
+        <h1>${pdict.hero_text}</h1>
+        <h3>${pdict.copy_text}</h3>
+        <div class="homepage_image_grid__image">
+            <isif condition="${pdict.image_first}">
+                <img src="${pdict.image_first.src.desktop}" alt="" />
+            </isif>
+            <isif condition="${pdict.image_second}">
+                <img src="${pdict.image_second.src.desktop}" alt="" />
+            </isif>
+            <isif condition="${pdict.image_third}">
+                <img src="${pdict.image_third.src.desktop}" alt="" />
+            </isif>
+            <isif condition="${pdict.image_fourth}">
+                <img src="${pdict.image_fourth.src.desktop}" alt="" />
+            </isif>
+        </div>
+    </div>
+</div>
+
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+.homepage_image_grid__wrapper {
+    width: 100%;
+    font-family: 'Poppins', sans-serif !important;
+}
+.homepage_image_grid__container {
+    width: 1300px;
+    margin: 0 auto;
+}
+.homepage_image_grid__container h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    text-align: center;
+    color: #1A1818;
+}
+.homepage_image_grid__container h3 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: none;
+    color: #1A1818;
+}
+.homepage_image_grid__container .homepage_image_grid__image {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 0 50px 0;
+}
+.homepage_image_grid__container .homepage_image_grid__image img {
+    height: 279px;
+    width: 279px;
+}
+
+@media(max-width: 768px)  {
+    .homepage_image_grid__container {
+        width: unset;
+    }
+    .homepage_image_grid__container h1 {
+       font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;
+        width: 320px;
+        margin: 0 auto;
+        padding: 0 30px;
+   } 
+    .homepage_image_grid__container h3 {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 25px 15px 0 15px;
+        width: 260px;
+        margin: 0 auto;
+    }
+    .homepage_image_grid__container .homepage_image_grid__image img {
+        width: 50%;
+    }
+    .homepage_image_grid__container .homepage_image_grid__image {
+        padding: 20px 0;
+        flex-wrap: wrap;
+        flex-direction: row;    
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1439px)  {
+    .homepage_image_grid__container {
+        width: 900px;
+    }
+    .homepage_image_grid__container .homepage_image_grid__image {
+        padding: 50px 0;
+    }
+    .homepage_image_grid__container .homepage_image_grid__image img {
+        width: 25%;
+        height: auto;
+    }
+}
+</style>

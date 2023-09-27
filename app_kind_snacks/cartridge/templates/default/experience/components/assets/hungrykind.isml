@@ -1,0 +1,12 @@
+<div class="hungrykind_container" style="background: ${pdict.background}">
+    <img src="${pdict.icon.src.desktop}" />
+    <div class="line"></div>
+    <h5>${pdict.header}</h5>
+    <div class="copy">
+    ${pdict.copy}
+    </div>
+</div>
+
+<style>
+
+</style>

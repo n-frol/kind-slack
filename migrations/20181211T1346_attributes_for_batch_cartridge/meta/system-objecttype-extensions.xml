@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="ServiceCredential">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="ftpBaseDir">
+                <display-name xml:lang="x-default">(s)FTP Base Directory</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="ftp">
+                <display-name xml:lang="x-default">FTP/SFTP</display-name>
+                <attribute attribute-id="ftpBaseDir"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="OrganizationPreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="batchArchiveInvalidFiles">
+                <display-name xml:lang="x-default">Archive Invalid Files</display-name>
+                <description xml:lang="x-default">If true, will archive and skip invalid XML files instad of throwing errors</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="batchSortFilesLexigraphically">
+                <display-name xml:lang="x-default">Sort Files by Name (lexigraphically)</display-name>
+                <description xml:lang="x-default">If true will sort files by their name rather than modification date asc.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="intBatch">
+                <display-name xml:lang="x-default">Batch Jobs</display-name>
+                <attribute attribute-id="batchArchiveInvalidFiles"/>
+                <attribute attribute-id="batchSortFilesLexigraphically"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="redShiftOrderCollectionTime">
+                <display-name xml:lang="x-default">Collect orders within the past X days</display-name>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Redshift">
+                <display-name xml:lang="x-default">Redshift Configuration</display-name>
+                <attribute attribute-id="redShiftOrderCollectionTime"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

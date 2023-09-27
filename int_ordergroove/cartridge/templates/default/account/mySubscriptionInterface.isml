@@ -1,0 +1,25 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.reportingURLs) && pdict.reportingURLs}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        if(!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')==true) {
+        	assets.addJs(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveStaticDomain')+ '/' + dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveMerchantID') + '/msi.js');
+        }
+    </isscript>
+
+    <isif condition="${!empty(pdict.flash)}">
+        <isset name="responses" value="${pdict.flash}" scope="page" />
+        <isinclude template="product/components/productAlerts" />
+    </isif>
+
+    <div class="c-account-msi">
+        <h1 class="title title-display-banner">${Resource.msg('page.heading.msi','account',null)}</h1>
+    </div>
+    <div class="container c-account-msi">
+    <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')==true}">
+        <div id="og-msi"></div>
+    </isif>
+    </div>
+</isdecorate>

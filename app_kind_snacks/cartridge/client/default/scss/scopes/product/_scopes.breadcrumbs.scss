@@ -1,0 +1,22 @@
+/* ============================================================================
+Product Breadcrumbs
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements in the page breadcrumbs without altering the global template
+ */
+
+$ns: s-product-breadcrumbs;
+
+.#{$ns} {
+    .breadcrumb {
+        padding-top: 0;
+    }
+    .breadcrumb-link {
+        color: $grey4;
+        font-family: $font-family-primary;
+        font-size: 14px;
+        letter-spacing: -.5px;
+        text-decoration: none;
+    }
+}

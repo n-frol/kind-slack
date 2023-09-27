@@ -1,0 +1,90 @@
+<isscript>
+var LoginRadius = require('*/cartridge/models/loginRadius');
+var loginRadius = new LoginRadius();
+var loginRadiusForwardingURL = "checkout";
+var resetpass = URLUtils.https('LoginRadius-PasswordResetForm');
+pdict.loginRadiusForwardingURL = loginRadiusForwardingURL;
+pdict.loginRadius = loginRadius;
+</isscript>
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/login.css');
+        assets.addJs('/js/login.js');
+        //assets.addJs('/js/kount.js');
+    </isscript>
+
+<div id="loginmodal" class="loginmodal modal fade" tabindex="-1" role="dialog" aria-labelledby="loginmodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title request-password-title">Returning Customers</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body loginbody" style="padding: 0px 20px">
+                <isinclude template="/loginradius/login" />
+                <div style="padding:10px;"></div>
+                <a class="checkout-create-mobile" href="${URLUtils.url('Login-Show')}?action=register&lrforwardurl=checkout"
+                    >${Resource.msg('heading.order.create', 'checkout', null)}</a>
+                <div style="padding-bottom: 10px"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<isdecorate template="common/layout/checkout">
+    <!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/checkout.js');
+        assets.addCss('/css/checkout/checkout.css');
+        var GTM = require('int_googletagmanager/cartridge/scripts/helpers/GTM');
+        var isReferenceTransaction = !empty(pdict.isRefTransaction) ? pdict.isRefTransaction : false;
+        var isExpressCheckout = session.privacy.PaypalExpressData || session.privacy.MasterPassQuickCheckoutData;
+        var isZeroTotal = !empty(pdict.order) && !empty(pdict.order.totals) && pdict.order.totals.grandTotalDecimal === 0;
+
+        var mainClassString = pdict.order.usingMultiShipping &&
+            pdict.order.shipping.length > 1 ? 'multi-ship' : '';
+        var selectedShippingMethod = pdict.order.shipping[0].selectedShippingMethod.ID;
+    </isscript>
+    <isif
+        condition="${!empty(GTM.CheckoutStepDataLayerHelper(pdict.order, GTM.SHIPPING, selectedShippingMethod))}">
+        <script type="text/javascript">
+            var dataLayerCheckout = <isprint value="${JSON.stringify(GTM.CheckoutStepDataLayerHelper(pdict.order, GTM.SHIPPING, selectedShippingMethod))}" encoding="off"/>;
+        </script>
+    </isif>
+    <isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+    <isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+
+    <isif condition="${siteID === 'CreativeSnacks'}">
+        <isinclude template="checkout/checkoutCS" />
+    <iselse/>
+        <isinclude template="checkout/checkoutKindSnacks" />
+    </isif>
+
+    </div>
+
+    <isinclude template="checkout/shipping/shippingAddressTemplate" />
+
+</isdecorate>
+
+<style>
+.collapsible .title, .collapsible .card-header {
+    font-size: 25px;
+    line-height: 100%;
+}
+@media screen and (max-width: 440px) {
+    .collapsible .title, .collapsible .card-header {
+        padding-top: 10px;
+    }
+}
+label, .form-control-label {
+    letter-spacing: 0px;
+}
+</style>

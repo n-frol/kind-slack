@@ -1,0 +1,46 @@
+<div class="benefits_container">
+    <img src="${pdict.image.src.desktop}" />
+    <div class="benefits_text">
+    <h3 class="benefit_header">
+    ${pdict.header}
+    </h3>
+    <div class="benefit_copy">
+        ${pdict.copy}
+    </div>
+    </div>
+</div>
+
+<style>
+.region:before {
+    display:none;
+}
+    .experience-assets-benefits {
+    }
+    .benefits_container img {
+        width:100%;
+    }
+    @media screen and (max-width:425px) {
+        .experience-assets-benefits {
+            width: 100%;
+        }
+        .benefits_text {
+            height:unset;
+        }
+    }
+    .benefits_text {
+        background: black;
+        color:white;
+        padding: 25px;
+        height: 410px;
+    }
+    .benefits_container {
+        margin:auto;
+    }
+    .benefit_header {
+        text-align:center;
+        letter-spacing: normal;
+    }
+    .benefit_copy {
+        text-align:center;
+    }
+</style>

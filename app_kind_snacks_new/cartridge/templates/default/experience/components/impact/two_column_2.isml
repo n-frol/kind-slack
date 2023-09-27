@@ -1,0 +1,139 @@
+<div class="impact_two_column_2_container">
+    <div class="impact_center center marginme nomarginmobile" style="align-self:flex-start;">
+        <img src="${URLUtils.staticURL('/images/impact/welcome_section_2.png')}" alt="Impact Two Column 2 Image" />
+    </div>
+    <div class="impact_center nomargin">
+        <div class="impact_headline">
+            a letter to the KIND community
+        </div>
+        <div class="impact_para">
+            KIND Community,
+<br/><br/>
+            Welcome to our second KIND Impact Report.
+<br/><br/>
+            When reflecting on what inspires us as a team at KIND, I often come back to our founding principles. Daniel Lubetzky founded KIND with a vision for a kinder and healthier world – one in which people didn’t have to choose between nutrition and taste. Since then, we've remained committed to crafting products that taste great and that help people get more nutritious, recommended foods – like nuts, whole grains, and fruit – into their diets. Put simply, this is the reason we exist.
+            <br/><br/>
+            And while our products help consumers be kinder to their bodies, we don’t stop there. Our purpose gives us the privilege of championing worthy causes like nutrition education and access to healthy food, supporting communities who haven’t always received their fair share of kindness, and mobilizing to help protect our planet.
+            <br/><br/>
+            But perhaps most importantly, we’ve moved forward with our mission and journey the KIND way, bit by bit – and bite by bite. On the following pages, you’ll see exactly what that means.
+            <br/><br/>Until next time,<br/><br/> <b>Russell Stokes</b> <br/>CEO, KIND North America
+        </div>
+    </div>
+</div>
+
+<style>
+    .nomargin {
+        margin-left: 0px !important;
+    }
+    @media screen and (max-width: 440px) {
+        .impact_center.center {
+            margin-left: 0px !important;
+            width: 50% !important;
+            margin: auto !important;
+            margin-top: 20px !important;
+        }
+    }
+    .impact_headline {
+        max-width: 550px;
+        font-size: 42px;
+        line-height: 40px;
+        font-family: main;
+        margin-bottom: 40px;
+    }
+    .impact_para {
+        max-width: 550px;
+        font-family: medium;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+    }
+    .primary.red {
+        position: absolute;
+        top: 0px;
+        right: 60px;
+        background: red !important;
+        color: white;
+        width: fit-content;
+    }
+    .primary.impact {
+        margin-bottom: 150px;
+    }
+    .para {
+        margin-bottom: 32px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 60px;
+    }
+    .impact_center.center {
+        text-align:center;
+    }
+    .big {
+        font-size: 140px;
+        line-height: 128px;
+        font-family: main;
+        letter-spacing: -1px;
+    }
+    .impact_two_column_2_container {
+        height: 700px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin-bottom: 200px;
+        position: relative;
+    }
+    @media screen and (max-width: 440px) {
+        .welcome_copy_3 {
+            padding: 0px 40px !important;
+        }
+        .impact_para {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .impact_headline {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .marginme {
+            margin-bottom: 20px;
+        }
+        .impact_two_column_2_container {
+            display: inline-block;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: auto !important;
+            margin-bottom: 0px !important;
+        }
+        .primary.impact {
+            margin-bottom: 20px !important;
+            position: relative;
+            left: -10px;
+        }
+        .big {
+            font-size: 112px;
+            line-height: 101px;
+        }
+        .primary.red {
+            display: none;
+        }
+        .impact_two_column_2_container img {
+            height: auto !important;
+            width: 100% !important;
+            border-radius: 20px !important;
+        }
+        .impact_center {
+            align-self: center;
+            margin-left: 20px !important;
+        }
+    }
+    .impact_two_column_2_container img {
+        height: auto;
+        width: 50%;
+        max-width: unset;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+</style>

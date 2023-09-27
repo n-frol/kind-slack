@@ -1,0 +1,37 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/login.css');
+        assets.addJs('/js/login.js');
+    </isscript>
+
+    <h1 class="title title-display-banner">
+        ${Resource.msg('header.hero.image.login', 'login', null)}
+    </h1>
+    <div class="container c-login-block">
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-6 c-login-block__vertical-line login-left-side">
+                <div class="card c-login-block__card">
+                    <div class="card-body">
+                        <isinclude template="account/components/navTabs" />
+                        <div class="tab-content">
+                            <div class="tab-pane ${pdict.navTabValue === 'login' ? 'active' : ''}" id="login" role="tabpanel">
+                            <isinclude template="account/components/loginForm" />
+                            <isinclude template="account/password/requestPasswordResetModal"/><p class="c-login-block__text-insert">${Resource.msg('loginradius.or', 'loginradius', null)}</p>
+                            <isinclude template="account/components/oauth" />
+                        </div>
+                        <div class="tab-pane ${pdict.navTabValue === "register" ? 'active' : ''}" id="register" role="tabpanel">
+                            <isinclude template="account/components/registerForm" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="col-sm-8 col-md-6 login-right-side">
+                <div class="card c-login-block__card">
+                    <isinclude template="account/components/trackOrderForm" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

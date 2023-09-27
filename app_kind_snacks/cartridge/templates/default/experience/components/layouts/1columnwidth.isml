@@ -1,0 +1,38 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+</isscript>
+<style>
+.st-global-footer__wrapper {
+    padding-top: 36px;
+    padding-bottom: 36px;
+}
+.region .experience-component {
+    left: 0;
+    right: 0;
+}
+.st-global-footer {
+    width:100%;
+}
+.page-designer-reference {
+    max-width: 100%;
+}
+.region .experience-component {
+    position:relative;
+}
+.region_landscape-small:before {
+    padding-top: 0px;
+}
+#gifting-page .col-12 {
+}
+.nomargins {
+    margin-bottom:0;
+}
+.nopadding {
+    padding: 0px;
+}
+</style>
+<div class="row mx-n2" style="max-width:${pdict.width}; margin:auto; text-align:${pdict.center}; background:${pdict.background}">
+    <isprint value="${pdict.regions.column1width.setClassName("region col-12 col-md-12 nomargins nopadding").render()}" encoding="off"/>
+</div>

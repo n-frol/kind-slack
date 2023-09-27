@@ -1,0 +1,17 @@
+<ul class="c-refinements__values values">
+    <isloop items="${refinement.values}" var="refinementValue">
+        <li class="c-refinements__values__item col-sm-4 col-md-12" title="${refinementValue.title}">
+            <a href="${refinementValue.url}" class="c-refinements__values__item__link">
+                <isif condition="${refinementValue.selected}">
+                    <span class="c-refinements__values__item__link__custom-radio-checked is-checked"></span>
+                <iselse>
+                    <span class="c-refinements__values__item__link__custom-radio"></span>
+                </isif>
+
+                <span class="c-refinements__values__item__link__custom-radio__text">
+                    ${refinementValue.displayValue}
+                </span>
+            </a>
+        </li>
+    </isloop>
+</ul>

@@ -1,0 +1,62 @@
+    <isscript>
+        var anchorreg = pdict.regions.anchors;
+        anchorreg.setClassName("anchor-wrapper sticky s-sticky-header");
+        // mark all pages as carousel
+        anchorreg.setComponentClassName("anchor");
+    </isscript>
+    <isprint value="${anchorreg.render()}" encoding="off"/>
+
+    <style>
+        .anchor-wrapper {
+            display: flex;
+            flex-direction: row;
+            padding: 30px 60px;
+            border: 1px solid #ccc;
+            background: white;
+            width: 101%;
+            z-index: 99 !important;
+            top: 60px !important;
+            visibility: hidden;
+            padding-top: 50px;
+        }
+        @media screen and (max-width: 864px) {
+            .anchor-wrapper {
+                display: none;
+            }
+        }
+        .anchor-wrapper img {
+            margin-right: 12px !important;
+        }
+        .anchor-wrapper .anchor {
+            margin-right: 20px;
+        }
+        .anchor-wrapper a {
+            text-decoration: none;
+            color: black;
+            font-family: main;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            var stickyTop = $('.sticky').offset().top - 50;
+            document.onscroll = function() {
+                var windowTop = $("body")
+                    .scrollTop();
+                if (stickyTop < windowTop) {
+                    $('.sticky')
+                        .css('position', 'fixed');
+                    $('.sticky')
+                        .css('top', '60px !important');
+                    $('.sticky').css('visibility', 'unset');
+                } else {
+                    $('.sticky')
+                        .css('position', 'relative');
+                    $('.sticky').css('visibility', 'hidden');
+                }
+            };
+            });
+
+    </script>

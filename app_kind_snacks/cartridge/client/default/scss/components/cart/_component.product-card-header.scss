@@ -1,0 +1,85 @@
+/* ============================================================================
+Cart product Card Header
+============================================================================ */
+
+/**
+ * Styles for the Cart Products Card Header
+*/
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-product-card-header;
+
+.#{$ns} {
+    font-family: $font-family-primary;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding-bottom: 10px;
+    padding-right: 0;
+    text-transform: lowercase;
+
+    &__btn-wrapper {
+        display: flex;
+        width: auto;
+
+        @include media-breakpoint-up(lg) {
+            width: 15%;
+        }
+    }
+    & &__title {
+        color: $grey7;
+        font-size: 18px;
+        letter-spacing: -0.8px;
+        margin-bottom: 0;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            font-size: 24px;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 80%;
+        }
+    }
+    &__btn {
+        line-height: 14px;
+        margin-right: 6px;
+
+        &--edit {
+            margin-top: 7px !important;
+            padding: 0;
+
+            &__link {
+                font-size: 14px !important;
+                letter-spacing: -0.3px;
+
+                &:hover {
+                    color: $black;
+                    text-decoration: none;
+                }
+            }
+        }
+        &--remove {
+            background-color: transparent;
+            border: 0;
+            color: $black;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: -0.3px;
+            min-height: 10px;
+            min-width: auto;
+            padding: 0;
+            text-align: left;
+            text-decoration: underline;
+            text-transform: lowercase;
+
+            &:hover {
+                background-color: transparent;
+                border: 0;
+                text-decoration: none;
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        padding-right: 26px;
+    }
+}

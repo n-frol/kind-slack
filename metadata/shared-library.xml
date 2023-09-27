@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="Benefits Assets">
+        <display-name xml:lang="x-default">Benefits Assets</display-name>
+        <online-flag>false</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="icon">
+                <display-name xml:lang="x-default">icon</display-name>
+                <attribute attribute-id="icon" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+        <sitemap-included-flag>true</sitemap-included-flag>
+    </folder>
+
+    <content content-id="kindSnackClub">
+        <display-name xml:lang="x-default">New Minis Chewy</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#61b4e4</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyTwo">Secondary Body</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">center</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">&lt;p class="my-1" style="line-height:1.5"&gt;Your favorite mini snack now chewier than ever&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a class="link-helvetica" href="$url('Page-Show','cid','snack-club')$" style="color:#ffffff;"&gt;LEARN MORE&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrowColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">NEW! Minis Chewy</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/marketing-tiles/0114_MarketingTile_ChewyMinis_Image.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetTextAlign">center</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">flex</custom-attribute>
+            <custom-attribute attribute-id="textAlign">center</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="recommendation-customized">
+        <display-name xml:lang="x-default">Customized Styles for recommendation slider</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;style&gt;&#13;
+ #product-recommendations {&#13;
+     padding: 40px;&#13;
+ }&#13;
+.c-recommendation__title {&#13;
+font-size:32px;&#13;
+word-spacing: 3px;&#13;
+}&#13;
+#product-recommendations .callout {&#13;
+display:none;&#13;
+}&#13;
+#product-recommendations .c-product-tile__tile-body__pdp-link.pdp-link:after {&#13;
+    content: "&gt;";&#13;
+}&#13;
+#product-recommendations .slick-dots li {&#13;
+display:inline-block;&#13;
+}&#13;
+#product-recommendations .slick-dots li.slick-active button {&#13;
+background:black;&#13;
+}&#13;
+#product-recommendations .slick-next,&#13;
+#product-recommendations .slick-prev {&#13;
+color: transparent!important;&#13;
+}&#13;
+#product-recommendations .slick-next  {&#13;
+right: -20px;&#13;
+    border-right-color: black;&#13;
+    border-top-color: black;&#13;
+}&#13;
+#product-recommendations .slick-prev  {&#13;
+left: -20px;&#13;
+border-left-color: black;&#13;
+border-bottom-color: black;&#13;
+}&#13;
+@media (min-width: 1024px) {&#13;
+.c-recommendation__slider.recommendation-customized .slick-arrow {&#13;
+color: transparent!important;&#13;
+}&#13;
+}&#13;
+.c-slick-slider__controls__arrow.slick-disabled {&#13;
+display:none;&#13;
+}&#13;
+.c-recommendation__slider .c-product-tile {&#13;
+margin-bottom: 0;&#13;
+   padding-bottom: 0;&#13;
+}&#13;
+.c-recommendation__slider .product-tile .tile-body {&#13;
+    padding: 0 1.875em;&#13;
+    text-transform: capitalize;&#13;
+}&#13;
+#product-recommendations .slick-dots button {&#13;
+width: 20px;&#13;
+height: 20px;&#13;
+}&#13;
+&lt;/style&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="snack-pack">
+        <display-name xml:lang="x-default">BYOB Marketing Tile</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#000</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">&lt;p class="m-0 mt-md-3"&gt;Take 25% off + free shipping on your first subscription order.&lt;/p&gt;&#13;
+&lt;a class="link-helvetica" href="$url('Product-Show','pid','MBYOB')$" style="color:#ffffff;"&gt;LEARN MORE&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrowColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Build Your Own Custom Variety Pack</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeadingColor">#61b4e4</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/marketing-tiles/MarketingTiles_BYOB_image.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetTextAlign">center</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">flex</custom-attribute>
+            <custom-attribute attribute-id="textAlign">center</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    
+
+</library>

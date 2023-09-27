@@ -1,0 +1,33 @@
+{
+  "name": "Brand Three Colors",
+  "description": "Brand Three Colors",
+  "group": "Brand",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content Left",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "color",
+          "name": "Color",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

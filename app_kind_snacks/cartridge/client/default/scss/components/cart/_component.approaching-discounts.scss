@@ -1,0 +1,40 @@
+/* ============================================================================
+Approaching Discount
+============================================================================ */
+
+/**
+ * Styles for the Approaching Discount
+*/
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-approaching-discounts;
+
+.#{$ns} {
+    /**
+     * use !important - in global style this class has chain of parent classes
+    */
+    font-family: $font-family-primary;
+    padding-top: 10px;
+    &__title {
+        border: 0 !important;
+        color: $grey7 !important;
+        font-size: 12px;
+        letter-spacing: -0.3px;
+        line-height: 18px;
+        margin: 0 !important;
+        padding-top: 10px;
+    }
+    &__bar-outer {
+        background-color: $grey2;
+        margin-top: 5px;
+        width: 100%;
+    }
+    &__bar-inner {
+        background-color: $picton-blue;
+        height: 5px;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 10px 15px 0 15px;
+    }
+}

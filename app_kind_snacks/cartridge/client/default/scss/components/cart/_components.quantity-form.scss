@@ -1,0 +1,66 @@
+/* ============================================================================
+Custom Selector
+============================================================================ */
+
+/**
+ * Styles for Custom selector
+*/
+$ns: c-quantity-form;
+/**
+ * use !important - in global style this class has chain of parent classes
+*/
+.#{$ns} {
+    &__label {
+        color: $black;
+        font-size: 14px !important;
+        padding-bottom: 9px;
+    }
+    &__select-wrapper {
+        display: inline-block;
+        position: relative;
+        width: 70%;
+
+        &::after {
+            border: none;
+            border-bottom: 1px solid $black;
+            border-left: 1px solid $black;
+            content: "";
+            display: inline-block;
+            height: 8px;
+            position: absolute;
+                top: 7px;
+                right: 4px;
+            transform: rotate(-45deg);
+            transition: all 0.5s ease;
+            width: 8px;
+        }
+    }
+    &__custom-select {
+        background: none;
+        border: none;
+        border-bottom: 2px solid $black;
+        color: $black;
+        font-family: $font-family-primary;
+        font-size: 12px;
+        height: 30px !important;
+        min-height: 30px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+
+        @supports (appearance: none) {
+            appearance: none;
+        }
+        &__option {
+            border: 2px solid $black !important;
+            color: $black;
+            font-size: 12px !important;
+            line-height: 1.33;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+    }
+    &__display {
+        display: inline-block;
+        text-align: center;
+    }
+}

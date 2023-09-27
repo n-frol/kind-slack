@@ -1,0 +1,87 @@
+{
+  "name": "Homepage Banner Mid",
+  "description": "Homepage Banner Mid",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "shared",
+      "name": "Shared Content",
+      "description": "The shared content for fullscreen",
+      "attribute_definitions": [
+        {
+          "id": "guardrailed",
+          "name": "Guard Rails?",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "link",
+          "name": "Link",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "text_align",
+          "name": "Text Align",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "small_image",
+          "name": "Small Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_mobile",
+          "name": "Small Image Mobile",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_align",
+          "name": "Small Image Align",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "background_color",
+          "name": "Background Color",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "full_image_use",
+          "name": "Use Full Sized Image",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "full_image",
+          "name": "Full Sized Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "full_image_mobile",
+          "name": "Full Sized Image Mobile",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

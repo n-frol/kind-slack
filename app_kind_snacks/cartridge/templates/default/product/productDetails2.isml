@@ -1,0 +1,76 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/productDetail.js');
+        assets.addCss('/css/product/detail.css');
+    </isscript>
+
+    <isset name="product" value="${pdict.product}" scope="page" />
+
+    <isset name="isBundle" value="${pdict.isBundle}" scope="page" />
+    <isif condition="${isBundle}">
+        <isset name="bundle" value="${pdict.product}" scope="page" />
+        <isobject object="${product.raw}" view="detail"></isobject>
+    </isif>
+
+    <isset name="isQuickView" value="${false}" scope="page" />
+    <isset name="isProductSet" value="${product.productType === 'set'}" scope="page" />
+
+    <isset name="cssVars" value="" scope="page" />
+    <isif condition="${!empty(product.backgroundColor)}">
+        <isset name="cssVars" value="${'--pdp-main__bg: ' + product.backgroundColor + ';'}" scope="page" />
+    </isif>
+    <isif condition="${!empty(product.imageNavigationColor)}">
+        <isset name="cssVars" value="${cssVars + ' --image-nav-color: ' + product.imageNavigationColor + ';'}" scope="page" />
+    </isif>
+
+<isscript>
+    var productId = product.masterId;
+</isscript>
+
+    <isobject object="${product.raw}" view="detail">
+        <div class="product-detail product-wrapper"
+            data-pid="${product.id}"
+            itemid="${productId}"
+            itemprop="itemReviewed"
+            id="pr-${productId}"
+            itemscope itemtype="http://schema.org/Product">
+
+            <isinclude template="product/productDetailsTop2" />
+
+            <div class="description-and-detail st-product-description-info">
+                <isif condition="${pdict.showDescriptionAndDetails || isBundle}">
+                    <div class="st-product-description-info__container--description__wrap">
+                        <div class="container st-container st-product-description-info__container--description st-product-description-info__section">
+
+                            <isinclude template="product/components/descriptionAndDetails2" />
+
+                        </div>
+                    </div>
+                </isif>
+                
+                <div class="container">
+                    <isset name="listName" value="${'PDP Recommendations'}" scope="page"/>
+                    <isif condition="${dw.system.Site.current.getCustomPreferenceValue('isEinsteinEnabled')}">
+                        <isscript>
+                            var recProduct = dw.catalog.ProductMgr.getProduct(product.id);
+                        </isscript>
+                        <isslot id="recommended-products" description="Recommended products" context-object="${recProduct.isVariant()? recProduct.masterProduct : recProduct}" context="global" />
+                    <iselse/>
+                        <isinclude template="product/components/recommendedProducts" />
+                    </isif>
+                </div>
+            
+            </div>
+
+            <iscomment> Yotpo Reviews - Read Reviews Section </iscomment>
+            <isif condition="${siteID !== "CreativeSnacks"}">
+                <div class="container u-margin-top-sm u-margin-bottom-xxl ">            
+                    <isinclude template="widget/yotpoReviewsWidget" />            
+                </div>
+            </isif>
+                
+            <isinclude template="/product/components/confirmEmptyByobList" sf-toolkit="off" />
+        </div>
+    </isobject>
+</isdecorate>

@@ -1,0 +1,33 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isscript>
+  importScript("int_talkable:talkable/libTalkable.ds");
+  var OrderMgr = require('dw/order/OrderMgr');
+  var paramMap = request.httpParameterMap;
+  var order : Order = pdict.Order;
+
+  if (empty(order) && !empty(paramMap.ID)) {
+    order = OrderMgr.getOrder(paramMap.ID);
+  }
+
+  var talkable : Object = new TalkableHelper();
+  var talkableSiteId : String = talkable.getSiteId();
+  var isPostCheckoutEnabled : Boolean = talkable.isPostCheckoutEnabled();
+
+  if (!empty(order)) {
+    var talkableData : Object = talkable.getPurchaseData(order);
+  }
+</isscript>
+
+<isif condition="${isPostCheckoutEnabled}">
+  <!-- Begin Talkable integration code -->
+  <isif condition="${empty(talkableSiteId)}">
+    <!-- Talkable Site ID is blank, check your Talkable extension settings -->
+  <iselsif condition="${empty(order)}"/>
+    <!-- Order could not be found -->
+  <iselse/>
+    <script type="text/javascript">
+      _talkableq.push(['register_purchase', JSON.parse('<isprint value="${talkableData}" encoding="jsonvalue"/>')]);
+    </script>
+  </isif>
+  <!-- End Talkable integration code -->
+</isif>

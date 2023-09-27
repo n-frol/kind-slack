@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="no-results-a" context="global" configuration-id="no-restuls-product" default="true" assigned-to-site="false">
+        <template>slots/product/grid-product.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <callout-msg xml:lang="x-default">&lt;p&gt;hmm, couldn't find that.&lt;br /&gt;
+how about these?&lt;/p&gt;</callout-msg>
+        <content>
+            <products>
+                <product product-id="293"/>
+                <product product-id="290"/>
+                <product product-id="292"/>
+                <product product-id="294"/>
+                <product product-id="289"/>
+                <product product-id="295"/>
+            </products>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

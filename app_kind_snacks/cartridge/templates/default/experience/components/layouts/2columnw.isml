@@ -1,0 +1,29 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+    var theid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+</isscript>
+<div class="row mx-n2 ${theid}" style="max-width:${pdict.width}; margin:auto;">
+	<isprint value="${pdict.regions.column1.setClassName("region region_landscape-small " + pdict.id + " " + pdict.column1align).render()}" encoding="off"/>
+	<isprint value="${pdict.regions.column2.setClassName("region region_landscape-small " + pdict.id2 + " " + pdict.column2align).render()}" encoding="off"/>
+</div>
+
+<style>
+@media screen and (min-width: 1025px) {
+    .${pdict.id} {
+        width: ${pdict.col1width};
+    }
+    .${pdict.id2} {
+        width: ${pdict.col2width};
+    }
+}
+@media screen and (max-width: 440px) {
+    .${pdict.id} {
+        width: ${pdict.columnmobile};
+    }
+    .${pdict.id2} {
+        width: ${pdict.columnmobile2};
+    }
+}
+</style>

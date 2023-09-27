@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="yotpoLoyalty.http.credentials">
+        <url/>
+        <user-id/>
+        <password encrypted="true" encryption-type="common.export">vVlkaPYZB9nh9LRvucuOEVZyiwJMPZ122IMKdaDxJ2o=</password>
+    </service-credential>
+
+    <service-profile service-profile-id="yotpoLoyalty.http.profile">
+        <timeout-millis>10000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>5</rate-limit-calls>
+        <rate-limit-millis>1000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>5</cb-calls>
+        <cb-millis>1000</cb-millis>
+    </service-profile>
+
+    <service service-id="yotpoLoyalty.http">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix/>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>yotpoLoyalty.http.profile</profile-id>
+        <credential-id>yotpoLoyalty.http.credentials</credential-id>
+    </service>
+
+</services>

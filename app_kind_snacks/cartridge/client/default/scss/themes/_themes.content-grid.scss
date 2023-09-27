@@ -1,0 +1,56 @@
+/* ============================================================================
+    Content Grid
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the content grid component
+ */
+
+ $ns: th-kind-content-grid;
+ $component: c-content-grid;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Content Grid Component
+     &.#{$component} {
+
+         .#{$component} {
+             &__item {
+                 &__content {
+                     // Content Grid Heading
+                     &__heading {
+                         font-family: $font-family-primary;
+                     }
+
+                     // Content Grid Body
+                     &__body {
+                         font-family: $font-family-secondary;
+                     }
+
+                     // Content Grid Links
+                     &__link {
+                         &__title {
+                             font-family: $font-family-primary;
+                             &:hover {
+                                 color: $san-marino;
+                             }
+                         }
+                         &__description {
+                             font-family: $font-family-secondary;
+                         }
+                     }
+                     &__links {
+                         font-family: $font-family-primary;
+                     }
+                 }
+             }
+         }
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+
+     }
+
+ }

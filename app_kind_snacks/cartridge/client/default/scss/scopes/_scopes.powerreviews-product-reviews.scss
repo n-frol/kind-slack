@@ -1,0 +1,196 @@
+/* ============================================================================
+Powerreviews Product Reviews Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements injected into the page by PowerReviews
+ * for PDP review content.
+ */
+
+$ns: s-powerreviews-product-reviews;
+
+.#{$ns} {
+    .p-w-r {
+        margin: 0;
+
+        .pr-rd-sort-group {
+            position: relative;
+
+            // We need to hide the variants dropdown, but don't have a good way to hide its group.  So hide the last group, where it sits
+            &:last-child {
+                // If there's only one dropdown, it's probably not for the variants, but something we actually want.  So don't hide then
+                &:not(:first-child) {
+                    display: none;
+                }
+            }
+
+            label {
+                text-transform: uppercase;
+            }
+
+            &::after {
+                color: #000;
+                content: "\F107";
+                font-family: FontAwesome;
+                font-size: 16px;
+                pointer-events: none;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+            }
+        }
+
+
+        .pr-review-display .pr-rd-main-header-with-filters .pr-rd-sort {
+            background-color: inherit;
+            border: none;
+            border-bottom: 2px solid $black;
+            font-family: $font-family-primary;
+            margin: 0 0 0 15px;
+            padding: 0;
+            text-transform: uppercase;
+        }
+
+        .pr-review-snapshot-block .pr-snippet .pr-snippet-stars-png .pr-star-v4 {
+            width: 20px;
+            height: 20px;
+        }
+
+        #pr-review-snapshot dl dt,
+        #pr-review-snapshot dl dd,
+        .pr-qa-display-questionlist dt,
+        .pr-qa-display-questionlist dd {
+            float: none;
+            margin-top: 0;
+        }
+
+        .pr-review-snapshot .pr-ratings-histogram {
+            padding: 0;
+        }
+
+        .pr-review-display.pr-rd-display-desktop .pr-rd-main-footer {
+            margin: 0 15px;
+        }
+
+        .pr-review-display .pr-rating-stars,
+        .pr-review-display.pr-rd-display-desktop .pr-rd-review-headline {
+            margin-top: 3px;
+        }
+        .pr-review-display .pr-snippet-rating-decimal {
+            border: 1px solid $black;
+            border-radius: 0;
+            font-family: $font-family-primary;
+            font-size: 14px;
+            height: inherit;
+            padding: 5px 11px;
+        }
+        .pr-review-snapshot .pr-review-snapshot-header .pr-headline {
+            font-family: $font-family-primary;
+        }
+        .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets-headline,
+        span,
+        a,
+        .pr-review-snapshot .pr-ratings-histogram .pr-zero-ratings .pr-histogram-label,
+        .pr-review-snapshot .pr-ratings-histogram .pr-zero-ratings .pr-histogram-count,
+        .pr-review-snapshot .pr-ratings-histogram .pr-histogram-count,
+        .pr-review-display p,
+        .pr-review-display span,
+        .pr-review-display time {
+            color: $black;
+        }
+        .pr-review-snapshot .pr-ratings-histogram .pr-zero-ratings .pr-histogram-label,
+        .pr-review-snapshot .pr-ratings-histogram .pr-histogram-label {
+            text-transform: lowercase;
+        }
+        .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a,
+        .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a:hover,
+        .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a:visited,
+        .pr-review-snapshot .pr-review-snapshot-simple .pr-review-snapshot-snippets .pr-snippet-read-and-write a:active {
+            background-color: $black;
+            border-bottom: 0;
+            border-radius: 0;
+            color: white;
+            text-transform: uppercase;
+        }
+        .pr-review-snapshot .pr-ratings-histogram .pr-ratings-histogram-bar,
+        .pr-review-snapshot .pr-ratings-histogram .pr-ratings-histogram-barValue {
+            border-radius: 0;
+            height: 12px;
+        }
+        .pr-review-snapshot .pr-ratings-histogram .pr-ratings-histogram-barValue {
+            background: $picton-blue;
+        }
+        .pr-review-snapshot .pr-ratings-histogram .pr-ratings-histogram-bar {
+            background-color: $grey3;
+        }
+        .pr-review-display.pr-rd-display-desktop .pr-rd-review-total {
+            margin-top: 14px;
+        }
+        .pr-review-display .pr-rd-header {
+            margin-top: 35px;
+        }
+        .pr-review-display {
+            .pr-rd-main-header-with-filters {
+                .pr-rd-search-container {
+                    .pr-rd-search-reviews-input {
+                        .pr-rd-search-reviews-icon-button,
+                        .pr-rd-search-reviews-clear-button {
+                            height: 47px;
+                            min-height: 47px;
+                        }
+                        .pr-rd-search-reviews-clear-button {
+                            right: 52px;
+
+                            .pr-cross-icon__line {
+                                stroke: #c7c7c7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .pr-review-display.pr-rd-display-tablet .pr-rd-main-header h1 {
+            margin-top: 15px;
+        }
+        .pr-review-display.pr-rd-display-tablet .pr-rd-star-rating {
+            float: none;
+            margin-bottom: 15px;
+        }
+        .pr-review-display.pr-rd-display-tablet .pr-rd-review-headline {
+            float: none;
+            margin: 0;
+        }
+        .pr-helpful-btn {
+            border: 1px solid $black;
+            border-bottom-width: 1px;
+            border-radius: 0;
+        }
+        .pr-helpful-btn:hover span {
+            color: $picton-blue;
+        }
+        .pr-helpful-active {
+            background: $grey4 !important;
+        }
+        .pr-review-display.pr-rd-display-desktop .pr-rd-main-footer {
+            margin: 0;
+        }
+        .pr-review-display.pr-rd-display-desktop .pr-rd-to-top,
+        .pr-rd-flag-review-container {
+            color: $picton-blue;
+            font-family: $font-family-primary;
+            text-transform: uppercase;
+        }
+        .pr-review-display .pr-rd-pagination {
+            border-bottom:  none;
+        }
+        .pr-review-display a {
+            color: $picton-blue;
+            font-family: $font-family-primary;
+            text-transform: uppercase;
+        }
+    }
+
+    #pr-rd-filter-variant-by {
+
+    }
+}

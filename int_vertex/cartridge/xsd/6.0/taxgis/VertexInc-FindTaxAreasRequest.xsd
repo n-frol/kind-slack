@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="urn:vertexinc:o-series:tps:6:0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0" xml:lang="en-us">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2009 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Tax Area Request message.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:include schemaLocation="../tax/VertexInc-Core.xsd"/>
+  <xsd:include schemaLocation="../tax/VertexInc-Common.xsd"/>
+  <xsd:complexType name="FindTaxAreasRequestType">
+    <xsd:complexContent>
+      <xsd:extension base="TaxgisRequestType">
+        <xsd:sequence>
+          <xsd:element name="TaxAreaLookup" type="TaxAreaLookupType" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation>The criteria to use in looking up the tax area. Use one of the following: TaxAreaId, PostalAddress, or ExternalJurisdiction.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,40 @@
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isset name="navigationTabsEnabled" value="${dw.system.Site.current.getCustomPreferenceValue('navigationTabsEnabled')}" scope="page" />
+<isset name="navigationKindSnacksLink" value="${dw.system.Site.current.getCustomPreferenceValue('navigationFirstTabLink')}" scope="page" />
+<isset name="navigationCreativeSnacks" value="${dw.system.Site.current.getCustomPreferenceValue('navigationSecondTabLink')}" scope="page" />
+
+<isscript>
+    var creativeSnascksLink = navigationCreativeSnacks;
+    var kindSnascksLink = navigationKindSnacksLink;
+
+    var csActive = false;
+    var ksActive = false;
+
+    if (siteID === 'CreativeSnacks') {
+        csActive = true;
+        creativeSnascksLink = false;
+    }
+
+    if (siteID === 'KINDSnacks') {
+        ksActive = true;
+        kindSnascksLink = false;
+    }
+</isscript>
+
+<isif condition="${navigationTabsEnabled}">
+    <li class="brand-partner-mobile nav-item st-primary-nav__item--account d-lg-none" role="menuitem">
+        <span class="user-message">${Resource.msg('label.brand.partners', 'common', null)}</span>
+        <br/>
+
+        <isif condition="${ksActive}">
+            <a href="${navigationCreativeSnacks}">
+                <img src="${URLUtils.staticURL('/images/creative_logo.png')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.storename', 'common', null)}" />
+            </a>
+        </isif>
+        <isif condition="${csActive}">
+            <a href="${navigationKindSnacksLink}">
+                <img src="${URLUtils.staticURL('/images/logo-black.svg')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.creative.storename', 'common', null)}" />
+            </a>
+        </isif>
+    </li>
+</isif>

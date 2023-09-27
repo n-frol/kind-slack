@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">
+    <inventory-list>
+        <header list-id="kind-snacks-inventory">
+            <default-instock>false</default-instock>
+            <description>KIND Snacks Inventory</description>
+            <use-bundle-inventory-only>false</use-bundle-inventory-only>
+            <on-order>false</on-order>
+        </header>
+
+        <records>
+
+            <record product-id="292">
+                <allocation-timestamp>2018-10-08T08:39:49.346Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="293">
+                <allocation-timestamp>2018-10-08T07:49:30.000Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="294">
+                <allocation-timestamp>2018-10-08T08:44:51.311Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="295">
+                <allocation-timestamp>2018-10-08T08:50:00.791Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+        </records>
+    </inventory-list>
+</inventory>

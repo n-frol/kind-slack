@@ -1,0 +1,63 @@
+/* ============================================================================
+   Full Width Cal to Action
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the full width cta component
+ */
+
+$ns: th-kind-full-width-cta;
+$component: c-full-width-cta;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Marketing Banner Component
+    &.#{$component} {
+
+        .#{$component} {
+
+            // Marketing Banner Heading
+            &__heading {
+                font-family: $font-family-primary;
+            }
+
+            // Marketing Banner Heading
+            &__body {
+                font-family: $font-family-secondary;
+            }
+
+            // Marketing Banner Links
+            &__links {
+                font-family: $font-family-primary;
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
+
+        }
+
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+
+                    &:hover {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                }
+            }
+
+        }
+
+    }
+
+}

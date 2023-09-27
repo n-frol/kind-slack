@@ -1,0 +1,47 @@
+<div class="planet_grid_3">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/ofi.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="copy">
+            Our partner on the ground, who owns our project acres and implements the KIND Almond Acres Initiative.
+        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/image 152.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="copy">
+            Pollinator Partnership works to verify that we’re sourcing our almonds from bee-friendly farmland – our goal is to source 100% of our volume on a mass balance basis by 2025.        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/UC.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="copy">
+            Our long-term sustainability and research partner, helping us understand how pollinator health and regenerative agriculture can positively impact the almond industry.        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/image 153.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="copy">
+            We are a member of CWAC and will work with key stakeholders in California on a project to improve the state’s water resilience for people, business, agriculture, and nature.        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .planet_grid_3 {
+            grid-template-columns: 1fr !important;
+            margin-top: 0px !important;
+            grid-gap: 20px !important;
+            width: 100% !important;
+            margin-left: 0px !important;
+        }
+    }
+    .planet_grid_3 img {
+        height: 60px;
+    }
+    .planet_grid_3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        grid-gap: 30px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+</style>

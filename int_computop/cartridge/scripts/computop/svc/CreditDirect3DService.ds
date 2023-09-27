@@ -1,0 +1,74 @@
+/**
+ * Service class for method credit direct (3d)
+ */
+/* Api includes */
+var cdpmLogger = require('dw/system/Logger').getLogger('paymentOperator', 'paymentOperator');
+
+/* Script includes */
+var AbstractComputopService = require( "./AbstractComputopService" );
+
+var CreditDirect3DService = AbstractComputopService.extend({
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorCreditDirect3dGatewayPath');
+    },
+
+   /**
+    * Implements the function that should be used to prepare the service call request objects
+    *
+    * @param {dw.svc.HTTPService}    svc       The service itself
+    * @param {dw.util.Map}           params    Map of key value pairs that have to be added as parameters to the call
+    *
+    * @return String The string that has to be sent to the service
+    */
+    createRequest : function( svc, params ) {
+
+        //the request string
+        //var request = "test";
+
+        //sets the service call endpoint
+        if ( !empty(this.relativeURLPath) ) {
+            svc.URL = [ svc.URL, this.relativeURLPath ].join('/');
+        }
+
+        //adding header values
+        if ( !empty(this.requestHeaders) ) {
+            for ( var headerID : String in this.requestHeaders ) {
+                svc.addHeader(headerID, this.requestHeaders[headerID]);
+            }
+        }
+
+        //setting request encoding
+        if ( !empty(this.encoding) && this.encoding != "UTF-8") {
+            svc.setEncoding(this.encoding);
+        }
+
+        //setting the authentication mechanism which is default NONE
+        svc.setRequestMethod('NONE');
+
+        //setting request method
+        svc.setRequestMethod('POST');
+
+        //create requestData as string
+        var requestData : String = '';
+        if ( !empty(params) ) {
+             for ( var paramName : String in params ) {
+                svc.addParam(paramName, params[paramName]);
+            }
+        }
+
+        // log used service url for debugging purposes
+        cdpmLogger.debug( "Called service: " + svc.URL );
+        var logRequestData : String = "Request POST data (unencrypted): " +  this.joinAttributes(params, '=', '&');
+        cdpmLogger.debug( logRequestData );
+
+        //setting the out file if defined
+        if ( !empty(this.outfile) ) {
+            svc.setOutFile(this.outfile);
+        }
+
+        return this;
+    },
+});
+//Export the configured service singleton
+module.exports = (new CreditDirect3DService()).getService();

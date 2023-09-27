@@ -1,0 +1,72 @@
+<isscript>
+    let dataMasterProductId = product.id;
+
+    if (product.productType === 'variant') {
+        const apiProduct = dw.catalog.ProductMgr.getProduct(dataMasterProductId);
+        dataMasterProductId = apiProduct.masterProduct.ID;
+    }
+
+    let gtmProduct = dw.catalog.ProductMgr.getProduct(dataMasterProductId);
+</isscript>
+<isif condition="${product}">
+<isset name="isByobTile" value="${!empty(pdict.isByob) ? pdict.isByob : false}" scope="page" />
+
+<isset name="templateClass" value="c-byob-product-tile" scope="page" />
+<div class="product-tile c-product-tile c-byob-product-tile js-product-tile js-product-tile--uninitialized js-gtm-select-product
+        <isif condition="${product.selectedQuantity.toFixed() > 0}"> c-byob-product-tile--active</isif>
+        <isif condition="${pdict.display.showQuickView}"> c-byob-product-tile--quick-view</isif>
+        <isif condition="${product.outOfStock}">c-product-tile--out-of-stock c-byob-product-tile--out-of-stock</isif>" itemscope itemtype="http://schema.org/Product"
+        data-masterid="${dataMasterProductId}"
+        data-itemid="${product.id}" data-itemname="${product.productName}"
+        data-quantity="${isByobTile ? product.selectedQuantity.toFixed() : ''}"
+        data-gtm-product-index="${pdict.gtmProductIndex}"
+        data-gtm-product-id="${gtmProduct.ID}"
+        data-gtm-product-name="${gtmProduct.name}"
+        data-gtm-product-category="${gtmProduct.primaryCategory ? gtmProduct.primaryCategory.displayName : gtmProduct.masterProduct.primaryCategory.displayName}"
+        data-gtm-product-price="${gtmProduct.getPriceModel() ? gtmProduct.getPriceModel().getMaxPrice().value : null}"
+        data-gtm-product-listname="${gtmProduct.primaryCategory ? gtmProduct.primaryCategory.displayName : gtmProduct.masterProduct.primaryCategory.displayName}">
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+
+    <isif condition="${pdict.display.badge && !empty(product.raw.custom.badge.value)}">
+        <div class="c-product-tile__tile-body__callout c-byob-product-tile__footer__callout">
+            ${product.raw.custom.badge}
+        </div>
+    </isif>
+
+    <isinclude template="product/components/configurationCategoryProductTileImage" />
+    <div class="c-product-tile__tile-body c-byob-product-tile__tile-body tile-body">
+        <isif condition="${!empty(product.shortDescription)}">
+            <div class="c-product-tile__tile-body__short-description c-byob-product-tile__tile-body__short-description tile-short-description">${product.shortDescription}</div>
+        </isif>
+        <isinclude template="product/components/productTileName" />
+
+        <isset name="price" value="${product.price}" scope="page" />
+        <isif condition="${product.productType === 'set'}">
+            <isinclude template="product/components/pricing/setPrice" />
+        <iselse />
+            <isinclude template="product/components/pricing/main" />
+        </isif>
+
+        <isif condition="${pdict.display.ratings}">
+            <isinclude template="product/productTileFooter" />
+        </isif>
+    </div>
+    <div class="c-byob-product-tile__footer">
+        <div class="simple-quantity c-byob-product-tile__qty-wrap">
+            <isinclude url="${URLUtils.url(
+                'BYOB-TileQuantity',
+                'pid', product.id
+            )}" />
+        </div>
+
+        <iscomment>Always include wrapper so it contributes its height</iscomment>
+
+        <div class="c-product-tile__out-of-stock">
+            <isif condition="${product.outOfStock}">
+                ${Resource.msg('label.outofstock', 'common', null)}
+            </isif>
+        </div>
+    </div>
+    <!-- END_dwmarker -->
+</div>
+</isif>

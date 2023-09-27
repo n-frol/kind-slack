@@ -1,0 +1,89 @@
+<isscript>
+	var dataMasterProductId = product.id;
+	if (product.productType === 'variant') {
+		var apiProduct = dw.catalog.ProductMgr.getProduct(dataMasterProductId);
+		dataMasterProductId = apiProduct.masterProduct.ID;
+	}
+    if (dataMasterProductId == "MBYOB") {
+        pdict.display.showQuickView = false;
+    }
+</isscript>
+<isif condition="${!empty(product.isBlockedAccess) && product.isBlockedAccess}">
+<div class="product-tile c-product-tile js-product-tile
+        <isif condition="${pdict.display.showQuickView}"> c-product-tile--quick-view</isif>
+        <isif condition="${product.outOfStock}">c-product-tile--out-of-stock</isif>" itemscope itemtype="http://schema.org/Product"
+        data-masterid="${dataMasterProductId}"
+        data-itemid="${product.id}" data-itemname="${product.productName}">
+
+<iselse/>
+<a href="${pdict.urls.product}" class="product-tile c-product-tile js-product-tile
+        <isif condition="${!empty(pdict.sellable) && pdict.sellable !== true}"> c-product-tile--unsellable</isif>
+        <isif condition="${pdict.display.showQuickView}"> c-product-tile--quick-view</isif>
+        <isif condition="${product.outOfStock}">c-product-tile--out-of-stock</isif>" itemscope itemtype="http://schema.org/Product"
+        data-masterid="${dataMasterProductId}"
+        data-itemid="${product.id}" data-itemname="${product.productName}">
+</isif>
+    <isif condition="${siteID === 'CreativeSnacks' && product.outOfStock && pdict.sellable !== false}">
+        <div class="c-product-tile__callout out-of-stock__callout">${Resource.msg('label.outofstock', 'common', null)}</div>
+        <div class="out-of-stock__overlay_wrapper">
+            <div class="out-of-stock__overlay"></div>
+        </div>
+    </isif>
+    <isif condition="${pdict.display.badge && !empty(product.raw.custom.badge.value) && !product.outOfStock}">
+        <div class="c-product-tile__callout">${product.raw.custom.badge}</div>
+    </isif>
+    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
+    <isinclude template="product/components/productTileImage" />
+    <div class="c-product-tile__tile-body tile-body">
+        <isif condition="${!empty(product.shortDescription)}">
+            <div class="c-product-tile__tile-body__short-description tile-short-description">${product.shortDescription}</div>
+        </isif>
+        <isinclude template="product/components/productTileName" />
+
+        <isinclude template="product/components/pricing/tilePricing" />
+
+
+        <isif condition="${pdict.display.totalItemQuantity && !empty(product.totalItemQuantity)}">
+            <div class="c-product-tile__tile-body__quantity-per-container quantity-per-container">
+                <isif condition="${!empty(product.productType)}">
+                    (${product.totalItemQuantity.toFixed(0)} ${product.productTypeDetail}<isif condition="${!empty(product.containerType)}">/ ${product.containerType}</isif>)
+                </isif>
+            </div>
+        </isif>
+
+        <div class="c-product-tile__out-of-stock">
+            <isif condition="${product.outOfStock}">
+                ${Resource.msg('label.outofstock', 'common', null)}
+            </isif>
+        </div>
+
+         <isif condition="${pdict.display.texture}">
+
+                <isif condition="${pdict.display.texture && !empty(product.texture) && !empty(product.texture.value) && product.texture.value !== '0'}">
+                    <div class="texture-bar-box texture-bar-box--${product.texture.value}">
+                        <div class="texture-bar-box__bar">
+                            <span class="texture-bar-box__bar__point isFirst"></span>
+                            <span class="texture-bar-box__bar__point texture-bar-box__bar__point--active"></span>
+                            <span class="texture-bar-box__bar__point isLast"></span>
+                        </div>
+                        <div class="texture-bar-box__title">${product.texture}</div>
+                    </div>
+                </isif>
+
+        </isif>
+
+        <isif condition="${pdict.display.ratings}">
+            <isinclude template="product/productTileFooter" />
+        </isif>
+        <isif condition="${pdict.display.badge && !empty(product.raw.custom.badge.value) && !product.outOfStock}">
+            <div class="c-product-tile__tile-body__callout">${product.raw.custom.badge}</div>
+        </isif>
+
+        <isinclude template="product/components/promotions" />
+    </div>
+    <!-- END_dwmarker -->
+<isif condition="${!empty(product.isBlockedAccess) && product.isBlockedAccess}">
+    </div>
+<iselse>
+    </a>
+</isif>

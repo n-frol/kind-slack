@@ -1,0 +1,56 @@
+/* ============================================================================
+    Media Grid
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Media Grid component
+ */
+
+$ns: th-kind-media-grid;
+$component: c-media-grid;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Media Grid Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__item {
+                &__content {
+                    // Media Grid Heading
+                    &__heading {
+                        font-family: $font-family-primary;
+                    }
+
+                    // Media Grid Body
+                    &__body {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Media Grid Links
+                    &__link {
+                        &__title {
+                            font-family: $font-family-primary;
+                            &:hover {
+                                color: $san-marino;
+                            }
+                        }
+                        &__description {
+                            font-family: $font-family-secondary;
+                        }
+                    }
+                    &__links {
+                        font-family: $font-family-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+    }
+
+}

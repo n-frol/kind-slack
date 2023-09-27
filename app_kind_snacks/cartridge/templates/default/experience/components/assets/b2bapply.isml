@@ -1,0 +1,729 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.4.10/cleave.min.js"></script>
+<script src="https://nosir.github.io/cleave.js/dist/cleave-phone.i18n.js"></script>
+<script src="https://parsleyjs.org/dist/parsley.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<isprint value="
+        ${dw.system.Site.current.getCustomPreferenceValue("googlePlacesApiKey")}" />&libraries=places&callback=initService"
+async defer></script>
+<script src="https://www.google.com/recaptcha/api.js?render=${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"></script>
+
+<div class="recaptcha3score" style="display:none" data-recaptcha-score="${dw.system.Site.getCurrent().getCustomPreferenceValue('recaptcha3_score')}"></div>
+       <div class="recaptcha3_error" style="display:none" data-recaptcha-error="${Resource.msg('error.recaptcha3apply', 'error', null)}"></div>
+
+<script>
+    $(function() {
+        new Cleave('#phone', {
+            numericOnly: true,
+            blocks: [0, 3, 3, 4],
+            delimiters: ["(", ") ", "-"]
+        });
+    });
+
+    var parse = $('#form').parsley();
+    $('#js-loginradius-container-login form').parsley();
+
+    function submitapply() {
+        var recaptcha = document.forms["form"]["g-recaptcha-response"].value;
+        if (recaptcha === "") {
+            $(".recap-resp")
+                .html("Please fill out recaptcha field.")
+                .show();
+            return false;
+        }
+    }
+
+    window.ParsleyValidator
+        .addValidator('fileextension', function (value, requirement) {
+            var tagslistarr = requirement.split(',');
+            var fileExtension = value.split('.').pop();
+            var arr=[];
+            $.each(tagslistarr,function(i,val){
+                arr.push(val);
+            });
+            if(jQuery.inArray(fileExtension, arr)!='-1') {
+                return true;
+            } else {
+                return false;
+            }
+        }, 32)
+        .addMessage('en', 'fileextension', 'Please only upload .png and .jpg files.');
+
+    $("#myForm").parsley();
+
+    window.Parsley.addValidator('maxFileSize', {
+        validateString: function(_value, maxSize, parsleyInstance) {
+            var files = parsleyInstance.$element[0].files;
+            return files.length != 1  || files[0].size <= maxSize * 1024;
+        },
+        requirementType: 'integer',
+        messages: {
+            en: 'Please upload a file less than 2MB'
+        }
+    });
+
+    window.Parsley.addAsyncValidator("checkemail", function (xhr) {
+        r = $.parseJSON(xhr.responseText);
+        if (r.ErrorCode == "1038") {
+            var specificField = $('.email-feedback').hide();
+            return false;
+        }
+        if (r.ErrorCode == "1023") {
+            var specificField = $('.email-feedback').hide();
+            $("#password").parent().show().attr("data-parseley-required", "required").parent().show();
+            $("#confirmpassword").parent().show().attr("data-parseley-required", "required").parent().show();
+            $("#currentPassword").parent().hide().removeAttr("data-parseley-required data-parseley-checkaccount").parent().hide();
+            $("#profuid").val("");
+            $("#profid").val("");
+            //  $('#form').parsley().refresh();
+            $("input:hidden").each(function() {
+                $(this).removeAttr("required");
+            });
+            $(".hidder:visible").each(function() {
+                $(this).attr("required","required");
+            });
+            return true;
+        }
+        var specificField = $('.email-feedback');
+        specificField.html("Email already registered, please enter your password").show();
+        $("#currentPassword").parent().show().attr("data-parseley-required", "required").parent().show();
+        $("#password").parent().hide().removeAttr("data-parseley-required").parent().hide();
+        $("#confirmpassword").parent().hide().removeAttr("data-parseley-required").parent().hide();
+        $("#profuid").val(r.Data[0].Uid);
+        $("#profid").val(r.Data[0].ID);
+
+        // $('#form').parsley().refresh();
+        $("input:hidden").each(function() {
+            $(this).removeAttr("required");
+        });
+        $(".hidder:visible").each(function() {
+            $(this).attr("required","required");
+        });
+        return true;
+    }, "https://api.loginradius.com/identity/v2/manage/account/identities?apikey=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiKey")}" />&apisecret=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiSecret")}" />", {
+    });
+
+    window.Parsley.addValidator('checkaccount', {
+        validateString: function() {
+            return $.ajax({
+                method: "POST",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                url: "https://api.loginradius.com/identity/v2/auth/login?apikey=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiKey")}" />&verificationurl=&loginurl=&emailtemplate=&g-recaptcha-response=",
+                data: JSON.stringify({ email: $("#email").val(), password: $("#currentPassword").val() })
+            });
+        },
+        messages: {en: 'Your password is incorrect.'}
+    });
+    function initService()
+    {
+
+//     document.getElementById("businessaddress").autocomplete = "false";
+// var input = document.getElementById('businessaddress');
+// var options = {
+//   componentRestrictions: {country: 'us'}
+// };
+// autocomplete = new google.maps.places.Autocomplete(input, options);
+// autocomplete.addListener('place_changed', fillInAddress);
+    }
+
+    function fillInAddress() {
+// Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+        jQuery("#businessaddress").val(place.address_components[0].short_name+" "+place.address_components[1].short_name);
+        jQuery("#businesscity").val(place.address_components[3].short_name);
+        jQuery("#businessstate").val(place.address_components[5].short_name);
+        jQuery("#businesszip").val(place.address_components[7].short_name);
+        jQuery("#businesscountry").val(place.address_components[6].short_name);
+    }
+
+    $(document).on("change", ".businesstype", function() {
+        var v =$("#businesstype option:selected").val();
+        if (v != "Other") {
+            $("#businesstype_other").removeAttr("required").hide();
+            $(".bus_other").hide();
+            $(".bussiness_type_other_row").hide();
+        } else {
+            $("#businesstype_other").attr("required", "required").show();
+            $(".bus_other").show();
+            $(".bussiness_type_other_row").show();
+        }
+        if (v != "Distributor") {
+            $("#distributor_region").removeAttr("required").hide();
+            $(".distributor_region_row").hide();
+        } else {
+            $("#distributor_region").attr("required", "required").show();
+            $(".distributor_region_row").show();
+        }
+    });
+
+    $(document).on("change", ".spending_other", function() {
+        var v =$("#spending_other option:selected").val();
+        if (v != "Other") {
+            $("#businesstype_other_other").removeAttr("required").hide();
+            $(".bussiness_type_other_other_row").hide();
+        } else {
+            console.log("its other");
+            $("#businesstype_other_other").attr("required", "required").show();
+            $(".bussiness_type_other_other_row").show();
+        }
+    });
+
+    window.Parsley.on('form:validate', function (formInstance) {
+        var v =$("#businesstype option:selected").val();
+        if (v <= 10) {
+            $("#businesstype_other").removeAttr("required");
+        } else {
+            $("#businesstype_other").attr("required", "required");
+        }
+
+        var vv =$("#hearaboutus option:selected").val();
+        if (vv <= 10) {
+            $("#hearaboutus_other").removeAttr("required");
+        } else {
+            $("#hearaboutus_other").attr("required", "required");
+        }
+
+    });
+
+    $(document).on("change", ".alreadyorder", function() {
+        var v = $(".alreadyorder option:selected").val();
+        if (v == "yes" || v == "Yes") {
+            $(".alreadyorder_row").attr("required", "required").show();
+        } else {
+            $(".alreadyorder_row").removeAttr("required").hide();
+        }
+    });
+</script>
+
+
+<div class="return">
+    <a style="text-decoration:none;" href="${URLUtils.url('Home-Show')}">
+                        <span class="arrowreturn"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.77818 1.57971L2 9.35789L9.77818 17.1361" stroke="black" stroke-width="2"/>
+</svg>
+</span>${dw.web.Resource.msg('label.wholesalereturn', 'forms', null)}
+    </a>
+</div>
+
+<h3 class="successmsg" style="display:none; font-size: 30px; padding-bottom:80px; padding-left: 150px !important;">
+    thank you! your application has been submitted.
+</h3>
+
+<h4 class="errormsg" style="display:none; padding-left: 150px !important;">
+    ${Resource.msg('error.recaptcha3', 'error', null)}
+</h4>
+
+<form style="padding:25px; max-width:1190px;"
+      data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden #distributor"
+      action="${URLUtils.url('Apply-SubmitForm')}" class="contact-form wholesale-apply dropzone desktopleft" method="POST" id="form"
+      data-parsley-validate>
+    <input style="display:none" id="profuid" name="profuid" />
+    <input style="display:none" id="profid" name="profid" />
+    <input style="display:none" name="cert_b64" value id="cert_b64" />
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group required">
+                <label class="form-control-label" for="firstName">
+                    ${dw.web.Resource.msg('label.input.firstname.profile', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text" minlength="2"
+                       class="form-control firstname" id="firstName" value="" name="firstName" required="" maxlength="19"
+                       autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="lastname">
+                    ${dw.web.Resource.msg('label.input.lastname.profile', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text" minlength="2"
+                       class="form-control lastname" id="lastname" value="" name="lastname" required="" maxlength="20"
+                       autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col7ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="email">
+                    ${dw.web.Resource.msg('label.input.email.profile', 'forms', null)}
+                </label>
+                <input data-parsley-validation-threshold="3" data-parsley-trigger="focusout keyup"
+                       data-parseley-required data-parsley-remote data-parsley-remote-validator='checkemail' type="text"
+                       class="form-control email" id="email" value="" name="email" required="" maxlength="60"
+                       autocomplete="" />
+                <div class="invalid-feedback email-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col3ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="phone">
+                    ${dw.web.Resource.msg('label.input.phone.profile', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"
+                       data-parseley-pattern-message="Please enter a valid phone number" type="text" data-parseley-required
+                       class="form-control phone" id="phone" value="" name="phone" required minlength="10" maxlength="14"
+                       autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="currentPassword">
+                    ${dw.web.Resource.msg('label.input.currentpassword.profile', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="submit" data-parsley-checkaccount type="password"
+                       class="form-control currentPassword hidder" id="currentPassword" value="" name="currentPassword"
+                       required maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="password">
+                    ${dw.web.Resource.msg('label.input.newpassword.profile', 'forms', null)}
+                </label>
+                <input minlength="6" data-parsley-trigger="focusout" type="password"
+                       class="form-control password hidder" id="password" value="" name="password"
+                       maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="confirmpassword">
+                    ${dw.web.Resource.msg('label.input.passwordconfirm.profile', 'forms', null)}
+                </label>
+                <input data-parsley-equalto=".password" minlength="6" data-parsley-trigger="focusout"
+                       data-parsley-equalto-message="passwords do not match" type="password"
+                       class="form-control confirmpassword hidder" id="confirmpassword" value="" name="confirmpassword"
+                       required maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row c-form-elements__row">
+
+    </div>
+
+    <div class="row c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col" style="display:none">
+            <div class="save-credit-card custom-control custom-checkbox ">
+                <input type="checkbox" class="custom-control-input" id="subscribeToNewsletter" name="subtonewsletter"
+                       value="true" checked="checked" />
+                <label for="subscribeToNewsletter">
+                    Subscribe me to KIND email list
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businessname">
+                    ${dw.web.Resource.msg('label.input.businessname.profile', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text"
+                       class="form-control businessname" id="businessname" value="" name="businessname" required=""
+                       maxlength="20" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group required">
+                <label class="form-control-label" for="businesstype">
+                    ${dw.web.Resource.msg('label.input.businesstype.profile', 'forms', null)}
+                </label>
+                <select data-parsley-trigger="focusout" required class="form-control businesstype custom-select"
+                        name="businesstype" id="businesstype">
+                    <option selected disabled></option>
+                    <isloop items="${dw.system.Site.current.getCustomPreferenceValue('businesstypes')}" var="btype">
+                        <option value="${btype}" data-showother=false>${btype}</option>
+                    </isloop>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col col6ipad distributor_region_row" style="display:none">
+            <div class="form-group required">
+                <label class="form-control-label" for="distributor_region">
+                    ${dw.web.Resource.msg('label.input.distrubtorregion.profile', 'forms', null)}
+                </label>
+                <select data-parsley-trigger="focusout" required class="form-control distributor_region custom-select"
+                        name="distributor_region" id="distributor_region">
+                    <option selected disabled></option>
+                    <isloop items="${dw.system.Site.current.getCustomPreferenceValue('distributor_region')}" var="btype">
+                        <option value="${btype}" data-showother=false>${btype}</option>
+                    </isloop>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="bussiness_type_other_row" id="businesstype_other_row col6ipad" style="display:none">
+            <div class="col-sm-3 c-form-elements__col" style="min-width: 180px; width: 100%;">
+                <div class="form-group bus_other required">
+                    <label class="form-control-label" for="businesstype_other">
+                        please specify
+                    </label>
+                    <input style="min-width:180px" type="text" class="form-control businesstype_other" name="businesstype_other"
+                           id="businesstype_other" value="" required="" maxlength="40" autocomplete="" />
+                    <div class="passed">&#10003;</div>
+                    <div class="failed">X</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col col6ipad" style="position:relative;">
+            <div class="form-group required">
+                <label class="form-control-label" for="businesswebsite">
+                    ${dw.web.Resource.msg('label.input.businesswebsite.profile', 'forms', null)}
+                </label>
+                <input type="text" data-parsley-trigger="focusout" required class="form-control businesswebsite"
+                       id="businesswebsite" value="" name="businesswebsite" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label style="font-size:13px;" class="form-control-label" for="alreadyorder">
+                    ${dw.web.Resource.msg('label.alreadyorder', 'forms', null)}
+                </label>
+                <select required style="" data-parsley-trigger="focusout" class="form-control alreadyorder custom-select" name="alreadyorder"
+                        id="alreadyorder">
+                    <option selected disabled></option>
+                    <option value="yes" data-showother=true>Yes</option>
+                    <option value="no" data-showother=false>No</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad alreadyorder_row" style="display:none">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="spending_other">
+                    ${dw.web.Resource.msg('label.input.spendingother', 'forms', null)}
+                </label>
+                <select required style="" data-parsley-trigger="focusout" class="form-control spending_other custom-select" name="spending_other"
+                        id="spending_other">
+                    <isloop items="${dw.system.Site.current.getCustomPreferenceValue('providers')}" var="btype">
+                        <option value="${btype}" data-showother=false>${btype}</option>
+                    </isloop>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="bussiness_type_other_other_row" id="businesstype_other_other_row col6ipad" style="display:none">
+            <div class="col-sm-3 c-form-elements__col" style="min-width: 180px; width: 100%;">
+                <div class="form-group bus_other_other required">
+                    <label class="form-control-label" for="businesstype_other_other">
+                        please specify the provider
+                    </label>
+                    <input style="min-width:180px" type="text" class="form-control businesstype_other_other" name="businesstype_other_other"
+                           id="businesstype_other_other" value="" required="" maxlength="40" autocomplete="" />
+                    <div class="passed">&#10003;</div>
+                    <div class="failed">X</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label style="font-size:13px;" class="form-control-label" for="spending">
+                    ${dw.web.Resource.msg('label.input.spending', 'forms', null)}
+                </label>
+                <select required style="" data-parsley-trigger="focusout" class="form-control spending custom-select" name="spending"
+                        id="spending">
+                    <option selected disabled></option>
+                    <option value="yes" data-showother=true>Yes</option>
+                    <option value="no" data-showother=false>No</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businessaddress">
+                    ${dw.web.Resource.msg('label.input.businessaddress', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" type="text" class="form-control businessaddress"
+                       id="businessaddress" value="" name="businessaddress" required="" maxlength="40"
+                       autocomplete="password" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group">
+                <label class="form-control-label" for="businessaddress2">
+                    ${dw.web.Resource.msg('label.input.businessaddress2', 'forms', null)}
+                </label>
+                <input data-parsley-trigger="focusout" type="text" class="form-control businessaddress2"
+                       id="businessaddress2" value="" name="businessaddress2" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businesscity">
+                    ${dw.web.Resource.msg('label.input.businesszip', 'forms', null)}
+                </label>
+                <input maxlength="25" data-parsley-trigger="focusout" type="text" class="form-control businesscity"
+                       id="businesscity" value="" name="businesscity" required="" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group required businessstate">
+                <label class="form-control-label" for="businessstate">
+                    ${dw.web.Resource.msg('label.input.businessstate', 'forms', null)}
+                </label>
+                <select data-parsley-trigger="focusout" name="businessstate" required
+                        class="form-control businessstate custom-select" id="businessstate">
+                    <option selected disabled> </option>
+                    <option id="AL" value="AL">Alabama</option>
+                    <option id="AK" value="AK">Alaska</option>
+                    <option id="AZ" value="AZ">Arizona</option>
+                    <option id="AR" value="AR">Arkansas</option>
+                    <option id="CA" value="CA">California</option>
+                    <option id="CO" value="CO">Colorado</option>
+                    <option id="CT" value="CT">Connecticut</option>
+                    <option id="DE" value="DE">Delaware</option>
+                    <option id="FL" value="FL">Florida</option>
+                    <option id="GA" value="GA">Georgia</option>
+                    <option id="HI" value="HI">Hawaii</option>
+                    <option id="DC" value="DC">District of Columbia</option>
+                    <option id="ID" value="ID">Idaho</option>
+                    <option id="IL" value="IL">Illinois</option>
+                    <option id="IN" value="IN">Indiana</option>
+                    <option id="IA" value="IA">Iowa</option>
+                    <option id="KS" value="KS">Kansas</option>
+                    <option id="KY" value="KY">Kentucky</option>
+                    <option id="LA" value="LA">Louisiana</option>
+                    <option id="ME" value="ME">Maine</option>
+                    <option id="MD" value="MD">Maryland</option>
+                    <option id="MA" value="MA">Massachusetts</option>
+                    <option id="MI" value="MI">Michigan</option>
+                    <option id="MN" value="MN">Minnesota</option>
+                    <option id="MS" value="MS">Mississippi</option>
+                    <option id="MO" value="MO">Missouri</option>
+                    <option id="MT" value="MT">Montana</option>
+                    <option id="NE" value="NE">Nebraska</option>
+                    <option id="NV" value="NV">Nevada</option>
+                    <option id="NH" value="NH">New Hampshire</option>
+                    <option id="NJ" value="NJ">New Jersey</option>
+                    <option id="NM" value="NM">New Mexico</option>
+                    <option id="NY" value="NY">New York</option>
+                    <option id="NC" value="NC">North Carolina</option>
+                    <option id="ND" value="ND">North Dakota</option>
+                    <option id="OH" value="OH">Ohio</option>
+                    <option id="OK" value="OK">Oklahoma</option>
+                    <option id="OR" value="OR">Oregon</option>
+                    <option id="PA" value="PA">Pennsylvania</option>
+                    <option id="RI" value="RI">Rhode Island</option>
+                    <option id="SC" value="SC">South Carolina</option>
+                    <option id="SD" value="SD">South Dakota</option>
+                    <option id="TN" value="TN">Tennessee</option>
+                    <option id="TX" value="TX">Texas</option>
+                    <option id="UT" value="UT">Utah</option>
+                    <option id="VT" value="VT">Vermont</option>
+                    <option id="VI" value="VI">Virgin Islands</option>
+                    <option id="VA" value="VA">Virginia</option>
+                    <option id="WA" value="WA">Washington</option>
+                    <option id="WV" value="WV">West Virginia</option>
+                    <option id="WI" value="WI">Wisconsin</option>
+                    <option id="WY" value="WY">Wyoming</option>
+                    <option id="AE" value="AE">Armed Forces Africa</option>
+                    <option id="AA" value="AA">Armed Forces America (exc. Canada)</option>
+                    <option id="AE" value="AE">Armed Forces Canada</option>
+                    <option id="AE" value="AE">Armed Forces Europe</option>
+                    <option id="AE" value="AE">Armed Forces Middle East</option>
+                    <option id="AP" value="AP">Armed Forces Pacific</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  c-form-elements__row">
+
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group required">
+                <label class="form-control-label" for="tax_exempt">
+                    ${dw.web.Resource.msg('label.taxexempt', 'forms', null)}
+                </label>
+                <select required style="" data-parsley-trigger="focusout" class="form-control tax_exempt custom-select" name="tax_exempt"
+                        id="tax_exempt">
+                    <option selected disabled></option>
+                    <option value="yes" data-showother=true>Yes</option>
+                    <option value="no" data-showother=false>No</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad" style="display:none" id="tax_exempt_id">
+            <div class="form-group required">
+                <label class="form-control-label" for="tax_exempt_id">
+                    ${dw.web.Resource.msg('label.taxid', 'forms', null)}
+                </label>
+                <input style="position:relative;" type="text" class="form-control tax_exempt_id" id="tax_exempt_id" value=""
+                       required name="tax_exempt_id" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad">
+            <div class="form-group required">
+                <label class="form-control-label" for="hearaboutus">
+                    ${dw.web.Resource.msg('label.hearabout', 'forms', null)}
+                </label>
+                <select data-parsley-trigger="focusout" required class="form-control hearaboutus custom-select"
+                        name="hearaboutus" id="hearaboutus">
+                    <option selected disabled></option>
+                    <option value="KIND Employee Name" data-showother=true>KIND Employee</option>
+                    <option value="Website" data-showother=false>Kind Snacks Website</option>
+                    <option value="Google" data-showother=false>Google</option>
+                    <option value="Facebook" data-showother=false>Facebook</option>
+                    <option value="LinkedIn" data-showother=false>LinkedIn</option>
+                    <option value="Instagram" data-showother=false>Instagram</option>
+                    <option value="Other" data-showother=true>other</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col col6ipad" style="display:none" id="hearaboutus_other_row">
+            <div class="form-group">
+                <label class="form-control-label" for="hearaboutus_other">
+                    ${dw.web.Resource.msg('label.hearaboutother', 'forms', null)}
+                </label>
+                <input type="text" class="form-control hearaboutus_other" id="hearaboutus_other" value=""
+                       name="hearaboutus_other" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .moveright::before {
+            margin-right: 5px;
+        }
+    </style>
+    <div class="form-group">
+        <label class="form-control-label normalfont" for="comments">
+            ${dw.web.Resource.msg('label.comments', 'forms', null)}
+        </label>
+        <textarea name="comments" id="comments" style="border: 2px solid black;"></textarea>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" class="custom-control-input movelefthug" id="allowkind" name="allowkind">
+        <label for="allowkind" class="normalfont">${dw.web.Resource.msg('label.allowcontact', 'forms', null)}</label>
+        </input>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" class="custom-control-input movelefthug" required="" id="ipromise" name="ipromise">
+        <label class="form-control-label moveright normalfont" for="ipromise"><span style="color:red">* </span>${dw.web.Resource.msg('label.itstrue', 'forms', null)}</label>
+        </input>
+    </div>
+
+    <div class="applyfaq">
+        <isprint value="${Resource.msg('b2b.applyfaq','common',null)}" encoding="off" />
+    </div>
+
+     <button
+        data-sitekey="${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"
+        data-callback='ValidateWholesaleApply'
+        data-url="${URLUtils.url('Product-NotifyMe')}"
+        class="g-recaptcha btn btn-primary wholesale-submit">Submit</button>
+
+        <div style="color:red;" class="wholesale-error"></div>
+
+    <input style="display:none" type="text" class="hidden" id="utm_source" name="utm_source" />
+    <input style="display:none" type="text" class="hidden" id="utm_campaign" name="utm_campaign" />
+    <input style="display:none" type="text" class="hidden" id="utm_medium" name="utm_medium" />
+
+    <input class="recpatcharesponse" style="display:none" name="recpatcharesponse" />
+</form>
+
+<style>
+    @media screen and (max-width: 425px) {
+        .applyfaq {
+            width:unset;
+        }
+        .subbutton {
+            width: 100% !important;
+        }
+    }
+    [type="checkbox"] {
+        position: relative;
+        left: 0px;
+    }
+    .normalfont {
+        text-transform: none;
+    }
+     .grecaptcha-badge {
+                visibility: hidden;
+            }
+</style>
+
+<script>
+function ValidateWholesaleApply() {
+        grecaptcha.ready(function() {
+
+                var key = $(".wholesale-submit").attr("data-sitekey");
+                grecaptcha.reset();
+                grecaptcha.execute(key, {action: 'wholesaleapply'}).then(function(token) {
+                    $(".recpatcharesponse").val(token);
+                    $(".wholesale-apply")[0].submit();
+            });
+        });
+}
+</script>

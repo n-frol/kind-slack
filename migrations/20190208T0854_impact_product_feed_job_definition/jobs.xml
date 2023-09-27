@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Adlucent-ProductFeeds" priority="0">
+        <description>Exports all products with the includeInProductFeed flag set to true.</description>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="adlucentProductFeed" type="custom.batch.adlucentProductFeed" enforce-restart="false">
+                <description>Ad Lucent product feed</description>
+                <parameters>
+                    <parameter name="directory">int_batch</parameter>
+                    <parameter name="fileName">adlucent-feed</parameter>
+                    <parameter name="addTimeStampToFileName">true</parameter>
+                    <parameter name="jobName">adlucent</parameter>
+                </parameters>
+            </step>
+            <step step-id="adlucentUploadFeed" type="custom.batch.UploadFilesToSFTP" enforce-restart="false">
+                <description>Upload export XML to SFTP server.</description>
+                <parameters>
+                    <parameter name="servicename">adlucent.sftp</parameter>
+                    <parameter name="directory">int_batch</parameter>
+                    <parameter name="prefix">adlucent-feed</parameter>
+                </parameters>
+                <rules>
+                    <on-exit status="ERROR,NO_FILES_FOUND">
+                        <stop-job/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="true">
+                <date>2019-01-08Z</date>
+                <time>05:00:00.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Impact-ProductFeeds" priority="0">
+        <description>Exports the product catalogs for export to Impact.</description>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="impactProductFeed" type="custom.batch.impactProductFeed" enforce-restart="false">
+                <description>Exports products to an XML file for the Impact Product Feed.</description>
+                <parameters>
+                    <parameter name="directory">impact</parameter>
+                    <parameter name="fileName">Kind_Product_Catalog</parameter>
+                    <parameter name="addTimeStampToFileName">false</parameter>
+                    <parameter name="jobName">impact</parameter>
+                </parameters>
+                <rules>
+                    <on-exit status="OK">
+                        <continue/>
+                    </on-exit>
+                </rules>
+            </step>
+            <step step-id="uploadImpactFeed" type="custom.batch.UploadFilesToSFTP" enforce-restart="false">
+                <description>Upload the feed data</description>
+                <parameters>
+                    <parameter name="servicename">impact.sftp</parameter>
+                    <parameter name="directory">impact</parameter>
+                    <parameter name="prefix">Kind_Product_Catalog</parameter>
+                </parameters>
+                <rules>
+                    <on-exit status="ERROR,NO_FILES_FOUND,OK">
+                        <stop-job/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2019-05-09Z</date>
+                <time>04:00:00.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

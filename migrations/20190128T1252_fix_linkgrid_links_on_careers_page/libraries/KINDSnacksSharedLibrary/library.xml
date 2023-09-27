@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="about-us_link-grid">
+        <display-name xml:lang="x-default">About Us</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Learn more about the integrity of our snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">about us</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Page-Show', 'cid', 'about-us')$"&gt;Learn More&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="hungry-yet_link-grid">
+        <display-name xml:lang="x-default">Hungry Yet?</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/leaderboard</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">try our snacks in a variety of flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">hungry yet?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us_description-w-link_bar-fan_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'products')$"&gt;Shop Now&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="hungry-yet">
+        <display-name xml:lang="x-default">Hungry Yet?</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">Try our snacks in a variety of flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Hungry Yet?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'products')$"&gt;Shop Now&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

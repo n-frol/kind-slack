@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="sample_folder_2" configuration-id="sample_featured-tabs" default="true" assigned-to-site="true">
+        <template>slots/content/featureTabs.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kind-foundation"/>
+                <content-asset content-id="kindawesome"/>
+                <content-asset content-id="kind-acts"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBody">Here’s how we bring our Movement to life. Not-only-for-profit®</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">do the KIND thing</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

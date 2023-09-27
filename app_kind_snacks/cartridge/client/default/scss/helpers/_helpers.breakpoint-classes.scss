@@ -1,0 +1,133 @@
+// ============================================================================
+// Breakpoint Classes
+// ============================================================================
+
+/// This allows the developer to quickly create responsive namespaced classes while only typing in
+/// the properties once. Please note that when inserting the class name into markup, you do not need
+/// need to the \ after @.
+///
+/// @author PixelMEDIA (Jono Herrington)
+///
+/// @group Responsive
+///
+/// @param {list} $breakpoints - Insert list of breakpoint values.
+/// @param {number} $breakpoint-count [null] - Insert number of breakpoints to iterate over.
+/// @param {boolean} $root [true] - Dictactes if you would like to print out a class
+///   without a responsive breakpoint attached to the class name.
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-breakpoint-classes(lg) {
+///         display: block;
+///      }
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      display: block;
+///   }
+///
+///   @media (min-width: 980px) {
+///      .usage@\lg-up {
+///         display: block;
+///      }
+///   }
+
+
+@mixin pxl-breakpoint-classes($breakpoints, $breakpoint-count: null, $root: true) {
+
+    $breakpoint-list: ();
+    $breakpoint-size: ();
+
+    @each $breakpoint in $breakpoints {
+
+        @if $breakpoint == 'xxs' {
+            $breakpoint-list: append($breakpoint-list, $xxs-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        } @else if $breakpoint == 'xs' {
+            $breakpoint-list: append($breakpoint-list, $xs-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        } @else if $breakpoint == 'sm' {
+            $breakpoint-list: append($breakpoint-list, $sm-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        } @else if $breakpoint == 'md' {
+            $breakpoint-list: append($breakpoint-list, $md-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        } @else if $breakpoint == 'lg' {
+            $breakpoint-list: append($breakpoint-list, $lg-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        } @else if $breakpoint == 'xl' {
+            $breakpoint-list: append($breakpoint-list, $xl-view-up, comma);
+            $breakpoint-size: append($breakpoint-size, $breakpoint + '-up', comma);
+        }
+
+    }
+
+    @if $breakpoint-list != () {
+
+        // Allow to set external break point count incase this is inside another loop
+
+        @if $breakpoint-count == null {
+
+            // If this is not inside another loop, set up a count for
+            // the number of breakpoints and then loop through them
+
+            @if $root == true {
+                $breakpoint-count: length($breakpoint-list) + 1;
+                $loop-count: 1;
+
+                @while $breakpoint-count > 0 {
+
+                    @if $loop-count == 1 {
+
+                        @content;
+
+                    } @else {
+
+                        @include pxl-media(nth($breakpoint-list, $breakpoint-count)) {
+                            &\@#{nth($breakpoint-size, $breakpoint-count)} {
+                                @content;
+                            }
+                        }
+
+                    }
+
+                    $breakpoint-count: $breakpoint-count - 1;
+                    $loop-count: $loop-count + 1;
+
+                }
+
+            } @else {
+
+                $breakpoint-count: length($breakpoint-list);
+
+                @while $breakpoint-count > 0 {
+
+                    @include pxl-media(nth($breakpoint-list, $breakpoint-count)) {
+                        &\@#{nth($breakpoint-size, $breakpoint-count)} {
+                            @content;
+                        }
+                    }
+
+                    $breakpoint-count: $breakpoint-count - 1;
+
+                }
+            }
+
+        } @else {
+
+            // If inside another loop
+
+            @include pxl-media(nth($breakpoint-list, $breakpoint-count)) {
+                &\@#{nth($breakpoint-size, $breakpoint-count)} {
+                    @content;
+                }
+            }
+
+        }
+
+    }
+
+}
+
+

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+        <attribute-definition attribute-id="paymentOperatorIncludeMAC">
+                <display-name xml:lang="x-default">Payment Operator - Include MAC in Request</display-name>
+                <description xml:lang="x-default">When true the HMAC key is included with the request, otherwise it will be left out.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="PAYMENTOPERATOR_PAYMENTGATE">
+                <display-name xml:lang="x-default">Computop</display-name>
+                <display-name xml:lang="zh-CN">Computop 支付网关</display-name>
+                <description xml:lang="x-default">Paymentgate Configuration</description>
+                <attribute attribute-id="paymentOperatorBaseUrl"/>
+                <attribute attribute-id="paymentOperatorMerchantID"/>
+                <attribute attribute-id="paymentOperatorMerchantCode"/>
+                <attribute attribute-id="paymentOperatorHMACKey"/>
+                <attribute attribute-id="paymentOperatorIncludeMAC"/>
+                <attribute attribute-id="paymentOperatorEtiID"/>
+                <attribute attribute-id="paymentOperatorTestFlag"/>
+                <attribute attribute-id="paymentOperatorTestString"/>
+                <attribute attribute-id="paymentOperatorProcessUnencryptedResponse"/>
+                <attribute attribute-id="paymentOperatorCreditDirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditDirect3dGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditCardCaptureType"/>
+                <attribute attribute-id="paymentOperatorCreditCardCaptureHours"/>
+                <attribute attribute-id="paymentOperatorCreditCard3DEnabled"/>
+                <attribute attribute-id="paymentOperatorCreditCardCapnEnabled"/>
+                <attribute attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired"/>
+                <attribute attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount"/>
+                <attribute attribute-id="paymentOperatorCreditCardGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditCardUseOldCards"/>
+                <attribute attribute-id="paymentOperatorCreditCardXSLTTemplatePath"/>
+                <attribute attribute-id="paymentOperatorCreditCardSellingPoint"/>
+                <attribute attribute-id="paymentOperatorCreditCardService"/>
+                <attribute attribute-id="paymentOperatorApplePayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorApplePayMerchantID"/>
+                <attribute attribute-id="paymentOperatorPayPalGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPayPalReferencePaymentPath"/>
+                <attribute attribute-id="paymentOperatorPayPalExpressCompletionGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaypalCaptureType"/>
+                <attribute attribute-id="paymentOperatorPaypalTxtype"/>
+                <attribute attribute-id="paymentOperatorKlarnaGatewayPath"/>
+                <attribute attribute-id="paymentOperatorKlarnaAction"/>
+                <attribute attribute-id="paymentOperatorKlarnaInvoiceFlag"/>
+                <attribute attribute-id="paymentOperatorDirectDebitGatewayPath"/>
+                <attribute attribute-id="paymentOperatorDirectDebitCaptureType"/>
+                <attribute attribute-id="paymentOperatorDirectDebitCaptureHours"/>
+                <attribute attribute-id="paymentOperatorDirectDebitSellingPoint"/>
+                <attribute attribute-id="paymentOperatorDirectDebitService"/>
+                <attribute attribute-id="paymentOperatorGiropayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorGiropaySellingPoint"/>
+                <attribute attribute-id="paymentOperatorGiropayService"/>
+                <attribute attribute-id="paymentOperatorGiropayVendor"/>
+                <attribute attribute-id="paymentOperatorIDealGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPostFinanceGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPostFinanceSellingPoint"/>
+                <attribute attribute-id="paymentOperatorPostFinanceService"/>
+                <attribute attribute-id="paymentOperatorTrustPayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorTrustPaySellingPoint"/>
+                <attribute attribute-id="paymentOperatorTrustPayService"/>
+                <attribute attribute-id="paymentOperatorPoliGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPoliSellingPoint"/>
+                <attribute attribute-id="paymentOperatorPoliService"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24GatewayPath"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24SellingPoint"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24Service"/>
+                <attribute attribute-id="paymentOperatorQiwiGatewayPath"/>
+                <attribute attribute-id="paymentOperatorQiwiSellingPoint"/>
+                <attribute attribute-id="paymentOperatorQiwiService"/>
+                <attribute attribute-id="paymentOperatorSkrillGatewayPath"/>
+                <attribute attribute-id="paymentOperatorSkrillSellingPoint"/>
+                <attribute attribute-id="paymentOperatorSkrillService"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPayGateway"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPayTypeObt"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPayTypePsp"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaObtList"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPspList"/>
+                <attribute attribute-id="paymentOperatorUsePPRO"/>
+                <attribute attribute-id="paymentOperatorOnlineTransferGatewayPath"/>
+                <attribute attribute-id="paymentOperatorMasterPassShippingLocationProfileID"/>
+                <attribute attribute-id="paymentOperatorMasterPassAcceptableCards"/>
+                <attribute attribute-id="paymentOperatorMasterPassRewardProgramEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassAuthLevelBasicEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassSuppressShippingAddressEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassRedirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorMasterPassTransactionGatewayPath"/>
+                <attribute attribute-id="paymentOperatorAliPayGateway"/>
+                <attribute attribute-id="paymentOperatorBancontactGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPayUGateway"/>
+                <attribute attribute-id="paymentOperatorPayUChannel"/>
+                <attribute attribute-id="paymentOperatorEpsGatewayPath"/>
+                <attribute attribute-id="paymentOperatorEpsSellingPoint"/>
+                <attribute attribute-id="paymentOperatorEpsService"/>
+                <attribute attribute-id="paymentOperatorTeleingresoGatewayPath"/>
+                <attribute attribute-id="paymentOperatorTeleingresoSellingPoint"/>
+                <attribute attribute-id="paymentOperatorTeleingresoService"/>
+                <attribute attribute-id="paymentOperatorEasyCreditRedirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorEasyCreditDirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorKoreaCCGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaymorrowGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaymorrowDeviceIDIframeUrl"/>
+                <attribute attribute-id="paymentOperatorPaymorrowBillingSameAsShipping"/>
+                <attribute attribute-id="paymentOperatorPaymorrowConfirmDataPolicy"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

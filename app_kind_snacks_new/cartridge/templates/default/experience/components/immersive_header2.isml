@@ -1,0 +1,246 @@
+<div class="immersive_header_container">
+    <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+        <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+    </a>
+    <img class="immersive_full" src="${URLUtils.staticURL('/images/hero/hero-img.png')}" alt="immersive header" />
+    <div class="immersive_text1">
+        the way we grow food isn’t sustainable for the planet or a growing population
+    </div>
+    <div class="immersive_text2">
+        Could we solve it by being kinder to the soil?
+    </div>
+    <div class="immersive_text3">
+        By adding nutrients back in with farming practices, instead of chemicals?
+    </div>
+    <div class="immersive_text4">
+        and seeing what grows from there?
+    </div>
+    <img src="${URLUtils.staticURL('/images/hero/slide4left.png')}" alt="immersive header" class="upperleft" />
+    <img src="${URLUtils.staticURL('/images/hero/slide4right.png')}" alt="immersive header" class="upperright" />
+    <img src="${URLUtils.staticURL('/images/hero/slide4mid.png')}" alt="immersive header" class="uppermid" />
+
+    <img src="${URLUtils.staticURL('/images/hero/slide5right.png')}" alt="immersive header" class="upperleft2" />
+    <img src="${URLUtils.staticURL('/images/hero/slide5left.png')}" alt="immersive header" class="upperright2" />
+    <img src="${URLUtils.staticURL('/images/hero/slide5mid.png')}" alt="immersive header" class="uppermid2" />
+</div>
+
+<style>
+    body {
+        overflow-y:hidden;
+    }
+    .immersive_header_container {
+        overflow: hidden;
+    }
+    .uppermid {
+        left: 0;
+        right: 0;
+        top: -440px;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        overflow: hidden;
+    }
+    .uppermid2 {
+        left: 0;
+        right: 0;
+        bottom: -380px;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        overflow: hidden;
+    }
+    .upperright {
+        position: absolute;
+        bottom: 60px;
+        right: 0px;
+        color: white;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-right: -210px;
+        overflow: hidden;
+    }
+    .upperright2 {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: white;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-right: -450px;
+        overflow: hidden;
+    }
+    .upperleft {
+        position: absolute;
+        top: 60px;
+        left: 0px;
+        color: white;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-left: -240px;
+        overflow: hidden;
+        text-align: left;
+    }
+    .upperleft2 {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-left: -340px;
+        overflow: hidden;
+        text-align: left;
+    }
+    .immersive_header_container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    .immersive_text1, .immersive_text2, .immersive_text3, .immersive_text4 {
+        position: absolute;
+        bottom: 60px;
+        left: 60px;
+        color: white;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-left: -600px;
+        overflow: hidden;
+        width: 570px;
+        text-align: left;
+        z-index: 10;
+    }
+    .immersive_text2, .immersive_text3, .immersive_text4 {
+        margin-left: 0px !important;
+        opacity: 0;
+    }
+    .immersive_text {
+        position: absolute;
+        bottom: 60px;
+        left: 60px;
+        color: white;
+        opacity: 0;
+        transition: all 1s;
+        font-size: 48px;
+        line-height: 54px;
+        margin-left: -300px;
+        overflow: hidden;
+    }
+    .immersive_text.state2, .immersive_text.state3, .immersive_text.state4 {
+        opacity: 1;
+        width: 570px;
+        margin-left: 0px;
+    }
+    .immersive_full {
+        height: 100vh;
+        widthL: 100vw;
+        transition: all 1s;
+        object-fit: cover;
+    }
+    .immersive_full.state3, .immersive_full.state4 {
+        position: absolute;
+        right: 250px;
+        left: 250px;
+        margin:auto;
+    }
+    .immersive_header_container {
+        height: 100vh;
+        width: 100vw;
+        overflow-y: hidden;
+        transition: background 1s;
+        background: black;
+        text-align: center;
+    }
+    .immersive_header_container.state3, .immersive_header_container.state4 {
+
+    }
+    .scroll_indicator_scroll {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+</style>
+
+<script>
+    $(document).on("click", ".scroll_indicator_scroll", function() {
+        $(".immersive_header_container").css("position", "relative");
+        $(".experience-component").get(1).scrollIntoView({behavior: 'smooth'});
+    });
+    document.addEventListener("scroll", (event) => {
+        var scrolllength = $(document).scrollTop();
+        if ($(".immersive_text2").css("opacity") < 0.1) {
+            $(".immersive_text2").css("opacity", 0);
+        }
+        if ($(".immersive_text").css("opacity") < 0.1) {
+            $(".immersive_text").css("opacity", 0);
+        }
+        if (scrolllength < 200) {
+            $(".immersive_text1").css("margin-left", -600 + scrolllength*3 + "px");
+            $(".immersive_full").css("width", "100vw");
+        }
+        if (scrolllength > 200 && scrolllength < 400) {
+            $(".upperleft2").css("margin-left", "-340px");
+            $(".uppermid").css("top", "-440px");
+            $(".upperright2").css("margin-right", "-450px");
+
+            $(".immersive_full").css("width", 100 - (scrolllength-200)/4 + "vw");
+            $(".immersive_full").css("height", "100vh");
+            $(".immersive_full").css("top", "0px");
+        }
+        if (scrolllength > 500 && scrolllength < 700) {
+            $(".upperleft2").css("margin-left", "-340px");
+            $(".upperright2").css("margin-right", "-450px");
+
+            $(".immersive_full").css("width", 50 - (scrolllength-200)/15 + "vw");
+            $(".immersive_full").css("height", 100 - (scrolllength-200)/15 + "vh");
+            $(".immersive_full").css("top", 0 + (scrolllength-200)/30 + "vh");
+            $(".immersive_full").css("position", "relative");
+            $(".immersive_text1").css("opacity", 1-(scrolllength-500)/200);
+            $(".immersive_text2").css("opacity", 0+(scrolllength-500)/200);
+            $(".upperleft").css("margin-left", "-240px");
+            $(".upperright").css("margin-right", "-210px");
+        }
+        if (scrolllength > 800 && scrolllength < 1000) {
+            $(".upperleft2").css("margin-left", "-340px");
+            $(".upperright2").css("margin-right", "-450px");
+
+            $(".immersive_full").css("opacity", 1-(scrolllength-800)/200);
+            $(".immersive_text2").css("opacity", 1-(scrolllength-800)/200);
+            $(".upperleft").css("margin-left", -195 + (scrolllength-800)/1   + "px");
+            $(".upperright").css("margin-right", -195 + (scrolllength-800)/1   + "px");
+            $(".uppermid").css("top", -440 + ((scrolllength-800)*2.2) + "px");
+            $(".immersive_text3").css("opacity", 0+(scrolllength-800)/200);
+        }
+        if (scrolllength > 1100 && scrolllength < 1300) {
+            $(".upperleft").css("margin-left", -195 - (scrolllength-1100)/1   + "px");
+            $(".upperright").css("margin-right", -195 - (scrolllength-1100)/1   + "px");
+            $(".uppermid").css("top", -440 - ((scrolllength-900)*2.2) + "px");
+
+            $(".upperleft2").css("margin-left", -195 + (scrolllength-1100)/1   + "px");
+            $(".upperright2").css("margin-right", -195 + (scrolllength-1100)/1   + "px");
+            $(".uppermid2").css("bottom", -440 + ((scrolllength-1100)*2.4) + "px");
+            $(".immersive_text3").css("opacity", 1-(scrolllength-1100)/200);
+            $(".immersive_text4").css("opacity", 0+(scrolllength-1100)/200);
+        }
+        if (scrolllength > 1400 && scrolllength < 1600) {
+            $(".upperright2").css("width", 10 + (scrolllength-1400)/2.5   + "vw");
+            $(".upperright2").css("height", 10 + (scrolllength-1400)/2.5   + "vh");
+            $(".upperleft2").css("opacity", 1-(scrolllength-1400)/200);
+            $(".uppermid2").css("opacity", 1-(scrolllength-1400)/200);
+        }
+        if (scrolllength > 1900 && scrolllength < 2000) {
+            $(".immersive_header_container").css("position", "relative");
+            $(".experience-component").get(1).scrollIntoView({behavior: 'smooth'});
+        }
+    });
+</script>
+
+<style>
+</style>

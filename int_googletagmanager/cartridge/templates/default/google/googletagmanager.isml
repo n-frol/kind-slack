@@ -1,0 +1,19 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerEnabled') &&
+				   !empty(dw.system.Site.current.getCustomPreferenceValue('googleTagManagerContainerID'))}">
+
+<isset name="googleTagManagerContainerID" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerContainerID')}" scope="page" />
+
+<isif condition="${!empty(pdict.datalayer)}">
+<script>
+	window.dataLayer = window.dataLayer || [];
+	
+	dataLayer.push(<isprint value="${JSON.stringify(pdict.datalayer, null, 2)}" encoding="off">);
+</script>
+</isif>
+
+<isinclude url="${URLUtils.url('GoogleTagManager-Tracking')}">
+
+</isif>
+

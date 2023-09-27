@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="do-the-kind-thing">
+        <display-name xml:lang="x-default">Do the KIND Thing</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">An inspiring handbook for success in business and life by the visionary CEO of KIND Healthy Snacks.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyTwo">&lt;p&gt;&lt;span style="color:#777777;"&gt;100% of author&amp;rsquo;s proceeds will be donated to furthering acts of kindness&lt;/span&gt;&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">by Daniel Lubetzky</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Do the KIND Thing</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/our-mission_product-content-module_do-the-kind-thing-book_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Product-Show', 'pid', 'do-the-kind-thing-book')$"&gt;Buy Now&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

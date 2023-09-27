@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+	<field formid="accountholdername"
+			label="directdebit.accountholdername" type="string" mandatory="true"
+			missing-error="directdebit.accountholdernameerror"
+			range-error="directdebit.accountholdernameerror"/>
+
+	<field formid="bankname"
+			label="directdebit.bankname" type="string" mandatory="true"
+		    missing-error="directdebit.banknameerror"
+			value-error="banknameerror"/>
+
+	<field formid="iban"
+			label="directdebit.iban" type="string" mandatory="true"
+		    missing-error="directdebit.ibanerror"
+			value-error="ibanerror"/>
+
+	<field formid="bic"
+			label="directdebit.bic" type="string" mandatory="true"
+		    missing-error="directdebit.bicerror"
+			value-error="bicerror"/>
+
+</form>

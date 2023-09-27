@@ -1,0 +1,65 @@
+<div class="image_component_container">
+    <h2><isprint value="${pdict.headline}" encoding="off" /></h2>
+    <div class="img_container">
+        <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+        <img class="leftcorner" src="${pdict.overlay_image.src.desktop}" alt="${pdict.overlay_image.alt}" />
+        <a target="_blank" class="middle_image primary dark" href="${pdict.ctalink}">${pdict.cta}</a>
+    </div>
+
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 864px) {
+        .image_component_container .middle_image {
+            width: unset !important;
+        }
+    }
+    @media screen and (max-width: 440px) {
+        .image_component_container .leftcorner {
+            bottom: -100px;
+            display: none;
+        }
+    }
+    .leftcorner {
+        position: absolute;
+        bottom: -50px;
+        left: 50px;
+    }
+    .image_component_container {
+        position: relative;
+        padding-bottom: 70px;
+    }
+    .image_component_container h2 {
+        font-size: 48px;
+        text-align: center;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 32px;
+        letter-spacing: -1px !important;
+    }
+    .image_component_container .img_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        max-width: 888px;
+        position: relative;
+    }
+    .image_component_container img {
+        border-radius: 20px;
+    }
+    @media screen and (max-width: 440px) {
+        .image_component_container h2 {
+            font-size: 30px !important;
+            line-height: 36px !important;
+        }
+        .image_component_container .img_container {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
+    .middle_image {
+        position: absolute;
+    }
+</style>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <category category-id="root">
+        <display-name xml:lang="x-default">KIND Snacks Master Catalog</display-name>
+        <online-flag>true</online-flag>
+        <template/>
+        <page-attributes/>
+    </category>
+    <product product-id="289">
+        <images>
+            <image-group view-type="large">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+        </images>
+    </product>
+
+    <product product-id="289-1">
+        <images>
+            <image-group view-type="large">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+        </images>
+    </product>
+
+    <product product-id="290">
+        <images>
+            <image-group view-type="large">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+        </images>
+    </product>
+
+</catalog>

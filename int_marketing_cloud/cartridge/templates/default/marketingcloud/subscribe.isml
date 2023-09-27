@@ -1,0 +1,59 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="components/modules" />
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isdecorate template="${pdict.DecoratorTemplate}">
+    <div class="s-email-signup">
+        <isif condition="${siteID === "kind_b2b"}" >
+            <iscontentasset aid="newsletter-form-copy-b2b" />
+        <iselseif condition="${siteID === "CreativeSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy-cs" />
+        <iselseif condition="${siteID === "KINDSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy" />
+        </isif>
+    </div>
+    <isif condition="${pdict.formSubmitted}">
+        <div class="container page-offset-bottom">
+            <isif condition="${pdict.subscribed}">
+                <h1>${Resource.msg('mcsubscribe.subscribed','forms',null)}</h1>
+            <iselse/>
+                <h1>${Resource.msg('mcsubscribe.unsubscribed','forms',null)}</h1>
+            </isif>
+    <iselse/>
+        <div class="container">
+            <form action="${URLUtils.httpsContinue()}" method="post" class="form-horizontal c-email-signup__form js-subscribe" id="MCSubscriptionForm">
+                <fieldset>
+                    <div class="c-email-signup__form-wrapper input-group">
+                        <div class="form-group c-email-signup__input__group ${pdict.CurrentForms.mcsubscribe.email.htmlName} <isif condition="${pdict.CurrentForms.mcsubscribe.email.mandatory === true}">required</isif>">
+                            <label class="form-control-label sr-only" for="${pdict.CurrentForms.mcsubscribe.email.htmlName}">
+                                <isif condition="${pdict.CurrentForms.mcsubscribe.email.mandatory === true}">
+                                    <span class="required-indicator">• </span>
+                                </isif>
+                                <isprint value="${Resource.msg(pdict.CurrentForms.mcsubscribe.email.label, 'forms', null)}" encoding="htmlcontent" />
+                            </label>
+                            <input type="text" class="input-text c-email-signup__input form-control js-subscribe-email <isif condition="${pdict.CurrentForms.mcsubscribe.email.mandatory === true}">required</isif>"
+                            id="${pdict.CurrentForms.mcsubscribe.email.htmlName}" name="${pdict.CurrentForms.mcsubscribe.email.htmlName}"
+                            value="<isprint value="${pdict.CurrentForms.mcsubscribe.email.htmlValue}" encoding="htmldoublequote"/>" >
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <isif condition="${pdict.formAction === 'subscribe' || pdict.formAction === 'subscribeFooter'}">
+                            <button type="submit" value="${Resource.msg('mcsubscribe.subscribe','forms',null)}" name="submitButton" class="c-email-signup__button btn btn-light js-subscription-submit">
+                                ${Resource.msg('mcsubscribe.subscribe','forms',null)}
+                            </button>
+                            <input type="hidden" value="${Resource.msg('mcsubscribe.subscribe','forms',null)}" name="${pdict.CurrentForms.mcsubscribe[pdict.formAction].htmlName}" />
+                        <iselse/>
+                            <button type="submit" value="${Resource.msg('mcsubscribe.unsubscribe','forms',null)}" name="submitButton" class="c-email-signup__button btn btn-light">
+                                ${Resource.msg('mcsubscribe.unsubscribe','forms',null)}
+                            </button>
+                            <input type="hidden" value="${Resource.msg('mcsubscribe.unsubscribe','forms',null)}" name="${pdict.CurrentForms.mcsubscribe[pdict.formAction].htmlName}" />
+                        </isif>
+
+                        <input type="hidden" name="subscription-url" class="js-subscribe-url" value="${URLUtils.url('MCSubscription-SubmitAjax')}"/>
+                        <input type="hidden" name="${dw.web.CSRFProtection.getTokenName()}" value="${dw.web.CSRFProtection.generateToken()}"/>
+
+                    </div>
+                </fieldset>
+
+            </form>
+        </isif>
+    </div>
+</isdecorate>

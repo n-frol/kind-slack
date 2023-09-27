@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="mcWelcomeCouponDataExtensionExternalKey">
+                <display-name xml:lang="x-default">Welcome Coupon Data Extension External Key</display-name>
+                <description xml:lang="x-default">The External Key of the data extension to trigger coupon codes.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="mcWelcomeCouponEventDefinitionKey">
+                <display-name xml:lang="x-default">Welcome Coupon Jouney Trigger Event Definition Key</display-name>
+                <description xml:lang="x-default">The Event Definition Key for the welcom coupon journey.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Marketing Cloud">
+                <display-name xml:lang="x-default">Marketing Cloud Connector</display-name>
+                <attribute attribute-id="mcEnableAnalytics"/>
+                <attribute attribute-id="mcMID"/>
+                <attribute attribute-id="mcIncludeTrackingLink"/>
+                <attribute attribute-id="mcCollectJsUrl"/>
+                <attribute attribute-id="mcEnableMailingLists"/>
+                <attribute attribute-id="mcDefaultMailingLists"/>
+                <attribute attribute-id="mcMailingListsWhitelist"/>
+                <attribute attribute-id="mcUnsubscribeAllowed"/>
+                <attribute attribute-id="mcWelcomeCouponID"/>
+                <attribute attribute-id="mcWelcomeCouponDataExtensionExternalKey"/>
+                <attribute attribute-id="mcWelcomeCouponEventDefinitionKey"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

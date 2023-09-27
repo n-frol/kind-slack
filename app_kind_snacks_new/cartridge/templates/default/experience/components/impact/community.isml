@@ -1,0 +1,198 @@
+<div class="community_section impact_section">
+    <isinclude template="experience/components/impact/community_grid_1" />
+    <img style=""class="railedimage desktop" src="${URLUtils.staticURL('/images/impact/Frame 5.png')}" alt="Impact" class="bodies_section_2" />
+    <img style="background: #EDA900;"class="railedimage mobile" src="${URLUtils.staticURL('/images/impact/grid7/image 158.png')}" alt="Impact" class="bodies_section_2" />
+    <isinclude template="experience/components/impact/community_grid_2" />
+    <isinclude template="experience/components/impact/community_grid_3" />
+    <div class="lgbtq_container" style="margin-bottom: 60px;">
+        <div class="para">
+            Aligned with our inclusive values and longstanding support of the LGBTQIA+ community, we proudly advocated for the passage of the Respect for Marriage Act to ensure that everyone has the right to love and marry who they choose. We put our allyship into action by signing the Human Rights Campaign’s Letter to the Senate in support of the Respect for Marriage Act.
+        </div>
+        <img src="${URLUtils.staticURL('/images/impact/Group 3247.png')}" alt="Impact" class="bodies_section_2" />
+    </div>
+    <div class="centerme" style="position: relative;">
+        <div class="para fs42">
+            celebrating everyday<br/>acts of kindness
+        </div>
+        <div class="para beast">
+            Kindness has a ripple effect. To create a wave of empathy in our own communities and beyond, we launched our biggest World Kindness Day campaign yet. To spread the word, we teamed up with Beast Philanthropy Productions, a non-profit working to alleviate hunger, homelessness, and unemployment. Together we encouraged everyone to take part in an act of kindness, no matter how big or small.        </div>
+        <img src="${URLUtils.staticURL('/images/impact/grid6/Group 3112.png')}" alt="Impact" class="absposleft bodies_section_2" />
+        <img src="${URLUtils.staticURL('/images/impact/grid6/Group 3112.png')}" alt="Impact" class="absposright bodies_section_2" />
+        <iframe class="beastvid" width="80%" height="5%" src="https://www.youtube.com/embed/qDeeJukyuXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="beastpara">
+            We partnered with influential changemaker MrBeast to ignite a celebration of everyday acts of kindness.
+        </div>
+        <div class="greybox beast">
+            <img src="${URLUtils.staticURL('/images/impact/grid6/blackquote.png')}" alt="Impact" class="bodies_section_2" />
+            <div class="beastquote">
+                Giving back is one of the best parts of my job, and I’m excited to have teamed up with KIND to encourage even more kindness in my community and across the country.”
+                <div class="person">
+                    Jimmy Donaldson, also known as MrBeast
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="experience/components/impact/community_grid_4" />
+    <div class="centerme withimg">
+        <img src="${URLUtils.staticURL('/images/impact/grid5/retail logos.png')}" alt="Impact" class="bodies_section_2" />
+        <div class="copy">
+            Thank you to retail partners Harris Teeter and Instacart for shining a spotlight on our campaign!
+        </div>
+    </div>
+    <div style="width: 100%; margin:auto; text-align: center; margin-top: 20px;">
+        <img style="margin:auto;" src="${URLUtils.staticURL('/images/impact/grid6/3248_desktop.png')}" alt="Impact" class="bodies_section_32 desktop" />
+    <img class="railimage20 mobile" style="margin-bottom: 30px;" src="${URLUtils.staticURL('/images/impact/grid6/3248_mobile.png')}" alt="Impact" class="bodies_section_32 mobile" />
+    </div>
+    <isinclude template="experience/components/impact/community_grid_5" />
+    <div class="centerme">
+        <div class="para fs32" style="margin-bottom: 0px;">
+            We believe kindness has no borders and mobilized quickly to support communities around the world facing unimaginable hardship.
+        </div>
+    </div>
+    <isinclude template="experience/components/impact/community_grid_6" />
+    <div class="nomobilepad" style="margin-top: 80px"></div>
+    <div class="desktop">
+    <div class="img_twogrid">
+        <img class="fullwidth" src="${URLUtils.staticURL('/images/impact/FlowerWallKIND 1.png')}" alt="Impact" class="bodies_section_62" />
+        <isinclude template="experience/components/impact/community_grid_7" />
+    </div>
+    <div class="centerme">
+        <div class="support_para">
+            In support of the ongoing crisis in Ukraine, our flower wall in New York City’s Flatiron Plaza was created to spread kindness at a time when the world needed it. Members of the public left kind messages while supporting World Central Kitchen’s Ukraine emergency food relief efforts.        </div>
+    </div>
+    </div>
+    <div class="mobile">
+        <div class="centerme">
+            <div class="support_para">
+                In support of the ongoing crisis in Ukraine, our flower wall in New York City’s Flatiron Plaza was created to spread kindness at a time when the world needed it. Members of the public left kind messages while supporting World Central Kitchen’s Ukraine emergency food relief efforts.            </div>
+        </div>
+        <div class="img_twogrid">
+            <img class="fullwidth mobilefull" src="${URLUtils.staticURL('/images/impact/FlowerWallKIND 1.png')}" alt="Impact" class="bodies_section_2" />
+            <isinclude template="experience/components/impact/community_grid_7" />
+        </div>
+    </div>
+    <div style="background: #F3F3F3; width: 100%; text-align: center">
+        <img style="margin:auto;" src="${URLUtils.staticURL('/images/impact/img_12.png')}" alt="Impact" class="bodies_section_2" />
+        <div class="frontline_grid">
+            <div class="griditem" style="background: white;">
+                <img src="${URLUtils.staticURL('/images/impact/image 58.png')}" alt="Impact" class="bodies_section_2" />
+                <div class="para">
+                    The <a class="normallink" href="https://frontlineimpact.org/">KIND Foundation’s Frontline Impact Project</a> connects those on the frontlines of communities and crises with donors who would like to help.
+                </div>
+            </div>
+            <div class="griditem" style="padding-top: 0px !important">
+                <div class="psmall">
+                    We worked together to bring:
+                </div>
+                <div class="para fs26" style="border-bottom: 1px solid; padding-bottom: 20px;">
+                    450,000 KIND bars donated to those in and around the borders of Ukraine, in partnership with the Frontline Impact Project and Beast Philanthropy Productions                </div>
+                <div class="para fs26">
+                    Over 3,000 KIND bars donated to eager voters facing long polling lines in Philadelphia and Milwaukee, in partnership with Pizza to The Polls                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="experience/components/impact/community_final_grid" />
+</div>
+
+<style>
+    .beastvid {
+        border-radius: 20px;
+    }
+    .beastpara {
+        margin-bottom: 30px;
+        font-size: 15px;
+        line-height: 20px;
+        font-family: main;
+        margin-top: 10px;
+    }
+    .absposright {
+        transform: scalex(-1);
+        position: absolute;
+        top: 700px;
+        left: -100px;
+    }
+    .absposleft {
+        position: absolute;
+        right: -100px;
+        top: 200px;
+    }
+    .railedimage {
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        margin-bottom: 60px; margin-top: 40px;
+    }
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    @media (max-width: 440px) {
+        .railedimage {
+            width: 100% !important;
+            margin-left: 0px !important;
+            margin-top: 0px !important;
+        }
+        .impact_two_column_1_container_welcome .para {
+            margin-bottom: 40px;
+        }
+        .quoteimg {
+            margin-top: 40px !important;
+        }
+        .support_para {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .comm_grid_5.mobile {
+            margin-bottom: 20px !important;
+        }
+        .comm_grid_6 {
+            margin-top: 40px !important;
+        }
+        .headnorm, .copynorm {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        .greybox.beast {
+            padding: 20px !important;
+            border-radius: 20px;
+        }
+        .community_grid_3 .quote {
+            margin-top: 20px !important;
+            padding-top: 0px !important;
+        }
+        .beastvid {
+            margin-bottom: 10px;
+            height: 300px;
+        }
+        .mobilefull {
+            width: 100% !important;
+            margin-left: 0px !important;
+        }
+        .mobile {
+            display: block !important;
+        }
+        .desktop {
+            display: none !important;
+        }
+    }
+    .headnorm {
+        font-size: 48px;
+        line-height: 54px;
+        font-weight: 700;
+        margin-top: 20px;
+        font-family: main;
+        max-width: 800px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .copynorm {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        margin-top: 20px;
+        font-family: medium;
+        max-width: 800px;
+        margin: auto;
+    }
+</style>

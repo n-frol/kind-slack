@@ -1,0 +1,64 @@
+<style>
+html { overflow-x:hidden !important; }
+</style>
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<div>
+    <isslot id="kind-snacks-header-banner-m" description="Slot above the site header for KIND Snacks" context="global" />
+</div>
+<header class="pageheader">
+    <nav role="navigation">
+        <div class="header st-header s-sticky-header js-header">
+            <div class="container st-header__container">
+                <div class="row">
+                    <div class="col-12 st-header__inner js-header__inner">
+                        <isinclude template="components/header/navigationTabs" />
+                        <div class="st-header__navbar navbar-header navbar-toggler--wrap d-lg-none">
+                            <button class="navbar-toggler js-navbar-toggler st-header__navbar__toggler" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                <div class="c-hamburger-menu">
+                                    <span class="c-hamburger-menu__bar"></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="main-menu st-primary-nav js-primary-nav navbar-toggleable-sm menu-toggleable-left multilevel-dropdown" id="sg-navbar-collapse">
+                            <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+                        </div>
+                        <div class="st-header__navbar st-header__navbar--logo navbar-header brand js-brand-logo">
+                            <a href="${URLUtils.url('Home-Show')}" class="st-header__navbar--logo__link" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                                <isif condition="${siteID === "CreativeSnacks"}">
+                                    <img src="${URLUtils.staticURL('/images/creative_logo.svg')}" class="st-header__navbar--logo__img js-logo-fade" alt="${Resource.msg('global.storename', 'common', null)}" />
+                                <iselseif condition="${siteID === "KINDSnacks"}"/>
+                                    <img src="${URLUtils.staticURL('/images/logo-black.svg')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.creative.storename', 'common', null)}" />
+                                <iselse/>
+                                    <img src="${URLUtils.staticURL('/images/logo-black.svg')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.creative.storename', 'common', null)}" />
+                                </isif>
+                            </a>
+                        </div>
+                        <div class="st-header__navbar navbar-header st-header__navbar--utilities">
+                            <div class="pull-left">
+                                <div class="search">
+                                    <isinclude template="components/header/search" />
+                                </div>
+                                <div class="hidden-sm-down">
+                                    <isinclude url="${URLUtils.url('Account-Header')}" />
+                                    <iscomment>
+                                        No current locale support
+                                        <isinclude url="${URLUtils.url('Page-Locale')}" />
+                                    </iscomment>
+                                </div>
+                            </div>
+                            <div class="pull-right">
+                                <div class="minicart c-minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                                    <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-mobile d-sm-none">
+                <isinclude template="components/header/searchMobile" />
+            </div>
+        </div>
+    </nav>
+</header>

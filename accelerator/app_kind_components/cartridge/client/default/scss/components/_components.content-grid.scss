@@ -1,0 +1,218 @@
+/* ============================================================================
+   Content Grid
+   ============================================================================ */
+
+/**
+ * Provides styles for content grids
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-content-grid;
+.#{$ns} {
+
+    &__parent-header {
+        &__heading {
+            font-size: 30px;
+            letter-spacing: -.6px;
+            margin-bottom: 8px;
+            text-transform: none;
+        }
+        &__body {
+            margin-bottom: 72px;
+        }
+    }
+    &__item {
+        @include make-col(6);
+
+        margin-bottom: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-decoration: none;
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(4);
+
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        @include media-breakpoint-up(md) {
+            @include make-col(3);
+
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+
+        &--link {
+            &:hover {
+                color: inherit;
+                text-decoration: none;
+
+                .#{$ns} {
+                    &__item {
+                        &__content {
+                            &__heading {
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &--link & {
+            &__content {
+                &__heading {
+                    &:hover {
+                        &::after {
+                            margin-left: 6px;
+                        }
+                    }
+
+                    &::after {
+                        border-right: 2px solid $black;
+                        border-top: 2px solid $black;
+                        content: '';
+                        display: inline-block;
+                        height: 11px;
+                        margin-left: 2px;
+                        transform: rotate(45deg);
+                        transition: .2s margin-left;
+                        vertical-align: middle;
+                        width: 11px;
+                    }
+                }
+            }
+        }
+
+        // Content Grid Content
+        &__content {
+            height: 100%;
+
+            &__image-wrapper {
+                margin-bottom: 15px;
+                padding-right: 15px;
+                width: 100%;
+
+                @include media-breakpoint-up(md) {
+                    padding-right: 20px;
+                }
+                @include media-breakpoint-up(lg) {
+                    padding-right: 30px;
+                }
+            }
+            &__image {
+                width: 100%;
+            }
+            &__heading {
+                font-size: 18px;
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.17;
+                letter-spacing: -.6px;
+                margin-bottom: 12px;
+                text-transform: lowercase;
+            }
+            &__body {
+                font-size: 14px;
+                line-height: 1.75;
+                letter-spacing: .3px;
+                margin-bottom: 15px;
+            }
+            &__link {
+                display: block;
+                padding: 0;
+                text-decoration: none;
+                text-transform: none;
+                &:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+                &__title {
+                    color: black;
+                    display: block;
+                    font-weight: 700;
+                    font-size: 18px;
+                    letter-spacing: -0.8px;
+                    line-height: 1.2em;
+                    &::after {
+                        border-right: 2px solid black;
+                        border-top: 2px solid black;
+                        content: "";
+                        display: inline-block;
+                        height: 10px;
+                        margin-bottom: 1px;
+                        margin-left: 5px;
+                        transform: rotate(45deg);
+                        width: 10px;
+                    }
+                }
+                &__description {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    letter-spacing: 0.3px;
+                }
+            }
+            &::after {
+                clear: both;
+                content: "";
+                display: block;
+            }
+            &--center {
+                text-align: center;
+
+                .#{$ns}__item__content__image-wrapper {
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-right: 0;
+                    text-align: center;
+                }
+            }
+            &--left {
+                .#{$ns}__item__content__image-wrapper {
+                    float: none;
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        float: left;
+                    }
+                }
+                .#{$ns}__item__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-left: 70%;
+                    }
+                }
+            }
+            &--right {
+                text-align: right;
+
+                .#{$ns}__item__content__image-wrapper {
+                    float: none;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-left: 15px;
+                    padding-right: 0;
+                    text-align: center;
+
+                    @include media-breakpoint-up(md) {
+                        padding-left: 20px;
+                    }
+                    @include media-breakpoint-up(lg) {
+                        float: right;
+                        padding-left: 30px;
+                    }
+                }
+                .#{$ns}__item__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-right: 70%;
+                    }
+                }
+            }
+        }
+    }
+}

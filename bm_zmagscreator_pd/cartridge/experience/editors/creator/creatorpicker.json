@@ -1,0 +1,13 @@
+{
+    "name": "Creator Experience ID",
+    "description": "Allows to pick a Creator experience to include in Page Designer canvas",
+    "resources": {
+        "scripts": [
+            "/experience/editors/creator/creatorpicker.js"
+        ],
+        "styles": [
+            "/experience/editors/creator/creatorpicker.css",
+            "https://cdnjs.cloudflare.com/ajax/libs/design-system/2.8.3/styles/salesforce-lightning-design-system.min.css"
+        ]
+    }
+}

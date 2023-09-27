@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coupons xmlns="http://www.demandware.com/xml/impex/coupon/2008-06-17">
+    <coupon coupon-id="testOrderPromoCoupon">
+        <description>Used to trigger an order level promotion in the test environments, and sandboxes.</description>
+        <enabled-flag>true</enabled-flag>
+        <case-insensitive>true</case-insensitive>
+        <redemption-limits>
+            <allow-multiple-codes-per-order>false</allow-multiple-codes-per-order>
+        </redemption-limits>
+        <single-code>order4less</single-code>
+    </coupon>
+
+    <coupon coupon-id="testProductPromoCoupon">
+        <description>Test coupon used for applying a test product level promotion to the basket.</description>
+        <enabled-flag>true</enabled-flag>
+        <case-insensitive>true</case-insensitive>
+        <redemption-limits>
+            <allow-multiple-codes-per-order>false</allow-multiple-codes-per-order>
+        </redemption-limits>
+        <single-code>product4less</single-code>
+    </coupon>
+
+    <coupon coupon-id="testShippingPromoCoupon">
+        <description>Test coupon used for applying a test shipping promotion to the basket.</description>
+        <enabled-flag>true</enabled-flag>
+        <case-insensitive>true</case-insensitive>
+        <redemption-limits>
+            <limit-per-customer>1</limit-per-customer>
+            <allow-multiple-codes-per-order>false</allow-multiple-codes-per-order>
+        </redemption-limits>
+        <single-code>ship4less</single-code>
+    </coupon>
+
+</coupons>

@@ -1,0 +1,45 @@
+{
+  "name": "Small Double Thing Solo",
+  "description": "Image, black box, two CTA",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "headertext",
+          "name": "Header Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "ctatext",
+          "name": "CTA Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "ctalink",
+          "name": "CTA Link",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "anchor",
+          "name": "Anchor ID",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,8 @@
+<!----------------------------------------------------------------------------------->
+<!-- Order Totals, Details and Summary -->
+<!----------------------------------------------------------------------------------->
+<div class="st-sidebar">
+
+    <isinclude template="checkout/checkoutSidebarContent_nocoupon" />
+
+</div>

@@ -1,0 +1,39 @@
+/* ============================================================================
+Containers
+============================================================================ */
+
+/**
+ * Establish custom style sets for container elements
+ */
+
+$ns: st-container;
+
+.#{$ns} {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    &--narrow,
+    &--padded {
+        max-width: map-get($container-max-widths, xl);
+    }
+
+    &--narrow {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    &--x-narrow {
+        max-width: map-get($container-max-widths, md);
+    }
+    &--padded {
+        padding: 20px 40px;
+
+        @include media-breakpoint-up(md) {
+            padding: 80px 64px;
+        }
+    }
+}

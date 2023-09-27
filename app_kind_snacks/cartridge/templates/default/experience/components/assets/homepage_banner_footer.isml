@@ -1,0 +1,208 @@
+<isscript>
+    if (pdict.text_container_align == "Left") {
+        var left = "right:unset !important; left:50px !important;"
+    }
+    if (pdict.text_container_align == "Right") {
+        var right = "left:unset !important; right:50px !important;"
+    }
+     if (pdict.text_container_align == "Center") {
+        var center = "left:0; right:0;"
+    }
+</isscript>
+<div id="${pdict.componentId}" class="${pdict.bannerClass} hero-shop-now ${pdict.extra_class}" <isif condition="${pdict.buttonlink}">onclick="window.location.href = '${pdict.buttonlink}'"</isif>>
+    <isif condition="${pdict.full_image_use}">
+        <div class="full_width_image" style="${pdict.fullstyle} ${pdict.banner_height}">
+            <div class="full_width_image_container">
+                <isif condition="${dw.system.Site.getCurrent().ID !== "CreativeSnacks"}">
+                    <picture>
+                        <isif condition="${pdict.resize}">
+                            <source media="(max-width: 500px)" srcset="${pdict.full_image_mobile.src.mobile}">
+                            <img class="full_width" src="${pdict.full_image.src.desktop}" alt="${pdict.full_image.alt}" />
+                        <iselse/>
+                            <source media="(max-width: 500px)" srcset="${pdict.full_image_mobile.file.URL}">
+                            <img class="full_width" src="${pdict.full_image.file.URL}" alt="${pdict.full_image.alt}" />
+                        </isif>
+                    </picture>
+                </isif>
+                <div class="text-container textalign${pdict.text_container_align}" style="
+            text-align: ${pdict.text_align}; color:${pdict.text_color}">
+                    <div class="text">
+                        <isif condition="${pdict.eyebrow}">
+                            <div class="eyebrow">
+                                ${pdict.eyebrow}
+                            </div>
+                        </isif>
+                        <h2>
+                            <isprint value="${pdict.header}" encoding="off" />
+                        </h2>
+                        <div class="copy" style="font-family:${pdict.copyfont}; font-weight:${pdict.copyweight}; color:${pdict.text_color}">
+                            <isprint value="${pdict.copy}" encoding="off" />
+                        </div>
+                        <div class="btn-container">
+                        <isif condition="${pdict.button}">
+                            <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color}; background:${pdict.button_color};" href="${pdict.buttonlink}">${pdict.button}</a>
+                        </isif>
+                        <isif condition="${pdict.button2}">
+                            <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color2}; background:${pdict.button_color2};" href="${pdict.button2link}">${pdict.button2}</a>
+                        </isif>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <iselse/>
+        <div class="backgrounded" style="background:${pdict.background_color};">
+            <div class="text-container" style="text-align: ${pdict.text_align};">
+                <div class="text">
+                    <isif condition="${pdict.eyebrow}">
+                        <div class="eyebrow" style="color:${pdict.text_color};">
+                            ${pdict.eyebrow}
+                        </div>
+                    </isif>
+                    <h2 style="color:${pdict.text_color};">
+                        <isprint value="${pdict.header}" encoding="off" />
+                    </h2>
+                    <div class="copy" style="font-family:${pdict.copyfont}; font-weight:${pdict.copyweight}; color:${pdict.text_color}">
+                        <isprint value="${pdict.copy}" encoding="off" />
+                    </div>
+                    <div class="btn-container">
+                    <isif condition="${pdict.button}">
+                       <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color}; background:${pdict.button_color};" href="${pdict.buttonlink}">${pdict.button}</a>
+                    </isif>
+                    <isif condition="${pdict.button2}">
+                        <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color2}; background:${pdict.button_color2};" href="${pdict.button2link}">${pdict.button2}</a>
+                    </isif>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="picture_container">
+            <picture>
+                <source media="(max-width: 500px)" srcset="${pdict.image_mobile.src.mobile}">
+                <img class="full_width image_half" src="${pdict.image.src.desktop}" alt="${pdict.full_image.alt}" />
+            </picture>
+        </div>
+    </isif>
+</div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+.full_width_image {
+    position: relative;
+}
+.creative-snacks .creative-snacks-banner-component-footer {
+    font-family: 'Poppins', sans-serif !important;
+}
+.creative-snacks .creative-snacks-banner-component-footer .full_width_image {
+    background-image: url('${pdict.full_image.src.desktop}');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+}
+.creative-snacks .creative-snacks-banner-component-footer h2 {
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+}
+.creative-snacks .creative-snacks-banner-component-footer .copy {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+.creative-snacks .creative-snacks-banner-component-footer .btn-container a {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 7px;
+    text-transform: none;
+    width: 140px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+    max-width: unset;
+    min-height: unset;
+}
+.creative-snacks .creative-snacks-banner-component-footer .text-container {
+    text-align: ${pdict.text_align};   
+}
+.creative-snacks .full_width_image_container {
+    width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+@media(max-width: 768px)  {
+    .creative-snacks .creative-snacks-banner-component-footer .full_width_image {
+        background-image: url('${pdict.full_image_mobile.src.desktop}');
+        background-position: inherit;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .creative-snacks .creative-snacks-banner-component-footer h2 {
+        font-weight: 500;
+        font-size: 34px;
+        line-height: 40px;
+        max-width: 285px;
+        margin: 0 auto;
+    }
+    .creative-snacks .creative-snacks-banner-component-footer .copy {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        max-width: 240px;
+        margin: 0 auto 30px auto;
+    }
+    .full_width_image_container {
+        width: unset;
+    }
+    .textalignLeft, .textalignRight, .textalignCenter {
+        left: 0 !important;
+        right: 0 !important;
+    }
+    .creative-snacks .creative-snacks-banner-component-footer .text-container {
+        text-align: center;
+        padding: 30px 5px;
+        top: 15% !important;
+        width: 100% !important;
+        bottom: unset;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .creative-snacks .creative-snacks-banner-component-footer .text-container {
+        top: 0 !important;
+    }
+}
+
+@media(min-width: 428px) and (max-width: 768px) {
+    .creative-snacks .creative-snacks-banner-component-footer .text-container {
+        top: 5% !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .textalignLeft {
+        ${left}
+    }
+    .textalignRight {
+        ${right}
+    }
+    .textalignCenter {
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1439px) {
+    .creative-snacks .creative-snacks-banner-component-footer .full_width_image_container {
+        width: 900px;
+    }
+    .creative-snacks .creative-snacks-banner-component-footer .text-container {
+        padding-top: 0;
+    }
+}
+
+</style>

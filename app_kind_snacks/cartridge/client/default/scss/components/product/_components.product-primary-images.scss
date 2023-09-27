@@ -1,0 +1,274 @@
+/* ============================================================================
+PDP Primary Images
+============================================================================ */
+
+/**
+ * Establish styles for the main image block on the PDP.
+ */
+
+$ns: c-product-primary-images;
+
+// Styles for indicator component that can also be used in the scope without the selector hierarchy getting messed up
+%#{$ns}__indicator {
+    background-color: inherit;
+    border: 2px solid $white;
+    border-radius: 100%;
+    height: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+    min-height: 0;
+    min-width: 0;
+    position: relative;
+    width: 16px;
+
+    &::after {
+        background-color: transparent;
+        border-radius: inherit;
+        content: "";
+        height: 8px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+    }
+
+    &--variable-color {
+        border-color: var(--image-nav-color, $white);
+    }
+}
+
+.#{$ns} {
+    background-color: var(--pdp-main__bg, $white);
+    display: flex;
+    align-items: center;
+    min-height: 300px;
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+        background-color: transparent;
+        flex: 0 0 60%;
+        max-width: 60%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &--white {
+        background-color: white !important;
+        height: auto !important;
+    }
+
+    &__carousel {
+        position: static;
+        width: 100%;
+
+        &__img {
+            width: 100%;
+            height: 100%;
+        }
+        &__controls {
+            display: none;
+            margin-bottom: 16px;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+
+            @include media-breakpoint-up(lg) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &--arrows-inline &__prev,
+            &__indicators,
+            &--arrows-inline &__next {
+                position: static;
+            }
+            &__prev,
+            &__next {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                flex-basis: 32px;
+                min-height: 0;
+                min-width: 0;
+                opacity: 1;
+                padding-left: 0;
+                padding-right: 0;
+                width: auto;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    background-color: transparent !important; // Using important to override button:not(:disabled):not(.disabled):active from _base.buttons as that would require an unreasonable hierarchy to override otherwise
+                    border: none !important;
+                }
+
+                &--variable-color {
+                    border: 2px solid transparent;
+                    flex-basis: 7px;
+                    height: 7px;
+                    transform: rotateZ(45deg);
+                }
+            }
+            &__prev {
+                &--variable-color {
+                    // Using pre-defined color as fallback for browsers that don't support scss variables
+                    border-bottom-color: $white;
+                    border-left-color: $white;
+
+                    border-bottom-color: var(--image-nav-color, $white);
+                    border-left-color: var(--image-nav-color, $white);
+                    margin-right: 8px;
+
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        border-bottom: 1px solid $white !important; // Using important to override button:not(:disabled):not(.disabled):active from _base.buttons as that would require an unreasonable hierarchy to override otherwise
+                        border-left: 1px solid $white !important;
+
+                        border-bottom-color: var(
+                            --image-nav-color,
+                            $white
+                        ) !important;
+                        border-left-color: var(
+                            --image-nav-color,
+                            $white
+                        ) !important;
+                    }
+                }
+            }
+            &__next {
+                &--variable-color {
+                    // Using pre-defined color as fallback for browsers that don't support scss variables
+                    border-right-color: $white;
+                    border-top-color: $white;
+
+                    border-right-color: var(--image-nav-color, $white);
+                    border-top-color: var(--image-nav-color, $white);
+                    margin-left: 8px;
+
+                    &:active,
+                    &:focus,
+                    &:hover {
+                        border-right: 1px solid $white !important; // Using important to override button:not(:disabled):not(.disabled):active from _base.buttons as that would require an unreasonable hierarchy to override otherwise
+                        border-top: 1px solid $white !important;
+
+                        border-right-color: var(
+                            --image-nav-color,
+                            $white
+                        ) !important;
+                        border-top-color: var(
+                            --image-nav-color,
+                            $white
+                        ) !important;
+                    }
+                }
+            }
+            &__indicators {
+                .#{$ns}__carousel__controls__indicator {
+                    @extend %#{$ns}__indicator;
+
+                    &.active {
+                        &::after {
+                            background-color: $white;
+                        }
+                    }
+                }
+            }
+            &__icon {
+                height: auto;
+                width: auto;
+            }
+        }
+
+        &--white {
+            background-color: white;
+        }
+    }
+
+    &--variety {
+        // Create stronger selector
+        &.#{$ns} {
+            @include media-breakpoint-up(lg) {
+                padding-bottom: 0;
+                padding-top: 0;
+            }
+        }
+
+        .#{$ns} {
+            &__carousel {
+                @include media-breakpoint-up(lg) {
+                    height: 100%;
+                }
+
+                &__img {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+
+                    @include media-breakpoint-up(lg) {
+                        left: auto;
+                        right: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+    }
+    .thumbnail-pager {
+        display: none;
+    }
+}
+
+.#{$ns}.show-thumbnails {
+    .c-product-primary-images__carousel__controls {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .thumbnail-pager {
+        @include media-breakpoint-up(lg) {
+            height: 44px;
+            display: block;
+            width: 54px;
+            object-fit:contain;
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: inline-block;
+            height: 14px;
+            flex-basis: 14px !important;
+            margin-top: 0;
+        }
+        @include media-breakpoint-down(md) {
+            border-color: transparent;
+        }
+    }
+    button {
+        display: none;
+    }
+    .slick-dots {
+        justify-content: center;
+        li {
+            border-radius: 50%;
+            margin: 0 5px;
+            border: 1px solid white;
+            padding: 7px;
+            @include media-breakpoint-up(lg) {
+                padding: 10px 5px;
+                background-color: rgba(255, 255, 255, 0.5);
+                border: none;
+            }
+        }
+        li.slick-active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+    }
+}

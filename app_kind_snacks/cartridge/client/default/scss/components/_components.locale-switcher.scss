@@ -1,0 +1,39 @@
+/* ============================================================================
+   Locale Switcher
+   ============================================================================ */
+
+/**
+ * Styles the locale switcher compenent
+ */
+
+$ns: c-locale-switcher;
+
+.#{$ns} {
+    display: inline-block;
+    min-height: 0;
+
+    @supports (appearance: none) {
+        appearance: none;
+        background-color: $primary;
+        background-position: right top;
+        border: none;
+        border-bottom: 2px solid $white;
+        color: $white;
+        font-size: 12px;
+        height: auto;
+        padding-bottom: 9px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &__option {
+        @supports (appearance: none) {
+            appearance: none;
+            background-color: $primary;
+            color: $white;
+            margin-bottom: 2px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+    }
+}

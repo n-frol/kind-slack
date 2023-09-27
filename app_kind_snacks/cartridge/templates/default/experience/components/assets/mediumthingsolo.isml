@@ -1,0 +1,194 @@
+<isscript>
+   var assets = require('*/cartridge/scripts/assets');
+   assets.addJs('/js/gifting.js');
+</isscript>
+<div class="double_medium_container_solo" id="${pdict.anchor}">
+    <div class="medium_container_solo">
+        <div class="banner-container">
+            <div class="banner">
+            <isprint value="${pdict.bannertext}" encoding="off" />
+            </div>
+        </div>
+        <div class="left">
+            <picture>
+    <isif condition="${pdict.image_tab}">
+    <source media="(max-width: 768px) and (min-width:426px)" srcset="https://t3.ftcdn.net/jpg/02/48/42/64/240_F_248426448_NVKLywWqArG2ADUxDq6QprtIzsF82dMF.jpg" />
+    </isif>
+        <isif condition="${pdict.image_mobile}">
+    <source media="(max-width: 425px)" srcset="${pdict.image_mobile.src.desktop}" />
+    </isif>
+<img src="${pdict.image.src.desktop}" alt="q" />
+    </picture>
+        </div>
+        <div class="right">
+            <div class="rightcontainer">
+                <div class="flexbreak"></div>
+                <h3>
+                <isprint value="${pdict.headertext}" encoding="off" />
+                </h3>
+                <div class="flexbreak"></div>
+                <div class="copy">
+                <isprint value="${pdict.copytext}" encoding="off" />
+                </div>
+                <isset name="product2" value="${pdict.pid}" scope="page" />
+                <button class="desktoponly c-product-tile__image-container__quickview quickview btn btn-light" 
+            data-link="/on/demandware.store/Sites-KINDSnacks-Site/en_US/Product-ShowQuickView?pid=${pdict.pid.ID}" data-is-blocked-access="false" data-impulse-upsell="true" title="Quick Shop" type="button">
+            Quick Shop
+        </button>
+        <button onclick="window.location='${dw.web.URLUtils.https('Product-Show','pid', pdict.pidd)}'" class="btn-light mobileonly">Shop Now</button>
+        <div class="flexbreak"></div>
+            <a class="desktoponly" href="${dw.web.URLUtils.https('Product-Show','pid', pdict.pidd)}">View Details</a>
+                <div class="flexbreak"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+.experience-layouts-2column {
+    padding-bottom:200px;
+}
+    @media only screen and (max-width: 1024px) and (min-width: 769px) {
+        .medium_container_solo h3 {
+            font-size: 28px !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 425px) {
+            .medium_container_solo h3 {
+                font-size:24px;
+                line-height:28px;
+            }
+    }
+.medium_container_solo .left img {
+    width:100%;
+}
+    .double_medium_container_solo {
+        max-width: 1280px;
+        margin: auto;
+    }
+
+    .banner-container {
+        position: relative;
+    }
+
+    .medium_container_solo .banner {
+z-index: 999;
+    position: absolute;
+    top: -10px;
+        left: 0px;
+        right: 0px;
+        background: black;
+        padding: 5px;
+        margin-bottom: 0px !important;
+        color: white;
+        text-align: center;
+        width: 250px;
+        margin: auto;
+         font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    }
+
+    @media only screen and (max-width: 425px) {
+        .medium_container_solo {
+            width:100% !important;
+            margin-bottom:10px !important;
+        }
+        .banner-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0px;
+        }
+
+        .medium_container_solo .left {
+            width: 100% !important;
+        }
+
+        .medium_container_solo .right {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .medium_container_solo h3 {
+            line-height:28px;
+        }
+    }
+
+    .medium_container_solo .copy {
+        margin-bottom: 20px;
+        font-family: georgia;
+    }
+
+    .medium_container_solo h3 {
+        margin-bottom: 20px;
+    }
+
+    .medium_container_solo button {
+        margin-bottom: 10px;
+    }
+
+    .btn-light {
+        width: 200px;
+    }
+
+    .btn-light-white {
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .flexbreak {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .medium_container_solo {
+        width: 100%;
+        margin: auto;
+        float: left;
+        margin-bottom: 60px;
+    }
+
+    .medium_container_solo_first {
+        margin-right: 5%;
+    }
+
+    .medium_container_solo .left {
+        width: 100%;
+        display: inline-block;
+        float: left;
+        position: relative;
+    }
+
+    .medium_container_solo .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: black;
+        color: white;
+        height: auto;
+        text-align: center;
+        padding: 20px;
+        flex-wrap: wrap;
+        position: relative;
+        height:332px;
+    }
+
+    .medium_container_solo .right .banner {
+            font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+        margin-bottom: 40px;
+    }
+
+    .medium_container_solo a {
+        font-family: HelveticaNeue-Bold;
+        color: white;
+        text-transform: uppercase;
+    }
+</style>

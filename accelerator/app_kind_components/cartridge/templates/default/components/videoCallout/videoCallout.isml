@@ -1,0 +1,60 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/videoCallout/videoCallout_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container st-container st-container--padded">
+            <div class="row">
+    </isif>
+        <div class="c-video-callout ${assetID} th-kind-video-callout s-graphical-asset">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container st-container st-container--padded">
+                    <div class="row">
+            </isif>
+            <div class="c-video-callout__content
+                <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-video-callout__content--${graphicalAsset.contentXPosition.value}
+                </isif>
+            ">
+                <isif condition="${!empty(graphicalAsset.heading)}">
+                    <div class="c-video-callout__content__header">
+                        <h2 class="c-video-callout__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h2>
+                    </div>
+                </isif>
+
+                <isif condition="${!empty(graphicalAsset.videoURL)}">
+                    <div class="c-video-callout__content__video__wrapper">
+                        <div class="c-video-callout__content__video__wrapper__inner">
+                            <iframe frameborder="0" src="${graphicalAsset.videoURL}" class="c-video-callout__content__video"></iframe>
+                        </div>
+                    </div>
+                </isif>
+
+                <div class="c-video-callout__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-video-callout__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.bodyTwo)}">
+                        <div class="c-video-callout__content__body-two">
+                            <isprint value="${graphicalAsset.bodyTwo}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

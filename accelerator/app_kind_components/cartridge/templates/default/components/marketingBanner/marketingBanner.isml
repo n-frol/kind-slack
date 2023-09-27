@@ -1,0 +1,51 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.backgroundImage) || !empty(graphicalAsset.backgroundColor))}">
+    <isinclude template="components/marketingBanner/marketingBanner_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container">
+            <div class="row">
+    </isif>
+                <div class="c-marketing-banner ${assetID} <isif condition="${!empty(graphicalAsset.image)}">has-image</isif> th-kind-marketing-banner s-graphical-asset">
+                    <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                        <div class="container">
+                            <div class="row">
+                    </isif>
+                                <div class="c-marketing-banner__wrapper col-12"><!-- dwMarker="content" dwContentID="${assetID}" -->
+                                    <isif condition="${!empty(graphicalAsset.eyebrow)}">
+                                        <div class="c-marketing-banner__eyebrow">
+                                            <isprint value="${graphicalAsset.eyebrow}" encoding="off" />
+                                        </div>
+                                    </isif>
+                                    <isif condition="${!empty(graphicalAsset.heading)}">
+                                        <div class="c-marketing-banner__heading">
+                                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                        </div>
+                                    </isif>
+                                    <isif condition="${!empty(graphicalAsset.links)}">
+                                        <div class="c-marketing-banner__links s-graphical-asset__links">
+                                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                                        </div>
+                                    </isif>
+                                    <isif condition="${!empty(graphicalAsset.image)}">
+                                        <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 611, 1222)}" scope="page" />
+                                        <div class="c-marketing-banner__image-wrapper">
+                                            <img class="c-marketing-banner__image" src="${responsiveImage.imageUrlDefault}"
+                                                srcset="${responsiveImage.imageUrlDefault} 1x,
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                                                 alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                                        </div>
+                                    </isif>
+                                </div>
+                        <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                                </div>
+                            </div>
+                        </isif>
+                </div><!-- END_dwmarker -->
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

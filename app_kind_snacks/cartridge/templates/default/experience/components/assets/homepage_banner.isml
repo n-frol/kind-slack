@@ -1,0 +1,184 @@
+<isif condition="${pdict.full_image_use}">
+    <div class="homepage_banner_full" onclick="javascript:location.href ='${pdict.buttonlink}'">
+        <picture>
+            <source media="(max-width: 400px)" srcset="${pdict.image_mobile.src.mobile}">
+            <img class="full_width" src="${pdict.full_image.src.desktop}" alt="${pdict.full_image.alt}" />
+        </picture>
+         <div class="text-container">
+        <div class="text">
+        <isif condition="${pdict.eyebrow}">
+            <div class="eyebrow">
+                ${pdict.eyebrow}
+            </div>
+            </isif>
+            <h1>
+                <isprint value="${pdict.header}" encoding="off" />
+            </h1>
+            <div class="copy">
+                ${pdict.copy}
+            </div>
+            <div class="btn-container">
+            <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color}; background:${pdict.button_color};" href="">${pdict.button}</a>
+            <isif condition="${pdict.button2}">
+                <a class="btn btn-primary resetwidth" style="
+                border: 2px solid ${pdict.button_color2_border}; color:${pdict.button_text_color2}; background:${pdict.button_color2};" href="">${pdict.button2}</a>
+            </isif>
+            </div>
+            </div>
+        </div>
+    </div>
+    <iselse>
+        <isif condition="${pdict.small_image_align == " left"}">
+            <div class="homepage_banner" onclick="javascript:location.href ='${pdict.buttonlink}'">
+                <iselse>
+                    <div class="homepage_banner reverse" onclick="javascript:location.href ='${pdict.buttonlink}'">
+        </isif>
+        <isif condition="${pdict.image.src.desktop}">
+            <div class="half banner_small_image">
+                <picture>
+                    <source media="(max-width: 400px)" srcset="${pdict.image_mobile.src.mobile}">
+                    <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+                </picture>
+            </div>
+            <div class="half banner_background" onclick="javascript:location.href ='${pdict.buttonlink}'">
+            <div class="text-container">
+                <div class="eyebrow">
+                    ${pdict.eyebrow}
+                </div>
+                <h1>
+                    ${pdict.header}
+                </h1>
+                <div class="copy">
+                    ${pdict.copy}
+                </div>
+                <div class="btn-container">
+                   <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color}; background:${pdict.button_color};" href="">${pdict.button}</a>
+            <isif condition="${pdict.button2}">
+                <a class="btn btn-primary resetwidth" style="color:${pdict.button_text_color2}; background:${pdict.button_color2};" href="">${pdict.button2}</a>
+            </isif>
+                    </div>
+                </div>
+            </div>
+        </isif>
+        </div>
+</isif>
+
+<iscomment> <style>
+.homepage_banner_full {
+    position:relative;
+}
+.homepage_banner img, .homepage_banner_full img {
+    max-height:412px;
+}
+@media screen and (min-width:426px) and (max-width:1024px) {
+    .banner_background .text-container {
+        width: unset !important;
+        padding:5px;
+    }
+    .homepage_banner_full .btn, .homepage_banner .btn {
+        width: 150px !important;
+    }
+}
+@media screen and (max-width:425px) {
+    .btn-container {
+        width: 100% !important;
+    }
+   .homepage_banner_full .btn, .homepage_banner .btn {
+    width: 150px !important;
+    margin-right:10px;
+    margin-left:10px;
+}
+.banner_background .text-container {
+    width:100% !important;
+    height: auto !important;
+}
+.btn-container {
+    display: grid;
+    grid-auto-flow: column;
+}
+.homepage_banner .copy, .homepage_banner_full .copy {
+    margin-bottom:10px;
+}
+}
+
+.btn-container {
+    display: grid;
+    grid-auto-flow: column;
+    width: 500px;
+    margin: auto;
+}
+.banner_background .text-container {
+        height: 300px;
+    display: grid;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: ${pdict.text_align};
+}
+.homepage_banner_full .btn, .homepage_banner .btn {
+    width: 200px;
+    margin-right:20px;
+}
+.homepage_banner_full .text {
+        text-align: center;
+    display: grid;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.full_width {
+    width:100%;
+}
+.container {
+    max-width:100%;
+}
+.homepage_banner {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+grid-auto-rows: 1fr;
+}
+.homepage_banner .eyebrow, .homepage_banner_full .eyebrow {
+font-family: Helvetica Neue;
+font-style: normal;
+font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+letter-spacing: 0.1em;
+color: ${pdict.text_color} !important;
+}
+.homepage_banner h1, .homepage_banner_full h1 {
+font-family: Helvetica Neue;
+font-style: normal;
+font-weight: bold;
+font-size: 60px;
+line-height: 49px;
+color: ${pdict.text_color} !important;
+}
+.homepage_banner .copy, .homepage_banner_full .copy {
+font-family: Helvetica Neue;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 22px;
+color: ${pdict.text_color} !important;
+}
+.reverse {
+direction: rtl;
+}
+.half {
+position: relative;
+align-items: center;
+display: grid;
+text-align: ${pdict.text_align};
+}
+.banner_background {
+background: ${pdict.background_color};
+}
+.banner_small_image {
+float: ${pdict.small_image_align};
+}
+</style> </iscomment>

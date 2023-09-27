@@ -1,0 +1,40 @@
+<isif condition="${pdict.usevideo}">
+  <isif condition="${pdict.video}">
+  <video class="videohtml fullheight" style="width:100%; height: 100%;" playsinline controls="true" poster="${pdict.poster.absURL}">
+    <source src="${pdict.video.absURL}" type="video/mp4">
+  </video>
+  <iselse/>
+    <isprint value="${pdict.youtube}" encoding="off"  />
+  </isif>
+<iselse/>
+  <img src="${pdict.image.src.desktop}" class="fullimg ${pdict.theid}" style="object-fit:cover;" />
+</isif>
+
+<style>
+  .${pdict.theid} {
+      padding:${pdict.paddingg};
+      width: ${pdict.width};
+    }
+    </style>
+<style>
+.experience-assets-careers-video {
+  height: 100%;
+  text-align:center;
+}
+  @media screen and (max-width: 440px) {
+    .videohtml {
+      height: 300px;
+    }
+    .fullimg {
+      max-width: 100% !important;
+      left: 0px !important;
+    }
+    .${pdict.theid} {
+      padding:${pdict.paddingmobile};
+    }
+  }
+  .maxheight {
+    height: 100.3%;
+    width: 100.3%;
+  }
+</style>

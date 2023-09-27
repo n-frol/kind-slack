@@ -1,0 +1,41 @@
+<table class="st-compare">
+    <colgroup>
+        <col style="width:${100/(pdict.pids.length + 1)}%" />
+        <isloop items="${pdict.pids}" var="productId">
+            <col style="width:${100/(pdict.pids.length + 1)}%" />
+        </isloop>
+    </colgroup>
+    <thead class="st-compare__products">
+        <tr>
+            <th scope="col"></th>
+            <isloop items="${pdict.pids}" var="productId">
+                <td class="st-compare__products__tile product-header">
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', productId, 'swatches', true, 'ratings', true, 'totalItemQuantity', true)}" />
+                    <a href="${pdict.removeUrls[productId]}" class="st-compare__products__remove"></a>
+                </td>
+            </isloop>
+        </tr>
+    </thead>
+    <tbody class="st-compare__attributes">
+        <tr>
+            <th></th>
+            <isloop items="${pdict.pids}" var="productId">
+                <td>
+                    <div class="st-compare__products__action">
+                        <a href="${URLUtils.url('Product-Show', 'pid', productId).relative().toString()}" class="btn btn-primary st-compare__products__add-to-cart">
+                            ${Resource.msg('button.shopnow', 'common', null)}
+                        </a>
+                    </div>
+                </td>
+            </isloop>
+        </tr>
+        <isloop items="${pdict.attributes}" var="attribute" status="loopState">
+            <tr class="st-compare__attributes__row">
+                <th>${attribute.displayName}</th>
+                <isloop items="${attribute.values}" var="attrs">
+                    <td class="st-compare__attributes__col">${attrs.values}</td>
+                </isloop>
+            </tr>
+        </isloop>
+    </tbody>
+</table>

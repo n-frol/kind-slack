@@ -1,0 +1,10 @@
+<isscript>
+    // Make sure templateClass is at least defined, so we don't have to add it to every template touching this one
+    var templateClass = typeof templateClass === 'undefined' ? '' : templateClass;
+</isscript>
+<div class="c-product-tile__tile-body__pdp-link<isif condition="${!empty(templateClass)}"> ${templateClass}__pdp-link</isif> pdp-link" itemprop="name" style="text-transform: none;">
+    ${product.productName}
+</div>
+<span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}"></span>
+<span class="value" itemprop="description" content="${product.longDescription}"></span>
+<span class="value" itemprop="sku" content="${product.id}"></span>

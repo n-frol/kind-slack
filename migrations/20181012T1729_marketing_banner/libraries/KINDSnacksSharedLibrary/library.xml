@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="test-banner-kind-minis">
+        <display-name xml:lang="x-default">KIND Minis</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundImage">images/test/2018-1008-Minis-Homepage-Background.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">This Treat is No Trick</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND&lt;sup&gt;&amp;reg;&lt;/sup&gt; minis</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeadingColor">#dd6001</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show','cgid','kind-nut-bars')$"&gt;KIND&amp;reg; Minis&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetPrimaryButtonBackgroundColor">#dd6001</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetPrimaryButtonColor">#FFFFFF</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetTextAlign">center</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">full</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="test-banner-snack-pack">
+        <display-name xml:lang="x-default">Test Snack Pack</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundImage">images/test/20181009_SnackPack-Homepage-Background.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">20 Snacks for $20! &lt;a href="$url('Home-Show')$"&gt;See Terms&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrowColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">try the KIND Snack Pack!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeadingColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show','cgid','kind-nut-bars')$"&gt;Shop Now&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

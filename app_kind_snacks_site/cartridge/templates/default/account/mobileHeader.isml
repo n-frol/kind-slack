@@ -1,0 +1,45 @@
+<ul role="list" class="st-primary-nav__dropdown__menu-list d-lg-none mb-0">
+    <li class="st-primary-nav__dropdown__utility-item">
+        <a class="st-primary-nav__dropdown__utility-link" href="https://wholesale.kindsnacks.com/customer/account/login/" target="_blank">
+            ${Resource.msg('link.header.wholesale', 'common', null)}
+        </a>
+    </li>
+    <li class="st-primary-nav__dropdown__utility-item">
+        <a class="st-primary-nav__dropdown__utility-link" href="${URLUtils.url('Page-Show', 'cid', 'rewards')}">
+            ${Resource.msg('link.header.rewards', 'common', null)}
+        </a>
+    </li>
+    <li class="st-primary-nav__dropdown__utility-item">
+        <a class="st-primary-nav__dropdown__utility-link" href="${URLUtils.url('Page-Show', 'cid', 'subscriptions')}">
+            ${Resource.msg('link.header.subscriptions', 'common', null)}
+        </a>
+    </li>
+    <li class="st-primary-nav__dropdown__utility-item">
+        <a class="st-primary-nav__dropdown__utility-link" href="https://www.creativesnacks.com/" target="_blank">
+            ${Resource.msg('link.header.creative.snacks', 'common', null)} <img src="${URLUtils.staticURL('/images/arrow-external-link.svg')}" alt="${Resource.msg('label.external.link', 'common', null)}" class="ml-1" />
+        </a>
+    </li>
+
+    <isif condition="${!pdict.CurrentCustomer.authenticated}">
+        <li class="nav-item st-primary-nav__item--account" role="menuitem">
+            <a href="${URLUtils.https('Login-Show')}" class="nav-link st-primary-nav__link st-primary-nav__link--account">
+                <img src="${URLUtils.staticURL('/images/login-black.svg')}" alt="${pdict.name}" class="st-header__navbar--utilities__icon__img mr-1" />
+                <span class="user-message">${Resource.msg('link.header.login.register', 'account', null)}</span>
+            </a>
+        </li>
+    <iselse/>
+        <li class="nav-item st-primary-nav__item--account is-logged-in" role="menuitem">
+            <ul class="st-primary-nav__user-menu" role="menu">
+                <li class="" role="menuitem">
+                    <a href="${URLUtils.https('Account-Show')}" class="dropdown-link st-primary-nav__link st-primary-nav__user-menu__link" role="button">
+                        <img src="${URLUtils.staticURL('/images/login-black.svg')}" alt="${pdict.name}" class="st-header__navbar--utilities__icon__img mr-1" />
+                        ${Resource.msg('link.header.myaccount', 'account', null)}
+                    </a>
+                </li>
+                <li class="" role="menuitem">
+                    <a href="${URLUtils.url('Login-Logout')}" class="dropdown-link st-primary-nav__link st-primary-nav__user-menu__link st-primary-nav__user-menu__link--log-out" role="button">${Resource.msg('link.header.logout', 'account', null)}</a>
+                </li>
+            </ul>
+        </li>
+    </isif>
+</ul>

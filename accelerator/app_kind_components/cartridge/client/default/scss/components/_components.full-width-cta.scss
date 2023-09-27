@@ -1,0 +1,42 @@
+/* ============================================================================
+   Full Width Call to Action
+   ============================================================================ */
+
+/**
+ * Provides a full width call to action that allows merchandizers to
+ * highlight products, categories, etc.
+ */
+
+$ns: c-full-width-cta;
+
+.#{$ns} {
+    background-size: cover;
+    background-position: center center;
+    padding-top: 81px;
+    padding-bottom: 69px;
+
+    // Full Width CTA Wrapper
+    &__wrapper {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+
+    // Full Width CTA Heading
+    &__heading {
+        font-size: 30px;
+        line-height: .95em;
+    }
+
+    // Full Width CTA Body
+    &__body {
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    // Full Width CTA Links {
+    &__links {
+        margin-top: 33px;
+    }
+
+}

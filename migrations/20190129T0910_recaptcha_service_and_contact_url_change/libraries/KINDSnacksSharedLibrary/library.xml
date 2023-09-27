@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="contact">
+        <page-attributes>
+            <page-url xml:lang="x-default">have-questions</page-url>
+        </page-attributes>
+    </folder>
+
+</library>

@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/marque.css')}" />
+
+<isif condition="${pdict.moving == 'yes'}">
+<div class="mar_slider ${pdict.theme}">
+<isscript>
+    var carouselRegion = pdict.regions.items;
+    if (pdict.theme == "light") {
+        carouselRegion.setClassName("swiper-wrapper");
+    } else {
+        carouselRegion.setClassName("swiper-wrapper");
+    }
+    // mark all pages as carousel
+    carouselRegion.setComponentClassName("swiper-slide");
+</isscript>
+<isprint value="${carouselRegion.render()}" encoding="off"/>
+</div>
+<script>
+    let SwiperTop = new Swiper('.mar_slider', {
+        spaceBetween: 10,
+        centeredSlides: true,
+        speed:3000,
+        autoplay: {
+            delay: 1,
+            disableOnInteraction: false,
+            loop: true,
+            pauseOnMouseEnter: true
+        },
+        loop: true,
+        slidesPerView: 4,
+        allowTouchMove: false,
+        disableOnInteraction: true,
+        loopedSlides: 4,
+    });
+</script>
+
+<style>
+    .mar_slider.dark {
+        background: black;
+        padding: 30px 0px;
+    }
+    .mar_slider {
+        overflow-x: hidden;
+    }
+    .mar_slider .marque_item {
+        font-family: main;
+    }
+    .mar_slider.dark .marque_item {
+        color: white;
+    }
+    .swiper-wrapper {
+        transition-timing-function: linear;
+    }
+    .marque_icons {
+        height: 30px;
+    }
+</style>
+    <iselse>
+        <link rel="stylesheet" href="${URLUtils.staticURL('/css/marque.css')}" />
+
+        <isscript>
+            var carouselRegion = pdict.regions.items;
+            if (pdict.theme == "light") {
+                carouselRegion.setClassName("marque-wrapper light");
+            } else {
+                carouselRegion.setClassName("marque-wrapper dark");
+            }
+            // mark all pages as carousel
+            carouselRegion.setComponentClassName("marque-item");
+        </isscript>
+        <isprint value="${carouselRegion.render()}" encoding="off"/>
+
+        <style>
+
+        </style>
+    </iselse>
+</isif>

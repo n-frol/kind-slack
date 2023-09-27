@@ -1,0 +1,66 @@
+<div class="full_width_banner_btm" style="background: url('${pdict.image.src.desktop}');">
+    <div class="btm_banner_container">
+    <img src="${pdict.image2.src.desktop}" alt="q" />
+    <h1>
+        <isprint value="${pdict.richtext}" encoding="off" />
+    </h1>
+    </div>
+</div>
+
+<style>
+.btm_banner_container {
+        width: 440px;
+        margin: auto;
+}
+.btm_banner_container h1 {
+    padding-top:20px;
+}
+.btm_banner_container img {
+    float:left;
+    width:110px;
+}
+    .full_width_banner_btm {
+        height: 85px;
+        background-size:1400px 100px;
+        display: flex;
+        margin: auto;
+        background-repeat: no-repeat !important;
+        max-width:1440px;
+    }
+
+    .full_width_banner_btm h1 {
+        margin: auto;
+        text-align: center;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+        position: relative;
+        left: 40px;
+        font-weight: 400;
+        text-transform: lowercase;
+        letter-spacing: -3.5;
+        max-width: 250px;
+        font-size: 16px;
+        line-height: 20px;
+        text-align:left;
+    }
+
+    @media (max-width: 425px) {
+        .full_width_banner_btm {
+            background-position-x: -550px !important;
+        }
+        .full_width_banner_btm h1 {
+            left:50px;
+            max-width:200px;
+            left: 30px;
+    max-width: 230px;
+    padding-top: 10px;
+        }
+    }
+        @media only screen and (max-width: 768px) and (min-width: 425px) {
+            .full_width_banner_btm {
+                background-position-x: -400px !important;
+            }
+            .btm_banner_container h1 {
+    padding-top:22px;
+}
+    }
+</style>

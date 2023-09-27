@@ -1,0 +1,16 @@
+/* ============================================================================
+   Navigation Content
+   ============================================================================ */
+
+/**
+ * Provides styles for the navigation content template
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: st-navigation-content;
+.#{$ns} {
+    &__navigation {
+        text-transform: lowercase;
+    }
+}

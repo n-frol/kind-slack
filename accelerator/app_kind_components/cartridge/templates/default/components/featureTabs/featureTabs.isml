@@ -1,0 +1,43 @@
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/featureTabs/featureTabs_UI" />
+    <div class="c-feature-tabs__item ${assetID} th-kind-feature-tabs__item tab-pane <isif condition="${innerLoopStatus.first}">active show</isif>" id="${assetID}" role="tab-content">
+         <div class="container st-container--padded">
+            <div class="row">
+                <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                                || !empty(graphicalAsset.links))}">
+
+                    <div class="c-feature-tabs__item__content
+                        <isif condition="${graphicalAsset.contentXPosition.value === 'left'}">c-feature-tabs__item__content--left
+                            <iselseif condition="${graphicalAsset.contentXPosition.value === 'right'}">c-feature-tabs__item__content--right
+                            <iselseif condition="${graphicalAsset.contentXPosition.value === 'center'}">c-feature-tabs__item__content--center
+                        </isif>
+                    ">
+                        <div class="c-feature-tabs__item__content__wrapper">
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <h4 class="c-feature-tabs__item__content__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </h4>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-feature-tabs__item__content__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-feature-tabs__item__content__links">
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div>
+                    </div>
+                </isif>
+             </div>
+        </div>
+    </div>
+</isif>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="ProductLineItem">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="boxContents">
+                <display-name xml:lang="x-default">Box Contents</display-name>
+                <description xml:lang="x-default">BYOB Box Contents</description>
+                <type>text</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="boxID">
+                <display-name xml:lang="x-default">BYOB Box ID</display-name>
+                <description xml:lang="x-default">The ID of the BYOB box.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="isByobMaster">
+                <display-name xml:lang="x-default">Is BYOB Master</display-name>
+                <description xml:lang="x-default">Is BYOB Master</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+</metadata>

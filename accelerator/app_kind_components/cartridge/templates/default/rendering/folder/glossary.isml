@@ -1,0 +1,32 @@
+<isdecorate template="common/layout/page">
+    
+    <div class="th-kind-glossary c-glossary st-container container content-asset-container">
+        <div class="c-glossary__header">
+            <h1 class="c-glossary__heading title title-display-banner">${pdict.folder.name}</h1>
+            <p class="c-glossary__subheading"><isprint value="${pdict.folder.body}" encoding="off" /></p>
+        </div>
+        <isloop items="${pdict.folder.subfolders}" var="subfolder">
+            <div class="c-glossary__item row">
+                <div class="c-glossary__starts-with col-12 col-sm-6">
+                    ${subfolder.name}
+                </div>
+                <div class="col-12 col-sm-6">
+                    <ul class="c-glossary__components">
+                        <isloop items="${subfolder.content}" var="content">
+                            <li class="c-glossary__component">
+                                <div class="c-glossary__component__name js-accordion-header">
+                                    ${content.name}
+                                    <img class="c-glossary__component__name__expand" src="${URLUtils.staticURL('/images/plus.svg')}" alt="${Resource.msg('global.expand', 'common', null)}" />
+                                </div>
+                                <div class="c-glossary__component__description js-accordion-body">
+                                    ${content.body}
+                                </div>
+                            </li>
+                        </isloop>
+                    </ul>
+                </div>
+            </div>
+        </isloop>
+    </div>
+    
+</isdecorate>

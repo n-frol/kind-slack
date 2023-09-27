@@ -1,0 +1,42 @@
+{
+    "name": "Benefit Flyout Item",
+    "description": "Benefit item for flyout",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "text",
+                    "name": "Text",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "fontstyle",
+                    "name": "Text Style",
+                    "type": "enum",
+                    "values": ["main", "medium"],
+                    "default_value": "main",
+                    "required": true
+                },
+                {
+                    "id": "image",
+                    "name": "Icon",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

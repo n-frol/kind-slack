@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="about-daniel">
+        <display-name xml:lang="x-default">About Daniel</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p&gt;Daniel Lubetzky is on a mission to build bridges between people. He is the founder &amp;amp; CEO of KIND, a not-only-for-profit that makes delicious and nutritious snack foods. Drawing on his experiences in the food industry, Daniel recently founded an independent organization called&amp;nbsp;&lt;a href="https://www.feedthetruth.org/"&gt;Feed the Truth&lt;/a&gt;, which seeks to improve public health by making truth and transparency the foremost values in today&amp;rsquo;s food system. A pioneering social entrepreneur, Daniel also founded or co-founded&amp;nbsp;&lt;a href="http://meditaliafoods.com/"&gt;PeaceWorks Inc.&lt;/a&gt;,&amp;nbsp;&lt;a href="https://maiyet.com/"&gt;Maiyet&lt;/a&gt;, and the&amp;nbsp;&lt;a href="http://www.onevoicemovement.org/"&gt;OneVoice Movement&lt;/a&gt;. In 2015, President Barack Obama and Commerce Secretary Penny Pritzker named him a Presidential Ambassador for Global Entrepreneurship. He is the author of the bestseller&amp;nbsp;&lt;a href="https://www.kindsnacks.com/products/kind-gear/do-the-kind-thing-book"&gt;Do the KIND Thing&lt;/a&gt;.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">about Daniel</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/DL-Cropped-Headshot-Image_Web_1.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;Read his&amp;nbsp;book:&amp;nbsp; &amp;nbsp;&lt;i&gt;&lt;a href="https://www.kindsnacks.com/products/kind-gear/do-the-kind-thing-book"&gt;Do The KIND Thing&lt;/a&gt;&amp;nbsp; &amp;nbsp;&lt;/i&gt;&lt;a href="https://www.kindsnacks.com/daniel-lubetzky"&gt;&lt;strong&gt;READ FULL BIO&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

@@ -1,0 +1,46 @@
+<div class="scroll_container" style="position:relative;">
+<select class="scrolling_dropdown">
+    <isloop items="${pdict.options}" var="item">
+        <option data-scroll="${item.anchor}">${item.text}</option>
+    </isloop>
+</select>
+</div>
+
+<style>
+@media screen and (max-width:425px) {
+    .experience-assets-scrolldropdown {
+    }
+}
+.scroll_container {
+    margin:auto;
+    max-width:1280px;
+    width: 100%;
+}
+.col-12 {
+    position: relative;
+}
+    .experience-assets-scrolldropdown {
+        z-index:0;
+        padding: 10px;
+        width:100%;
+        background:white;
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+    .scrolling_dropdown {
+        margin: auto;
+        border: 1px solid black;
+        max-width: 1280px;
+        }
+    .scroll_container::after {
+    color: #000;
+    content: "\F107";
+    font-family: FontAwesome;
+    font-size: 30px;
+    pointer-events: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    }
+</style>

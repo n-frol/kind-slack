@@ -1,0 +1,72 @@
+{
+    "name": "Homepage Hero",
+    "description": "Homepage Hero",
+    "group": "Homepage",
+    "attribute_definition_groups": [
+      {
+        "id": "shared",
+        "name": "Shared Content",
+        "description": "Shared Attributes",
+        "attribute_definitions": [
+          {
+            "id": "hero_height",
+            "name": "Hero Height",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "hero_text",
+            "name": "Hero Text",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "copy_text",
+            "name": "Copy",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "background_color",
+            "name": "Backgorund Color",
+            "type": "custom",
+            "editor_definition": {
+              "type": "kind.colorpicker"
+            },
+            "required": false
+          },
+          {
+            "id": "button_text",
+            "name": "Button Text",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "button_link",
+            "name": "Button Link",
+            "type": "text",
+            "required": false
+          },
+          {
+            "id": "background_image",
+            "name": "Background Image / Mask",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "background_image_mobile",
+            "name": "Background Image / Mask Mobile",
+            "type": "image",
+            "required": false
+          },
+          {
+            "id": "content_image",
+            "name": "Content Image",
+            "type": "image",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

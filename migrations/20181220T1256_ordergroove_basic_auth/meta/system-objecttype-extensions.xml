@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveBasicUser">
+                <display-name xml:lang="x-default">OrderGroove Basic Username</display-name>
+                <description xml:lang="x-default">The basic authorization username credential is sent from OrderGroove in the header and must be validated and matched to process the request for recurring order placement.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value></default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="OrderGrooveBasicPass">
+                <display-name xml:lang="x-default">OrderGroove Basic Password</display-name>
+                <description xml:lang="x-default">The basic authorization password credential is sent from OrderGroove in the header and must be validated and matched to process the request for recurring order placement.</description>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value></default-value>
+            </attribute-definition>
+		</custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove Configurations</display-name>
+                <attribute attribute-id="OrderGrooveEnable"/>
+                <attribute attribute-id="OrderGrooveMerchantID"/>
+                <attribute attribute-id="OrderGrooveMerchantHashKey"/>
+                <attribute attribute-id="OrderGrooveBasicUser"/>
+                <attribute attribute-id="OrderGrooveBasicPass"/>
+                <attribute attribute-id="OrderGrooveStaticDomain"/>
+                <attribute attribute-id="OrderGrooveEmail"/>
+                <attribute attribute-id="OrderGrooveAddresses"/>
+                <attribute attribute-id="OrderGrooveShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSession"/>
+                <attribute attribute-id="OrderGrooveShipping"/>
+                <attribute attribute-id="OrderGrooveBilling"/>
+                <attribute attribute-id="OrderGrooveLabel"/>
+                <attribute attribute-id="OrderGrooveToken"/>
+                <attribute attribute-id="OrderGrooveCardHolder"/>
+                <attribute attribute-id="OrderGrooveCardNumber"/>
+                <attribute attribute-id="OrderGrooveCardType"/>
+                <attribute attribute-id="OrderGrooveCardExpiration"/>
+                <attribute attribute-id="OrderGrooveSubscription"/>
+                <attribute attribute-id="OrderGrooveTracking"/>
+                <attribute attribute-id="OrderGrooveOfferID"/>
+                <attribute attribute-id="OrderGrooveDiscountType"/>
+                <attribute attribute-id="OrderGrooveDiscountValue"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

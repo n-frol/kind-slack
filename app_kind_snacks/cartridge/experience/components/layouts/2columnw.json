@@ -1,0 +1,81 @@
+{
+  "name": "1 Row, 2 Column, Landscape Settable Width 2",
+  "group": "layouts",
+  "attribute_definition_groups": [
+    {
+      "id": "widthgroup",
+      "attribute_definitions": [
+        {
+          "id": "width",
+          "name": "Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol1",
+          "name": "Width Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol2",
+          "name": "Width Columns 2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthmobile1",
+          "name": "Width Mobile Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthmobile2",
+          "name": "Width Mobile Columns 2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "column1align",
+          "name": "Column 1 Align",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "column2align",
+          "name": "Column 2 Align",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+      {
+        "id":"column1",
+        "name":"Column 1",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column2",
+        "name":"Column 2",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      }
+  ]
+}

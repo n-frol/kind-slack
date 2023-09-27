@@ -1,0 +1,9 @@
+<div class="c-approaching-discounts approaching-discounts">
+    <isif condition="${!pdict.approachingDiscounts.empty}">
+        <isloop items="${pdict.approachingDiscounts}" var="approachingDiscount">
+            <div class="single-approaching-discount text-left">
+                <isprint value="${approachingDiscount.discountMsg}" encoding="off" />
+            </div>
+        </isloop>
+    </isif>
+</div>

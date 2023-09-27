@@ -1,0 +1,169 @@
+/* ============================================================================
+   Featured Container
+   ============================================================================ */
+
+/**
+ * Provides a Featured Container that allows merchandizers to
+ * highlight products, categories, etc.
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-featured-container;
+.#{$ns} {
+    &__parent-header {
+        &__heading {
+            font-size: 40px;
+            letter-spacing: -2px;
+            line-height: 38px;
+            margin-bottom: 60px;
+
+            @include media-breakpoint-up(md) {
+                font-size: 60px;
+                line-height: 1;
+            }
+        }
+    }
+    &__item {
+        // Featured Container heading
+        &__container-header {
+            color: black;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: -3.4px;
+            margin: 0 auto;
+            max-width: 850px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 60px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+        // Featured Container Content
+        &__content {
+            padding-bottom: 40px;
+            padding-top: 40px;
+
+            &__image-wrapper {
+                width: 100%;
+
+                @include media-breakpoint-up(lg) {
+                    width: 70%;
+                }
+            }
+            &__image {
+                width: 100%;
+
+                @include media-breakpoint-up(lg) {
+                    width: 78%;
+                }
+            }
+            &__heading {
+                font-size: 24px;
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: .93;
+                letter-spacing: -1.1px;
+                margin-bottom: 26px;
+                @include media-breakpoint-up(lg) {
+                    font-size: 30px;
+                }
+            }
+            &__body {
+                font-size: 16px;
+                line-height: 1.75;
+                letter-spacing: .3px;
+                margin-bottom: 53px;
+                text-align: left;
+            }
+            &__link {
+                display: block;
+                padding: 0;
+                text-decoration: none;
+                text-transform: none;
+                &:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+                &__title {
+                    color: black;
+                    display: block;
+                    font-weight: 700;
+                    font-size: 18px;
+                    letter-spacing: -0.8px;
+                    line-height: 1.2em;
+                    &::after {
+                        border-right: 2px solid black;
+                        border-top: 2px solid black;
+                        content: "";
+                        display: inline-block;
+                        height: 10px;
+                        margin-bottom: 1px;
+                        margin-left: 5px;
+                        transform: rotate(45deg);
+                        width: 10px;
+                    }
+                }
+                &__description {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    letter-spacing: 0.3px;
+                }
+            }
+            &::after {
+                clear: both;
+                content: "";
+                display: block;
+            }
+            &--center {
+                .#{$ns}__item__content__image-wrapper {
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        width: 60%;
+                    }
+                }
+            }
+            &--left {
+                .#{$ns}__item__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    @include media-breakpoint-up(lg) {
+                        float: right;
+                    }
+                }
+                .#{$ns}__item__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-right: 70%;
+                    }
+                }
+            }
+            &--right {
+                .#{$ns}__item__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    @include media-breakpoint-up(lg) {
+                        float: left;
+                    }
+                }
+                .#{$ns}__item__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-left: 70%;
+                    }
+                }
+            }
+        }
+    }
+}

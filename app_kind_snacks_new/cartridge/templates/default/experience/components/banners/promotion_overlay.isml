@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('css/promotion_overlay.css')}">
+
+<div class="promotion_overlay" style="position: relative;">
+    <div class="image_gradient moved"></div>
+    <div class="imgcontain">
+        <img class="promo_main_image" src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+    </div>
+    <div class="abs">
+    <h2 class="headline" style="color:${pdict.headlinecolor.value}">
+        <isprint value="${pdict.headline}" encoding="off" />
+    </h2>
+    <div class="blackover" style="background: ${pdict.overlaycolor.value}; color: ${pdict.overlaytextcolor.value}">
+        <div class="paragraph textcontainer">
+            <div class="description">
+                <isprint value="${pdict.description}" encoding="off" />
+                </div>
+            <div class="bene-header">
+                ${pdict.bene_description}
+            </div>
+            <div class="benefits ${pdict.benefitsdirection}">
+                <isscript>
+                    var benefits = pdict.regions.benefits;
+                    benefits.setClassName("benefits_wrapper");
+                    // mark all pages as carousel
+                    benefits.setComponentClassName("benefits");
+                </isscript>
+                <isprint value="${benefits.render()}" encoding="off"/>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<style>
+    .image_gradient.moved {
+        bottom: 42.5%;
+        z-index: 5;
+        height: 35%;
+    }
+</style>
+<script>
+    $(".image_gradient.moved").css("bottom", "calc(100% - " + $(".promo_main_image").height() + "px)");
+    $(".benefits.horizontal .benefits_wrapper").css("grid-template-columns", "auto");
+    var adder = 0;
+    var winwidth = $(window).width();
+    if (winwidth < 725) {
+        adder = 1;
+    }
+    var imgheight = $(".promo_main_image").height();
+    var startcol = Math.round(imgheight/100) - 2 + adder;
+    startcol = Math.min(startcol, 5);
+    $(".promotion_overlay .abs").css("grid-row-start", startcol);
+
+    $(window).on("resize", function() {
+        var adder = 0;
+        var winwidth = $(window).width();
+        if (winwidth < 725) {
+
+            adder = 0;
+        }
+        var imgheight = $(".promo_main_image").height();
+        var startcol = Math.round(imgheight/100) - 2 + adder;
+        startcol = Math.min(startcol, 5);
+        const htmlElement = document.querySelector(".promotion_overlay .abs");
+        htmlElement.style.gridRowStart = startcol;
+        $(".image_gradient.moved").css("bottom", "calc(100% - " + $(".promo_main_image").height() + "px)");
+
+        var imgheight = $(".promo_main_image").height();
+        var startcol = Math.round(imgheight/100) - 2 + adder;
+        $(".promotion_overlay .abs").css("grid-row-start", startcol);
+        $(".image_gradient.moved").css("bottom", "calc(100% - " + $(".promo_main_image").height() + "px)");
+    });
+    //.promotion_overlay .abs
+</script>

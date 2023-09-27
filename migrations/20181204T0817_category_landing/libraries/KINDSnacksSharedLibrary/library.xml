@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="occasions">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/navigationContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>explore-snack-times</value>
+                <value>fuel-your-morning-run</value>
+                <value>breakfast-at-home</value>
+                <value>add-some-fruit</value>
+                <value>make-lunch-interesting</value>
+                <value>healthy-on-the-go</value>
+                <value>after-school-snack</value>
+                <value>power-your-workout</value>
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="isTimelineTemplate">true</custom-attribute>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="active"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show, 'cgid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefits-nav-asset">
+        <display-name xml:lang="x-default">Ways to snack custom nav - Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'benefits')$" class="active"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="flavors-nav-asset">
+        <display-name xml:lang="x-default">Ways to snack custom nav - Flavors</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'flavors')$" class="active"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

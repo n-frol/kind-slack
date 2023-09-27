@@ -1,0 +1,40 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/orderTrack.css');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <div class="container receipt st-container--padded <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="title title-display-banner">${Resource.msg('heading.order.details','order',null)}</h1>
+                <h2 class="h4 mb-4">
+                    <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}: </span>
+                    <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+                </h2>
+            </div>
+        </div>
+        <div class="row st-row st-row--padded justify-content-between u-background__color-grey1 mb-7">
+            <div class="st-main-w-sidebar">
+                <isinclude template="account/orderDetailsDetails" />
+            </div>
+            <div class="st-sidebar c-order-details-sidebar pt-0 js-order-items">
+                <isinclude template="checkout/checkoutSidebarContent_nocoupon" />
+                <isif condition="${!empty(pdict.order.items.items)}">
+                    <button data-order="${pdict.CurrentHttpParameterMap.orderID.stringValue}" class="btn c-order-details-sidebar__btn js-reorder">${Resource.msg('link.reorder','account',null)}</button>
+                </isif>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="my-account">
+                    <a href="${pdict.exitLinkUrl}" class="btn btn-outline-primary" title="${Resource.msg('link.orderdetails.myaccount','account',null)}">
+                        ${pdict.exitLinkText}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

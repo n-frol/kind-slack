@@ -1,0 +1,10 @@
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.content)}">
+        <isset name="assetID" value="${pdict.content.ID}" scope="page" />
+        <isset name="contentAsset" value="${pdict.content}" scope="page" />
+        <isset name="assetBody" value="${contentAsset.body}" scope="page" />
+
+        <isinclude template="components/contentAssetBasic/contentAssetBasic" />
+    </isif>
+
+</isdecorate>

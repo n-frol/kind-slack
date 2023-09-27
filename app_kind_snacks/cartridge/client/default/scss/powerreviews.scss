@@ -1,0 +1,34 @@
+/* ============================================================================
+   PowerReviews
+   ============================================================================ */
+
+/**
+ * These styles augment the base styles injected into the page by the PowerReviews
+ * service. These styles cannot be included in the main app.css asset because
+ * a separate stylesheet needs to be referenced in the PowerReviews Javascript
+ * initialization in order for the overrides to function properly.
+ */
+
+/**
+ * CONTENTS
+ * ============================================================================
+ *
+ *
+ * HELPERS
+ * Variables Global..................Layout, Fonts, Colors, etc
+ *
+ * SCOPES
+ * PowerReviews......................PowerReviews global scope
+ * Tile Ratings......................PowerReviews product tile rating overrides
+ * Product Rating....................PowerReviews product rating overrides
+ * Product Reviews...................PowerReviews product reviews overrides
+ * Write a Review....................PowerReviews write a review overrides
+ */
+
+@import 'sfra/variables';
+@import 'helpers/helpers.variables-global';
+@import 'scopes/scopes.powerreviews';
+@import 'scopes/scopes.powerreviews-product-tile-ratings';
+@import 'scopes/scopes.powerreviews-product-rating';
+@import 'scopes/scopes.powerreviews-product-reviews';
+@import 'scopes/scopes.powerreviews-write-review';

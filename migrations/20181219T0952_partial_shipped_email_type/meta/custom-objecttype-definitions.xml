@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="OrderTransactionalEmails">
+        <display-name xml:lang="x-default">Order Transactional Emails</display-name>
+        <description xml:lang="x-default">Used to queue order related transactional emails</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <retention-days>30</retention-days>
+        <key-definition attribute-id="ID">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="amountRefunded">
+                <display-name xml:lang="x-default">Amount Refunded</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="email">
+                <display-name xml:lang="x-default">Email</display-name>
+                <type>email</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="emailType">
+                <display-name xml:lang="x-default">Email Type</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Shipping Confirmation</display>
+                        <value>shippingConfirmation</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Order Cancellation</display>
+                        <value>orderCancellation</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Order Refund</display>
+                        <value>orderRefund</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Partially Shipped Confirmation</display>
+                        <value>partiallyShippedConfirmation</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="firstName">
+                <display-name xml:lang="x-default">First Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastName">
+                <display-name xml:lang="x-default">Last Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="orderNumber">
+                <display-name xml:lang="x-default">Order Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="productLineItems">
+                <display-name xml:lang="x-default">Product Line Items</display-name>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingAddress1">
+                <display-name xml:lang="x-default">Address Line 1</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingAddress2">
+                <display-name xml:lang="x-default">Address Line 2</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingCity">
+                <display-name xml:lang="x-default">City</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingPostalCode">
+                <display-name xml:lang="x-default">Postal Code</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="shippingState">
+                <display-name xml:lang="x-default">State</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="trackingNumber">
+                <display-name xml:lang="x-default">Tracking Number</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="trackingURL">
+                <display-name xml:lang="x-default">Tracking URL</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="details">
+                <display-name xml:lang="x-default">Details</display-name>
+                <attribute attribute-id="orderNumber"/>
+                <attribute attribute-id="firstName"/>
+                <attribute attribute-id="lastName"/>
+                <attribute attribute-id="email"/>
+                <attribute attribute-id="emailType"/>
+                <attribute attribute-id="productLineItems"/>
+            </attribute-group>
+            <attribute-group group-id="refunds">
+                <display-name xml:lang="x-default">Refunds</display-name>
+                <attribute attribute-id="amountRefunded"/>
+            </attribute-group>
+            <attribute-group group-id="shippingAddress">
+                <display-name xml:lang="x-default">Shipping Address</display-name>
+                <attribute attribute-id="shippingAddress1"/>
+                <attribute attribute-id="shippingAddress2"/>
+                <attribute attribute-id="shippingCity"/>
+                <attribute attribute-id="shippingState"/>
+                <attribute attribute-id="shippingPostalCode"/>
+            </attribute-group>
+            <attribute-group group-id="shippingDetails">
+                <display-name xml:lang="x-default">Shipping Details</display-name>
+                <attribute attribute-id="trackingURL"/>
+                <attribute attribute-id="trackingNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

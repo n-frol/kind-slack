@@ -1,0 +1,19 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<isdecorate template="common/layout/page">
+    <isif condition="${!empty(pdict.category)}">
+        <isset name="categoryRaw" value="${dw.catalog.CatalogMgr.getCategory(pdict.category)}" scope="page">
+        <div class="th-kind-navigation-content st-navigation-content s-navigation-content">
+            <isslot id="category-slot-a" context="category" description="Category Landing Slot A" context-object="${categoryRaw}" />
+            <isslot id="category-slot-b" context="category" description="Category Landing Slot B" context-object="${categoryRaw}" />
+            <isslot id="category-slot-c" context="category" description="Category Landing Slot C" context-object="${categoryRaw}" />
+            <isslot id="category-slot-d" context="category" description="Category Landing Slot D" context-object="${categoryRaw}" />
+            <isslot id="category-slot-e" context="category" description="Category Landing Slot E" context-object="${categoryRaw}" />
+        </div>
+    </isif>
+
+</isdecorate>

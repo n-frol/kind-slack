@@ -1,0 +1,40 @@
+{
+    "name": "Marque Item",
+    "description": "Item to go into marque",
+    "group": "marques",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "text",
+                    "name": "Text",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "icon",
+                    "name": "Icon",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "bothsides",
+                    "name": "Show on both sides",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "url",
+                    "name": "URL",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

@@ -1,0 +1,196 @@
+<div class="impact_two_column_1_container_welcome less somepadding">
+    <div class="impact_center order2 marginme">
+        <div class="big welcome">kinder to our</div>
+        <div class="welcome bigger">planet</div>
+        <div class="para">
+            We believe that being kinder to your body and kinder to the planet go hand in hand. That means sourcing healthy AND sustainable ingredients while bee-ing kind to our pollinators. Testing to ensure that each sustainability effort is backed by science – so that we can keep making progress. The truth is there’s no straightforward answer to any of the world’s environmental issues, but how you start is simple: with kindness.        </div>
+        <div class="bluearea2">
+            <img src="${URLUtils.staticURL('/images/impact/layer11.png')}" alt="Impact Two Column 1 Image" />
+            <div class="orange_para">
+                Our goal is to source 100% of our almonds on a mass-balance basis from bee-friendly farmland and farmland leveraging regenerative agriculture practices by 2030.
+            </div>
+        </div>
+        <img class="fullwidth marginbot mobile nomarginn" src="${URLUtils.staticURL('/images/impact/grid7/planetmobile.png')}" alt="Impact Two Column 1 Image" />
+    </div>
+    <div>
+        <img style="width: 80%;" class="fullwidth" src="${URLUtils.staticURL('/images/impact/grid5/Group 3175.png')}" alt="Impact Two Column 1 Image" />
+    </div>
+    <img class="fullwidth marginbot desktop" src="${URLUtils.staticURL('/images/impact/grid7/planetdesktop.png')}" alt="Impact Two Column 1 Image" />
+</div>
+<a target="_blank" href="${URLUtils.staticURL('/files/impactreport.pdf')}" class="primary dark red">Download PDF</a>
+<style>
+    .somepadding {
+        padding-top: 100px;
+    }
+    @media screen and (max-width: 440px) {
+        .nomarginn {
+            margin-left: 0px !important;
+        }
+        .welcome_copy_3 {
+            font-size: 22px !important;
+            line-height: 23px !important;
+        }
+        .planet_grid_6 .head {
+            font-size: 38px !important;
+            line-height: 44px !important;
+        }
+        .planet_grid_4 .blackbox {
+            margin-top: 50px;
+        }
+        .planet_grid_4 .blackbox img {
+            top: -80px !important;
+            right: 40px !important;
+        }
+        .planet_grid_7 {
+            padding: 0px !important;
+        }
+        .blackbox .head {
+            margin-top: 50px;
+        }
+        .bluearea2 img {
+            top: -90px !important;
+            left: 0px !important;
+            right: 0px !important;
+            margin: auto !important;
+        }
+        .bluearea2 {
+            padding: 45px 46px !important;
+        }
+        .order2 {
+            order: 2;
+        }
+        .impact_two_column_1_container_welcome.less {
+            grid-template-columns: 1fr !important;
+            margin-top: 0px !important;
+            grid-gap: 20px !important;
+            width: 100% !important;
+        }
+        .impact_two_column_1_container_welcome.less .para {
+            padding: 0px !important;
+        }
+    }
+    .impact_two_column_1_container_welcome.less {
+        margin-bottom: 0px !important;
+        padding-bottom: 200px;
+        grid-row-gap: 0px;
+        position: relative;
+        margin-bottom: 700px !important;
+        padding-top: 150px !important;
+    }
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+        .impact_two_column_1_container_welcome.less {
+            margin-bottom: 400px !important;
+        }
+    }
+    @media screen and (max-width: 440px) {
+        .impact_two_column_1_container_welcome.less {
+            margin-bottom: 0px !important;
+        }
+    }
+    .bluearea2 {
+        background: #B9BE10;
+        padding: 31px 46px;
+        position: relative;
+        border-radius: 20px;
+    }
+    .orange_para {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        position: relative;
+        left: 90px;
+        width: 80%;
+    }
+    .bluearea2 img {
+        position: absolute;
+        left: -10px;
+        top: -40px;
+        z-index: 10;
+    }
+    .fullwidth {
+        width: 100%;
+    }
+    .primary.red {
+        position: absolute;
+        top: 0px;
+        right: 60px;
+        background: red !important;
+        color: white;
+        width: fit-content;
+    }
+    .primary.impact {
+        margin-bottom: 150px;
+    }
+    .impact_two_column_1_container_welcome .para {
+        margin-bottom: 90px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 60px;
+    }
+    .big.welcome {
+        font-size: 72px;
+        line-height: 58px;
+        font-family: main;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+    }
+    .impact_two_column_1_container_welcome {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background: white;
+        margin-bottom: 200px;
+        position: relative;
+        width: calc(100% - 120px);
+        grid-gap: 160px;
+        paadding-top: 100px;
+    }
+    .impact_two_column_1_container_welcome div {
+
+    }
+    @media screen and (max-width: 440px) {
+        .impact_two_column_1_container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: auto !important;
+            margin-bottom: 0px !important;
+        }
+        .impact_two_column_1_container div:first-child {
+            order: 2;
+        }
+        .impact_two_column_1_container div:last-child {
+            order: 1;
+            background: #F5F5F5;
+        }
+        .primary.impact {
+            margin-bottom: 20px !important;
+            position: relative;
+            left: -10px;
+        }
+        .big {
+            font-size: 112px;
+            line-height: 101px;
+        }
+        .primary.red {
+            display: none;
+        }
+        .impact_two_column_1_container img {
+            height: auto !important;
+            width: 100% !important;
+        }
+        .impact_center {
+            align-self: center;
+            margin-left: 0px !important;
+        }
+    }
+    .impact_two_column_1_container img {
+        height: calc(100% + 100px);
+        width: 100%;
+        max-width: unset;
+        object-fit: cover;
+    }
+</style>

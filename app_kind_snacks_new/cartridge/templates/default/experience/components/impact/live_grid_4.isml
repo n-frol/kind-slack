@@ -1,0 +1,120 @@
+<div class="live_grid_4">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Frame 3222.png')}" alt="Impact Planet Grid 7 Image" />
+        <img class="flower" src="${URLUtils.staticURL('/images/impact/grid4/Vector.png')}" alt="Impact Planet Grid 7 Image" />
+    </div>
+    <div class="griditem">
+        <div class="head">
+            DEI milestones in 2022
+        </div>
+        <div class="square" style="background:#EDA900">
+            <img src="${URLUtils.staticURL('/images/impact/grid3/Layer_13.png')}" alt="Impact Planet Grid 7 Image" />
+            <div>
+                Internally launched the KIND Resource Groups (KRGs), supporting diverse communities within our organization by creating a space for understanding and connection. Through advocacy, education, and awareness, the KRGs are driving a deeper sense of belonging and appreciation for the contributions we each make at KIND. In just our first year, we formed 6 KRGs consisting of more than 200 members and hosted 17 events.
+            </div>
+        </div>
+        <div class="square" style="background: #B9BE10">
+            <img src="${URLUtils.staticURL('/images/impact/grid3/Layer_13.png')}" alt="Impact Planet Grid 7 Image" />
+            <div>
+
+                Expanded our commitment to two adopted Historically Black Colleges and Universities: Florida Agricultural & Mechanical University (FAMU) and Fayetteville State University. Our commitment to the schools seeks to impact diverse future leaders through our scholarship program, mentorship, and on-campus activities – as well as the KIND Perfect Pitch Challenge at FAMU, which awarded three winning teams with $40,000. Since adopting the schools in 2021, we have provided grants and scholarships totaling $360,000.            </div>
+        </div>
+        <div class="square" style="background: #61B3E4">
+            <img src="${URLUtils.staticURL('/images/impact/grid3/Layer_13.png')}" alt="Impact Planet Grid 7 Image" />
+            <div>
+                Celebrated kindness and solidarity in June, evolving our approach to be inclusive of several diverse communities. Engagement opportunities for our team members throughout the month included volunteering with The Ali Forney Center, a day of listening, learning, and reflecting on Juneteenth, and participation in the annual NYC Pride March.
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .live_grid_4 {
+        position: relative;
+    }
+    .flower {
+        position: absolute !important;
+        left: -40px !important;
+        top: 150px !important;
+    }
+    @media screen and (max-width: 440px) {
+        .live_grid_5, .live_grid_4 {
+            grid-template-columns: 1fr !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+        }
+    }
+    .live_grid_5 {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 60px;
+        padding: 50px 0;
+        align-items: flex-start;
+        justify-items: center;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .live_grid_5 .griditem {
+        background: #F3F3F3;
+        padding-right: 60px;
+        border-radius: 20px;
+    }
+    .headitem {
+        font-size: 48px;
+        line-height: 54px;
+        color: black;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .live_grid_4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 60px;
+        padding: 50px 0;
+        align-items: flex-start;
+        justify-items: center;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .live_grid_4 .griditem:first-child {
+        justify-self: flex-end;
+    }
+    .live_grid_4 .griditem:last-child {
+        justify-self: flex-start;
+    }
+    .live_grid_4 .head {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        color: black;
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: main;
+        max-width: 85%;
+    }
+    .live_grid_4 .square {
+        padding: 30px;
+        border-radius: 20px;
+        font-size: 18px;
+        line-height: 24px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: main;
+        display: flex;
+    }
+    .live_grid_4 .square img {
+        margin-right: 20px;
+        height: 100%;
+        top: 0px;
+    }
+
+    .live_grid_4 .copy {
+        color: #939393;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: meduim;
+    }
+</style>

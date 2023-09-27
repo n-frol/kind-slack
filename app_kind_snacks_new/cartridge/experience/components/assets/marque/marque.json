@@ -1,0 +1,45 @@
+{
+    "name": "Marque",
+    "group": "marques",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["light", "dark"],
+                    "required": true
+                },
+                {
+                    "id": "moving",
+                    "name": "Moving",
+                    "type": "enum",
+                    "values": ["yes", "no"],
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"items",
+            "name":"Marque Items",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}

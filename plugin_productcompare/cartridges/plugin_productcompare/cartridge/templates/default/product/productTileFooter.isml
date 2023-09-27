@@ -1,0 +1,8 @@
+<div class="product-tile__tile-body__footer row tile-body-footer">
+    <div class="product-tile__tile-body__footer__ratings ratings col-6 col-xs-12 col-sm-6">
+        <isinclude template="product/components/ratings" />
+    </div>
+    <div class="product-tile__tile-body__footer__compare compare col-6 col-sm-6">
+        <isinclude template="product/components/compare" />
+    </div>
+</div>

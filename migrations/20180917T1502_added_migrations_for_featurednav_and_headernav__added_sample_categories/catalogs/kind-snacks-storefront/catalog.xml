@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category category-id="sample_kind-protein">
+        <display-name xml:lang="x-default">KIND Protein</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>Screen Shot 2018-09-17 at 2.06.32 PM.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="sample_variety-packs">
+        <display-name xml:lang="x-default">Variety Packs</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <thumbnail>Screen Shot 2018-09-11 at 1.04.51 PM.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category-assignment category-id="sample_kind-protein" product-id="289-1"/>
+
+    <category-assignment category-id="sample_variety-packs" product-id="289-1"/>
+
+</catalog>

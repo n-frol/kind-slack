@@ -1,0 +1,209 @@
+<div class="card_click ${pdict.layout}" data-url-="${pdict.ctalink}"
+     onclick="window.location.href = '${pdict.ctalink}'"
+     style="background: ${pdict.bgcolor}">
+    <isif condition="${pdict.eyebrow}">
+        <div class="single-card-eyebrow eyebrow ${pdict.layout}_eyebrow">
+            <isprint value="${pdict.eyebrow}" encoding="off" />
+        </div>
+    </isif>
+    <picture>
+        <source media="(max-width: 440px)" srcset="${pdict.image_mobile.src.desktop}" />
+    <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" class="card_image" />
+    </picture>
+    <div class="card_text_${pdict.layout}">
+        <h3>
+            <isprint value="${pdict.heading}" encoding="off"/>
+        </h3>
+        <isif condition="${pdict.description}">
+            <div class="card_description paragraph">
+                <isprint value="${pdict.description}" encoding="off"/>
+            </div>
+        </isif>
+        <isif condition="${pdict.cta}">
+            <div class="card_cta">
+                <a aria-label="${pdict.ctaaira}" href="${pdict.ctalink}" class="${(pdict.layout == 'BG_Image' ? 'primary dark':'secondary normal')}"><isprint value="${pdict.cta}" encoding="off"/></a>
+            </div>
+        </isif>
+    </div>
+    <isif condition="${pdict.show_gradient == true}">
+        <div class="image_gradient"></div>
+    </isif>
+</div>
+
+<style>
+    .cards_heading {
+        margin-left: 60px;
+        margin-bottom: 25px;
+        font-size: 48px;
+        line-height: 56px;
+        letter-spacing: -1px !important;
+        width: 50%;
+    }
+    @media screen and (max-width: 440px) {
+        .cards_heading {
+            width: 90%;
+            margin-left: 0px;
+            font-size: 36px !important;
+            line-height: 42px !important;
+        }
+    }
+    .card_slider .swiper-slide {
+        max-width: 330px;
+        height: 600px;
+        margin-left: 0px;
+        margin-right: 0px;
+        border-radius: 20px;
+    }
+    .card_slider .swiper-slide {
+        margin-left: 20px !important;
+    }
+    .card_slider .swiper-wrapper {
+        margin-bottom: 30px;
+    }
+    .card_slider .BG_Image {
+        height: 100%;
+        border-radius: 20px;
+    }
+    .card_slider h3, .card_slider .card_description {
+        text-align: left;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 25px;
+        z-index: 5;
+        position: relative;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .card_slider h3 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .card_slider .card_description {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: normal;
+    }
+    .card_slider .swiper-slide img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    .card_slider .Full_Screen {
+        height: 100%;
+        border-radius: 20px;
+    }
+    .card_slider .card_cta {
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    .card_slider .card_cta a {
+        margin-left: 20px;
+        width: calc(100% - 40px) !important;
+    }
+    .card_slider .eyebrow {
+        top: 40px;
+        left: 40px;
+    }
+    .card_slider .BG_Image img {
+        max-height: 275px;
+    }
+    @media screen and (max-width: 1024px) {
+        .card_slider .eyebrow {
+            top: 20px;
+            left: 20px;
+        }
+        .card_slider .swiper_slide:last-child {
+            padding-right: 10px;
+        }
+        .card_slider h3, .card_slider .card_description {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .cards_heading {
+            margin-left: 20px;
+        }
+        .cards_desktop {
+            display: none;
+        }
+        .card_slider {
+            display: block;
+            position: relative;
+        }
+    }
+    @media screen and (min-width: 1024px) {
+        .cards_desktop {
+            display: block;
+        }
+        .card_slider {
+            display: none;
+        }
+    }
+    .BG_Image {
+        max-width: 100%;
+        margin:auto;
+        text-align: center;
+        border-radius: 20px;
+    }
+    .BG_Image img {
+        max-width: 100%;
+    }
+    .single-card2 .eyebrow {
+        top: 40px;
+        left: 40px;
+    }
+    .single-card2 h3, .single-card2 .card_description {
+        text-align: left;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 32px;
+        z-index: 5;
+        position: relative;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .single-card2 .card_description {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: normal;
+    }
+    .card_cta {
+        z-index: 5;
+        position: relative;
+        margin-left: 40px;
+        text-align: left;
+    }
+    .cards_desktop .card-wrapper2 {
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .cards_desktop .single-card2 {
+        width: calc(50% - 20px);
+        display: inline-block;
+        margin-right: 20px;
+        float: left;
+        position:relative;
+    }
+    .cards_desktop .single-card2 .Full_Screen img {
+        max-width: 100%;
+        height: unset;
+        object-fit: cover;
+        width: 100%;
+    }
+    .cards_desktop .Full_Screen {
+        width: 100%;
+        height: unset;
+        position: relative;
+        border-radius: 20px;
+    }
+    .Full_Screen .image_gradient {
+        border-radius: 20px;
+    }
+    .cards_desktop .Full_Screen img {
+        border-radius: 20px;
+    }
+    .card_text_BG_Image, .card_text_Full_Screen {
+        position: absolute;
+        bottom: 40px;
+    }
+</style>

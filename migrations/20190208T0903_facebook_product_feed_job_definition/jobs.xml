@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Facebook-ProductFeeds" priority="0">
+        <description>Exports catalog data in .CSV format.</description>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="facebookProductFeed" type="custom.batch.facebookProductFeed" enforce-restart="false">
+                <description>Creates a CSV export file for uploading to Facebook via SFTP.</description>
+                <parameters>
+                    <parameter name="directory">facebook</parameter>
+                    <parameter name="prefix">fbFeed</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2019-02-04Z</date>
+                <time>18:38:53.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

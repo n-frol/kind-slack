@@ -1,0 +1,118 @@
+<meta charset=UTF-8>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<isscript>
+    var Site = require('dw/system/Site');
+    if (pdict.GTM_PAGE_DATA) {
+        gtmUrl = URLUtils.url("GTM-Help", "gtmPageData", pdict.GTM_PAGE_DATA);
+    } else {
+       gtmUrl = URLUtils.url("GTM-Help");
+    }
+</isscript>
+
+<isif condition=${dw.system.Site.current.getCustomPreferenceValue('seoappend') != null }>
+<title><isprint value="${pdict.CurrentPageMetaData.title + " " + dw.system.Site.current.getCustomPreferenceValue('seoappend')}" encoding="htmlcontent" /></title>
+<iselse>
+<title><isprint value="${pdict.CurrentPageMetaData.title}" encoding="htmlcontent" /></title>
+</isif>
+<!-- OneTrust Cookies Consent Notice start STAGING & TEST-->
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="${dw.system.Site.current.getCustomPreferenceValue("cppakey")}" async></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end -->
+
+<iscomment>New Relic</iscomment>
+<isprint value="${Site.current.getCustomPreferenceValue('newRelicScript')}" encoding="off" />
+<iscomment>BEGIN Google Tag Manager</iscomment>
+<isinclude template="google/googlemodules"/>
+
+<isinclude url="${gtmUrl}"/>
+
+<isgoogletagmanager datalayer="${pdict.DataLayer}"/>
+<isgtmremarketing pagetype="${pdict.gtmPageType}"/>
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('googleOptimizeContainerID') &&
+				   !empty(dw.system.Site.current.getCustomPreferenceValue('googleOptimizeContainerID'))}">
+    <isset name="googleOptimizeContainerID" value="${dw.system.Site.current.getCustomPreferenceValue('googleOptimizeContainerID')}" scope="page" />
+    <!-- Anti-flicker snippet (recommended)  -->
+    <style>.async-hide { opacity: 0 !important} </style>
+    <script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+    h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+    (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+    })(window,document.documentElement,'async-hide','dataLayer',4000,
+    {'${googleOptimizeContainerID}':true});</script>
+<script src="https://www.googleoptimize.com/optimize.js?id=${googleOptimizeContainerID}" async></script>
+</isif>
+<script src="${dw.system.Site.current.getCustomPreferenceValue('yotpo_sdk')}" async="true"></script>
+
+<script src="${dw.system.Site.current.getCustomPreferenceValue('yotpo_async')}" async="true"></script>
+<iscomment>END Google Tag Manager</iscomment>
+
+<iscomment> Start GTM </iscomment>
+<isinclude template="common/gtm/gtm"/>
+<iscomment> End GTM </iscomment>
+
+<meta name="description" content="${pdict.CurrentPageMetaData.description ? pdict.CurrentPageMetaData.description : Resource.msg('global.storename','common',null)}"/>
+<isif condition="${!empty(pdict.CurrentPageMetaData.keywords)}">
+    <meta name="keywords" content="${pdict.CurrentPageMetaData.keywords}"/>
+</isif>
+
+<iscomment>Additional Rule based page meta tags</iscomment>
+<isloop items="${pdict.CurrentPageMetaData.pageMetaTags}" var="pageMetaTag">
+    <isif condition="${pageMetaTag.name}">
+        <meta name="<isprint value="${pageMetaTag.ID}"/>" content="<isprint value="${pageMetaTag.content}"/>">
+    <iselseif condition="${pageMetaTag.property}"/>
+        <meta property="<isprint value="${pageMetaTag.ID}"/>" content="<isprint value="${pageMetaTag.content}"/>">
+    </isif>
+</isloop>
+
+<!-- socialCardsData: ${JSON.stringify(pdict.socialCardsData)} -->
+
+<iscomment> Social Card Tags (Twitter w/Open Graph coming soon...) </iscomment>
+<isscript>
+    var socialCardsData = !empty(pdict.socialCardsData) ? pdict.socialCardsData : {};
+</isscript>
+<isinclude url="${URLUtils.url('MetaData-SocialCards',
+    'currentUrl', request.httpURL,
+    'socialCardsData', JSON.stringify(socialCardsData))}" />
+<isif condition="${Site.getCurrent().ID === 'CreativeSnacks'}">
+    <link rel="apple-touch-icon" sizes="60x60" href="${URLUtils.staticURL('images/favicons/ca-favicon/apple-icon.png')}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="${URLUtils.staticURL('images/favicons/ca-favicon/favicon-32x32.png')}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="${URLUtils.staticURL('images/favicons/ca-favicon/favicon-16x16.png')}"/>
+<iselse/>
+    <link rel="apple-touch-icon" sizes="60x60" href="${URLUtils.staticURL('images/favicons/apple-touch-icon.ico')}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="${URLUtils.staticURL('images/favicons/favicon-32x32.ico')}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="${URLUtils.staticURL('images/favicons/favicon-16x16.ico')}"/>
+</isif>
+
+<link rel="manifest" href="${URLUtils.staticURL('images/favicons/site.webmanifest')}"/>
+<link rel="mask-icon" href="${URLUtils.staticURL('images/favicons/safari-pinned-tab.svg" color="#5bbad5')}"/>
+<meta name="msapplication-TileColor" content="#da532c"/>
+<meta name="theme-color" content="#ffffff"/>
+
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/components.css')}" defer />
+<link rel="preload" as="style" href="${URLUtils.staticURL('/css/app.css')}" />
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/app.css')}" />
+<isloop items="${ require('*/cartridge/scripts/assets.js').styles }" var="style">
+    <link rel="stylesheet" href="${style.src}" defer <isif condition="${style.integrity != null}">integrity="${style.integrity}" crossorigin="anonymous"</isif> />
+</isloop>
+
+<isif condition="${'GoogleVerificationTag' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.GoogleVerificationTag!=''}">
+    <meta name="google-site-verification" content="<isprint value="${dw.system.Site.current.preferences.custom.GoogleVerificationTag}"/>" />
+</isif>
+
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6638374/6186812/css/fonts.css" async />
+
+<isscript>
+    var hookHelper = require('int_handlerframework/cartridge/scripts/template/hookHelper');
+    hookHelper.callHook('app.template.htmlHead', null, {pdict: pdict});
+</isscript>
+<input type='hidden' id="yotpoEnabled" value="${dw.system.Site.getCurrent().preferences.custom.yotpoCartridgeEnabled}" />
+
+<style>
+    .chatter-chat-box .chat-logo {
+        background-image: url("${URLUtils.staticURL('/images/KINDLogo_48px-h.png')}") !important;
+        height:70% !important;
+    }
+</style>

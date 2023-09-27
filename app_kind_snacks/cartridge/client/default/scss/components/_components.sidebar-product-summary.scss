@@ -1,0 +1,62 @@
+/* ============================================================================
+Sidebar Product Summary
+============================================================================ */
+
+/**
+ * Establish styles for product summary block(s) within the site sidebar
+ */
+
+$ns: c-sidebar-product-summary;
+
+.#{$ns} {
+    font-family: $font-family-primary;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    &__container {
+        background-color: $grey1;
+    }
+    &__card {
+        border: none;
+        margin-bottom: 0;
+    }
+    &__container {
+        padding: 0 15px;
+    }
+    &__shipment-block {
+        background-color: $white;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 19px 15px 5px;
+    }
+    &__shipment-block,
+    &__multi-shipping {
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.multi-ship {
+    .c-checkout-product-summary__multi-shipping,
+    .shipment-block.c-sidebar-product-summary__shipment-block {
+        background-color: #fff;
+    }
+    .shipment-block.c-sidebar-product-summary__shipment-block {
+        margin-bottom: 0;
+    }
+    .c-checkout-product-summary__multi-shipping {
+        margin-bottom: 40px;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 19px 15px 5px;
+    }
+    .product-summary-block {
+        counter-reset: ship-header;
+        .h4::before {
+            counter-increment: ship-header;
+            content: "Shipment " counter(ship-header);
+        } 
+    }
+}

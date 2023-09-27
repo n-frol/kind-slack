@@ -1,0 +1,64 @@
+<div stlye="clear:both;"></div>
+<div class="card_wrapper">
+    <div class="card-content ${pdict.positionul}">
+        <img class="card_img ${pdict.themeul}" src="${pdict.imageul.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themeul}">
+            <h2>
+                <isprint value="${pdict.headerul}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionul}">
+                <div class="card_description">
+                    <isprint value="${pdict.descriptionul}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctaul}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctaul}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+    <div class="card-content ${pdict.positionur}">
+        <img class="card_img ${pdict.themeur}" src="${pdict.imageur.src.desktop}" alt="${pdict.product.name}" />
+        <div class="card_text_${pdict.themeur}">
+            <h2>
+                <isprint value="${pdict.headerur}" encoding="off"/>
+            </h2>
+            <isif condition="${pdict.descriptionur}">
+                <div class="card_description">
+                    <isprint value="${pdict.descriptionur}" encoding="off"/>
+                </div>
+            </isif>
+            <isif condition="${pdict.ctaur}">
+                <div class="card_cta">
+                    <a href="#" class="button"><isprint value="${pdict.ctaur}" encoding="off"/></a>
+                </div>
+            </isif>
+        </div>
+    </div>
+</div>
+
+<style>
+    .Upperleft {
+        position: absolute;
+        top: 200px;
+        left: 3%;
+    }
+    .UpperRight {
+        position: absolute;
+        right: 1%;
+        top: 0%;
+    }
+
+    .card-content {
+        width: 676px;
+        border: 1px solid transparent;
+        max-height: 640px;
+        border-radius: 20px;
+        background: teal;
+        min-height: 800px;
+    }
+    .card_wrapper {
+        position: relative;
+    }
+</style>

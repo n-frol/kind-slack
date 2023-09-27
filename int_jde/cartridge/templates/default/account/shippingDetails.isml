@@ -1,0 +1,80 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/orderTrack.css');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+
+    <isset name="order" value="${pdict.order}" scope="page" />
+    <isif condition="${!empty(order)}">
+
+        <div class="container receipt st-container--padded st-container--x-narrow <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="title title-display-banner">${Resource.msg('link.shippingdetails','account',null)}</h1>
+                    <h2 class="h4 mb-4">
+                        <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}: </span>
+                        <span class="summary-details order-number">${order.orderNumber}</span>
+                    </h2>
+                </div>
+            </div>
+
+            <isset name="confirmedShipmentsSortedList" value="${order.confirmedShipmentsSortedList}" scope="page" />
+            <isif condition="${!empty(confirmedShipmentsSortedList)}">
+                <isloop items="${confirmedShipmentsSortedList}" var="shipment" status="loopstatus">
+                    <div class="row st-row st-row--padded justify-content-between u-background__color-grey1 mb-7">
+                        <div class="st-main-w-sidebar--flipped col-12 col-md-6 col-xl-5 pl-0">
+                            <h2 class="summary-section-label shipment-label h4 mb-1">${Resource.msgf('heading.shipping.shipmentcount', 'order', null, loopstatus.count, confirmedShipmentsSortedList.length)}</h2>
+
+                            <p class="summary-section-label shippment-status-label st-checkout-main__sub-title subtitle">${Resource.msg('heading.shipping.status', 'order', null)}:</p>
+                            <p class="summary-details shipment-status subtext">
+                                ${shipment.status.displayValue}
+                            </p>
+
+                            <isif condition="${!empty(shipment.trackingNumber)}">
+                                <p class="summary-section-label shippment-tracking-label st-checkout-main__sub-title subtitle">${Resource.msg('heading.shipping.tracking', 'order', null)}:</p>
+                                <p class="summary-details shipment-tracking subtext u-text__size-12">
+                                    <isif condition="${!empty(shipment.trackingUrl) && shipment.trackingUrl}">
+                                        <a href="${shipment.trackingUrl}">
+                                            ${shipment.trackingNumber}
+                                        </a>
+                                    <iselse>
+                                        ${shipment.trackingNumber}
+                                    </isif>
+                                </p>
+                            </isif>
+
+                            <isset name="isConfirmationStage" value="${true}" scope="page"/>
+                            <isinclude template="checkout/shipping/shippingSummary" />
+                        </div>
+                        <div class="st-sidebar--flipped c-order-details-sidebar pt-0 js-order-items col-12 col-md-6 col-xl-7 pr-0">
+                            <div class="card-body order-total-summary c-sidebar-product-summary pt-0">
+                                <div class="card order-product-summary c-sidebar-product-summary__card">
+                                    <div class="card-body c-sidebar-product-summary__container pt-0 pb-0">
+
+                                        <div class="product-summary-block">
+                                            <iscomment>The variable shipment isn't named shippingModel to avoid confusion.  But here, in order to pass into existing templates, we need to pass it with that name</iscomment>
+                                            <isset name="shippingModel" value="${shipment}" scope="page" />
+                                            <isinclude template="checkout/orderProductSummaryCards" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </isloop>
+            </isif>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
+                    <div class="my-account">
+                        <a href="${pdict.exitLinkUrl}" class="btn btn-outline-primary" title="${Resource.msg('link.orderdetails.orderdetails','account',null)}">
+                            ${Resource.msg('link.orderdetails.orderdetails','account',null)}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </isif>
+</isdecorate>

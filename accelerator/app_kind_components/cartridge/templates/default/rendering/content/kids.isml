@@ -1,0 +1,541 @@
+<isdecorate template="common/layout/page">
+    <style>
+        #kidsnavbar2 a {
+            float: left;
+            font-family: DK Canoodle;
+            font-size: 16px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            color: #421b05;
+            line-height: 1;
+            text-align: center;
+            padding: 8px 4px 16px;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin: 1px;
+            background: url(../images/kindkids/fixed-nav-bk.png) no-repeat 50% !important;
+            background-size: 63px 79px !important;
+            width: 60px;
+            height: 79px;
+            border: none;
+            font-weight: 600 !important;
+            display: none !important;
+
+            .shop-btn {
+                background-color: #000;
+                border-radius: 0%;
+                border: 2px solid transparent;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                color: #fff;
+                display: inline-block;
+                font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 1.5px;
+                line-height: 40px;
+                min-height: 52px;
+                min-width: 52px;
+                padding: auto 100%;
+                text-align: center;
+                text-decoration: none;
+                text-transform: uppercase;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                vertical-align: middle;
+                white-space: nowrap;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <div class="s-knd-legacy">
+        <div id="kind-kids">
+            <div id="kidsnavbar2">
+                <div class="meet"><a href="#meet"><span>meet the kind kids</span></a></div>
+
+                <div class="story"><a href="#story"><span>story time</span></a></div>
+
+                <div class="game"><a href="#game"><span>game time</span></a></div>
+
+                <div class="grown"><a href="#grown"><span>for grown ups</span></a></div>
+            </div>
+
+            <div id="product-display-container">
+                <div class="chocolate-chips-bg" style="transform: translate(20px, 30px) scale(1.1);">&nbsp;</div>
+
+                <div class="prods clearfix">
+                    <div style="display:none;" class="kind-kids-logo"><img alt="KINDS Kid Logo"
+                            src="${URLUtils.staticURL('images/kindKidsLogo_NEG_Shadow.png')}" title="" /></div>
+
+                    <h1 style="
+            padding-top:60px;
+             font-size: 60px;">Chewy Granola Bars</h1>
+
+                    <div class="kidspackagecontainer">
+                        <div class="p-items honey-oat-cnt"
+                            style="width: 182px; transform: translate3d(0px, 0px, 0px); left: 20px; top: 57px; z-index: auto;">
+                            <a href="/images/chewy-honey-oat-kids" style="border: none">
+                                <img alt="Honey Oat 6 Pack"
+                                    src="${URLUtils.staticURL('images/82fafb9a-4683-464a-adb7-b69e455f26fd.png')}" /></a>
+
+                            <h4>chewy honey oat</h4>
+                        </div>
+
+                        <div class="p-items choc-chip-cnt"
+                            style="left: 220px; top: 0px; width: 255px; z-index: 3; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <a href="/products/kids/chewy-chocolate-chip-kids" style="border: none">
+                                <img alt="Chocolate Chip 6 Pack"
+                                    src="${URLUtils.staticURL('images/fa4a1f7c-bbd5-4cbe-b6d6-9992af94b747.png')}" /></a>
+
+                            <h4>CHEWY CHOCOLATE CHIP</h4>
+                        </div>
+
+                        <div class="p-items peanut-butter-cnt"
+                            style="top: 49px; width: 182px; left: 486px; z-index: auto; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <a href="/products/kids/chewy-peanut-butter-chocolate-chip-kids" style="border: none">
+                                <img alt="Peanut Butter Chocolate Chip 6 Pack"
+                                    src="${URLUtils.staticURL('images/63795464-3d97-4d84-b43b-f0f5e2299122.png')}" /></a>
+
+                            <h4>CHEWY PEANUT BUTTER CHOCOLATE CHIP</h4>
+                        </div>
+                    </div>
+
+                    <div class="shop-btn-contain"><button
+                            onclick="location.href='https://www.kindsnacks.com/kids-snack-bars/'" class="primary-btn">Shop
+                            All</button></div>
+
+                    <div id="highlights_contain"><img alt="Claims" class="claims"
+                            src="${URLUtils.staticURL('images/claims-new.png')}" 
+                            style="transform-style: preserve-3d; transform: translate3d(0px, 0px, 0px);" />
+                        <p class="nutrition-fact">*Per 23 grams, the leading kids granola bar contains 6.7 grams of
+                            sugar, KIND Kids&trade; granola bar contains 5 grams</p>
+                    </div>
+                    <!-- Mobile Kids -->
+
+                    <div class="kidspackagecontainer-mobile">
+                        <div class="p-items honey-oat-cnt"
+                            style="width: 182px; transform: translate3d(0px, 0px, 0px); left: 20px; top: 57px; z-index: auto;">
+                            <a href="/products/kids/chewy-honey-oat-kids" style="border: none"><img
+                                    alt="Chewy Honey Oat 6 Pack"
+                                    src="${URLUtils.staticURL('images/82fafb9a-4683-464a-adb7-b69e455f26fd.png')}" /></a></div>
+
+                        <div class="p-items choc-chip-cnt"
+                            style="left: 220px; top: 0px; width: 255px; z-index: 3; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <a href="/products/kids/chewy-chocolate-chip-kids" style="border: none"><img
+                                    alt="Chocolate Chip 6 Pack"
+                                    src="${URLUtils.staticURL('images/fa4a1f7c-bbd5-4cbe-b6d6-9992af94b747.png')}" /></a></div>
+
+                        <div class="p-items peanut-butter-cnt"
+                            style="top: 49px; width: 182px; left: 486px; z-index: auto; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            <a href="/products/kids/chewy-peanut-butter-chocolate-chip-kids" style="border: none"><img
+                                    alt="Peanut Butter Chocolate Chip 6 Pack"
+                                                                        src="${URLUtils.staticURL('images/63795464-3d97-4d84-b43b-f0f5e2299122.png')}" /></a>
+</div>
+
+ <div class="shop-btn-contain-mobile"><button
+                            onclick="location.href='https://www.kindsnacks.com/kids-snack-bars/'" class="primary-btn">Shop
+                            All</button></div>
+                        <div id="highlights_contain-mobile"><img alt="Claims" class="claims"
+                                src="${URLUtils.staticURL('images/claims-new.png')}"
+                                style="transform-style: preserve-3d; transform: translate3d(0px, 0px, 0px);" />
+                            <p class="nutrition-fact">*Per 23 grams, the leading kids granola bar contains 6.7 grams of
+                                sugar, KIND Kids&trade; granola bar contains 5 grams</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container meet-kind-kids-contain clearfix">
+                <div class="row">
+                    <div class="col-lg-12" id="scene-2" style="width: 100%"><a name="meet"
+                            style="padding: 20px; border: none"></a>
+
+                        <h2 class="meet-header" id="animation-2" style="left: 0px;">Meet the Kind Kids</h2>
+                    </div>
+                </div>
+
+                <div class="row superpowers" id="scene-3">
+                    <div class="superhero col-md-6 col-xs-6">
+
+                        <div class="column" id="column-1"
+                            style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -474);">
+                            <img alt="Chip Character" class="kid-charact_choc_boy max_char"
+                                src="${URLUtils.staticURL('images/max_char.png')}" />
+                            <div class="bio">
+                                <h3>Max</h3>
+
+                                <div class="section-one">
+                                    <h4>SUPERPOWER</h4>
+
+                                    <p class="text-bio">Super strength</p>
+                                </div>
+
+                                <div class="section-two">
+                                    <h4 class="favorite">FAVORITE ACTIVITY</h4>
+
+                                    <p class="text-bio">Playing tug-of-war with his friends</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="superhero col-md-6 col-xs-6">
+                        <div class="column" id="column-2"
+                            style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);">
+                            <img alt="Izzy Character" class="kid-charact_peanut_girl"
+                                src="${URLUtils.staticURL('images/peanut_girl_07.13.17_8bit.png')}" />
+                            <div class="bio extra-margn">
+                                <h3 class="overlap" style="margin-left: 12px;">IZZY</h3>
+
+                                <div class="section-one izzy">
+                                    <h4>SUPERPOWER</h4>
+
+                                    <p class="text-bio">Super human speed</p>
+                                </div>
+
+                                <div class="section-two">
+                                    <h4 class="favorite">favorite activity</h4>
+
+                                    <p class="text-bio">Spinning in circles until she gets dizzy</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="superhero col-md-6 col-xs-6">
+                        <div class="column" id="column-3"
+                            style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);">
+                            <img alt="Jet Character" class="kid-charact_honey_boy"
+                                src="${URLUtils.staticURL('images/Choc_boy_07.13.17_8bit.png')}" />
+                            <div class="bio">
+                                <h3>JET</h3>
+
+                                <div class="section-one">
+                                    <h4>SUPERPOWER</h4>
+
+                                    <p class="text-bio">Can Fly</p>
+                                </div>
+
+                                <div class="section-two">
+                                    <h4 class="favorite">favorite activity</h4>
+
+                                    <p class="text-bio">Doing tricks on the monkey bars at the playground</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="superhero col-md-6 col-xs-6">
+                        <div class="column" id="column-4"
+                            style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -470);"><img
+                                alt="Kat Character" class="kid-charact_kat_girl"
+                                src="${URLUtils.staticURL('images/kat_girl_07.13.17.png')}" />
+                            <div class="bio">
+                                <h3>KAT</h3>
+
+                                <div class="section-one">
+                                    <h4>SUPERPOWER</h4>
+
+                                    <p class="text-bio">Can talk to animals</p>
+                                </div>
+
+                                <div class="section-two">
+                                    <h4 class="favorite">favorite activity</h4>
+
+                                    <p class="text-bio">Playing fetch with her dog</p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="superhero col-md-6 col-xs-6">
+                        <div class="column" id="column-4"
+                            style="opacity: 1; transform: translate(0%, 96%) matrix(1, 0, 0, 1, 0, -474);">
+                            <img alt="Chip Character" class="kid-charact_choc_boy"
+                                src="${URLUtils.staticURL('images/honey_boy_07.13.17.png')}" />
+                            <div class="bio">
+                                <h3>Chip</h3>
+
+                                <div class="section-one">
+                                    <h4>SUPERPOWER</h4>
+
+                                    <p class="text-bio">Can move objects without touching them</p>
+                                </div>
+
+                                <div class="section-two">
+                                    <h4 class="favorite">FAVORITE ACTIVITY</h4>
+
+                                    <p class="text-bio">Hanging out with his friends in his treehouse</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid clearfix" id="story-scene">
+                <div class="row">
+                    <div class="col-sm-12" style="width: 100%;"><a name="story" style="padding: 10px; border: none"></a>
+
+                        <h2 class="story" id="story-ani" style="left: 0px;">Story Time</h2>
+
+                        <div class="parents-subtext">Hey parents, click on these stories to read with your kids.</div>
+                    </div>
+                </div>
+
+                <div class="row" id="story-scene-modal">
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="trigger">
+                            <div class="story-one" style="opacity: 1; top: 0px;">
+                                <div class="tagline mobile">
+                                    <h2>How it all began</h2>
+
+                                    <div id="read-one">Read Now</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-xs-12">
+                        <div class="triggertwo">
+                            <div class="story-two" style="opacity: 1; top: 0px;">
+                                <div class="tagline mobile">
+                                    <h2>The magic Baseball</h2>
+
+                                    <div id="read-two">Read Now</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a name="game" style="padding: 10px; border: none"></a>
+
+            <div class="container-fluid clearfix">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="kind-kids-title">print kind kids games</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="print-container print-kids clearfix">
+                <div class="kids-games enlarge"><img alt="Peanut Girl Character" class="peanut-girl-left"
+                        src="${URLUtils.staticURL('images/peanut_girl_maze.png')}" /> <img alt=""
+                        src="${URLUtils.staticURL('images/new_maze_bg8bit.png')}" />
+                    <h2 class="maze-text"><a class="gamelink" href="${URLUtils.staticURL('images/kind_kids_maze.pdf')}"
+                            style="border: none" target="_blank">maze game</a></h2>
+                </div>
+
+                <div class="kids-games enlarge"><img alt="" src="${URLUtils.staticURL('images/puzzle_bg_8bit.png')}" />
+                    <h2 class="word-text"><a class="gamelink" href="${URLUtils.staticURL('images/kind_kids_crossword.pdf')}"
+                            style="border: none" target="_blank">Word Search</a></h2>
+                </div>
+
+                <div class="kids-games enlarge"><img alt="" src="${URLUtils.staticURL('images/new_number_bg8bit.png')}" />
+                    <h2 class="numb-text"><a class="gamelink"
+                            href="${URLUtils.staticURL('images/kind_kids_numbers_game.pdf')}" style="border: none"
+                            target="_blank">Number Game</a></h2>
+                </div>
+
+                <div class="kids-games enlarge"><img alt="" src="${URLUtils.staticURL('images/new_color_bg8bit.png')}" />
+                    <img alt="Chocolate Chip Girl Character" class="choc-girl-right"
+                        src="${URLUtils.staticURL('images/choc_girl_coloring.png')}" />
+                    <h2 class="color-text"><a class="gamelink"
+                            href="${URLUtils.staticURL('images/kind_kids_coloring_page.pdf')}" style="border: none"
+                            target="_blank">Coloring Page</a></h2>
+                </div>
+<style>
+.btn-outline-primary:hover a {
+    color:white;
+}
+</style>
+                <div class="print-btn-contain"><button class="btn-outline-primary"><a href="${URLUtils.staticURL('images/kind_kids_games_print.pdf')}" style="text-decoration:none; backgound:transparent; border:none" class="">print All</a></button></div>
+            </div>
+
+            <div class="container-fluid clearfix">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="kind-community auto-margin">
+                            <p>Welcome to the KIND community!</p>
+
+                            <p>Here at KIND, we think a little differently. Instead of &ldquo;or&rdquo; we say
+                                &ldquo;and.&rdquo; We choose healthy and tasty, convenient and wholesome, economically
+                                sustainable and socially responsible. We&rsquo;re excited to tell you about KIND Kids
+                                <sup style="margin-left: -7px;">&trade;</sup> bars &ndash; we crafted them to be fun for
+                                kids and with nutritious ingredients that will make parents happy. Our delicious recipe
+                                contains 100% whole grains, including gluten free oats, sorghum and quinoa, without any
+                                artificial flavors, colors or preservatives!</p>
+
+                            <p>We love making snacks for your whole family to enjoy, and we also love spreading
+                                kindness. Since 2004, our team has been on a mission to make the world a little kinder.
+                                Whether you snack with us or start making kindness top of mind by joining our KIND
+                                Movement, thanks for being a part of our journey.</p>
+
+                            <p>Kindly yours,<br />
+                                Daniel Lubetzky, Founder and CEO, KIND<br />
+                                (and dad to four KIND kids!)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a name="grown" style="padding: 10px; border: none"></a>
+
+            <div class="new-container">
+                <div class="row">
+                    <div class="col-sm-12" style="
+    /* margin-left: 48%; */
+    /* margin-right: 48%; */
+">
+                        <div class="get-involved">
+                            <h1>Hey Parents, Get involved</h1>
+                        </div>
+                        <img alt="" src="${URLUtils.staticURL('images/Empatico_Exchange.jpg')}" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid clearfix visit-empatico">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="empatico auto-margin">
+                            <p>Did you know that The KIND Foundation is committed to teaching future generations to act
+                                with kindness? Through an initiative called Empatico, the Foundation will connect
+                                millions of students worldwide.</p>
+
+                            <h2>what it is</h2>
+
+                            <p>Empatico is a free online learning tool that connects classrooms across the country and
+                                world! Through interactive technology, kids can explore what life is like for their
+                                peers. Empatico exchanges give them a unique opportunity to talk with kids from
+                                different backgrounds and places while practicing kindness, cooperation and critical
+                                thinking.</p>
+
+                            <h2>availability</h2>
+
+                            <p>Teachers of 7-11-year-old students are invited to test Empatico in their classroom today.
+                            </p>
+
+                            <h2>why 7-11-year-olds?</h2>
+
+                            <p class="mb-0">At this age, kids are at a sensitive point in their development and have
+                                started asking questions about their place in the world. Giving them an opportunity to
+                                develop this curiosity and have positive experiences with different people can influence
+                                how they perceive others in the future.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-btn-contain"><button onclick="location.href='https://empatico.org'" class="btn-outline-primary">Visit empatico.org</button></div>
+
+                <div class="kidsmodal">
+                    <div class="modal-content">
+                        <div class="close-button-kids">&nbsp;</div>
+
+                        <h2>How it all began</h2>
+
+                        <div class="how-it-began-text">
+                            <p>Once upon a time there were five good friends; Max, Chip, Jet, Kat and Izzy. One afternoon, the five friends were hanging out at Chip’s treehouse, which had a wall of old-looking cabinets in the large main room, when Kat noticed a cabinet in the corner that had never been opened.</p>
+
+                            <p>It was a small cabinet with a carving of a giant flower with five petals. Chip said that he had tried to open it but it was always locked. They all stared more closely and then noticed that the petals actually appeared to be handprints. They each immediately placed their hands on the petals.</p>
+
+                            <p>Suddenly there was a loud click and the cabinet door swung open. Inside was a small
+                                wooden box covered in letters and a handwritten note, both of which looked very old.
+                                Chip read the note out loud:</p>
+
+                            <p style="font-style: italic;">Suddenly there was a loud click and the cabinet door swung open. Inside was a small wooden box covered in letters and a handwritten note, both of which looked very old. Max read the note out loud:<br />
+                                &ldquo;What is as good to give as it is to get?&rdquo;<br />
+                                Spread the answer to people who will never forget.</p>
+
+                            <p>They all looked at each other deep in thought. Kat picked up the box to examine it. The top lid was covered in small wooden squares, each with a random letter on it. She pressed one with her finger and it moved down, like a keyboard. Many riddle answers were thrown out, including “toys,” “games,” “chocolate,” and “cake,” but none worked. They stared at the box in frustration without talking. Finally, after what seemed like hours, Izzy , the youngest of the kids, broke the silence by confidently uttering a single word: kindness.The lid flew open and the treehouse was filled with a blinding light and strong gust of wind that left as quickly as it came. “I feel a little funny, but it seems like we’re all ok,” said Izzy, checking to make sure they were all okay. “Yeah, that was crazy,” responded a voice from the back of the room. Kat looked behind her, but there was no one there except her dog Mighty, a small Jack Russel Terrier, staring back at her. “Did anyone else hear that?” she asked. Three shaking heads answered no. Turning back to Mighty, she asked “Did you just talk to me?” “I’ve been talking to you for like, forever.” Mighty said, “I guess this is the just the first time you understood me- Jeez!”</p>
+
+                            <p>Turning back to her friends, Kat said, &ldquo;Guys, I think this is going to get
+                                interesting!&rdquo;</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kidsmodaltwo">
+                    <div class="modal-content-two">
+                        <div class="close-button-kids-two">&nbsp;</div>
+
+                        <h2>The Magic Baseball</h2>
+
+                        <div class="the-magic-baseball-text">
+                            <p>Chip and Kat were walking past the park one day when they saw a younger boy standing on
+                                the sidewalk by himself, staring longingly at kids picking teams on the baseball field.
+                            </p>
+
+                            <p><span style="font-style: italic;">&ldquo;What&rsquo;s wrong?&rdquo;</span> asked Kat.</p>
+
+                            <p><span style="font-style: italic;">&ldquo;I want to play, but I&rsquo;m afraid I&rsquo;ll
+                                    mess up,&rdquo; </span> the boy replied, as he tossed a ball into his glove.</p>
+
+                            <p><span style="font-style: italic;">&ldquo;What&rsquo;s your name?&rdquo;</span> Chip
+                                asked.</p>
+
+                            <p><span style="font-style: italic;">&ldquo;Billy,&rdquo;</span> the boy said.</p>
+
+                            <p>A mischievous smirk came across Chip&rsquo;s face as he put his arm around Billy&rsquo;s
+                                shoulder. <span style="font-style: italic;">&ldquo;Do you trust me?&rdquo;</span> he
+                                asked Billy, who replied, <span style="font-style: italic;">&ldquo;I
+                                    guess,&rdquo;</span> still a little unsure.</p>
+
+                            <p><span style="font-style: italic;">&ldquo;Hey guys!&rdquo;</span> Chip yelled at the group
+                                of kids, <span style="font-style: italic;">&ldquo;Count Billy in, he&rsquo;ll just be a
+                                    minute.&rdquo;</span></p>
+
+                            <p>Chip turned and looked back at Billy, who&rsquo;s eyes were as wide as plates. <span
+                                    style="font-style: italic;">&ldquo;I&rsquo;m going to let you in on a couple
+                                    secrets,&rdquo;</span> Chip began, <span style="font-style: italic;">&ldquo;The
+                                    first one is that Kat and I each have a superpower and mine is I can move things
+                                    without touching them.&rdquo; </span></p>
+
+                            <p>While he was talking, Chip pointed his hands at the baseball Billy was holding and it
+                                began to float out of his glove and then glided above their heads while spinning.</p>
+
+                            <p>Billy&rsquo;s jaw dropped open and he let out a <span
+                                    style="font-style: italic;">&ldquo;Woah.&rdquo;</span></p>
+
+                            <p><span style="font-style: italic;"> &ldquo;Here&rsquo;s what we&rsquo;ll do. I&rsquo;m
+                                    going to help you from the bleachers so that when you hit the ball it goes super
+                                    far. And when you try to catch a ball, I&rsquo;ll make it go right into your
+                                    glove.&rdquo;</span></p>
+
+                            <p>Billy had closed his mouth and started nodding his head, <span
+                                    style="font-style: italic;">&ldquo;Sounds awesome!&rdquo;</span> Then he asked,
+                                <span style="font-style: italic;">&ldquo;What&rsquo;s the second secret?!&rdquo;</span>
+                            </p>
+
+                            <p><span style="font-style: italic;">&ldquo;I&rsquo;ll tell you after the game,&rdquo;
+                                </span> Chip said, <span style="font-style: italic;">&ldquo;Get in there, you&rsquo;re
+                                    going to do great.&rdquo; </span></p>
+
+                            <p>Billy&rsquo;s expression quickly changed from timid to confident. <span
+                                    style="font-style: italic;">&ldquo;Alright!&rdquo; </span> he said, and went
+                                sprinting into the park.</p>
+
+                            <p>Chip and Kat watched from the bleachers. Chip waved his hands when Billy was batting, and
+                                each time the ball popped off his bat and sailed into the outfield for a total of two
+                                doubles, a triple and a home run! In the field, Billy was equally as impressive,
+                                catching seven fly balls, including a diving catch that was the last out of the game.
+                                After celebrating the win with his team, Billy made his way to the bleachers.</p>
+
+                            <p><span style="font-style: italic;">&ldquo;The second secret is even cooler.&rdquo; </span>
+                                Chip said, as his smirk reappeared. <span style="font-style: italic;">&ldquo;It&rsquo;s
+                                    that I wasn&rsquo;t actually helping. You did that all by yourself&mdash;you just
+                                    need a little help believing you could do it.&rdquo; </span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

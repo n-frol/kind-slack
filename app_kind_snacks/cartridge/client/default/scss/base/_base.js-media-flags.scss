@@ -1,0 +1,35 @@
+/* ============================================================================
+   JS pxl-media Flags
+   ============================================================================ */
+
+/**
+ * Inserts content into body pseudo element as a flag to JS for current viewport
+ * size to align CSS with JS.
+ */
+
+body::after {
+    content: 'default';
+    display: none;
+
+    @include pxl-media($xs-view-up) {
+        content: 'xs-up';
+    }
+
+    @include pxl-media($sm-view-up) {
+        content: 'sm-up';
+    }
+
+    @include pxl-media($md-view-up) {
+        content: 'md-up';
+    }
+
+    @include pxl-media($lg-view-up) {
+        content: 'lg-up';
+    }
+
+    @include pxl-media($xl-view-up) {
+        content: 'xl-up';
+    }
+
+}
+

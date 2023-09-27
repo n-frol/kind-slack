@@ -1,0 +1,72 @@
+/* ============================================================================
+   Purchase Block
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the purchase block component
+ */
+
+$ns: th-kind-purchase-block;
+$component: c-purchase-block;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Purchase Block Component
+    &.#{$component} {
+
+        .#{$component} {
+
+            &__content {
+                // Purchase Block Heading
+                &__heading {
+                    font-family: $font-family-primary;
+                }
+
+                // Purchase Block Heading
+                &__body {
+                    font-family: $font-family-secondary;
+                }
+
+                // Purchase Block Links
+                &__links {
+                    font-family: $font-family-primary;
+                    font-size: 12px;
+                    letter-spacing: 1.5px;
+                }
+            }
+
+        }
+
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+                    background-color: transparent;
+                    border: 2px solid $primary;
+                    color: $primary;
+                    font-family: $font-family-primary;
+
+                    &:hover {
+                        background-color: $primary;
+                        border-color: $primary;
+                        color: $white;
+                        text-decoration: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

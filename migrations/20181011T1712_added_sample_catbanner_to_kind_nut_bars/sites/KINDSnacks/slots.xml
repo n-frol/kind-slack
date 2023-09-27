@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="cat-banner" context="category" context-id="kind-nut-bars" configuration-id="kindNutBarsBannerSlot" default="true" assigned-to-site="false">
+        <template>slots/content/category-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kindNutBarsBanner"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+</slot-configurations>

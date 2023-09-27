@@ -1,0 +1,43 @@
+<div class="leftcoolumn ${pdict.id}">
+    ${pdict.id}
+</div>
+
+<div class="rightcolumn ${pdict.id2}">
+    <img src="${pdict.rightimage.src.desktop}" alt="test" />
+</div>
+
+<style>
+@media screen and (min-width:1025px) {
+    .${pdict.id} {
+        display:inline-block;
+        float:left;
+        width: ${pdict.dl};
+    }
+    .${pdict.id2} {
+        display:inline-block;
+        width: ${pdict.dr};
+    }
+}
+@media screen and (max-width:1024px) and (min-width:440px) {
+    .${pdict.id} {
+        display:inline-block;
+        float:left;
+        width: ${pdict.il};
+    }
+    .${pdict.id2} {
+        display:inline-block;
+        width: ${pdict.ir};
+    }
+}
+@media screen and (max-width:440px) {
+    .${pdict.id} {
+        display:inline-block;
+        float:left;
+        width: ${pdict.ml};
+    }
+    .${pdict.id2} {
+        display:inline-block;
+        width: ${pdict.mr};
+    }
+}
+</style>

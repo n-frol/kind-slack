@@ -1,0 +1,107 @@
+<div class="${pdict.theid}">
+    <div class="alt_card_left">
+        <picture>
+            <source media="(max-width: 768px)" srcset="${pdict.image_mobile.src.desktop}">
+            <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+        </picture>
+    </div>
+    <div class="alt_card_right">
+        <div class="alt_card_headline">
+            ${pdict.headline}
+        </div>
+        <div class="alt_card_descriptizon">
+            ${pdict.description}
+        </div>
+        <isif condition="${pdict.regions.benefits.region.size > 0}">
+        <div class="alt_benefit_header">
+            How we’re building for a kinder future
+        </div>
+
+        <isscript>
+            var three_column_cards_benefit = pdict.regions.benefits;
+            three_column_cards_benefit.setClassName("alternating_benefits_wrapper");
+            three_column_cards_benefit.setComponentClassName("alternating_benefits_item");
+        </isscript>
+        <isprint value="${three_column_cards_benefit.render()}" encoding="off"/>
+        </isif>
+        <isif condition="${pdict.ctatext}">
+            <a class="alternating_button primary dark" href="${pdict.ctalink}">${pdict.ctatext}</a>
+        </isif>
+    </div>
+</div>
+
+<style>
+    .alternating_button {
+        margin-bottom: 20px;
+    }
+    .${pdict.theid} {
+        margin-bottom: ${pdict.padding};
+        display:flex;
+        background: ${pdict.background.value};
+    }
+    @media screen and (max-width: 440px) {
+        .${pdict.theid} {
+            margin-bottom: ${pdict.paddingm};
+        }
+    }
+    .alt_card_right, .alt_card_left {
+        align-self: center;
+    }
+    .alt_benefit_header {
+        font-size: 18px;
+        line-height: 32px;
+        font-family: main;
+        letter-spacing: -0.5px;
+        margin-bottom: 24px;
+    }
+    .alt_card_descriptizon {
+        font-family: medium;
+        margin-bottom: 20px;
+    }
+    .alt_card_left, .alt_card_right {
+        width: 49%;
+        float:left;
+    }
+    .alt_card_headline {
+        font-size: 36px;
+        line-height: 44px;
+        letter-spacing: -1px;
+        font-family: main;
+        margin-bottom: 24px;
+    }
+    .alt_card_description {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 0px;
+        font-family: medium;
+        margin-bottom: 24px;
+    }
+    @media screen and (max-width: 1024px) and (min-width: 764px) {
+        .alt_card_right {
+            padding: 0px 20px;
+        }
+    }
+    @media screen and (max-width: 769px) {
+        .alt_card_right {
+            padding: 20px;
+        }
+    }
+    @media screen and (max-width: 769px) {
+        .alt_card_left, .alt_card_right {
+            width: 100%;
+            float:none;
+        }
+        .alt_card_headline {
+            font-size: 28px;
+            line-height: 36px;
+        }
+        .alternating_cards_header {
+            font-size: 36px !important;
+            line-height: 44px !important;
+        }
+        .cards_wrapper {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+        }
+    }
+</style>

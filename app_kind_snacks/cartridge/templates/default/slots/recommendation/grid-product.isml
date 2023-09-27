@@ -1,0 +1,17 @@
+<isif condition="${!empty(slotcontent)}">
+    <isset name="showQuickView" value="${true}" scope="page"/>
+
+    <div class="c-recommendation">
+        <h2 class="c-recommendation__title">
+            <isif condition="${!empty(slotcontent.calloutMsg)}">
+                <isprint value="${slotcontent.calloutMsg}" encoding="off"/>
+            <iselse>
+                <isprint value="${Resource.msg('label.recommendations', 'product', null)}" encoding="off"/>
+            </isif>
+        </h2>
+        <div class="c-recommendation__content">
+            <isset name="products" value="${slotcontent.content}" scope="page"/>
+            <isinclude template="components/products" />
+        </div>
+    </div>
+</isif>

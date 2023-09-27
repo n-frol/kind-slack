@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Customer-PaymentAttrTruncate" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="customDataFixZip" type="custom.datafix.zip" enforce-restart="false">
+                <description/>
+                <parameters/>
+                <rules>
+                    <on-exit status="ERROR">
+                        <stop-job/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2019-02-26Z</date>
+                <time>11:47:10.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

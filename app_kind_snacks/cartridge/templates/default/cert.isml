@@ -1,0 +1,15 @@
+<!--- TEMPLATENAME: helloform.isml --->
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<isinclude template="util/modules">
+<div id="service">
+
+<h1>Hello World Form</h1>
+
+<form action="Certificate-HandleForm" method="post" id="cert">
+	<fieldset>
+		<isinputfield formfield="${pdict.CurrentForms.cert.certificate}" type="input"/>
+        <button type="cancel"
+				name="${pdict.CurrentForms.cert.submit.htmlName}"
+				value="submit">Submit</button>
+	</fieldset>
+</form>

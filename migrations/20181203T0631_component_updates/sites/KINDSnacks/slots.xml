@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="home-slot-b" context="global" configuration-id="home-slot-b_config" default="true" assigned-to-site="true">
+        <template>slots/content/contentGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="products-asset"/>
+                <content-asset content-id="flavors-content-grid"/>
+                <content-asset content-id="occasions-content-grid"/>
+                <content-asset content-id="benefits-content-grid"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotHeading">explore some of our healthy snacks</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-c" context="global" configuration-id="home-slot-c_config" default="true" assigned-to-site="true">
+        <template>slots/content/ctaGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="try-20-snacks"/>
+                <content-asset content-id="have-a-favorite"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-d" context="global" configuration-id="home-slot-d_config" default="true" assigned-to-site="true">
+        <template>slots/content/featuredBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kinds-promise"/>
+                <content-asset content-id="achieve-balance"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-a" context="global" configuration-id="test-banner-kind-minis" default="true" assigned-to-site="true">
+        <template>slots/content/marketingBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-banner-kind-minis"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-c" context="global" configuration-id="test-banner-snack-pack" assigned-to-site="true">
+        <template>slots/content/marketingBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-banner-snack-pack"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-f" context="global" configuration-id="test-banner-snack-pack" default="true" assigned-to-site="true">
+        <template>slots/content/marketingBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-banner-snack-pack"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-b" context="global" configuration-id="test-full-width-cta" assigned-to-site="true">
+        <template>slots/content/fullWidthCallToAction.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-full-width-cta"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-e" context="global" configuration-id="test-full-width-cta" default="true" assigned-to-site="true">
+        <template>slots/content/fullWidthCallToAction.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-full-width-cta"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+</slot-configurations>

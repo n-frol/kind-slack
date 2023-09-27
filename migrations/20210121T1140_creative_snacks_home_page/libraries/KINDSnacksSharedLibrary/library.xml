@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="homepage_creative_snacks">
+        <display-name xml:lang="x-default">Homepage Creative Snacks</display-name>
+        <type>page.dynamiclayout</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <visibility-mode xml:lang="x-default">visible</visibility-mode>
+        <data xml:lang="x-default">{ }</data>
+        <online-flag>false</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <searchable-flag site-id="CreativeSnacks">false</searchable-flag>
+        <page-attributes/>
+        <content-links>
+            <content-link content-id="91b53a615a1908fca1dd23e91d" type="page.dynamiclayout.main">
+                <position>0.0</position>
+            </content-link>
+            <content-link content-id="a599a006a9ad4e83efeb73f102" type="page.dynamiclayout.main">
+                <position>1.0</position>
+            </content-link>
+            <content-link content-id="adea64d945c9a445e5c59db554" type="page.dynamiclayout.main">
+                <position>2.0</position>
+            </content-link>
+            <content-link content-id="828b74991733c86a49afccc523" type="page.dynamiclayout.main">
+                <position>6.0</position>
+            </content-link>
+            <content-link content-id="28b07cc807bd82559e5f133d29" type="page.dynamiclayout.main">
+                <position>4.0</position>
+            </content-link>
+            <content-link content-id="afa2300552bfe3af3a35c9aa55" type="page.dynamiclayout.main">
+                <position>3.0</position>
+            </content-link>
+            <content-link content-id="ce50cd765b7ee79428feac888a" type="page.dynamiclayout.main">
+                <position>8.0</position>
+            </content-link>
+            <content-link content-id="da163e5b178e54b1cb59773b86" type="page.dynamiclayout.main">
+                <position>7.0</position>
+            </content-link>
+            <content-link content-id="dba29517deb99de3f85d4a3286" type="page.dynamiclayout.main">
+                <position>9.0</position>
+            </content-link>
+            <content-link content-id="38f8139041ca1b0e98f41669b0" type="page.dynamiclayout.main">
+                <position>11.0</position>
+            </content-link>
+            <content-link content-id="46322dfa52452c09878a8955ef" type="page.dynamiclayout.main">
+                <position>5.0</position>
+            </content-link>
+            <content-link content-id="4148944405c5430085b45128af" type="page.dynamiclayout.main">
+                <position>12.0</position>
+            </content-link>
+        </content-links>
+        <sitemap-included-flag site-id="CreativeSnacks">false</sitemap-included-flag>
+    </content>
+
+    <content content-id="4148944405c5430085b45128af">
+        <type>component.assets.homepage_banner_footer</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "button_color2" : {
+    "value" : "#9f1a4c"
+  },
+  "buttonlink" : null,
+  "small_image" : null,
+  "small_image_align" : null,
+  "button" : null,
+  "copyweight" : null,
+  "button2link" : null,
+  "copy" : "We’re on a mission to create better snacks for everyone. ",
+  "copyfont" : null,
+  "button2" : "Learn More",
+  "banner_height" : "300",
+  "eyebrow" : null,
+  "extra_class" : "creative-snacks-banner-component-footer",
+  "full_image_use" : true,
+  "full_image" : {
+    "path" : "AC_CashCran_Ovrhd-30 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 300,
+      "width" : 1440
+    }
+  },
+  "button_color" : null,
+  "full_image_mobile" : {
+    "path" : "AC_CashCran_Ovrhd-30 1 (1).png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 300,
+      "width" : 375
+    }
+  },
+  "small_image_mobile" : null,
+  "button_text_color" : null,
+  "background_color" : null,
+  "header" : "We Are Creative Snacks",
+  "resize" : false,
+  "text_color" : null,
+  "button_text_color2" : {
+    "value" : "#ffffff"
+  },
+  "text_container_align" : "Center",
+  "text_align" : "Center"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="46322dfa52452c09878a8955ef">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="38f8139041ca1b0e98f41669b0">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="dba29517deb99de3f85d4a3286">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="da163e5b178e54b1cb59773b86">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="ce50cd765b7ee79428feac888a">
+        <type>component.assets.homepage_dual_tout</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "small_image_r" : {
+    "path" : "Group 706 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 558,
+      "width" : 592
+    }
+  },
+  "small_image_mobile" : null,
+  "small_image_mobile_r" : null,
+  "small_image" : {
+    "path" : "2-Header-Coconut-Snacks-loose 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 558,
+      "width" : 590
+    }
+  },
+  "header_r" : "Clean, Simple &lt;/br&gt; Ingredients",
+  "extra_class" : "creative-snacks-dual-tout",
+  "link" : null,
+  "copy_r" : "Love snacks? Get your favorites delivered to your door at 10% off kindsnacks.com retail pricing plus exclusive perks!",
+  "header" : "&lt;/br&gt; Baked by Hand",
+  "copy" : "Our snack recipes are made by real people in a real bakery that smells like heaven every day. ",
+  "link_r" : null,
+  "guardrailed" : false
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="afa2300552bfe3af3a35c9aa55">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="28b07cc807bd82559e5f133d29">
+        <type>component.assets.homepage_banner</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "button_color2" : {
+    "value" : "#9f1a4c"
+  },
+  "buttonlink" : "/ingredient-questions/faqs-ingredients.html",
+  "small_image" : null,
+  "small_image_align" : null,
+  "button" : null,
+  "copyweight" : "500",
+  "button2link" : null,
+  "copy" : "If escaping to a tropical island sounds like your thing,  you’ll love our Organic Coconut Snacks.\nThey are packed with lightly toasted, naturally sweet, organic coconut.",
+  "copyfont" : "Poppins",
+  "button2" : null,
+  "banner_height" : "600",
+  "eyebrow" : null,
+  "extra_class" : "creative-snacks-banner-component",
+  "full_image_use" : true,
+  "full_image" : {
+    "path" : "coconut-12345.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 600,
+      "width" : 1440
+    }
+  },
+  "button_color" : {
+    "value" : "#9f1a4c"
+  },
+  "full_image_mobile" : {
+    "path" : "coconut-123.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 710,
+      "width" : 375
+    }
+  },
+  "small_image_mobile" : null,
+  "button_text_color" : {
+    "value" : "#ffffff"
+  },
+  "background_color" : null,
+  "header" : "Irresistibly Delicious Coconut Snacks",
+  "resize" : true,
+  "text_color" : null,
+  "button_text_color2" : {
+    "value" : "#ffffff"
+  },
+  "text_container_align" : "Right",
+  "text_align" : "Left"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="828b74991733c86a49afccc523">
+        <type>component.assets.carousel</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "carousel_type" : "CreativeSnacks",
+  "slidescount" : "3",
+  "rootcat" : "root",
+  "hide_slider_controls" : false,
+  "recommenderitems" : null,
+  "headline" : "Try Our Snacks"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="adea64d945c9a445e5c59db554">
+        <type>component.assets.carousel</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "carousel_type" : "CreativeSnacks",
+  "slidescount" : "4",
+  "rootcat" : "root",
+  "hide_slider_controls" : false,
+  "recommenderitems" : null,
+  "headline" : "Shop Our Snacks"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="a599a006a9ad4e83efeb73f102">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "30"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="91b53a615a1908fca1dd23e91d">
+        <type>component.assets.homepage_hero</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "background_image" : {
+    "path" : "Mask Group.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.49
+    },
+    "meta_data" : {
+      "height" : 600,
+      "width" : 1440
+    }
+  },
+  "background_color" : {
+    "value" : "#9f1a4c"
+  },
+  "hero_text" : "Smart Snacking.\nGenius Flavor.",
+  "copy_text" : "Insanely delicious snacks make with clean, simple ingredients. &lt;br/&gt;\nWe are Creative Snacks!",
+  "background_image_mobile" : {
+    "path" : "mask Group.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 534,
+      "width" : 375
+    }
+  },
+  "button_link" : "https://dev05.kindsnacks.com/nut-bars/",
+  "button_text" : "Learn More",
+  "content_image" : {
+    "path" : "ProduchShadows 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 650,
+      "width" : 1034
+    }
+  }
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+</library>

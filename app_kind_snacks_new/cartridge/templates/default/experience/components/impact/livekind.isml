@@ -1,0 +1,87 @@
+<div class="impact_section live_section">
+    <isinclude template="experience/components/impact/live_grid_1" />
+    <isinclude template="experience/components/impact/live_grid_2" />
+    <div class="blackarea">
+        <isinclude template="experience/components/impact/live_grid_3" />
+    </div>
+    <div class="centerme">
+        <div class="headitem">
+            we’re passionate about giving back. take a look at our team in action at some recent volunteer activities.
+        </div>
+    </div>
+    <img class="railedimg fullmob" src="${URLUtils.staticURL('/images/impact/grid3/Group 3172.png')}" alt="Impact Planet Grid 7 Image" />
+    <div class="centeryellow">
+        <div>
+            <img class="crown" src="${URLUtils.staticURL('/images/impact/grid3/Layer_12.png')}" alt="Impact Planet Grid 7 Image" />
+            <div class="head">
+                Congratulations to Kellie Kesner,<br/>
+                2022 KINDOS of the Year winner
+            </div>
+            <div class="body">
+                Kellie, VP of Customer Operations Collaboration, was recognized for exemplifying our Hungry and KIND values. Throughout the year, Kellie persevered to achieve exceptional results while exuding kindness along the way.
+            </div>
+        </div>
+        <img class="personimg" src="${URLUtils.staticURL('/images/impact/grid3/Rectangle 2820.png')}" alt="Impact Planet Grid 7 Image" />
+    </div>
+    <div class="greyarea">
+        <div class="centerme">
+            <div class="head">inspiring and strengthening a culture of diversity, inclusivity, and belonging</div>
+            <div class="copy">
+                Our commitment to fostering empathy and compassion begins with our own teammates. By celebrating our diversity – inside and outside of KIND – we can build bridges and advance our mission of kindness. This work is championed by our Diversity, Equity & Inclusion team, whose leadership has driven progress, engagement, and continued learning for us all.
+            </div>
+        </div>
+        <isinclude template="experience/components/impact/live_grid_4" />
+    </div>
+    <isinclude template="experience/components/impact/live_grid_5" />
+    <div  class="centerme">
+        <div class="head">
+            spreading kindness around the globe…
+        </div>
+    </div>
+    <isinclude template="experience/components/impact/live_grid_7" />
+    <isinclude template="experience/components/impact/live_grid_6" />
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .fixpadding {
+            padding: 20px 0px 50px 0px !important;
+        }
+        .fullmob {
+            width: 100% !important;
+            margin-left:0px !important;
+            margin-bottom: 60px;
+        }
+    }
+    .crown {
+        position: absolute;
+        top: -60px;
+    }
+    .centeryellow {
+        position:relative;
+        background: #EDA900;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 240px);
+        margin-left: 120px;
+        align-items: center;
+        padding: 60px;
+        margin-bottom: 80px;
+        border-radius: 20px;
+    }
+    .centeryellow img {
+        justify-self: flex-end;
+    }
+    .centeryellow .head {
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 36px;
+        font-family: main;
+        margin-bottom: 20px;
+    }
+    .centeryellow .body {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+    }
+</style>

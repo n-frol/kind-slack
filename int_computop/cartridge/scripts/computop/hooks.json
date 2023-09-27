@@ -1,0 +1,24 @@
+{
+    "hooks": [
+        {
+            "name": "app.payment.processor.paymentoperator_paymentgate",
+            "script": "./hooks/paymentoperator_paymentgate"
+        },
+    	{
+      		"name": "dw.extensions.applepay.paymentAuthorized.authorizeOrderPayment",
+      		"script": "./hooks/applepay/authorize"
+        },
+        {
+            "name": "dw.extensions.applepay.prepareBasket",
+            "script": "./hooks/applepay/prepareBasket"
+        },
+        {
+            "name": "dw.extensions.applepay.paymentAuthorized.createOrder",
+            "script": "./hooks/applepay/createOrder"
+        },
+        {
+            "name": "dw.extensions.applepay.paymentAuthorized.placeOrder",
+            "script": "./hooks/applepay/placeOrder"
+        }
+    ]
+}

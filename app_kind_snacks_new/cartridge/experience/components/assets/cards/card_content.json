@@ -1,0 +1,81 @@
+{
+    "name": "Cards Content",
+    "group": "cards",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "layout",
+                    "name": "Layout",
+                    "type": "enum",
+                    "values": ["Full_Screen", "BG_Image"],
+                    "required": true
+                },
+                {
+                    "id": "show_gradient",
+                    "name": "Show Gradient",
+                    "type": "boolean",
+                    "required": true
+                },
+                {
+                    "id": "eyebrow",
+                    "name": "Eyebrow",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cta",
+                    "name": "CTA",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctalink",
+                    "name": "CTA Link",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "ctaaira",
+                    "name": "CTA Aira Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bgcolor",
+                    "name": "Background Color",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "image_mobile",
+                    "name": "Image Mobile",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+
+    ]
+}

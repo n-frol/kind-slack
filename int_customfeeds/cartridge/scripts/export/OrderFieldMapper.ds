@@ -1,0 +1,76 @@
+/**
+ * Utility class to map a given field to a order attribute value
+ * 
+ * @namespace
+ */
+var OrderFieldMapper = function(){};
+
+/**
+ * Supported system attributes
+ */
+OrderFieldMapper.SYSTEM_ATTRIBUTES = ['affiliatePartnerID', 'affiliatePartnerName', 'businessType', 'cancelCode',
+                                      'cancelDescription', 'channelType', 'confirmationStatus', 'createdBy',
+                                      'creationDate', 'customerEmail', 'customerName', 'customerNo',
+                                      'customerOrderReference', 'exportAfter', 'exportStatus', 'externalOrderNo',
+                                      'externalOrderStatus', 'externalOrderText', 'lastModified', 'orderNo',
+                                      'originalOrderNo', 'paymentStatus', 'replaceCode', 'replaceDescription',
+                                      'replacedOrderNo', 'replacementOrderNo', 'shippingStatus', 'status'];
+
+/**
+ * Returns the value of the order for the given field. Field is either a system
+ * attribute or a custom attribute prefixed with 'custom.'
+ */
+OrderFieldMapper.getField = function(order : dw.order.Order, field : String, format : String){
+    // no field, can't do anything
+    if(empty(field) || order == null){
+        return '';
+    }
+    try{
+        // now handle generic attributes
+        var result = '';
+        
+        // handle custom attributes
+        if(field.indexOf('custom.') == 0){
+            var cname = field.substr(7);
+            if(cname in order.custom){
+                result = order.custom[cname];
+            }
+        }
+        // handle system attributes
+        if(OrderFieldMapper.SYSTEM_ATTRIBUTES.indexOf(field) > -1){
+            result = order[field];
+        }
+        if(format && result instanceof Date){
+            result = dw.util.StringUtils.formatCalendar(new dw.util.Calendar(result), format);
+        }
+        return result;
+    }
+    catch(e){
+        dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').error('Error occured while mapping field {0} for order {1}', field, order.orderNo);
+    }
+    return null;
+};
+
+/**
+ * Parses a given field definition as string and return a field object
+ */
+OrderFieldMapper.parseField = function(attributeAsStr : String){
+    var typeDef = dw.object.SystemObjectMgr.describe('Order');
+    var field = attributeAsStr.split(/(?:\{\{| |\}\})/g).filter(function(t){ return !empty(t)})[0];
+    if(field.indexOf('var:') == 0){
+        field = field.substring(4).replace(':', '.');
+    }
+    var fieldAsJson = {}
+    if(attributeAsStr.indexOf('format="') > -1){
+        fieldAsJson.format = attributeAsStr.split('format="')[1].split('"')[0];
+    }
+    if(field.indexOf('custom.') == 0){
+        if(typeDef.getCustomAttributeDefinition(field.substr(7)) != null){
+            fieldAsJson.attribute = field;
+        }
+    }else{
+        fieldAsJson.attribute = field;
+    }
+    dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').debug('Parsed mapping for field {0} to field {1}', attributeAsStr, JSON.stringify(fieldAsJson));
+    return fieldAsJson;
+}

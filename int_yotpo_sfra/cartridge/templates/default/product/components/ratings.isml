@@ -1,0 +1,10 @@
+<isif condition="${pdict.yotpoWidgetData.isRatingEnabled}">
+    <isinclude template="widget/yotpoRatingsWidget" />
+<iselse>
+    <isif condition="${pdict.display && pdict.display.ratings}">
+     <iscomment>
+        FR - do not display the default ratings for SFCC if we turn off Yotpo
+        <isinclude template="product/components/productRating" />
+    </iscomment>
+    </isif>
+</isif>

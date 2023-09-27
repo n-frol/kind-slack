@@ -1,0 +1,33 @@
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<div class="contact-footer u-background__color-grey9 ${siteID !== 'CreativeSnacks' ? 'pt-7' : ''}">
+    <div class="${siteID !== 'CreativeSnacks' ? 'u-background__color-white' : ''}">
+        <div class="container st-container--padded">
+            <div class="row justify-content-center">
+                <iscontentasset aid="instructions-contact" />
+            </div>
+            <div class="row justify-content-center">
+                <isif condition="${siteID === 'CreativeSnacks'}">
+                    <button class="c-icon-button js-modal-dialog-create js-nice-incontact" data-modal-class="js-modal-dialog-destroy" data-iframe-src="${dw.system.Site.current.getCustomPreferenceValue('niceInContactUrl')}">
+                        <img src="${URLUtils.staticURL('images/chat-icon-red.svg')}" alt="${Resource.msg('label.contact.chat', 'common', null)}" />
+                    </button>
+                    <a href="tel:+18558845463" class="c-icon-button">
+                        <img src="${URLUtils.staticURL('images/phone-icon-red.svg')}" alt="${Resource.msg('label.contact.phone', 'common', null)}" />
+                    </a>
+                    <a href="mailto:%20customerservice@kindsnacks.com%20" class="c-icon-button">
+                        <img src="${URLUtils.staticURL('images/email-icon-red.svg')}" alt="${Resource.msg('label.contact.email', 'common', null)}" />
+                    </a>
+                <iselse/>
+                    <a href="tel:+18558845463" class="c-icon-button">
+                        <img src="${URLUtils.staticURL('images/phone-icon-black.png')}" alt="${Resource.msg('label.contact.phone', 'common', null)}" />
+                    </a>
+                    <a href="mailto:%20customerservice@kindsnacks.com%20" class="c-icon-button">
+                        <img src="${URLUtils.staticURL('images/email-icon-black.png')}" alt="${Resource.msg('label.contact.email', 'common', null)}" />
+                    </a>
+                    <button class="c-icon-button js-modal-dialog-create js-nice-incontact" data-modal-class="js-modal-dialog-destroy" data-iframe-src="${dw.system.Site.current.getCustomPreferenceValue('niceInContactUrl')}">
+                        <img src="${URLUtils.staticURL('images/chat-icon-black.png')}" alt="${Resource.msg('label.contact.chat', 'common', null)}" />
+                    </button>
+                </isif>
+            </div>
+        </div>
+    </div>
+</div>

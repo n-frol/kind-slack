@@ -1,0 +1,81 @@
+<div class="wrapperforbig ${pdict.theid} ${pdict.style}">
+    <div class="header_comp ${pdict.style} ${pdict.theid}">
+        <isprint value="${pdict.header}" encoding="off" />
+    </div>
+    <isif condition="${pdict.description}">
+    <div class="description_comp ${pdict.style} ${pdict.theid}">
+        <isprint value="${pdict.description}" encoding="off" />
+    </div>
+    </isif>
+</div>
+
+<style>
+    .wrapperforbig.${pdict.theid} {
+        background: ${pdict.background};
+    }
+    .wrapperforbig.${pdict.theid}.sidebyside {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .header_comp.sidebyside {
+        max-width: 350px;
+        letter-spacing: -1px;
+    }
+    .description_comp.sidebyside {
+        max-width: 550px;
+        justify-self: flex-end;
+    }
+    .header_comp {
+        font-family: main;
+        letter-spacing: -1px;
+    }
+    .description_comp.${pdict.theid} {
+        font-size: ${pdict.descriptionsize};
+        line-height: ${pdict.desclh};
+        font-family: medium;
+    }
+    .header_comp.single {
+        text-align: center;
+        margin: auto;
+        max-width: 625px;
+    }
+    .header_comp.stacked, .description_comp.stacked {
+        text-align: center;
+        margin: auto;
+        max-width: 625px;
+    }
+    .header_comp.stacked {
+        margin-bottom: 24px;
+    }
+    .header_comp.${pdict.theid} {
+        font-size: ${pdict.headersize};
+        line-height: ${pdict.headerlh};
+    }
+    @media screen and (max-width: 768px) {
+        .header_comp.${pdict.theid} {
+            font-size: ${pdict.headersizemobile};
+            line-height: ${pdict.headerlm};
+        }
+        .description_comp.${pdict.theid} {
+            font-size: ${pdict.descriptionsizemobile};
+            line-height: ${pdict.desclhm};
+        }
+        .wrapperforbig.${pdict.theid}.sidebyside {
+            grid-template-columns: 1fr;
+            width: calc(100% - 40px);
+            margin-left: 20px;
+        }
+        .header_comp.sidebyside {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .description_comp.sidebyside {
+            max-width: 100%;
+            justify-self: flex-start;
+            margin-bottom: 20px;
+        }
+    }
+</style>

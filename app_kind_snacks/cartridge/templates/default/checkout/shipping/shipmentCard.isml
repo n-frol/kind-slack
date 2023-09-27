@@ -1,0 +1,64 @@
+<div class="card-body shipping-content st-checkout-shipping__content st-checkout-main__content">
+    <form class="shipping-form" autocomplete="on" novalidate
+          action="${shipmentLoopState
+          ? URLUtils.url('CheckoutAddressServices-AddNewAddress')
+          : URLUtils.url('CheckoutShippingServices-SubmitShipping')}"
+          data-address-mode="${shippingModel.matchingAddressId ? 'edit' : 'new'}"
+          <isprint value=${pdict.forms.shippingForm.attributes} encoding="off"/>
+    >
+        <isif condition="${lineItem}">
+            <input name="productLineItemUUID" type="hidden" value="${lineItem.UUID}" />
+        </isif>
+
+        <input name="originalShipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+        <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+
+        <div class="shipping-address ${pdict.order.usingMultiShipping ? 'd-none' : ''}">
+            <fieldset class="shipment-selector-block ${(pdict.order.usingMultiShipping || shipmentLoopState) || (pdict.customer.addresses && pdict.customer.addresses.length > 0) ? '' : 'd-none'} ">
+                <isinclude template="checkout/shipping/shipmentSelector" />
+            </fieldset>
+
+            <fieldset class="shipping-address-block">
+                <legend class="st-checkout-main__sub-title subtitle c-checkout-multi-shipping__hidden">
+                    ${Resource.msg('heading.shipping.address', 'checkout', null)}:
+                </legend>
+                <isinclude template="checkout/shipping/shippingAddress" />
+
+                <iscomment>Not included in shippingAddress so that it won't be hidden with it</iscomment>
+                <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')==true}">
+                    <div class="row  c-form-elements__row st-checkout-main__sms-widget">
+                        <div class="col-sm-12 c-form-elements__col">
+                            <og-reorder-optin></og-reorder-optin>
+                        </div>
+                    </div>
+                </isif>
+            </fieldset>
+
+            <fieldset class="shipping-method-block c-checkout-shipping-methods">
+                <legend class="st-checkout-main__sub-title subtitle">
+                    ${Resource.msg('heading.shipping.method', 'checkout', null)}:
+                </legend>
+
+                <isinclude template="checkout/shipping/shippingMethod" />
+            </fieldset>
+            <isif condition="${siteID !== 'CreativeSnacks'}">
+                <fieldset class="gift-message-block c-checkout-shipping-gift collapsible">
+                    <legend class="st-checkout-main__sub-title subtitle title" style="font-size:18px;">
+                        ${Resource.msg('heading.gift.options', 'checkout', null)}
+                    </legend>
+                    <div class="content">
+                    <isinclude template="checkout/shipping/isGift" />
+                    </div>
+                </fieldset>
+            </isif>
+        </div>
+
+        <div class="view-address-block ${shippingModel.shippingAddress ? '' : 'd-none' }">
+            <isinclude template="checkout/shipping/shippingCard" />
+        </div>
+
+        <isinclude template="checkout/shipping/multiShippingButtons" />
+
+        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+    </form>
+</div>

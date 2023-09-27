@@ -1,0 +1,39 @@
+<iscomment>Non-cached tracking; for user data</iscomment>
+<isscript>
+    var trackingHelpers = require('int_googletagmanager/cartridge/scripts/helpers/trackingHelpers');
+    var isEmployee = trackingHelpers.isEmployee();
+    var isSnackClub = trackingHelpers.isSnackClub();
+</isscript>
+<script>
+	window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+    <isif condition="${session.getCustomer().getProfile()}">
+        'visitorId': '${session.getCustomer().getProfile().getCustomerNo()}',
+        <iselse>
+'visitorId': '${pdict.CurrentCustomer.ID}',
+        </isif>
+		<isif condition="${pdict.CurrentCustomer.registered}">
+            'email': '${pdict.CurrentCustomer.profile.email.toLowerCase()}',
+		</isif>
+		'registered': '${pdict.CurrentCustomer.registered ? 'true' : 'false'}',
+		<isif condition="${isSnackClub}">
+			'visitorType': 'Snack Club'
+        <iselseif condition="${pdict.CurrentCustomer.registered}">
+            <isif condition="${isEmployee}">
+                'visitorType': 'Employee'
+            <iselse>
+                'visitorType': 'Registered'
+            </isif>
+        <iselse>
+            'visitorType': 'Guest'
+        </isif>
+	});
+</script>
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${pdict.GoogleTagManagerContainerID}');</script>
+
+

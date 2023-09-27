@@ -1,0 +1,8 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isinclude template="components/tipGeneratorScripts" />
+
+<div class="c-compliment-generator">
+    <span class="c-compliment-generator__message js-compliment-msg"></span>
+    <button class="c-compliment-generator__generate btn btn-primary btn-block js-generate-compliment">${Resource.msg('button.error.click', 'error', null)}</button>
+</div>

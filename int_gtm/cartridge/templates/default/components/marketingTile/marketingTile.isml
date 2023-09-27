@@ -1,0 +1,42 @@
+<isscript>
+    var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/marketingTile/marketingTile_UI" />
+    <div class="c-marketing-tile ${assetID} th-kind-marketing-tile s-graphical-asset">
+        <div class="c-marketing-tile__wrapper text-${graphicalAsset.textAlign.value} c-marketing-tile__wrapper_${graphicalAsset.wrapper.value} js-gtm-promotion">
+            <div class="c-marketing-tile__text-wrapper">
+                <isif condition="${!empty(graphicalAsset.heading)}">
+                    <div class="c-marketing-tile__heading">
+                        <isprint value="${graphicalAsset.heading}" encoding="off" />
+                    </div>
+                </isif>
+                <isif condition="${!empty(graphicalAsset.eyebrow)}">
+                    <div class="c-marketing-tile__eyebrow">
+                        <isprint value="${graphicalAsset.eyebrow}" encoding="off" />
+                    </div>
+                </isif>
+            </div>
+            <isif condition="${!empty(graphicalAsset.image)}">
+                <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 611, 1222)}" scope="page" />
+                <div class="c-marketing-tile__image-wrapper">
+                    <img class="c-marketing-tile__image" src="${responsiveImage.imageUrlDefault}"
+                        srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                        alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                </div>
+            </isif>
+            <isif condition="${!empty(graphicalAsset.body)}">
+                <div class="c-marketing-tile__body">
+                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                </div>
+            </isif>
+            <isif condition="${!empty(graphicalAsset.links)}">
+                <div class="c-marketing-tile__links s-graphical-asset__links">
+                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                </div>
+            </isif>
+        </div>
+    </div>
+</isif>

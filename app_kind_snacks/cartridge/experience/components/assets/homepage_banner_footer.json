@@ -1,0 +1,209 @@
+{
+  "name": "Homepage Banner Footer",
+  "description": "Homepage Banner Footer",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "shared",
+      "name": "Shared Content",
+      "description": "Shared Attributes",
+      "attribute_definitions": [
+        {
+          "id": "extra_class",
+          "name": "Extra Wrapper Class",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "banner_height",
+          "name": "Banner Height",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "eyebrow",
+          "name": "Eyebrow",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copyfont",
+          "name": "Copy Font",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copyweight",
+          "name": "Copy Font Weight",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "text_color",
+          "name": "Text Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "button",
+          "name": "Button",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "buttonlink",
+          "name": "Button Link",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "button_color",
+          "name": "Button Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "button_text_color",
+          "name": "Button Text Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "button2",
+          "name": "Button 2",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "button2link",
+          "name": "Button 2 Link",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "button_color2",
+          "name": "Button Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "button_text_color2",
+          "name": "Button Text Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "text_container_align",
+          "name": "Text Container Align",
+          "type": "enum",
+          "values": ["Left","Center","Right"],
+          "default_value": "Left",
+          "required": false
+        },
+        {
+          "id": "text_align",
+          "name": "Text Align",
+          "type": "enum",
+          "values": ["Left","Center","Right"],
+          "default_value": "Left",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "smallimages",
+      "name": "Half Image Content",
+      "description": "Half Image Attributes",
+      "attribute_definitions": [
+        {
+          "id": "small_image",
+          "name": "Small Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_mobile",
+          "name": "Small Image Mobile",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "small_image_align",
+          "name": "Small Image Align",
+          "type": "enum",
+          "values": ["Left","Right"],
+          "default_value": "Left",
+          "required": false
+        },
+        {
+          "id": "background_color",
+          "name": "Background Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        }
+      ]
+    },
+    {
+    "id": "largeimage",
+    "name": "Full Width Image Content",
+    "description": "Full Width Image Attributes",
+    "attribute_definitions": [
+      {
+        "id": "resize",
+        "name": "Resize Full Sized Image",
+        "type": "boolean",
+        "required": false
+      },  
+      {
+          "id": "full_image_use",
+          "name": "Use Full Sized Image",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "full_image",
+          "name": "Full Sized Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "full_image_mobile",
+          "name": "Full Sized Image Mobile",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

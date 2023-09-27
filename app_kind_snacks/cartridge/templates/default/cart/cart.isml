@@ -1,0 +1,27 @@
+<isset name="swapname" value="${pdict.swapname}" scope="page" />
+<isset name="defaultbar" value="${pdict.defaultbar}" scope="page" />
+<isset name="byobsub" value="${pdict.isByobSub}" scope="page" />
+<isdecorate template="common/layout/page">
+    <isinclude template="/components/modules" sf-toolkit="off" />
+    <isscript>
+        var GTM = require('int_googletagmanager/cartridge/scripts/helpers/GTM');
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/cart.css');
+        assets.addJs('/js/search.js'); // Required for loading quickview, as well as OG inside of the quickview
+        var bonuses = [];
+    </isscript>
+
+    <isif condition="${!empty(GTM.CartDataLayerHelper(pdict.items))}">
+        <script>
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push(<isprint value="${JSON.stringify(GTM.CartDataLayerHelper(pdict.items))}" encoding="off"/>);
+            }
+        </script>
+    </isif>
+
+    <isif condition="${pdict.siteID == "CreativeSnacks"}">
+        <isinclude template="cart/content/cartPageCS" />
+    <iselse/>
+        <isinclude template="cart/content/cartPage" />
+    </isif>
+</isdecorate>

@@ -1,0 +1,211 @@
+<isscript>
+   var assets = require('*/cartridge/scripts/assets');
+   assets.addJs('/js/gifting.js');
+    var showQuickView = typeof showQuickView === 'undefined' ? false : showQuickView; // Make sure showQuickview is initialized, since not all templates will be using it
+</isscript>
+<div class="large_container" id="${pdict.anchor}">
+        <div class="banner_mobile banner">
+        <isprint value="${pdict.bannertext}" encoding="off" />
+    </div>
+    <div class="left">
+    <picture>
+    <isif condition="${pdict.image_tab}">
+    <source media="(max-width: 768px)" srcset="${pdict.image_tab.src.desktop}" />
+    </isif>
+        <isif condition="${pdict.image_mobile}">
+    <source media="(max-width: 425px)" srcset="${pdict.image_mobile.src.desktop}" />
+    </isif>
+<img src="${pdict.image.src.desktop}" alt="q" />
+    </picture>
+    </div>
+    <div class="right">
+        <div class="rightcontainer">
+                <div class="banner_desktop banner">
+                <isprint value="${pdict.bannertext}" encoding="off" />
+                </div>
+            <div class="flexbreak"></div>
+            <h3 class="gtitle">
+            <isprint value="${pdict.headertext}" encoding="off" />
+            </h3>
+            <div class="flexbreak"></div>
+            <div class="copy">
+            <isprint value="${pdict.copytext}" encoding="off" /></div>
+            <div class="flexbreak"></div>
+            <isset name="product" value="${pdict.pid}" scope="page" />
+            <button class="desktoponly c-product-tile__image-container__quickview quickview btn btn-light" 
+            data-link="/on/demandware.store/Sites-KINDSnacks-Site/en_US/Product-ShowQuickView?pid=${product.ID}" data-is-blocked-access="false" data-impulse-upsell="true" title="Quick Shop" type="button">
+            Quick Shop
+        </button>
+        <button onclick="window.location='${dw.web.URLUtils.abs('Product-Show','pid', product.ID)}'" class="btn-light mobileonly">Shop Now</button>
+        <div class="flexbreak"></div>
+            <a class="desktoponly" href="${dw.web.URLUtils.abs('Product-Show','pid', product.ID)}">View Details</a>
+        </div>
+    </div>
+</div>
+<style>
+.desktoponly {
+    display: block;
+    margin: auto;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    width: 102px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid white;
+    text-decoration: none;
+        }
+        .desktoponly:hover {
+            text-decoration: none;
+        }
+        .mobileonly {
+            display:none;
+        }
+            @media only screen and (max-width: 768px) and (min-width: 425px) {
+                .experience-component h3 {
+                    line-height:28px;
+                    font-size:24px;
+                }
+.desktoponly {
+            display:none;
+        }
+        .mobileonly {
+            display:block;
+            margin:auto;
+        }
+    }
+    @media only screen and (max-width: 425px) {
+        .desktoponly {
+            display:none;
+        }
+        .mobileonly {
+            display:block;
+            margin:auto;
+        }
+        .experience-assets-largething {
+            padding:20px;
+        }
+        .banner_desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0px;
+            display:none;
+        }
+        .banner_mobile {
+            display:block !important;
+        }
+        .large_container {
+            display:inline-block !important; 
+            margin-bottom:10px !important;
+        }
+
+        .large_container .left {
+            width: 100% !important;
+        }
+
+        .large_container .right {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .large_container .banner, .medium_container_solo .banner {
+    z-index: 999;
+    position: absolute;
+    top: -10px;
+    left: 0px;
+    right: 0px;
+    background: black;
+    padding: 5px;
+    margin-bottom: 0px !important;
+    color: white;
+    text-align: center;
+    width: 200px;
+    margin: auto;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+        }
+    }
+
+    .large_container .copy {
+        margin-bottom: 20px;
+        font-family: georgia;
+    }
+
+    .large_container h3 {
+        margin-bottom: 20px;
+    }
+
+    .large_container button {
+        margin-bottom: 10px;
+    }
+
+    .btn-light {
+        width: 200px;
+    }
+
+    .btn-light-white {
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .flexbreak {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+.banner_mobile {
+    display:none;
+}
+.banner_desktop {
+    display:block;
+}
+
+    .large_container {
+        max-width: 1310px;
+        margin: auto;
+        margin-bottom: 75px;
+        position:relative;
+        display:flex;
+    }
+
+    .large_container .left {
+        width: 50%;
+        display: inline-block;
+        float: left;
+    }
+    .large_container .left img {
+        width:100%;
+    }
+
+    .large_container .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 49%;
+        background: black;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .large_container .right .banner {
+            font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+        margin-bottom: 40px;
+    }
+
+    .large_container a {
+        font-family: HelveticaNeue-Bold;
+        color: white;
+        text-transform: uppercase;
+    }
+</style>

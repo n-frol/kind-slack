@@ -1,0 +1,198 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+
+$checkout-font-weight: 600;
+
+$receipt-font-size: 0.875rem;
+$receipt-spacing: 0.625em;
+$stored-payment-spacing: 1rem;
+
+.sup {
+    vertical-align: baseline;
+    position: relative;
+    top: -.7em;
+    font-size: .5em;
+    line-height: .8em;
+}
+
+.checkout-card-header {
+    font-weight: $checkout-font-weight;
+}
+
+.grand-total-price {
+    float: right;
+    font-weight: $checkout-font-weight;
+}
+
+.grand-total-label {
+    font-weight: $checkout-font-weight;
+}
+
+.grand-total {
+    font-size: 16px !important;
+    font-weight: 600;
+}
+
+.order-receipt-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.product-divider {
+    margin-left: -$receipt-spacing;
+    margin-right: -$receipt-spacing;
+
+    hr {
+        border-top: dashed 0.063em;
+    }
+}
+
+.product-line-item + .product-line-item::before,
+.multi-shipping + .product-line-item::before {
+    content: "";
+    display: block;
+}
+
+.shipping-method {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hero-confirmation {
+    background-image: url('../../images/thankyou.jpg');
+    background-position-y: -8.125em;
+}
+
+.leading-lines {
+    overflow: hidden;
+    margin: 0;
+
+    label {
+        background-color: white;
+    }
+
+    .start-lines {
+        padding: 1px;
+
+        span {
+            position: relative;
+            background-color: white;
+            z-index: 2;
+        }
+
+        &::before {
+            float: left;
+            width: 0;
+            white-space: nowrap;
+            content: ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            z-index: 1;
+            color: #adadad;
+        }
+    }
+
+    .end-lines {
+        padding: 1px;
+
+        span {
+            position: relative;
+            background-color: white;
+            z-index: 2;
+        }
+    }
+}
+
+.cards {
+    width:70px;
+    height:42px;
+  }
+  .cardtype {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 30px;
+    display: none;
+  }    
+
+.summary-section-label {
+    font-weight: $checkout-font-weight;
+    font-style: italic;
+
+    @include media-breakpoint-up(lg) {
+        font-weight: 500;
+    }
+}
+
+.saved-security-code {
+    margin-top: $stored-payment-spacing;
+}
+
+.saved-credit-card-type {
+    font-weight: 600;
+}
+
+.saved-payment-information {
+    margin-top: $stored-payment-spacing;
+    margin-bottom: $stored-payment-spacing;
+}
+
+.payment-information {
+    margin-bottom: $stored-payment-spacing;
+}
+
+.checkout-hidden {
+    display: none;
+}
+
+.card-image {
+    margin-top: 0.5rem;
+}
+
+.cancel-new-payment {
+    margin-top: $stored-payment-spacing;
+}
+
+.form-check.start-lines {
+    padding-left: 1.5rem;
+}
+
+.gift-message-block {
+    padding-bottom: 1em;
+}
+
+.confirm-details .shipping-method,
+.confirm-details .shipping-method-price {
+    margin-bottom: 0;
+}
+
+
+
+.snackclub-summary {
+    font-style: italic;
+    font-size:.8em; 
+    line-height: 1.3em; 
+    padding-top:10px;
+}
+
+.multi-shipping {
+    display: none;
+}
+.multi-ship {
+    .multi-shipping {
+        display: block;
+    }
+   .confirm-details .single-shipping {
+        display: none;
+    }
+    .single-shipping .shipping-content {
+        display: none;
+    }
+    .shipping-summary .single-shipping {
+        display: none;
+    }
+    .btn-save-multi-ship.save-shipment {
+        display: none;
+    }
+}

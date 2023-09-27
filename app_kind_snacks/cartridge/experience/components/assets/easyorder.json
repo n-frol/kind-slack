@@ -1,0 +1,46 @@
+{
+    "name": "Easy Order",
+    "description": "Easy order datatable.",
+    "group": "EasyOrder",
+    "attribute_definition_groups": [
+      {
+        "id": "rootcat",
+        "name": "Category",
+        "description": "Subcategorties will be in carousel",
+        "attribute_definitions": [
+          {
+            "id": "rootcategory",
+            "name": "Root Category",
+            "type": "category",
+            "required": true
+          },
+          {
+            "id": "productcategory",
+            "name": "Product Category",
+            "type": "category",
+            "required": true
+          },
+          {
+            "id": "header",
+            "name": "Header",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "copy",
+            "name": "Copy",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "copyrejected",
+            "name": "No Access Copy",
+            "type": "text",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }
+  

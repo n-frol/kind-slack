@@ -1,0 +1,6 @@
+<isif condition="${pdict.display.compare}">
+    <div class="c-product-tile__tile-body__footer__compare__custom-control text-right">
+        <input type="checkbox" id="${product.id}" class="c-product-tile__tile-body__footer__compare__custom-control__checkbox" value="true" />
+        <label class="c-product-tile__tile-body__footer__compare__custom-control__label" for="${product.id}">${Resource.msg('checkbox.tile.compare', 'product', null)}</label>
+     </div>
+</isif>

@@ -1,0 +1,7 @@
+<isif condition="${!empty(parentHeading)}">
+    <div class="row c-image-gallery__parent-header th-kind-image-gallery__parent-header">
+        <div class="col-12 text-center">
+            <h1 class="c-image-gallery__parent-header__heading">${parentHeading}</h1>
+        </div>
+    </div>
+</isif>

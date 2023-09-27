@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="subscriptionIntervals">
+                <display-name xml:lang="x-default">OG Subscription Intervals</display-name>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="BYOB">
+                <display-name xml:lang="x-default">BYOB Configurations</display-name>
+                <attribute attribute-id="byobMasterProductID"/>
+                <attribute attribute-id="byobRootCategoryID"/>
+                <attribute attribute-id="byob20"/>
+                <attribute attribute-id="byob40"/>
+                <attribute attribute-id="subscriptionIntervals"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

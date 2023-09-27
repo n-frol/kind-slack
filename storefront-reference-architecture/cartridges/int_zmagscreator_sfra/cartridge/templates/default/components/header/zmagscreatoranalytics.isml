@@ -1,0 +1,41 @@
+<!--- TEMPLATENAME: zmagscreatoranalytics.isml --->
+<iscomment>
+    Include and initialize analytics functionality:
+    - expose settings from site preferences to client-side JS
+    - include Google and Adobe analytics libraries (if not already included)
+    - create a named analytics library instance for Google and Adobe (if enabled in site preferences)
+</iscomment>
+
+<!-- BEGIN Zmags Analytics: Creator -->
+<isscript>
+    var Logger = require('dw/system/Logger');
+
+    var zmagsCreator = require('~/cartridge/scripts/ZmagsCreator');
+    var settings = zmagsCreator.getSettings();
+    var analyticsData = zmagsCreator.getAnalyticsData(settings, pdict.order ? pdict.order.orderNumber : null);
+    var assets = require('*/cartridge/scripts/assets.js');
+
+    // adobe
+    if (settings.adobeAnalyticsEnabled) {
+        assets.addJs('js/lib/adobe/AppMeasurement.js');
+        assets.addJs('/js/zmags-creator-aa.js');
+    }
+    // google
+    if (settings.googleAnalyticsEnabled) {
+        assets.addJs('/js/zmags-creator-ga.js');
+    }
+    // zmags
+    if (settings.adobeAnalyticsEnabled || settings.googleAnalyticsEnabled) {
+        assets.addJs('/js/zmags-creator-analytics.js');
+    }
+</isscript>
+
+<script>
+    window.__zmags = window.__zmags || {};
+    window.__zmags.demandware = window.__zmags.demandware || {};
+    window.__zmags.demandware.analytics = window.__zmags.demandware.analytics || {};
+    window.__zmags.demandware.analytics.creator = window.__zmags.demandware.analytics.creator || {}
+    window.__zmags.demandware.analytics.creator.settings = window.__zmags.demandware.analytics.creator.settings || JSON.parse("<isprint value="${JSON.stringify(settings)}" encoding="jssource"/>");
+    window.__zmags.demandware.analytics.creator.data = window.__zmags.demandware.analytics.creator.data || JSON.parse("<isprint value="${JSON.stringify(analyticsData)}" encoding="jssource"/>");
+</script>
+<!-- END Zmags Analytics: Creator -->

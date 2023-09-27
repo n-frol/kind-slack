@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="test-banner-for-your-body">
+        <display-name xml:lang="x-default">do the kind thing for your body, your taste buds &amp; your world&lt;sup&gt;&amp;reg;&lt;/sup&gt;</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe if you can't pronounce an ingredient, it shouldn’t go into your body. Actually, it shouldn’t even go into your pantry. KIND&lt;sup&gt;&amp;reg;&lt;/sup&gt; products are made from nutritionally-dense ingredients like whole nuts, fruits and whole grains - no secret ingredients and no artificial flavors, preservatives or sweeteners. Nothing to hide&lt;sup&gt;&amp;reg;&lt;/sup&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">for your body</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/test/about-us_ingredients_grains_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a class="c-featured-container__content__link" href="ingredients-a-z"&gt;&#13;
+        &lt;span class="c-featured-container__content__link__title arrow-link"&gt;ingredients A-Z&lt;/span&gt;&#13;
+        &lt;span class="c-featured-container__content__link__description"&gt;learn more about what's in our snacks&lt;/span&gt;&#13;
+&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="slotHeading" xml:lang="x-default">do the kind thing for your body, your taste buds &amp; your world&lt;sup&gt;&amp;reg;&lt;/sup&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

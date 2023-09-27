@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="OrderAddress">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="addressClass">
+                <display-name xml:lang="x-default">Address Class</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="JDE">
+                <display-name xml:lang="x-default">JDE</display-name>
+                <description xml:lang="x-default">JDE Attributes For Order</description>
+                <attribute attribute-id="addressClass"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="Shipment">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="giftSender">
+                <display-name xml:lang="x-default">Gift Sender</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="giftRecipient">
+                <display-name xml:lang="x-default">Gift Recipient</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="JDE">
+                <display-name xml:lang="x-default">JDE</display-name>
+                <description xml:lang="x-default">JDE Attributes For Order</description>
+                <attribute attribute-id="giftSender"/>
+                <attribute attribute-id="giftRecipient"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="weight">
+                <display-name xml:lang="x-default">Weight</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="productDetails">
+                <display-name xml:lang="x-default">Product Details</display-name>
+                <attribute attribute-id="size"/>
+                <attribute attribute-id="backgroundColor"/>
+                <attribute attribute-id="imageNavigationColor"/>
+                <attribute attribute-id="totalItemQuantity"/>
+                <attribute attribute-id="productType"/>
+                <attribute attribute-id="badge"/>
+                <attribute attribute-id="benefits"/>
+                <attribute attribute-id="texture"/>
+                <attribute attribute-id="goodFor"/>
+                <attribute attribute-id="nutritionFactsImage"/>
+                <attribute attribute-id="nutritionNotes"/>
+                <attribute attribute-id="featuredHeading"/>
+                <attribute attribute-id="notInProductLabel"/>
+                <attribute attribute-id="notInProductBody"/>
+                <attribute attribute-id="featuredAssets"/>
+                <attribute attribute-id="containerType"/>
+                <attribute attribute-id="weight"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="ProductLineItem">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="weight">
+                <display-name xml:lang="x-default">Weight</display-name>
+                <description xml:lang="x-default">Weight of Product Line Item</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+                <attribute-definition attribute-id="subscriptionType">
+                <display-name xml:lang="x-default">Subscription Type</display-name>
+                <description xml:lang="x-default">Type of subscription that the product is ordered under.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+</metadata>

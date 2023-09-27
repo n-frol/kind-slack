@@ -1,0 +1,101 @@
+<div class="headerback">
+    <img class="backgroundimg" src="${pdict.background.src.desktop}" alt="background" />
+    <img class="backgroundimgp" src="${pdict.backgroundipad.src.desktop}" alt="background" />
+    <img class="backgroundimgm" src="${pdict.backgroundm.src.desktop}" alt="background" />
+    <div class="textcontainer">
+        <isprint value="${pdict.text}" encoding="off" />
+    </div>
+</div>
+
+<style>
+    .headerback {
+        position: relative;
+    }
+
+    @media screen and (min-width:1025px) {
+        .headerback .textcontainer {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 450px;
+            left: ${pdict.ol};
+            right: ${pdict.or};
+        }
+        .headerback .backgroundimg {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display: block;
+    }
+    .headerback .backgroundimgp {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display: none;
+    }
+    .headerback .backgroundimgm {
+        object-fit: cover;
+        max-width: 102%;
+        width: 102%;
+        display:none;
+    }
+
+    }
+
+    @media screen and (max-width:1024px) and (min-width:440px) {
+    .headerback .backgroundimg {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:none;
+    }
+    .headerback .backgroundimgp {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:block;
+    }
+    .headerback .backgroundimgm {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:none;
+    }
+     .headerback .textcontainer {
+            position: absolute;
+            top: ${pdict.oup};
+            bottom: ${pdict.obp};
+            left: ${pdict.olp};
+            right: ${pdict.orp};
+        }
+    }
+
+    @media screen and (max-width:440px) {
+    .headerback .backgroundimg {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:none;
+    }
+    .headerback .backgroundimgp {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:none;
+    }
+    .headerback .backgroundimgm {
+        object-fit: cover;
+        max-width: 101%;
+        width: 101%;
+        display:block;
+    }
+    .headerback .textcontainer {
+            position: absolute;
+           top: 10px;
+            left: ${pdict.olm};
+            right: ${pdict.orm};
+            top: ${pdict.oum};
+            bottom: ${pdict.obm};
+        }
+    }
+</style>

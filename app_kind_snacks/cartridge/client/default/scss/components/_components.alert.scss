@@ -1,0 +1,55 @@
+/* ============================================================================
+Alerts
+============================================================================ */
+
+/**
+ * Establish styles for alert pop-ups
+ */
+
+$ns: "c-alert";
+
+.#{$ns} {
+    background-color: $primary;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.52);
+    color: $white;
+    font-family: $font-family-primary;
+
+    &__alerts-container {
+        @include toast-message();
+
+        max-width: 100%;
+        width: auto;
+        z-index: 99999;
+
+        @include media-breakpoint-up(md) {
+            max-width: 600px;
+        }
+    }
+    &--danger {
+        background-color: $danger;
+    }
+    &--success {
+        background-color: $success;
+        color: white;
+    }
+}
+
+// For alerts we can't practically add classes to {
+.alert {
+    background-color: $primary;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(153, 153, 153, 0.52);
+    color: $white;
+    font-family: $font-family-primary;
+
+    &-danger {
+        background-color: $danger;
+    }
+    &-success {
+        background-color: $success;
+        color: white;
+    }
+}

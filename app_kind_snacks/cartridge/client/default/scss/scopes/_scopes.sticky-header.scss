@@ -1,0 +1,19 @@
+/* ============================================================================
+Sticky Header
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements affected by the sticky header js
+ */
+
+$ns: s-sticky-header;
+
+.#{$ns} {
+    .has-sticky-header & {
+        position: fixed;
+            left: 0;
+            top: 0;
+        width: 100%;
+        z-index: $z-index-header;
+    }
+}

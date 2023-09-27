@@ -1,0 +1,104 @@
+<div class="bodies_grid_3">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/image 81.png')}" alt="">
+        <div class="para">
+            The FDA announces new definition of what’s “healthy”
+        </div>
+    </div>
+
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/image 82.png')}" alt="">
+        <div class="para">
+            The problem with the FDA’s New Definition of “Healthy”
+        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid6/fooddrive.png')}" alt="">
+        <div class="para">
+            “Healthy” gets a new definition from FDA
+        </div>
+    </div>
+    </div>
+    <div class="bodies_kinder">
+            <div class="header">
+                kinder to our communities
+            </div>
+            <div class="toright" style="">
+            <img src="${URLUtils.staticURL('/images/impact/image 80.png')}" alt="Impact" class="bodies_section_2" />
+            <a href="javascript:void(0)" class="primary dark welcomelink" data-s="community_section">go to communities</a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bodies_kinder {
+        width: 100%;
+        background: #D9D9D9;
+        position: relative;
+        height: 360px;
+    }
+    .bodies_kinder .header {
+
+        position: absolute;
+        left: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: unset;
+        font-size: 52px;
+        line-height: 47px;
+        color: black;
+        font-family: main;
+        max-width: 400px;
+    }
+    .toright {
+        position: absolute;
+        right: 60px;
+    }
+    .bodies_kinder img {
+        position: relative;
+        left: 60px;
+        top: -100px;
+    }
+    @media screen and (max-width: 440px) {
+        .bodies_kinder img {
+            left: 90px;
+            top: -100px;
+            width: 245px;
+        }
+        .bodies_kinder .header {
+            left: 0px !important;
+            text-align: center;
+        }
+        .toright {
+            right: 0px !important;
+        }
+    }
+    .bodies_kinder a {
+        position: relative;
+        top: -50px;
+    }
+    .bodies_grid_3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: 240px;
+        padding-right: 240px;
+        text-align: center;
+        margin-bottom: 50px;
+        grid-gap: 20px;
+    }
+    @media screen and (max-width: 440px) {
+        .bodies_grid_3 {
+            grid-template-columns: 1fr !important;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .bodies_grid_3 .griditem .para {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+        }
+    }
+    .bodies_grid_3 .griditem .para {
+        border-top: 1px solid;
+        padding-top: 30px;
+    }
+</style>

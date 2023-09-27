@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <folder folder-id="flavors">
+        <display-name xml:lang="x-default">Flavors</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="ogDescription">KIND Snacks - Flavors Folder custom open graph description</custom-attribute>
+            <custom-attribute attribute-id="ogImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="ogTitle">KIND Snacks - Flavors Folder open graph title</custom-attribute>
+            <custom-attribute attribute-id="ogURL">https://www.kindsnacks.com/</custom-attribute>
+        </custom-attributes>
+    </folder>
+
+    <content content-id="chocolate">
+        <display-name xml:lang="x-default">Chocolate</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="ogDescription">KIND Snacks - Chocolate asset open graph description</custom-attribute>
+            <custom-attribute attribute-id="ogImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="ogImageAlt">KIND Snacks - Chocolate lovers only!</custom-attribute>
+            <custom-attribute attribute-id="ogTitle">KIND Snacks - Who doesn't love chocolate?</custom-attribute>
+            <custom-attribute attribute-id="ogURL">https://www.kindsnacks.com/</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="flavors"/>
+        </folder-links>
+    </content>
+</library>

@@ -1,0 +1,97 @@
+/* ============================================================================
+Confirmation
+============================================================================ */
+
+/**
+ * Establish styles for checkout page's confirmation details info block
+ */
+
+ $ns: st-checkout-confirmation;
+
+.#{$ns} {
+    &__header {
+        display: flex;
+            justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 12px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+
+    &__heading {
+        color: $darker-gray;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: -0.3px;
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(md) {
+            letter-spacing: -0.8px;
+            
+        }
+
+        &--thank-you {
+            font-size: 16px;
+            @include media-breakpoint-up(md) {
+                font-size: 24px;
+            }
+        }
+    }
+
+    &__body {
+        &__main-info {
+            text-transform: lowercase;
+        }
+        
+    }
+
+    &__info {
+        background-color: $light-gray;
+        margin: 20px -15px;
+        padding-bottom: 30px;
+        padding-top: 10px;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin: 20px 0;
+            padding-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        &__order-number,
+        &__item {
+            margin-top: 20px;
+        }
+
+        &__order-number {
+            color: $darker-gray;
+            font-family: $font-family-primary;
+            letter-spacing: -0.3px;
+            text-transform: lowercase;
+        }
+    }
+
+    &__create-account,
+    &__receipt {
+        margin-bottom: 16px;
+    }
+
+    &__registration {
+        margin-bottom: 4px;
+    }
+
+    &__receipt {
+        color: $darker-gray;
+        font-family: $font-family-primary;
+    }
+
+	// Override ordergroove styling for spacing between CLB confirmation and order receipt containers
+	.og-widget {
+		.conf-cont {
+			margin-bottom: 30px !important;
+		}
+	}
+
+}

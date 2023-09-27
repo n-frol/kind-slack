@@ -1,0 +1,77 @@
+.container {
+    // letter-spacing: normal;
+}
+.experience-assets-hungrykind {
+    width: 290px;
+    height: 290px;
+    float:left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    @media screen and (max-width: 425px) {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.region:nth-child(1) .experience-assets-hungrykind {
+    @media screen and (max-width:425px) {
+        margin-right: 10px;
+        width:95%;
+    }
+    @media screen and (min-width:767px) and (max-width: 1023px) {
+        position:relative;
+        left: 75px;
+    }
+}
+
+.region:nth-child(2) .experience-assets-hungrykind .hungrykind_container {
+    @media screen and (max-width:425px) {
+        padding-right: 20px;
+        padding-left: 10px;
+    }
+    @media screen and (min-width:767px) and (max-width: 1024px) {
+        position:relative;
+        left: 30px;
+    }
+}
+
+@media screen and (min-width:1023px) and (max-width: 1100px) {
+    .experience-assets-hungrykind {
+        width: 45%;
+    }
+}
+
+.hungrykind_container {
+    width:100%;
+    font-family: $helvetica;
+    color: white;
+    text-align: center;
+    padding: 0px 15px;
+    & h1, h2, h3, h4, h5, h6 {
+        font-family: $helvetica;
+    }
+    & h5 {
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    & img {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        height: 95px;
+        @media screen and (max-width: 425px) {
+            height: 65px;
+        }
+    }
+    & .line {
+        width: 80%;
+        margin: auto;
+        border-bottom: 5px solid black;
+        margin-bottom: 10px;
+    }
+    & .copy {
+        font-size: 14px;
+        line-height: 20px;
+        font-family: $georgia;
+    }
+}

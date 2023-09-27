@@ -1,0 +1,217 @@
+<iscontent type="text/html" charset="UTF-8" />
+
+<isdecorate template="application/MenuFrame">
+
+<isscript>
+   var ContentMgr = require('dw/content/ContentMgr');
+
+    pdict.pages = {
+     'changeup-donation-confirmation-merchant': ContentMgr.getContent("changeup-donation-confirmation-merchant"),
+     'changeup-donation-confirmation-customer': ContentMgr.getContent("changeup-donation-confirmation-customer"),
+     'changeup-donation-confirmation-match': ContentMgr.getContent("changeup-donation-confirmation-match"),
+     'changeup-donation-submessage-merchant': ContentMgr.getContent("changeup-donation-submessage-merchant"),
+     'changeup-donation-submessage-customer': ContentMgr.getContent("changeup-donation-submessage-customer"),
+     'changeup-donation-submessage-match': ContentMgr.getContent("changeup-donation-submessage-match"),
+     'changeup-charity-selector-header': ContentMgr.getContent("changeup-charity-selector-header"),
+     'changeup-charity-selector-merchant-statement': ContentMgr.getContent("changeup-charity-selector-merchant-statement"),
+     'changeup-charity-supersize-header': ContentMgr.getContent("changeup-charity-supersize-header")
+   }
+</isscript>
+  <script defer src="${URLUtils.httpsStatic('js_v2/libs.js')}"></script>
+  <script defer src="${URLUtils.httpsStatic('js_v2/app.js')}"></script>
+  <script defer src="${URLUtils.httpsStatic('js_v2/tags.js')}" type="riot/tag"></script>
+ 
+
+  <link rel="stylesheet" href="${URLUtils.httpsStatic('css_v2/changeUp.css')}" />
+
+  <input type="hidden" id="cfg_save_url" value="${URLUtils.https('ChangeUp-SaveConfig')}" />
+  <input type="hidden" id="cfg_search_url" value="${URLUtils.https('ChangeUp-CharitySearch')}" />
+  <input type="hidden" id="cfg_verified_charity_flag" value="${pdict.config && pdict.config['verified_charity_flag'] || ''}" />
+  <input type="hidden" id="cfg_category_exclusions" value="${pdict.config && JSON.stringify(pdict.config['category_exclusions']) || ''}" />
+  <input type="hidden" id="cfg_customer_search_toggle" value="${pdict.config && pdict.config['customer_search_toggle'] || ''}" />
+  <input type="hidden" id="cfg_default_charity" value="${pdict.config && JSON.stringify(pdict.config['default_charity']) || ''}" />
+  <input type="hidden" id="cfg_featured_charities" value="${pdict.config && JSON.stringify(pdict.config['featured_charities']) || ''}" />
+  <input type="hidden" id="cfg_donation_type_actor" value="${pdict.config && pdict.config['donation_type_actor'] || ''}" />
+  <input type="hidden" id="cfg_donation_type_option" value="${pdict.config && pdict.config['donation_type_option'] || ''}" />
+  <input type="hidden" id="cfg_donation_type_amount" value="${pdict.config && pdict.config['donation_type_amount'] || ''}" />
+  <input type="hidden" id="cfg_donation_display_type" value="${pdict.config && pdict.config['donation_display_type'] || ''}" />
+  <input type="hidden" id="cfg_total_donations_toggle" value="${(pdict.config && (pdict.config['total_donations_toggle'] != undefined || pdict.config['total_donations_toggle'] !=null )) ? pdict.config['total_donations_toggle'] : ''}" />
+  <input type="hidden" id="cfg_total_donations_start" value="${pdict.config && pdict.config['total_donations_start'] || ''}" />
+  <input type="hidden" id="cfg_total_donations_min" value="${pdict.config && pdict.config['total_donations_min'] || ''}" />
+  <input type="hidden" id="cfg_show_charities_at_checkout" value="${pdict.config && pdict.config['show_charities_at_checkout'] || ''}" />
+  <input type="hidden" id="cfg_supersize_toggle" value="${(pdict.config && (pdict.config['supersize_toggle'] != undefined || pdict.config['supersize_toggle'] !=null )) ? pdict.config['supersize_toggle'] : ''}" />
+  <input type="hidden" id="cfg_supersize_option" value="${pdict.config && pdict.config['supersize_option'] || ''}" />
+
+  <input type="hidden" id="cfg_supersize_options" value="${pdict.supersize_options && pdict.supersize_options['options'] || ''}" />
+
+  <input type="hidden" id="cfg_supersize_single_option_value" value="${pdict.config && pdict.config.supersize.single['value'] || ''}" />
+
+  <input type="hidden" id="cfg_supersize_three_options_one_value" value="${pdict.config && pdict.config.supersize.three['value_one'] || ''}" />
+  <input type="hidden" id="cfg_supersize_three_options_two_value" value="${pdict.config && pdict.config.supersize.three['value_two'] || ''}" />
+  <input type="hidden" id="cfg_supersize_three_options_three_value" value="${pdict.config && pdict.config.supersize.three['value_three'] || ''}" />
+
+  <input type="hidden" id="cfg_supersize_two_plus_option_one_value" value="${pdict.config && pdict.config.supersize.two_plus['value_one'] || ''}" />
+  <input type="hidden" id="cfg_supersize_two_plus_option_two_value" value="${pdict.config && pdict.config.supersize.two_plus['value_two'] || ''}" />
+  <input type="hidden" id="cfg_supersize_two_plus_option_plus_value" value="${pdict.config && pdict.config.supersize.two_plus['value_plus'] || ''}" />
+
+  <input type="hidden" id="pages-changeup-donation-confirmation-merchant" value="${pdict.pages['changeup-donation-confirmation-merchant'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-donation-confirmation-customer" value="${pdict.pages['changeup-donation-confirmation-customer'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-donation-confirmation-match" value="${pdict.pages['changeup-donation-confirmation-match'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-merchant" value="${pdict.pages['changeup-donation-submessage-merchant'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-customer" value="${pdict.pages['changeup-donation-submessage-customer'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-match" value="${pdict.pages['changeup-donation-submessage-match'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-charity-selector-header" value="${pdict.pages['changeup-charity-selector-header'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-charity-selector-merchant-statement" value="${pdict.pages['changeup-charity-selector-merchant-statement'].custom.body || ''}" />
+  <input type="hidden" id="pages-changeup-charity-supersize-header" value="${pdict.pages['changeup-charity-supersize-header'].custom.body || ''}" />
+
+
+  <input type="hidden" id="pages-changeup-donation-confirmation-merchant-uuid" value="${pdict.pages['changeup-donation-confirmation-merchant'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-donation-confirmation-customer-uuid" value="${pdict.pages['changeup-donation-confirmation-customer'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-donation-confirmation-match-uuid" value="${pdict.pages['changeup-donation-confirmation-match'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-merchant-uuid" value="${pdict.pages['changeup-donation-submessage-merchant'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-customer-uuid" value="${pdict.pages['changeup-donation-submessage-customer'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-donation-submessage-match-uuid" value="${pdict.pages['changeup-donation-submessage-match'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-charity-selector-header-uuid" value="${pdict.pages['changeup-charity-selector-header'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-charity-selector-merchant-statement-uuid" value="${pdict.pages['changeup-charity-selector-merchant-statement'].getUUID() || ''}" />
+  <input type="hidden" id="pages-changeup-charity-supersize-header-uuid" value="${pdict.pages['changeup-charity-supersize-header'].getUUID() || ''}" />
+
+
+  <app id="app-wrap" style="display: none">
+
+    <header-bar
+      store={store}
+      header="${Resource.msg('dashboard.header', 'dashboard', null)}"
+      help="${Resource.msg('dashboard.emaillink', 'dashboard', null)}"
+      phone="${Resource.msg('dashboard.phonelink', 'dashboard', null)}"></header-bar>
+
+    <div id="page-wrapper">
+
+      <div id="dashboard-wrap">
+
+          <div id="notify-box"></div>
+
+          <charity-actor
+            store={store}
+            donationtype="${Resource.msg('dashboard.donationtype', 'dashboard', null)}"
+            donationsub="${Resource.msg('dashboard.donationsub', 'dashboard', null)}"
+            actormerchant="${Resource.msg('dashboard.actormerchant', 'dashboard', null)}"
+            actorcustomer="${Resource.msg('dashboard.actorcustomer', 'dashboard', null)}"
+            actorcustomermerchant="${Resource.msg('dashboard.actorcustomermerchant', 'dashboard', null)}"
+            actorcustomermerchantdescription="${Resource.msg('dashboard.actorcustomermerchantdescription', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltipactor', 'dashboard', null)}"></charity-actor>
+
+          <charity-donationformat
+            store={store}
+            donationformat="${Resource.msg('dashboard.donationformat', 'dashboard', null)}"
+            donationformatsub="${Resource.msg('dashboard.donationformatsub', 'dashboard', null)}"
+            donationformatfixed="${Resource.msg('dashboard.donationformatfixed', 'dashboard', null)}"
+            donationformatfixedinput="${Resource.msg('dashboard.donationformatfixedinput', 'dashboard', null)}"
+            donationformatpercent="${Resource.msg('dashboard.donationformatpercent', 'dashboard', null)}"
+            donationformatpercentinput="${Resource.msg('dashboard.donationformatpercentinput', 'dashboard', null)}"
+            donationformatpercentinputcalculated="${Resource.msg('dashboard.donationformatpercentinputcalculated', 'dashboard', null)}"
+            donationformatroundup="${Resource.msg('dashboard.donationformatroundup', 'dashboard', null)}"
+            donationformatroundupdescription="${Resource.msg('dashboard.donationformatroundupdescription', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltipformat', 'dashboard', null)}"></charity-donationformat>
+
+          <charity-search
+            store={store}
+            charitysearch="${Resource.msg('dashboard.charitysearch', 'dashboard', null)}"
+            clearsearch="${Resource.msg('dashboard.clearsearch', 'dashboard', null)}"
+            charitysearchplaceholder="${Resource.msg('dashboard.charitysearchplaceholder', 'dashboard', null)}"
+            buttonselectdefault="${Resource.msg('dashboard.button.selectdefault', 'dashboard', null)}"
+            buttonaddfeatured="${Resource.msg('dashboard.button.addfeatured', 'dashboard', null)}"
+            defaultcharity="${Resource.msg('dashboard.defaultcharity', 'dashboard', null)}"
+            featuredcharities="${Resource.msg('dashboard.featuredcharities', 'dashboard', null)}"
+            nofeaturedcharities="${Resource.msg('dashboard.nofeaturedcharities', 'dashboard', null)}"
+            charitypickernote="${Resource.msg('dashboard.nofeaturedcharities', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltipsearch', 'dashboard', null)}"></charity-search>
+
+          <charity-checkoutpages
+            store={store}
+            checkoutpages="${Resource.msg('dashboard.checkoutpages', 'dashboard', null)}"
+            checkoutpagesfield="${Resource.msg('dashboard.checkoutpagesfield', 'dashboard', null)}"
+            totalamountraised="${Resource.msg('dashboard.totalamountraised', 'dashboard', null)}"
+            donatedtodatefeature="${Resource.msg('dashboard.donatedtodatefeature', 'dashboard', null)}"
+            startingvaluedescription="${Resource.msg('dashboard.startingvaluedescription', 'dashboard', null)}"
+            showcharitiesatcheckout="${Resource.msg('dashboard.showcharitiesatcheckout', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltipcheckout', 'dashboard', null)}"
+            supersizetoogle="${Resource.msg('dashboardSupersize.toogle', 'dashboard', null)}"
+            supersizesingleoption="${Resource.msg('dashboardSupersize.singleoption', 'dashboard', null)}"
+            supersizesingleoptionsub="${Resource.msg('dashboardSupersize.singleoption.sub', 'dashboard', null)}"
+            supersizethreeoptions="${Resource.msg('dashboardSupersize.threeoptions', 'dashboard', null)}"
+            supersizethreeoptionssub="${Resource.msg('dashboardSupersize.threeoptions.sub', 'dashboard', null)}"
+            supersizetwoplusoptions="${Resource.msg('dashboardSupersize.twoplusoptions', 'dashboard', null)}"
+            supersizetwoplusoptionssub="${Resource.msg('dashboardSupersize.twoplusoptions.sub', 'dashboard', null)}"
+            supersizetwoplusoptionsfixed="${Resource.msg('dashboardSupersize.twoplusoptions.fixed', 'dashboard', null)}"></charity-checkoutpages>
+
+          <charity-editpages
+            store={store}
+            customizetext="${Resource.msg('dashboard.customizetext', 'dashboard', null)}"
+            customizetextfield="${Resource.msg('dashboard.customizetextfield', 'dashboard', null)}"
+            customizetextfield2="${Resource.msg('dashboard.customizetextfield2', 'dashboard', null)}"
+            linetext1="${Resource.msg('dashboard.linetext1', 'dashboard', null)}"
+            linetext2="${Resource.msg('dashboard.linetext2', 'dashboard', null)}"
+            linetext3="${Resource.msg('dashboard.linetext3', 'dashboard', null)}"
+            linetext4="${Resource.msg('dashboard.linetext4', 'dashboard', null)}"
+            linetext5="${Resource.msg('dashboard.linetext5', 'dashboard', null)}"
+            linetext6="${Resource.msg('dashboard.linetext6', 'dashboard', null)}"
+            edittextlink="${Resource.msg('dashboard.edittextlink', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltiptext', 'dashboard', null)}"></charity-editpages>
+            
+            <charity-supersize
+             store={store}
+            checkoutpages="${Resource.msg('dashboard.checkoutpages', 'dashboard', null)}"
+            checkoutpagesfield="${Resource.msg('dashboard.checkoutpagesfield', 'dashboard', null)}"
+            totalamountraised="${Resource.msg('dashboard.totalamountraised', 'dashboard', null)}"
+            donatedtodatefeature="${Resource.msg('dashboard.donatedtodatefeature', 'dashboard', null)}"
+            startingvaluedescription="${Resource.msg('dashboard.startingvaluedescription', 'dashboard', null)}"
+            showcharitiesatcheckout="${Resource.msg('dashboard.showcharitiesatcheckout', 'dashboard', null)}"
+            tooltip="${Resource.msg('dashboard.tooltipcheckout', 'dashboard', null)}"
+
+            ></charity-supersize>
+
+          <charity-save
+            store={store}
+            savesettings="${Resource.msg('dashboard.savesettings', 'dashboard', null)}"
+            savesettingsbtn="${Resource.msg('dashboard.savesettingsbtn', 'dashboard', null)}"></charity-save>
+
+      </div>
+
+      <div id="checkout-wrap">
+
+        <checkout-preview
+          samplecheckoutscreen="${Resource.msg('dashboard.samplecheckoutscreen', 'dashboard', null)}"
+          productdescription="${Resource.msg('dashboard.productdescription', 'dashboard', null)}"
+          taxdescription="${Resource.msg('dashboard.taxdescription', 'dashboard', null)}"
+          shippingdescription="${Resource.msg('dashboard.shippingdescription', 'dashboard', null)}"
+          shippingfreedescription="${Resource.msg('dashboard.shippingfreedescription', 'dashboard', null)}"
+          subtotaldescription="${Resource.msg('dashboard.subtotaldescription', 'dashboard', null)}"
+          donatingmerchantdescription1="${Resource.msg('dashboard.donatingmerchantdescription1', 'dashboard', null)}"
+          donatingmerchantdescription2="${Resource.msg('dashboard.donatingmerchantdescription2', 'dashboard', null)}"
+          donatingcustomerdescription="${Resource.msg('dashboard.donatingcustomerdescription', 'dashboard', null)}"
+          donatingmatchdescription="${Resource.msg('dashboard.donatingmatchdescription', 'dashboard', null)}"
+          choosecharitydescription="${Resource.msg('dashboard.choosecharitydescription', 'dashboard', null)}"
+          donatedtodatedescription="${Resource.msg('dashboard.donatedtodatedescription', 'dashboard', null)}"
+          totaldescription="${Resource.msg('dashboard.totaldescription', 'dashboard', null)}"
+          store={store}
+          supersize="${Resource.msg('dashboard.samplecheckoutscree.supersize', 'dashboard', null)}"></checkout-preview>
+
+        <br />
+
+        <thankyou-preview
+          store={store}
+          samplethankyoupage="${Resource.msg('dashboard.samplethankyoupage', 'dashboard', null)}"
+          thankyouheader1="${Resource.msg('dashboard.thankyouheader1', 'dashboard', null)}"
+          thankyouheader2="${Resource.msg('dashboard.thankyouheader2', 'dashboard', null)}"
+          thankyoubody="${Resource.msg('dashboard.thankyoubody', 'dashboard', null)}"
+          thankyoufavorites="${Resource.msg('dashboard.thankyoufavorites', 'dashboard', null)}"
+          thankyouclickhere="${Resource.msg('dashboard.thankyouclickhere', 'dashboard', null)}"></thankyou-preview>
+
+      </div>
+
+    </div>
+
+  </app>
+
+ <script defer src="${URLUtils.httpsStatic('js/dashboardv2_supersize.js')}"></script>
+</isdecorate>

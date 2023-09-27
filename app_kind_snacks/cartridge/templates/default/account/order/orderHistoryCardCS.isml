@@ -1,0 +1,28 @@
+<div class="card c-account-dashboard__card-body">
+    <isif condition="${pdict.accountlanding}">
+        <div class="c-account-dashboard__card-header clearfix">
+            <h4 class="pull-left">${Resource.msg('label.orderhistory','account',null)}</h4>
+            <a href="${URLUtils.url('Order-History')}" class="pull-right c-account-dashboard__card-header__link">${Resource.msg('link.view','account',null)}</a>
+        </div>
+    <iselse/>
+        <div class="c-account-dashboard__card-header clearfix">
+            <h4 class="pull-left">${Resource.msg('label.orderhistory.orderno','account',null)} ${order.orderNumber}</h4>
+            <a href="${URLUtils.url('Order-Details', 'orderID', order.orderNumber, 'orderFilter', pdict.orderFilter)}" class="pull-right">${Resource.msg('link.view','account',null)}</a>
+        </div>
+    </isif>
+    <div class="card-body c-account-dashboard__card-body__body card-info-group short-order-history">
+        <div class="row">
+            <div class="col-12">
+                <ul>
+                    <isloop items="${pdict.CurrentCustomer.orderHistory.orders}" var="order" end="">
+                        <li>
+                            <a href="${URLUtils.url('Order-Details', 'orderID', order.orderNo, 'orderFilter', pdict.orderFilter)}">
+                                <isprint value="${order.creationDate}" timezone="SITE" formatter="MMMM d, yyyy" />
+                            </a>
+                        </li>
+                    </isloop>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

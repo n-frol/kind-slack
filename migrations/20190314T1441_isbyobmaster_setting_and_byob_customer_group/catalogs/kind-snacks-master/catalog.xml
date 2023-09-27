@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="sampleByob">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Sample BYOB product</display-name>
+        <long-description xml:lang="x-default">&lt;h4&gt;product description&lt;/h4&gt;Sweet cravings, salty cravings, healthy cravings. Our best-selling bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-size: x-small;"&gt;This bar has 5g sugar; the average nutrition bar has 12g sugar. Contains 15g of fat per bar. Contains almonds, peanuts and soy. Made in facility that processes peanuts, tree nuts, soy and sesame seeds. OU.&lt;/span&gt;</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>true</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <tax-class-id>standard</tax-class-id>
+        <brand>KIND Bars</brand>
+        <sitemap-included-flag>true</sitemap-included-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Dark Chocolate Nuts &amp; Sea Salt Bars | Mixed Nut Bars | KIND Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="addedSugar" xml:lang="x-default">4</custom-attribute>
+            <custom-attribute attribute-id="autoShipDiscount" xml:lang="x-default">16.16</custom-attribute>
+            <custom-attribute attribute-id="autoShipEligible">true</custom-attribute>
+            <custom-attribute attribute-id="backgroundColor" xml:lang="x-default">#095C66</custom-attribute>
+            <custom-attribute attribute-id="badge" xml:lang="x-default">bestSeller</custom-attribute>
+            <custom-attribute attribute-id="benefits" xml:lang="x-default">
+                <value>benefit_0gTransFat</value>
+                <value>benefit_5gSugarOrLess</value>
+                <value>benefit_GlutenFree</value>
+                <value>benefit_GoodSourceFiber</value>
+                <value>benefit_Kosher</value>
+                <value>benefit_LowGlycemicIndex</value>
+                <value>benefit_LowSodium</value>
+                <value>benefit_NonGMO</value>
+                <value>benefit_DairyFreeRecipe</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="calories" xml:lang="x-default">200</custom-attribute>
+            <custom-attribute attribute-id="containerType" xml:lang="x-default">box</custom-attribute>
+            <custom-attribute attribute-id="dietaryFiber" xml:lang="x-default">7</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="featuredAssets" xml:lang="x-default">
+                <value>featured-ingredient_almond</value>
+                <value>featured-ingredient_cocoa-powder</value>
+                <value>featured-ingredient_sea-salt</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="featuredHeading" xml:lang="x-default">what's in this bar?</custom-attribute>
+            <custom-attribute attribute-id="flavor" xml:lang="x-default">chocolate</custom-attribute>
+            <custom-attribute attribute-id="googleProductCategory" xml:lang="x-default">
+                <value>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Snack Foods &gt; Cereal &amp; Granola Bars</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">true</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isByobMaster">true</custom-attribute>
+            <custom-attribute attribute-id="isCheckAddressFraud">false</custom-attribute>
+            <custom-attribute attribute-id="notInProductBody" xml:lang="x-default">Artificial Sweeteners - Artificial sugar substitutes like saccharin, aspartame &amp; sucralose that are many times sweeter than sugar but with few to no calories. We prefer the real thing in moderation.</custom-attribute>
+            <custom-attribute attribute-id="notInProductLabel" xml:lang="x-default">what's not in this bar?</custom-attribute>
+            <custom-attribute attribute-id="nutritionFactsImage" xml:lang="x-default">images/17751-nutrition-panel-kind-nut-bars-dark-chocolate-nuts-sea-salt.png</custom-attribute>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="productClassID" xml:lang="x-default">BAR</custom-attribute>
+            <custom-attribute attribute-id="productCondition" xml:lang="x-default">New</custom-attribute>
+            <custom-attribute attribute-id="productFeedDescription" xml:lang="x-default">Dark Chocolate Nuts &amp; Sea Salt, 12 Bars - Sweet cravings &amp; salty cravings &amp; healthy cravings satisified with our best-selling nut bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent! - Gluten Free KIND Nuts &amp; Spices Bars</custom-attribute>
+            <custom-attribute attribute-id="productFeedImage" xml:lang="x-default">images/17751-box-kind-nut-bars-dark-chocolate-nuts-sea-salt.png</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel" xml:lang="x-default">Bars</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel1" xml:lang="x-default">Nuts &amp; Spices</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel2" xml:lang="x-default">dark chocolate nuts &amp; sea salt</custom-attribute>
+            <custom-attribute attribute-id="productFeedTitle" xml:lang="x-default">KIND® Dark Chocolate Nuts &amp; Sea Salt, 12 Bars - Gluten Free</custom-attribute>
+            <custom-attribute attribute-id="productType" xml:lang="x-default">bars</custom-attribute>
+            <custom-attribute attribute-id="protein" xml:lang="x-default">6</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">false</custom-attribute>
+            <custom-attribute attribute-id="sodium" xml:lang="x-default">140</custom-attribute>
+            <custom-attribute attribute-id="sugars" xml:lang="x-default">5</custom-attribute>
+            <custom-attribute attribute-id="texture" xml:lang="x-default">crunchy</custom-attribute>
+            <custom-attribute attribute-id="totalCarb" xml:lang="x-default">16</custom-attribute>
+            <custom-attribute attribute-id="totalFat" xml:lang="x-default">15</custom-attribute>
+            <custom-attribute attribute-id="unitBaseMeasure" xml:lang="x-default">1ct</custom-attribute>
+            <custom-attribute attribute-id="unitMeasure" xml:lang="x-default">12ct</custom-attribute>
+            <custom-attribute attribute-id="weight" xml:lang="x-default">1.1</custom-attribute>
+        </custom-attributes>
+        <variations>
+            <attributes>
+                <shared-variation-attribute attribute-id="size" variation-attribute-id="size"/>
+            </attributes>
+            <variants>
+                <variant product-id="17751-1"/>
+                <variant product-id="17651-1"/>
+                <variant product-id="17851-1"/>
+                <variant product-id="17075-1"/>
+                <variant product-id="17168-1"/>
+                <variant product-id="17175-1"/>
+                <variant product-id="17269-1"/>
+                <variant product-id="17675-1"/>
+                <variant product-id="17720-1"/>
+                <variant product-id="17775-1"/>
+                <variant product-id="17901-1"/>
+                <variant product-id="17904-1"/>
+                <variant product-id="17927-1"/>
+                <variant product-id="17976-1"/>
+                <variant product-id="17985-1"/>
+                <variant product-id="17999-1"/>
+                <variant product-id="18028-1"/>
+                <variant product-id="18079-1"/>
+                <variant product-id="18094-1"/>
+                <variant product-id="18504-1"/>
+                <variant product-id="18514-1"/>
+                <variant product-id="18526-1"/>
+                <variant product-id="18550-1"/>
+                <variant product-id="18565-1"/>
+                <variant product-id="18589-1"/>
+                <variant product-id="18625-1"/>
+                <variant product-id="18633-1"/>
+                <variant product-id="18654-1"/>
+                <variant product-id="18656-1"/>
+                <variant product-id="18660-1"/>
+                <variant product-id="18665-1"/>
+                <variant product-id="18689-1"/>
+                <variant product-id="18717-1"/>
+                <variant product-id="19794-1"/>
+                <variant product-id="19838-1"/>
+                <variant product-id="19947-1"/>
+                <variant product-id="24430-1"/>
+                <variant product-id="24836-1"/>
+                <variant product-id="24980-1"/>
+                <variant product-id="24981-1"/>
+                <variant product-id="25791-1"/>
+                <variant product-id="25793-1"/>
+                <variant product-id="25795-1"/>
+                <variant product-id="26052-1"/>
+                <variant product-id="26075-1"/>
+                <variant product-id="26111-1"/>
+                <variant product-id="26131-1"/>
+                <variant product-id="26143-1"/>
+                <variant product-id="26541-1"/>
+                <variant product-id="26787-1"/>
+                <variant product-id="26888-1"/>
+                <variant product-id="26985-1"/>
+                <variant product-id="27028-1"/>
+                <variant product-id="27053-1"/>
+                <variant product-id="27090-1"/>
+                <variant product-id="27129-1"/>
+                <variant product-id="27130-1"/>
+                <variant product-id="27371-1"/>
+                <variant product-id="27581-1"/>
+                <variant product-id="30000-1"/>
+                <variant product-id="30100-1"/>
+                <variant product-id="30200-1"/>
+            </variants>
+        </variations>
+        <classification-category>kind-nut-bars</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <product product-id="sampleBlockedAccess">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Sample Blocked Access product</display-name>
+        <long-description xml:lang="x-default">&lt;h4&gt;product description&lt;/h4&gt;Sweet cravings, salty cravings, healthy cravings. Our best-selling bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent. &lt;br /&gt;&lt;br /&gt;&lt;span style="font-size: x-small;"&gt;This bar has 5g sugar; the average nutrition bar has 12g sugar. Contains 15g of fat per bar. Contains almonds, peanuts and soy. Made in facility that processes peanuts, tree nuts, soy and sesame seeds. OU.&lt;/span&gt;</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>true</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <tax-class-id>standard</tax-class-id>
+        <brand>KIND Bars</brand>
+        <sitemap-included-flag>true</sitemap-included-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Dark Chocolate Nuts &amp; Sea Salt Bars | Mixed Nut Bars | KIND Snacks</page-title>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="addedSugar" xml:lang="x-default">4</custom-attribute>
+            <custom-attribute attribute-id="autoShipDiscount" xml:lang="x-default">16.16</custom-attribute>
+            <custom-attribute attribute-id="autoShipEligible">true</custom-attribute>
+            <custom-attribute attribute-id="backgroundColor" xml:lang="x-default">#095C66</custom-attribute>
+            <custom-attribute attribute-id="badge" xml:lang="x-default">bestSeller</custom-attribute>
+            <custom-attribute attribute-id="benefits" xml:lang="x-default">
+                <value>benefit_0gTransFat</value>
+                <value>benefit_5gSugarOrLess</value>
+                <value>benefit_GlutenFree</value>
+                <value>benefit_GoodSourceFiber</value>
+                <value>benefit_Kosher</value>
+                <value>benefit_LowGlycemicIndex</value>
+                <value>benefit_LowSodium</value>
+                <value>benefit_NonGMO</value>
+                <value>benefit_DairyFreeRecipe</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="calories" xml:lang="x-default">200</custom-attribute>
+            <custom-attribute attribute-id="containerType" xml:lang="x-default">box</custom-attribute>
+            <custom-attribute attribute-id="dietaryFiber" xml:lang="x-default">7</custom-attribute>
+            <custom-attribute attribute-id="discontinued">false</custom-attribute>
+            <custom-attribute attribute-id="featuredAssets" xml:lang="x-default">
+                <value>featured-ingredient_almond</value>
+                <value>featured-ingredient_cocoa-powder</value>
+                <value>featured-ingredient_sea-salt</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="featuredHeading" xml:lang="x-default">what's in this bar?</custom-attribute>
+            <custom-attribute attribute-id="flavor" xml:lang="x-default">chocolate</custom-attribute>
+            <custom-attribute attribute-id="googleProductCategory" xml:lang="x-default">
+                <value>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Snack Foods &gt; Cereal &amp; Granola Bars</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="impulseUpsell">true</custom-attribute>
+            <custom-attribute attribute-id="includeInProductFeed">false</custom-attribute>
+            <custom-attribute attribute-id="isByobMaster">false</custom-attribute>
+            <custom-attribute attribute-id="isBlockedAccess">true</custom-attribute>
+            <custom-attribute attribute-id="isCheckAddressFraud">false</custom-attribute>
+            <custom-attribute attribute-id="notInProductBody" xml:lang="x-default">Artificial Sweeteners - Artificial sugar substitutes like saccharin, aspartame &amp; sucralose that are many times sweeter than sugar but with few to no calories. We prefer the real thing in moderation.</custom-attribute>
+            <custom-attribute attribute-id="notInProductLabel" xml:lang="x-default">what's not in this bar?</custom-attribute>
+            <custom-attribute attribute-id="nutritionFactsImage" xml:lang="x-default">images/17751-nutrition-panel-kind-nut-bars-dark-chocolate-nuts-sea-salt.png</custom-attribute>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="productClassID" xml:lang="x-default">BAR</custom-attribute>
+            <custom-attribute attribute-id="productCondition" xml:lang="x-default">New</custom-attribute>
+            <custom-attribute attribute-id="productFeedDescription" xml:lang="x-default">Dark Chocolate Nuts &amp; Sea Salt, 12 Bars - Sweet cravings &amp; salty cravings &amp; healthy cravings satisified with our best-selling nut bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent! - Gluten Free KIND Nuts &amp; Spices Bars</custom-attribute>
+            <custom-attribute attribute-id="productFeedImage" xml:lang="x-default">images/17751-box-kind-nut-bars-dark-chocolate-nuts-sea-salt.png</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel" xml:lang="x-default">Bars</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel1" xml:lang="x-default">Nuts &amp; Spices</custom-attribute>
+            <custom-attribute attribute-id="productFeedLabel2" xml:lang="x-default">dark chocolate nuts &amp; sea salt</custom-attribute>
+            <custom-attribute attribute-id="productFeedTitle" xml:lang="x-default">KIND® Dark Chocolate Nuts &amp; Sea Salt, 12 Bars - Gluten Free</custom-attribute>
+            <custom-attribute attribute-id="productType" xml:lang="x-default">bars</custom-attribute>
+            <custom-attribute attribute-id="protein" xml:lang="x-default">6</custom-attribute>
+            <custom-attribute attribute-id="showOnPDP">false</custom-attribute>
+            <custom-attribute attribute-id="sodium" xml:lang="x-default">140</custom-attribute>
+            <custom-attribute attribute-id="sugars" xml:lang="x-default">5</custom-attribute>
+            <custom-attribute attribute-id="texture" xml:lang="x-default">crunchy</custom-attribute>
+            <custom-attribute attribute-id="totalCarb" xml:lang="x-default">16</custom-attribute>
+            <custom-attribute attribute-id="totalFat" xml:lang="x-default">15</custom-attribute>
+            <custom-attribute attribute-id="unitBaseMeasure" xml:lang="x-default">1ct</custom-attribute>
+            <custom-attribute attribute-id="unitMeasure" xml:lang="x-default">12ct</custom-attribute>
+            <custom-attribute attribute-id="weight" xml:lang="x-default">1.1</custom-attribute>
+        </custom-attributes>
+        <classification-category>kind-nut-bars</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+
+    <category-assignment category-id="all-products" product-id="sampleByob"/>
+
+    <category-assignment category-id="kind-nut-bars" product-id="sampleByob">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="all-products" product-id="sampleBlockedAccess"/>
+
+    <category-assignment category-id="kind-nut-bars" product-id="sampleBlockedAccess">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

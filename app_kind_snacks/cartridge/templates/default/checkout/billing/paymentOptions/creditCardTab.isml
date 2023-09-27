@@ -1,0 +1,5 @@
+<li class="nav-item c-tabs__item c-tabs__item--active js-custom-tab-item" data-method-id="${paymentOption.ID}">
+    <a class="nav-link credit-card-tab active c-tabs__label js-custom-tab-label" data-toggle="tab" href="#credit-card-content" role="tab">
+        ${Resource.msg('label.payment.credit', 'payment', null)}
+    </a>
+</li>

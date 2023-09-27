@@ -1,0 +1,19 @@
+<isif condition="${!empty(timelineElements)}">
+
+    <div class="c-daily-timeline js-daily-timeline">
+        <div class="container st-container st-container--narrow">
+            <div class="row c-daily-timeline__row">
+                <img src="${URLUtils.staticURL('images/sun-icon.png')}" class="c-daily-timeline__icon" alt="${Resource.msg('label.sun', 'common', null)}" />
+                <div class="c-daily-timeline__timeline">
+                    <span class="c-daily-timeline__timeline__line"></span>
+                    <div class="c-daily-timeline__timeline__links">
+                        <isloop items="${timelineElements}" var="element" status="loopstatus">
+                            <a href="${'#' + element}" class="c-daily-timeline__timeline__link js-daily-timeline__link <isif condition="${loopstatus.first}">c-daily-timeline__timeline__link--selected js-daily-timeline__link--selected</isif>" id="${element}-timeline-link"></a>
+                        </isloop>
+                    </div>
+                </div>
+                <img src="${URLUtils.staticURL('images/moon-icon.png')}" class="c-daily-timeline__icon" alt="${Resource.msg('label.moon', 'common', null)}" />
+            </div>
+        </div>
+    </div>
+</isif>

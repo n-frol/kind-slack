@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="289-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="nutritionFactsImage">images/sample_kind_nutrition.jpg</custom-attribute>
+            <custom-attribute attribute-id="nutritionNotes">Product formulation and packaging may change.</custom-attribute>
+        </custom-attributes>
+    </product>
+
+</catalog>

@@ -1,0 +1,30 @@
+/* ============================================================================
+Checkout Shipping Methods
+============================================================================ */
+
+/**
+ * Establish styles for shipping method section of the checkout page
+ */
+
+$ns: "c-checkout-shipping-methods";
+
+.#{$ns} {
+    margin-bottom: 5px;
+    margin-top: 14px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 15px;
+    }
+
+    &__list {
+        padding-top: 6px;
+    }
+    &__method {
+        display: flex;
+        max-width: 360px;
+    }
+    &__summary {
+        line-height: 1.1;
+        padding-bottom: 26px;
+    }
+}

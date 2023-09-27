@@ -1,0 +1,54 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/leaderboard/leaderboard_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container">
+            <div class="row">
+    </isif>
+        <div class="c-leaderboard ${assetID} th-kind-leaderboard s-graphical-asset
+            <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-leaderboard--${graphicalAsset.contentXPosition.value}</isif>">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container c-leaderboard__container">
+                    <div class="row justify-content-center">
+            </isif>
+                        <div class="c-leaderboard__content">
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-leaderboard__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-leaderboard__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-leaderboard__links s-graphical-asset__links">
+
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div>
+                        <isif condition="${!empty(graphicalAsset.image)}">
+                            <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 611, 1222)}" scope="page" />
+                            <div class="c-leaderboard__image__wrapper">
+                                <img class="c-leaderboard__image" src="${responsiveImage.imageUrlDefault}"
+                                    srcset="${responsiveImage.imageUrlDefault} 2x,
+                                                            ${responsiveImage.imageUrlDefault} 2x"
+                                    alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                            </div>
+                        </isif>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

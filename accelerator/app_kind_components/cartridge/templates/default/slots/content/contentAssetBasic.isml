@@ -1,0 +1,10 @@
+<isif condition="${!empty(slotcontent)}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isif condition="${!empty(contentAsset)}">
+            <isset name="assetID" value="${contentAsset.ID}" scope="page" />
+            <isset name="assetBody" value="${contentAsset.custom.body}" scope="page" />
+
+            <isinclude template="components/contentAssetBasic/contentAssetBasic" />
+        </isif>
+    </isloop>
+</isif>

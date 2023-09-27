@@ -1,0 +1,4 @@
+<div class="c-rotation-message">
+    <img src="${URLUtils.staticURL('/images/rotation-icon.png')}" class="c-rotation-message__icon" alt="${Resource.msg('global.rotate', 'common', null)}" />
+    <span class="c-rotation-message__text">${Resource.msg('global.rotate', 'common', null)}</span>
+</div>

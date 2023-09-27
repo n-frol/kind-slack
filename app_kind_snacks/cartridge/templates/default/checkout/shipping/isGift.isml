@@ -1,0 +1,45 @@
+<div class="row gift-message">
+    <input class="gift d-none" type="checkbox" id="isGift-${lineItem ? lineItem.UUID : 'default'}-${shippingModel.UUID}"
+                    <isif condition="${shippingModel.isGift}">
+                        checked
+                    </isif>
+                    <isprint value="${pdict.forms.shippingForm.shippingAddress.isGift.attributes}" encoding="off" />
+                >
+    <label for="isGift-${lineItem ? lineItem.UUID : 'default'}-${shippingModel.UUID}" class="d-none">
+        ${Resource.msg('check.gift', 'checkout', null)}
+    </label>
+    <div class="col-sm-6">
+        <div class="form-group js-form-group
+        ${pdict.forms.shippingForm.shippingAddress.giftFrom.htmlName}
+        ">
+            <label class="form-control-label" for="giftTo">${Resource.msg('label.input.giftto', 'forms', null)}</label>
+            <input autocomplete="new-password" type="text" class="form-control js-gift-to-input gift-to-${shippingModel.UUID}" id="giftTo"
+            value="${shippingModel.isGift && shippingModel.giftTo ? shippingModel.giftTo: '' }"
+            <isprint value="${pdict.forms.shippingForm.shippingAddress.giftTo.attributes}" encoding="off" />
+            >
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group js-form-group
+            ${pdict.forms.shippingForm.shippingAddress.giftFrom.htmlName}
+            ">
+            <label class="form-control-label" for="giftFrom">${Resource.msg('label.input.giftfrom', 'forms', null)}</label>
+            <input autocomplete="new-passworda" type="text" class="form-control js-gift-from-input gift-from-${shippingModel.UUID}" id="giftFrom"
+            value="${shippingModel.isGift && shippingModel.giftFrom ? shippingModel.giftFrom: '' }"
+            <isprint value="${pdict.forms.shippingForm.shippingAddress.giftFrom.attributes}" encoding="off" />
+            >
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group js-form-group
+        ${pdict.forms.shippingForm.shippingAddress.giftMessage.htmlName}">
+            <label class="form-control-label" for="giftMessage">${Resource.msg('label.input.giftmessage', 'forms', null)}</label>
+            <textarea class="form-control js-gift-message-input gift-message-${shippingModel.UUID}" id="giftMessage" rows="3"
+            <isprint value="${pdict.forms.shippingForm.shippingAddress.giftMessage.attributes}" encoding="off" />
+            >${shippingModel.isGift && shippingModel.giftMessage ? shippingModel.giftMessage: '' }</textarea>
+            <div class="invalid-feedback"></div>
+        </div>
+    </div>
+</div>

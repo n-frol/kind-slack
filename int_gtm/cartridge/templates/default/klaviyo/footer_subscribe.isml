@@ -1,0 +1,84 @@
+<!--- TEMPLATENAME: footer-subscribe.isml --->
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('klaviyo_enabled')}">
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<iscomment>Klaviyo</iscomment>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="components/modules" />
+    <div class="s-email-signup">
+        <isif condition="${siteID === "kind_b2b"}" >
+            <iscontentasset aid="newsletter-form-copy-b2b" />
+        <iselseif condition="${siteID === "CreativeSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy-cs" />
+        <iselseif condition="${siteID === "KINDSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy" />
+        </isif>
+    </div>
+    <div style="display:inline-block" class="">
+        <isset name="formURL" value="Klaviyo-Subscribe" scope="page" />
+        <form action="${URLUtils.url(formURL)}" method="post" class="form-horizontal c-email-signup__form js-subscribe" name="subscribe-form" id="subscribe-form">
+            <fieldset>
+                <div class="c-email-signup__form-wrapper input-group">
+                    <div class="form-group c-email-signup__input__group klaviyo" >
+                        <label class="form-control-label sr-only" for="klaviyo">
+                        </label>
+                        <input type="email" placeholder="Your Email" class="input-text c-email-signup__input" id="emailsignup" name="emailsignup">
+                        <div class="invalid-feedback"></div>
+                    </div>
+
+                    <button type="submit" name="submitButton" class="c-email-signup__button btn btn-light js-gtm-subscribe">
+                        Subscribe
+                    </button>
+                    <input type="hidden" name="source" value="Footer"/>
+                    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</isif>
+
+<style>
+.st-global-footer__wrapper--secondary {
+    padding-bottom: 0px !important;
+}
+@media screen and (max-width: 440px) {
+.s-email-signup {
+    text-align:left;
+    float:none !important;
+padding-left: 10px !important;
+}
+.movedown {
+    padding-left: 0px !important;
+    top: 0px !important;
+}
+.st-global-footer__wrapper--secondary {
+    padding-top: 0px !important;
+}
+.st-global-footer__logo {
+left: 0px !important;
+top: 0px !important;
+}
+}
+.s-email-signup {
+    display: inline-block;
+    text-align:left;
+    padding-left: 10px;
+}
+.st-global-footer__wrapper--secondary {
+    text-align:center;
+    position:relative;
+    margin-top: 30px;
+    background: black;
+}
+.movedown {
+    position: relative;
+    top: 40px;
+    padding-left: 100px;
+    left: -20px;
+}
+ .st-global-footer__logo {
+        display: inline-block;
+        left: -200px;
+        position: relative;
+        top: -10px;
+        }
+</style>

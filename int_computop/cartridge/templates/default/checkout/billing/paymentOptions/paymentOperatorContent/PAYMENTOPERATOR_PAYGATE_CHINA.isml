@@ -1,0 +1,31 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_PAYGATE_CHINA.isml --->
+<isset name="paygateChinaFields" value="${ pdict.forms.billingForm.paygatechina }" scope="page"/>
+
+<isscript>
+    var listPaygateChinaAccounts = require('/int_computop/cartridge/scripts/computop/util/Settings').getPaygateChinaActiveBankList();
+</isscript>
+
+<fieldset class="paymentoperator-paygatechina-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ paygateChinaFields.accbank.mandatory === true }>required</isif>
+                ${ paygateChinaFields.accbank.htmlName }">
+                <label class="form-control-label" for="paygatechina_accbank">${Resource.msg('paygatechina.accbank','paymentoperator',null)}</label>
+                <select class="form-control custom-select" id="paygatechina_accbank" <isprint value=${ paygateChinaFields.accbank.attributes} encoding="off"/>>
+                <isloop items=${ listPaygateChinaAccounts } var="issuer">
+                    <option id="${ issuer.value }" value="${ issuer.value }"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                && issuer.value == pdict.order.billing.payment.selectedPaymentInstruments[0].accbank}">
+                        selected
+                    </isif> >
+                    ${ issuer.displayValue }
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+</fieldset>

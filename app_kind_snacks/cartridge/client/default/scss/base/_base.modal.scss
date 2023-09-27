@@ -1,0 +1,79 @@
+/* ============================================================================
+Table
+============================================================================ */
+
+/**
+ * Base styles for modal elements
+ */
+
+@media screen and (max-width:425px) {
+    .byob-confirm-modal {
+        max-width:90% !important;
+        margin:auto;
+    }
+}
+
+.byob-confirm-modal {
+    max-width:600px !important;
+}
+.byob-confirm-modal button {
+    width: unset;
+    margin:auto;
+}
+
+.login-modal {
+    z-index: 30000 !important;
+}
+
+.modal {
+    .modal-dialog {
+        @extend .st-modal__dialog;
+    }
+    .modal-header {
+        @extend .st-modal__header;
+    }
+}
+.close {
+    @extend .st-modal__close;
+
+    font-size: 0;
+}
+.modal-title {
+    @extend .st-modal__title;
+}
+.modal-body {
+    @extend .st-modal__body;
+}
+.modal-footer {
+    @extend .st-modal__footer;
+}
+
+// Because we can't practically add classes to the bonus product modal, work with what we have
+#chooseBonusProductModal {
+    &.modal {
+        @extend .st-modal-quickview;
+
+        .modal-body {
+            @extend .st-modal__body;
+            @extend .st-modal-quickview__body;
+        }
+    }
+    .modal-content {
+        @extend .st-modal-quickview__content;
+    }
+    .modal-header {
+        @extend .st-modal-quickview__header;
+
+        color: $white;
+
+        span {
+            @extend .st-modal-quickview__header__link;
+        }
+
+        .close {
+            @extend .st-modal-quickview__header__close;
+
+            font-size: 0px;
+        }
+    }
+}

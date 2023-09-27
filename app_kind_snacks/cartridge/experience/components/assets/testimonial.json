@@ -1,0 +1,39 @@
+{
+  "name": "Testimonial",
+  "description": "Testimonial",
+  "group": "Career",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content Left",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "quote",
+          "name": "Quote",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "readmore",
+          "name": "Read more",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

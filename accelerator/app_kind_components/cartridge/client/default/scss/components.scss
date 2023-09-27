@@ -1,0 +1,105 @@
+/* ============================================================================
+   KIND Snacks Components
+   ============================================================================ */
+
+/**
+ * KIND Snacks Components, by @pixelmedia
+ */
+
+// THIRD PARTY
+// ============================================================================
+
+// This includes third party styles for third party plugins.
+
+@import "~kind/sfra/variables";
+@import "~bootstrap/scss/bootstrap";
+
+
+// HELPERS
+// ============================================================================
+
+// Please Note: All partials inside the helpers directory should be namespaced with helpers.
+
+// Helpers are made up of the global variables, mixins, and functions that are used within the
+// codebase.
+
+@import "helpers/helpers.lists";
+
+
+// COMPONENTS
+// ============================================================================
+
+// Please Note: All partials inside the components directory should be namespaced with components.
+
+/**
+ * Components are concrete, implementation-specific pieces of UI. All of the changes you make to
+ * its styles should be detectable in the context you're currently looking at. Modifying these
+ * styles should be safe and have no side effects.
+ *
+ * Please namespace all component classes with c-.
+ *
+ * Do not remove the {{COMPONENTS}} Sass comment below as it is needed to scaffold
+ * out components.
+ */
+
+@import "components/components.benefits-grid";
+@import "components/components.billboard-grid";
+@import 'components/components.bio-block';
+@import "components/components.content-banner";
+@import "components/components.content-grid";
+@import "components/components.cta-grid";
+@import "components/components.custom-navigation";
+@import "components/components.daily-timeline";
+@import "components/components.marketing-banner";
+@import "components/components.full-width-cta";
+@import "components/components.featured-banner";
+@import "components/components.feature-tabs";
+@import "components/components.featured-container";
+@import "components/components.flavor-banner";
+@import "components/components.glossary";
+@import "components/components.image-gallery";
+@import 'components/components.leaderboard';
+@import "components/components.link-grid";
+@import "components/components.marketing-tile";
+@import "components/components.media-grid";
+@import "components/components.purchase-block";
+@import "components/components.simple-tile";
+@import "components/components.tips-block";
+@import "components/components.video-callout";
+@import "components/components.ezorder";
+
+// Structures
+// ============================================================================
+
+// Please Note: All partials inside the components directory should be namespaced with structures.
+
+/**
+ * Like components, structures are concrete, implementation-specific pieces of UI. All of the changes you make to
+ * its styles should be detectable in the context you're currently looking at. Modifying these
+ * styles should be safe and have no side effects. The difference between structures and components
+ * is that structures are made up of multiple components.
+ *
+ * Please namespace all component classes with st-.
+ */
+
+@import "structures/structures.navigation-content";
+
+// SCOPES
+// ============================================================================
+
+// Please Note: All partial filenames inside this directory should be namespaced with scopes.
+
+/**
+ * Scopes create a new styling context. These should be used sparingly. they can be open to abuse
+ * and lead to poor CSS if not used wisely. The primary use case for scopes within an SFCC standup
+ * is to provide styles within a content asset or content slot. The secondary use case is when
+ * styling an SG component in order to easily style the SG classes that are in place.
+ *
+ * Please namespace all scope classes with s-
+ */
+
+@import "scopes/scopes.custom-navigation";
+@import 'scopes/scopes.featured-container';
+@import "scopes/scopes.graphical-asset";
+@import "scopes/scopes.navigation-content";
+

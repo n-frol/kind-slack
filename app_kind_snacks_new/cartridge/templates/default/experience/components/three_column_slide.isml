@@ -1,0 +1,39 @@
+<div class="social_desktop_top">
+<img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" class="social_desktop_img" />
+</div>
+    <div>
+    <div class="three_column_subhead">
+        ${pdict.headline}
+    </div>
+    <div class="three_column_subdescription">
+        ${pdict.description}
+    </div>
+</div>
+
+<style>
+    .three_column_subhead {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        letter-spacing: -1px;
+        font-family: main;
+        max-width: 300px;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    .three_column_subdescription {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        letter-spacing: 0px;
+        font-family: medium;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    @media screen and (max-width: 768px) {
+        .three_column_subdescription {
+            margin-bottom: 20px;
+        }
+    }
+</style>

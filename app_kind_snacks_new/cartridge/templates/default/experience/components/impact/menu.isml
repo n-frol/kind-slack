@@ -1,0 +1,168 @@
+<div class="impact_menu_trigger">
+    <svg class="hamburger" style="color: white" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z" fill="white"></path></svg>
+    <svg class="closeme" style="color:white; position: relative; left: 5px;" xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 32" fill="none">
+        <path d="M1.61572 18.4854L18.5863 1.51479" stroke="white" stroke-width="2"/>
+        <path d="M1.61572 1.51465L18.5863 18.4852" stroke="white" stroke-width="2"/>
+    </svg>
+</div>
+<ul class="impact_menu_desktop impactmenu" role="navigation">
+    <li class="active" data-s="welcome_section">Welcome</li>
+    <li data-s="bodies_section">Bodies</li>
+    <li data-s="community_section">Communities</li>
+    <li data-s="planet_section">Planet</li>
+    <li data-s="live_section">LIVE KIND</li>
+</ul>
+
+<div class="impact_menu_mobile_trigger">
+    <svg class="hamburger" style="color: white" height="32px" id="Layer_1" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z" fill="white"></path></svg>
+    <svg class="closeme" style="color:white; position: relative; left: 5px;" xmlns="http://www.w3.org/2000/svg" width="32" height="42" viewBox="0 0 32 32" fill="none">
+        <path d="M1.61572 18.4854L18.5863 1.51479" stroke="white" stroke-width="2"/>
+        <path d="M1.61572 1.51465L18.5863 18.4852" stroke="white" stroke-width="2"/>
+    </svg>
+</div>
+<ul class="impact_menu_mobile impactmenu" role="navigation">
+    <li data-s="welcome_section">Welcome</li>
+    <li data-s="bodies_section">Bodies</li>
+    <li data-s="community_section">Communities</li>
+    <li data-s="planet_section">Planet</li>
+    <li data-s="live_section">LIVE KIND</li>
+</ul>
+
+<script>
+    $(document).on("click", ".impactmenu li", function() {
+        var section = $(this).attr("data-s");
+        $(".impactmenu li").removeClass("active");
+        $(this).addClass("active");
+        $(".impact_section").hide();
+        $("."+ section).fadeToggle();
+        window.scrollTo(0,0);
+    });
+    $(document).on("click", ".welcomelink", function() {
+        var section = $(this).attr("data-s");
+        $(".impactmenu li").removeClass("active");
+        $(".impact_section").hide();
+        var elements = document.querySelectorAll('[data-s="'+section+'"]');
+        elements[0].classList.add("active");
+        $("."+ section).fadeToggle ();
+        window.scrollTo(0,0);
+    })
+</script>
+
+<style>
+    .impact_menu_trigger {
+        width: 52px;
+        height: 52px;
+        z-index: 10000;
+        background: black;
+        border-radius: 50%;
+        padding: 10px;
+        width: fit-content;
+        position: fixed;
+        top: 180px;
+        left: 20px;
+        display: block;
+    }
+    .impact_menu_trigger .hamburger {
+        display: block;
+    }
+    .impact_menu_trigger .closeme {
+        display: none;
+    }
+    @media screen and (max-width: 440px) {
+        .bluearea {
+            margin-bottom: 0px !important;
+        }
+        .blue_section {
+            margin-bottom: 40px;
+        }
+    }
+    .impact_menu_mobile li {
+        font-family: main;
+        color: white;
+        background: black;
+        display: inline-block;
+        padding: 10px 30px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border-radius: 90px;
+    }
+    .impact_menu_desktop:hover {
+        opacity: 1 !important;
+    }
+    .impact_menu_desktop {
+        opacity: 1;
+        background: black;
+        border-radius: 90px;
+        padding: 15px 40px;
+        width: fit-content;
+        position: fixed;
+        top: 180px;
+        left: 80px;
+        display: none;
+        z-index: 100;
+    }
+    .impact_menu_mobile, .impact_menu_mobile_trigger {
+        display: none;
+    }
+    @media screen and (max-width: 440px) {
+        .impact_menu_desktop {
+            display: none !important;
+        }
+        .impact_menu_mobile_trigger {
+            width: 52px;
+            height: 52px;
+            z-index: 10000;
+            background: black;
+            border-radius: 50%;
+            padding: 10px;
+            width: fit-content;
+            position: fixed;
+            top: 180px;
+            left: 20px;
+            display: block;
+        }
+        .impact_menu_mobile {
+            z-index: 10000;
+            margin-left: 20px;
+            position: fixed;
+            top: 240px;
+        }
+        .impact_menu_mobile_trigger .hamburger {
+            display: block;
+        }
+        .impact_menu_mobile_trigger .closeme {
+            display: none;
+        }
+    }
+    .impact_menu_desktop li.active {
+        opacity: 1;
+        text-decoration: underline;
+    }
+    .impact_menu_desktop li {
+        cursor: pointer;
+        text-decoration: none;
+        opacity: .5;
+        color: white;
+        display: inline-block;
+        margin-right: 40px;
+        font-size: 18px;
+        line-height: 22px;
+        font-family: main;
+    }
+    .impact_menu_desktop li:last-child {
+        margin-right: 0;
+    }
+</style>
+
+<script>
+    $(document).on("click", ".impact_menu_mobile_trigger", function() {
+        $(".impact_menu_mobile").slideToggle();
+        $(".impact_menu_mobile_trigger .hamburger").fadeToggle();
+        $(".impact_menu_mobile_trigger .closeme").fadeToggle();
+    });
+    $(document).on("click", ".impact_menu_trigger", function() {
+        $(".impact_menu_desktop").slideToggle();
+        $(".impact_menu_trigger .hamburger").fadeToggle();
+        $(".impact_menu_trigger .closeme").fadeToggle();
+    });
+</script>

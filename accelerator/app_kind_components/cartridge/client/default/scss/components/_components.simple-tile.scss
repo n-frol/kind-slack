@@ -1,0 +1,36 @@
+/* ============================================================================
+   Simple Tile
+   ============================================================================ */
+
+/**
+ * Provides a simple tile that allows merchandizers to
+ * add basic content.
+ */
+
+$ns: c-simple-tile;
+
+.#{$ns} {
+    text-align: center;
+
+    &__heading {
+        @include media-breakpoint-up(md) {
+            margin-bottom: 22px;
+        }
+    }
+
+    // Styles that don't look good if there isn't an image
+    &--has-image {
+        .#{$ns} {
+            &__body {
+                margin-bottom: 50px;
+
+                @include media-breakpoint-up(md) {
+                    margin-bottom: 80px;
+                }
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 115px;
+                }
+            }
+        }
+    }
+}

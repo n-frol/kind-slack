@@ -1,0 +1,24 @@
+/* ============================================================================
+Checkout Shipping Address
+============================================================================ */
+
+/**
+ * Establish styles for shipping address section of the checkout page
+ */
+
+$ns: "c-checkout-shipping-address";
+
+.#{$ns} {
+    &__summary {
+        margin-bottom: 0;
+        padding-top: 4px;
+    }
+    &__selected-method {
+        margin-top: -5px;
+
+        &__label,
+        &__price {
+            color: $primary;
+        }
+    }
+}

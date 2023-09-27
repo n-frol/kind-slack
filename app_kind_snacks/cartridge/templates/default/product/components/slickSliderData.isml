@@ -1,0 +1,9 @@
+<iscomment>
+The data fields for slick sliders based on site preferences
+In their own template for ease of access and modification
+</iscomment>
+
+data-autoplay="${dw.system.Site.current.getCustomPreferenceValue('isAutoplay')}"
+data-autoplayspeed="${dw.system.Site.current.getCustomPreferenceValue('autoplaySpeed')}"
+data-arrows="${dw.system.Site.current.getCustomPreferenceValue('isArrows')}"
+data-dots="${dw.system.Site.current.getCustomPreferenceValue('isDots')}"

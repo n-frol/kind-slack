@@ -1,0 +1,48 @@
+/* ============================================================================
+Cart Ordergroove Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created by Ordergroove on the cart
+ */
+
+ // Use importants to override other important styles
+
+$ns: s-cart-og;
+
+.#{$ns} {
+    margin-bottom: 15px;
+
+    @include media-breakpoint-up(lg) {
+        flex-basis: 26%;
+        max-width: 26%;
+    }
+    @include media-breakpoint-up(xl) {
+        flex-basis: 32%;
+        max-width: 32%;
+    }
+
+    .og-offer {
+        .og-label {
+            display: inline-block !important;
+            font-size: 14px !important;
+        }
+        .og-deliver-text-inner {
+            margin-bottom: 5px !important;
+        }
+        .og-on-row {
+            background-color: transparent !important;
+        }
+        .og-select {
+            &.sculptor-dropdown {
+                background-color: transparent !important;
+            }
+        }
+    }
+    .og-widget {
+        .og-radio-group {
+            .og-on-label {
+            }
+        }
+    }
+}

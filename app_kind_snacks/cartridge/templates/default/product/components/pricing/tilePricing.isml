@@ -1,0 +1,25 @@
+<iscache type="relative" minute="0" hour="0">
+<isscript>
+    var grps = session.getCustomer().getCustomerGroups();
+    var names = [];
+</isscript>
+<isloop items="${grps}" var="g">
+        <isscript>
+        names.push(g.ID);
+        </isscript>
+</isloop>
+<isset name="wholesaler" value="${dw.system.Site.getCurrent().name === "Kind B2B"}" scope="page" />
+<isset name="approvedWholesaler" value="${wholesaler && names.indexOf("Approved") > -1}" scope="page" />
+
+<isif condition="${(wholesaler && approvedWholesaler) || !wholesaler}">
+    <isset name="price" value="${product.price}" scope="page" />
+    <isinclude template="product/components/pricing/main" />
+<iselseif condition="${wholesaler && !approvedWholesaler}">
+    <div class="price c-product-add-to-cart__prices__price u-text__font-primary text-uppercase">
+        <isif condition="${!session.isCustomerAuthenticated()}">
+            Apply to see pricing
+        <iselse>
+            Pricing available upon application approval
+        </isif>
+    </div>
+</isif>

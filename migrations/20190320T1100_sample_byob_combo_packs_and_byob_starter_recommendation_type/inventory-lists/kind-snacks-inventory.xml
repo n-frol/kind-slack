@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">
+    <inventory-list>
+        <header list-id="kind-snacks-inventory">
+            <default-instock>false</default-instock>
+            <description>KIND Snacks Inventory</description>
+            <use-bundle-inventory-only>false</use-bundle-inventory-only>
+            <on-order>false</on-order>
+        </header>
+
+        <records>
+
+            <record product-id="chocolatecombo20">
+                <allocation-timestamp>2019-03-20T14:29:59.342Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="chocolatecombo40">
+                <allocation-timestamp>2019-03-20T14:30:26.650Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="fruitflavors20">
+                <allocation-timestamp>2019-03-20T14:48:45.485Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="fruitflavors40">
+                <allocation-timestamp>2019-03-20T14:48:55.638Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="naturalprotein20">
+                <allocation-timestamp>2019-03-20T14:51:18.169Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="naturalprotein40">
+                <allocation-timestamp>2019-03-20T14:51:30.027Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem1">
+                <allocation-timestamp>2019-03-20T15:05:48.851Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem1-1">
+                <allocation-timestamp>2019-03-20T15:06:26.514Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem2">
+                <allocation-timestamp>2019-03-20T15:06:08.006Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem2-1">
+                <allocation-timestamp>2019-03-20T15:06:26.527Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem3">
+                <allocation-timestamp>2019-03-20T15:06:51.756Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplechocolatecomboitem4">
+                <allocation-timestamp>2019-03-20T15:07:14.013Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplefruitflavorsitem1">
+                <allocation-timestamp>2019-03-20T15:09:23.729Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplefruitflavorsitem2">
+                <allocation-timestamp>2019-03-20T15:09:43.112Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplefruitflavorsitem3">
+                <allocation-timestamp>2019-03-20T15:09:54.302Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplefruitflavorsitem4">
+                <allocation-timestamp>2019-03-20T15:10:05.908Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplenaturalproteinitem1">
+                <allocation-timestamp>2019-03-20T15:11:38.547Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplenaturalproteinitem2">
+                <allocation-timestamp>2019-03-20T15:11:57.182Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplenaturalproteinitem3">
+                <allocation-timestamp>2019-03-20T15:12:05.109Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="samplenaturalproteinitem4">
+                <allocation-timestamp>2019-03-20T15:12:13.097Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+        </records>
+    </inventory-list>
+</inventory>

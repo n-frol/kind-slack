@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <header>
+        <image-settings>
+            <internal-location base-path="/"/>
+            <view-types>
+                <view-type>large</view-type>
+                <view-type>medium</view-type>
+                <view-type>small</view-type>
+                <view-type>swatch</view-type>
+            </view-types>
+            <alt-pattern>${productname}</alt-pattern>
+            <title-pattern>${productname}</title-pattern>
+        </image-settings>
+    </header>
+
+    <category category-id="root">
+        <display-name xml:lang="x-default">KIND Snacks Master Catalog</display-name>
+        <online-flag>true</online-flag>
+        <template/>
+        <page-attributes/>
+    </category>
+
+    <category category-id="breakfast">
+        <display-name xml:lang="x-default">Breakfast</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="clusters">
+        <display-name xml:lang="x-default">Clusters</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="fruit-bites">
+        <display-name xml:lang="x-default">Fruit Bites</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="gear">
+        <display-name xml:lang="x-default">Gear</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+    </category>
+
+    <category category-id="hgb">
+        <display-name xml:lang="x-default">HGB</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="kids">
+        <display-name xml:lang="x-default">Kids</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="kind-nut-bars">
+        <display-name xml:lang="x-default">KIND Nut Bars</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="minis">
+        <display-name xml:lang="x-default">Minis</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="pressed">
+        <display-name xml:lang="x-default">Pressed</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="protein">
+        <display-name xml:lang="x-default">Protein</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="sweet-spicy">
+        <display-name xml:lang="x-default">Sweet &amp; Spicy</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+    <category category-id="variety">
+        <display-name xml:lang="x-default">Variety</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <attribute-groups>
+            <attribute-group group-id="nutritionFacts">
+                <display-name xml:lang="x-default">Nutrition Facts</display-name>
+                <attribute attribute-id="fatCalories" system="false"/>
+                <attribute attribute-id="totalFat" system="false"/>
+                <attribute attribute-id="saturatedFat" system="false"/>
+                <attribute attribute-id="transFat" system="false"/>
+                <attribute attribute-id="polyunsaturatedFat" system="false"/>
+                <attribute attribute-id="monounsaturatedFat" system="false"/>
+                <attribute attribute-id="cholesterol" system="false"/>
+                <attribute attribute-id="sodium" system="false"/>
+                <attribute attribute-id="potassium" system="false"/>
+                <attribute attribute-id="totalCarb" system="false"/>
+                <attribute attribute-id="dietaryFiber" system="false"/>
+                <attribute attribute-id="sugars" system="false"/>
+                <attribute attribute-id="addedSugar" system="false"/>
+                <attribute attribute-id="sugarAlcohol" system="false"/>
+                <attribute attribute-id="protein" system="false"/>
+                <attribute attribute-id="allergenInformation" system="false"/>
+            </attribute-group>
+        </attribute-groups>
+    </category>
+
+</catalog>

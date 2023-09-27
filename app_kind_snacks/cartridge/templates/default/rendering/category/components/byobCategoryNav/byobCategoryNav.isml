@@ -1,0 +1,50 @@
+<isscript>
+    var BYOBHelpers = require('*/cartridge/scripts/helpers/byobHelpers');
+</isscript>
+<isset name="byobRootCategoryID" value="${dw.system.Site.current.getCustomPreferenceValue('byobRootCategoryID')}" scope="page" />
+    <isif condition="${!empty(byobRootCategoryID)}">
+        <isset name="byobRootCategory" value="${dw.catalog.CatalogMgr.getCategory(byobRootCategoryID)}" scope="page" />
+        <isset name="byobRootCategoryCount" value="${BYOBHelpers.getByobCategoryCount(byobRootCategory)}" scope="page" />
+        <isif condition="${!empty(byobRootCategory) && !empty(byobRootCategory.subCategories)}">
+            <div class="c-byob-category-nav__wrap js-navbar-wrapper">
+                <div class="container s-slick position-relative">
+                    <span class="c-byob-category-nav__wrap__jump_to">${Resource.msg('label.jumpto', 'byob', null)}:</span>
+                    <div class="c-byob-category-nav js-slider" data-infinite="false" data-slidestoshow="9" data-slidestoscroll="1" data-slidestoscroll-1200="1" data-slidestoscroll-1024="1" data-slidestoscroll-768="1"  data-slidestoscroll-992="3" data-slidestoshow-1200="7" data-slidestoshow-1024="5" data-slidestoshow-768="1" data-dots="true" data-arrows="true">
+                        <iscomment>Intentionally overwrites byobCategory</iscomment>
+                        <isloop items="${byobRootCategory.subCategories}" var="byobCategory" status="loopStatus">
+                            <isif condition="${byobCategory.online && byobCategory.hasOnlineProducts()}">
+                                <div class="c-byob-category-nav__item-wrap c-byob-redesign text-center">
+                                    <isinclude template="rendering/category/components/byobCategoryNav/byobCategoryNav_UI" />
+                                    <a href="" class="c-byob-category-nav__item c-byob-category-nav__item--${byobCategory.ID} js-category-nav-item<isif condition="${loopStatus.first}"> is-active</isif>"
+                                        data-label="${byobCategory.displayName}"
+                                        data-scid="${byobCategory.ID}">
+                                        <isif condition="${!empty(byobCategory.thumbnail)}">
+                                            <div class="c-byob-category-nav__item__img-wrap ">
+                                                <isset name="responsiveImage" value="${responsiveImageUtils.getResponsiveImage(byobCategory.thumbnail, 125)}" scope="page" />
+                                                <img class="c-byob-category-nav__item__img" src="${responsiveImage.imageUrlDefault}" alt="${byobCategory.displayName}" />
+                                            </div>
+                                        </isif>
+                                        <div class="c-byob-category-nav__item__name">
+                                            ${byobCategory.displayName}
+                                        </div>
+                                    </a>
+                                </div>
+                            </isif>
+                        </isloop>
+                    </div>
+                    <div class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                        <iscomment>Hide arrows here so jQuery can get them.  Allows for generating buttons using SFRA functions that imageCarousel.js won't have access to</iscomment>
+                        <button class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--byob slick-prev d-none" type="button" data-slide="prev">
+                            <span class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                        </button>
+
+                        <button class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--byob c-byob-category-nav__slider__controls__arrow slick-next d-none" type="button" data-slide="next">
+                            <span class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </isif>
+    </isif>

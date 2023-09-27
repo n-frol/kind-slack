@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="footer-column-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'products')$"&gt;shop&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'products')$" title="Shop All Products"&gt;shop all&lt;/a&gt;&lt;/li&gt; &#13;
+                &lt;li&gt;&lt;a href="https://wholesale.kindsnacks.com/customer/account/login/" title="Wholesale" target="_blank"&gt;wholesale&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-2">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$httpsURL('Account-Show')$"&gt;account&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$httpsURL('Account-Show')$" title="Go to My Account"&gt;my account&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$httpsURL('Order-History')$" title="Go to Check Order"&gt;check order&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer-account --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-3">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Search-ShowContent', 'fdid', 'contact')$"&gt;support&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'contact')$" title="Go to Contact Us"&gt;contact us &amp; FAQ&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_support --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-4">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'about-us')$" title="Go to About Us"&gt;about us&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'careers')$" title="Go to Careers"&gt;careers&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'media-center')$" title="Go to the Media Center"&gt;media center&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'nutrition-collective_welcome')$" title="Go to the Nutrition Collective"&gt;nutrition collective&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-5">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="$url('Page-Show', 'cid', 'our-mission')$"&gt;our mission&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="KIND foundation"&gt;KIND foundation&lt;/a&gt;&lt;/li&gt;&#13;
+            &#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'donations')$" title="Donations"&gt;donations&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="fr-FR">&lt;h3&gt;&lt;a class="title" href="#"&gt;À propos&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Aller à À propos de nous"&gt;À propos de nous&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Aller à Déclaration de confidentialité"&gt;Confidentialité&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="Aller à Conditions générales"&gt;Conditions générales&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="Aller à Carrières"&gt;Carrières&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="it-IT">&lt;h3&gt;&lt;a class="title" href="#"&gt;Informazioni su&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="Vai a Chi siamo"&gt;Chi siamo&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="Vai a Privacy"&gt;privacy&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="Vai a Termini"&gt;Termini&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="Vai a Lavora con noi"&gt;Lavora con noi&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="ja-JP">&lt;h3&gt;&lt;a class="title" href="#"&gt;企業情報&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="「Commerce Cloud について」に移動する"&gt;Commerce Cloud について&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="「プライバシー」に移動する"&gt;プライバシー&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="「利用条件」に移動する"&gt;利用条件&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="「採用情報」に移動する"&gt;採用情報&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+            <custom-attribute attribute-id="body" xml:lang="zh-CN">&lt;h3&gt;&lt;a class="title" href="#"&gt;关于&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'about-us')$" title="前往关于我们"&gt;关于我们&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'privacy-policy')$" title="前往隐私"&gt;隐私政策&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'terms')$" title="前往条款"&gt;条款&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'jobs-landing')$" title="前往招聘"&gt;招聘&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="explore-snack-times">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">see all the ways you can eat KIND® snacks every day</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="make-lunch-interesting">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">make lunch interesting</custom-attribute>
+         </custom-attributes>
+    </content>
+
+    <content content-id="after-school-snack">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">after school snack</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="power-your-workout">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">power for your workout</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="guilt-free-indulgence">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">guilt-free indulgence</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="evening-snack">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">evening snack</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

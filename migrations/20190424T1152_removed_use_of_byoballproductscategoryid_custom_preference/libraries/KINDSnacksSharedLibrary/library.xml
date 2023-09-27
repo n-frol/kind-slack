@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="nav-select-some-snacks">
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-Show', 'cgid', 'byob-test')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

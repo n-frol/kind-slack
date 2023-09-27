@@ -1,0 +1,448 @@
+/* ============================================================================
+Product Tiles
+
+/**
+ * Styles for the Search – Product Tiles
+*/
+
+$ns: c-product-tile;
+
+.#{$ns} {
+    display: block;
+    font-family: $font-family-primary;
+    padding: 0 16px 16px 16px;
+    text-decoration: none;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        align-content: space-between;
+        flex-wrap: wrap;
+        height: 100%;
+        min-height: 375px;
+    }
+    @include media-breakpoint-up(sm) {
+        min-height: 315px;
+    }
+    @include media-breakpoint-up(xs) {
+        min-height: 215px;
+    }
+
+    &__wrap {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(6);
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        @include media-breakpoint-up(lg) {
+            @include make-col(4);
+        }
+    }
+
+    .c-product-tile__callout {
+        display: none;
+    }
+    &__wrap.callout-top {
+        position: relative;
+        .c-product-tile__callout {
+            display: inline-block;
+            text-align: center;
+            margin: -17px auto;
+            background: $dark-yellow;
+            padding: 3px 10px;
+            font-size: 14px;
+            z-index: 1;
+            text-transform: uppercase;
+            color: black;
+        }
+    }
+    &__tile-body {
+        font-family: $font-family-primary;
+        width: 100%;
+
+        &__short-description {
+            color: $grey4;
+            font-size: 14px;
+            padding-bottom: 8px;
+        }
+        &__pdp-link {
+            /**
+             * use !important - in global style this class has chain of parent classes
+            */
+            color: $grey7 !important;
+            font-size: 18px !important;
+            letter-spacing: -0.5px;
+            line-height: 18px !important;
+            text-decoration: none;
+            text-transform: lowercase;
+            padding-bottom: 5px;
+            @include media-breakpoint-up(md) {
+                font-size: 15px;
+            }
+            @include media-breakpoint-up(sm) {
+                font-size: 14px;
+            }
+        }
+        &__quantity-per-container {
+            font-size: 14px;
+            line-height: 1.21;
+        }
+
+        &__footer {
+            &__ratings {
+                &__star {
+                    color: $dark-yellow;
+                    font-size: 11px;
+                }
+                &__count {
+                    color: $grey5;
+                    font-size: 12px;
+                    padding-left: 5px;
+                }
+            }
+            /**
+             * compare label&checkbox have other styles then global default elements
+            */
+            &__compare {
+                text-align: right;
+                &__custom-control {
+                    &__label {
+                        color: $grey5 !important;
+                        font-size: 12px;
+                        margin-top: 0 !important;
+                        &::before {
+                            border: 2px solid $grey3 !important;
+                            height: 14px !important;
+                            left: 9px !important;
+                            top: 5px !important;
+                            transition: all 0.3s ease 0s;
+                            width: 14px !important;
+                        }
+                        &:hover::before {
+                            border: 2px solid #5cb1e3 !important;
+                        }
+                        &::after {
+                            content: none !important;
+                        }
+                    }
+
+                    &__checkbox:checked ~ &__label::before {
+                        background: url("../../images/compare-checked.svg")
+                            no-repeat 0 0;
+                        border: none !important;
+                    }
+
+                    &__checkbox:disabled ~ &__label:hover::before {
+                        border-color: $grey3 !important;
+                    }
+                }
+            }
+        }
+        &__callout {
+            color: $black;
+            font-size: 12px;
+            line-height: normal;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__image-container {
+        align-items: center;
+        display: flex;
+        overflow: hidden !important;
+        position: relative;
+        &__image {
+            display: block;
+            transition: all 0.5s ease 0s;
+            width: 100%;
+        }
+        @include media-breakpoint-up(sm) {
+            min-height: 272px;
+        }
+    }
+
+    &__out-of-stock {
+        color: black !important;
+        font-family: $font-family-secondary;
+        font-size: 15px;
+        font-style: italic;
+        text-transform: lowercase;
+        @include media-breakpoint-up(sm) {
+            float: right;
+        }
+    }
+}
+
+/* v2 product tile styles */
+.product-grid-v2 {
+    background: #eee;
+    padding-top: 15px;
+    margin-left: -23px;
+    margin-right: -23px;
+    .product-tile .tile-body .price,
+    .c-product-tile__tile-body__quantity-per-container {
+        display: inline-block;
+    }
+    .c-product-tile__tile-body__quantity-per-container {
+        color: $grey10 !important;
+    }
+    .c-product-tile__tile-body__pdp-link {
+        text-transform: none;
+    }
+    .#{$ns} {
+        margin: 20px 0 0px;
+        padding: 0 6px;
+        &__wrap {
+            padding: 0;
+        }
+
+        &__image-container,
+        &__tile-body {
+            padding: 0.625em;
+            min-height: 180px;
+            background: white;
+            @include media-breakpoint-up(sm) {
+                min-height: 156px;
+            }
+            @include media-breakpoint-up(md) {
+                min-height: 146px;
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+            }
+        }
+        &__tile-body {
+            border-bottom: 1px solid white;
+        }
+        &__image-container {
+            border-top: 1px solid white;
+        }
+        &--quick-view {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            transition: none !important;
+            border: 3px solid transparent !important;
+        }
+        @include media-breakpoint-up(md) {
+            padding: 0 16px 16px 16px;
+            &__image-container {
+                padding: 46px 55px 16px;
+            }
+
+            &--quick-view:hover {
+                border-color: transparent;
+                .tile-body,
+                .image-container {
+                    border-left: 1px solid #808080;
+                    border-right: 1px solid #808080;
+                }
+                .tile-body {
+                    border-bottom: 1px solid #808080;
+                }
+                .image-container {
+                    border-top: 1px solid #808080;
+                }
+            }
+        }
+    }
+    .callout {
+        line-height: 1.2;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+}
+
+.c-product-tile--unsellable {
+    .c-product-add-to-cart__prices__price,
+    .c-product-tile__out-of-stock {
+        display: none;
+    }
+}
+
+/* col-12 search results column control */
+.c-search-results__content-box.col-12 {
+    .c-product-tile__wrap {
+        @include make-col(6);
+        @include media-breakpoint-up(lg) {
+            @include make-col(4);
+            margin-bottom: 20px;
+        }
+        &.marketing_tile__wrap {
+            @include make-col(12);
+            margin: 30px 0 10px 0;
+            @include media-breakpoint-up(sm) {
+                @include make-col(6);
+                margin: 20px 0 0;
+                padding: 0 7px;
+            }
+            @include media-breakpoint-up(md) {
+                margin-bottom: 20px;
+                padding: 0;
+            }
+            @include media-breakpoint-up(lg) {
+                @include make-col(4);
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .c-product-tile__wrap--step2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.c-search-results__content-box.js-content-box.col-sm-12.right.col-md-9 {
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.c-search-results__content-box {
+    .c-simple-tile__heading {
+        display: none;
+    }
+
+    .c-simple-tile__body {
+        display: none;
+    }
+
+    .c-byob-product-list__item__quantity {
+        display: none;
+    }
+
+    .c-byob-product-list__item__image {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+    .c-byob-product-list__body.js-byob-list-body
+        .c-byob-product-list__body-inner {
+        padding-top: 0;
+    }
+
+    .c-byob-product-list__item__action--change-qty {
+        margin-top: 20px;
+    }
+
+    .c-byob-product-list__body__add-more-snacks.c-byob-product-list__body__add-to-cart {
+        background-color: #808080 !important;
+        color: white;
+
+        :hover {
+            background-color: #808080;
+            color: white;
+        }
+    }
+}
+/* Modifiers
+ ============================================================================ */
+
+// Product Tile with Quick View
+.#{$ns}--quick-view {
+    border: 3px solid transparent;
+    margin-bottom: 40px;
+    transition: all 0.5s ease 0s;
+
+    @include media-breakpoint-up(md) {
+        height: calc(100% - 40px);
+    }
+
+    .#{$ns}__image-container {
+        &__quickview {
+            display: none;
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            line-height: 34px;
+            opacity: 0;
+            position: absolute;
+            bottom: 1rem;
+            left: 50% !important;
+            right: 1rem;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transform: translate(-50%, 15%);
+            transition: all 0.5s ease 0s;
+            width: 75%;
+            @include media-breakpoint-up(sm) {
+                display: block;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: #808080;
+        text-decoration: none;
+        transition: all 2s ease 0s;
+
+        .#{$ns} {
+            &__tile-body {
+                &__quantity-per-container {
+                    color: $primary;
+                }
+            }
+            &__image-container {
+                &__quickview {
+                    opacity: 1;
+                    transition: all 0.8s ease 0s;
+                }
+            }
+        }
+    }
+}
+
+// Product Tile for Out of Stock Product
+.#{$ns}--out-of-stock {
+    .#{$ns} {
+        &__image-container {
+            //opacity: 0.4;
+
+            &__quickview {
+                display: none;
+            }
+        }
+    }
+}
+
+/* Yotpo
+ ============================================================================ */
+.#{$ns} {
+    .yotpo.bottomLine,
+    .yotpo {
+        .yotpo-bottomline .yotpo-stars,
+        .yotpo-stars {
+            .yotpo-icon {
+                width: 14px !important;
+                height: 14px !important;
+                margin: 0 1px 0 0;
+                &.rating-star.yotpo-icon-empty-star {
+                    background-position: -200px 0;
+                }
+                &.rating-star.yotpo-icon-star {
+                    background-position: -171px 0;
+                }
+                &.rating-star.yotpo-icon-half-star {
+                    background-position: -185px 0;
+                }
+            }
+        }
+        .text-m {
+            font-size: 9px;
+            color: $grey10 !important;
+            line-height: 1.5;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.no-padding {
+    padding-bottom: 0;
+}

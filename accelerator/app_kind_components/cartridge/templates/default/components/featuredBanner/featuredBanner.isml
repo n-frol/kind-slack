@@ -1,0 +1,58 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/featuredBanner/featuredBanner_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container st-container st-container--padded c-featured-banner__container">
+            <div class="row">
+    </isif>
+        <div class="c-featured-banner ${assetID} th-kind-featured-banner s-graphical-asset
+            <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-featured-banner--${graphicalAsset.contentXPosition.value}</isif>">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container st-container st-container--padded c-featured-banner__container">
+                    <div class="row c-featured-banner__row">
+            </isif>
+                        <isif condition="${!empty(graphicalAsset.image)}">
+                            <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 1000, null, '', 'jpg')}" scope="page" />
+                            <div class="c-featured-banner__image__wrapper"><!-- dwMarker="content" dwContentID="${assetID}" -->
+                                <img class="c-featured-banner__image" src="${responsiveImage.imageUrlDefault}"
+                                    srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                                    alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                            </div><!-- END_dwmarker -->
+                        </isif>
+                        <div class="c-featured-banner__content"><!-- dwMarker="content" dwContentID="${assetID}" -->
+                            <isif condition="${!empty(graphicalAsset.eyebrow)}">
+                                <div class="c-featured-banner__eyebrow">
+                                    <isprint value="${graphicalAsset.eyebrow}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-featured-banner__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-featured-banner__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-featured-banner__links s-graphical-asset__links">
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div><!-- END_dwmarker -->
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

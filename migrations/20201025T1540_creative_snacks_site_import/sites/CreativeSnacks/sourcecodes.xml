@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sourcecodes xmlns="http://www.demandware.com/xml/impex/sourcecode/2007-03-31">
+    <sourcecode-group group-id="Site-wide">
+        <description>Site-Wide Discount</description>
+        <enabled-flag>false</enabled-flag>
+        <active-redirect>
+            <default-redirect/>
+        </active-redirect>
+        <inactive-redirect>
+            <default-redirect/>
+        </inactive-redirect>
+        <code-specs>
+            <code-spec>*</code-spec>
+        </code-specs>
+        <pricebooks>
+            <pricebook pricebook-id="kind-snacks-list-prices"/>
+            <pricebook pricebook-id="kind-snacks-snack-club-prices"/>
+        </pricebooks>
+    </sourcecode-group>
+
+    <sourcecode-group group-id="idme">
+        <description>ID.me</description>
+        <enabled-flag>true</enabled-flag>
+        <cookie-max-age>7</cookie-max-age>
+        <online-from>2020-05-22Z</online-from>
+        <active-redirect>
+            <default-redirect/>
+        </active-redirect>
+        <inactive-redirect>
+            <default-redirect/>
+        </inactive-redirect>
+        <code-specs>
+            <code-spec>idme</code-spec>
+        </code-specs>
+        <pricebooks/>
+    </sourcecode-group>
+
+    <sourcecode-group group-id="lrbc">
+        <description/>
+        <enabled-flag>false</enabled-flag>
+        <active-redirect>
+            <category-redirect category-id="kind-protein"/>
+        </active-redirect>
+        <inactive-redirect>
+            <default-redirect/>
+        </inactive-redirect>
+        <code-specs>
+            <code-spec>facebook</code-spec>
+            <code-spec>instagram</code-spec>
+        </code-specs>
+        <pricebooks/>
+    </sourcecode-group>
+
+    <sourcecode-group group-id="product-affinity">
+        <description>Product Affinity Test</description>
+        <enabled-flag>true</enabled-flag>
+        <cookie-max-age>7</cookie-max-age>
+        <active-redirect>
+            <default-redirect/>
+        </active-redirect>
+        <inactive-redirect>
+            <default-redirect/>
+        </inactive-redirect>
+        <code-specs/>
+        <pricebooks/>
+    </sourcecode-group>
+
+</sourcecodes>

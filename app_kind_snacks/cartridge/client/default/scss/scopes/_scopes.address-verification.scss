@@ -1,0 +1,27 @@
+/* ============================================================================
+Address Verification Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles within content assets in the address verification
+ */
+
+$ns: s-address-verification;
+
+.#{$ns} {
+    .content-asset {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h2 {
+        font-size: 30px;
+        letter-spacing: -1.5px;
+        margin-bottom: 14px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 60px;
+            letter-spacing: -3.4px;
+            margin-bottom: 22px;
+        }
+    }
+}

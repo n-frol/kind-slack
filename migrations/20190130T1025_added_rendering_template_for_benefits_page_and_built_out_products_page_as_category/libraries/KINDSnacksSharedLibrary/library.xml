@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="occasions">
+        <display-name xml:lang="x-default">Occasions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/navigationContent</template>
+        <page-attributes>
+            <page-title xml:lang="x-default">When to Eat KIND | Find the Right Snack for You | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">We think there's never a wrong time to enjoy KIND, but we can make some recommendations of how you can enjoy KIND throughout your day.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>explore-snack-times</value>
+                <value>fuel-your-morning-run</value>
+                <value>breakfast-at-home</value>
+                <value>add-some-fruit</value>
+                <value>make-lunch-interesting</value>
+                <value>healthy-on-the-go</value>
+                <value>after-school-snack</value>
+                <value>power-your-workout</value>
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="isTimelineTemplate">true</custom-attribute>
+            <custom-attribute attribute-id="navigation">&lt;ul&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Page-Show', 'cid', 'occasions')$" class="active"&gt;Occasions&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'flavors')$"&gt;Flavors&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'benefits')$"&gt;Benefits&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'products')$"&gt;Products&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

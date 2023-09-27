@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19" secure="false">
+
+    <field formid="fullName" label="label.input.name" type="string" mandatory="true" binding="fullName"
+           max-length="100" missing-error="error.message.required" range-error="error.message.lessthan100"/>
+
+    <field formid="company" label="label.input.company" type="string" mandatory="false" binding="company"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="subject" label="label.input.subject" type="string" mandatory="true" binding="subject"
+           missing-error="error.message.required">
+        <options>
+            <option optionid="General Inquiry" label="input.subject.generalinquiry" value="General Inquiry"/>
+            <option optionid="Order Status" label="input.subject.orderstatus" value="Order Status"/>
+            <option optionid="Press Inquiry" label="input.subject.pressinquiry" value="Press Inquiry"/>
+            <option optionid="Product Concern" label="input.subject.productconcern" value="Product Concern"/>
+            <option optionid="Where to Buy" label="input.subject.wheretobuy" value="Where to Buy"/>
+        </options>
+    </field>
+
+    <field formid="comments" label="label.input.comments" type="string" mandatory="true" binding="comments"
+           missing-error="error.message.required" />
+
+    <!-- use fields from shipping address definition -->
+    <include formid="addressFields" name="address"/>
+
+    <!-- Optional address fields -->
+    <field formid="address1" label="label.input.address1" type="string" mandatory="false" binding="address1" max-length="50"
+           missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="city" label="label.input.city" type="string" mandatory="false" binding="city" min-length="2"
+           max-length="50" missing-error="error.message.required" range-error="error.message.lessthan50"/>
+
+    <field formid="postalCode" label="label.input.zipcode" type="string" mandatory="false" min-length="5" max-length="10"
+           regexp="(^\d{5}(-\d{4})?$)|(^[abceghjklmnprstvxyABCEGHJKLMNPRSTVXY]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"
+           binding="postalCode"
+           range-error="error.message.between5and10"
+           missing-error="error.message.required"
+           parse-error="error.message.parse.zip"/>
+
+    <field formid="phone" label="label.input.phonenumber" description="address.phone.example" type="string" mandatory="false"
+           binding="phone" min-length="10" max-length="20"
+           missing-error="error.message.required"
+           range-error="error.message.between10and20"
+           parse-error="error.message.parse.phone"/>
+
+    <include formid="orderFields" name="order"/>
+
+</form>

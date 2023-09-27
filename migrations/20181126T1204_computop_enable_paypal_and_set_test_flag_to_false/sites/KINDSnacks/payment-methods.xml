@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payment-settings xmlns="http://www.demandware.com/xml/impex/paymentsettings/2009-09-15">
+    <payment-method method-id="PAYMENTOPERATOR_PAYPAL">
+        <name xml:lang="x-default">PaymentOperator Paypal</name>
+        <enabled-flag>true</enabled-flag>
+        <processor-id>PAYMENTOPERATOR_PAYMENTGATE</processor-id>
+    </payment-method>
+    <payment-method method-id="PAYMENTOPERATOR_PAYPALEXPRESS">
+        <name xml:lang="x-default">PaymentOperator PaypalExpress</name>
+        <enabled-flag>true</enabled-flag>
+        <processor-id>PAYMENTOPERATOR_PAYMENTGATE</processor-id>
+    </payment-method>
+</payment-settings>

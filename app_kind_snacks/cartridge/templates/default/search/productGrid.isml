@@ -1,0 +1,35 @@
+<iscache hour="2" type="relative" if="${typeof searchModel !== 'undefined' && !searchModel.isPersonalizedSort()}" />
+<isif condition="${pdict.isSwap}">
+    <isinclude template="search/components/productTilesSwap" />
+</isif>
+<isif condition="${pdict.isBYOB}">
+    <isinclude template="search/components/productTilesBYOB" />
+<iselse/>
+    <isinclude template="search/components/productTiles" />
+</isif>
+
+
+<div class="col-12 grid-footer"
+        data-sort-options="${JSON.stringify(pdict.productSearch.productSort)}"
+        data-page-size="${pdict.productSearch.pageSize}"
+        data-page-number="${pdict.productSearch.pageNumber}"
+    >
+<isset name="loadStyle" value="${dw.system.Site.current.getCustomPreferenceValue("enableInfiniteScroll") ? 'show': 'load'}" scope="page" />
+       <isif condition="${pdict.productSearch.showMoreUrl !== ''}">
+                    <div class="${loadStyle}-more">
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary col-12 col-sm-4 js-${loadStyle}-more-sentinel"
+                                    data-url="${pdict.productSearch.showMoreUrl}"
+                            >
+                                ${Resource.msg('button.more', 'search', null)}
+                            </button>
+                        </div>
+                    </div>
+        </isif>
+</div>
+
+<input type="hidden" class="permalink" value="${pdict.productSearch.permalink}" />
+<isif condition="${pdict.productSearch.category != null}">
+<input type="hidden" class="category-id" value="${pdict.productSearch.category.id}" />
+</isif>
+

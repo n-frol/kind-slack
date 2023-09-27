@@ -1,0 +1,22 @@
+/* ============================================================================
+Compliment Generator
+============================================================================ */
+
+/**
+ * Styles for the compliment generator on the error pages
+*/
+$ns: c-compliment-generator;
+
+.#{$ns} {
+    &__message {
+        display: block;
+        font-family: $font-family-primary;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    &__generate {
+        max-width: 215px;
+    }
+}
+

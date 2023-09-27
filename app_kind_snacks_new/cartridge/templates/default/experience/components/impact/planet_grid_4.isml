@@ -1,0 +1,156 @@
+<div class="planet_grid_4">
+    <div class="griditem left">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Layer_1.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="head">
+            planet meets communities
+        </div>
+        <div class="copy">
+            We are supporting the next generation of sustainable agriculture through a scholarship at UC Merced, a Hispanic-Serving Institution in Merced County, California. We’ll be donating a total of $20,000 to contribute towards scholarships that will be awarded to eight undergraduate students who have a demonstrated interest in either sustainable or regenerative agriculture.
+        </div>
+    </div>
+    <div class="griditem right">
+        <div class="blackbox">
+            <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3156.png')}" alt="Impact Planet 3 Image 1" />
+            <div class="head">
+                What is regenerative<br/> agriculture?
+            </div>
+            <div class="copy">
+                KIND defines regenerative agriculture as a set of farming principles and practices which aim to restore soil health and build long-term climate resilience in farming communities.
+            </div>
+            </div>
+    </div>
+</div>
+<div class="planet_grid_4_2 desktop">
+    <div class="griditem left">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/image 165.png')}" alt="Impact Planet 3 Image 1" />
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid6/blackquote.png')}" alt="Impact Planet 3 Image 1" />
+        <div class="quote" style="margin-bottom: 20px;">
+            This will tremendously help our students, many of which are first-generation students, and continue to give back to our planet by investing in the future generation that’s going to change the world. It means a lot to our students to see a brand like KIND invest in our local community and for an initiative that they care deeply about – helping the planet.”
+        <div class="person">
+            Monica Sozinho<br/>
+        Director of Corporate Relations, UC Merced
+    </div>
+        </div>
+    </div>
+</div>
+
+<div class="planet_grid_4_2 mobile" style="display: none">
+    <div class="quote" style="padding-left: 20px; padding-right: 20px;">
+        This will tremendously help our students, many of which are first-generation students, and continue to give back to our planet by investing in the future generation that’s going to change the world. It means a lot to our students to see a brand like KIND invest in our local community and for an initiative that they care deeply about – helping the planet.”        <div class="person">
+            <img style="width: 40%; margin-right: 10px; margin-left: 20px;" src="${URLUtils.staticURL('/images/impact/grid3/image 165.png')}" alt="Impact Planet 3 Image 1" />
+            <div class="persont" style="position: relative; top: 50px; margin-bottom: 50px;">
+                Monica Sozinho<br/>
+                Director of Corporate Relations, UC Merced
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .planet_grid_6 {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            grid-template-columns: 1fr !important;
+        }
+        .planet_grid_4_2 {
+            flex-direction: column;
+            padding: 0px !important;
+        }
+    }
+    .mobile {
+        display: none;
+    }
+    .planet_grid_4_2 {
+        padding: 30px 180px;
+        display: flex;
+        grid-gap: 140px;
+    }
+    .planet_grid_4_2 .griditem.left img {
+        max-width: 120px;
+        width: 120px;
+    }
+    .planet_grid_4_2 .quote {
+        font-size: 23px !important;
+        line-height: 25px !important;
+        font-family: medium !important;
+        font-weight: 700 !important;
+        margin-top: 20px;
+    }
+    .planet_grid_4_2 .quote .person {
+        font-size: 22px !important;
+        line-height: 25px !important;
+        color: #939393;
+        font-family: medium;
+        margin-top: 20px;
+    }
+    .blackbox {
+        position: relative;
+        background-color: #000000;
+    }
+    .planet_grid_4 .blackbox {
+        color: #FFFFFF;
+        padding: 30px;
+        position: relative;
+        border-radius: 20px;
+        width: 100%;
+    }
+    .blackbox .head {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 32px;
+        font-family: main;
+        margin-bottom: 30px;
+    }
+    .blackbox .copy {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        margin-bottom: 40px;
+    }
+    .planet_grid_4 .blackbox img {
+        position: absolute;
+        right: -60px;
+        top: -30px;
+    }
+    @media screen and (max-width: 440px) {
+     .planet_grid_4 {
+         grid-template-columns: 1fr !important;
+     }
+    }
+    .planet_grid_4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        grid-gap: 80px;
+        align-items: flex-end;
+        justify-items: center;
+        border-bottom: 1px solid #999999;
+        padding-bottom: 80px;
+        margin-bottom: 80px;
+    }
+    .planet_grid_4 .griditem {
+        position: relative;
+    }
+    .planet_grid_4 .left img {
+        position: absolute;
+        right: 0px;
+    }
+    .planet_grid_4 .griditem.left .head {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 46px;
+        font-family: main;
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+    .planet_grid_4 .griditem.left .copy {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        font-family: medium;
+    }
+</style>

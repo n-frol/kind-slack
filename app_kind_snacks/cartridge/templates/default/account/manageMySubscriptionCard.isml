@@ -1,0 +1,32 @@
+<div class="card c-account-dashboard__card-body">
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">${Resource.msg('label.subscription','account',null)}</div>
+    </div>
+    <div class="card-body card-info-group">
+        ${Resource.msg('label.subscriptionintro','account',null)}
+    </div>
+    <div class="text-center c-account-dashboard__card-footer">
+        <a href="${URLUtils.url('Account-MSI')}" class="msilink c-account-dashboard__card-header__link">${Resource.msg('label.managemysubscription','account',null)}</a>
+    </div>
+
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">${Resource.msg('label.subscriptionswap','account',null)}</div>
+    </div>
+    <div class="card-body card-info-group">
+        ${Resource.msg('label.subscriptionintroswap','account',null)}
+        <br />
+        <div class="col-4" style="float:left;">
+                <isif condition="${!empty(pdict.images[0].imageUrlDefault)}">
+                    <img class="img-fluid" src="${pdict.images[0].imageUrlDefault}" alt="${pdict.images[0].imageAlt}" title="${pdict.images[0].imageAlt}">
+                <iselse>
+                    <img class="img-fluid" src="${URLUtils.staticURL('images/noimagelarge.png')}" alt="${pdict.images[0].imageAlt}" title="${pdict.images[0].imageAlt}">
+                </isif>
+            </div>
+            <div class="col-sm-8 col-12 subtext floatrightdesk" style="margin-top:10px;">
+                <p>${pdict.swapbar.name}</p>
+            </div>
+    </div>
+    <div class="text-center c-account-dashboard__card-footer">
+        <a href="/search?cgid=swap&ref=account" aria-label="edit default bar"  class="c-account-dashboard__card-header__link">${Resource.msg('label.managemysubscriptionswap','account',null)}</a>
+    </div>
+</div>

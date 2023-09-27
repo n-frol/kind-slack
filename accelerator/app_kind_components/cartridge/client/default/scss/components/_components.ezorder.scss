@@ -1,0 +1,92 @@
+.ezorder-container {
+    margin:auto; max-width:1280px; padding:10px;
+}
+.ezorder-container .ezheader {
+    padding-top:30px; text-transform:none; color:red;
+}
+.ezorder-container .subtext {
+    max-width:800px; line-height:1.1; font-size:16px; font-family:georgia;
+}
+.ezerror {
+    background:red; padding:20px; color:white; display:none
+}
+.ezsearch-container {
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+.ezsearch-container label {
+    font-size:20px;
+}
+.ezsearch {
+    background:#eeeeee !important; width:30% !important; position:absolute; left:0px;
+}
+.pagelen {
+    position:absolute; right:0px; width:100px; display:none;
+}
+.ezordertable {
+    width:100% !important; padding-top:30px;
+}
+.ezorder-img {
+    width:150px;
+}
+.ezorder-quickview {
+    cursor:pointer; width:20px;
+}
+.minorderqty {
+    font-weight:jnormal;
+    font-size:14px;
+}
+.qv-subtext {
+    width:800px; line-height:1.1; font-size:16px; font-family:georgia; padding-bottom:20px;
+}
+button:disabled {
+    background-color: #ccc;
+}
+    .ezadd {
+        width: unset;
+        margin-top: 20px;
+        float: right;
+        margin-bottom: 20px;
+        padding: 10px 40px;
+        cursor: pointer;
+    }
+
+    table.dataTable tfoot {
+        border-top: 3px solid black;
+    }
+
+    .odd,
+    .even {
+        border-bottom: 1px solid black !important;
+    }
+
+    .q {
+        display: inline-block;
+    }
+
+    .dataTables_length {
+        float: right;
+    }
+
+    div.dataTables_wrapper div.dataTables_filter {
+        text-align: left !important;
+        width: 50%;
+        display: inline-block;
+    }
+
+    th {
+        font-size: 20px;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    }
+
+    td {
+        font-weight: bold;
+        font-size: 16px;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    }
+
+    .c-qty__input[type="number"] {
+        padding: 0px;
+    }

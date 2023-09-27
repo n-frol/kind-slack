@@ -1,0 +1,44 @@
+{
+  "name": "1 Row, 1 Column, Landscape, Settable Width",
+  "group": "layouts",
+  "attribute_definition_groups": [
+    {
+      "id": "widthgroup",
+      "attribute_definitions": [
+        {
+          "id": "width",
+          "name": "Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Background Color",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "center",
+          "name": "Center Align",
+          "type": "boolean",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+      {
+        "id":"column1width",
+        "name":"Column 1 Width",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      }
+  ]
+}

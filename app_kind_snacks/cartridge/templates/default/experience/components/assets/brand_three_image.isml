@@ -1,0 +1,59 @@
+<div class="tripleimgcontain subtitle" style="text-align:center;">
+    <a href="${pdict.link}">
+        <img class="tripleimg" src="${pdict.image.src.desktop}" alt="" />
+    </a>
+    <div class="text">
+    <a class="" href="${pdict.link}">${pdict.header}</a>
+</div>
+</div>
+<style>
+.experience-assets-brand_three_images {
+    vertical-align:top;
+    display:inline-block;
+}
+.mx-n2 .experience-assets-brand_three_images:last-child .tripleimgcontain {
+    margin-right: 0px;
+}
+.tripleimgcontain {
+    max-width: 200px;
+        margin-bottom: 25px;
+    margin-right:60px;
+}
+    .tripleimg {
+        max-width: 200px;
+    }
+
+    @media screen and (min-width:425px) and (max-width:780px) {
+        .tripleimg {
+            max-width:180px;
+        }
+    }
+
+    @media screen and (max-width:425px) {
+        .tripleimgcontain {
+            max-width:100%;
+            width:100%;
+        }
+        .tripleimg {
+            width:100%;
+            max-width: 100%;
+            margin: auto;
+            padding-bottom:50px;
+            padding:10px; 
+            margin-right:0px;  
+        }
+        }
+    }
+
+    html,
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #000;
+        font-family: "Sentinel A", "Sentinel B", Georgia, serif;
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.3;
+        line-height: 28px;
+    }
+</style>

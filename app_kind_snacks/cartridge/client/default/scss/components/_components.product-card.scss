@@ -1,0 +1,133 @@
+/* ============================================================================
+Product Card
+============================================================================ */
+
+/**
+ * Styles for Product Card
+*/
+$ns: c-product-card;
+/**
+ * use !important - in global style this class has chain of parent classes
+*/
+.#{$ns} {
+    padding-bottom: 10px;
+    font-family: $font-family-primary;
+    text-transform: lowercase;
+
+    & + & {
+        &::before {
+            border-top: 2px solid $primary;
+            margin-left: 0;
+            margin-right: 0;
+            padding-top: 10px;
+        }
+    }
+
+    &__header {
+       padding-top: 10px;
+       position: relative;
+
+        &__name {
+            color: $primary;
+            font-size: 18px;
+            letter-spacing: -.5px;
+            margin-bottom: 8px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 12px;
+            }
+
+            &--large {
+                margin-bottom: 12px;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 24px;
+                    margin-bottom: 40px;
+               }
+           }
+        }
+        &__remove {
+            &__btn {
+                color: $primary;
+                line-height: 24px;
+                letter-spacing: 0;
+                margin-top: 0 !important;
+                min-height: 16px;
+                min-width: 16px;
+                text-align: right;
+            }
+        }
+    }
+    &__details {
+        line-height: 1.6;
+        padding-bottom: 15px;
+
+        @include media-breakpoint-up(md) {
+            padding-bottom: 15px;
+        }
+
+        &__image {
+            height: auto;
+        }
+        &__attributes {
+            color: $grey4;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+        &__subscription {
+            color: black;
+            font-size: 11px;
+            line-height: 1.3;
+        }
+        &__bundled {
+            // Create stronger selector
+            & &__bundle-includes {
+                font-size: 12px;
+                line-height: normal;
+            }
+            &__bundle-includes {
+                color: $primary;
+                letter-spacing: normal;
+            }
+        }
+    }
+    &__image {
+        &__wrap {
+            flex: 0 0 26%;
+            height: auto;
+            margin-right: 10px;
+        }
+    }
+    &__qty-price {
+        display: flex;
+            justify-content: space-between;
+        margin-bottom: 3px;
+        margin-left: -15px;
+        margin-right: -15px;
+        text-align: left;
+        text-transform: lowercase;
+
+        &__each,
+        &__qty,
+        &__total {
+            font-size: 14px;
+            line-height: 28px;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            &__label {
+                color: $primary;
+            }
+        }
+        &__qty {
+            text-align: center;
+
+            &__amt {
+                font-size: 12px;
+            }
+        }
+    }
+    &__item-promo {
+        padding-top: 10px;
+    }
+}

@@ -1,0 +1,70 @@
+<iscomment>
+    File: product/componenets/productList/byobList.isml
+    Description: Rendering template for display of the BYOB ProductList.
+    CSS Namespace: c-byob-product-list
+</iscomment>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isscript>
+    var productList = pdict.productList;
+    var listClass = '';
+
+    productList.boxSize = pdict.boxSize;
+
+    if (empty(productList.items)) {
+        listClass = ' c-byob-product-list--empty c-byob-product-list--active';
+    } else {
+        listClass = ' c-byob-product-list--full c-byob-product-list--active';
+    }
+</isscript>
+<div class="mobile-menu--expand">
+        <button class="btn js-expand-mobile-menu"> <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.828527 8.75626L7.89959 1.68519L15.1433 8.92893" stroke="white" stroke-width="1.5"/>
+</svg>${Resource.msg('btn.open.swap.panel', 'byob', null)}</button>
+
+    <div class="c-byob-product-list__header-inner js-byob-list-header-inner c-byob-product-list__header-inner--init ${pdict.isListFull ? 'active-blue--color' : ''}">
+        <h4
+            class="js-byob-list-title"
+            data-box-full-label="${Resource.msg('label.yourbox.full', 'byob', null)}"
+            data-box-default-label="${Resource.msg('label.yourbox', 'byob', null)}"
+            aria-live="polite"
+        >${Resource.msg('label.swapheader', 'byob', null)}</h4>
+        <div class="c-byob-product-list__header__item-count">
+        </div>
+    </div>
+</div>
+<div class="c-byob-product-list js-byob-list${listClass}"
+    data-byob-list-url="${URLUtils.https('BYOB-List')}"
+    data-errormessage="${Resource.msg('error.update.technicalissue', 'search', null)}">
+
+    <div class="og-offer-byob"
+        data-og-module="pdp_nocontent"
+        data-og-pid="${productList.boxSku}"
+        data-og-every='<isprint value="${productList.ogData.every || 0}" style="INTEGER" />'
+        data-og-every-period='<isprint value="${productList.ogData.everyPeriod || 0}" style="INTEGER" />'
+    ></div>
+
+    <iscomment> BYOB List - Header </iscomment>
+    <div class="c-byob-product-list__header js-byob-list-toggle">
+        <button class="btn c-close-mobile-menu js-close-mobile-menu">
+            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.1434 7.92892L8.07233 15L0.828593 7.75625" stroke="white" stroke-width="1.5"/>
+            </svg>
+            ${Resource.msg('btn.close.swap.panel', 'byob', null)}
+        </button>
+        <div class="c-byob-product-list__header-inner js-byob-list-header-inner c-byob-product-list__header-inner--init ${pdict.isListFull ? 'active-blue--color' : ''}">
+            <h4
+                class="js-byob-list-title"
+                data-box-full-label="${Resource.msg('label.yourbox.full', 'byob', null)}"
+                data-box-default-label="${Resource.msg('label.yourbox', 'byob', null)}"
+                aria-live="polite"
+            >${Resource.msg('label.swapheader', 'byob', null)}</h4>
+            <div class="c-byob-product-list__header__item-count">
+            </div>
+        </div>
+    </div>
+    <div class="byob-list-body-wrap js-byob-list-body-wrap">
+        <isinclude template="product/components/productList/swapListBody" />
+    </div>
+</div>

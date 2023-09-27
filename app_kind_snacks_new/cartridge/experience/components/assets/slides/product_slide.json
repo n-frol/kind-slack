@@ -1,0 +1,22 @@
+{
+    "name": "Product Slide",
+    "description": "Product tile to go in slider",
+    "group": "Slides",
+    "attribute_definition_groups": [
+        {
+            "id": "product",
+            "name": "Product to use",
+            "description": "The product to use for this slide",
+            "attribute_definitions": [
+                {
+                    "id": "product",
+                    "name": "Product",
+                    "type": "product",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

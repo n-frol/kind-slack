@@ -1,0 +1,98 @@
+/* ============================================================================
+Cart Totals
+============================================================================ */
+
+/**
+ * Styles for the Cart Totals
+*/
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-cart-totals;
+
+@media screen and (max-width:440px) {
+    .doublebutton1, .doublebutton2 {
+        width: 49.4%;
+        display:inline-block;
+    }
+}
+
+.#{$ns} {
+    font-family: $font-family-primary;
+    margin-top: 30px;
+    text-transform: lowercase;
+    &__order-summary {
+        background-color: $grey1;
+        margin-left: -15px;
+        margin-right: -15px;
+        padding: 20px 15px;
+        &__title {
+            color: $grey7;
+            font-size: 24px;
+            letter-spacing: -0.8px;
+            padding-bottom: 10px;
+        }
+        &__row {
+            line-height: 36px;
+            &.is-order-discount {
+                color: $alizarin-crimson;
+            }
+        }
+        &__total {
+            border-top: 2px solid $black;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            line-height: 20px;
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 15px;
+            padding-top: 20px;
+            font-family: $font-family-primary !important;
+            text-transform: lowercase;
+            &__col {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    &__checkout-btn {
+        margin-top: 15px;
+        padding-left: 0;
+        padding-right: 0;
+
+        &--paypal {
+            margin-top: 0;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 15px;
+            }
+            @include media-breakpoint-down(xs) {
+                margin-top: -10px;
+            }
+
+            &__icon {
+                width: 100px;
+            }
+        }
+        &--applepay {
+            margin-top: 0;
+
+            @include media-breakpoint-up(sm) {
+                margin-top: 15px;
+            }
+
+            @include media-breakpoint-down(xs) {
+                margin-top: -10px;
+            }
+              
+        }
+        @include media-breakpoint-up(lg) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

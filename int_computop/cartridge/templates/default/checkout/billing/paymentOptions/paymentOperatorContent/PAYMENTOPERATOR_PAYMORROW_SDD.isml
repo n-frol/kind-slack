@@ -1,0 +1,137 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_PAYMORROW_SDD.isml --->
+<isset name="paymorrowFields" value="${ pdict.forms.billingForm.paymorrowsdd }" scope="page"/>
+
+<fieldset class="paymorrow-invoice-form">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group-multiple required">
+                <label class="form-control-label" for="year_pm">${Resource.msg('paymorrow.dob','forms',null)}</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ paymorrowFields.year_pm.mandatory === true}>required</isif>
+        ${ paymorrowFields.year_pm.htmlName }">
+                <label class="form-control-label checkout-hidden" for="year_pm"></label>
+                <select class="form-control custom-select" id="year_pm"
+                <isprint value=${paymorrowFields.year_pm.attributes} encoding="off"/> autocomplete="pm-year">
+                <isloop items=${paymorrowFields.year_pm.options} var="year">
+                    <option id="${year.id}" value="${year.htmlValue}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                        && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                        && year.id == pdict.order.billing.payment.selectedPaymentInstruments[0].year_pm}">
+                        selected
+                    </isif> >
+                    ${year.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ paymorrowFields.month_pm.mandatory === true}>required</isif>
+        ${ paymorrowFields.month_pm.htmlName }">
+                <label class="form-control-label checkout-hidden" for="month_pm"></label>
+                <select class="form-control custom-select" id="month_pm"
+                <isprint value=${paymorrowFields.month_pm.attributes} encoding="off"/> autocomplete="pm-month">
+                <isloop items=${paymorrowFields.month_pm.options} var="month">
+                    <option id="${month.id}" value="${month.htmlValue}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            && month.id == pdict.order.billing.payment.selectedPaymentInstruments[0].month_pm}">
+                        selected
+                    </isif> >
+                    ${month.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ paymorrowFields.day_pm.mandatory === true}>required</isif>
+        ${ paymorrowFields.day_pm.htmlName }">
+                <label class="form-control-label checkout-hidden" for="day_pm"></label>
+                <select class="form-control custom-select" id="day_pm"
+                <isprint value=${paymorrowFields.day_pm.attributes} encoding="off"/> autocomplete="pm-day">
+                <isloop items=${paymorrowFields.day_pm.options} var="day">
+                    <option id="${day.id}" value="${day.htmlValue}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                && day.id == pdict.order.billing.payment.selectedPaymentInstruments[0].day_pm}">
+                        selected
+                    </isif> >
+                    ${day.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=${ paymorrowFields.gender_pm.mandatory === true }>required</isif>
+        ${ paymorrowFields.gender_pm.htmlName }">
+                <label class="form-control-label" for="gender">${Resource.msg('resource.gender','forms',null)}</label>
+
+                <select class="form-control custom-select" id="gender_pm"
+                <isprint value=${paymorrowFields.gender_pm.attributes} encoding="off"/> autocomplete="pm-gender">
+                <isloop items=${paymorrowFields.gender_pm.options} var="gender">
+                    <option id="${gender.id}" value="${gender.htmlValue}"
+                    <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            && gender.id == pdict.order.billing.payment.selectedPaymentInstruments[0].gender_pm}">
+                        selected
+                    </isif> >
+                    ${gender.label}
+                    </option>
+                </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group
+        <isif condition=${paymorrowFields.iban.mandatory === true}>required</isif>
+        ${paymorrowFields.iban.htmlName}">
+                <label class="form-control-label" for="iban">${Resource.msg('paymorrow.ibanlabel','forms',null)}</label>
+                <input type="text" class="form-control" id="iban" <isprint value=${paymorrowFields.iban.attributes} encoding="off"/> >
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-check <isif condition=${paymorrowFields.sepaaccepted.mandatory === true}>required</isif>">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="true" <isprint value=${paymorrowFields.sepaaccepted.attributes} encoding="off"/>/>
+                    ${ paymorrowFields.sepaaccepted.label }
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-check <isif condition=${paymorrowFields.termsandconditions.mandatory === true}>required</isif>">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" value="true" <isprint value=${paymorrowFields.termsandconditions.attributes} encoding="off"/>/>
+                    ${ paymorrowFields.termsandconditions.label }
+                </label>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+</fieldset>

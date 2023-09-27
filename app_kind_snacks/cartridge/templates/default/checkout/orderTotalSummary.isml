@@ -1,0 +1,59 @@
+<!--- Subtotal --->
+<div class="row subtotal-item c-checkout-price-summary__item u-text__font-primary u-text__font-primary--lowercase">
+    <div class="col-6">
+        <p class="order-receipt-label c-checkout-price-summary__item__label"><span>${Resource.msg('label.order.subtotal','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6">
+        <p class="text-right c-checkout-price-summary__item__amt"><span class="sub-total">${pdict.order.totals.subTotal}</span></p>
+    </div>
+</div>
+
+<!--- Shipping Cost --->
+<div class="row shipping-item c-checkout-price-summary__item u-text__font-primary u-text__font-primary--lowercase">
+    <div class="col-6">
+        <p class="order-receipt-label c-checkout-price-summary__item__label"><span>${Resource.msg('label.order.shipping.cost','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6">
+        <p class="text-right c-checkout-price-summary__item__amt"><span class="shipping-total-cost">${pdict.order.totals.totalShippingCost}</span></p>
+    </div>
+</div>
+
+<!--- Shipping Discount --->
+<div class="row shipping-discount c-checkout-price-summary__item u-text__font-primary u-text__font-primary--lowercase <isif condition="${pdict.order.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+    <div class="col-6">
+        <p class="order-receipt-label"><span>${Resource.msg('label.shipping.discount', 'common', null)}</span></p>
+    </div>
+    <div class="col-6">
+        <p class="text-right"><span class="shipping-discount-total">- ${pdict.order.totals.shippingLevelDiscountTotal.formatted}</span></p>
+    </div>
+</div>
+
+<!--- Sales Tax --->
+<div class="row sales-tax-item c-checkout-price-summary__item u-text__font-primary u-text__font-primary--lowercase">
+    <div class="col-6">
+        <p class="order-receipt-label c-checkout-price-summary__item__label"><span>${Resource.msg('label.order.sales.tax','confirmation', null)}</span></p>
+    </div>
+    <div class="col-6">
+        <p class="text-right c-checkout-price-summary__item__amt"><span class="tax-total">${pdict.order.totals.totalTax}</span></p>
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="row order-discount c-checkout-price-summary__item u-text__font-primary u-text__font-primary--lowercase u-text__color-alizarin-crimson <isif condition="${pdict.order.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-6">
+        <p class="order-receipt-label"><span>${Resource.msg('label.order.discount', 'common', null)}</span></p>
+    </div>
+    <div class="col-6">
+        <p class="text-right"><span class="order-discount-total">- ${pdict.order.totals.orderLevelDiscountTotal.formatted}</span></p>
+    </div>
+</div>
+
+<!--- Grand Total --->
+<div class="c-cart-totals__order-summary__total row">
+    <div class="c-cart-totals__order-summary__total__col col-8">
+        ${Resource.msg('label.totals.total','cart',null)}
+    </div>
+    <div class="c-cart-totals__order-summary__total__col col-4 text-right grand-total">
+        <p class="text-right c-checkout-price-summary__total__amt"><span class="grand-total-sum">${pdict.order.totals.grandTotal}</span></p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<isif condition="${(!empty(parentHeading) || !empty(parentBody))}">
+    <div class="row c-cta-grid__parent-header th-kind-cta-grid__parent-header">
+        <div class="col-12 text-center">
+            <isif condition="${!empty(parentHeading)}">
+                <h1 class="c-cta-grid__parent-header__heading">${parentHeading}</h1>
+            </isif>
+            <isif condition="${!empty(parentBody)}">
+                <div class="c-cta-grid__parent-header__body">
+                    <isprint value="${parentBody}" encoding="off" />
+                </div>
+            </isif>
+        </div>
+    </div>
+</isif>

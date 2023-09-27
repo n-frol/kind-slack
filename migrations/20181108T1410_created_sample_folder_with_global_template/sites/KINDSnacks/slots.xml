@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="Sample Folder" configuration-id="sample_media-center" default="true" assigned-to-site="true">
+        <template>slots/content/mediaGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="press-releases"/>
+                <content-asset content-id="media-assets"/>
+                <content-asset content-id="videos"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBody">find images, videos and more!</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Media Center</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

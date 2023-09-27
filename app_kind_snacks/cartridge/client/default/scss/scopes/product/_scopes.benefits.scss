@@ -1,0 +1,28 @@
+/* ============================================================================
+Benefits Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements within product benefits content assets
+ */
+
+ $ns: s-product-benefits;
+
+ .#{$ns} {
+    .link {
+        a {
+            border-bottom: 2px solid $primary;
+            padding-bottom: 3px;
+            text-decoration: none;
+        }
+    }
+    div {
+        &:last-child {
+            > p {
+                &:last-child {
+                    margin-bottom: 0; // Basically, if a paragraph is the last element of the last content element (there's no benefits link), it shouldn't have a bottom margin
+                }
+            }
+        }
+    }
+ }

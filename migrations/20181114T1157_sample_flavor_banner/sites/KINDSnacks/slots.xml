@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-d" context="folder" context-id="sample_folder_3" configuration-id="sample_flavor-banner" default="true" assigned-to-site="true">
+        <template>slots/content/flavorBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="chocolate"/>
+                <content-asset content-id="fruit"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

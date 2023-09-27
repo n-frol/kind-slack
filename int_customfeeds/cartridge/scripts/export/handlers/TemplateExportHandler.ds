@@ -1,0 +1,149 @@
+/**
+ * Demandware Script File
+ */
+importPackage( dw.system );
+importPackage( dw.io );
+importScript( 'export/handlers/AbstractExportHandler.ds' );
+importScript( 'export/ProductFieldMapper.ds' );
+importScript( 'export/OrderFieldMapper.ds' );
+importScript( 'export/ProfileFieldMapper.ds' );
+
+var processAll = false;
+
+// Hack, because vars cannot be imported in DW, only functions
+function getTemplateExportHandler() {
+    return TemplateExportHandler;
+}
+var AbstractExportHandler = getAbstractExportHandler();
+
+/**
+ * @augments AbstractExportHandler
+ */
+var TemplateExportHandler = AbstractExportHandler.extend(
+        /** @lends TemplateExportHandler.prototype */
+        {
+            /**
+             * Creates a new template handler instance. The template must define
+             * a block of type product|profile|order and within that block
+             * certain variables can be used to access product|profile|order
+             * attributes
+             */
+            
+            init : function(writer : Writer, template : String, contextObject : String){
+                this.handlesProducts = true;
+                this.handlesMasters = true; //KIND-FX
+                this.writer = writer;
+                this.template = template;
+                this.contextObject = contextObject;
+                
+                    if (template.indexOf("processall") > 0) {
+                        this.processAll = true;
+                    }
+
+                    template = template.replace("<processall />", "");
+
+                if('Catalog' === contextObject) {
+                    if(template.indexOf('{{block type="product"') < 0 || template.indexOf('{{/block}}') < 0){
+                        throw new Error('Invalid template provided, a block of type *product* is mandatory!');
+                    }
+
+                    this.header = template.split('{{block type="product"}}')[0];
+                    this.footer = template.split('{{/block}}')[1];
+                    this.processedTemplate = template.split('{{block type="product"}}')[1].split('{{/block}}')[0];
+                    this.initProductFieldCache();
+                } else if ('Order' === contextObject) {
+                    if(template.indexOf('{{block type="order"}}') < 0 || template.indexOf('{{/block}}') < 0){
+                        throw new Error('Invalid template provided, a block of type *order* is mandatory!');
+                    }
+                    
+                    this.header = template.split('{{block type="order"}}')[0];
+                    this.footer = template.split('{{/block}}')[1];
+                    this.processedTemplate = template.split('{{block type="order"}}')[1].split('{{/block}}')[0];
+                    this.initOrderFieldCache();
+                } else if ('Customer' === contextObject) {
+                    if(template.indexOf('{{block type="profile"}}') < 0 || template.indexOf('{{/block}}') < 0){
+                        throw new Error('Invalid template provided, a block of type *profile* is mandatory!');
+                    }
+                    
+                    this.header = template.split('{{block type="profile"}}')[0];
+                    this.footer = template.split('{{/block}}')[1];
+                    this.processedTemplate = template.split('{{block type="profile"}}')[1].split('{{/block}}')[0];
+                    this.initProfileFieldCache();
+                }
+                
+            },
+            /**
+             * Initialize the a field cache to avoid parsing the expressions for
+             * every product
+             */
+            initProductFieldCache :function(){
+                this.fieldCache = {};
+                // parse the template and populate the field cache once to avoid
+                // parsing the template for each product
+                _that = this;
+                this.processedTemplate.replace(/\{\{[^}]*\}\}/g,function(a : String){
+                    _that.fieldCache[a] = ProductFieldMapper.parseField(a);
+                    return "";
+                });
+            },
+            /**
+             * Initialize the a field cache to avoid parsing the expressions for
+             * every order
+             */
+            initOrderFieldCache :function(){
+                this.fieldCache = {};
+                // parse the template and populate the field cache once to avoid
+                // parsing the template for each product
+                _that = this;
+                this.processedTemplate.replace(/\{\{[^}]*\}\}/g,function(a : String){
+                    _that.fieldCache[a] = OrderFieldMapper.parseField(a);
+                    return "";
+                });
+            },
+            /**
+             * Initialize the a field cache to avoid parsing the expressions for
+             * every profile
+             */
+            initProfileFieldCache :function(){
+                this.fieldCache = {};
+                // parse the template and populate the field cache once to avoid
+                // parsing the template for each product
+                _that = this;
+                this.processedTemplate.replace(/\{\{[^}]*\}\}/g,function(a : String){
+                    _that.fieldCache[a] = ProfileFieldMapper.parseField(a);
+                    return "";
+                });
+            },
+            exportProduct : function (product : dw.catalog.Product){
+                if (!this.processAll && !product.custom.includeInProductFeed) {
+                    return;
+                }
+                _that = this;
+                this.writer.write(this.processedTemplate.replace(/\{\{[^}]*\}\}/g, function(a : String){
+                    return ProductFieldMapper.getField(product,_that.fieldCache[a].attribute, _that.fieldCache[a].format) || '';
+                })+'\n');
+            },
+            exportOrder : function (order : dw.order.Order){
+                _that = this;
+                this.writer.write(this.processedTemplate.replace(/\{\{[^}]*\}\}/g, function(a : String){
+                    return OrderFieldMapper.getField(order, _that.fieldCache[a].attribute, _that.fieldCache[a].format) || '';
+                })+'\n');
+            },
+            exportProfile : function (profile : dw.customer.Profile){
+                _that = this;
+                this.writer.write(this.processedTemplate.replace(/\{\{[^}]*\}\}/g, function(a : String){
+                    return ProfileFieldMapper.getField(profile, _that.fieldCache[a].attribute, _that.fieldCache[a].format) || '';
+                })+'\n');
+            },
+            beginExport : function() {
+                this.writer.write(this.header+'\n');
+            },
+            endExport: function () {
+                this.writer.write(this.footer+'\n');
+                this.writer.close();
+            }
+        });
+
+if(typeof exports !== 'undefined') {
+    exports.TemplateExportHandler = TemplateExportHandler;
+}

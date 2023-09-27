@@ -1,0 +1,10 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isdecorate template="common/layout/page">
+
+    <isif condition="${!empty(pdict.content)}">
+        <isset name="contentAsset" value="${pdict.content}" scope="page" />
+        <isinclude template="components/navigationContent/navigationContent" />
+    </isif>
+
+</isdecorate>

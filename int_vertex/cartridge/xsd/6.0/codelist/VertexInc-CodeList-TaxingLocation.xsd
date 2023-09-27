@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="urn:vertexinc:o-series:tps:6:0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Taxing location specification. Declararion of structures and data types.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="TaxingLocationCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Indicates the valid values for taxing locations that Vertex O Series uses when calculating tax.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="60"/>
+      <xsd:enumeration value="ADMINISTRATIVE_DESTINATION">
+        <xsd:annotation>
+          <xsd:documentation>Administrative Destination is equivalent to the Bill To: location.
+A common synonym is benefit received.
+
+For service transactions in the U.S. and Canada, the administrative
+destination is the benefit received location and the destination is the
+service performed location.
+
+For tangible personal property transactions, the administrative
+destination is examined when checking for the triangulation condition
+of an intra-European Union (EU) transaction from the buyer's perspective.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="ADMINISTRATIVE_ORIGIN">
+        <xsd:annotation>
+          <xsd:documentation>Administrative Origin is equivalent to the Bill-From: location.
+Common synonyms include order taken, order acceptance, place of
+principal negotiation, and place of business.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DESTINATION">
+        <xsd:annotation>
+          <xsd:documentation>Destination is equivalent to the Ship-To: location. Common synonyms
+include benefit received, first used, where used, primary place of use,
+principal use location, location of property, and place of use.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PHYSICAL_ORIGIN">
+        <xsd:annotation>
+          <xsd:documentation>Physical Origin is equivalent to the Ship-From: location.
+A common synonym is first removed. A physical origin is required to
+perform triangulation in the case of value added tax transactions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="TaxingLocation" type="TaxingLocationCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Taxing location structure.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

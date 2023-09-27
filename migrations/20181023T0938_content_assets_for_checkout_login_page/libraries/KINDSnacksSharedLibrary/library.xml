@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="instructions-create-account">
+        <display-name xml:lang="x-default">Instructions to Create an Account</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;To get sneak peaks for new products, keep track of orders and save payment info for a quick checkout.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="instructions-guest-checkout">
+        <display-name xml:lang="x-default">Instructions to Checkout with a Guest Account</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;You can check out without creating an account. You will have a chance to create an account later.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

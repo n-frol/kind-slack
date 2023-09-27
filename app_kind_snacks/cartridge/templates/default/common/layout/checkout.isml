@@ -1,0 +1,38 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <isinclude sf-toolkit="off" template="/common/scripts" />
+        <isinclude template="/common/htmlHead" />
+        <isactivedatahead/>
+        <isinclude template="google/googlemodules" />
+        <isgtmremarketing pagetype="cart"/>
+        <isgoogletagmanager />
+    </head>
+    <body data-brand="${Resource.msg('global.brandname', 'common', null)}" class="${dw.system.Site.getCurrent().ID === 'CreativeSnacks' ? 'creative-snacks' : ''}">
+     <isif condition="${session.isCustomerAuthenticated()}">
+         <div
+                id="swell-customer-identification"
+                data-authenticated="true"
+                data-email="${session.customer.profile.email}"
+                data-id="${session.customer.profile.customerNo}"
+                data-tags=""
+                style="display:none;"
+             ></div>
+    </isif>
+    <div class="page ${pdict.action.toLowerCase()}">
+        <isinclude template="/components/header/pageHeaderNomenu" />
+        <isreplace/>
+        <isinclude template="/components/footer/pageFooter" />
+    </div>
+    <isinclude url="${URLUtils.url('ConsentTracking-Check')}"/>
+
+    <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('lincClientSecret') != null}">
+        <isinclude template="letslinc/optinwidget" />
+    </isif>
+    </body>
+</html>
+

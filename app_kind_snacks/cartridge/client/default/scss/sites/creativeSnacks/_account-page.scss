@@ -1,0 +1,100 @@
+/* ============================================================================
+Creative Snacks - Account Page
+============================================================================ */
+
+/**
+ * Styles for Creative Snacks site
+*/
+$ns: creative-snacks;
+
+.#{$ns} {
+    .account-show {
+        background-color: #EBEBEB;
+
+        .account-popover {
+            left: unset;
+            right: 50%;
+            padding: 20px 20px 15px 20px;
+            a {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .c-account-dashboard {
+        max-width: 80%;
+        background-color: #EBEBEB;
+        .title-display-banner {
+            padding: 80px 60px;
+            justify-content: left;
+            background-color: #EBEBEB;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 42px;
+            line-height: 48px;
+        }
+        .c-account-dashboard__card-body {
+            background-color: #fff;
+            padding: 20px 15px 0 15px;
+        }
+        .c-account-dashboard__card-footer {
+            background-color: #fff;
+        }
+        .c-account-dashboard__card-header {
+            background-color: #fff;
+            .pull-left {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 30px;
+            }
+        }
+
+        .dashboard-cards-block-title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        .c-account-dashboard__card-body__card-term {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        .c-account-dashboard__card-body__card-description {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .c-account-dashboard__card-header__link {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        .dashboard-info {
+            text-transform: none;
+        }
+
+        .c-account-dashboard__left-cards, .c-account-dashboard__right-cards {
+            margin-bottom: 75px;
+        }
+
+        .short-order-history {
+            ul li {
+                display: block;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

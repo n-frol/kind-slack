@@ -1,0 +1,44 @@
+// ============================================================================
+// Visually Hidden
+// ============================================================================
+
+/// Mixin to quickly apply accessible hiding to elements.
+///
+/// @author IntuitCSS
+///
+/// @group Display
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-visually-hidden();
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      border: 0 !important;
+///      clip: rect(0 0 0 0) !important;
+///      clip-path: inset(50%) !important;
+///      height: 1px !important;
+///      margin: -1px !important;
+///      overflow: hidden !important;
+///      padding: 0 !important;
+///      position: absolute !important;
+///      white-space: nowrap !important;
+///      width: 1px !important;
+///   }
+///
+/// @link https://github.com/inuitcss/inuitcss/blob/develop/tools/_tools.hidden.scss Snippet from IntuitCSS
+
+@mixin pxl-visually-hidden() {
+    border: 0 !important;
+    clip: rect(0 0 0 0) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+    width: 1px !important;
+}
+

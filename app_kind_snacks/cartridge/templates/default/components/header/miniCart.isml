@@ -1,0 +1,26 @@
+<div class="c-minicart__total minicart-total hide-link-med">
+    <a class="c-minicart__link minicart-lin st-header__utility-link st-header__utility-link--minicart js-minicart-link${pdict.quantityTotal > 0 ? ' is-filled' : ''}" href="${URLUtils.https('Cart-Show')}" title="${Resource.msg('minicart.viewcart','common',null)}">
+        <isif condition="${dw.system.Site.getCurrent().name != "Creative Snacks"}">
+        <span class="sr-only">${Resource.msg('minicart.viewcart','common',null)}</span>
+        <iselse/>
+            <img src="${URLUtils.staticURL('/images/cart-white.png')}" alt="${Resource.msg('minicart.viewcart','common',null)}" class="st-header__navbar--utilities__icon__img" />
+        </isif>
+        <span class="c-minicart__quantity minicart-quantity">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+        </span>
+    </a>
+</div>
+
+<div class="c-minicart__total minicart-total hide-no-link">
+    <div class="c-minicart__link minicart-link st-header__utility-link st-header__utility-link--minicart js-minicart-link${pdict.quantityTotal > 0 ? ' is-filled' : ''}">
+        <isif condition="${dw.system.Site.getCurrent().name != "Creative Snacks"}">
+        <span class="sr-only">${Resource.msg('minicart.viewcart','common',null)}</span>
+        <iselse/>
+            <img src="${URLUtils.staticURL('/images/cart-white.png')}" alt="${Resource.msg('minicart.minicart','common',null)}" class="st-header__navbar--utilities__icon__img" />
+        </isif>
+        <span class="c-minicart__quantity minicart-quantity">
+            <isprint value="${pdict.quantityTotal}" formatter="##" />
+        </span>
+    </div>
+</div>
+<div class="popover popover-bottom"></div>

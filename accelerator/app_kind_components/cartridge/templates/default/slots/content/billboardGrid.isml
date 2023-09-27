@@ -1,0 +1,19 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<isif condition="${!empty(slotcontent)}">
+    <isset name="parentHeading" value="${slotcontent.custom.slotHeading}" scope="page" />
+    <isset name="parentBody" value="${slotcontent.custom.slotBody}" scope="page" />
+    <isset name="parentBG" value="${slotcontent.custom.slotBackgroundColor}" scope="page" />
+    <isset name="parentLinks" value="${slotcontent.custom.slotLinks}" scope="page" />
+    <isset name="parentID" value="${slotcontent.slotID}" scope="page" />
+
+    <isloop items="${slotcontent.content}" var="contentAsset" status="loopstatus">
+        <isif condition="${!empty(contentAsset)}">
+            <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+            <isset name="assetID" value="${contentAsset.ID}" scope="page" />
+            <isinclude template="components/billboardGrid/billboardGrid" />
+        </isif>
+    </isloop>
+</isif>

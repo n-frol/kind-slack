@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="ingredients">
+        <display-name xml:lang="x-default">Ingredients A-Z</display-name>
+        <description xml:lang="x-default">take a look at everything we put in our snacks</description>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/glossary</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <folder folder-id="a-ingredients">
+        <display-name xml:lang="x-default">a</display-name>
+        <online-flag>true</online-flag>
+        <parent>ingredients</parent>
+        <position>1.0</position>
+        <page-attributes/>
+    </folder>
+
+    <folder folder-id="b-ingredients">
+        <display-name xml:lang="x-default">b</display-name>
+        <online-flag>true</online-flag>
+        <parent>ingredients</parent>
+        <position>2.0</position>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="alkalized-cocoa">
+        <display-name xml:lang="x-default">alkalized cocoa</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">also known as Dutch cocoa; a powder from roasted, ground cacao beans</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="a-ingredients"/>
+        </folder-links>
+    </content>
+
+    <content content-id="allspice">
+        <display-name xml:lang="x-default">allspice</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">spice from the dried unripe berry from a tropical evergreen tree</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="a-ingredients"/>
+        </folder-links>
+    </content>
+
+    <content content-id="bananas">
+        <display-name xml:lang="x-default">bananas</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">typically a yellow-colored tropical fruit botanically classified as a berry</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="b-ingredients"/>
+        </folder-links>
+    </content>
+
+    <content content-id="black-pepper">
+        <display-name xml:lang="x-default">black pepper</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">powdered spice from a peppercorn</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="b-ingredients"/>
+        </folder-links>
+    </content>
+
+</library>

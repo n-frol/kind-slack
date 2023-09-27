@@ -1,0 +1,16 @@
+<iscomment>Track the number of benefits actually being shown so we know if we need to use a "show more/less" accordion</iscomment>
+<isset name="visibleBenefits" value="${0}" scope="page" />
+<isset name="visibleBenefitsOverflow" value="${dw.system.Site.current.getCustomPreferenceValue('visibleBenefits') + 1}" scope="page" />
+
+<isloop items="${product.benefits}" var="benefitId" status="loopstatus">
+    <isset name="benefit" value="${dw.content.ContentMgr.getContent(benefitId)}" scope="page" />
+    <isif condition="${empty(benefit) || !benefit.onlineFlag}">
+        <iscontinue>
+    </isif>
+
+
+    <div class="c-product-benefits__benefit">
+        <span class="title c-product-benefits__benefit__title">${benefit.name}</span>
+    </div>
+   
+</isloop>

@@ -1,0 +1,28 @@
+.showFilters {
+    cursor: pointer;
+}
+.filterBar_container {
+    padding: 40px 60px;
+    border-bottom: 1px solid #cccccc;
+    & .filterBar_item {
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid black;
+        border-radius: 16px;
+        font-family: main;
+        font-size: 14px;
+        line-height: 20px;
+        margin-right: 20px;
+        &.selected {
+            background: black;
+            color: white;
+        }
+    }
+}
+.filterBar_filters {
+    display: none;
+}
+
+.c-search-results__sort {
+    float: right;
+}

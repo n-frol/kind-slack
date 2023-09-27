@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="category-slot-b" context="category" context-id="products" configuration-id="products-page-content" default="true" assigned-to-site="true">
+        <template>slots/content/contentAssetBasic.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="products-page"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="category-slot-a" context="category" context-id="products" configuration-id="products-nav" default="true" assigned-to-site="true">
+        <template>slots/content/customNavigation.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="products-nav-asset"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="home-slot-b" context="global" configuration-id="home-slot-b_config" default="true" assigned-to-site="true">
+        <template>slots/content/contentGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="products-content-grid"/>
+                <content-asset content-id="flavors-content-grid"/>
+                <content-asset content-id="occasions-content-grid"/>
+                <content-asset content-id="benefits-content-grid"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotHeading">explore some of our healthy snacks</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

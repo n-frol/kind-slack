@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="about_creativesnacks">
+        <display-name xml:lang="x-default">Creative Snacks About Us</display-name>
+        <type>page.dynamiclayout</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <visibility-mode xml:lang="x-default">visible</visibility-mode>
+        <data xml:lang="x-default">{ }</data>
+        <online-flag>false</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <searchable-flag site-id="CreativeSnacks">false</searchable-flag>
+        <page-attributes/>
+        <content-links>
+            <content-link content-id="e260417b493c891c9d575546da" type="page.dynamiclayout.main">
+                <position>8.0</position>
+            </content-link>
+            <content-link content-id="88ad2eab4ffbf1bf703cd0832a" type="page.dynamiclayout.main">
+                <position>2.0</position>
+            </content-link>
+            <content-link content-id="bf60ad15271c8671725f4715dd" type="page.dynamiclayout.main">
+                <position>3.0</position>
+            </content-link>
+            <content-link content-id="2ed717a447e14cd2a37fe20728" type="page.dynamiclayout.main">
+                <position>1.0</position>
+            </content-link>
+            <content-link content-id="9931c7ad1913424527100e64f9" type="page.dynamiclayout.main">
+                <position>0.0</position>
+            </content-link>
+            <content-link content-id="cff672e4da40f71ccf9f13a13f" type="page.dynamiclayout.main">
+                <position>5.0</position>
+            </content-link>
+            <content-link content-id="d4a06c8bb87dd2f95705fc533b" type="page.dynamiclayout.main">
+                <position>6.0</position>
+            </content-link>
+            <content-link content-id="1aad9e565e2c147ee77702d405" type="page.dynamiclayout.main">
+                <position>4.0</position>
+            </content-link>
+            <content-link content-id="62d5813f43f7ef5378101ab70b" type="page.dynamiclayout.main">
+                <position>7.0</position>
+            </content-link>
+        </content-links>
+        <sitemap-included-flag site-id="CreativeSnacks">false</sitemap-included-flag>
+    </content>
+
+    <content content-id="62d5813f43f7ef5378101ab70b">
+        <type>component.assets.homepage_banner</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "button_color2" : null,
+  "buttonlink" : null,
+  "small_image" : {
+    "path" : "CA-16 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 450,
+      "width" : 450
+    }
+  },
+  "small_image_align" : null,
+  "button" : null,
+  "copyweight" : null,
+  "button2link" : null,
+  "copy" : "Based in beautiful High Point, North Carolina, we create, test and bake our addictive snacks by hand in a real bakery with clean ingredients and lots of love.",
+  "copyfont" : null,
+  "button2" : null,
+  "banner_height" : "450",
+  "eyebrow" : null,
+  "extra_class" : "banner-about-us mobile-reverse",
+  "full_image_use" : false,
+  "full_image" : null,
+  "button_color" : null,
+  "full_image_mobile" : null,
+  "small_image_mobile" : {
+    "path" : "CA-16 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 450,
+      "width" : 450
+    }
+  },
+  "button_text_color" : null,
+  "background_color" : null,
+  "header" : "Baked by hand in High Point, NC",
+  "resize" : false,
+  "text_color" : null,
+  "button_text_color2" : null,
+  "text_container_align" : "Right",
+  "text_align" : "Left"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="1aad9e565e2c147ee77702d405">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "25"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="d4a06c8bb87dd2f95705fc533b">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "25"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="cff672e4da40f71ccf9f13a13f">
+        <type>component.assets.homepage_banner</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "button_color2" : null,
+  "buttonlink" : null,
+  "small_image" : {
+    "path" : "IMG_0817 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 450,
+      "width" : 450
+    }
+  },
+  "small_image_align" : "Right",
+  "button" : null,
+  "copyweight" : null,
+  "button2link" : null,
+  "copy" : "Like our fans, we are just real people who snack in real ways. No matter where you are from or where you are going, we know you’ll love the simple ingredients, convenience, and most of all the flavors of our insanely delicious Creative Snacks.",
+  "copyfont" : null,
+  "button2" : null,
+  "banner_height" : "450",
+  "eyebrow" : null,
+  "extra_class" : "banner-about-us mobile-reverse",
+  "full_image_use" : false,
+  "full_image" : null,
+  "button_color" : null,
+  "full_image_mobile" : null,
+  "small_image_mobile" : {
+    "path" : "IMG_0817 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 450,
+      "width" : 450
+    }
+  },
+  "button_text_color" : null,
+  "background_color" : null,
+  "header" : "Real Snacksfor Real People",
+  "resize" : false,
+  "text_color" : null,
+  "button_text_color2" : null,
+  "text_container_align" : "Left",
+  "text_align" : "Left"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="9931c7ad1913424527100e64f9">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "0"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="2ed717a447e14cd2a37fe20728">
+        <type>component.assets.homepage_banner</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "button_color2" : null,
+  "buttonlink" : null,
+  "small_image" : {
+    "path" : "snack-brain-food-3 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 274,
+      "width" : 509
+    }
+  },
+  "small_image_align" : null,
+  "button" : null,
+  "copyweight" : null,
+  "button2link" : null,
+  "copy" : "Founded in 2009, our diverse team (from 11 countries) brings unique perspectives to a shared purpose: create better snacks for everyone.",
+  "copyfont" : null,
+  "button2" : null,
+  "banner_height" : "275",
+  "eyebrow" : null,
+  "extra_class" : "banner-about-us",
+  "full_image_use" : false,
+  "full_image" : null,
+  "button_color" : null,
+  "full_image_mobile" : null,
+  "small_image_mobile" : {
+    "path" : "snack-brain-food-3 1.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 274,
+      "width" : 509
+    }
+  },
+  "button_text_color" : null,
+  "background_color" : null,
+  "header" : "We Are Creative Snacks\n",
+  "resize" : false,
+  "text_color" : null,
+  "button_text_color2" : null,
+  "text_container_align" : "Right",
+  "text_align" : null
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="bf60ad15271c8671725f4715dd">
+        <type>component.assets.video_component</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "image" : {
+    "path" : "Group 894.png",
+    "focal_point" : {
+      "x" : 0.5,
+      "y" : 0.5
+    },
+    "meta_data" : {
+      "height" : 704,
+      "width" : 1238
+    }
+  },
+  "youtubeurl" : "https://www.youtube.com/watch?v=MOJtd1a3Eh4",
+  "video" : null
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="88ad2eab4ffbf1bf703cd0832a">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "25"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="e260417b493c891c9d575546da">
+        <type>component.assets.padding</type>
+        <config>{
+  "visibility" : [ ]
+}</config>
+        <data xml:lang="x-default">{
+  "amount" : "50",
+  "amount_mobile" : "0"
+}</data>
+        <online-flag>true</online-flag>
+        <online-flag site-id="CreativeSnacks">true</online-flag>
+        <page-attributes/>
+    </content>
+
+</library>

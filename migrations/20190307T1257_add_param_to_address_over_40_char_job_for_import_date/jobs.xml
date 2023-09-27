@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Customer-DataFix" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="dataFixAddress1" type="ExecuteScriptModule" enforce-restart="true">
+                <description/>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">app_kind_snacks/cartridge/scripts/jobs/customerUpdate/UpdateCustomerData</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">updateCustomers</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">true</parameter>
+                    <parameter name="ExecuteScriptModule.TimeoutInSeconds">60</parameter>
+                    <parameter name="importDate">03/01/2019</parameter>
+                </parameters>
+                <rules>
+                    <on-exit status="ERROR">
+                        <stop-job/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2019-03-04Z</date>
+                <time>16:27:22.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

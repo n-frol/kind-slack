@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="starter-combo-banner" context="global" configuration-id="starter-combos-banner-1" default="true" assigned-to-site="true">
+        <template>slots/content/starter-combo-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="starter-combos-banner"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

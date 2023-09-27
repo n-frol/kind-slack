@@ -1,0 +1,108 @@
+<isscript>
+    var hasbonus = false;
+</isscript>
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isset name="miniCart" value="${true}" scope="page" />
+<isset name="bonusProductRedirect" value="${false}" scope="page" />
+<div class="c-minicart-view cart container cart">
+    <isif condition="${!empty(pdict.reportingURLs)}">
+        <isinclude template="reporting/reportingUrls" />
+    </isif>
+    <div class="c-minicart-view__header">
+        <div class="row c-minicart-view__header__row">
+            <div class="col-12">
+                <div class="close c-minicart-view__close js-minicart-close"></div>
+            </div>
+        </div>
+    </div>
+    <div class="c-minicart-view__content">
+        <div class="row">
+            <div class="col-6">
+                <h4 class="c-minicart-view__content__title">${Resource.msg('title.your.shopping.cart','cart',null)}</h4>
+            </div>
+            <div class="col-6 text-right">
+                <a class="c-minicart-view__content__view-link normal" href="${URLUtils.https('Cart-Show')}" title="${Resource.msg('link.view.cart','cart',null)}">
+                    ${Resource.msg('link.view.cart','cart',null)}
+                </a>
+            </div>
+        </div>
+        <div class="minicart-error cart-error">
+            <isif condition="${!empty(pdict.valid) && !empty(pdict.valid.error) && pdict.valid.error && !empty(pdict.items)}">
+                <div class="alert c-alert alert-danger c-alert--danger alert-dismissible valid-cart-error fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    ${pdict.valid.message}
+                </div>
+            </isif>
+        </div>
+        <div class="c-minicart-view__content__product-summary product-summary">
+            <isloop items="${pdict.items}" var="lineItem">
+                <isif condition="${lineItem.discountLineItems.length > 0}">
+                <isscript>
+                    hasbonus = true;
+                </isscript>
+                    <isset name="bonusProductRedirect" value="${true}" scope="page" />
+                    <div class="c-minicart-view__content__product-summary__card js-card ${miniCart ? 'bonus-product-line-item' : ''} uuid-${lineItem.UUID}">
+                        <isif condition="${siteID === "CreativeSnacks"}">
+                            <isinclude template="checkout/productCard/bonusProductCardCS" />
+                        <iselse/>
+                            <isinclude template="checkout/productCard/bonusProductCard" />
+                        </isif>
+                    </div>
+                <iselse/>
+                    <isif condition="${empty(lineItem.boxId) || !empty(lineItem.boxContents)}">
+                        <div class="c-minicart-view__content__product-summary__card js-card uuid-${lineItem.UUID}">
+                            <isif condition="${siteID === "CreativeSnacks"}">
+                                <isinclude template="checkout/productCard/productCardCS" />
+                            <iselse/>
+                                <isinclude template="checkout/productCard/productCard" />
+                            </isif>
+                        </div>
+                    </isif>
+                </isif>
+            </isloop>
+        </div>
+    </div>
+    <div class="c-minicart-view__footer minicart-footer">
+        <isif condition="${!empty(pdict.totals)}">
+            <div class="row estimated-total">
+                <div class="c-minicart-view__footer__label col-8">
+                    ${Resource.msg('label.estimatedtotal','cart',null)}
+                </div>
+                <div class="c-minicart-view__footer__label col-4 sub-total text-right">
+                    ${pdict.totals.subTotal}
+                </div>
+            </div>
+        </isif>
+        <isif condition="${hasbonus}">
+            <div class="minicart-gift">
+                <img src="${URLUtils.staticURL('/images/gift.png')}" alt="mini cart gift" />
+                <span>You qualify for a free gift! Visit <a style="text-decoration: none; color: #61B3E4" href="${URLUtils.https('Cart-Show')}">your cart</a> to choose</span>
+            </div>
+        </isif>
+        <div class="row checkout-buttons">
+            <div class="col-12 checkout-continue">
+                <isinclude template="cart/checkoutButtons" />
+            </div>
+        </div>
+        <isif condition="${!empty(pdict.totals)}">
+            <isinclude template="cart/cartApproachingDiscount" />
+        </isif>
+    </div>
+
+    <isif condition="${!empty(pdict.bonusDiscounts)}">
+        <isloop items="${pdict.bonusDiscounts}" var="bonusDiscount">
+            <isif condition="${bonusDiscount.promotion.tags.indexOf('minicart') > -1}">
+                <div class="bonus-product-callout">
+                    <p><isprint value="${bonusDiscount.promotion.details.markup}" encoding="off" /></p>
+                </div>
+            </isif>
+        </isloop>
+    </isif>
+
+</div>
+<iscomment>Pixlee Add To Cart Analytics</iscomment>
+<isif condition="${pdict.CurrentHttpParameterMap.cartAction == 'add' || pdict.CurrentHttpParameterMap.cartAction == 'update'}">
+        <isinclude template="checkout/addtocart"/>
+</isif>

@@ -1,0 +1,19 @@
+/* ============================================================================
+Link
+============================================================================ */
+
+/**
+ * Establish base link style. No hover effect is handled in order to keep the base
+ * styes as minimal as possible
+ */
+
+ a {
+    color: $primary;
+    text-decoration: underline;
+
+    &:hover {
+        color: $san-marino;
+        cursor: pointer;
+    }
+
+}

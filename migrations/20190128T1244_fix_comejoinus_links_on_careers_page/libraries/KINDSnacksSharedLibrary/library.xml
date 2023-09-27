@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="come-join-us">
+        <display-name xml:lang="x-default">Come Join Us</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/billboardGrid</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>kind-nyc-office</value>
+                <value>kind-field-team</value>
+                <value>kind-international</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Come Join Us</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="https://kindsnacks.submit4jobs.com/index.cfm?cid=85390&amp;amp;fuseaction=85390.viewjobs&amp;amp;criteria=nyc"&gt;View All Positions&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-field-team">
+        <display-name xml:lang="x-default">KIND Field Team</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">spread kindness throughout the country!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND Field Team</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="https://kindsnacks.submit4jobs.com/index.cfm?cid=85390&amp;fuseaction=85390.viewjobs&amp;criteria=field_part-time"&gt;View Part-Time Positions&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="https://kindsnacks.submit4jobs.com/index.cfm?cid=85390&amp;fuseaction=85390.viewjobs&amp;criteria=field_full-time"&gt;View Full-Time Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-international">
+        <display-name xml:lang="x-default">KIND International</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">work with us around the globe!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND International</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="https://kindsnacks.submit4jobs.com/index.cfm?cid=85390&amp;fuseaction=85390.viewjobs&amp;criteria=international"&gt;View Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-nyc-office">
+        <display-name xml:lang="x-default">KIND NYC Office</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">work with us at our headquarters!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND NYC Office</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="https://kindsnacks.submit4jobs.com/index.cfm?cid=85390&amp;fuseaction=85390.viewjobs&amp;criteria=nyc"&gt;View Positions&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

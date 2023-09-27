@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="yotpoJobsConfiguration" object-id="1">
+        <object-attribute attribute-id="orderFeedJobLastExecutionDateTime">2019-11-01T22:25:00.000+0000</object-attribute>
+    </custom-object>
+
+</custom-objects>

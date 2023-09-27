@@ -1,0 +1,116 @@
+
+<style>
+    /**
+     * Background Image
+     */
+    <isif condition="${!empty(graphicalAsset.backgroundImage)}">
+            <isset name="responsiveBackgroundImageAdjust" value="${GetResponsiveImage(graphicalAsset.backgroundImage, 768, 1400, '', 'jpg')}" scope="page" />
+        <isset name="responsiveBackgroundImage" value="${graphicalAsset.backgroundImage.URL}}" scope="page" />
+        <isif condition="${!empty(responsiveBackgroundImage)}">
+            .c-marketing-banner.${assetID} {
+                background-image: url('${responsiveBackgroundImageAdjust.imageUrlDefault}');
+            }
+            @media screen and (min-width: 768px) {
+                .c-marketing-banner.${assetID} {
+                    background-image: url('${graphicalAsset.backgroundImage.URL}');
+                }
+            }
+        </isif>
+    </isif>
+
+    /*
+     * Aligment
+     */
+    <isif condition="${!empty(graphicalAsset.textAlign)}">
+        <isif condition="${graphicalAsset.textAlign.value === 'left'}">
+            .${assetID} .c-marketing-banner__wrapper {
+                text-align: left !important;
+                align-items: flex-start !important;
+            }
+        <iselseif condition="${graphicalAsset.textAlign.value === 'right'}">
+            .${assetID} .c-marketing-banner__wrapper {
+                text-align: right !important;
+                align-items: flex-end !important;
+            }
+        </isif>
+    </isif>
+
+    /*
+     * Colors
+     */
+    <isif condition="${!empty(graphicalAsset.contentColor)}">
+        .c-marketing-banner.${assetID} {
+            color: ${graphicalAsset.contentColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.backgroundColor)}">
+        .c-marketing-banner.${assetID} {
+            background-color: ${graphicalAsset.backgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.eyebrowColor)}">
+        .c-marketing-banner.${assetID} .c-marketing-banner__eyebrow {
+            color: ${graphicalAsset.eyebrowColor};
+        }
+
+        .c-marketing-banner.${assetID} .c-marketing-banner__eyebrow a {
+            color: ${graphicalAsset.eyebrowColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.headingColor)}">
+        .c-marketing-banner.${assetID} .c-marketing-banner__heading {
+            color: ${graphicalAsset.headingColor} !important;
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonColor)}">
+        .c-marketing-banner.${assetID} .s-graphical-asset__links a {
+            color: ${graphicalAsset.primaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonBackgroundColor)}">
+        .c-marketing-banner.${assetID} .s-graphical-asset__links a {
+            background-color: ${graphicalAsset.primaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonColor)}">
+        .c-marketing-banner.${assetID} .s-graphical-asset__links a.secondary {
+            color: ${graphicalAsset.secondaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonBackgroundColor)}">
+        .c-marketing-banner.${assetID} .s-graphical-asset__links a.secondary {
+            background-color: ${graphicalAsset.secondaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.mobileOnly) && graphicalAsset.mobileOnly}">
+        .c-marketing-banner.${assetID} {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .c-marketing-banner.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.tabletOnly) && graphicalAsset.tabletOnly}">
+        .c-marketing-banner.${assetID} {
+            display: none !important;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .c-marketing-banner.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+</style>

@@ -1,0 +1,269 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('css/dynamic_introduction.css')}">
+
+<div class="dynamic_container desktop" style="position:relative">
+    <div class="top_container">
+        <div class="text-container">
+            <div class="headline">
+                <isprint value="${pdict.headline}" encoding="off" />
+            </div>
+            <div class="copy">
+                <isprint value="${pdict.copy}" encoding="off" />
+            </div>
+            <svg class="divider_line" xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.000000pt" height="190.000000pt" viewBox="0 0 1.000000 190.000000" preserveAspectRatio="xMidYMid meet">
+
+                <g transform="translate(0.000000,190.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+                    <path d="M1 1884 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"/>
+                    <path d="M2 1775 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 1660 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+                    <path d="M2 1540 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+                    <path d="M2 1425 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 1305 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 1185 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 1065 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 950 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+                    <path d="M2 835 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 715 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 595 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 475 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M2 360 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+                    <path d="M2 240 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+                    <path d="M2 125 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+                    <path d="M1 14 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"/>
+                </g>
+            </svg>
+        </div>
+        <img class="left-image" src="${pdict.left_image.src.desktop}" alt="${pdict.left_image.alt}" />
+        <img class="upperright-image" src="${pdict.ur_image.src.desktop}" alt="${pdict.ur_image.alt}" />
+        <img class="bottomright-image" src="${pdict.br_image.src.desktop}" alt="${pdict.br_image.alt}" />
+    </div>
+    <div class="background_container">
+        <div class="subcopy">
+            <isprint value="${pdict.subcopy}" encoding="off" />
+        </div>
+        <div style="flex-basis:100%;height:0"></div>
+        <isscript>
+            var dynamicitem = pdict.regions.items;
+            dynamicitem.setClassName("dynamic_items");
+            // mark all pages as carousel
+            dynamicitem.setComponentClassName("item");
+        </isscript>
+        <isprint value="${dynamicitem.render()}" encoding="off"/>
+    </div>
+</div>
+
+<div class="dynamic_container_mobile" style="position:relative;">
+    <div class="img_container">
+    <img class="left-image" src="${pdict.left_image.src.desktop}" alt="${pdict.left_image.alt}" />
+    <img class="upperright-image" src="${pdict.ur_image.src.desktop}" alt="${pdict.ur_image.alt}" />
+    <img class="bottomright-image" src="${pdict.br_image.src.desktop}" alt="${pdict.br_image.alt}" />
+        <div style="clear: both; line-height: 0;">&nbsp;</div>
+    </div>
+    <div class="headline">
+        <isprint value="${pdict.headline}" encoding="off" />
+    </div>
+    <div class="copy paragraph">
+        <isprint value="${pdict.copy}" encoding="off" />
+    </div>
+    <svg class="divider_line" xmlns="http://www.w3.org/2000/svg" version="1.0" width="1.000000pt" height="190.000000pt" viewBox="0 0 1.000000 190.000000" preserveAspectRatio="xMidYMid meet">
+
+        <g transform="translate(0.000000,190.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+            <path d="M1 1884 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"/>
+            <path d="M2 1775 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 1660 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+            <path d="M2 1540 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+            <path d="M2 1425 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 1305 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 1185 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 1065 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 950 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+            <path d="M2 835 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 715 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 595 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 475 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M2 360 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+            <path d="M2 240 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
+            <path d="M2 125 c0 -16 2 -22 5 -12 2 9 2 23 0 30 -3 6 -5 -1 -5 -18z"/>
+            <path d="M1 14 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"/>
+        </g>
+    </svg>
+</div>
+<div class="background_container_mobile">
+    <div class="subcopy paragraph">
+        <isprint value="${pdict.subcopy}" encoding="off" />
+    </div>
+    <div class="dynamic_slider" style="position: relative">
+        <isscript>
+            var dynamicitem = pdict.regions.items;
+            dynamicitem.setClassName("swiper-wrapper");
+            // mark all pages as carousel
+            dynamicitem.setComponentClassName("swiper-slide");
+        </isscript>
+        <isprint value="${dynamicitem.render()}" encoding="off"/>
+
+        <!-- scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</div>
+<style>
+    .dynamic_slider {
+        overflow-x: hidden;
+    }
+    .dynamic_container_mobile .img_container {
+        display: block !important;
+    }
+    @media screen and (max-width: 1024px) {
+        .dynamic_container_mobile .left-image, .dynamic_container_mobile .bottomright-image {
+            width: 150px;
+            height: 100px;
+        }
+        .dynamic_container_mobile .upperright-image {
+            width: 85px;
+            position: relative;
+            right: 120px !important;
+            top: -130px;
+        }
+        .dynamic_container_mobile .left-image {
+            left: 50px;
+            position: relative;
+            top: -60px;
+        }
+    }
+
+    .dynamic_link.arrow {
+        min-width: 195px !important;
+    }
+    .divider_line {
+        position:relative;
+        top: 40px;
+        height: 190px;
+    }
+    .dynamic_text_container .dynamic_link {
+        position: absolute;
+        bottom: -50px;
+        font-family: main;
+        margin-bottom: 30px;
+    }
+    .dynamic_text_container .dynamic_link {
+        position: absolute;
+        bottom: -50px;
+        font-family: main;
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width: 440px) {
+        .divider_line {
+            position: absolute;
+            top: 510px;
+            height: 80px;
+        }
+    }
+    .dynamic_container_mobile .copy {
+        margin-bottom: 40px;
+    }
+    .dynamic_slider .swiper-wrapper {
+        padding-bottom: 50px;
+    }
+    .dynamic_slider .swiper-slide {
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .dynamic_container_mobile {
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .background_container_mobile {
+        background: #F5F5F5;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 60px;
+        text-align: center;
+    }
+    .background_container_mobile .subcopy {
+        padding-bottom: 60px;
+    }
+    .dynamic_container_mobile .headline {
+        font-size: 36px;
+        line-height: 42px;
+        letter-spacing: -1px;
+        font-family: main;
+        margin-bottom: 25px;
+    }
+    .dynamic_items {
+        width: calc(100% - 240px);
+        margin-left: 0px;
+        position: relative;
+        top: -40px;
+    }
+    @media screen and (min-width: 820px) and (max-width: 1024px) {
+        .dynamic_items {
+            width: calc(100% - 20px);
+            margin-left: 0px;
+            position: relative;
+            top: -40px;
+            column-gap: 10px;
+        }
+        .dynamic_container .subcopy {
+            margin-bottom: 140px;
+        }
+    }
+    .dynamic_items .item {
+        position: relative;
+    }
+    .dynamic_items {
+        column-gap: 50px;
+    }
+    .dynamic_container .headline {
+        width:50vw;
+    }
+    .dynamic_container .copy {
+        width:50vw;
+    }
+    .background_container .subcopy {
+        width:35vw;
+    }
+    .dynamic_container .bottomright-image {
+        bottom:-60px !important;
+    }
+    @media screen and (max-width: 1100px) {
+        .dynamic_container .bottomright-image {
+            bottom: -60px !important;
+        }
+    }
+</style>
+
+<script>
+    var distance = $('.subcopy').offset().top - $(".copy").offset().top;
+    $(".divider_line").css("transform", 'scale('+650/distance+')');
+
+    $(".dynamic_container .dynamic_items").css("display", "grid");
+    $(".dynamic_container .dynamic_items").css("grid-template-columns", "repeat(" +$('.dynamic_items .item').length + ", 1fr)");
+
+    var width = $(window).width() - 410;
+    var goodwidth = Math.min(width, 30);
+    if (goodwidth < 0) { goodwidth = 0; }
+
+    $(".dynamic_container_mobile .left-image").css("left", goodwidth + "px");
+    $(".dynamic_container_mobile .upperright-image").css("right", goodwidth+40 + "px");
+    $(".dynamic_container_mobile .bottomright-image").css("right", goodwidth+10 + "px");
+
+    const dynamic_slider = new Swiper('.dynamic_slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 30,
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "1.45"
+    });
+</script>

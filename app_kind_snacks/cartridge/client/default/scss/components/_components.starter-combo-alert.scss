@@ -1,0 +1,25 @@
+/* ============================================================================
+Starter Combo Alert
+============================================================================ */
+
+/**
+ * Establish styles for starter combo alerts. The styling namespace for this
+ * file is for when a user selects a starter combo and has items in their box.
+ */
+
+$ns: "c-starter-combo-alert";
+
+.#{$ns} {
+    @include media-breakpoint-up(md) {}
+
+    &__body {
+        @include media-breakpoint-up(md) {}
+    }
+
+    &__add-to-box {
+        font-family: $font-family-primary;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+    }
+}

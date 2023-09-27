@@ -1,0 +1,36 @@
+<isscript>
+    const isObjectHas = Object.hasOwnProperty.call(pdict.results, 'productIds');
+    const MAX_PRODUCTS = 3;
+    const productCount = isObjectHas ? pdict.results.productIds.length <= MAX_PRODUCTS ? pdict.results.productIds.length : MAX_PRODUCTS : 0;
+    const category = dw.catalog.CatalogMgr.getCategory(pdict.cat);
+</isscript>
+
+<ul>
+    <isif condition="${isObjectHas && productCount > 0}">
+        <isset name="counter" value="${0}">
+        <isloop items="${pdict.results.productIds}" var="productId" status="loopstate">
+            <isif condition="${loopstate.count <= productCount}">
+                <isscript>
+                    let product = dw.catalog.ProductMgr.getProduct(productId.productID);
+                </isscript>
+                <li>
+                    <a href="${dw.web.URLUtils.url("Product-Show", "pid", productId.productID)}"
+                        class="js-gtm-select-product js-gtm-nav-click"
+                        data-gtm-item-list-name="${Resource.msg('label.top.nav', 'gtm', null)}"
+                        data-gtm-product-index="${loopstate.index}"
+                        data-gtm-product-id="${product.ID}"
+                        data-gtm-product-name="${product.name}"
+                        data-gtm-product-category="${product.primaryCategory ? product.primaryCategory.displayName : product.masterProduct.primaryCategory.displayName}"
+                        data-gtm-product-price="${product.getPriceModel() ? product.getPriceModel().getMaxPrice().value : null}"
+                        data-gtm-product-listname="${Resource.msg('label.top.nav', 'gtm', null)}">
+                        ${product.name}
+                    </a>
+                </li>
+            </isif>
+        </isloop>
+    </isif>
+
+    <li class="suggestall">
+        <a style="text-transform:none;" data-gtm-shop-all-category="${category ? category.displayName : " "}" href="${dw.web.URLUtils.url("Search-Show", "cgid", pdict.cat)}">Shop All</a>
+    </li>
+</ul>

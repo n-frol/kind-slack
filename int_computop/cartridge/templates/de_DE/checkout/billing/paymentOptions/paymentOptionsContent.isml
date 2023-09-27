@@ -1,0 +1,24 @@
+<isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption" status="loopSate">
+    <isif condition="${paymentOption.ID !== 'CREDIT_CARD'}">
+        <!--- dotsource PaymentOperator --->
+        <isinclude template="checkout/billing/paymentOptions/paymentOperatorContent" />
+    </isif>
+</isloop>
+
+<!--- dotsource paymentoperator config --->
+<script type="text/javascript">
+    var paymentOperatorConfig = <isprint value="${ require('int_computop/cartridge/scripts/computop/util/Settings').getPaymentOperatorConfig() }" encoding="off"/>;
+</script>
+
+<isscript>
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var activePaymentMethod = selectedPaymentInstrument ? selectedPaymentInstrument.paymentMethod : 'PAYMENTOPERATOR_CREDIT_CARD';
+</isscript>
+<!--- dotsource custom: defaults to CREDIT_CARD --->
+<isif condition="${ pdict.order.billing.payment.applicablePaymentMethods.length > 0 }">
+    <input type="hidden" class="form-control"
+           name="${ pdict.forms.billingForm.paymentMethod.htmlName }"
+           value="${ activePaymentMethod }"
+    >
+</isif>

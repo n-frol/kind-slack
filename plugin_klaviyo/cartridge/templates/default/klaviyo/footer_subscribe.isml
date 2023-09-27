@@ -1,0 +1,109 @@
+<!--- TEMPLATENAME: footer-subscribe.isml --->
+<isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue('klaviyo_enabled')}">
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<iscomment>Klaviyo</iscomment>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isinclude template="components/modules" />
+    <div class="s-email-signup">
+        <isif condition="${siteID === "kind_b2b"}" >
+            <iscontentasset aid="newsletter-form-copy-b2b" />
+        <iselseif condition="${siteID === "CreativeSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy-cs" />
+        <iselseif condition="${siteID === "KINDSnacks"}" />
+            <iscontentasset aid="newsletter-form-copy" />
+        </isif>
+    </div>
+    <div style="display:inline-block" class="c-email-signup__form-outer">
+        <isset name="formURL" value="${'Klaviyo-Subscribe' + (siteID === 'KINDSnacks' ? 'Ajax' : '')}" scope="page" />
+        <form action="${URLUtils.url(formURL)}" method="post" class="form-horizontal c-email-signup__form js-subscribe${siteID === 'KINDSnacks' ? ' js-subscribe--ajax' : ''}" name="subscribe-form" id="subscribe-form">
+            <fieldset>
+                <div class="c-email-signup__form-wrapper input-group">
+                    <div class="form-group c-email-signup__input__group klaviyo" >
+                        <label class="form-control-label sr-only" for="klaviyo">
+                        </label>
+                        <input type="email" placeholder="${Resource.msg('placeholder.form.emailsignup', 'footer', null)}" class="input-text c-email-signup__input js-subscribe-email" id="emailsignup" name="emailsignup"
+                            aria-describedby="subcribe-feedback">
+                        <div id="subscribe-feedback" class="js-subscribe-email-feedback c-email-signup__input-feedback" aria-live="polite"></div>
+                        <div class="invalid-feedback"></div>
+                    </div>
+                    <button type="submit" name="submitButton" class="nostretch c-email-signup__button btn btn-light${siteID === 'KINDSnacks' ? ' js-subscription-submit' : ''}">
+                        <isif condition="${siteID !== 'CreativeSnacks'}">
+                            <span class="sr-only">
+                                ${Resource.msg('button.form.emailsignup', 'homePage', null)}
+                            </span>
+                            <img src="${URLUtils.staticURL('images/arrow-right.svg')}" alt="" role="presentation"
+                                class="c-email-signup__button__icon c-email-signup__button__icon--submit" />
+                            <img src="${URLUtils.staticURL('images/checkmark-black.svg')}" alt="" role="presentation"
+                                class="c-email-signup__button__icon c-email-signup__button__icon--success" />
+                        <iselse/>
+                            ${Resource.msg('button.form.emailsignup', 'homePage', null)} *
+                        </isif>
+                    </button>
+                    <input type="hidden" name="source" value="Footer"/>
+                    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div style="line-height:normal;  text-transform: none; font-size:14px;" class="c-email-signup__disclaimer">
+        <isif condition="${siteID === 'KINDSnacks'}">
+            <iscontentasset aid="kind-snacks-footer-legal" />
+        <iselse/>
+            <isprint value="${Resource.msg('footer.legal', 'footer', null)}" encoding="off" />
+        </isif>
+    </div>
+</isif>
+
+<style>
+    .nostretch {
+        width: 40px !important;
+        padding: 6px 8px !important;
+    }
+.st-global-footer__wrapper--secondary {
+    padding-bottom: 0px !important;
+}
+@media screen and (max-width: 440px) {
+.s-email-signup {
+    text-align:left;
+    float:none !important;
+    <isif condition="${siteID !== 'KINDSnacks'}">
+        padding-left: 10px !important;
+    </isif>
+}
+.movedown {
+    padding-left: 0px !important;
+    top: 0px !important;
+    left: 0px !important;
+}
+.st-global-footer__wrapper--secondary {
+    padding-top: 0px !important;
+}
+.st-global-footer__logo {
+left: 0px !important;
+top: 0px !important;
+}
+}
+.s-email-signup {
+    display: inline-block;
+    text-align:left;
+    padding-left: 10px;
+}
+.st-global-footer__wrapper--secondary {
+    text-align:center;
+    position:relative;
+    margin-top: 30px;
+    background: black;
+}
+.movedown {
+    position: relative;
+    top: 40px;
+    padding-left: 100px;
+    left: -20px;
+}
+ .st-global-footer__logo {
+        display: inline-block;
+        left: -200px;
+        position: relative;
+        top: -10px;
+        }
+</style>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="kinds-promise">
+        <display-name xml:lang="x-default">KIND's Promise</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">KIND has always been committed to bringing you wholesome and delicious snacks. The first and predominant ingredient in all of our snacks will always be a nutrient-dense food like nuts, whole grains or fruit.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">KIND's Promise</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">real food, wholesome ingredients</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/featured-banners/homepage_ingredients_almonds_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;Learn More&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="achieve-balance">
+        <display-name xml:lang="x-default">Achieve Balance</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe that people don’t need to choose between health and taste when it comes to snacking. We use high-quality, delicious ingredients that taste good, energize you and help keep you satisfied.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">achieve a balance of health AND taste</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/featured-banners/homepage_ingredients_pineapple_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;Give KIND a Try&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

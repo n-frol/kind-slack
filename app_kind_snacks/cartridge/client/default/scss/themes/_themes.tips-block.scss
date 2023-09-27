@@ -1,0 +1,70 @@
+/* ============================================================================
+   Tips Block
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the tips block component
+ */
+
+$ns: th-kind-tips-block;
+$component: c-tips-block;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Tips Block Component
+    &.#{$component} {
+
+        .#{$component} {
+
+            // Tips Block Heading
+            &__heading {
+                font-family: $font-family-primary;
+            }
+
+            // Tips Block Heading
+            &__body {
+                font-family: $font-family-secondary;
+            }
+
+            // Tips Block Links
+            &__links {
+                font-family: $font-family-primary;
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
+            &__tip {
+                font-family: $font-family-primary;
+            }
+        }
+
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+
+                    &:hover {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                }
+
+                img {
+                    transform: rotate(0deg);
+                }
+
+            }
+
+        }
+
+    }
+
+}

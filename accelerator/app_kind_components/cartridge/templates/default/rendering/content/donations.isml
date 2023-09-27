@@ -1,0 +1,48 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/content.css');
+    </isscript>
+
+    <isset name="formSuccess" value="${!empty(pdict.success) && pdict.success}" scope="page" />
+    <isset name="formSubmitted" value="" scope="page" />
+    <isif condition="${!empty(pdict.flash) && !empty(pdict.flash.formSubmitted)}">
+        <isset name="formSubmitted" value="${pdict.flash.formSubmitted}" scope="page" />
+    </isif>
+
+    <isif condition="${formSuccess}">
+        <div class="container main-container s-knd-legacy s-knd-legacy--generic-page pt-5 pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <p>${Resource.msg('message.donations.successModal', 'forms', null)}</p>
+                    <p>
+                        ${Resource.msg('message.donations.successWholesale', 'forms', null)}
+                        <a href="https://wholesale.kindsnacks.com/apply">${Resource.msg('message.donations.here', 'forms', null)}</a>
+                    </p>
+                </div>
+            </div>     
+        </div>
+    <iselseif condition="${!empty(pdict.content)}">
+        <div class="container main-container s-knd-legacy s-knd-legacy--generic-page pt-5 pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <isprint value="${pdict.content.body}" encoding="off" />
+                </div>
+                    <isif condition="${empty(formSubmitted) || formSubmitted !== true}">
+                        <div class="col-12">
+                            <isinclude url="${URLUtils.url('Contact-GetContactForm', 'cid', 'donations', 'success', pdict.success, 'formId', 'donations', 'formTemplate', 'components/donations/donationsForm')}" />
+                    <iselse>
+                        <div class="col-12 u-background__color-light-green pb-3 pt-3">
+                            <h2 class="h4 u-text__color-green">
+                                ${Resource.msg('heading.donations.success', 'forms', null)}
+                            </h2>
+                            ${Resource.msg('message.donations.success', 'forms', null)}
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </isif>
+
+</isdecorate>
+
+

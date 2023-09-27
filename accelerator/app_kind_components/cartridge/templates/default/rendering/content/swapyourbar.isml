@@ -1,0 +1,15 @@
+<div style="text-align:center;">
+<h3 style="text-transform:none">
+Build Your Own Box subscription information
+</h3>
+<br/>
+We always do our best to send the bars you select in your Build Your Own Box subscription orders. 
+<br/><br/>
+In the unlikely event that any selected bars are out of stock on the date of your orders, we’ll replace them with your default bar. If your default is also out of stock, we’ll replace it with ${defaultbar}.
+<br/><br/>
+Your default bar is currently set to ${swapname}. Select Change Default below to update your selection.
+<br/><br/>
+Questions? Contact customerservice@kindsnacks.com.
+<br/>
+<a style="margin-bottom:10px; margin-top:10px;" class="btn btn-primary" href="/search?cgid=swap">Set Your Default Bar</a>
+<a style="margin-bottom:10px; margin-top:10px;" data-dismiss="modal" onclick="window.location.reload(false);" class="btn btn-primary" href="javascript:void(0)">Continue</a>

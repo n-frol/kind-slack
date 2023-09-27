@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <product product-id="M17111">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17117">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17118">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17119">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17121">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17124">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17125">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17127">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17128">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17148">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17150">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17156">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17158">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17159">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17179">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17181">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17190">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17193">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17224">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17226">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17227">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17228">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17750">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17751">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17752">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M17758">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18052">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18053">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18054">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>evening-snack</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18055">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18056">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+                <value>make-lunch-interesting</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18070">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18421">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M18629">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M19982">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M19983">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M19984">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>fuel-your-morning-run</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M19985">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M20800">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M20801">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M20802">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M20803">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>power-your-workout</value>
+                <value>healthy-on-the-go</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M20805">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>make-lunch-interesting</value>
+                <value>power-your-workout</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24201">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24202">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24203">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>fuel-your-morning-run</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24205">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24210">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24211">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24443">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M24480">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M25878">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M25879">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26672">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26674">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26695">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26696">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26697">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26698">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26699">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>guilt-free-indulgence</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26700">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+                <value>power-your-workout</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26704">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26705">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26706">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26707">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26708">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26709">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>breakfast-at-home</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26710">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26711">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>add-some-fruit</value>
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26712">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M26713">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M27361">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M27362">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>after-school-snack</value>
+                <value>guilt-free-indulgence</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="M27369">
+        <custom-attributes>
+            <custom-attribute attribute-id="occasion" xml:lang="x-default">
+                <value>healthy-on-the-go</value>
+                <value>evening-snack</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+</catalog>

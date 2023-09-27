@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <development>
+            <preference preference-id="paymentOperatorBaseUrl">https://www.computop-paygate.com/</preference>
+            <preference preference-id="paymentOperatorCreditCard3DEnabled">false</preference>
+            <preference preference-id="paymentOperatorCreditCardGatewayPath">paySSL.aspx</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount">1</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired">true</preference>
+            <preference preference-id="paymentOperatorHMACKey">6s_BE=5b[kG2X?9z*wM3R)7c(oH4eZ8]</preference>
+            <preference preference-id="paymentOperatorMerchantCode">h53fZ0K7Q1l2JYwMwStWzqzTjOxWzJIujxV6dudUVA6nXjIxCMODE0LjXTRD+JLh</preference>
+            <preference preference-id="paymentOperatorMerchantID">PRG_KIND_CNPTest</preference>
+            <preference preference-id="paymentOperatorTestFlag">false</preference>
+            <preference preference-id="useLongPostalCodes">true</preference>
+        </development>
+        <staging>
+            <preference preference-id="paymentOperatorBaseUrl">https://www.computop-paygate.com/</preference>
+            <preference preference-id="paymentOperatorCreditCard3DEnabled">false</preference>
+            <preference preference-id="paymentOperatorCreditCardGatewayPath">paySSL.aspx</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount">1</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired">true</preference>
+            <preference preference-id="paymentOperatorHMACKey">6s_BE=5b[kG2X?9z*wM3R)7c(oH4eZ8]</preference>
+            <preference preference-id="paymentOperatorMerchantCode">h53fZ0K7Q1l2JYwMwStWzqzTjOxWzJIujxV6dudUVA6nXjIxCMODE0LjXTRD+JLh</preference>
+            <preference preference-id="paymentOperatorMerchantID">PRG_KIND_CNPTest</preference>
+            <preference preference-id="paymentOperatorTestFlag">false</preference>
+            <preference preference-id="useLongPostalCodes">true</preference>
+        </staging>
+        <production>
+            <preference preference-id="paymentOperatorBaseUrl">https://www.computop-paygate.com/</preference>
+            <preference preference-id="paymentOperatorCreditCard3DEnabled">false</preference>
+            <preference preference-id="paymentOperatorCreditCardGatewayPath">paySSL.aspx</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount">1</preference>
+            <preference preference-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired">true</preference>
+            <preference preference-id="paymentOperatorHMACKey">6s_BE=5b[kG2X?9z*wM3R)7c(oH4eZ8]</preference>
+            <preference preference-id="paymentOperatorMerchantCode">h53fZ0K7Q1l2JYwMwStWzqzTjOxWzJIujxV6dudUVA6nXjIxCMODE0LjXTRD+JLh</preference>
+            <preference preference-id="paymentOperatorMerchantID">PRG_KIND_CNP</preference>
+            <preference preference-id="paymentOperatorTestFlag">false</preference>
+            <preference preference-id="useLongPostalCodes">true</preference>
+        </production>
+    </custom-preferences>
+</preferences>
+

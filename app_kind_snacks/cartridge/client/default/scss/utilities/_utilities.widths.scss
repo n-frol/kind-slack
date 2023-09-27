@@ -1,0 +1,55 @@
+/* ============================================================================
+   Utilities - Widths
+   ============================================================================ */
+
+$ns: u-width;
+
+// List of breakpoint classes
+$breakpoints: (xl, lg, md, sm, xs, xxs);
+
+// Column sets
+$settings-columns: 1 2 3 4 5;
+
+.#{$ns} {
+
+   // Create an empty list that will dynamically populate
+   $column-list: ();
+
+   @each $column in $settings-columns {
+
+      $column-length: $column;
+
+      @while $column-length > 0 {
+
+         // Set up key for class name
+         $key: floor($column-length / $column * 100);
+
+         // Set up width of columns
+         $width: percentage($column-length / $column);
+
+         // If the class name is not inside the list, create a new class
+         @if index($column-list, $key) == null {
+
+            $column-list: join($column-list, $key);
+
+            &-#{$key} {
+               @include pxl-breakpoint-classes($breakpoints) {
+                  width: $width;
+               }
+            }
+
+         }
+
+         $column-length: $column-length - 1;
+
+      }
+
+   }
+
+}
+
+.u-width-auto {
+    @include pxl-breakpoint-classes($breakpoints) {
+        width: auto !important;
+    }
+}

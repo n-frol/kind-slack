@@ -1,0 +1,6 @@
+{
+    "init": [
+      "./cartridge/scripts/batch/services/S3Service.js",
+      "./cartridge/scripts/batch/services/FTPService.js"
+    ]
+}

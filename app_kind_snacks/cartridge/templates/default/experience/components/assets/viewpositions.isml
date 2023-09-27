@@ -1,0 +1,70 @@
+<isscript>
+    var rstring = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+</isscript>
+
+<div style="background: ${pdict.background.value};" class="position-container">
+    <img src="${pdict.image.src.desktop}" />
+    <h3>${pdict.header}</h3>
+    <a href="${pdict.link}">${pdict.copy}</a>
+</div>
+<style>
+    .position-container {
+        padding:10px;
+        text-align:center;
+        color:white;
+        letter-spacing:normal;
+        padding-bottom: 80px;
+    }
+    .position-container img {
+        margin-bottom: 30px;
+    }
+    @media screen and (max-width:425px) {
+        .position-container img {
+            display:none;
+        }
+        .position-container {
+            width:90%;
+            margin-left:5%;
+            margin-bottom: 10px;
+        }
+        .position-container a {
+            bottom:40px !important;
+        }
+    }
+    .position-container h3 {
+        font-size: 30px;
+        line-height: 28px;
+            position: relative;
+    top: 10px;
+    }
+    .position-container h3, .position-container a {
+        letter-spacing: normal;
+        color:white;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    }
+    .position-container a {
+        position:absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        font-size: 16px;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+        letter-spacing: normal;
+    }
+    .position-container:first-child {
+        margin-right: 10px;
+    }
+    @media screen and (max-width:425px) {
+        .position-container:first-child {
+        margin-right: 0px;
+    }
+    }
+</style>
+
+<script>
+    $(function() {
+        $(".position-container")
+            .parent()
+            .css("justify-content", "center").css("align-items", "center");
+    });
+</script>

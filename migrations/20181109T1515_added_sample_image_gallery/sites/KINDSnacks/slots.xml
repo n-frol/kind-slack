@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-e" context="folder" context-id="Sample Folder" configuration-id="sample_image-gallery" default="true" assigned-to-site="true">
+        <template>slots/content/imageGallery.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kindness-safari"/>
+                <content-asset content-id="giving-flowers"/>
+                <content-asset content-id="uplifting-message"/>
+                <content-asset content-id="2016-entrepreneurship-summit"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

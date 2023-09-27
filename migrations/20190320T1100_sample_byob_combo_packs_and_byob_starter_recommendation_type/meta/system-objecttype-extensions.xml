@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Recommendation">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="UUID">
+                <min-length>0</min-length>
+                <field-length>28</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="calloutMsg"/>
+            <attribute-definition attribute-id="creationDate"/>
+            <attribute-definition attribute-id="image"/>
+            <attribute-definition attribute-id="lastModified"/>
+            <attribute-definition attribute-id="longDescription"/>
+            <attribute-definition attribute-id="name">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="recommendationType">
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Product Detail Page - Cross Sell</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Component</display>
+                        <value>2</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">BYOB Starter Combo</display>
+                        <value>3</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="shortDescription"/>
+        </system-attribute-definitions>
+    </type-extension>
+
+</metadata>

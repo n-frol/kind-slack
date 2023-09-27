@@ -1,0 +1,43 @@
+<isif condition="${loopstatus.first}">
+    <div class="c-link-grid ${parentID} th-kind-link-grid s-graphical-asset">
+        <div class="container st-container st-container--padded">
+            <div class="row">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/linkGrid/linkGrid_UI" />
+    <div class="c-link-grid__item th-kind-link-grid__item ${assetID}">
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-link-grid__item__content">
+                <div class="c-link-grid__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-link-grid__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-link-grid__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-link-grid__item__content__links s-graphical-asset__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    </div>
+</isif>
+<isif condition="${loopstatus.last}">
+        </div>
+    </div>
+</div>
+</isif>

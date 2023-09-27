@@ -1,0 +1,31 @@
+/* ============================================================================
+Error
+============================================================================ */
+
+/**
+ * Styles for the error pages
+*/
+$ns: st-error;
+
+.#{$ns} {
+    margin-top: 90px;
+    text-align: center;
+
+    &__title {
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 16px;
+        margin-top: 24px;
+        @include media-breakpoint-up(md) {
+            font-size: 60px;
+        }
+    }
+
+    &__instructions {
+        margin-bottom: 32px;
+    }
+
+    &__compliment-generator {
+        margin-bottom: 30px;
+    }
+}

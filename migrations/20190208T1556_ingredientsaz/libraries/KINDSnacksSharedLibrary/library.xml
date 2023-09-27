@@ -1,0 +1,2236 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+  <folder folder-id="ingredients" mode="delete"/>
+  <folder folder-id="ingredients-a-z">
+    <display-name>Ingredients A-Z</display-name>
+    <description>take a look at everything we put in our snacks</description>
+    <online-flag>true</online-flag>
+    <template>rendering/folder/glossary</template>
+  </folder>
+  <folder folder-id="ingredients-a">
+    <display-name>a</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>0</position>
+  </folder>
+  <folder folder-id="ingredients-b">
+    <display-name>b</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>1</position>
+  </folder>
+  <folder folder-id="ingredients-c">
+    <display-name>c</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>2</position>
+  </folder>
+  <folder folder-id="ingredients-d">
+    <display-name>d</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>3</position>
+  </folder>
+  <folder folder-id="ingredients-f">
+    <display-name>f</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>5</position>
+  </folder>
+  <folder folder-id="ingredients-g">
+    <display-name>g</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>6</position>
+  </folder>
+  <folder folder-id="ingredients-h">
+    <display-name>h</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>7</position>
+  </folder>
+  <folder folder-id="ingredients-j">
+    <display-name>j</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>9</position>
+  </folder>
+  <folder folder-id="ingredients-k">
+    <display-name>k</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>10</position>
+  </folder>
+  <folder folder-id="ingredients-m">
+    <display-name>m</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>12</position>
+  </folder>
+  <folder folder-id="ingredients-n">
+    <display-name>n</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>13</position>
+  </folder>
+  <folder folder-id="ingredients-o">
+    <display-name>o</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>14</position>
+  </folder>
+  <folder folder-id="ingredients-p">
+    <display-name>p</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>15</position>
+  </folder>
+  <folder folder-id="ingredients-q">
+    <display-name>q</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>16</position>
+  </folder>
+  <folder folder-id="ingredients-r">
+    <display-name>r</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>17</position>
+  </folder>
+  <folder folder-id="ingredients-s">
+    <display-name>s</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>18</position>
+  </folder>
+  <folder folder-id="ingredients-t">
+    <display-name>t</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>19</position>
+  </folder>
+  <folder folder-id="ingredients-u">
+    <display-name>u</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>20</position>
+  </folder>
+  <folder folder-id="ingredients-v">
+    <display-name>v</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>21</position>
+  </folder>
+  <folder folder-id="ingredients-w">
+    <display-name>w</display-name>
+    <online-flag>true</online-flag>
+    <parent>ingredients-a-z</parent>
+    <position>22</position>
+  </folder>
+  <content content-id="alkalized-cocoa">
+    <display-name>alkalized cocoa</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>also known as Dutch cocoa; a powder from roasted, ground cacao beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="allspice">
+    <display-name>allspice</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice from the dried unripe berry from a tropical evergreen tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="almonds">
+    <display-name>almonds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>tree nut with sweet, creamy texture and flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="almond-butter">
+    <display-name>almond butter</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>butter-like paste made from crushed almonds and used as a spread</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="amaranth">
+    <display-name>amaranth</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ancient super grain, naturally gluten free</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="ancho-chili">
+    <display-name>ancho chili</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice from a dried and ground poblano pepper</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="annatto">
+    <display-name>annatto</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>powdered seeds of the achiote tree used for color</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apple-concentrate">
+    <display-name>apple concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>apple juice with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apple-juice">
+    <display-name>apple juice</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>juice from pressed apples</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apple-juice-concentrate">
+    <display-name>apple juice concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>apple juice with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apple-puree">
+    <display-name>apple puree</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>another form of apple sauce</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apple-puree-concentrate">
+    <display-name>apple puree concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>apple sauce with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apples">
+    <display-name>apples</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>rounded red, yellow, or green fruit of an apple tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="apricots">
+    <display-name>apricots</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>stone fruit with yellow outer skin and a fleshy inside</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="ascorbic-acid">
+    <display-name>ascorbic acid</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a source of vitamin c used to preserve freshness</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-a"/>
+    </folder-links>
+  </content>
+  <content content-id="bananas">
+    <display-name>bananas</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>typically a yellow-colored tropical fruit botanically classified as a berry</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="black-pepper">
+    <display-name>black pepper</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>powdered spice from a peppercorn</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="black-peppercorn">
+    <display-name>black peppercorn</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>cooked and dried unripe fruit of the pepper plant</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="black-sesame-seeds">
+    <display-name>black sesame seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet seeds with a slightly nuttier flavor than their white counterparts</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="blueberries">
+    <display-name>blueberries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>small, sweet berries, blue in color and grown on bushes</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="blueberry-concentrate">
+    <display-name>blueberry concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>blueberry juice with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="blueberry-puree">
+    <display-name>blueberry puree</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ripened blueberries blended together into a sweet, blue sauce</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="brazil-nuts">
+    <display-name>brazil nuts</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>large tree nut native to south america</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="brown-rice">
+    <display-name>brown rice</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a whole grain that is actually unpolished rice with only the husk removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="brown-rice-flour">
+    <display-name>brown rice flour</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a gluten free, whole grain powder derived from grinding brown rice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="brown-rice-syrup">
+    <display-name>brown rice syrup</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweetener derived from cooking down brown rice starch</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="buckwheat">
+    <display-name>buckwheat</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>gluten free, whole grain seed with a nutty taste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-b"/>
+    </folder-links>
+  </content>
+  <content content-id="calcium-carbonate">
+    <display-name>calcium carbonate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>mineral derived form earth's limestone, marble or crushed marine shells and used as a preservative</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cane-sugar">
+    <display-name>cane sugar</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>solidified liquid from sugar cane</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="canola-oil">
+    <display-name>canola oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>derived from non-gmo rapeseed, a bright-yellow flowering plant that actually belongs to the cabbage family</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cardamom">
+    <display-name>cardamom</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice with an herbal, spicy character made from the seeds of cardamom pods</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="carob-powder">
+    <display-name>carob powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a ground legume related to the pea but with a sweet chocolate-like flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cascabel-chili">
+    <display-name>cascabel chili</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>also known as the rattle chili for the sound they make when dry and shaken - used for spice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cashews">
+    <display-name>cashews</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>kidney-shaped tree nut which is roasted and shelled before it can be eaten</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cayenne-chili">
+    <display-name>cayenne chili</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a hot red pepper very spicy in flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chai-spice">
+    <display-name>chai spice</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice blend made with the likes of ginger, clove, black pepper and cinnamon</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chamomile-powder">
+    <display-name>chamomile powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>flowers of the chamomile plant dried and ground</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cherries">
+    <display-name>cherries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>small and round stone fruit from the cherry tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chia-seeds">
+    <display-name>chia seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>seeds from a flowering plant in the mint family</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chicory-root-fiber">
+    <display-name>chicory root fiber</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plant-based fiber used to include fiber in some of our snacks</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chipotle-chili">
+    <display-name>chipotle chili</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>smoked, dried jalapeno pepper</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="chocolate-liquor">
+    <display-name>chocolate liquor</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>cocoa mass from fermented, dried and roasted cocoa beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cinnamon">
+    <display-name>cinnamon</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice from the dried, aromatic bark of a cinnamon tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="citric-acid">
+    <display-name>citric acid</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>derived from citrus fruits and used as a preservative</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="citrus-fiber">
+    <display-name>citrus fiber</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a type of carbohydrate from the peel and pulp of ripe citrus fruits</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="citrus-pectin">
+    <display-name>citrus pectin</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a type of carbohydrate from the peel and pulp of ripe citrus fruits</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="clove">
+    <display-name>clove</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice known for its warm, sweet taste and derived from the dried flower bud of a tropical tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cocoa-butter">
+    <display-name>cocoa butter</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>vegetable fat extracted from the cocoa bean, essential in the making of chocolate</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cocoa-nibs">
+    <display-name>cocoa nibs</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried and fermented bits of cacao beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cocoa-powder">
+    <display-name>cocoa powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>powder extracted from the cacao bean after it is roasted, dried, pressed and ground</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="coconut">
+    <display-name>coconut</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>large thick shelled, stone fruit filled with white flesh and liquid and grown on tropical palm trees</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="coconut-chips">
+    <display-name>coconut chips</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried coconut</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="coffee">
+    <display-name>coffee</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a dark roast blend perfect for your morning java or flavoring our snacks</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="coffee-powder">
+    <display-name>coffee powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ground roasted coffee beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="cranberries">
+    <display-name>cranberries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>firm, tart berry red in color and grown in bogs</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="crisp-rice">
+    <display-name>crisp rice</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>rice kernels heated under high pressure and steamed to puff</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-c"/>
+    </folder-links>
+  </content>
+  <content content-id="d-alpha-tocopheryl">
+    <display-name>d-alpha tocopheryl</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>vitamin e to keep the nutty, fruity, spicy and whole grain goodness fresh</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="dark-chocolate">
+    <display-name>dark chocolate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>these are the chocolate chunks you'll see within the bar itself - it's slightly bitter chocolate made with sugar, unsweetened chocolate, cocoa butter, soy lecithin, vanilla extract and no added dairy</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="dark-chocolate-flavored-coating">
+    <display-name>dark chocolate flavored coating</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>drizzled on some of our snacks to enhance flavor, it's a compound chocolate made with palm kernel oil, chicory root fiber, sugar, cocoa powder, soy lecithin, natural flavor and salt</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="dates">
+    <display-name>dates</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>tropical stone fruits that come from the date palm tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="distilled-vinegar">
+    <display-name>distilled vinegar</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>distilled grain mixed with water for a clean, crisp flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="dried-fruit">
+    <display-name>dried fruit</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried sultanas (white grapes), raisins and dates</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="dried-raspberries">
+    <display-name>dried raspberries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried red berries</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-d"/>
+    </folder-links>
+  </content>
+  <content content-id="flax-seeds">
+    <display-name>flax seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>small seed with a nutty taste from the flax plant</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-f"/>
+    </folder-links>
+  </content>
+  <content content-id="garlic-powder">
+    <display-name>garlic powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>strong, savory spice from a dried garlic bulb</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="ginger">
+    <display-name>ginger</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>the root of a flowering plant with a spicy warming taste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="glucose-syrup">
+    <display-name>glucose syrup</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a simple sugar made from non-genetically engineered corn - not to be confused with high fructose corn syrup (HFCS)</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="glycerine">
+    <display-name>glycerine</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a sweet, syrupy liquid</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="gochujang-seasoning">
+    <display-name>gochujang seasoning</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet, spicy blend of gochugaru chili, cabbage, spices, distilled vinegar, onion powder, red bell pepper, garlic powder, lactic acid, garlic oil and chili pepper extract</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="gum-acacia">
+    <display-name>gum acacia</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>not chewing gum! it's naturally produced by the acacia tree and delivers fiber and a desirable texture in some of our snacks</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-g"/>
+    </folder-links>
+  </content>
+  <content content-id="habanero">
+    <display-name>habanero</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>chili pepper with a very hot spice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-h"/>
+    </folder-links>
+  </content>
+  <content content-id="honey">
+    <display-name>honey</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>natural sweet substance produced by honey bees from the nectar of plants</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-h"/>
+    </folder-links>
+  </content>
+  <content content-id="honey-mustard-seasoning">
+    <display-name>honey mustard seasoning</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a flavorful blend made of onion powder, distilled vinegar, garlic powder, mustard seed, black pepper, salt, mustard seed oil, turmeric, paprika</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-h"/>
+    </folder-links>
+  </content>
+  <content content-id="jalapeno-chili">
+    <display-name>jalapeno chili</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>chili pepper with mild to medium heat</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-j"/>
+    </folder-links>
+  </content>
+  <content content-id="kale">
+    <display-name>kale</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dark leafy, cruciferous vegetable</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-k"/>
+    </folder-links>
+  </content>
+  <content content-id="macadamias">
+    <display-name>macadamias</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>tropical tree nut with a very difficult to crack shell</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="madagascar-vanilla">
+    <display-name>madagascar vanilla</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet spice derived from vanilla pods grown in Madagascar</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="madagascar-vanilla-extract">
+    <display-name>madagascar vanilla extract</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>flavor extracted from Madagascar vanilla pods</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="mango">
+    <display-name>mango</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>fleshy yellowish-red tropical fruit from the mango tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="maple-syrup">
+    <display-name>maple syrup</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet syrup from the sap of certain maple trees</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="milk-powder">
+    <display-name>milk powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>evaporated whole milk</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="millet">
+    <display-name>millet</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ancient super grain, naturally gluten free</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="mixed-nuts">
+    <display-name>mixed nuts</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a selection of peanuts, almonds, brazil nuts and walnuts in some of our snacks</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="molasses">
+    <display-name>molasses</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>thick dark brown syrup made from sugar cane</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="mustard-seed">
+    <display-name>mustard seed</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>tiny strong-flavored seeds with a spicy hot taste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="mustard-seed-oil">
+    <display-name>mustard seed oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>oil extracted from the seeds of mustard plants</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-m"/>
+    </folder-links>
+  </content>
+  <content content-id="natural-apricot-flavor">
+    <display-name>natural apricot flavor</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>apricot flavor extracted from apricots</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-n"/>
+    </folder-links>
+  </content>
+  <content content-id="natural-flavor">
+    <display-name>natural flavor</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>flavors extracted from spice, fruit or fruit juice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-n"/>
+    </folder-links>
+  </content>
+  <content content-id="natural-smoke-flavor">
+    <display-name>natural smoke flavor</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>actual smoke vapor from burning hardwood, collected and condensed down</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-n"/>
+    </folder-links>
+  </content>
+  <content content-id="nonfat-milk-powder">
+    <display-name>nonfat milk powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>evaporated skim milk</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-n"/>
+    </folder-links>
+  </content>
+  <content content-id="nutmeg">
+    <display-name>nutmeg</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice from the ground nutmeg seed of a tropical tree</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-n"/>
+    </folder-links>
+  </content>
+  <content content-id="oat-flour">
+    <display-name>oat flour</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ground whole grain oats</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-o"/>
+    </folder-links>
+  </content>
+  <content content-id="oats">
+    <display-name>oats</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a naturally gluten-free whole grain</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-o"/>
+    </folder-links>
+  </content>
+  <content content-id="onion-powder">
+    <display-name>onion powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>strong, sweet spice from a dried onion</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-o"/>
+    </folder-links>
+  </content>
+  <content content-id="palm-kernel-oil">
+    <display-name>palm kernel oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>Oil from the seed of the palm fruit. Used as a better alternative to trans fats or hydrogenated oil, it's added to our chocolate drizzle to raise the melting temperature allowing our snacks to be truly on-the-go anywhere. We're a member of RSPO (Roundtable on Sustainable Palm Oil), we source only from RSPO certified suppliers, and we are committed to the sustainable sourcing of palm kernel oil.</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="paprika">
+    <display-name>paprika</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet, bitter spice from the ground, dried red pepper</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pea-crisp">
+    <display-name>pea crisp</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plant-based protein with a crunchy texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pea-protein-isolate">
+    <display-name>pea protein isolate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plant-based protein derived from yellow or green split peas</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pea-starch">
+    <display-name>pea starch</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plant-based carbohydrate extracted from yellow or split peas and added for texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peanut-butter">
+    <display-name>peanut butter</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>roasted peanuts ground to bring out the rich, nutty flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peanut-flour">
+    <display-name>peanut flour</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>made by crushing defatted peanuts into powdered form</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peanut-oil">
+    <display-name>peanut oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>oil extracted by pressing peanuts</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peanuts">
+    <display-name>peanuts</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>seeds that comes from underground pods of the peanut plant - related to the pea or legume family</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pecans">
+    <display-name>pecans</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a smooth brown nut with a sweet, rich flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peppermint-extract">
+    <display-name>peppermint extract</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>oils extracted from peppermint leaves</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peppermint-leaves">
+    <display-name>peppermint leaves</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried leafy herb that is a part of the mint family and contains menthol that gives it a stronger flavor and a cooling sensation on the palate</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="peppermint-oil">
+    <display-name>peppermint oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>oils extracted from peppermint leaves</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pineapple">
+    <display-name>pineapple</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a large, juicy tropical fruit</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pistachios">
+    <display-name>pistachios</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>though commonly known as a nut, pistachios are actually a pale green seed with a sweet and nutty flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="plum-concentrate">
+    <display-name>plum concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plum juice with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="plum-puree">
+    <display-name>plum puree</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>blended plum flesh</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="plum-puree-concentrate">
+    <display-name>plum puree concentrate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>plum puree with some of the water removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pomegranate">
+    <display-name>pomegranate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>medium-sized fruit with a tough reddish outer skin and sweet red gelatinous flesh containing many seeds</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="popped-sorghum">
+    <display-name>popped sorghum</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a type of whole grain that swells up and bursts with a pop when heated - similar to popcorn</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="powdered-yogurt">
+    <display-name>powdered yogurt</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried yogurt</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="pumpkin-seeds">
+    <display-name>pumpkin seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>edible seed of a pumpkin- typically flat, oval and light green in color</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-p"/>
+    </folder-links>
+  </content>
+  <content content-id="quinoa">
+    <display-name>quinoa</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a naturally gluten free, ancient super grain; originally a staple of the Inca's and now the healthy eaters of today</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-q"/>
+    </folder-links>
+  </content>
+  <content content-id="raisin-paste">
+    <display-name>raisin paste</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sun-ripened raisins ground into a paste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-r"/>
+    </folder-links>
+  </content>
+  <content content-id="raisins">
+    <display-name>raisins</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sun-ripened white grapes</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-r"/>
+    </folder-links>
+  </content>
+  <content content-id="raspberries">
+    <display-name>raspberries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>soft fruit related to the blackberry, consisting of a cluster of reddish-pink berries</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-r"/>
+    </folder-links>
+  </content>
+  <content content-id="rice-flour">
+    <display-name>rice flour</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>flour from finely milled rice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-r"/>
+    </folder-links>
+  </content>
+  <content content-id="rice-starch">
+    <display-name>rice starch</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>carbohydrate derived from rice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-r"/>
+    </folder-links>
+  </content>
+  <content content-id="salt">
+    <display-name>salt</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>crystalline granular used to season and enhance flavors</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sea-salt">
+    <display-name>sea salt</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>Brazilian sea salt with a clean, delicate taste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="semi-sweet-chocolate">
+    <display-name>semi-sweet chocolate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>slightly bitter chocolate made from sugar, chocolate liquor, cocoa butter, soy lecithin and vanilla extract and without added dairy</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sesame-seeds">
+    <display-name>sesame seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>delicate and nutty seed from the flowering sesame plant</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="skim-milk">
+    <display-name>skim milk</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>milk from which the cream was removed</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="smoked-sea-salt">
+    <display-name>smoked sea salt</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>crystals of Pacific Sea salt are infused with wood smoke for a rich deep flavor</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sorghum">
+    <display-name>sorghum</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>cereal super grain, naturally gluten free with the same ability to pop like popcorn (only into smaller puffs!)</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sorghum-flour">
+    <display-name>sorghum flour</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>whole grain, gluten free sorghum that has been ground into a flour</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="soy-crisp">
+    <display-name>soy crisp</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>an ingredient consisting of soy protein isolate, tapioca starch and calcium carbonate baked into a crisp for added texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="soy-lecithin">
+    <display-name>soy lecithin</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a by-product of soy oil used as an emulsifier to prevent ingredients from naturally separating</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="soy-protein-isolate">
+    <display-name>soy protein isolate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>vegetable-based protein derived from soy beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="spices">
+    <display-name>spices</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a flavorful blend of cayenne chili, black pepper, clove, and cinnamon</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="spinach">
+    <display-name>spinach</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>vegetable with large, dark green leaves and a slightly bitter taste</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="strawberries">
+    <display-name>strawberries</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet, soft, red fruit with a seed-studded surface</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sugar">
+    <display-name>sugar</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet crystalline granule obtained from various plants and used to sweeten food or beverages</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sultanas">
+    <display-name>sultanas</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>dried green-flesh grapes smaller and slightly sweeter than raisins</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sunflower-lecithin">
+    <display-name>sunflower lecithin</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a by-product of sunflower oil used as an emulsifier to prevent ingredients from naturally separating</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sunflower-oil">
+    <display-name>sunflower oil</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>oil compressed from the seeds of sunflowers</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="sunflower-seeds">
+    <display-name>sunflower seeds</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>seeds from the flowering sunflower plant used for their nutty taste and crunchy texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-s"/>
+    </folder-links>
+  </content>
+  <content content-id="tapioca-starch">
+    <display-name>tapioca starch</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>carbohydrate extracted from the cassava root and added for texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="tapioca-syrup">
+    <display-name>tapioca syrup</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>natural liquid sweetener created from tapioca starch</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="thai-seasoning">
+    <display-name>thai seasoning</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a flavorful blend turbinado sugar, spices, onion powder, garlic powder, sea salt, paprika, tomato powder, jalapeno chili, and citric acid</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="tocopherols">
+    <display-name>tocopherols</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>Vitamin E to keep the nutty, fruity, spicy and whole grain goodness fresh</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="tomato-powder">
+    <display-name>tomato powder</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>ground, dried tomatoes</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="turbinado-sugar">
+    <display-name>turbinado sugar</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a light-brown sugar with larger crystals obtained from pure sugar cane extract</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="turmeric">
+    <display-name>turmeric</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>spice derived from boiled and dried turmeric plant - a member of the ginger family</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-t"/>
+    </folder-links>
+  </content>
+  <content content-id="unsweetened-chocolate">
+    <display-name>unsweetened chocolate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>slightly bitter chocolate, without added sugar</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-u"/>
+    </folder-links>
+  </content>
+  <content content-id="vanilla">
+    <display-name>vanilla</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>sweet spice derived from vanilla beans</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vanilla-bean">
+    <display-name>vanilla bean</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>fruit of the vanilla plant used for its sweet spice</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vanilla-extract">
+    <display-name>vanilla extract</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>concentrated flavor of vanilla</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vegetable-glycerine">
+    <display-name>vegetable glycerine</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>clear, slightly sweet liquid derived from plant oils and used to create texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vegetable-glycerin">
+    <display-name>vegetable glycerin</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>clear, slightly sweet liquid derived from plant oils and used to create texture</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vitamin-a-acetate">
+    <display-name>vitamin a acetate</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>Vitamin A Acetate is a form of Vitamin A - an important antioxidant that helps maintain healthy skin and support normal growth and development</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vitamin-a">
+    <display-name>vitamin a</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>an important antioxidant that helps maintain healthy skin and support normal growth and development</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vitamin-c">
+    <display-name>vitamin c</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>Vitamin C is an important antioxidant that helps fight free radicals and support a healthy immune system</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="vitamin-e">
+    <display-name>vitamin e</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>vitamin e to keep the nutty, fruity, spicy and whole grain goodness fresh</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-v"/>
+    </folder-links>
+  </content>
+  <content content-id="walnuts">
+    <display-name>walnuts</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>tree nut consisting of two halves enclosed within a hard shell</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-w"/>
+    </folder-links>
+  </content>
+  <content content-id="water">
+    <display-name>water</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>100% h20</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-w"/>
+    </folder-links>
+  </content>
+  <content content-id="whey">
+    <display-name>whey</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>powder created by the watery part left over when making cheese</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-w"/>
+    </folder-links>
+  </content>
+  <content content-id="whole-grains">
+    <display-name>whole grains</display-name>
+    <online-flag>true</online-flag>
+    <searchable-flag>false</searchable-flag>
+    <custom-attributes>
+      <custom-attribute attribute-id="body">
+        <value>a cereal grain that contains all three parts of the grain: the germ, endosperm, and bran</value>
+      </custom-attribute>
+    </custom-attributes>
+    <folder-links>
+      <classification-link folder-id="ingredients-w"/>
+    </folder-links>
+  </content>
+</library>

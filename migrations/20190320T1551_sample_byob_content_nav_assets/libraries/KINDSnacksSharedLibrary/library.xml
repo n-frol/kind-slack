@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-navigation">
+        <display-name xml:lang="x-default">BYOB Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/content-navigation.isml</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>nav-select-some-snacks</value>
+                <value>nav-pick-a-starter-combo</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="nav-select-some-snacks">
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">select some snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="nav-pick-a-starter-combo">
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">pick a starter combo</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-Show', 'cgid', 'byob-test')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

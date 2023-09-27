@@ -1,0 +1,33 @@
+{
+    "name": "Card Collection",
+    "group": "cards",
+    "attribute_definition_groups": [
+        {
+            "name": "Heading",
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"column1",
+            "name":"Column 1",
+            "max_components":999,
+            "component_type_exclusions": [
+                { "type_id": "layouts.1column" },
+                { "type_id": "layouts.2column" },
+                { "type_id": "layouts.3column" },
+                { "type_id": "layouts.4column" },
+                { "type_id": "layouts.gridcomponentlayout" },
+                { "type_id": "einstein.noanchorgrid" }
+            ]
+        }
+    ]
+}

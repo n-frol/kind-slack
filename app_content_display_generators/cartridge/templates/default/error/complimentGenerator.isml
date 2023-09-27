@@ -1,0 +1,18 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isscript>
+    var ContentMgr = require('dw/content/ContentMgr');
+    var folderIDtips = dw.system.Site.current.getCustomPreferenceValue('contentGeneratorFolderIDtips');
+    var folderTips = ContentMgr.getFolder(folderIDtips);
+    var contentAssets = folderTips.getOnlineContent();
+</isscript>
+<script>
+    var complimentMessages = [];
+    <isloop items="${contentAssets}" var="tip">
+        complimentMessages.push('<isprint value="${tip.description}" encoding="jshtml" />');
+    </isloop>
+</script>
+<div>
+    <span class="js-compliment-msg"></span>
+    <button class="btn btn-primary btn-block js-generate-compliment">${Resource.msg('button.error.click', 'error', null)}</button>
+</div>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="home-slot-b" context="global" configuration-id="home-slot-b_config" default="true" assigned-to-site="true">
+        <template>slots/content/contentGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="products-asset"/>
+                <content-asset content-id="flavors-content-grid"/>
+                <content-asset content-id="occasions-content-grid"/>
+                <content-asset content-id="benefits-content-grid"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotHeading">explore some of our healthy snacks</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-b" context="folder" context-id="flavors" configuration-id="flavors-banners" default="true" assigned-to-site="true">
+        <template>slots/content/flavorBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="chocolate"/>
+                <content-asset content-id="fruit"/>
+                <content-asset content-id="nut-butter"/>
+                <content-asset content-id="savory"/>
+                <content-asset content-id="spiced"/>
+                <content-asset content-id="sweet-salty"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-c" context="folder" context-id="flavors" configuration-id="flavors-cta" default="true" assigned-to-site="true">
+        <template>slots/content/fullWidthCallToAction.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="learn-more-ingredients"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="flavors" configuration-id="flavors-nav" default="true" assigned-to-site="true">
+        <template>slots/content/customNavigation.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="flavors-nav-asset"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="benefits" configuration-id="benefits-nav" default="true" assigned-to-site="true">
+        <template>slots/content/customNavigation.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="benefits-nav-asset"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="slotBody">Looking for fiber or protein? We've got it. Vegan or Kosher? We've got you covered there too.</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Benefits</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-b" context="folder" context-id="benefits" configuration-id="benefits-grid" default="true" assigned-to-site="true">
+        <template>slots/content/benefitsGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="benefit_0gTransFat"/>
+                <content-asset content-id="benefit_100WholeGrain"/>
+                <content-asset content-id="benefit_5gSugarOrLess"/>
+                <content-asset content-id="benefit_goodSourceOfFiber"/>
+                <content-asset content-id="benefit_goodSourceOfProtein"/>
+                <content-asset content-id="benefit_lowFat"/>
+                <content-asset content-id="benefit_lowGlycemicIndex"/>
+                <content-asset content-id="benefit_lowSodium"/>
+                <content-asset content-id="benefit_nonGmo"/>
+                <content-asset content-id="benefit_noAddedSugar"/>
+                <content-asset content-id="benefit_nutFreeRecipe"/>
+                <content-asset content-id="benefit_kosher"/>
+                <content-asset content-id="benefit_glutenFree"/>
+                <content-asset content-id="benefit_vegan"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="slotBody">Looking for fiber or protein? We've got it. Vegan or Kosher? We've got you covered there too.</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Benefits</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="media-center" configuration-id="media-center_config" default="true" assigned-to-site="true">
+        <template>slots/content/mediaGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="media-center_press-releases"/>
+                <content-asset content-id="media-center_media-assets"/>
+                <content-asset content-id="media-center_videos"/>
+                <content-asset content-id="media-center_archive"/>
+                <content-asset content-id="media-center_media-inquiries"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBody">find images, videos and more!</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Media Center</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

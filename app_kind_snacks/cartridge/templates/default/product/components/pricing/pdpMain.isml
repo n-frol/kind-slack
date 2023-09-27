@@ -1,0 +1,49 @@
+<isscript>
+    pdict.templateClass = (typeof pdict.templateClass === 'undefined' ? '' : pdict.templateClass);  // Make sure template class is defined, since empty() doesn't check for it
+    var useSnackclubPricingInFeed = dw.system.Site.current.getCustomPreferenceValue('useSnackclubPricingInFeed');
+</isscript>
+
+<isset name="finalOrigPrice" value="${price}" scope="page" />
+<isset name="priceOrig" value="${finalOrigPrice ? finalOrigPrice.sales : null}" scope="page" />
+
+<isif condition="${price && price.type === 'tiered'}">
+    <div class="price c-product-add-to-cart__prices__price u-text__font-primary">
+        <isinclude template="/product/components/pricing/tiered" />
+    </div>
+    <iselseif condition="${price && price.type === 'range'}">
+        <div class="price c-product-add-to-cart__prices__price u-text__font-primary"  itemprop="offers" itemscope itemtype="http://schema.org/AggregateOffer">
+            <isset name="price" value="${finalOrigPrice.max}" scope="page" />
+            <isset name="isLowPrice" value="${'range-high'}" scope="page" />
+            <isinclude template="/product/components/pricing/pdpPrice" />
+        </div>
+        <iselse>
+            <div class="price"  itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <isset name="isLowPrice" value="${}" scope="page" />
+                <isif condition="${typeof product !== 'undefined' && !empty(product)}">
+                    <isif condition="${product.readyToOrder}">
+                        <span class="value" itemprop="availability" content="InStock"></span>
+                        <iselse>
+                            <span class="value" itemprop="availability" content="OutOfStock"></span>
+                    </isif>
+                    <span class="value" itemprop="url" content="${URLUtils.abs('Product-Show', 'pid', product.id)}"></span>
+                </isif>
+                <isif condition="${isLowPrice == 'range-low'}">
+                    <span class="value" itemprop="lowprice" content="${priceOrig ? priceOrig.decimalPrice : ''}"></span>
+                </isif>
+                <isif condition="${isLowPrice == 'range-high'}">
+                    <span class="value" itemprop="highprice" content="${priceOrig ? priceOrig.decimalPrice : ''}"></span>
+                </isif>
+                <isif condition="${isLowPrice == null}">
+                    <isif condition="${price && !empty(price.ogPrice) && useSnackclubPricingInFeed}">
+                        <span class="value" itemprop="price" content="${price.ogPrice.value}"></span>
+                        <iselse>
+                            <span class="value" itemprop="price" content="${priceOrig ? priceOrig.decimalPrice : ''}"></span>
+                    </isif>
+                </isif>
+
+                <div class="c-product-add-to-cart__prices__price u-text__font-primary <isif condition="${!empty(pdict.templateClass)}">${pdict.templateClass}__prices__price</isif>">
+<isinclude template="/product/components/pricing/pdpPrice" />
+</div>
+
+</div>
+</isif>

@@ -1,0 +1,50 @@
+{
+    "name": "Flyout Squares",
+    "group": "Orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["light", "dark"],
+                    "required": true
+                },
+                {
+                    "id": "headline",
+                    "name": "carousel title",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"squares",
+            "name":"Squares",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}

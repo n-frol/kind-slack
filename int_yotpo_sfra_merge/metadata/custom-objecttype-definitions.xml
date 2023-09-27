@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="yotpoRatingStorage">
+        <display-name xml:lang="x-default">Yotpo Ratings Storage</display-name>
+        <description xml:lang="x-default">Holds Yotpo ratings and review aggregate data for SEO purposes.</description>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="productId">
+            <display-name xml:lang="x-default">Master Product ID</display-name>
+            <description xml:lang="x-default">The Master Product ID that will hold the rating</description>
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="average_score">
+                <display-name xml:lang="x-default">Average Score</display-name>
+                <description xml:lang="x-default">The average rating for this SKU</description>
+                <type>double</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="total_reviews">
+                <display-name xml:lang="x-default">The total reviews for this SKU</display-name>
+                <description xml:lang="x-default">Total number of reviews for this SKU</description>
+                <type>int</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="yotpoRatingStorageAttributes">
+                <display-name xml:lang="x-default">Yotpo Ratings Storage Attributes</display-name>
+                <description xml:lang="x-default">This is default group to combine Yotpo Ratings attributes</description>
+                <attribute attribute-id="productId"/>
+                <attribute attribute-id="average_score"/>
+                <attribute attribute-id="total_reviews"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>  
+</metadata>

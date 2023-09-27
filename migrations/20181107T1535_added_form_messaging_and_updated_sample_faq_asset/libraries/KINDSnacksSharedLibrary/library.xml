@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="allergens">
+        <display-name xml:lang="x-default">Allergens</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/faqChild</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+&lt;li&gt;&#13;
+	&lt;h4&gt;are KIND® snacks gluten free?&lt;/h4&gt;&#13;
+    &lt;p class="answer"&gt;All KIND® snacks are gluten free. Many of our ingredients are inherently gluten free (i.e. nuts), but we also complete testing to ensure our snacks meet the FDA’s standards for a gluten free product.&lt;/p&gt;&#13;
+&lt;/li&gt;&lt;li&gt;&#13;
+	&lt;h4&gt;are there KIND® products that do not contain nuts?&lt;/h4&gt;&#13;
+    &lt;p class="answer"&gt;We have multiple product lines that have nut free recipes. Bear in mind that all of our products are made in a facility that processes tree nuts, peanuts, soy and sesame.&lt;/p&gt;&#13;
+&lt;/li&gt;&lt;li&gt;&#13;
+	&lt;h4&gt;how does KIND avoid cross-contamination?&lt;/h4&gt;&#13;
+    &lt;p class="answer"&gt;Our manufacturing facilities follow strict regulations and product safety programs, which include regularly conducting U.S.&#13;
+ FDA-grade cleanings as well as testing to prevent cross-contamination.&lt;/p&gt;&#13;
+&lt;/li&gt;&lt;p&gt;&lt;/p&gt;				&lt;ul&gt;&#13;
+			&lt;/ul&gt;&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="contact"/>
+        </folder-links>
+    </content>
+
+    <content content-id="contact-form-instructions">
+        <display-name xml:lang="x-default">Contact Instructions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h4 style="text-align: center;"&gt;Need more information?&lt;/h4&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;Let us know and we&amp;rsquo;ll get back to you before you finish your next KIND bar.&lt;/p&gt;&#13;
+&#13;
+&lt;h4 style="text-align: center;"&gt;Contact us&lt;/h4&gt;&#13;
+&#13;
+&lt;hr /&gt;&#13;
+&lt;p style="text-align: center;"&gt;Please drop us a line below and we'll get in touch with you shortly!&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="contact-form-submitted">
+        <display-name xml:lang="x-default">Contact Form Confirmation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h4 style="text-align: center;"&gt;Need more information?&lt;/h4&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;Let us know and we&amp;rsquo;ll get back to you before you finish your next KIND bar.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align:center"&gt;&lt;img alt="" src="images/check.svg?$staticlink$" title="" /&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;h2 style="text-align: center;"&gt;Thanks for getting in touch!&lt;/h2&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;We love hearing from you. A real person will get back to you as soon as they can. Sorry, robot fans.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;&lt;a class="btn btn--auto-width" href="$url('Home-Show')$"&gt;Shop Now&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

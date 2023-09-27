@@ -1,0 +1,28 @@
+<div class="container s-slick position-relative">
+<div class="js-slider hide-until-loaded" data-infinite="true" data-slidestoshow="${pdict.prods.length < 5 ? pdict.prods.length : 5}"
+     data-slidestoscroll="1" data-slidestoscroll-1200="1" data-slidestoscroll-1024="1"
+     data-slidestoscroll-768="1" data-slidestoscroll-440="1" data-slidestoshow-1200="1" data-slidestoshow-1024="1"
+     data-slidestoshow-768="1" data-slidestoshow-440="1" data-dots="false" data-mobiledots="false" data-arrows="false"
+data-autoplay="true" data-infinite="true">
+<isloop items="${slotcontent.content}" var="contentAsset">
+    <div class="tester">
+    <isprint value="${contentAsset.custom.body}" encoding="off" />
+    </div>
+</isloop>
+</div>
+</div>
+
+<style>
+    .hide-until-loaded {
+        display: none;
+    }
+    .slick-initialized{
+        display: block
+    }
+    .dynamic_wrapper {
+        background: #eee;
+    }
+    .tester {
+        text-align:center;
+    }
+</style>

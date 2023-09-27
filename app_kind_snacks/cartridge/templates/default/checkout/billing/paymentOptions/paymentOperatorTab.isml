@@ -1,0 +1,54 @@
+<!--- TEMPLATENAME: paymentOperatorTab.isml --->
+<isscript>
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = !empty(selectedPaymentInstruments) && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var isActive = !empty(selectedPaymentInstrument) && selectedPaymentInstrument.paymentMethod === paymentOption.ID;
+    var lowerId = paymentOption.ID.toLowerCase();
+    var tabContent = ['#', lowerId, '-content'].join('');
+
+    // If no instrument is selected, go to default
+    if (empty(selectedPaymentInstrument)) {
+        // Switch to having Paypal as the active default if the customer's first saved payment method (their default), is a Paypal agreement
+        if (!empty(pdict.customer) && !empty(pdict.customer.customerPaymentInstruments) && !empty(pdict.customer.customerPaymentInstruments[0].creditCardType) && pdict.customer.customerPaymentInstruments[0].creditCardType === 'PayPal') {
+            if (paymentOption.ID.equals('PAYMENTOPERATOR_PAYPAL')) {
+                isActive = true;
+            }
+        } else if (paymentOption.ID.equals('PAYMENTOPERATOR_CREDIT_DIRECT')){
+            // Default to showing credit card
+            isActive = true;
+        }
+    }
+</isscript>
+
+
+<isif condition="${ paymentOption.ID.indexOf('PAYMENTOPERATOR_') > -1}">
+    <isset name="payMethodName" value="${ paymentOption.ID === 'PAYMENTOPERATOR_CREDIT_DIRECT' ? Resource.msg('creditdirect.displayname', 'paymentoperator', null) : paymentOption.name}" scope="page" />
+    <li class="nav-item c-tabs__item  ${isActive ? 'c-tabs__item--active' : ''} js-custom-tab-item" data-method-id="${ paymentOption.ID }">
+        <a class="nav-link c-tabs__label c-tabs__label--paypal ${isActive ? 'c-tabs__label--active' : ''} js-custom-tab-label ${ lowerId + '-tab' } ${ isActive ? 'active' : '' }"
+            data-toggle="tab"
+            href="${tabContent}"
+            role="tab"
+        >
+            <isif condition="${paymentOption.ID === 'PAYMENTOPERATOR_PAYPAL'}">
+                <img src="${ URLUtils.staticURL('/images/PP_logo_h_150x38.png') }"
+                    alt="${Resource.msg('paymentmethod.paypalexpress.alttext', 'paymentoperator', null)}" class="c-tabs__label--paypal__icon"
+                />
+            <iselse/>
+                <isprint value="${ payMethodName }" />
+            </isif>
+        </a>
+    </li>
+</isif>
+
+<isif condition="${paymentOption.ID.indexOf('PAYONACCOUNT') > -1}">
+    <isset name="payMethodName" value="${paymentOption.name}" scope="page" />
+    <li class="nav-item c-tabs__item ${pdict.customer.profile.creditApproved ? '' : 'checkout-hidden'}   ${isActive ? 'c-tabs__item--active' : ''} js-custom-tab-item" data-method-id="${ paymentOption.ID }">
+        <a class="nav-link c-tabs__label c-tabs__label--paypal ${isActive ? 'c-tabs__label--active' : ''} js-custom-tab-label ${ lowerId + '-tab' } ${ isActive ? 'active' : '' }"
+            data-toggle="tab"
+            href="${pdict.customer.profile.creditApproved ? tabContent : ''}"
+            role="tab"
+        >
+             <isprint value="${ payMethodName }" />
+        </a>
+    </li>
+</isif>

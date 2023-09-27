@@ -1,0 +1,23 @@
+<!----------------------------------------------------------------------------------->
+<!-- Load Static Assets -->
+<!----------------------------------------------------------------------------------->
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    
+    /////////////////////////////////////////////
+    //            CHANGEUP INJECTION           //
+    /////////////////////////////////////////////
+    var prefs = require('dw/system/Site').current.preferences.custom;
+    if (prefs.changeupEnabled) {
+        assets.addCss('/css/changeUp.css');
+        assets.addJs('/js/changeUp.js');
+    }
+</isscript>
+
+
+<!-- =========================================== -->
+<!--             CHANGEUP INJECTION              -->
+<!-- =========================================== -->
+<isif condition="${prefs.changeupEnabled}">
+    <isinclude template="changeUp/donationconfirmation" />
+</isif>

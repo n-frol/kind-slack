@@ -1,0 +1,111 @@
+<div class="c-product-card product-line-item js-order-item js-product-detail" data-pid="${lineItem.id}" data-product-line-item="${lineItem.UUID}" data-is-byob-master="${lineItem.isByobMaster ? 'true' : 'false'}">
+    <div class="c-product-card__header line-item-header">
+        <isscript>
+            // Make sure minicart is at least declared
+            var miniCart = typeof miniCart === 'undefined' ? '' : miniCart;
+        </isscript>
+
+        <isif condition="${!empty(miniCart) && miniCart}">
+            <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+        <iselse/>
+            <isinclude template="checkout/productCard/productCardProductName" />
+        </isif>
+    </div>
+    <isif condition="${lineItem.quantityOptions.minOrderQuantity > 1}">
+        ${Resource.msgf('msg.minOrderQuantity',
+                            'checkout',
+                            null,
+                            lineItem.quantityOptions.minOrderQuantity)}
+    </isif>
+
+        <div class="c-product-card__details product-line-item-details d-flex flex-row">
+            <div class="c-product-card__details__image item-image">
+                <img class="product-image"
+                    <isif condition="${!empty(lineItem.responsiveImages) && !empty(lineItem.responsiveImages[0])}">
+                        src="${lineItem.responsiveImages[0].normal.imageUrlDefault}"
+                        srcset="${lineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + lineItem.responsiveImages[0].normal.imageUrlLarge + ' 2x'}"
+                    <iselse/>
+                        src="${URLUtils.staticURL('images/noimagelarge.png')}"
+                    </isif>
+                    alt="${!empty(lineItem.images.large) ? lineItem.images.large[0].alt : lineItem.displayName}"
+                    title="${!empty(lineItem.images.large) ? lineItem.images.large[0].title : lineItem.displayName}">
+            </div>
+            <isinclude template="checkout/productCard/productCardAttributes" />
+        </div>
+
+        <isset name="bundleItems" value="" scope="page" />
+        <isif condition="${!empty(lineItem.byobLineItems)}">
+            <isif condition="${!empty(lineItem.isByobMaster) && pdict.showByobLineItems === true}">
+                <isset name="bundleItems" value="${lineItem.byobLineItems}" scope="page" />
+            </isif>
+        <iselseif condition="${lineItem.productType === 'bundle' && (empty(lineItem.isHiddenComponents) || !lineItem.isHiddenComponents)}">
+            <isset name="bundleItems" value="${lineItem.bundledProductLineItems}" scope="page" />
+        </isif>
+
+        <isif condition="${!empty(bundleItems)}">
+            <div class="collapsible c-product-card__details__bundled">
+                <div class="bundle-includes c-product-card__details__bundled__bundle-includes title">${Resource.msg('msg.bundle.includes','cart',null)}</div>
+                <!--- individual bundled line items --->
+                <div class="content">
+                    <isinclude template="checkout/productCard/productCardBundledItems" />
+                </div>
+            </div>
+        </isif>
+
+    <isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || (!empty(miniCart) && miniCart))}">
+        <isinclude template="cart/productCard/cartProductCardAvailability" />
+    </isif>
+
+    <isscript>
+        // Make sure variable isn't undeclared, since an empty check wouldn't work
+        var productCardQtyPrice = typeof productCardQtyPrice === 'undefined' ? true : productCardQtyPrice;
+    </isscript>
+    <isif condition="${productCardQtyPrice}">
+        <div class="c-product-card__qty-price">
+            <!--- item price --->
+            <div class="line-item-unit-price c-product-card__qty-price__each">
+                <isif condition="${lineItem.price}">
+                    <div class="line-item-pricing-info">
+                        <span class="line-item-total-text unit-price-label c-product-card__qty-price__each__label">
+                            ${Resource.msg('label.each.item.price','cart',null)}
+                        </span><br/>
+                        <isif condition="${!empty(pdict.isOrderHistory) && pdict.isOrderHistory}">
+                            <isinclude template="/product/components/pricing/mainOrderHistory.isml" />
+                        <iselse>
+                            <isset name="price" value="${lineItem.price}" scope="page"/>
+                            <isinclude template="/product/components/pricing/main.isml" />
+                        </isif>
+                    </div>
+                </isif>
+            </div>
+            <!--- quantity --->
+            <div class="line-item-quantity justify-content-center flex c-product-card__qty-price__qty">
+                <isif condition="${!empty(miniCart) && miniCart}">
+                    <isif condition="${!empty(lineItem.isCheckAddressFraud) && !lineItem.isCheckAddressFraud}">
+                        <isinclude template="checkout/productCard/productCardQuantitySelector" />
+                    </isif>
+                <iselse/>
+                    <isinclude template="checkout/productCard/productCardQuantityDisplay" />
+                </isif>
+            </div>
+            <!--- line item total price --->
+            <div class="line-item-total-price justify-content-end c-product-card__qty-price__total">
+                <p class="line-item-pricing-info">
+                    <span class="line-item-total-text line-item-total-price-label c-product-card__qty-price__total__label">
+                        ${Resource.msg('label.total.price','cart',null)}
+                    </span>
+                </p>
+                <div class="item-total-${lineItem.UUID} price">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
+            </div>
+        </div>
+    </isif>
+    <isif condition="${!empty(miniCart) && miniCart}">
+        <div class="c-product-card__item-promo line-item-promo item-${lineItem.UUID}">
+            <isinclude template="checkout/productCard/productCardProductPromotions" />
+        </div>
+    </isif>
+
+    <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddMultipleProducts')}">
+</div>

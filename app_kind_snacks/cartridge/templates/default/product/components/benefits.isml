@@ -1,0 +1,30 @@
+<iscomment>Track the number of benefits actually being shown so we know if we need to use a "show more/less" accordion</iscomment>
+<isset name="visibleBenefits" value="${0}" scope="page" />
+<isset name="visibleBenefitsOverflow" value="${dw.system.Site.current.getCustomPreferenceValue('visibleBenefits') + 1}" scope="page" />
+ <isscript>
+        var getResponsiveImage = require('*/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+<isloop items="${product.benefits}" var="benefitId" status="loopstatus">
+    <isset name="benefit" value="${dw.content.ContentMgr.getContent(benefitId)}" scope="page" />
+    <isif condition="${empty(benefit) || !benefit.onlineFlag}">
+        <iscontinue>
+    </isif>
+
+    <div class="c-product-benefits__benefit">
+    <isif condition="${!empty(benefit.custom.icon)}">
+        <isset name="responsiveImage" value="${getResponsiveImage(benefit.custom.icon, 100)}" scope="page" />
+        <img class="benefits_logo" src="${responsiveImage.imageUrlDefault}" />
+    </isif>
+        <span class="title c-product-benefits__benefit__title">${benefit.name}</span>
+        <div class="content c-product-benefits__benefit__content">
+            <div class="c-product-benefits__benefit__content__body">
+                <isprint value="${benefit.custom.body}" encoding="off" />
+            </div>
+            <isif condition="${!empty(benefit.custom.link)}">
+                <div class="link">
+                    <isprint value="${benefit.custom.link}" encoding="off" />
+                </div>
+            </isif>
+        </div>
+    </div>
+</isloop>

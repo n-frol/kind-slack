@@ -1,0 +1,5 @@
+<link rel="stylesheet" type="text/css" href="//c.zmags.com/static/styles.css" />
+<div class="zmags-viewer-container" data-group="${experienceId}"></div>
+<script type="text/javascript" src="//c.zmags.com/static/manifest.js"></script>
+<script type="text/javascript" src="//c.zmags.com/static/vendor.js"></script>
+<script type="text/javascript" src="//c.zmags.com/static/client.js"></script>

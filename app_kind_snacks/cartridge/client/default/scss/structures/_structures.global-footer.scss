@@ -1,0 +1,75 @@
+/* ============================================================================
+Site Footer
+============================================================================ */
+
+/**
+ * Establish styles for the site footer and non-component elements within
+ */
+
+// !important used to overwrite bootstrap
+
+$ns: st-global-footer;
+
+.#{$ns} {
+    color: $white;
+    font-family: $font-family-primary;
+    text-transform: lowercase;
+    text-decoration: none;
+
+    &__wrapper {
+        background-color: $primary;
+        padding-bottom: 36px;
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 36px;
+        }
+
+        &--secondary {
+            background-color: $grey7;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+    }
+
+    &__logo {
+            display: inline-block;
+            left: -150px;
+            position: relative;
+            top: -10px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80px;
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            width: 88px;
+        }
+
+        &-img {
+            width: 80px;
+            padding-bottom: 24px
+        }
+
+    }
+
+    &__utility {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row-reverse;
+        }
+
+        @include media-breakpoint-up(lg) {
+            border-top: 1px solid $grey6;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+
+        li + li {
+            margin-left: 6px;
+        }
+
+    }
+}

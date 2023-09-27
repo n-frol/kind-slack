@@ -1,0 +1,83 @@
+<h2 class="cards_heading">
+    <isprint value="${pdict.heading}" encoding="off" />
+</h2>
+<div class="cards_desktop">
+<isscript>
+    var reg = pdict.regions.column1;
+    reg.setClassName("card-wrapper2");
+    // mark all pages as carousel
+    reg.setComponentClassName("single-card2");
+</isscript>
+<isprint value="${reg.render()}" encoding="off"/>
+</div>
+<isscript>
+    var reg = pdict.regions.column1;
+    reg.setClassName("swiper-wrapper");
+    // mark all pages as carousel
+    reg.setComponentClassName("swiper-slide");
+</isscript>
+<div style="clear:both"></div>
+<div class="card_slider" style="overflow-x:hidden;">
+<isprint value="${reg.render()}" encoding="off"/>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<div style="clear:both"></div>
+
+
+<script>
+    const swiper = new Swiper('.card_slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 10,
+        centeredSlides: false,
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "auto"
+    });
+</script>
+
+<script>
+    var elements = $(".single-card2").length;
+    var finalcount = (elements * 2) + 1;
+    $(".single-card2").each(function (index) {
+        var count = index + 1;
+        console.log((count-1)*10);
+        if (count % 2 == 0) {
+            $(this).css("grid-column-start", 2);
+        }
+        if (count % 2 == 0 && count > 2) {
+            $(this).css("grid-row-start", count + 1);
+            $(this).css("position", "relative");
+            $(this).css("top", "20px");
+        }
+        if (count % 2 == 1) {
+            $(this).css("grid-row-start", count * 2);
+                $(this)
+                    .css("position", "relative");
+                $(this)
+                    .css("top", (120+((count-1)*10)));
+        }
+    });
+</script>
+
+<style>
+    .single-card2:nth-child(2) .image_gradient {
+        bottom: 5px;
+    }
+    @media (max-width: 768px) {
+        .secondary, .primary {
+            padding: 23px 40px 21px 40px !important;
+        }
+    }
+</style>

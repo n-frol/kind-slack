@@ -1,0 +1,42 @@
+<isif condition="${pdict.cacheme}">
+    <iscache type="relative" minute="0" hour="0">
+</isif>
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/base.js');
+    </isscript>
+    <div class="c-product-details__steps--grey-wrapper">
+        <isinclude template="rendering/category/components/byobCategoryNav/stepContainer" />
+        <div class="c-product-details__wrap">
+            <h1 class="product-name c-product-details__name js-product-name c-product-details__name-byob">
+                <span class="value" itemprop="name" content="${Resource.msg('label.byob-title', 'byob', null)}">${Resource.msg('label.byob-title', 'byob', null)}</span>
+            </h1>
+
+            <div class="value c-product-details__description" itemprop="description"
+                content="${Resource.msg('label.byob-description', 'byob', null)}">
+                ${Resource.msg('label.byob-description', 'byob', null)}</div>
+
+
+            <span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}"></span>
+            <span class="value" itemprop="sku" content="${typeof product !== 'undefined' ? product.masterId: ''}"></span>
+
+            <isif condition="${typeof product !== 'undefined' && !empty(product.badge) && !empty(product.badge.value)}">
+                <div class="st-product-top__callout badge_callout ${pdict.templateClass}__callout">
+                    ${product.badge}
+                </div>
+            </isif>
+        </div>
+
+        <div class="c-product-details__step-title c-product-details__step-title--step2 c-byob-redesign__step2-title">
+            <h1>${Resource.msg('label.step2-title', 'byob', null)}</h1>
+        </div>
+        <div class="c-product-details__step2__description-title">
+            ${Resource.msg('label.tryboxes-title', 'byob', null)}
+            <div class="c-product-details__step2__description-text">
+            ${Resource.msg('label.tryboxes-description', 'byob', null)}
+            </div>
+        </div>
+        <isinclude url="${URLUtils.https('BYOB-StarterComboTiles')}" />
+
+</isdecorate>

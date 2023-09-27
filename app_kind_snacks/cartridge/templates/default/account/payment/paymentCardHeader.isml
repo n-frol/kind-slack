@@ -1,0 +1,8 @@
+<div class="c-account-dashboard__card-header">
+    <div class="pull-left">
+        ${paymentInstrument.creditCardHolder}
+        <isif condition="${paymentInstrument.UUID === pdict.defaultPaymentInstrument}">
+            (${Resource.msg('payment.default', 'payment', null)})
+        </isif>
+    </div>
+</div>

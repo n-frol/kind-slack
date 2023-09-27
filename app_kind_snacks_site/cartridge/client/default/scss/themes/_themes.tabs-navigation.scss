@@ -1,0 +1,45 @@
+@import '~kind/themes/themes.tabs-navigation';
+
+.navigation-tabs {
+    .navigation-tab {
+        &.nav-tab-1 {
+            &.active {
+                background: $white;
+                border-color: $white;
+            }
+        }
+    }
+}
+
+.header-banner {
+    .content {
+        @include media-breakpoint-down(md) {
+            padding-bottom: 9px;
+            padding-top: 9px;
+        }
+    }
+
+    .links {
+        max-width: 50%;
+        padding-bottom: 3px;
+        padding-top: 3px;
+        text-align: right;
+
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+            margin-right: $grid-gutter-width / -2;
+        }
+
+        li {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            display: inline-block;
+            padding: 7px 16px;
+            vertical-align: top;
+        }
+    }
+}

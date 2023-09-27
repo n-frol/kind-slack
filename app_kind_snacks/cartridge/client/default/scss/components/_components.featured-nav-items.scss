@@ -1,0 +1,20 @@
+/* ============================================================================
+Featured Navigation
+============================================================================ */
+
+/**
+ * Establish styles for the featured nav inside the shop nav
+ */
+
+$ns: c-featured-nav;
+
+.#{$ns} {
+    font-size: 24px;
+    letter-spacing: -.8px;
+    line-height: 1.3;
+    padding: 4px 0;
+
+    @include media-breakpoint-up(lg) {
+        white-space: nowrap;
+    }
+}

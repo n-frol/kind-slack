@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redirect-urls xmlns="http://www.demandware.com/xml/impex/redirecturl/2011-09-01">
+    <redirect-url source-id="add-some-fruit" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="after-school-snacks" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="breakfast-at-home" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="evening-snacks" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="fuel-your-morning-run" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="guilt-free-indulgence" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="healthy-on-the-go" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="make-lunch-interesting" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="power-your-workout" source-type="category">
+        <destination-id>occasions</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url source-id="subscriptions" source-type="category">
+        <destination-id>snack-club</destination-id>
+        <destination-type>category</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/retailers">
+        <status-code>301</status-code>
+        <enabled-flag>false</enabled-flag>
+        <destination-url>/on/demandware.store/Sites-CreativeSnacks-Site/en_US/Page-Show?cid=retailers</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/kind-breakfast-variety-pack">
+        <destination-id>26690</destination-id>
+        <destination-type>product</destination-type>
+        <product-category-id>variety</product-category-id>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/nut-bars/kind-heroes-dark-chocolate-nuts-sea-salt">
+        <destination-id>M28195</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>307</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/custom">
+        <destination-id>MBYOB</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>302</status-code>
+        <enabled-flag>true</enabled-flag>
+        <additional-url-params>utm_source=collateral&amp;utm_medium=print&amp;utm_campaign=byob_inclusion</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/emmaguns">
+        <destination-id>MBYOB</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <additional-url-params>utm_source=emma_guns_show&amp;utm_medium=podcast&amp;utm_campaign=byob</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/forever35">
+        <destination-id>MBYOB</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <additional-url-params>utm_source=forever35&amp;utm_medium=podcast&amp;utm_campaign=byob</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/iconic">
+        <destination-id>MBYOB</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <additional-url-params>utm_source=everything_iconic&amp;utm_medium=podcast&amp;utm_campaign=byob</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/yogaland">
+        <destination-id>MBYOB</destination-id>
+        <destination-type>product</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <additional-url-params>utm_source=yogaland&amp;utm_medium=podcast&amp;utm_campaign=byob</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/oatsandhoneygranola">
+        <destination-id>oatsandhoneygranola</destination-id>
+        <destination-type>content</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/snack-club">
+        <destination-id>subscriptions</destination-id>
+        <destination-type>content</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/snack-club.html">
+        <destination-id>subscriptions</destination-id>
+        <destination-type>content</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/subscriptions">
+        <destination-id>subscriptions</destination-id>
+        <destination-type>content</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/tiktoksimplecrunchcontest">
+        <destination-id>tiktoksimplecrunchcontest</destination-id>
+        <destination-type>content</destination-type>
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/apply">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://wholesale.kindsnacks.com/apply</destination-url>
+        <copy-source-params>yes</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/customer/account/login/">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://www.kindsnacks.com/login</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/documents/kindness-tracker.pdf">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>http://kindassets.kindsnacks.com/kindness-tracker.pdf</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/email/logo.png">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>http://kindsnacks-com.s3.amazonaws.com/email/logo.png</destination-url>
+        <copy-source-params>yes</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/gifts">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>/holiday-gift-guide.html</destination-url>
+        <additional-url-params>utm_source=pebblepost&amp;utm_medium=directmail&amp;utm_campaign=holiday2019</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/kindbackoffice">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://wholesale.kindsnacks.com/kindbackoffice</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/nutritioncollective">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://wholesale.kindsnacks.com/nutritioncollective</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/refer-a-friend">
+        <status-code>302</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>/on/demandware.store/Sites-KINDSnacks-Site/en_US/Talkable-Dashboard</destination-url>
+        <additional-url-params>utm_source=KIND+Community&amp;utm_medium=email&amp;utm_term=0&amp;utm_campaign=20190923_RAF&amp;utm_content=hero</additional-url-params>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/refer-a-friend.html">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>/on/demandware.store/Sites-KINDSnacks-Site/en_US/Talkable-Dashboard</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/snack-packs.html">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>/</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/store/">
+        <status-code>307</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://www.kindsnacks.com/</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="/wholesale">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>https://wholesale.kindsnacks.com/customer/account/login/</destination-url>
+        <copy-source-params>yes</copy-source-params>
+    </redirect-url>
+
+    <redirect-url uri="ambassador">
+        <status-code>301</status-code>
+        <enabled-flag>true</enabled-flag>
+        <destination-url>/nutrition-collective/welcome.html</destination-url>
+        <copy-source-params>default</copy-source-params>
+    </redirect-url>
+
+</redirect-urls>

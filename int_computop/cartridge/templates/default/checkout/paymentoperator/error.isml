@@ -1,0 +1,5 @@
+<isif condition="${ pdict.paymentOperator.error }">
+    <div class="alert alert-danger error-message" role="alert" style="display:block;">
+        <p class="error-message-text">${ pdict.paymentOperator.error }</p>
+    </div>
+</isif>

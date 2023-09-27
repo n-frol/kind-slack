@@ -1,0 +1,69 @@
+<iscomment>
+Fires Events: purchase
+
+This template renders a transaction datalayer and event push for google
+tag manager to pick up.
+
+This will be skipped if the transaction already exists on the pdict as that indicates
+the datalayer was passed to the GTM tag at the start of the page (which is the ideal
+scenario). If not, this renders the data layer and fires a 'purchase' event'
+</iscomment>
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerEnabled')}">
+
+<isset name="criteoEnabled" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerCriteoEnabled')}" scope="page">
+<isset name="adwordsEnabled" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerAdwordsEnabled')}" scope="page">
+    <isif condition="${!empty(pdict.orderin) && (empty(pdict.DataLayer) || empty(pdict.DataLayer.ecommerce) || empty(pdict.DataLayer.ecommerce.purchase))}">
+
+    <isscript>
+        var GTM = require('int_googletagmanager/cartridge/scripts/helpers/GTM');
+        var dataLayerObj = GTM.PurchaseHelper(pdict.orderin);
+        var ordermgr = require('dw/order/OrderMgr');
+        var theemail = "";
+        var thisorder = ordermgr.getOrder(dataLayerObj.ecommerce.purchase.actionField.id);
+        if (thisorder) {
+            theemail = thisorder.customerEmail;
+        }
+        var orders = ordermgr.searchOrders('customerEmail={0}', 'creationDate desc', theemail);
+    </isscript>
+    <script>
+        window.dataLayer = window.dataLayer || []
+        if (dataLayer.length) {
+            dataLayer.push({
+                ordercount: <isprint value="${orders.count}" encoding="off">,
+                payment_method : <isprint value="${JSON.stringify(dataLayerObj.payment_method, null, 2)}" encoding="off">,
+                shipping_method: <isprint value="${JSON.stringify(dataLayerObj.shipping_method, null, 2)}" encoding="off">,
+                points_redemeed: <isprint value="${JSON.stringify(dataLayerObj.points_redemeed, null, 2)}" encoding="off">,
+                points_discount: <isprint value="${JSON.stringify(dataLayerObj.points_discount, null, 2)}" encoding="off">,
+                subscription_discount: <isprint value="${JSON.stringify(dataLayerObj.subscription_discount, null, 2)}" encoding="off">,
+                ecommerce: <isprint value="${JSON.stringify(dataLayerObj.ecommerce, null, 2)}" encoding="off">,
+                <isscript>
+                    var productList = [];
+                    var productIDs = [];
+                    for (var i=0; i<dataLayerObj.ecommerce.purchase.products.length; i++) {
+                        var pli = dataLayerObj.ecommerce.purchase.products[i];
+                        productIDs.push(pli.id);
+                        productList.push({id: pli.id, price: parseFloat(pli.price), quantity: pli.quantity});
+                    }
+                </isscript>
+                <isif condition="${criteoEnabled}">
+                    'PageType': 'TransactionPage',
+                    'email': <isprint value="${JSON.stringify(pdict.orderin.customerEmail.toLowerCase(), null, 2)}" encoding="off">,
+                    'ProductTransactionProducts': <isprint value="${JSON.stringify(productList)}" encoding="off">,
+                    'TransactionID': <isprint value="${JSON.stringify(pdict.orderin.orderNo, null, 2)}" encoding="off">,
+                </isif>
+                <isif condition="${adwordsEnabled}">
+                    google_tag_params: {
+                        ecomm_pagetype: 'purchase',
+                        ecomm_prodid: <isprint value="${JSON.stringify(productIDs)}" encoding="off">,
+                        ecomm_totalvalue: ${pdict.orderin.totals.subTotalDecimalIncludingOrderLevelDiscounts}
+                    }
+                </isif>
+            });
+
+            dataLayer.push({'event': 'purchaseSuccess'});
+        }
+    </script>
+
+    </isif>
+</isif>
+

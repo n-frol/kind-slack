@@ -1,0 +1,8 @@
+<isset name="enableEditItemLink" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('cartShowEditLink')) ? dw.system.Site.current.getCustomPreferenceValue('cartShowEditLink') : false}" scope="page"/>
+
+<!--- Edit product --->
+<isif condition="${enableEditItemLink}">
+    <div class="product-edit">
+        <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="edit" title="${Resource.msg('link.edit.item', 'cart',null)}">${Resource.msg('link.edit.item', 'cart', null)}</a>
+    </div>
+</isif>

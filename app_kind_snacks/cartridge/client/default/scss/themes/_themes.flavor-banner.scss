@@ -1,0 +1,67 @@
+/* ============================================================================
+   Flavor Banner
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the flavor banner component
+ */
+
+ $ns: th-kind-flavor-banner;
+ $component: c-flavor-banner;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Flavor Banner Component
+     &.#{$component} {
+
+         .#{$component} {
+
+            &__eyebrow {
+                font-family: $font-family-primary;
+            }
+             // Flavor Banner Heading
+             &__heading {
+                 font-family: $font-family-primary;
+             }
+
+             // Flavor Banner Heading
+             &__body {
+                 font-family: $font-family-secondary;
+             }
+
+             // Flavor Banner Links
+             &__links {
+                 font-family: $font-family-primary;
+                 font-size: 11px;
+                 letter-spacing: 1.5px;
+             }
+
+         }
+
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+
+         .#{$scope} {
+
+             // Graphical Asset Links
+             &__links {
+
+                 a {
+
+                     &:hover {
+                         color: $white;
+                         text-decoration: none;
+                     }
+
+                 }
+
+             }
+
+         }
+
+     }
+
+ }

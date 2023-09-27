@@ -1,0 +1,55 @@
+/* ============================================================================
+Rotation Message
+============================================================================ */
+
+/**
+ * Establish styles for popup message encouraging mobile users to rotate their device to landscape view
+ */
+
+$ns: c-rotation-message;
+
+// Because we only want to display the block when we need it, we'll need an animation to get rid of it
+@keyframes hide-rotation-message {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.#{$ns} {
+    background-color: rgba(0, 0, 0, .8); // Partially transparent black
+    border-radius: 10px;
+    display: none;
+    max-height: 100vh;
+    max-width: 100vw;
+    padding: $setting-gutter;
+    position: fixed;
+        left: 50%;
+        top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    z-index: $z-index-header;
+
+    @include media-breakpoint-down(sm) {
+        @media only screen and (orientation: portrait) {
+            animation-name: hide-rotation-message;
+                animation-duration: 5s;
+                animation-fill-mode: forwards;
+                animation-timing-function: step-end;
+            display: block;
+            pointer-events: none; // Allow users to click through element so we can keep the process within css
+        }
+    }
+
+    &__icon {
+        margin-bottom: $setting-gutter;
+    }
+    &__text {
+        color: $white;
+        font-family: $font-family-primary;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+}

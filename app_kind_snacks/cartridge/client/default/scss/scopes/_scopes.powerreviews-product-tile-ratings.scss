@@ -1,0 +1,47 @@
+/* ============================================================================
+Powerreviews Product Tile Rating Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements injected into the page by PowerReviews
+ * for product tile rating content.
+ */
+
+$ns: s-powerreviews-product-tile-ratings;
+
+.#{$ns} {
+    .p-w-r {
+        margin: 0;
+
+        .pr-snippet-stars {
+            background: none;
+        }
+
+        .pr-category-snippet__item {
+            display: block;
+            text-align: center;
+        }
+
+        .pr-category-snippet {
+            margin: 0;
+        }
+
+        .pr-category-snippet__total.pr-category-snippet__item {
+            display: none;
+        }
+
+        .pr-snippet-rating-decimal {
+            border: none;
+            color: $black;
+
+            &::before {
+                content: '(';
+            }
+            &::after {
+                content: ')';
+            }
+        }
+
+    }
+}
+

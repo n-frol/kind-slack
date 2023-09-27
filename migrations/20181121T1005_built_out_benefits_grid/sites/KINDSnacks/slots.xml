@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-a" context="folder" context-id="benefits" configuration-id="benefits-grid" default="true" assigned-to-site="true">
+        <template>slots/content/benefitsGrid.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="benefit_0gTransFat"/>
+                <content-asset content-id="benefit_100WholeGrain"/>
+                <content-asset content-id="benefit_5gSugarOrLess"/>
+                <content-asset content-id="benefit_goodSourceOfFiber"/>
+                <content-asset content-id="benefit_goodSourceOfProtein"/>
+                <content-asset content-id="benefit_lowFat"/>
+                <content-asset content-id="benefit_lowGlycemicIndex"/>
+                <content-asset content-id="benefit_lowSodium"/>
+                <content-asset content-id="benefit_nonGmo"/>
+                <content-asset content-id="benefit_noAddedSugar"/>
+                <content-asset content-id="benefit_nutFreeRecipe"/>
+                <content-asset content-id="benefit_kosher"/>
+                <content-asset content-id="benefit_glutenFree"/>
+                <content-asset content-id="benefit_vegan"/>
+            </content-assets>
+        </content>
+        <custom-attributes>
+            <custom-attribute attribute-id="slotBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="slotBody">Looking for fiber or protein? We've got it. Vegan or Kosher? We've got you covered there too.</custom-attribute>
+            <custom-attribute attribute-id="slotHeading">Benefits</custom-attribute>
+        </custom-attributes>
+    </slot-configuration>
+
+</slot-configurations>

@@ -1,0 +1,72 @@
+importPackage( dw.system );
+importPackage( dw.catalog );
+importPackage( dw.util );
+
+importScript('export/CatalogExportMgr.ds');
+importScript('export/ProfileExportMgr.ds');
+importScript('export/OrderExportMgr.ds');
+importScript('export/handlers/AbstractExportHandler.ds');
+
+// Hack, because vars cannot be imported in DW, only functions
+function getCustomFeedsExportMgr() {
+    return CustomFeedsExportMgr;
+}
+
+/**
+ * Distribute handlers across context object specific export manager:
+ * catalog|customer|order
+ */
+function CustomFeedsExportMgr(ExecutionContexts){
+    this.logger = dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport');
+    this.handlers = [];
+    this.executionContexts = ExecutionContexts;
+}
+
+CustomFeedsExportMgr.prototype = {
+        /**
+         * Registers a new export handler which needs to be a subclass of
+         * {@link AbstractExportHandler}.
+         */
+        registerExportHandler : function(handler){
+            this.handlers.push(handler);
+        },
+        /**
+         * Runs the export and notifies all registered handlers
+         */
+        runExport : function(){
+            // init catalog export mngr
+            var CatalogExportMgr = getCatalogExportMgr();
+            var catalogExportMgr = new CatalogExportMgr();
+            
+            // init customer export mngr
+            var ProfileExportMgr = getProfileExportMgr();
+            var profileExportMgr = new ProfileExportMgr(this.executionContexts.DaysToExportCustomers);
+            
+            // init order export mngr
+            var OrderExportMgr = getOrderExportMgr();
+            var orderExportMgr = new OrderExportMgr(this.executionContexts.DaysToExportOrders);
+            
+            for each (var handler in this.handlers) {
+                switch(handler.contextObject) {
+                    case 'Catalog' : 
+                        catalogExportMgr.registerExportHandler(handler);
+                        break;
+                    case 'Customer' : 
+                        profileExportMgr.registerExportHandler(handler);
+                        break;
+                    case 'Order' : 
+                        orderExportMgr.registerExportHandler(handler);
+                        break;
+                }
+            };
+            
+            // execute selected in workflow component exports
+            catalogExportMgr.runExport();
+            profileExportMgr.runExport();
+            orderExportMgr.runExport();
+        }
+}
+
+if(typeof exports !== 'undefined') {
+    exports.CustomFeedsExportMgr = CustomFeedsExportMgr;
+}

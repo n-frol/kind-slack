@@ -1,0 +1,113 @@
+{
+  "name": "Background with Text",
+  "description": "Background with Text",
+  "group": "B2B",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Left Column",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Background Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "textl",
+          "name": "Text Offset Left",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textr",
+          "name": "Text Offset Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textu",
+          "name": "Text Offset Upper",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textb",
+          "name": "Text Offset Botttom",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textcontent",
+          "name": "Text Content HTML",
+          "type": "text",
+          "required": false
+        },
+
+        {
+          "id": "backgroundipad",
+          "name": "Background Image Ipad",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "textlp",
+          "name": "Text Offset Left Ipad",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textrp",
+          "name": "Text Offset Right Ipad",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textup",
+          "name": "Text Offset Up Ipad",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textbp",
+          "name": "Text Offset Bottom Ipad",
+          "type": "string",
+          "required": false
+        },
+
+        {
+          "id": "backgroundm",
+          "name": "Background Image Mobile",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "textlm",
+          "name": "Text Offset Left Mobile",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textrm",
+          "name": "Text Offset Right Mobile",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textum",
+          "name": "Text Offset Top Mobile",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "textbm",
+          "name": "Text Offset Bottom Mobile",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

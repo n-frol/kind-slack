@@ -1,0 +1,84 @@
+/* ============================================================================
+   Leaderboard
+   ============================================================================ */
+
+/**
+ * Provides styles for leaderboard components
+ */
+
+$ns: c-leaderboard;
+
+.#{$ns} {
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    &__container {
+        padding-top: 50px;
+        position: relative;
+    }
+
+    // Leaderboard Wrapper
+    &__content {
+        @include make-col(12);
+
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+        margin-bottom: 56px;
+
+        @include media-breakpoint-up(lg) {
+            @include make-col(10);
+
+            margin-bottom: 50px;
+        }
+    }
+
+    // Leaderboard Heading
+    &__heading {
+        font-size: 24px;
+        line-height: .95em;
+    }
+
+    // Leaderboard Body
+    &__body {
+        margin-top: 5px;
+    }
+
+    // Leaderboard Links {
+    &__links {
+        margin-top: 15px;
+    }
+
+    &__image {
+        @include media-breakpoint-up(lg) {
+            height: 100%;
+            width: auto;
+        }
+
+        &__wrapper {
+            @include make-col(12);
+
+            text-align: center;
+
+            @include media-breakpoint-up(lg) {
+                flex-basis: auto;
+
+                position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    top: -15px;
+            }
+        }
+    }
+    &--left {
+        & .#{$ns}__image {
+            &__wrapper {
+                @include media-breakpoint-up(lg) {
+                    left: 0;
+                    right: auto;
+                }
+            }
+        }
+    }
+}

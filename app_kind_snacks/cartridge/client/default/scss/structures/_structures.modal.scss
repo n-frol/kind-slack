@@ -1,0 +1,138 @@
+/* ============================================================================
+Modals
+============================================================================ */
+
+/**
+ * Establish custom styles for modals on the site
+ */
+
+ $ns: st-modal;
+
+ .#{$ns} {
+    &__dialog {
+        margin: 0;
+        margin-top: 0;
+        max-width: map-get($container-max-widths, xl);
+        position: absolute;
+            left: 50%;
+            top: 50%;
+        transform: translate(-50%, -50%) !important; // modal.scss uses three levels of selectors to impose transform.  Not sure we want to change that globally right now
+        width: 100vw;
+
+        @include media-breakpoint-up(md) {
+            max-width: calc(100vw - 150px);
+            min-width: 350px;
+            width: auto;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: calc(100vw - 200px);
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: #{map-get($container-max-widths, xl) + 50px};
+        }
+    }
+    &__content {
+        max-height: calc(100vh - 30px);
+        overflow: auto;
+
+        @include media-breakpoint-up(md) {
+            max-height: calc(100vh - 110px);
+        }
+        @include media-breakpoint-up(lg) {
+            max-height: calc(100vh - 150px);
+        }
+    }
+    &__header,
+    &__body,
+    &__footer {
+        border-bottom: none;
+        border-top: none;
+        flex-shrink: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 23px;
+            padding-right: 23px;
+        }
+    }
+    &__header {
+        background-color: $primary;
+        border-bottom: none;
+        color: $white;
+        display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        flex-shrink: 0;
+        font-family: $font-family-primary;
+        font-size: 18px;
+        padding-left: 19px;
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 23px;
+            padding-right: 23px;
+        }
+    }
+    &__title {
+        font-size: inherit;
+    }
+    &__body {
+        line-height: 25px;
+        padding-bottom: 0;
+        padding-top: 5px;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 26px;
+        }
+    }
+    &__footer {
+        justify-content: flex-start;
+        padding-top: 0;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 14px;
+        }
+    }
+    &__close {
+        @include background-svg($svg-close-white);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        height: 24px;
+        margin: 0 !important; // Important to override stacked selector from bootstrap
+        margin-right: 9px !important; // Important to override stacked selector from bootstrap
+        min-height: 0;
+        min-width: 0;
+        opacity: 1;
+        width: 24px;
+
+        @include media-breakpoint-up(md) {
+            margin-right: 0 !important; // Important to override stacked selector from bootstrap
+        }
+
+        &:active,
+        &:hover {
+            background-color: transparent !important; // Important because it would require too strong a hierarchy to override the base button styles otherwise
+            border: none !important; // Important because it would require too strong a hierarchy to override the base button styles otherwise
+            opacity: 1;
+        }
+
+        &__wrap {
+            display: flex;
+                justify-content: flex-end;
+            padding-bottom: 42px;
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__menu {
+        &__background {
+        z-index: -1;
+        }
+    }
+}

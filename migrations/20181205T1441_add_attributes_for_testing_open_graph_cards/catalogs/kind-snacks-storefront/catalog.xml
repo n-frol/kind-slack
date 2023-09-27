@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+    <category category-id="kind-nut-bars">
+        <display-name xml:lang="x-default">KIND Nut Bars</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">true</custom-attribute>
+            <custom-attribute attribute-id="ogDescription">KIND Bars are gluten free and made with ingredients that are easy to pronounce like whole nuts, spices, and pieces of fruit.</custom-attribute>
+            <custom-attribute attribute-id="ogImage">https://images.kindsnacks.com/catalog/category/shop-by-product_kind-bar_opt_2.png</custom-attribute>
+            <custom-attribute attribute-id="ogImageAlt">KIND Nut Bars | KIND Snacks</custom-attribute>
+            <custom-attribute attribute-id="ogTitle">KIND Nut Bars | KIND Snacks</custom-attribute>
+            <custom-attribute attribute-id="ogURL">https://www.kindsnacks.com/products/kind-nut-bars</custom-attribute>
+        </custom-attributes>
+    </category>
+</catalog>

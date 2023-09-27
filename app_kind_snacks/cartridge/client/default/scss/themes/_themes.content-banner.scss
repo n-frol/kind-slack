@@ -1,0 +1,67 @@
+/* ============================================================================
+   Content Banner
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the content banner component
+ */
+
+ $ns: th-kind-content-banner;
+ $component: c-content-banner;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Content Banner Component
+     &.#{$component} {
+
+         .#{$component} {
+
+            &__eyebrow {
+                font-family: $font-family-primary;
+            }
+             // Content Banner Heading
+             &__heading {
+                 font-family: $font-family-primary;
+             }
+
+             // Content Banner Heading
+             &__body {
+                 font-family: $font-family-secondary;
+             }
+
+             // Content Banner Links
+             &__links {
+                 font-family: $font-family-primary;
+                 font-size: 11px;
+                 letter-spacing: 1.5px;
+             }
+
+         }
+
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+
+         .#{$scope} {
+
+             // Graphical Asset Links
+             &__links {
+
+                 a {
+
+                     &:hover {
+                         color: $white;
+                         text-decoration: none;
+                     }
+
+                 }
+
+             }
+
+         }
+
+     }
+
+ }

@@ -1,0 +1,23 @@
+<div class="card c-account-dashboard__card-body">
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">${Resource.msg('label.addressbook','account',null)}</div>
+        <isif condition="${pdict.account.preferredAddress}">
+            <a href="${URLUtils.url('Address-List')}" class="pull-right c-account-dashboard__card-header__link">${Resource.msg('link.view','account',null)}</a>
+        </isif>
+    </div>
+    <isif condition="${pdict.account.preferredAddress}">
+        <div class="card-body">
+            <div>
+                <div class="dashboard-cards-block-title">${Resource.msg('label.addressbook.defaultaddress','account',null)}</div>
+                <div class="dashboard-info">${pdict.account.preferredAddress.address.ID}</div>
+                <div class="c-account-dashboard__card-body__card-description">${pdict.account.preferredAddress.address.firstName} ${pdict.account.preferredAddress.address.lastName}</div>
+                <div class="c-account-dashboard__card-body__card-description">${pdict.account.preferredAddress.address.address1}</div>
+                <div class="c-account-dashboard__card-body__card-description">${pdict.account.preferredAddress.address.city}, ${pdict.account.preferredAddress.address.stateCode} ${pdict.account.preferredAddress.address.postalCode}</div>
+                <div class="c-account-dashboard__card-body__card-description">${pdict.account.preferredAddress.address.phone}</div>
+            </div>
+        </div>
+    </isif>
+    <div class="text-center c-account-dashboard__card-footer">
+        <a href="${URLUtils.url('Address-AddAddress')}" aria-label="add new address" class="c-account-dashboard__card-header__link">${Resource.msg('link.addnew','account',null)}</a> 
+    </div>
+</div>

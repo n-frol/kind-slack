@@ -1,0 +1,134 @@
+/* ============================================================================
+Content Navigation
+============================================================================ */
+
+/**
+ * Establish styles for the content navigation component.
+ */
+
+$ns: "c-content-nav";
+
+.#{$ns} {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &__divider {
+        align-self: center;
+        background-color: $primary;
+        border-radius: 50%;
+        color: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 16px;
+        font-style: italic;
+        height: 30px;
+        margin-bottom: 5px;
+        margin-left: 9px;
+        margin-right: 9px;
+        width: 30px;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+            margin-left: 25px;
+            margin-right: 25px;
+            margin-top: 5px;
+        }
+    }
+
+    &__item {
+        padding-top: 20px;
+        width: 100%;
+
+        &:first-of-type {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        &__link {
+            border-bottom: 4px solid transparent;
+            display: inline-block;
+            padding-bottom: 20px;
+            text-decoration: none;
+            vertical-align: top;
+
+            @include media-breakpoint-up(md) {
+                border-bottom-width: 5px;
+                padding-bottom: 15px;
+            }
+
+            &.is-active {
+                border-bottom-color: $primary;
+            }
+
+            &:hover {
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+        &__heading {
+            font-size: 20px;
+            line-height: 1.1;
+            margin-bottom: 0;
+            text-align: center;
+            text-decoration: none;
+
+            @include media-breakpoint-up(md) {
+                font-size: 28px;
+                letter-spacing: -1.2px;
+                line-height: 1;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &--step2 {
+        display: flex;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            margin: 0 auto;
+            justify-content: center;
+            width: 800px;
+
+            .c-product-details__image-border--step2 {
+                &:first-of-type {
+                    margin-right: 10px;
+                }
+                &:last-of-type {
+                    margin-left: 10px;
+                }
+            }
+        }
+        @include media-breakpoint-up(xl) {
+            margin: 0 auto;
+            justify-content: center;
+            width: 1200px;
+        }
+    }
+}
+
+.content-navigation-img {
+    max-width: 354px;
+
+    @include media-breakpoint-up(md) {
+        max-width: 362px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        max-width: 519px;
+    }
+}

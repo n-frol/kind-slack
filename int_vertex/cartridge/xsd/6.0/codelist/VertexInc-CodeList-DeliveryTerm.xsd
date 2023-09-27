@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:vertexinc:o-series:tps:6:0" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Delivery term specification. Declararion of structures and data types.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="DeliveryTermCodeType">
+    <xsd:annotation>
+      <xsd:documentation>An identifier that determines the point in which the title transfer and risk of a supply takes place. A Delivery Term Code identifies the importer of record on cross-border transactions. These terms are also known as Shipping Terms or Incoterm. Delivery Term information is critical in Value Added Tax transactions to determine the place of supply in distance selling. For detailed explanations of these terms, refer to the Terms of Sales definition in the glossary of the U.S. Department of Transportation Maritime
+Administration Web site at
+http://www.marad.dot.gov/publications/glossary/T.html.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="EXW">
+        <xsd:annotation>
+          <xsd:documentation>Ex Works (EXW).The customer is the importer of record. </xsd:documentation>
+          <xsd:appinfo>Ex Works (EXW)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FCA">
+        <xsd:annotation>
+          <xsd:documentation>Free Carrier (FCA). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Free Carrier (FCA)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FAS">
+        <xsd:annotation>
+          <xsd:documentation>Free Along Side Ship (FAS). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Free Along Side Ship (FAS)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FOB">
+        <xsd:annotation>
+          <xsd:documentation>Free Onboard Vessel (FOB). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Free Onboard Vessel (FOB)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CFR">
+        <xsd:annotation>
+          <xsd:documentation>Cost and Freight (CFR). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Cost and Freight (CFR)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CIF">
+        <xsd:annotation>
+          <xsd:documentation>Cost Insurance and Freight (CIF). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Cost Insurance and Freight (CIF)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CPT">
+        <xsd:annotation>
+          <xsd:documentation>Carriage Paid To (CPT). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Carriage Paid To (CPT)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CIP">
+        <xsd:annotation>
+          <xsd:documentation>Carriage Insurance Paid To (CIP).The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Carriage Insurance Paid To (CIP)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DAF">
+        <xsd:annotation>
+          <xsd:documentation>Delivered at Frontier (DAF). The customer is the importer of record. While this identifier was removed from active use in 2010, O Series will process it. </xsd:documentation>
+          <xsd:appinfo>Delivered at Frontier (DAF)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DES">
+        <xsd:annotation>
+          <xsd:documentation>Delivered Ex Ship (DES). The customer is the importer of record. While this identifier was removed from active use in 2010, O Series will process it. </xsd:documentation>
+          <xsd:appinfo>Delivered Ex Ship (DES)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DEQ">
+        <xsd:annotation>
+          <xsd:documentation>Delivered Ex Quay Duty Unpaid (DEQ). The customer is the importer of record. While this identifier was removed from active use in 2010, O Series will process it. </xsd:documentation>
+          <xsd:appinfo>Delivered Ex Quay Duty Unpaid (DEQ)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DDU">
+        <xsd:annotation>
+          <xsd:documentation>Delivery Duty Unpaid (DDU). The customer is the importer of record. While this identifier was removed from active use in 2010, O Series will process it. </xsd:documentation>
+          <xsd:appinfo>Delivery Duty Unpaid (DDU)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DDP">
+        <xsd:annotation>
+          <xsd:documentation> Delivery Duty Paid (DDP).The Supplier is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Delivery Duty Paid (DDP)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DAP">
+        <xsd:annotation>
+          <xsd:documentation>Delivered at Place (DAP). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Delivered at Place (DAP)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DAT">
+        <xsd:annotation>
+          <xsd:documentation>Delivered at Terminal (DAT). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Delivered at Terminal (DAT)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SUP">
+        <xsd:annotation>
+          <xsd:documentation>Supplier Ships (SUP). The Supplier is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Supplier Ships (SUP)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CUS">
+        <xsd:annotation>
+          <xsd:documentation>Customer Ships (CUS). The customer is the importer of record.</xsd:documentation>
+          <xsd:appinfo>Customer Ships (CUS)</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="DeliveryTerm" type="DeliveryTermCodeType">
+    <xsd:annotation>
+      <xsd:documentation>An identifier that determines the point in which the title transfer and risk of a supply take place. A Delivery Term Code identifies the importer of record on cross-border transactions.
+
+These terms are also known as Shipping Terms or Incoterm. Delivery Term information is critical in Value Added Tax transactions to determine the place of supply in distance selling. For detailed explanations of these terms, refer to the Terms of Sales definition in the glossary of the U.S. Department of Transportation Maritime Administration Web site at
+http://www.marad.dot.gov/publications/glossary/T.html.</xsd:documentation>
+      <xsd:appinfo>Delivery term structure.</xsd:appinfo>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

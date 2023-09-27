@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site xmlns="http://www.demandware.com/xml/impex/site/2007-04-30" site-id="CreativeSnacks">
+    <name>Creative Snacks</name>
+    <currency>USD</currency>
+    <taxation>net</taxation>
+    <custom-cartridges>int_kind_yotpo:int_yotpo_sfra_merge:int_yotpo_sfra:plugin_pagedesigner_sfra:int_recaptcha:int_batch:int_pixlee:int_talkable:int_jde:lib_utils:int_sfra_bugfixes:int_jiracollector:app_magnet:int_ordergroove:int_googletagmanager:int_vertex:int_loginradius:int_smartystreets:app_kind_components:app_marketing_tiles:app_kind_snacks:int_kind_idme:int_computop:plugin_productcompare:app_content_display_generators:app_storefront_base:plugin_klaviyo:int_marketing_cloud:int_handlerframework:module_pagedesigner</custom-cartridges>
+    <storefront-status>online</storefront-status>
+    <storefront-password>$s0$b0401$O0BHHKUPwRjgNaGDI4A7CQ==$Fae7BG6Ep6YXiloKxjEQyw12aBCfjSfuXg5aVKfIEt8=</storefront-password>
+    <home-page-meta-tag-rules>
+        <page-meta-tag-rule rule-id="hp-description"/>
+        <page-meta-tag-rule rule-id="hp-name"/>
+        <page-meta-tag-rule rule-id="hp-property"/>
+        <page-meta-tag-rule rule-id="hp-title"/>
+    </home-page-meta-tag-rules>
+</site>
+

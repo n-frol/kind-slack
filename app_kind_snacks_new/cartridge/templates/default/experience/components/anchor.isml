@@ -1,0 +1,12 @@
+<svg style="margin-right: 5px" xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.98269 12.3773V0.550049H7.78269V12.3773L11.9739 8.18609C12.3253 7.83462 12.8952 7.83462 13.2467 8.18609C13.5981 8.53756 13.5981 9.10741 13.2467 9.45888L7.51909 15.1864C7.16762 15.5379 6.59777 15.5379 6.2463 15.1864L0.518731 9.45888C0.167259 9.10741 0.167259 8.53756 0.518731 8.18609C0.870203 7.83462 1.44005 7.83462 1.79152 8.18609L5.98269 12.3773Z" fill="black" fill-opacity="0.35"/>
+</svg>
+<a href="${pdict.jumpto}">
+ <isprint value="${pdict.headline}" encoding="off"/>
+</a>
+<style>
+    .anchor a:hover {
+        text-decoration: none;
+        color: #D8262E;
+    }
+</style>

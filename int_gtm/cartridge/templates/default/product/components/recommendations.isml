@@ -1,0 +1,48 @@
+<isif condition="${!product.raw.getRecommendations(1).empty}">
+    <isinclude template="components/modules" sf-toolkit="off" />
+    <iscontentasset aid="recommendation-customized" />
+    <isinclude template="components/definition"/>
+    <isset name="slickDots" value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsDots')}" scope="page" />
+    <isset name="slickWrapperClasses" value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsWrapper')}" scope="page" />
+    <isset name="slickArrowClasses" value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsArrows')}" scope="page" />
+    <isset name="einsteinPDP" value="${Resource.msg('label.einstein.pdp', 'gtm', null)}" scope="page" />
+   
+    <isscript>
+        const productRecommendationGtmHelper= require('*/cartridge/scripts/helpers/gtmHelpers');
+        let recommendedProducts = [];
+        let recommendations = product.raw.getRecommendations(1).iterator();
+        while (recommendations.hasNext()) {
+            let recommendation = recommendations.next();
+            let recommendedProduct  = recommendation.getRecommendedItem();
+            recommendedProducts.push(recommendedProduct);
+        }
+        const dataSlick = dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsJSON');
+        const recommendationsGTM = productRecommendationGtmHelper.setRecommendationProducts(recommendedProducts);
+    </isscript>
+
+    <isif condition="${!empty(recommendationsGTM)}">
+        <isgtmpush gtmdata="${recommendationsGTM}" />
+    </isif>
+
+    <div id="product-recommendations" class="${slickWrapperClasses}">
+        <h2 class="c-recommendation__title">
+            <isprint value="${Resource.msg('label.recommendations', 'product', null)}" encoding="off"/>
+        </h2>
+        <div class="c-recommendation__slider recommendation-customized js-recommendation-customized" 
+            data-slick='${dataSlick}'
+            data-slickdots='${!empty(slickDots) ? slickDots : ''}'
+            data-mobileDots="false"
+            data-slickarrows='${!empty(slickArrowClasses) ? slickArrowClasses : ''}'>
+            <isloop items="${recommendedProducts}" var="product" status="loopstate">
+                <div data-gridindex="${loopstate.index}" data-gtm-item-list-name='${einsteinPDP}'>
+                    <isscript>
+                        let showQuickView = typeof showQuickView === 'undefined' ? false : showQuickView; // Make sure showQuickview is initialized, since not all templates will be using it
+                    </isscript>
+                    <isobject object="${product}" view="recommendation">
+                        <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'showQuickView', showQuickView, 'itemListName', einsteinPDP, 'gtmProductIndex', loopstate.index)}" />
+                    </isobject>
+                </div>
+            </isloop>
+        </div>
+    </div>
+</isif>

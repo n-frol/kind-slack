@@ -1,0 +1,71 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isinclude template="components/definition"/>
+
+<isscript>
+    var box40Sku = dw.system.Site.current.getCustomPreferenceValue('byob40');
+    var productList = pdict.productList;
+
+    // Create a pseudo product for populating the ID in the addToCartGlobal.isml
+    // template to avoid errors in logs.
+    if ((typeof product === 'undefined' || empty(product)) && !empty(pdict.boxSku)) {
+        product = {
+            id: pdict.boxSku,
+            available: parseInt(productList.boxSize) == parseInt(productList.totalInBox),
+            readyToOrder: parseInt(productList.boxSize) == parseInt(productList.totalInBox),
+            productType: 'variant'
+        };
+    }
+</isscript>
+fashhfgdhdgfhgfgd
+<style>
+.modal {
+    z-index:999999999 !important;
+}
+</style>
+
+<isif condition="${!empty(pdict.gtmPageData && pdict.gtmPageData.event === "select_content")}">
+    <span> <span id="js-gtm-push"> <isgtmpush gtmdata="${pdict.gtmPageData}" /> </span> </span>
+</isif>
+<iscomment> BYOB List - Body </iscomment>
+<div class="c-byob-product-list__body js-byob-list-body" data-total-quantity="${productList.length}" data-max-quantity="${productList.boxSize}">
+    <div class="c-byob-product-list__body-inner">
+        <iscomment>Setup the BYOB content asset to be displayed</iscomment>
+        <isscript>
+            // In case pdict.content is set, save it for later so we're not messing with variables
+            var contentHolder = pdict.content;
+            // isset scope="pdict" is deprecated, so set content in isscript
+            if (empty(productList.items)) { // Empty Box
+                pdict.content = dw.content.ContentMgr.getContent('nothing-in-box');
+            } else if (productList.length === productList.boxSize) { // Full Box
+                pdict.content = dw.content.ContentMgr.getContent('byob-congrats-filled-box');
+            } else { // Partially Filled Box
+                pdict.content = dw.content.ContentMgr.getContent('byob-almost-there-box');
+            }
+        </isscript>
+        <isif condition="${!empty(productList.activeStarterCombo)}">
+            <iscomment>Set combo name to be displayed instead of content asset's heading</iscomment>
+            <isset name="altHeading" value="${productList.activeStarterCombo}" scope="page" />
+        </isif>
+
+        <iscomment>Display the appropriate content asset for the current state of the BYOB list</iscomment>
+        <isinclude template="rendering/content/simpleTile" />
+
+        <isscript>
+            // Reset original pdict.content now that we're done with the asset
+            pdict.content = contentHolder;
+        </isscript>
+
+        <isif condition="${!empty(productList.items)}">
+            <isset name="itemsIdsDataString" value="" scope="page" />
+            <iscomment> Loop through BYOB List items </iscomment>
+            <isloop items="${productList.items}" var="byobItem" status="loopStatus">
+                <isif condition="${!loopStatus.first && typeof itemsIdsDataString !== 'undefined'}">
+                    <isset name="itemsIdsDataString" value="${itemsIdsDataString + ', '}" scope="page" />
+                </isif>
+                <isset name="itemsIdsDataString" value="${itemsIdsDataString + '"' + byobItem.id + '"'}" scope="page" />
+
+                <isinclude template="product/components/productList/swapListItem" />
+            </isloop>
+        </isif>
+    </div>
+</div>

@@ -1,0 +1,111 @@
+/* ============================================================================
+Quickview Modal
+============================================================================ */
+
+/**
+ * Establish styles for quickview modals and non-component elements within
+ */
+
+ $ns: st-modal-quickview;
+
+ .#{$ns} {
+     &__content {
+         max-height: 100%; // Placed here instead of in dialog as this is the simplest way to make the height scale as intended due to how browsers handle height
+         overflow-x: hidden;
+
+         @include media-breakpoint-up(md) {
+             max-height: calc(100vh - 150px);
+         }
+     }
+
+     // Increase specificity a little bit for selected styles rather than use important
+     & &__dialog {
+         bottom: 0;
+         top: 0;
+         transform: translateX(-50%) !important; // Important to override important style
+
+         @include media-breakpoint-up(md) {
+             bottom: auto;
+             top: 50%;
+             transform: translate(-50%, -50%) !important; // Important to override important style
+             width: 100%;
+         }
+     }
+
+     &__header {
+         &__link,
+         &__close {
+             color: inherit;
+             text-decoration: none;
+
+             &--info {
+                 background-color: $primary !important; // Importanted due to the strength of the selector that would be required to override
+                 background-position: center center;
+                 background-size: 20px auto;
+                 border-radius: 50%;
+                 height: 32px;
+                 margin-right: 0 !important; // Importanted to override important style
+                 position: absolute;
+                     right: 24px;
+                     top: 21px;
+                 width: 32px;
+             }
+         }
+
+         &__link {
+             font-size: 18px;
+             letter-spacing: .5px;
+             padding-top: 2px;
+         }
+
+         // Increase specificity a little bit for selected styles rather than use important
+         & &__close {
+             margin: 0;
+         }
+     }
+     &__body {
+         padding: 0;
+     }
+
+     // Increase specificity a little bit for selected styles rather than use important
+     & &__body {
+         flex: 0 1 auto;
+     }
+
+     &__product {
+         padding-left: 0;
+         padding-right: 0;
+
+         // Create a stronger selector
+         h1#{&}__name {
+             font-size: 36px;
+             margin-bottom: 8px;
+
+             @include media-breakpoint-up(md) {
+                 font-size: 40px;
+             }
+         }
+
+         &__description {
+             line-height: normal;
+         }
+         &__texture-bar {
+             font-family: $font-family-primary;
+             margin-bottom: 10px;
+             max-width: 246px;
+
+             @include media-breakpoint-up(md) {
+                 margin-bottom: 10px;
+                 padding-top: 10px;
+             }
+         }
+     }
+     &__footer {
+         padding-bottom: 0;
+         padding-top: 0;
+     }
+
+     .c-product-add-to-cart {
+         position: relative;
+     }
+ }

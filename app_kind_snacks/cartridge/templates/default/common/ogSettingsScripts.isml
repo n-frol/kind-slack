@@ -1,0 +1,11 @@
+<isscript>
+    var Site = require('dw/system/Site');
+    var currentSite = Site.getCurrent();
+</isscript>
+<isif condition="${!empty(currentSite.getCustomPreferenceValue('OrderGrooveEnable')) && currentSite.getCustomPreferenceValue('OrderGrooveEnable')}">
+    <isif condition="${!empty(pdict.productSettings)}">
+        <script defer type="text/javascript">
+            og_settings = <isprint value="${pdict.productSettings}" encoding="off"/>
+        </script>
+    </isif>
+</isif>

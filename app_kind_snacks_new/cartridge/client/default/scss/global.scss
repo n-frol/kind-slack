@@ -1,0 +1,279 @@
+h1, h2, h3, h4, h5 {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+html, body {
+    font-family: main;
+    @media screen and (max-width: 440px) {
+        overflow-x: hidden;
+    }
+}
+
+.rails {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.eyebrow {
+    color: black;
+    background: white;
+    position: absolute !important;
+    top: 60px;
+    left: 60px;
+    padding: 5px 7.5px;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: .25px;
+    font-weight: 700;
+    border-radius: 8px;
+    @media screen and (max-width: 440px) {
+        font-size: 13px;
+    }
+
+    &.single-card-eyebrow {
+        top: 40px;
+        left: 40px;
+    }
+
+    &.recommender {
+        top: 20px;
+        left: 20px;
+    }
+
+    &.product_dual {
+        @media screen and (max-width: 440px) {
+            top: 30px;
+        }
+    }
+
+    &.BG_Image_eyebrow
+    {
+        @media screen and (max-width: 440px) {
+            top: 40px;
+            left: 20px;
+        }
+    }
+
+    &.Full_Screen_eyebrow {
+        @media screen and (max-width: 440px) {
+            top: 40px;
+            left: 20px;
+        }
+    }
+
+    &.onrails {
+        margin-left: 60px !important;
+        @media screen and (max-width: 440px) {
+            left: 20px !important;
+            margin-left: 0px !important;
+        }
+    }
+    &.inverted {
+        background: white;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 20px;
+        border-radius: 8px;
+        letter-spacing: 0px;
+    }
+    &.short {
+        padding: 5px 20px !important;
+    }
+}
+
+.image_gradient {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.0), rgba(0,0,0,.6));
+
+    &.onrails {
+        width: calc(100% - 120px);
+        margin-left: 120px;
+        border-radius: 20px;
+        @media screen and (max-width: 440px) {
+            width: 100% !important;
+            margin-left: 0px !important;
+            border-radius: 0px !important;
+        }
+    }
+}
+
+.scroll_indicator_scroll {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    z-index: 2;
+    border-radius: 50%;
+    @media screen and (max-width: 440px){
+        display: none;
+    }
+}
+
+.buttonPause img, .buttonPlay img {
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    color: white;
+    height: 36px;
+    width: 36px;
+    @media screen and (max-width: 440px) {
+        margin-left: 20px;
+    }
+}
+
+.buttonPause, .buttonPlay {
+    border: none;
+    background: none;
+}
+
+.buttonPlay {
+    display: none;
+}
+
+.button {
+    position: relative;
+    right: 10px;
+    font-weight: bold;
+    background: white;
+    color: black;
+    padding: 22px 40px 22px 40px;
+    border-radius: 46px;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: inline-block;
+    &:hover {
+        background: black;
+        color: white;
+    }
+    &:disabled {
+        background: #AFAFAF;
+        cursor: not-allowed;
+    }
+    &:focus {
+
+    }
+    @media screen and (max-width: 440px) {
+        right: 0px;
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 10px;
+        width: fill-available;
+        &.short {
+            padding: 10px 40px 10px 40px;
+        }
+    }
+    &.secondary {
+        color: white;
+        border: 1px solid white;
+        background: rgba(0,0,0,.6);
+        &:hover {
+            background: white !important;
+            color: black;
+        }
+    }
+}
+.hidden {
+    display: none;
+    background: none;
+}
+
+.onrails_container {
+    padding-left: 60px;
+    padding-right: 60px;
+    @media screen and (max-width: 440px) {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+}
+.button.black {
+    color: white !important;
+    background: black !important;
+}
+
+.swiper-scrollbar-drag {
+    color: black;
+    background: black;
+    @media screen and (max-width: 440px) {
+        background: black !important;
+    }
+}
+
+.black {
+    color: black;
+}
+.black:hover {
+    color: black;
+}
+
+.yotpo .text-m {
+    font-size: 13px;
+    color: blue !important;
+}
+
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star {
+    color: black !important;
+}
+
+.headline {
+    & sup {
+        font-size: 24px;
+        position: relative;
+        top: -40px;
+    }
+    &.biggest {
+        font-size: 125px;
+        line-height: 105px;
+        letter-spacing: -4px;
+    }
+    &.normal {
+        font-size: 48px;
+        line-height: 54px;
+        letter-spacing: -1px;
+    }
+    &.small {
+        font-size: 34px;
+        line-height: 44px;
+    }
+}
+
+.font-normal {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: medium;
+}
+.font-normalsmall {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: medium;
+}
+.font-small {
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    @media screen and (max-width: 440px) {
+        font-size: 14px;
+    }
+}
+.font-bigger {
+    font-size: 20px;
+}
+.no-underline {
+    text-decoration: none;
+}
+
+.swiper-wrapper {
+    @media screen and (max-width:440px) {
+        margin-bottom: 20px;
+    }
+}
+
+.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    @media screen and (max-width: 440px) {
+        width: 100%;
+    }
+}

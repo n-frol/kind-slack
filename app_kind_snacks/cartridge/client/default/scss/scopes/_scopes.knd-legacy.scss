@@ -1,0 +1,5994 @@
+/* ============================================================================
+   KIND Legacy Styles
+   ============================================================================ */
+
+/**
+ * Styles imported from the old KIND site for components that are merely copied over rather than built out anew
+ */
+
+ $ns: s-knd-legacy;
+
+ .#{$ns} {
+     h1,
+     h2 {
+         text-transform: none;
+     }
+     span {
+         &.expand-symbol {
+             font-size: 22px;
+         }
+     }
+     ul {
+         list-style: none;
+     }
+     sup {
+         vertical-align: baseline;
+         position: relative;
+         top: -.7em;
+         font-size: .5em;
+         line-height: .8em;
+     }
+ 1
+     .opening-header {
+         font-family: $font-family-primary;
+         font-weight: 700;
+         font-size: 30px;
+         letter-spacing: -.04em;
+         line-height: .95em;
+         color: #000;
+     }
+     #kind-kids .print-btn a, #kind-kids .shop-btn a {
+         text-transform: uppercase !important;
+     }
+ 
+     .main-container,
+     &.main-container {
+         &.product-page-content {
+             background-color: #61b3e4;
+         }
+         &.cms-page-view {
+             p {
+                 font-family: unset;
+                 font-size: 16px;
+                 font-weight: normal;
+                 font-style: normal;
+                 font-stretch: normal;
+                 line-height: normal;
+                 letter-spacing: 0.3px;
+                 margin-top: 0;
+                 padding-bottom: 0;
+                 padding-top: 0;
+                 color: #000000;
+             }
+         }
+ 
+         a {
+             font-family: $font-family-primary;
+             font-weight: 700;
+             text-transform: lowercase;
+             text-decoration: none;
+             letter-spacing: inherit;
+             font-size: inherit;
+ 
+             &:not(.btn) {
+                 border-bottom: 2px solid #000;
+                 color: #000;
+                 line-height: 1.33;
+                 padding-bottom: 2px;
+             }
+         }
+         ul {
+             margin: 10px 0 0 40px;
+         }
+         p,
+         .std {
+             line-height: normal;
+             letter-spacing: 0.3px;
+             color: #000000;
+             margin-bottom: 0;
+             padding-top: 20px;
+             padding-bottom: 20px;
+         }
+ 
+         .product-details {
+             position: absolute;
+             top: 83%;
+             left: -5%;
+             text-align: center;
+             z-index: 3;
+             height: 210px;
+             width: 483px;
+         }
+ 
+         .community-faq p.comm-question {
+             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+             font-weight: bold;
+             font-style: normal;
+             font-stretch: normal;
+             line-height: 0.92;
+             color: rgba(0, 0, 0, 0.87);
+             padding-bottom: 5px;
+         }
+ 
+         .rotating-slider {
+             ul {
+                 &.direction-controls {
+                     li {
+                         &.left-arrow,
+                         &.right-arrow {
+                             position: absolute;
+                                 top: 129%;
+                             transform: translateY(-50%);
+                             z-index: 3;
+                         }
+                         &.left-arrow {
+                             right: 106%;
+                         }
+                         &.right-arrow {
+                             left: 113%;
+                         }
+                     }
+                 }
+             }
+         }
+ 
+         @media screen and (min-width: 768px) {
+             .container h2.opening-header  {
+                 font-size: 30px !important;
+                 letter-spacing: normal;
+             }
+ 
+             h2.section-header-head {
+                 font-size: 39px;
+                 letter-spacing: initial;
+             }
+         }
+     }
+ 
+     .main-container .std {
+         font: unset;
+     }
+ 
+     .container {
+         margin-top: 60px;
+     }
+ 
+ 
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 480px)
+     and (-webkit-min-device-pixel-ratio: 2)
+     and (orientation: portrait) {
+ 
+         #kidsnavbar {
+             display: none;
+         }
+     }
+ 
+     /* Landscape */
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 1024px)
+     and (-webkit-min-device-pixel-ratio: 2)
+     and (orientation: landscape) {
+ 
+         #kidsnavbar {
+             display: none;
+         }
+ 
+         .print-btn-contain {
+             margin: 34px auto 21px !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     #kidsnavbar {
+         overflow: hidden;
+         z-index: 11;
+         margin-top: -4px;
+         margin-left: 6px;
+     }
+ 
+     #kidsnavbar a {
+         float: left;
+         font-family: 'DK Canoodle';
+         font-size: 16px;
+         display: flex;
+             align-items: center;
+             justify-content: center;
+         color: #421b05;
+         line-height: 1;
+         text-align: center;
+         padding: 8px 4px 16px;
+         text-decoration: none;
+         text-transform: uppercase;
+         margin: 1px;
+         // font-family: 'DK Canoodle' !important;
+         background: url(../images/kindkids/fixed-nav-bk.png) no-repeat center !important;
+         background-size: 63px 79px !important;
+         width: 60px;
+         height: 79px;
+         border: none;
+         font-weight: 600 !important;
+ 
+         &:hover {
+             background: url(../images/kindkids/fixed-nav-bk-ovr.png) no-repeat center !important;
+             background-size: 63px 79px !important;
+         }
+ 
+     }
+ 
+     #kind-kids .active {
+         background: url(../images/kindkids/fixed-nav-bk-ovr.png) no-repeat center !important;
+         color: #421b05;
+     }
+ 
+ 
+     #kidsnavbar a div.meet {
+         padding-top: 12px;
+     }
+ 
+ 
+     #kidsnavbar a div.meet,  #kidsnavbar a .grown {
+         width: 100%;
+         height: 53px;
+         line-height: 15px;
+     }
+ 
+ 
+     #kidsnavbar a .grown {
+         padding-top: 8px;
+     }
+ 
+ 
+ 
+     #kidsnavbar a .story, #kidsnavbar a .game {
+         width: 90%;
+         padding-top: 13px;
+         padding-left: 4px;
+         line-height: 14px;
+     }
+ 
+ 
+     .content {
+         padding: 16px;
+     }
+ 
+     .sticky {
+         position: fixed;
+         top: 0;
+         width: 100%;
+ 
+         @media only screen and (min-width: 768px) {
+             top: 58px;
+         }
+     }
+ 
+ 
+ 
+ 
+     .sticky + #product-display-container {
+         background-position: center 88px, center 94px;
+         padding: 89px;
+     }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     .sticky + #product-display-container .prods.clearfix {
+         top: 62%;
+     }
+ 
+ 
+     #kind-kids {
+ 
+         margin:0;
+         background: #d24826; /* Old browsers */
+         background: -moz-linear-gradient(top, #d24826 0%, #e76529 32%, #ec9b21 100%); /* FF3.6-15 */
+         background: -webkit-linear-gradient(top, #d24826 0%,#e76529 32%,#ec9b21 100%); /* Chrome10-25,Safari5.1-6 */
+         background: linear-gradient(to bottom, #d24826 0%,#e76529 32%,#ec9b21 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d24826', endColorstr='#ec9b21',GradientType=0 ); /* IE6-9 */
+         width: 100%;
+ 
+     }
+ 
+ 
+ 
+     .clearfix::after {
+         content: "";
+         clear: both;
+         display: table;
+     }
+ 
+ 
+     /*** Product Showcase ***/
+ 
+     #product-display-container {
+         width: 100%;
+         height: 861px;
+         padding: 10px;
+         background: url(../images/kindkids/rayscopy.png) no-repeat center;
+         background-image: url(../images/kindkids/rayscopy.png);
+         background-position: center 4px;
+         background-repeat: no-repeat, no-repeat;
+         position: relative;
+         margin-top: 0;
+     }
+ 
+     .chocolate-chips-bg {
+ 
+         background: url(../images/kindkids/Chocolate_chips.png);
+         width: 100%;
+         height: 611px;
+         position: relative;
+         background-position: center;
+         background-repeat: no-repeat;
+         padding: 10px;
+         margin-top: 0;
+ 
+     }
+ 
+     #kind-kids .prods h1 {
+         text-align: center;
+         color: #fff;
+         font-size: 2.3em;
+         text-shadow: 2px 2px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         font-weight: 100;
+         padding-right: 38px;
+         padding-bottom: 10px;
+         text-transform: uppercase;
+         line-height: unset;
+         margin: 14px 0 22px;
+     }
+ 
+ 
+ 
+     .prods.clearfix img {
+         width: 100%;
+     }
+ 
+ 
+     .honey-oat-cnt {
+         width: 182px;
+         position: absolute;
+         top: 57px;
+         left: 20px;
+     }
+ 
+     .choc-chip-cnt {
+         width: 255px;
+         position: absolute;
+         top: 0px;
+         left: 220px;
+         z-index: 50;
+     }
+ 
+     .peanut-butter-cnt {
+         width: 182px;
+         position: absolute;
+         top: 49px;
+         left: 486px;
+     }
+ 
+ 
+     .prods.clearfix .p-items {
+         margin: 10px;
+     }
+ 
+ 
+     .prods.clearfix {
+         width: 728px;
+         position: absolute;
+         top: 52.5%;
+         left: 50%;
+         margin-left: -340px;
+         margin-top: -459px;
+     }
+ 
+     #kind-kids .p-items h4 {
+         text-align: center;
+         font-family: 'trade Gothic LT Std';
+         color: #34140e;
+         text-transform: uppercase;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 600;
+         margin-top: 10px;
+         margin-bottom: 10px;
+     }
+ 
+     .kind-kids-logo {
+         width: 99px;
+         margin: auto;
+         padding-right: 30px;
+     }
+ 
+     .shop-btn-contain, .print-btn-contain, .view-btn-contain  {
+ 
+         clear: left;
+         margin: auto;
+         width: 200px;
+     }
+ 
+ 
+     .print-btn-contain {
+ 
+         clear: left;
+         margin: 21px auto;
+         width: 200px;
+     }
+ 
+     .view-btn-contain {
+ 
+         clear: left;
+         margin: 20px auto;
+         width: 200px;
+     }
+ 
+ 
+     #kind-kids .print-btn, #kind-kids .shop-btn {
+         font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+         text-transform: uppercase;
+         color: #000;
+         background: #fff;
+         width: 199px;
+         height: 49px;
+         border: none;
+         font-weight: 600;
+         font-size: 12px;
+         cursor: pointer;
+ 
+     }
+ 
+     #highlights_contain {
+         position: relative;
+         height: 102px;
+         width: 531px;
+         margin: 37px 82px 80px;
+         padding-bottom: 12px;
+     }
+ 
+     #product-display-container .break hr {
+         width: 100%;
+         color: #eda330;
+         background-color: #eda330;
+         height: 2px;
+         border: 0;
+     }
+ 
+ 
+     /*** Product Showcase End ***/
+ 
+ 
+ 
+     .container-fluid {
+         padding-right: 15px;
+         padding-left: 15px;
+         margin-right: auto;
+         margin-left: auto;
+     }
+     .container-narrow {
+         @extend .st-container;
+         @extend .st-container--narrow;
+     }
+ 
+ 
+     .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+         display: block;
+         width: 100%;
+         max-width: 100%;
+         height: auto;
+     }
+ 
+     img {
+         vertical-align: middle;
+     }
+ 
+     img {
+         border: 0;
+     }
+ 
+ 
+     /** Meet The Kids **/
+ 
+     #kind-kids h2.meet-header {
+         margin-right: auto;
+         margin-left: auto;
+         padding-bottom: 35px;
+         padding-top: 30px;
+         text-align: center;
+         color: #ffd83d;
+         font-size: 4em;
+         text-shadow: 3px 4px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 4px;
+         word-spacing: 12px;
+         font-weight: 100;
+         text-transform: uppercase;
+         border-top: 2px solid #eda330;
+         width: 41%;
+         @media screen and (max-width:900px) {
+         margin-top:20%;
+         }
+         position: relative;
+ 
+     }
+ 
+     #kind-kids h2.story {
+         line-height: .92;
+         margin-bottom: 0;
+         margin-right: auto;
+         margin-left: auto;
+         padding-bottom: 35px;
+         padding-top: 30px;
+         text-align: center;
+         color: #ffd83d;
+         font-size: 4em;
+         text-shadow: 3px 4px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 4px;
+         word-spacing: 12px;
+         font-weight: 100;
+         text-transform: uppercase;
+         width: 100%;
+         position: relative;
+     }
+ 
+     .story-one,
+     .story-two {
+         height: 363px;
+ 
+         @include media-breakpoint-up(md) {
+             width: 477px;
+             height: 477px;
+         }
+ 
+         .tagline {
+             line-height: .92;
+             position: absolute;
+                 top: 340px;
+                 left: 91px;
+                 z-index: 11;
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+ 
+             @include media-breakpoint-down(sm) {
+                 bottom: 50px;
+                 top: auto !important;
+             }
+         }
+     }
+     .story-one {
+         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#592c0a+0,432005+100 */
+         background: url(../images/kindkids/KINDKids-StoryTime18bit.png) no-repeat center;
+         margin: auto;
+         position: relative;
+         background-size: 100%;
+         background-position: 0px 0px;
+         float: right;
+ 
+     }
+ 
+     .story-two {
+         margin: auto;
+         position: relative;
+         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#592c0a+0,432005+100 */
+         background: url(../images/kindkids/KINDKids-StoryTime28bit.png) no-repeat center;
+         background-size: 100%;
+         background-position: 0px 0px;
+         float: left;
+ 
+     }
+ 
+     .story-one .tagline h2 {
+         color: #fff;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+         margin: 0;
+     }
+ 
+ 
+     .story-one .tagline a {
+         display: block;
+         color: #fff;
+         font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+         text-decoration: none;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         font-size: 12px;
+         border-bottom: 2px solid #fff;
+         width: 74px;
+         padding-bottom: 2px;
+         text-align: center;
+         margin: auto;
+         padding-top: 18px;
+         font-weight: 500;
+     }
+ 
+     .story-two .tagline h2 {
+         color: #fff;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+         margin: 0;
+     }
+ 
+ 
+     .story-two .tagline a {
+         display: block;
+         color: #fff;
+         font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+         text-decoration: none;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         font-size: 12px;
+         border-bottom: 2px solid #fff;
+         width: 74px;
+         padding-bottom: 2px;
+         text-align: center;
+         margin: auto;
+         padding-top: 18px;
+         font-weight: 500;
+     }
+ 
+ 
+ 
+     .meet-kind-kids-contain {
+         width: 100%;
+     }
+ 
+     .meet-kind-kids-contain .column {
+         width: 264px;
+         height: 492px;
+         float: left;
+         margin: 1px;
+         background-image: url(../images/kindkids/column.png);
+         background-repeat: no-repeat;
+         position: relative;
+         background-position: center;
+         left:30px;
+         @media screen and (max-width: 440px) {
+             left: 0px !important;
+         }
+     }
+ 
+     .row {
+         &.superpowers {
+             justify-content: center;
+ 
+             > .col-lg-2.col-md-6 {
+                 display: flex;
+                 justify-content: center;
+ 
+                 @include media-breakpoint-up(lg) {
+                     display: block;
+                 }
+             }
+         }
+     }
+     .superhero {
+         display: flex;
+             justify-content: center;
+             flex-basis: 200px;
+         @include media-breakpoint-up(lg) {
+             display: block;
+             flex-basis: 200px;
+         }
+ 
+         .column {
+ 
+             @include media-breakpoint-up(lg) {
+                 width: 190px;
+             }
+         }
+     }
+ 
+     .kid-charact_choc_boy {
+         position: absolute;
+         top: 1px;
+         left: 6px;
+         z-index: 10;
+         @media screen and (max-width: 440px) {
+            top: -4px;
+            left: 12px;
+        }
+         @media screen and (min-width:1025px) {
+            top: 10px;
+            left: 7px;
+         }
+     }
+     .max_char {
+        top: 35px;
+        left:7px;
+        @media screen and (max-width: 440px) {
+            top: -10px;
+        }
+         @media screen and (min-width:1025px) {
+            top: 42px;
+        }
+     }
+ 
+     .kid-charact_peanut_girl {
+         position: absolute;
+         top: -59px;
+         left: 16px;
+         z-index: 10;
+         @media screen and (max-width: 440px) {
+             left: 46px;
+         }
+         @media screen and (min-width:1025px) {
+            left: 12px;
+        }
+     }
+ 
+     .kid-charact_honey_boy {
+         position: absolute;
+         top: 40px;
+         left: 22px;
+         z-index: 10;
+         @media screen and (max-width: 440px) {
+             top: -5px
+         }
+         @media screen and (min-width:1025px) {
+            top: -6px;
+             left: -18px;
+             max-width: 264px;
+         }
+     }
+ 
+     .kid-charact_kat_girl {
+         position: absolute;
+         top: -12px;
+         left: 20px;
+         z-index: 10;
+         @media screen and (max-width: 440px) {
+             top: -42px;
+        }
+         @include media-breakpoint-up(lg) {
+             top: -48px;
+             left: -15px;
+             max-width: 264px;
+         }
+     }
+ 
+     #kind-kids .meet-kind-kids-contain .bio {
+         width: 143px !important;
+         font-family: 'trade Gothic LT Std' !important;
+         font-weight: 300 !important;
+         font-style: normal !important;
+         font-size: 1em !important;
+         margin-top: 200px !important;
+         margin-left: auto !important;
+         margin-right: auto !important;
+         color: #300b02 !important;
+         text-align: center !important;
+         position: relative !important;
+         font: inherit !important;
+     }
+ 
+     .bio.extra-margn {
+         margin-top: 251px;
+     }
+ 
+     #kind-kids .bio h3 {
+         color: #fff;
+         font-size: 2.5em;
+         text-shadow: 2px 2px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 1px;
+         margin-top: -15px;
+         margin-bottom: 0;
+         line-height: normal;
+     }
+ 
+     h3.overlap {
+         position: absolute;
+         top: 0px;
+         left: 30px;
+         z-index: 20;
+     }
+ 
+ 
+     #kind-kids p.text-bio {
+         font-size: 1em !important;
+         margin-top: 11px;
+         margin-bottom: 11px;
+         font-family: 'trade Gothic LT Std';
+         line-height: normal;
+     }
+ 
+ 
+     .section-one h4, .section-two h4 {
+         text-transform: uppercase;
+         font-family: 'trade Gothic LT Std';
+         font-weight: bold;
+         margin-top: 15px;
+     }
+ 
+     #kind-kids h4.favorite {
+         font-size: 1.2em;
+         font-weight: bold;
+         padding-bottom: 5px;
+     }
+ 
+     .section-one.izzy {
+         padding-top: 24px !important;
+     }
+ 
+     .section-one h4 {
+         font-size: 1.2em;
+         margin-bottom: 0;
+ 
+     }
+ 
+     .section-two h4 {
+         margin-top: 0;
+         margin-bottom: -8px;
+     }
+ 
+     .section-one p {
+         margin-top: 11px;
+     }
+ 
+ 
+ 
+     #kind-kids .kids-games h2.maze-text, #kind-kids .kids-games h2.word-text, #kind-kids .kids-games h2.numb-text, #kind-kids .kids-games h2.color-text {
+         width: 130px;
+         margin-left: auto;
+         margin-right: auto;
+         position: relative;
+         top: 50%;
+         transform: translateY(-50%);
+         font-size: 3.3em;
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+         text-align: center;
+         position: absolute;
+         top: 48%;
+         left: 33%;
+     }
+ 
+ 
+ 
+     #kind-kids .kids-games h2.maze-text {
+         color: #faeaa9;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(176, 85, 3, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+     }
+ 
+ 
+     #kind-kids .kids-games h2.word-text {
+         color: #f8d488;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(107, 29, 0, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+     }
+ 
+     #kind-kids .kids-games h2.numb-text {
+         color: #fad5a9;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(75, 33, 2, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+     }
+ 
+ 
+     #kind-kids .kids-games h2.color-text {
+         color: #f5c08b;
+         font-size: 3.3em;
+         text-shadow: 3px 3px 0px rgba(20, 9, 0, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         text-transform: uppercase;
+         font-weight: 300;
+     }
+ 
+     .peanut-girl-left {
+         top: 80%;
+         left: 7%;
+         position: absolute;
+         z-index: 10;
+     }
+ 
+     .choc-girl-right {
+         top: -129px;
+         left: 58%;
+         position: absolute;
+         z-index: 100;
+     }
+ 
+     #kind-kids h2.kind-kids-title {
+         margin-right: auto;
+         margin-left: auto;
+         padding-bottom: 18px;
+         padding-top: 30px;
+         text-align: center;
+         color: #ffd83d;
+         font-size: 4em;
+         text-shadow: 3px 4px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 4px;
+         word-spacing: 12px;
+         font-weight: 100;
+         text-transform: uppercase;
+         width: 569px;
+         margin-top: 20px;
+     }
+ 
+ 
+ 
+     /**** Choc Girl Character Scale ****/
+ 
+     @media (min-width: 1559px) and (max-width:1644px)
+     {
+         .choc-girl-right {
+             left: 56% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     @media (min-width: 1400px) and (max-width:1552px)
+     {
+         .choc-girl-right {
+             left: 53% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+ 
+     @media (min-width: 1300px) and (max-width:1400px)
+     {
+         .choc-girl-right {
+             left: 50% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     @media (min-width: 1200px) and (max-width:1300px)
+     {
+         .choc-girl-right {
+             left: 47% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     @media (min-width: 1100px) and (max-width:1200px)
+     {
+         .choc-girl-right {
+             left: 40% !important;
+ 
+         }
+ 
+     }
+ 
+     @media (min-width: 900px) and (max-width:1100px)
+     {
+         .choc-girl-right {
+             left: 34% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+ 
+ 
+     @media (min-width: 1300px) and (max-width:1400ppx)
+     {
+         .choc-girl-right {
+             left: 51% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     @media (min-width: 1605px) and (max-width:1713px)
+     {
+         .choc-girl-right {
+             left: 58% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+     @media (min-width: 1412px) and (max-width:1424px)
+     {
+         .choc-girl-right {
+             left: 51% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+ 
+     /**** Smart Device Size ****/
+ 
+     /* Portrait and Landscape */
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 736px)
+     and (-webkit-min-device-pixel-ratio: 3) {
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+ 
+             width:100%;
+ 
+         }
+ 
+ 
+ 
+     }
+ 
+     /* ----------- iPhone 4 and 4S ----------- */
+ 
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 480px)
+     and (-webkit-min-device-pixel-ratio: 2) {
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+ 
+             width: 100%;
+ 
+         }
+ 
+ 
+     }
+ 
+     /* ----------- iPhone X ----------- */
+ 
+     /* Landscape and Portrait */
+ 
+     @media only screen
+     and (min-device-width: 375px)
+     and (max-device-width: 812px)
+     and (-webkit-min-device-pixel-ratio: 3) {
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+ 
+     }
+ 
+ 
+     /* ----------- iPhone X ----------- */
+ 
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 374px)
+     and (max-device-width: 812px)
+     and (orientation: portrait) {
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top: 20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 363px;
+             margin: 93px auto -25px 22%;
+             padding-bottom: 12px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 30% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             line-height: 48px;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+     }
+ 
+     /* Landscape */
+     @media only screen
+     and (min-device-width: 375px)
+     and (max-device-width: 812px)
+     and (-webkit-min-device-pixel-ratio: 3)
+     and (orientation: landscape) {
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 21px !important;
+         }
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 52px !important;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 423px;
+             margin: 103px auto -25px 17%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 32% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0;
+             width: 560px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+ 
+ 
+     }
+ 
+ 
+ 
+     /* ----------- iPhone 6+, 7+ and 8+ ----------- */
+ 
+ 
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 414px)
+     and (max-device-width: 736px)
+     and (-webkit-min-device-pixel-ratio: 3)
+     and (orientation: portrait) {
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: -58px !important;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 363px;
+             margin: 93px auto -25px 22%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 30% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 340px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+     }
+ 
+ 
+     /* Landscape */
+ 
+ 
+     @media only screen
+     and (min-device-width: 414px)
+     and (max-device-width: 736px)
+     and (-webkit-min-device-pixel-ratio: 3)
+     and (orientation: landscape) {
+ 
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 21px !important;
+         }
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 52px !important;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 423px;
+             margin: 103px auto -25px 17%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 32% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0;
+             width: 560px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+ 
+     }
+ 
+ 
+     /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+ 
+ 
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 375px)
+     and (max-device-width: 667px)
+     and (orientation: portrait) {
+ 
+         .story-one, .story-two {
+             height: 363px;
+         }
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 317px !important;
+             overflow-x: hidden;
+             height: 367px;
+         }
+ 
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 317px !important;
+             overflow-x: hidden;
+             height: 367px;
+         }
+ 
+ 
+         #kind-kids .modal-content h2 {
+ 
+             width: 100% !important;
+             word-spacing: -12px!important;
+ 
+         }
+ 
+         .how-it-began-text, .the-magic-baseball-text {
+             float: right;
+             height: 401px;
+             overflow: scroll;
+             overflow-x: hidden;
+         }
+ 
+         .how-it-began-text {
+             width: 370px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+ 
+             word-spacing: -12px !important;
+             width: 100% !important;
+ 
+         }
+ 
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -47px;
+             margin-bottom: 0px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 363px;
+             margin: 93px auto -25px 22%;
+             padding-bottom: 12px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 32% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 340px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content h2 {
+ 
+             width: 100% !important;
+             word-spacing: -12px!important;
+ 
+         }
+ 
+         .how-it-began-text, .the-magic-baseball-text {
+             float: right;
+             height: 401px;
+             overflow: scroll;
+             overflow-x: hidden;
+         }
+ 
+         .how-it-began-text {
+             width: 370px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+ 
+             word-spacing: -12px !important;
+             width: 100% !important;
+ 
+         }
+ 
+ 
+ 
+     }
+ 
+ 
+     /* Landscape */
+     @media only screen
+     and (min-device-width: 375px)
+     and (max-device-width: 667px)
+ 
+     and (orientation: landscape) {
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 21px !important;
+         }
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 599px !important;
+             height: 200px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -449px;
+             left: 30%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: -5px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 423px;
+             margin: 53px auto -25px 17%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 30% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 560px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+ 
+     }
+ 
+     /* ----------- Pixel XL ----------- */
+     @media only screen
+     and (min-width: 411px)
+     and (max-width: 823px)
+     and (orientation: landscape)
+     {
+ 
+ 
+         .prods.clearfix {
+             width: 728px;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             margin-left: -340px;
+             margin-top: -409px;
+         }
+ 
+ 
+ 
+ 
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+         .story-one, .story-two {
+             float: none;
+         }
+ 
+         .story-one, .story-two {
+             margin-top: 20px;
+         }
+ 
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 599px !important;
+             height: 200px !important;
+             overflow-x: hidden;
+         }
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 599px !important;
+             height: 200px !important;
+             overflow-x: hidden;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+ 
+         .column {
+             margin-left: 22% !important;
+         }
+ 
+ 
+     }
+ 
+ 
+ 
+     /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+ 
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 568px)
+     and (device-aspect-ratio: 40/71)
+     and (orientation: portrait) {
+ 
+ 
+         .col-xs-6 {
+ 
+             max-width: 60%;
+         }
+ 
+         .container.meet-kind-kids-contain.clearfix {
+             margin-top:  -192px !important;
+         }
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 5% !important;
+         }
+ 
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px !important;
+             margin-bottom: 40px !important;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 182px;
+             top: 287px;
+             width: 120px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 247px;
+             top: 275px;
+             width: 170px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 120px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 287px;
+             margin: 93px auto -25px 27%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 33% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 277px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+ 
+     }
+ 
+     /* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+     /* Landscape */
+     @media only screen
+     and (min-device-width: 320px)
+     and (max-device-width: 568px)
+     and (orientation: landscape) {
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 1px !important;
+         }
+ 
+ 
+         .choc-girl-right {
+             top: -427px;
+             left: 31%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -28px;
+             margin-bottom: 40px;
+         }
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 423px;
+             margin: 103px auto -25px 17%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 30% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 470px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 31px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+ 
+         .container.meet-kind-kids-contain.clearfix {
+             margin-top:  27px !important;
+         }
+ 
+ 
+         #product-display-container {
+             width: 100%;
+             height: 757px;
+             padding: 10px;
+             background: url(../images/kindkids/rayscopy.png) no-repeat center;
+             background-position: center -14px !important;
+             background-repeat: no-repeat, no-repeat;
+             position: relative;
+             margin-top: 0px;
+         }
+ 
+ 
+ 
+     }
+ 
+     /* ----------- Misc Landscape ----------- */
+ 
+     @media only screen and (max-width: 731px) and (orientation: landscape) {
+ 
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 549px !important;
+             height: 145px !important;
+             overflow-x: hidden
+         }
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 549px !important;
+             height: 145px !important;
+             overflow-x: hidden
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+ 
+             width: 459px !important;
+ 
+         }
+ 
+         #kind-kids .modal-content h2 {
+ 
+             width: 459px !important;
+ 
+         }
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 89% !important;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+ 
+         .story-two, .story-one {
+ 
+             float: none;
+         }
+ 
+         .story-two  {
+ 
+             margin-top: 30px;
+         }
+ 
+ 
+         div#read-one, div#read-two {
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+ 
+ 
+ 
+         .shop-btn-contain {
+ 
+             margin: 49% 41% auto auto;
+         }
+ 
+         .prods.clearfix {
+             width: 728px;
+             position: absolute;
+             top: 58%;
+             left: 50%;
+             margin-left: -340px;
+             margin-top: -459px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 161px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 360px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+         .container.meet-kind-kids-contain.clearfix[style] {
+             margin-top: 210px !important;
+         }
+ 
+         .column {
+             margin-left: 50px !important;
+         }
+ 
+     }
+ 
+ 
+ 
+     /* ----------- Galaxy S4, S5 and Note 3 ----------- */
+ 
+ 
+     @media screen and (max-width: 360px) {
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+         .story-one, .story-two {
+             height: 348px;
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+             font-size: 3em !important;
+         }
+ 
+ 
+         .modal-content .how-it-began-text {
+             width: 100% !important;
+             height: 360px;
+             overflow-x: hidden;
+         }
+ 
+ 
+         .modal-content-two .the-magic-baseball-text {
+             width: 100% !important;
+             height: 360px;
+             overflow-x: hidden;
+         }
+ 
+ 
+         #kind-kids .modal-content h2 {
+ 
+             width: 100% !important;
+             word-spacing: -12px!important;
+ 
+         }
+ 
+         .how-it-began-text, .the-magic-baseball-text {
+             float: right;
+             height: 401px;
+             overflow: scroll;
+             overflow-x: hidden;
+         }
+ 
+         .how-it-began-text {
+             width: 370px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+ 
+             word-spacing: -12px !important;
+             width: 100% !important;
+ 
+         }
+ 
+ 
+         .meet-kind-kids-contain .column {
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 0px;
+         }
+ 
+ 
+         .choc-girl-right {
+             top: -379px;
+             left: 29%;
+             position: absolute;
+             width: 70%;
+             z-index: 100;
+         }
+ 
+         #kind-kids h2.kind-kids-title {
+             width: 100%;
+             margin-top: -47px;
+             margin-bottom: 3px;
+         }
+ 
+ 
+ 
+         .kind-kids-logo {
+             width: 100px;
+             margin: 97px 43% 0% 42%;
+             padding-right: 31px;
+         }
+ 
+         #kind-kids .prods h1 {
+            padding-top:20px;
+             font-size: 60px;
+         }
+ 
+         .p-items.choc-chip-cnt h4, .p-items.honey-oat-cnt h4, .p-items.peanut-butter-cnt h4 {
+             display: none;
+         }
+ 
+         .p-items.honey-oat-cnt {
+             position: absolute;
+             left: 179px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .p-items.choc-chip-cnt {
+             position: absolute;
+             left: 232px;
+             top: 243px;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .p-items.peanut-butter-cnt {
+             position: absolute;
+             left: 339px;
+             top: 287px;
+             width: 140px;
+         }
+ 
+         .shop-btn-contain {
+             clear: left;
+             width: 200px;
+             margin-left: auto;
+             margin-right: 39%;
+             margin-top: 236px;
+         }
+ 
+ 
+ 
+         #highlights_contain {
+             position: relative;
+             height: 102px;
+             width: 297px;
+             margin: 91px auto -25px 27%;
+             padding-bottom: 12px;
+         }
+ 
+ 
+         .shop-btn-contain {
+             clear: left;
+             margin: 32% 32% -5% 33%;
+             width: 200px;
+         }
+ 
+ 
+ 
+         div#read-one, div#read-two {
+ 
+             padding-top: 10px !important;
+ 
+         }
+ 
+ 
+         #kind-kids .kind-community {
+             text-align: left;
+             width: 80% !important;
+ 
+         }
+ 
+         #kind-kids .get-involved h1 {
+             color: #fff;
+             font-size: 4em;
+             letter-spacing: 1px;
+             font-family: 'DK Canoodle';
+             font-weight: 200;
+             text-align: center;
+             padding: 44px 0 !important;
+             width: 340px;
+             margin: auto;
+         }
+ 
+         #kind-kids .empatico {
+             text-align: center;
+             width: 100% !important;
+             padding: 8px 9px 5px 10px;
+             font-family: 'trade Gothic LT Std';
+         }
+ 
+         .modal-content {
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd7bc !important;
+             background-size: 482px, 704px;
+             background-position: -17px 70px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content h2 {
+ 
+             width: 100% !important;
+             word-spacing: -12px!important;
+ 
+         }
+ 
+         .how-it-began-text, .the-magic-baseball-text {
+             float: right;
+             height: 401px;
+             overflow: scroll;
+             overflow-x: hidden;
+         }
+ 
+         .how-it-began-text {
+             width: 370px !important;
+         }
+ 
+ 
+         .modal-content-two {
+             position: absolute;
+             top: 60%;
+             left: 50%;
+             transform: translate(-50%, -50%);
+             background-color: white;
+             padding: 1rem 1.5rem;
+             width: 96% !important;
+             height: 35em;
+             border-radius: 0.5rem;
+             background: #ffd6bb !important;
+             background-size: 482px, 704px;
+             background-position: 29px 150px, 5px -3px;
+         }
+ 
+ 
+         #kind-kids .modal-content-two h2 {
+ 
+             word-spacing: -12px !important;
+             width: 100% !important;
+ 
+         }
+ 
+         .story-one .tagline.mobile {
+             position: absolute;
+             top: 63%;
+             left: 1%;
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+             z-index: 11;
+             width: 100%;
+         }
+ 
+         .story-two .tagline.mobile {
+             position: absolute;
+             top: 63%;
+             left: 1%;
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+             z-index: 11;
+             width: 100%;
+         }
+ 
+ 
+     }
+ 
+ 
+     /* ----------- iPad Pro 12.9" ----------- */
+ 
+     /* Portrait and Landscape */
+     @media only screen
+     and (min-device-width: 1024px)
+     and (max-device-width: 1366px)
+     and (-webkit-min-device-pixel-ratio: 2) {
+ 
+ 
+         .peanut-girl-left {
+             display: none !important;
+         }
+ 
+         .choc-girl-right {
+             display: none !important;
+         }
+ 
+ 
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+         }
+ 
+ 
+         .story-one, .story-two {
+             height: 477px !important;
+             margin-top: 30px;
+             float: none;
+         }
+ 
+     }
+ 
+ 
+     /* ----------- iPad Pro 12.9" ----------- */
+ 
+     /* Portrait and Landscape */
+     @media only screen
+     and (min-device-width: 1024px)
+     and (max-device-width: 1366px)
+     and (orientation: landscape)
+     and (-webkit-min-device-pixel-ratio: 2) {
+ 
+ 
+ 
+         .story-one, .story-two {
+ 
+             float: none !important;
+         }
+ 
+         .print-btn-contain {
+ 
+             margin: 35px auto 11px;
+ 
+         }
+ 
+     }
+ 
+ 
+ 
+     /* ----------- iPad Pro 12.9" ----------- */
+     /* Landscape */
+     /* Declare the same value for min- and max-width to avoid colliding with desktops */
+     /* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+     @media only screen
+     and (min-device-width: 1366px)
+     and (max-device-width: 1366px)
+     and (orientation: landscape)
+     and (-webkit-min-device-pixel-ratio: 2) {
+ 
+ 
+         #highlights_contain {
+             margin: 37px auto 16px !important;
+             padding-bottom: 12px;
+         }
+ 
+ 
+ 
+         .prods.clearfix {
+             width: 728px;
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             margin-left: -340px;
+             margin-top: -409px !important;
+         }
+ 
+         .meet-kind-kids-contain .column {
+             width: 264px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+             margin-left: 70px !important;
+         }
+ 
+ 
+     }
+ 
+ 
+ 
+ 
+     /* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+     /* Portrait */
+     @media only screen
+     and (min-device-width: 768px)
+     and (max-device-width: 1024px)
+     and (orientation: portrait) {
+ 
+ 
+ 
+         .kidspackagecontainer-mobile  {
+             display: block;
+         }
+ 
+         .kidspackagecontainer,  #highlights_contain, .shop-btn-contain  {
+             display: none;
+         }
+ 
+ 
+ 
+         .kidspackagecontainer-mobile {
+             position: relative;
+ 
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt, .kidspackagecontainer-mobile .p-items.choc-chip-cnt, .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             position: absolute;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt {
+             left: 22%;
+             top: 43%;
+             width: 140px;
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.choc-chip-cnt {
+             left: 32%;
+             top: 37%;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             left: 49.5%;
+             top: 43%;
+             width: 140px;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .shop-btn-contain-mobile {
+ 
+             clear: unset;
+             margin: auto;
+             width: 201px;
+             position: absolute;
+             top: 430px;
+             left: 32%;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile #highlights_contain-mobile {
+ 
+             position: absolute;
+             height: 102px;
+             max-width:  423px;
+             /* margin: 93px auto -24px 22%; */
+             margin-top: 52%;
+             left: 17%;
+ 
+         }
+ 
+ 
+         .peanut-girl-left {
+             display: none;
+         }
+ 
+         .print-btn-contain {
+             margin: 35px auto 11px;
+         }
+ 
+         #kind-kids .kids-games h2.maze-text, #kind-kids .kids-games h2.word-text, #kind-kids .kids-games h2.numb-text, #kind-kids .kids-games h2.color-text {
+             font-size: 3em !important;
+             top: 37% !important;
+             left: 34% !important;
+ 
+         }
+ 
+         .choc-girl-right {
+             display: none !important;
+         }
+ 
+         .story-one, .story-two {
+             height: 763px;
+         }
+ 
+ 
+         .story-one .tagline.mobile h2, .story-two .tagline.mobile h2 {
+             font-size: 3.3em !important;
+         }
+ 
+ 
+         .meet-kind-kids-contain .column {
+             width: 200px;
+             height: 492px;
+             float: left;
+             background-image: url(../images/kindkids/column.png);
+             background-repeat: no-repeat;
+             position: relative;
+             background-position: center;
+         }
+ 
+     }
+ 
+ 
+ 
+ 
+     /* Landscape */
+     @media only screen
+     and (min-device-width: 768px)
+     and (max-device-width: 1024px)
+     and (orientation: landscape) {
+ 
+         .kidspackagecontainer-mobile {
+             display: block !important;
+         }
+ 
+         .kidspackagecontainer, #highlights_contain, .shop-btn-contain {
+             display: none !important;
+         }
+ 
+         .kidspackagecontainer-mobile {
+             position: relative;
+ 
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt, .kidspackagecontainer-mobile .p-items.choc-chip-cnt, .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             position: absolute !important;
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt {
+             left: 22% !important;
+             top: 43% !important;
+             width: 140px !important;
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.choc-chip-cnt {
+             left: 32% !important;
+             top: 37% !important;
+             width: 190px !important;
+             z-index: 10 !important;
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             left: 49.5% !important;
+             top: 43% !important;
+             width: 140px !important;
+         }
+ 
+         .kidspackagecontainer-mobile .shop-btn-contain-mobile {
+ 
+             clear: unset !important;
+             margin: auto !important;
+             width: 201px !important;
+             position: absolute !important;
+             top: 430px !important;
+             left: 32% !important;
+         }
+ 
+         .kidspackagecontainer-mobile #highlights_contain-mobile {
+ 
+             position: absolute !important;
+             height: 102px !important;
+             max-width: 423px !important;
+             /* margin: 93px auto -24px 22%; */
+             margin-top: 42% !important;
+             left: 17% !important;
+             left: 17% !important;
+             left: 17% !important;
+ 
+         }
+ 
+     }
+ 
+ 
+ 
+     @media only screen
+     and (min-device-width : 768px)
+     and (max-device-width : 1024px)
+     and (orientation : landscape)
+     and (-webkit-min-device-pixel-ratio: 2) {
+ 
+         .kidspackagecontainer-mobile {
+             display: block !important;
+         }
+ 
+         .kidspackagecontainer, #highlights_contain, .shop-btn-contain {
+             display: none !important;
+         }
+ 
+ 
+     }
+ 
+ 
+ 
+     @media only screen
+     and (min-device-width : 768px)
+     and (max-device-width : 1024px)
+     and (orientation : landscape)
+     and (-webkit-min-device-pixel-ratio: 1) {
+ 
+         .kidspackagecontainer-mobile {
+             display: block !important;
+         }
+ 
+         .kidspackagecontainer, #highlights_contain, .shop-btn-contain {
+             display: none !important;
+         }
+ 
+ 
+     }
+ 
+ 
+ 
+ 
+ 
+     /* ----------- Desktop ----------- */
+ 
+ 
+ 
+ 
+     @media (max-width: 950px) and (orientation: portrait) {
+ 
+ 
+         #kidsnavbar {
+             display: none;
+         }
+ 
+         #kind-kids h2.meet-header {
+             width: 100%;
+         }
+ 
+         h2.story {
+             margin-top: -54px;
+         }
+ 
+         .parents-subtext {
+             padding-bottom: 9px !important;
+ 
+         }
+ 
+         #product-display-container {
+             width: 100%;
+             height: 757px;
+             padding: 10px;
+             background: url(../images/kindkids/rayscopy.png) no-repeat center;
+             background-position: center -76px;
+             background-repeat: no-repeat, no-repeat;
+             position: relative;
+             margin-top: 0px;
+         }
+ 
+         .container.meet-kind-kids-contain.clearfix {
+             margin-top: -164px;
+         }
+ 
+ 
+         .story-one, .story-two {
+ 
+             width: 100%;
+         }
+ 
+         .story-two .tagline {
+             position: absolute;
+             top: 74%;
+             left: 1%;
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+             z-index: 11;
+             width: 100%;
+         }
+ 
+         .story-one .tagline {
+             position: absolute;
+             top: 73%;
+             left: 1%;
+             padding-bottom: 5px;
+             margin-bottom: 5px;
+             z-index: 11;
+             width: 100%;
+         }
+ 
+         .story-one .tagline.mobile h2, .story-two .tagline.mobile h2 {
+             font-size: 2.1em;
+             text-align: center;
+         }
+ 
+         .print-kids .kids-games {
+ 
+             width: 50% !important;
+ 
+         }
+ 
+         #kind-kids .kids-games h2.maze-text, #kind-kids .kids-games h2.word-text, #kind-kids .kids-games h2.numb-text, #kind-kids .kids-games h2.color-text {
+             font-size: 2.3em;
+             top: 37%;
+             left: 19%;
+         }
+ 
+         .peanut-girl-left,  .choc-girl-right {
+             display: none;
+         }
+ 
+         .print-btn-contain {
+             margin: 34px auto 21px;
+         }
+ 
+ 
+ 
+     }
+ 
+ 
+ 
+     @media only screen and (max-width: 1050px) and (orientation: landscape) {
+ 
+         .peanut-girl-left,  .choc-girl-right {
+             display: none;
+         }
+ 
+     }
+ 
+     @media only screen and (max-width: 1050px) and (orientation: portrait) {
+         .peanut-girl-left,  .choc-girl-right {
+             display: none;
+         }
+ 
+     }
+ 
+ 
+     @media only screen and (max-width: 950px) and (orientation: landscape) {
+ 
+         #product-display-container {
+             width: 100%;
+             height: 850px;
+             padding: 10px;
+             background: url(../images/kindkids/rayscopy.png) no-repeat center;
+             background-position: center 64px;
+             background-repeat: no-repeat, no-repeat;
+             position: relative;
+             margin-top: 0px;
+         }
+ 
+         #kind-kids h2.meet-header {
+             width: 100%;
+         }
+ 
+         .container.meet-kind-kids-contain.clearfix {
+ 
+             margin-top: -143px;
+ 
+         }
+ 
+         .print-kids .kids-games {
+ 
+             width: 50% !important;
+             display: inline-grid;
+             height: fit-content;
+ 
+         }
+ 
+         #kind-kids .kids-games h2.maze-text, #kind-kids .kids-games h2.word-text, #kind-kids .kids-games h2.numb-text, #kind-kids .kids-games h2.color-text {
+             font-size: 3em;
+             top: 37%;
+             left: 29%;
+ 
+         }
+ 
+         .peanut-girl-left,  .choc-girl-right {
+             display: none;
+         }
+ 
+ 
+ 
+     }
+ 
+     @media only screen and (min-width: 1025px) {
+         .row.superpowers {
+             margin-left: auto !important;
+             margin-right: auto !important;
+         }
+ 
+         .container.meet-kind-kids-contain.clearfix {
+             margin-top: -90px;
+             padding-left: 3%;
+         }
+ 
+         .print-btn-contain {
+             margin: 40px auto -3px;
+         }
+ 
+     }
+ 
+ 
+ 
+     #kind-kids .kids-games a.gamelink {
+         border: none;
+         padding: unset;
+         font-stretch: unset;
+         text-transform: unset;
+         font-family: unset;
+         font-weight: unset;
+         text-transform: unset;
+         text-decoration: none;
+         line-height: unset;
+         letter-spacing: inherit;
+         font-size: inherit;
+         color: inherit;
+     }
+ 
+ 
+     .kind-community {
+         text-align: left;
+         width: 641px;
+     }
+ 
+ 
+     .auto-margin {
+ 
+         margin: auto;
+     }
+ 
+     #kind-kids .kind-community {
+         text-align: left;
+         width: 641px;
+         border-bottom: 2px solid #e15a00;
+         border-top: 2px solid #e15a00;
+         padding: 31px 9px 31px 10px;
+         font-family: 'Shadows Into';
+         font-weight: bold !important;
+         margin-bottom: 3%;
+         margin-top: 3%;
+     }
+ 
+     #kind-kids .kind-community.auto-margin p {
+         color: #fff;
+         padding-top: 10px;
+         padding-bottom: 10px;
+         font-weight: bold;
+         letter-spacing: 1px;
+     }
+ 
+     .get-involved {
+         background: #000;
+     }
+ 
+ 
+     #kind-kids .get-involved h1 {
+         color: #fff;
+         font-size: 4em;
+         letter-spacing: 1px;
+         font-family: 'DK Canoodle';
+         font-weight: 200;
+         text-align: center;
+         padding: 27px 0 44px;
+         margin: auto;
+     }
+ 
+     #kind-kids .empatico {
+         text-align: center;
+         width: 521px;
+         padding: 5px 9px 5px 10px;
+         font-family: 'trade Gothic LT Std';
+     }
+ 
+ 
+     #kind-kids .empatico.auto-margin p {
+         color: #000;
+         padding-top: 30px;
+         padding-bottom: 30px;
+         font-weight: 100;
+         letter-spacing: 1px;
+     }
+ 
+     #kind-kids .empatico h2 {
+         color: #fff;
+         font-size: 3.7em;
+         text-shadow: 2px 3px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 2px;
+         margin-top: -15px;
+         margin-bottom: 0;
+         line-height: normal;
+         font-weight: 100;
+     }
+ 
+ 
+ 
+     /********* Modal Styling ***********/
+ 
+ 
+     .kidsmodal {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         opacity: 0;
+         visibility: hidden;
+         transform: scale(1.1);
+         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+     }
+ 
+     .kidsmodaltwo {
+         position: fixed;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         opacity: 0;
+         visibility: hidden;
+         transform: scale(1.1);
+         transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+     }
+ 
+ 
+ 
+ 
+     .modal-content {
+         position: absolute;
+         top: 60%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background-color: white;
+         display: block;
+         padding: 1rem 1.5rem;
+         width: 40em;
+         height: 35em;
+         border-radius: 0.5rem;
+         background: url(../images/kindkids/HowItBegan_OverlayBG8bit_girl.png) no-repeat center, #ffd7bc ;
+         background-size: 634px;
+         background-position: 4px 5px;
+     }
+ 
+ 
+ 
+ 
+ 
+        .modal-content-two {
+            position: absolute;
+            top: 60%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background-color: white;
+         padding: 1rem 1.5rem;
+         width: 40em;
+         height: 35em;
+         border-radius: 0.5rem;
+         background: url(../images/kindkids/MagicBaseball_OverlayBG8bit.png) no-repeat center, #ffd6bb;
+         background-size: 634px;
+         background-position: 4px 5px;
+     }
+ 
+ 
+ 
+     #kind-kids .modal-content h2 {
+         margin-right: auto;
+         margin-left: auto;
+         padding-bottom: 35px;
+         padding-top: -10px;
+         text-align: center;
+         color: #feb900;
+         font-size: 4em;
+         text-shadow: 2px 2px 0px rgba(159, 47, 18, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 4px;
+         word-spacing: -6px;
+         font-weight: 100;
+         text-transform: uppercase;
+         width: 569px;
+         margin-top: 7px;
+     }
+ 
+ 
+     #kind-kids .modal-content-two h2 {
+         margin-right: auto;
+         margin-left: auto;
+         padding-bottom: 35px;
+         padding-top: -10px;
+         text-align: center;
+         color: #e4af7d;
+         font-size: 4em;
+         text-shadow: 1px 2px 0px rgba(84, 41, 9, 1);
+         font-family: 'DK Canoodle';
+         letter-spacing: 4px;
+         word-spacing: -6px;
+         font-weight: 100;
+         text-transform: uppercase;
+         width: 569px;
+         margin-top: 7px;
+     }
+ 
+ 
+ 
+ 
+     .close-button-kids {
+         float: left;
+         width: 60px;
+         height: 62px;
+         line-height: 1.5rem;
+         text-align: center;
+         cursor: pointer;
+         border-radius: 0.25rem;
+         background-color: white;
+         background: url(../images/kindkids/close-btn.png) no-repeat center;
+         background-size: 37px;
+         background-position: -1px 1px;
+         position: absolute;
+         top: 2%;
+         left: 1%;
+     }
+ 
+ 
+ 
+     .close-button-kids-two {
+         float: left;
+         width: 60px;
+         height: 62px;
+         line-height: 1.5rem;
+         text-align: center;
+         cursor: pointer;
+         border-radius: 0.25rem;
+         background-color: white;
+         background: url(../images/kindkids/close-btn.png) no-repeat center;
+         background-size: 37px;
+         background-position: -1px 1px;
+         position: absolute;
+         top: 2%;
+         left: 1%;
+     }
+ 
+ 
+     .show-modal {
+         opacity: 1;
+         visibility: visible;
+         transform: scale(1.0);
+         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+         z-index: 999;
+     }
+ 
+     .show-modal-two {
+         opacity: 1;
+         visibility: visible;
+         transform: scale(1.0);
+         transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+         z-index: 999;
+     }
+ 
+ 
+     .trigger, .triggertwo {
+         cursor: pointer;
+     }
+ 
+     .how-it-began-text, .the-magic-baseball-text {
+         float: right;
+         height: 401px;
+         overflow: scroll;
+         overflow-x: hidden;
+     }
+ 
+     .how-it-began-text {
+         width: 322px;
+     }
+ 
+     .the-magic-baseball-text {
+         width: 322px;
+     }
+ 
+     #kind-kids .how-it-began-text p, #kind-kids .the-magic-baseball-text p {
+         font-family: 'trade Gothic LT Std';
+         font-weight: 300;
+         font-style: normal;
+         font-size: 1em;
+         color: #592c0a;
+         margin-left: 5px;
+         padding: 1px 42px 17px;
+     }
+ 
+ 
+     div#read-one, div#read-two {
+         display: block;
+         color: #fff;
+         font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+         text-decoration: none;
+         text-transform: uppercase;
+         letter-spacing: 1px;
+         font-size: 12px;
+         border-bottom: 2px solid #fff;
+         width: 74px;
+         padding-bottom: 2px;
+         text-align: center;
+         margin: auto;
+         padding-top: 18px;
+         font-weight: 500;
+         cursor: pointer;
+     }
+ 
+     #kind-kids .active a{
+         color: #c3095f!important;
+     }
+     #kind-kids .active a:after{
+         content: '';
+         border-bottom: 2px solid #c3095f;
+         display: block;
+         width: 100%;
+         position: relative;
+         top: 8px;
+     }
+ 
+     .print-kids .kids-games {
+ 
+         width: 25%;
+         float: left;
+         position: relative;
+         display: inline-grid;
+         height: fit-content;
+ 
+     }
+ 
+ 
+     .print-container.print-kids.clearfix {
+         flex-wrap: wrap;
+         margin-right: -15px;
+         margin-left: -15px;
+         min-width: 100%;
+         display: flex;
+         margin-top: 20px;
+     }
+ 
+     #kind-kids .empatico p {
+         font-size: 20px;
+     }
+ 
+     #kind-kids .visit-empatico {
+         padding-bottom: 40px;
+     }
+ 
+ 
+     .parents-subtext {
+         text-align: center;
+         font-family: 'trade Gothic LT Std';
+         color: #fff;
+         padding: 0 10px 31px;
+         font-size: 1.2em;
+         margin-top: -9px;
+     }
+ 
+     p {
+         &.nutrition-fact {
+             font-size: 0.58em !important;
+             text-align: center;
+             font-family: Helvetica,Arial,sans-serif !important;
+             line-height: normal;
+             padding: 9px !important;
+             color: #482317 !important;
+         }
+     }
+ 
+     .enlarge {
+         transition: all .2s ease-in-out;
+     }
+ 
+ 
+     .enlarge:hover {
+ 
+         -webkit-transform: scale3d(1.1, 1.1, 1.1);
+         transform: scale3d(1.1, 1.1, 1.1);
+ 
+         animation-timing-function:ease-in-out;
+         z-index: 20;
+     }
+ 
+ 
+     .pulser:hover {
+         -webkit-animation: pulsate ease-out .3s 1;
+         animation: pulsate ease-out .3s 1;
+         z-index: 20;
+     }
+ 
+ 
+     @-webkit-keyframes pulsate {
+         from {
+             -webkit-transform: scale3d(1, 1, 1);
+             transform: scale3d(1, 1, 1);
+         }
+ 
+         50% {
+             -webkit-transform: scale3d(1.5, 1.5, 1.5);
+             transform: scale3d(1.5, 1.5, 1.5);
+         }
+ 
+         to {
+             -webkit-transform: scale3d(1, 1, 1);
+             transform: scale3d(1, 1, 1);
+         }
+     }
+ 
+     @keyframes pulsate {
+         from {
+             -webkit-transform: scale3d(1, 1, 1);
+             transform: scale3d(1, 1, 1);
+         }
+ 
+         50% {
+             -webkit-transform: scale3d(1.5, 1.5, 1.5);
+             transform: scale3d(1.5, 1.5, 1.5);
+         }
+ 
+         to {
+             -webkit-transform: scale3d(1, 1, 1);
+             transform: scale3d(1, 1, 1);
+         }
+     }
+ 
+ 
+ 
+     @media (min-width: 847px) {
+ 
+         .kidspackagecontainer-mobile  {
+             display: none;
+         }
+ 
+         .kidspackagecontainer,  #highlights_contain, .shop-btn-contain  {
+             display: block;
+         }
+ 
+     }
+ 
+ 
+         @media only screen and (max-width: 846px)
+         and (orientation: portrait)
+ 
+          {
+ 
+             .kidspackagecontainer-mobile  {
+                 display: block;
+                 position: relative;
+             }
+ 
+             .kidspackagecontainer,  #highlights_contain, .shop-btn-contain  {
+                 display: none;
+             }
+ 
+ 
+             .kidspackagecontainer-mobile .p-items.honey-oat-cnt, .kidspackagecontainer-mobile .p-items.choc-chip-cnt, .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+                 position: absolute;
+             }
+ 
+ 
+             .kidspackagecontainer-mobile .p-items.honey-oat-cnt {
+                 left: 22%;
+                 top: 43%;
+                 width: 140px;
+             }
+ 
+             .kidspackagecontainer-mobile .p-items.choc-chip-cnt {
+                 left: 32%;
+                 top: 37%;
+                 width: 190px;
+                 z-index: 10;
+             }
+ 
+ 
+             .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+                 left: 49.5%;
+                 top: 43%;
+                 width: 140px;
+             }
+ 
+ 
+             .kidspackagecontainer-mobile .shop-btn-contain-mobile {
+ 
+                 clear: unset;
+                 margin: auto;
+                 width: 201px;
+                 position: absolute;
+                 top: 430px;
+                 left: 32%;
+             }
+ 
+ 
+             .kidspackagecontainer-mobile #highlights_contain-mobile {
+ 
+                 position: absolute;
+                 height: 102px;
+                 max-width:  363px;
+                 /* margin: 93px auto -24px 22%; */
+                 margin-top: 42%;
+                 left: 22%;
+ 
+             }
+ 
+ 
+          }
+ 
+ 
+ 
+ 
+ 
+     @media only screen and (max-width: 846px)
+     and (orientation: landscape)
+ 
+     {
+ 
+         .kidspackagecontainer-mobile  {
+             display: block;
+         }
+ 
+         .kidspackagecontainer,  #highlights_contain, .shop-btn-contain  {
+             display: none;
+         }
+ 
+ 
+ 
+         .kidspackagecontainer-mobile {
+             position: relative;
+ 
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt, .kidspackagecontainer-mobile .p-items.choc-chip-cnt, .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             position: absolute;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .p-items.honey-oat-cnt {
+             left: 22%;
+             top: 43%;
+             width: 140px;
+         }
+ 
+         .kidspackagecontainer-mobile .p-items.choc-chip-cnt {
+             left: 32%;
+             top: 37%;
+             width: 190px;
+             z-index: 10;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .p-items.peanut-butter-cnt {
+             left: 49.5%;
+             top: 43%;
+             width: 140px;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile .shop-btn-contain-mobile {
+ 
+             clear: unset;
+             margin: auto;
+             width: 201px;
+             position: absolute;
+             top: 430px;
+             left: 32%;
+         }
+ 
+ 
+         .kidspackagecontainer-mobile #highlights_contain-mobile {
+ 
+             position: absolute;
+             height: 102px;
+             max-width:  423px;
+             /* margin: 93px auto -24px 22%; */
+             margin-top: 42%;
+             left: 17%;
+ 
+         }
+ 
+ 
+     }
+ 
+     #essay_bio_wrap {
+         margin-top: 0px;
+         margin-bottom: 30px;
+         width: auto;
+     }
+     #essay_bio_wrap_toggle {
+         display: block;
+         width: 100%;
+         height: 35px;
+         text-decoration:none;
+         border: none;
+     }
+ 
+     #essay_bio_wrap_toggle:hover {
+         text-decoration:none;
+     }
+ 
+ 
+     .kidspackagecontainer {
+         height: 354px;
+         position: relative;
+     }
+ 
+     &.nutritioncollective-index-success,
+     &.nutritioncollective-welcome-index {
+         &.main-container {
+             p {
+                 line-height: 20px;
+                 font-family: $font-family-secondary;
+                 color: #000;
+                 font-size: 24px;
+                 font-stretch: normal;
+                 font-style: normal;
+                 font-weight: 400;
+                 letter-spacing: .3px;
+                 line-height: 40px;
+                 opacity: 1;
+                 margin-top: 15px;
+                 padding-bottom: 0;
+                 padding-top: 0;
+             }
+         }
+         .paragraph {
+             padding-bottom: 40px;
+         }
+         #title-image {
+             height: auto;
+             max-width: 470px;
+             margin-left: 15%;
+             margin-top: 40px;
+         }
+         .welcome-content {
+             width: 100%;
+             padding-left: 38%;
+             min-height: calc(100vh - 757px);
+             padding-right: 9%;
+             padding-bottom: 30px;
+         }
+         .direction {
+             width: 100%;
+             text-align: center;
+             background-color: #eee;
+         }
+         .direction-content {
+             padding-top: 20px;
+             padding-bottom: 40px;
+         }
+         #apply-link {
+             padding: 20px 50px;
+             margin-top: 25px;
+         }
+         #login-link {
+             display: inline-block;
+             text-transform: uppercase;
+             margin-top: 25px;
+             color: #000;
+             font-weight: 700;
+         }
+     }
+     .snack-club {
+         margin-bottom: -20px;
+ 
+         h1 {
+             font-size: 60px;
+             line-height: .93;
+             letter-spacing: -.6px;
+         }
+         h3 {
+             font-family: $font-family-primary;
+             font-size: 18px;
+             font-weight: 700;
+             font-style: normal;
+             font-stretch: normal;
+             line-height: 1.33;
+             letter-spacing: -.6px;
+             margin-bottom: 0;
+         }
+         h4{
+             font-size: 18px;
+         }
+ 
+         p {
+             font-family: Georgia,Garamond,Times New Roman,serif;
+             font-weight: 400;
+             font-style: normal;
+             font-stretch: normal;
+             letter-spacing: .3px;
+             padding-bottom: 0;
+             padding-top: 0;
+         }
+         ul {
+             margin: 0;
+         }
+ 
+         .container {
+             @extend .st-container;
+             @extend .st-container--narrow;
+ 
+             margin-top: 0;
+             max-width: 940px;
+             padding: 0 25px;
+ 
+             @include media-breakpoint-up(md) {
+                 padding: 0 35px;
+             }
+         }
+         .container-narrow {
+             max-width: 940px;
+             padding: 0 25px;
+ 
+             @include media-breakpoint-up(md) {
+                 padding-left: 35px;
+                 padding-right: 35px;
+             }
+ 
+             .button {
+                 width: 250px;
+                 padding: 12px 30px 10px 30px;
+                 margin-bottom: 12px;
+             }
+         }
+         .button {
+             font-size: 13px;
+         }
+         .snack-header {
+             padding-bottom: 84px;
+ 
+             h1 {
+                 margin-bottom: 24px;
+             }
+             img {
+                 display: inline-block;
+                 margin-bottom: 36px;
+                 vertical-align: baseline;
+             }
+             p {
+                 font-size: 18px;
+                 line-height: 1.33;
+             }
+ 
+             .row {
+                 line-height: 1.6;
+                 margin-top: 72px;
+ 
+                 .snack-content {
+                     vertical-align: baseline;
+ 
+                     h3 {
+                         margin-bottom: 0;
+                     }
+                     p {
+                         padding-top: 3px;
+                         font-size: 14px;
+                         line-height: 1.43;
+                     }
+                 }
+             }
+         }
+         .snack-benefits {
+             h1 {
+                 line-height: .97;
+                 letter-spacing: -3px;
+             }
+             ul {
+                 li {
+                     height: 75px;
+                     margin-bottom: 53px;
+ 
+                     div {
+                         &:nth-last-child(1) {
+                             padding-left: 112px;
+                         }
+                     }
+ 
+                     p {
+                         font-size: 14px;
+                         line-height: 1.71;
+                         max-width: 528px;
+                         text-align: left;
+                     }
+ 
+                     .img-container {
+                         width: 64px;
+                         height: 64px;
+                         float: left;
+                         margin: 0 24px;
+                         position: relative;
+                         margin-top: -8px;
+ 
+                         img {
+                             max-width: 45px;
+                             position: absolute;
+                             top: 0;
+                             bottom: 0;
+                             margin: auto;
+                         }
+                     }
+                 }
+             }
+             .container {
+                 padding: 0;
+             }
+             .left-title {
+                 padding: 0 45px;
+                 margin-bottom: 56px;
+                 text-align: left;
+             }
+             .snack-links {
+                 margin-top: 51px;
+                 text-align: center;
+ 
+                 p {
+                     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                     font-size: 16px;
+                     font-weight: 700;
+                     font-style: normal;
+                     font-stretch: normal;
+                     line-height: 1.88;
+                     letter-spacing: -.4px;
+                     color: #000;
+                 }
+             }
+         }
+         .snack-subscription {
+             padding-bottom: 56px !important;
+ 
+             h4 {
+                 display: block;
+                 font-size: 16px;
+                 font-weight: bold;
+                 margin-bottom: 0;
+             }
+             .button {
+                 width: 225px;
+                 border: solid 2px #fff;
+                 outline: 0!important;
+                 -webkit-tap-highlight-color: transparent;
+             }
+         }
+         .snack-questions {
+             margin: 104px 0 144px 0!important;
+             text-align: left;
+ 
+             h3 {
+                 text-transform: none;
+             }
+             ul {
+                 li {
+                     padding: 16px 40px 16px 0;
+                     position: relative;
+                     margin: 0 0 0 45px;
+                     border-bottom: 1px solid rgba(0,0,0,.1);
+ 
+                     h3 {
+                         &::after {
+                             @include background-svg($svg-plus);
+ 
+                             background-size: cover;
+                             content: "";
+                             display: block;
+                             width: 20px;
+                             height: 20px;
+                             float: right;
+                             margin: 6px 0 0 0;
+                             position: absolute;
+                             right: 0;
+                             margin-top: -20px;
+                         }
+                     }
+                 }
+             }
+ 
+             .container {
+                 max-width: 1010px;
+             }
+             .left-title {
+                 padding: 0 45px;
+                 margin-bottom: 56px;
+                 text-align: left;
+             }
+         }
+         .snack-footer {
+             padding-bottom: 102px!important;
+ 
+             h1 {
+                 font-size: 80px;
+                 margin-bottom: 50px;
+             }
+             p {
+                 color: $grey8;
+                 opacity: .4;
+                 font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+                 font-size: 18px;
+                 font-weight: 700;
+                 font-style: normal;
+                 font-stretch: normal;
+                 line-height: 2.11;
+                 letter-spacing: -.9px;
+                 margin-top: 36px;
+                 margin-bottom: 16px;
+             }
+             img {
+                 display: inline-block;
+                 max-width: 379px;
+             }
+         }
+ 
+         .button {
+             text-transform: none;
+         }
+     }
+     .section-gray {
+         background-color: $grey9;
+         padding-bottom: 67px;
+         padding-top: 64px;
+ 
+         @include media-breakpoint-up(md) {
+             padding-top: 105px;
+         }
+     }
+     .section-black {
+         background-color: $black;
+         color: $white;
+         padding-bottom: 50px;
+         padding-top: 50px;
+     }
+ 
+     &--generic-page {
+         .main-container,
+         &.main-container {
+             p {
+                 padding-top: 0;
+             }
+         }
+     }
+ 
+     &.catalog-category-view {
+         .container {
+             padding: 25px 0;
+         }
+     }
+     .family_wrapper {
+         .std {
+             padding-bottom: 0;
+ 
+             #layout {
+                 h4 {
+                     &.control-title {
+                         font-family: $font-family-primary;
+                         font-size: 2.2em;
+                         line-height: 1em;
+                         height: 80px;
+                         padding-top: 4%;
+                         padding-bottom: 4%;
+                         padding-left: 60px;
+                         padding-right: 60px;
+                     }
+                     &.product-title {
+                         font-family: $font-family-primary;
+                         font-size: 1.9em;
+                         line-height: 1em;
+                         height: 80px;
+                         padding-top: 7%;
+                         padding-bottom: 4%;
+                         padding-left: 10px;
+                         padding-right: 0;
+                         color: #000;
+                         text-transform: none;
+                         letter-spacing: -.025em;
+                     }
+                 }
+                 a {
+                     color: #000;
+                     font-family: $font-family-primary;
+                     font-weight: 700;
+                     text-transform: lowercase;
+                     text-decoration: none;
+                     line-height: 1.33;
+                     letter-spacing: inherit;
+                     font-size: inherit;
+                     padding-bottom: 2px;
+                     border-bottom: none;
+                 }
+                 p {
+                     &.control-title-sub-text,
+                     &.control-title-sub-text-up {
+                         font-family: "HelveticaNeue-Medium", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 109px;
+                         padding-left: 11px;
+                         word-spacing: 1px;
+                         padding-top: 4%;
+                         padding-bottom: 14%;
+                         margin-bottom: -1%;
+ 
+                         @include media-breakpoint-up(md) {
+                             height: 53px;
+                             padding-left: 0;
+                         }
+                     }
+                     &.product-details-plp {
+                         font-family: $font-family-primary;
+                         font-weight: 700;
+                         font-size: 1em;
+                         padding-left: 20px;
+                         padding-right: 20px;
+                         padding-top: 16px;
+                         padding-bottom: 16px;
+                         height: 105px;
+                     }
+                 }
+                 .feature-grid-row {
+                     display: flex;;
+                         flex-direction: row;
+                         flex-wrap: wrap;
+                     max-width: 1290px;
+                     margin: 0 auto;
+                 }
+                 .grid-item {
+                     width: 430px;
+                     text-align: center;
+                     position: relative;
+                     margin: 0;
+                     border: 1px solid #b7b7b7;
+                     padding: 0 0 31px 0;
+                     max-height: 454px;
+                     opacity: 1;
+                     top: 0;
+                     margin-left: auto;
+                     margin-right: auto;
+ 
+                     &:not(.snack-club-prod-group) {
+                         &:hover {
+                             .button-outline-white {
+                                 background-color: transparent;
+                                 border-color: $white !important;
+                                 color: $white;
+                             }
+                         }
+                     }
+ 
+                     :hover {
+                         .inner {
+                             &::before {
+                                 opacity: 1;
+                             }
+                         }
+                     }
+ 
+                     .inner {
+                         &::before {
+                             content: "";
+                             display: block;
+                             position: absolute;
+                             top: -1.5px;
+                             left: -1.5px;
+                             width: calc(100% + 3px);
+                             height: calc(100% + 3px);
+                             border: 3px solid #000;
+                             opacity: 0;
+                             transition: opacity .3s ease;
+                         }
+                     }
+                     .image-container {
+                         max-width: 500px;
+                         margin: 0 auto;
+                         height: 177px;
+                         overflow: hidden;
+                         margin-top: 5%;
+ 
+                         img {
+                             max-width: 115%;
+                             display: block;
+                         }
+                     }
+                     .product-title {
+                         a {
+                             text-transform: none;
+                         }
+                     }
+                 }
+                 .coredarkchoc,
+                 .kidschewychocchip,
+                 .proteinpeanutcrunch,
+                 .ssjalapeno {
+                     transform: translate(-9%,-28%) rotate(90deg);
+                 }
+                 .hgbbar,
+                 .breakfastpb {
+                     transform: translate(-13%,-29%) rotate(90deg);
+                 }
+                 .clusterpeanutbutter {
+                     transform: translate(-11%,-6%) rotate(-16deg);
+                 }
+                 .pressedstrawchoc {
+                     transform: translate(-9%,-51%) rotate(75deg);
+                 }
+                 .fruitbitestrawapple {
+                     transform: translate(15%,-13%);
+                 }
+ 
+                 .button-outline-white {
+                     color: #000;
+                     border-color: #000;
+                     background-color: #fff;
+                     border-bottom: 2px solid!important;
+                     text-transform: uppercase;
+                     font-size: .8em;
+                     padding-bottom: 0;
+                     padding-top: 14px;
+                 }
+                 .minischoc {
+                     transform: translate(-13%,-29%) rotate(80deg);
+                     position: absolute;
+                     z-index: 2;
+                     top: 1%;
+                     left: 0;
+                     top: -10px;
+                 }
+                 .minicaramel {
+                     transform: translate(-33px,16px) rotate(84deg);
+                     position: absolute;
+                     z-index: 1;
+                     top: -59%;
+                     left: 1%;
+                 }
+ 
+                 /** HGB **/
+ 
+                 img {
+                     &.HGBarOatsHoney,
+                     &.HGBAlmondButterDarkChocolate,
+                     &.HGDarkChocolateChunk {
+                         position: absolute;
+                             top: -210px;
+                         transition: top .5s ease-in-out;
+                     }
+                 }
+                 img.HGBarOatsHoney {
+                     left: -16px;
+                     z-index: 2;
+ 
+                     @include media-breakpoint-up(sm) {
+                         left: -38px;
+                     }
+                 }
+                 img.HGBAlmondButterDarkChocolate {
+                     left: -16px;
+                     z-index: 3;
+ 
+                     @include media-breakpoint-up(sm) {
+                         left: -38px;
+                     }
+                 }
+                 img.HGDarkChocolateChunk {
+                     left: -16px;
+                     z-index: 2;
+ 
+                     @include media-breakpoint-up(sm) {
+                         left: -40px;
+                     }
+                 }
+ 
+ 
+ 
+                 .active-slide {
+                     .group-product-hgb {
+                         .left-target:hover + .HGBarOatsHoney {
+                             top: -92px;
+                         }
+                         .center-target:hover + .HGBAlmondButterDarkChocolate {
+                             top: -92px;
+                         }
+                         .right-target:hover + .HGDarkChocolateChunk {
+                             top: -92px;
+                         }
+                     }
+                 }
+ 
+                 .group-product-hgb {
+                     img {
+                         max-width: 90%;
+ 
+                         @include media-breakpoint-up(sm) {
+                             max-width: 100%;
+                         }
+                     }
+                 }
+ 
+                 @media only screen
+                 and (min-device-width : 375px)
+                 and (max-device-width : 667px)
+                 and (orientation : portrait) {
+ 
+                     /* Container */
+ 
+                     /* Carousel Text and Button Positioning */
+ 
+                     .main-container {
+                         #layout {
+                             .rotating-slider {
+                                 .inner {
+                                     .group-product-hgb {
+                                         transform: translate(-102px, 189px) rotate(0deg);
+                                         position: relative;
+                                         width: 500px;
+                                         height: 400px;
+ 
+                                         img {
+                                             max-width: 90%
+                                         }
+                                     }
+                                 }
+                             }
+                         }
+                     }
+ 
+                     .main-container #layout .rotating-slider .product-details {
+                         position: absolute;
+                         top: 80%;
+                         left: -1%;
+                         text-align: center;
+                         z-index: 20;
+                         height: 210px;
+                         width: 367px;
+                     }
+ 
+                     .main-container #layout .rotating-slider h4.control-title {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                         font-size: 2.2em;
+                         line-height: 1em;
+                         height: 80px;
+                         padding-top: 4%;
+                         padding-bottom: 4%;
+                         padding-left: 20px;
+                         padding-right: 20px;
+                     }
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 56px ;
+                         padding-top: 4%;
+                         padding-bottom: 25%;
+                         margin-bottom: -1%;
+                         padding-left: 11px;
+                     }
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text-up {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 56px ;
+                         padding-top: 4%;
+                         padding-bottom: 25%;
+                         margin-bottom: -1%;
+                         padding-left: 11px;
+                     }
+ 
+                 }
+ 
+                 /**** Samsung 8+ 9+ ****/
+ 
+                 @media only screen
+                 and (min-device-width: 412px)
+                 and (max-device-width: 846px)
+                 and (orientation: portrait) {
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text-up {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif ;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 109px;
+                         padding-top: 4%;
+                         padding-bottom: 25%;
+                         margin-bottom: -1%;
+                         padding-left: 11px;
+                     }
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 109px ;
+                         padding-top: 4%;
+                         padding-bottom: 14%;
+                         margin-bottom: -1%;
+                     }
+ 
+ 
+                     .main-container #layout .rotating-slider .product-details {
+                         position: absolute;
+                         top: 80%;
+                         left: 4%;
+                         text-align: center;
+                         z-index: 20;
+                         height: 210px;
+                         width: 367px;
+                     }
+                 }
+ 
+                 @media only screen
+                 and (min-device-width: 414px)
+                 and (max-device-width: 736px)
+                 and (-webkit-min-device-pixel-ratio: 3)
+                 and (orientation: portrait) {
+ 
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text-up {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 109px !important;
+                         padding-top: 4%;
+                         padding-bottom: 25%;
+                         margin-bottom: -1%;
+                         padding-left: 11px;
+                     }
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 109px !important;
+                         padding-top: 4%;
+                         padding-bottom: 14%;
+                         margin-bottom: -1%;
+                     }
+ 
+ 
+                     .main-container #layout .rotating-slider .product-details {
+                         position: absolute;
+                         top: 80%;
+                         left: 4%;
+                         text-align: center;
+                         z-index: 20;
+                         height: 210px;
+                         width: 367px !important;
+                     }
+                 }
+ 
+                 @media only screen
+                 and (min-device-width: 360px)
+                 and (max-device-width: 740px)
+                 and (orientation: portrait) {
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 100px;
+                         padding-top: 4%;
+                         padding-bottom: 14%;
+                         margin-bottom: -1%;
+                     }
+ 
+                     .main-container #layout .rotating-slider p.control-title-sub-text-up {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+                         color: #888888 !important;
+                         font-weight: 600 !important;
+                         word-spacing: 1px;
+                         height: 100px ;
+                         padding-top: 4%;
+                         padding-bottom: 25%;
+                         margin-bottom: -1%;
+                         padding-left: 11px;
+                     }
+ 
+                     .main-container #layout .rotating-slider .product-details {
+                         position: absolute;
+                         top: 79%;
+                         left: 3%;
+                         text-align: center;
+                         z-index: 20;
+                         height: 210px;
+                         width: 335px;
+                     }
+ 
+ 
+                     .main-container #layout .rotating-slider .product-details h4.control-title {
+                         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                         font-size: 2.2em;
+                         line-height: 1em;
+                         height: 80px;
+                         padding-top: 4%;
+                         padding-bottom: 4%;
+                         padding-left: 10px;
+                         padding-right: 10px;
+                     }
+                 }
+ 
+ 
+                 /**** Product Hover ****/
+ 
+                 /** core bg **/
+ 
+                 .core-prod-group {
+                     background-image: url(../images/products-page/core-bk-1.png),
+                     url(../images/products-page/core-bk-2.png),
+                     url(../images/products-page/core-bk-3.png),
+                     url(../images/products-page/core-bk-4.png);
+                     background-position: -116% -52%, 239% -52%, -6% 150%, 104% 150%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: coreanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: coreanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                 }
+ 
+                 @keyframes coreanimatedBackgroundfrom {
+                     from {
+                         background:
+                             url(../images/products-page/core-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/core-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/core-bk-3.png) -6% 100% no-repeat,
+                             url(../images/products-page/core-bk-4.png) 104% 100% no-repeat;
+                         background-color: #095c66;
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/core-bk-1.png) -46% -48% no-repeat,
+                             url(../images/products-page/core-bk-2.png) 222% -22% no-repeat,
+                             url(../images/products-page/core-bk-3.png) -81% 130% no-repeat,
+                             url(../images/products-page/core-bk-4.png) 163% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes coreanimatedBackgroundto {
+                     from {
+                         background:
+                             url(../images/products-page/core-bk-1.png) -46% -48% no-repeat,
+                             url(../images/products-page/core-bk-2.png) 222% -22% no-repeat,
+                             url(../images/products-page/core-bk-3.png) -81% 130% no-repeat,
+                             url(../images/products-page/core-bk-4.png) 163% 130% no-repeat;
+                         background-color: #fff;
+ 
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/core-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/core-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/core-bk-3.png) -6% 100% no-repeat,
+                             url(../images/products-page/core-bk-4.png) 104% 100% no-repeat;
+                         background-color: #095c66;
+                     }
+                 }
+ 
+ 
+ /** butter bg **/
+ 
+ .butter-prod-group {
+     background-image: url(../images/products-page/core-bk-1.png),
+     url(../images/products-page/core-bk-2.png),
+     url(../images/products-page/core-bk-3.png),
+     url(../images/products-page/core-bk-4.png);
+     background-position: -116% -52%, 239% -52%, -6% 150%, 104% 150%;
+     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+     animation: butteranimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+     &:hover {
+         animation: butteranimatedBackgroundto 0.3s ease-in-out forwards;
+         background-repeat: no-repeat;
+     }
+ 
+ }
+ 
+ @keyframes butteranimatedBackgroundfrom {
+     from {
+         background:
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients4.png) -6% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients3.png) 109% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients1.png) -6% 100% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients2.png) 104% 100% no-repeat;
+         background-color: #643614;
+     }
+     to {
+         background:
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients4.png) -46% -48% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients3.png) 222% -22% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients1.png) -81% 130% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients2.png) 163% 130% no-repeat;
+         background-color: #fff;
+     }
+ }
+ 
+ @keyframes butteranimatedBackgroundto {
+     from {
+         background:
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients4.png) -46% -48% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients3.png) 222% -22% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients1.png) -81% 130% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients2.png) 163% 130% no-repeat;
+         background-color: #fff;
+ 
+     }
+     to {
+         background:
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients4.png) -6% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients3.png) 109% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients1.png) -6% 100% no-repeat,
+             url(../images/products-page/ExploreProduct_NutButterTile_Ingredients2.png) 104% 100% no-repeat;
+         background-color: #643614;
+     }
+ }
+ 
+ 
+ /** CRUNCH bg **/
+ 
+ .crunch-prod-group {
+     background-image: url(../images/products-page/core-bk-1.png),
+     url(../images/products-page/core-bk-2.png),
+     url(../images/products-page/core-bk-3.png),
+     url(../images/products-page/core-bk-4.png);
+     background-position: -116% -52%, 239% -52%, -6% 150%, 104% 150%;
+     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+     animation: crunchanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+     &:hover {
+         animation: crunchanimatedBackgroundto 0.3s ease-in-out forwards;
+         background-repeat: no-repeat;
+     }
+ 
+ }
+ 
+ @keyframes crunchanimatedBackgroundfrom {
+     from {
+         background:
+             url(../images/products-page/ExploreProduct_SCTile_01.png) -6% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_03.png) 109% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_04.png) -6% 100% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_02.png) 104% 100% no-repeat;
+         background-color: #d22630;
+     }
+     to {
+         background:
+             url(../images/products-page/ExploreProduct_SCTile_01.png) -46% -48% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_03.png) 222% -22% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_04.png) -81% 130% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_02.png) 163% 130% no-repeat;
+         background-color: #fff;
+     }
+ }
+ 
+ @keyframes crunchanimatedBackgroundto {
+     from {
+         background:
+             url(../images/products-page/ExploreProduct_SCTile_01.png) -46% -48% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_03.png) 222% -22% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_04.png) -81% 130% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_02.png) 163% 130% no-repeat;
+         background-color: #fff;
+ 
+     }
+     to {
+         background:
+             url(../images/products-page/ExploreProduct_SCTile_01.png) -6% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_03.png) 109% -2% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_04.png) -6% 100% no-repeat,
+             url(../images/products-page/ExploreProduct_SCTile_02.png) 104% 100% no-repeat;
+         background-color: #d22630;
+     }
+ }
+ 
+ 
+                 /** kids bg **/
+ 
+                 .kids-prod-group {
+                     background-image: url(../images/products-page/core-bk-1.png),
+                     url(../images/products-page/kids-bk-2.png),
+                     url(../images/products-page/kids-bk-3.png),
+                     url(../images/products-page/kids-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: kidsanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: kidsanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+                 }
+ 
+                 @keyframes kidsanimatedBackgroundfrom {
+                     from {
+                         background:
+                             url(../images/products-page/kids-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/kids-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/kids-bk-3.png) -6% 100% no-repeat,
+                             url(../images/products-page/kids-bk-4.png) 104% 100% no-repeat;
+                         background-color: #73381d;
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/kids-bk-1.png) -47% -48% no-repeat,
+                             url(../images/products-page/kids-bk-2.png) 183% -22% no-repeat,
+                             url(../images/products-page/kids-bk-3.png) -50% 140% no-repeat,
+                             url(../images/products-page/kids-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes kidsanimatedBackgroundto {
+                     from {
+                         background:
+                             url(../images/products-page/kids-bk-1.png) -47% -48% no-repeat,
+                             url(../images/products-page/kids-bk-2.png) 183% -22% no-repeat,
+                             url(../images/products-page/kids-bk-3.png) -50% 140% no-repeat,
+                             url(../images/products-page/kids-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/kids-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/kids-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/kids-bk-3.png) -6% 100% no-repeat,
+                             url(../images/products-page/kids-bk-4.png) 104% 100% no-repeat;
+                         background-color: #73381d;
+                     }
+                 }
+ 
+                 /** protein bg **/
+ 
+                 .protein-prod-group {
+                     background-image: url(../images/products-page/protein-bk-1.png),
+                     url(../images/products-page/protein-bk-2.png),
+                     url(../images/products-page/protein-bk-3.png),
+                     url(../images/products-page/protein-bk-4.png);
+                     background-position: -26% -48%,172% -22%,-79% 130%,190% 140%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: proteinsanimatedBackgroundfrom 0.3s ease-in-out forwards;
+                     -moz-animation: proteinsanimatedBackgroundfrom 0.3s ease-in-out forwards;
+                     -webkit-animation: proteinsanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: proteinanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+                 }
+ 
+                 @keyframes proteinanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/protein-bk-1.png) 0 -14% no-repeat,
+                         url(../images/products-page/protein-bk-2.png) 101% -21% no-repeat,
+                         url(../images/products-page/protein-bk-3.png) -16% 120% no-repeat,
+                         url(../images/products-page/protein-bk-4.png) 104% 120% no-repeat;
+                         background-color: #cb6015;}
+                     to {
+                         background: url(../images/products-page/protein-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/protein-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/protein-bk-3.png) -61% 130% no-repeat,
+                         url(../images/products-page/protein-bk-4.png) 163% 140% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes proteinanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/protein-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/protein-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/protein-bk-3.png) -61% 130% no-repeat,
+                         url(../images/products-page/protein-bk-4.png) 163% 140% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/protein-bk-1.png) 0 -14% no-repeat,
+                         url(../images/products-page/protein-bk-2.png) 101% -21% no-repeat,
+                         url(../images/products-page/protein-bk-3.png) -16% 120% no-repeat,
+                         url(../images/products-page/protein-bk-4.png) 104% 120% no-repeat;
+                         background-color: #cb6015;
+                     }
+                 }
+ 
+                 /** hgb bg **/
+ 
+                 .hgb-prod-group {
+                     background-image: url(../images/products-page/hgb-bk-1.png),
+                     url(../images/products-page/hgb-bk-2.png),
+                     url(../images/products-page/hgb-bk-3.png),
+                     url(../images/products-page/hgb-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 121%, 104% 120%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: hgbanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: hgbanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                     .iamge-container {
+                         img {
+                             max-width: 121%;
+                         }
+                     }
+                 }
+ 
+                 @keyframes hgbanimatedBackgroundfrom {
+                     from {
+                         background:
+                             url(../images/products-page/hgb-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/hgb-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/hgb-bk-3.png) -6% 121% no-repeat,
+                             url(../images/products-page/hgb-bk-4.png) 104% 120% no-repeat;
+                         background-color: #b9782a;
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/hgb-bk-1.png) -36% -48% no-repeat,
+                             url(../images/products-page/hgb-bk-2.png) 172% -22% no-repeat,
+                             url(../images/products-page/hgb-bk-3.png) -51% 170% no-repeat,
+                             url(../images/products-page/hgb-bk-4.png) 144% 180% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes hgbanimatedBackgroundto {
+                     from {
+                         background:
+                             url(../images/products-page/hgb-bk-1.png) -36% -48% no-repeat,
+                             url(../images/products-page/hgb-bk-2.png) 172% -22% no-repeat,
+                             url(../images/products-page/hgb-bk-3.png) -51% 170% no-repeat,
+                             url(../images/products-page/hgb-bk-4.png) 144% 180% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background:
+                             url(../images/products-page/hgb-bk-1.png) -6% -2% no-repeat,
+                             url(../images/products-page/hgb-bk-2.png) 109% -2% no-repeat,
+                             url(../images/products-page/hgb-bk-3.png) -6% 121% no-repeat,
+                             url(../images/products-page/hgb-bk-4.png) 104% 120% no-repeat;
+                         background-color: #b9782a;
+                     }
+                 }
+ 
+                 /** clusters bg **/
+ 
+                 .clusters-prod-group {
+                     background-image: url(../images/products-page/clusters-bk-1.png),
+                     url(../images/products-page/clusters-bk-2.png),
+                     url(../images/products-page/clusters-bk-3.png),
+                     url(../images/products-page/clusters-bk-4.png);
+                     background-position: -0% -21%, 101% -31%, -6% 131%, 104% 130%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: clustersanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: clustersanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                     .image-container {
+                         img {
+                             max-width: 90%;
+                         }
+                     }
+                 }
+ 
+                 @keyframes clustersanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/clusters-bk-1.png) -0% -21% no-repeat,
+                         url(../images/products-page/clusters-bk-2.png) 101% -31% no-repeat,
+                         url(../images/products-page/clusters-bk-3.png) -6% 131% no-repeat,
+                         url(../images/products-page/clusters-bk-4.png) 104% 130% no-repeat;
+                         background-color: #e7661b;
+                     }
+                     to {
+                         background: url(../images/products-page/clusters-bk-1.png) -76% -48% no-repeat,
+                         url(../images/products-page/clusters-bk-2.png) 182% -22% no-repeat,
+                         url(../images/products-page/clusters-bk-3.png) -61% 161% no-repeat,
+                         url(../images/products-page/clusters-bk-4.png) 143% 171% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+ 
+                 @keyframes clustersanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/clusters-bk-1.png) -76% -48% no-repeat,
+                         url(../images/products-page/clusters-bk-2.png) 182% -22% no-repeat,
+                         url(../images/products-page/clusters-bk-3.png) -61% 161% no-repeat,
+                         url(../images/products-page/clusters-bk-4.png) 143% 171% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/clusters-bk-1.png) -0% -21% no-repeat,
+                         url(../images/products-page/clusters-bk-2.png) 101% -31% no-repeat,
+                         url(../images/products-page/clusters-bk-3.png) -6% 131% no-repeat,
+                         url(../images/products-page/clusters-bk-4.png) 104% 130% no-repeat;
+                         background-color: #e7661b;
+                     }
+                 }
+ 
+                 /** breakfast bg **/
+ 
+                 .breakfast-prod-group {
+                     background-image: url(../images/products-page/breakfast-bk-1.png),
+                     url(../images/products-page/breakfast-bk-2.png),
+                     url(../images/products-page/breakfast-bk-3.png),
+                     url(../images/products-page/breakfast-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: breakfastanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: breakfastanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+                 }
+ 
+                 @keyframes breakfastanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/breakfast-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/breakfast-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/breakfast-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/breakfast-bk-4.png) 104% 100% no-repeat;
+                         background-color: #f5b537;
+                     }
+                     to {
+                         background: url(../images/products-page/breakfast-bk-1.png) -56% -48% no-repeat,
+                         url(../images/products-page/breakfast-bk-2.png) 216% -22% no-repeat,
+                         url(../images/products-page/breakfast-bk-3.png) -51% 130% no-repeat,
+                         url(../images/products-page/breakfast-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes breakfastanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/breakfast-bk-1.png) -56% -48% no-repeat,
+                         url(../images/products-page/breakfast-bk-2.png) 216% -22% no-repeat,
+                         url(../images/products-page/breakfast-bk-3.png) -51% 130% no-repeat,
+                         url(../images/products-page/breakfast-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/breakfast-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/breakfast-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/breakfast-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/breakfast-bk-4.png) 104% 100% no-repeat;
+                         background-color: #f5b537;
+                     }
+                 }
+ 
+                 /** pressed bg **/
+ 
+                 .pressed-prod-group {
+                     background-image: url(../images/products-page/pressed-bk-1.png),
+                     url(../images/products-page/pressed-bk-2.png),
+                     url(../images/products-page/pressed-bk-3.png),
+                     url(../images/products-page/pressed-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: pressedanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: pressedanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+                 }
+ 
+                 @keyframes pressedanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/pressed-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/pressed-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/pressed-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/pressed-bk-4.png) 104% 100% no-repeat;
+                         background-color: #d6006d;
+                     }
+                     to {
+                         background: url(../images/products-page/pressed-bk-1.png) -46% -48% no-repeat,
+                         url(../images/products-page/pressed-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/pressed-bk-3.png) -81% 140% no-repeat,
+                         url(../images/products-page/pressed-bk-4.png) 133% 160% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes pressedanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/pressed-bk-1.png) -46% -48% no-repeat,
+                         url(../images/products-page/pressed-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/pressed-bk-3.png) -81% 140% no-repeat,
+                         url(../images/products-page/pressed-bk-4.png) 133% 160% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/pressed-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/pressed-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/pressed-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/pressed-bk-4.png) 104% 100% no-repeat;
+                         background-color: #d6006d;
+                     }
+                 }
+ 
+                 /** fruit bites bg **/
+ 
+                 .fruit-bites-prod-group {
+ 
+                     background-image: url(../images/products-page/fruit-bites-bk-1.png),
+                     url(../images/products-page/fruit-bites-bk-2.png),
+                     url(../images/products-page/fruit-bites-bk-3.png),
+                     url(../images/products-page/fruit-bites-bk-4.png);
+                     background-position: -26% -2%, 119% -12%, -16% 110%, 114% 109%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: fbanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: fbanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                     .image-container {
+                         img {
+                             max-width: 80%;
+                         }
+                     }
+                 }
+ 
+                 @keyframes fbanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/fruit-bites-bk-1.png) -26% -2% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-2.png) 119% -12% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-3.png) -16% 110% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-4.png) 114% 109% no-repeat;
+                         background-color: #d13239;
+                     }
+                     to {
+                         background: url(../images/products-page/fruit-bites-bk-1.png) -106% -48% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-2.png) 212% -22% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-3.png) -91% 130% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes fbanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/fruit-bites-bk-1.png) -106% -48% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-2.png) 212% -22% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-3.png) -91% 130% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-4.png) 133% 130% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/fruit-bites-bk-1.png) -26% -2% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-2.png) 119% -12% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-3.png) -16% 110% no-repeat,
+                         url(../images/products-page/fruit-bites-bk-4.png) 114% 109% no-repeat;
+                         background-color: #d13239;
+                     }
+                 }
+
+                 /** bark **/
+                 .bark-prod-group {
+ 
+                    background-image: url(../images/products-page/ExploreProduct_Bark_01.png),
+                    url(../images/products-page/ExploreProduct_Bark_01-02.png),
+                    url(../images/products-page/ExploreProduct_Bark_01-03.png),
+                    url(../images/products-page/ExploreProduct_Bark_01-04.png);
+                    background-position: -26% -2%, 119% -12%, -16% 110%, 114% 109%;
+                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                    animation: barkanimatedBackgroundfrom 0.3s ease-in-out forwards;
+
+                    &:hover {
+                        animation: barkanimatedBackgroundto 0.3s ease-in-out forwards;
+                        background-repeat: no-repeat;
+                    }
+
+                    .image-container {
+                        img {
+                            position: relative;
+                            left: -40px;
+                            top: -100px;
+                        }
+                    }
+                }
+
+                @keyframes barkanimatedBackgroundfrom {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_Bark_01.png) -26% -2% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-02.png) 119% -12% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-03.png) -16% 110% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-04.png) 114% 109% no-repeat;
+                        background-color: #095c66;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_Bark_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-04.png) 153% 130% no-repeat;
+                        background-color: #fff;
+                    }
+                }
+
+                @keyframes barkanimatedBackgroundto {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_Bark_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-04.png) 153% 130% no-repeat;
+                        background-color: #fff;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_Bark_01.png) -26% -2% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-02.png) 119% -12% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-03.png) -16% 110% no-repeat,
+                        url(../images/products-page/ExploreProduct_Bark_01-04.png) 114% 109% no-repeat;
+                        background-color: #095c66;
+                    }
+                }
+
+                /** frozen **/
+                .frozen-prod-group {
+ 
+                    background-image: url(../images/products-page/ExploreProduct_Frozen_01.png),
+                    url(../images/products-page/ExploreProduct_Frozen_01-02.png),
+                    url(../images/products-page/ExploreProduct_Frozen_01-03.png),
+                    url(../images/products-page/ExploreProduct_Frozen_01-04.png);
+                    background-position: -26% -2%, 119% -12%, -16% 110%, 114% 109%;
+                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                    animation: FrozenanimatedBackgroundfrom 0.3s ease-in-out forwards;
+
+                    &:hover {
+                        animation: FrozenanimatedBackgroundto 0.3s ease-in-out forwards;
+                        background-repeat: no-repeat;
+                    }
+
+                    .image-container {
+                        img {
+                            position: relative;
+                            left: -40px;
+                            top: -100px;
+                        }
+                    }
+                }
+
+                @keyframes FrozenanimatedBackgroundfrom {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_Frozen_01.png) -26% -2% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-02.png) 119% -12% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-03.png) -16% 110% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-04.png) 114% 109% no-repeat;
+                        background-color: #3a6b74;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_Frozen_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-04.png) 133% 130% no-repeat;
+                        background-color: #fff;
+                    }
+                }
+
+                @keyframes FrozenanimatedBackgroundto {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_Frozen_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-04.png) 133% 130% no-repeat;
+                        background-color: #fff;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_Frozen_01.png) -26% -2% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-02.png) 119% -12% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-03.png) -16% 110% no-repeat,
+                        url(../images/products-page/ExploreProduct_Frozen_01-04.png) 114% 109% no-repeat;
+                        background-color: #3a6b74;
+                    }
+                }
+
+                 /** nb bar **/
+                 .nutbutter-prod-group {
+ 
+                    background-image: url(../images/products-page/ExploreProduct_NutButterBar_01.png),
+                    url(../images/products-page/ExploreProduct_NutButterBar_01-02.png),
+                    url(../images/products-page/ExploreProduct_NutButter_01-03.png),
+                    url(../images/products-page/ExploreProduct_NutButter_01-04.png);
+                    background-position: -56% -2%, 139% -12%, -16% 110%, 114% 150%;
+                    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                    animation: NutButteranimatedBackgroundfrom 0.3s ease-in-out forwards;
+
+                    &:hover {
+                        animation: NutButteranimatedBackgroundto 0.3s ease-in-out forwards;
+                        background-repeat: no-repeat;
+                    }
+
+                    .image-container {
+                        img {
+                            position: relative;
+                            left: -40px;
+                            top: -100px;
+                        }
+                    }
+                }
+
+                @keyframes NutButteranimatedBackgroundFrom {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_NutButterBar_01.png) -26% -2% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-02.png) 119% -12% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-03.png) -16% 110% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-04.png) 114% 109% no-repeat;
+                        background-color: #de4e2b;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_NutButterBar_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButterBar_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButteBarr_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButterBar_01-04.png) 133% 150% no-repeat;
+                        background-color: #fff;
+                    }
+                }
+
+                @keyframes NutButteranimatedBackgroundto {
+                    from {
+                        background: url(../images/products-page/ExploreProduct_NutButterBar_01.png) -106% -48% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButterBar_01-02.png) 212% -22% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButterBar_01-03.png) -91% 130% no-repeat,
+                        url(../images/products-page/ExploreProduct_NutButterBar_01-04.png) 133% 150% no-repeat;
+                        background-color: #fff;
+                    }
+                    to {
+                        background: url(../images/products-page/ExploreProduct_NutButterBar_01.png) -26% -2% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-02.png) 119% -12% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-03.png) -16% 110% no-repeat,url(../images/products-page/ExploreProduct_NutButterBar_01-04.png) 114% 109% no-repeat;
+                        background-color: #de4e2b;
+                    }
+                }
+
+                .button-outline-white-stay {
+                    color: #000;
+                    border-color: #000;
+                    background-color: #fff;
+                    border-bottom: 2px solid !important;
+                    text-transform: uppercase;
+                    font-size: .8em;
+                    padding-bottom: 0;
+                    padding-top: 14px;
+                    display: inline-block;
+                    min-height: 48px;
+                    padding: 10px 30px;
+                    border: 2px solid #000;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    text-decoration: none;
+                    text-align: center;
+                    line-height: 23px;
+                    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+                    -webkit-transition: border-color 240ms ease,background 240ms ease;
+                    transition: border-color 240ms ease,background 240ms ease;
+                }
+ 
+                 /** minis bg **/
+ 
+                 .minis-prod-group {
+                     background-image: url(../images/products-page/minis-bk-1.png),
+                     url(../images/products-page/minis-bk-2.png),
+                     url(../images/products-page/minis-bk-3.png),
+                     url(../images/products-page/minis-bk-4.png);
+                     background-position: -16% -2%, 110% -2%, -4% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: minisanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: minisanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                     .image-container {
+                         position: relative;
+                     }
+                 }
+ 
+                 @keyframes minisanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/minis-bk-1.png) -16% -2% no-repeat,
+                         url(../images/products-page/minis-bk-2.png) 110% -2% no-repeat,
+                         url(../images/products-page/minis-bk-3.png) -4% 100% no-repeat,
+                         url(../images/products-page/minis-bk-4.png) 104% 100% no-repeat;
+                         background-color: #5b858c;
+                     }
+                     to {
+                         background: url(../images/products-page/minis-bk-1.png) -106% -48% no-repeat,
+                         url(../images/products-page/minis-bk-2.png) 212% -22% no-repeat,
+                         url(../images/products-page/minis-bk-3.png) -111% 130% no-repeat,
+                         url(../images/products-page/minis-bk-4.png) 193% 160% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes minisanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/minis-bk-1.png) -106% -48% no-repeat,
+                         url(../images/products-page/minis-bk-2.png) 212% -22% no-repeat,
+                         url(../images/products-page/minis-bk-3.png) -111% 130% no-repeat,
+                         url(../images/products-page/minis-bk-4.png) 193% 160% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/minis-bk-1.png) -16% -2% no-repeat,
+                         url(../images/products-page/minis-bk-2.png) 110% -2% no-repeat,
+                         url(../images/products-page/minis-bk-3.png) -4% 100% no-repeat,
+                         url(../images/products-page/minis-bk-4.png) 104% 100% no-repeat;
+                         background-color: #5b858c;
+                     }
+                 }
+ 
+                 /** SS bg **/
+ 
+                 .ss-prod-group {
+                     background-image: url(../images/products-page/ss-bk-1.png),
+                     url(../images/products-page/ss-bk-2.png),
+                     url(../images/products-page/ss-bk-3.png),
+                     url(../images/products-page/ss-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: ssanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: ssanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+                 }
+ 
+                 @keyframes ssanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/ss-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/ss-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/ss-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/ss-bk-4.png) 104% 100% no-repeat;
+                         background-color: #4b8b2a;
+                     }
+                     to {
+                         background: url(../images/products-page/ss-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/ss-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/ss-bk-3.png) -101% 130% no-repeat,
+                         url(../images/products-page/ss-bk-4.png) 173% 150% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes ssanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/ss-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/ss-bk-2.png) 172% -22% no-repeat,
+                         url(../images/products-page/ss-bk-3.png) -101% 130% no-repeat,
+                         url(../images/products-page/ss-bk-4.png) 173% 150% no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/ss-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/ss-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/ss-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/ss-bk-4.png) 104% 100% no-repeat;
+                         background-color: #4b8b2a;
+                     }
+                 }
+ 
+                 /** Variety bg **/
+ 
+                 .variety-prod-group {
+                     background-image: url(../images/products-page/protein-packs-bk-1.png),
+                     url(../images/products-page/protein-packs-bk-2.png),
+                     url(../images/products-page/protein-packs-bk-3.png),
+                     url(../images/products-page/protein-packs-bk-4.png);
+                     background-position: -6% -2%, 109% -2%, -6% 100%, 104% 100%;
+                     background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+                     animation: varietyanimatedBackgroundfrom 0.3s ease-in-out forwards;
+                     -moz-animation: varietyanimatedBackgroundfrom 0.3s ease-in-out forwards;
+                     -webkit-animation: varietyanimatedBackgroundfrom 0.3s ease-in-out forwards;
+ 
+                     &:hover {
+                         animation: varietyanimatedBackgroundto 0.3s ease-in-out forwards;
+                         background-repeat: no-repeat;
+                     }
+ 
+                     .image-container {
+                         img {
+                             max-width: 79%;
+                             display: block;
+                             margin-left: 11%;
+                         }
+                     }
+                 }
+ 
+                 @keyframes varietyanimatedBackgroundfrom {
+                     from {
+                         background: url(../images/products-page/protein-packs-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/protein-packs-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/protein-packs-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/protein-packs-bk-4.png) 104% 100% no-repeat;
+                         background-color: #eaeaea;
+                     }
+                     to {
+                         background: url(../images/products-page/protein-packs-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/protein-packs-bk-2.png) 192% -22% no-repeat,
+                         url(../images/products-page/protein-packs-bk-3.png) -81% 130% no-repeat,
+                         url(../images/products-page/protein-packs-bk-4.png) 133% 160% no-repeat;
+                         background-color: #fff;
+                     }
+                 }
+ 
+                 @keyframes varietyanimatedBackgroundto {
+                     from {
+                         background: url(../images/products-page/protein-packs-bk-1.png) -26% -48% no-repeat,
+                         url(../images/products-page/protein-packs-bk-2.png) 192% -22% no-repeat,
+                         url(../images/products-page/protein-packs-bk-3.png) -81% 130% no-repeat,
+                         url(../images/products-page/protein-packs-bk-4.png) 133% 160% no-repeat;
+                         background-repeat: no-repeat;
+                         background-color: #fff;
+                     }
+                     to {
+                         background: url(../images/products-page/protein-packs-bk-1.png) -6% -2% no-repeat,
+                         url(../images/products-page/protein-packs-bk-2.png) 109% -2% no-repeat,
+                         url(../images/products-page/protein-packs-bk-3.png) -6% 100% no-repeat,
+                         url(../images/products-page/protein-packs-bk-4.png) 104% 100% no-repeat;
+                         background-color: #eaeaea;
+                     }
+                 }
+             }
+         }
+     }
+     .button,
+     .button-outline-white {
+         display: inline-block;
+         min-height: 48px;
+         padding: 10px 30px;
+         background: #000;
+         border: 2px solid #000;
+         color: #fff;
+         text-transform: uppercase;
+         cursor: pointer;
+         text-decoration: none;
+         text-align: center;
+         line-height: 23px;
+         font-family: $font-family-primary;
+         transition: border-color 240ms ease,background 240ms ease;
+     }
+     #layout {
+         .rotating-slider {
+             p {
+                 &.control-title-sub-text,
+                 &.control-title-sub-text-up {
+                     @include media-breakpoint-down(sm) {
+                         height: 109px;
+                         padding-left: 11px;
+                         word-spacing: 1px;
+                     }
+                 }
+             }
+         }
+         .product-details {
+             .jumbo-product-promo-button {
+                 &[style] {
+                     background: #000 !important;
+                     border: 2px solid #000 !important;
+                     color: #fff !important;
+                     display: block !important;
+                     text-transform: uppercase !important;
+                     font-weight: 400 !important;
+                     font-size: 0.8em !important;
+                     line-height: 25px !important;
+                     width: 186px !important;
+                     margin: auto !important;
+                 }
+             }
+         }
+     }
+     .rotating-slider {
+         ul {
+             &.direction-controls {
+                 li {
+                     &.left-arrow button {
+ 
+                         background: url(../images/products-page/leftctrlbtn.png) no-repeat center;
+                         height: 56px;
+                         width: 57px;
+                         background-size: 52px 53px;
+                     }
+                     &.right-arrow button {
+ 
+                         background: url(../images/products-page/rightctrlbtn.png) no-repeat center;
+                         height: 56px;
+                         width: 57px;
+                         background-size: 52px 53px;
+                     }
+                 }
+             }
+         }
+     }
+     #controller-panel {
+         width: 100%;
+         height: 359px;
+         background: url(../images/products-page/half-circle-update.png) no-repeat;
+         background-position: center 64px;
+         position: relative;
+         margin-top: 0px;
+         background-size: 1142px 340px;
+         z-index: 2;
+         top: 203px;
+         left: 0;
+     }
+ 
+     .block-amseorichdata {
+         display: none;
+     }
+ }
+ 

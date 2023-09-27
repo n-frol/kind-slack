@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/collection.css')}" />
+
+<h2 class="cards_heading">
+    <isprint value="${pdict.heading}" encoding="off" />
+</h2>
+<div class="cards_desktop">
+<isscript>
+    var reg = pdict.regions.column1;
+    reg.setClassName("card-wrapper");
+    // mark all pages as carousel
+    reg.setComponentClassName("single-card");
+</isscript>
+<isprint value="${reg.render()}" encoding="off"/>
+</div>
+<isscript>
+    var reg = pdict.regions.column1;
+    reg.setClassName("swiper-wrapper");
+    // mark all pages as carousel
+    reg.setComponentClassName("swiper-slide");
+</isscript>
+<div class="card_slider" style="overflow-x:hidden;">
+<isprint value="${reg.render()}" encoding="off"/>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<script>
+    const swiper = new Swiper('.card_slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 10,
+        centeredSlides: false,
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        breakpoints: {
+            1920: {
+                slidesPerView: 3
+            },
+            992: {
+                slidesPerView: 3
+            },
+            320: {
+                slidesPerView: 1.1
+            }
+        },
+    });
+
+    var elements = $(".single-card").length;
+    var finalcount = (elements * 2) + 1;
+    $(".card-wrapper").css("grid-template-rows", "repeat(" + finalcount + ", 200px");
+    $(".single-card").each(function (index) {
+        var count = index + 1;
+        if (count % 2 == 0) {
+            $(this).css("grid-column-start", 2);
+        }
+        if (count % 2 == 0 && count > 2) {
+            $(this).css("grid-row-start", count + 1);
+            $(this).css("position", "relative");
+        }
+        if (count % 2 == 1) {
+            $(this).css("grid-row-start", count * 2);
+        }
+    });
+</script>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <development>
+             <preference preference-id="paymentOperatorTestFlag">true</preference>
+        </development>
+        <staging>
+             <preference preference-id="paymentOperatorTestFlag">true</preference>
+        </staging>
+        <production>
+             <preference preference-id="paymentOperatorTestFlag">false</preference>
+        </production>
+    </custom-preferences>
+</preferences>
+

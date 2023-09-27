@@ -1,0 +1,22 @@
+<isscript>
+    // we shouldn't show pricebook pricing for historical orders because the prices may change
+    // user the line item total and the quantity to calculate the each price
+    var singlePrice, totalPrice, quantity;
+
+    if (!empty(lineItem.unformattedPrice) && !empty(lineItem.price) && !empty(lineItem.price.sales) && !empty(lineItem.price.sales.currency)) {
+        totalPrice = new dw.value.Money(lineItem.unformattedPrice, lineItem.price.sales.currency);
+    }
+
+    if (!empty(lineItem.quantity)) {
+        quantity = new Number(lineItem.quantity);
+    }
+
+    if (!empty(totalPrice) && !empty(quantity)) {
+        singlePrice = totalPrice.divide(quantity);
+    }
+</isscript>
+<div class="price c-product-add-to-cart__prices__price u-text__font-primary">
+    <isif condition="${!empty(singlePrice)}">
+        ${singlePrice.toFormattedString()}
+    </isif>
+</div>

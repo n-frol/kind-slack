@@ -1,0 +1,42 @@
+<style>
+    .c-quantity-form__select-wrapper::after {
+        content: none !important;
+    }
+</style>
+<div class="c-quantity-form">
+    <isif condition="${!lineItem.isByobMaster}">
+        <label class="c-quantity-form__label line-item-pricing-info quantity-label ${pdict.siteID !== 'CreativeSnacks' ? '' : 'd-flex d-lg-none'}" for="quantity">
+                ${Resource.msg('field.selectquantity','cart',null)}
+        </label>
+        <div class="c-quantity-form__select-wrapper quantity-form" tabindex="0">
+            <select class="c-quantity-form__custom-select js-cart-quantity-select form-control quantity quantity-select custom-select"
+                    data-uuid="${lineItem.UUID}"
+                    data-name="${lineItem.name}"
+                    data-price="${lineItem.adjustedPrice.value}"
+                    data-pid="${lineItem.id}"
+                    data-action="${pdict.actionUrls.updateQuantityUrl}"
+                    data-pre-select-qty="${lineItem.quantity}"
+                    data-max="999"
+                    id="quantity"
+                    name="quantity">
+                <isloop begin="${lineItem.quantityOptions.minOrderQuantity}"
+                        end="999"
+                        status="status">
+                    <isif condition="${lineItem.quantity === status.index}">
+                        <option class="c-quantity-form__custom-select__option" selected>${status.index}</option>
+                    <iselse/>
+                        <option class="c-quantity-form__custom-select__option">${status.index}</option>
+                    </isif>
+                </isloop>
+            </select>
+
+        </div>
+    <iselse>
+        <span class="c-quantity-form__display">
+            <isif condition="${pdict.siteID !== "CreativeSnacks"}">
+                ${Resource.msg('field.selectquantity','cart',null)} <br />
+            </isif>
+            <isprint value="${lineItem.quantity}" style="INTEGER" />
+        </span>
+    </isif>
+</div>

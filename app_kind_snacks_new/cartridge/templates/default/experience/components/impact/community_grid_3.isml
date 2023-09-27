@@ -1,0 +1,377 @@
+<div class="comm_grid_3" style="text-align: center; margin:auto">
+    KIND Snack & Give Back
+</div>
+<div class="desktop">
+<div class="community_grid_3">
+    <div class="griditem">
+        <div class="uppergrid">
+        <div class="top_area" style="background: #955023;">
+            <img class="topimg" src="${URLUtils.staticURL('/images/impact/image 35.png')}" alt="KIND Snack & Give Back">
+            <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/Group 23.png')}" alt="KIND Snack & Give Back">
+        </div>
+        <div class="header">
+            KIND<sup>®</sup> PRIDE<br/>
+            benefiting The Ali Forney Center
+        </div>
+        <div class="copy">
+            The Ali Forney Center is the nation’s largest non-profit organization aiding homeless LGBTQIA+ youth. Our 2022 donation supports their housing and healthcare services.
+        </div>
+        </div>
+        <div class="quotegrid" style="border-top: 2px solid #955023;">
+            <img class="quoteimg" src="${URLUtils.staticURL('/images/impact/quotes.png')}" alt="KIND Snack & Give Back">
+            <div class="quote" style="color: #955023;">
+                We are humbled by and grateful for KIND's continued and generous support of our homeless LGBTQ youth. The KIND team and community of consumers have demonstrated for LGBTQ homeless youth that they are valued and cared for no matter what. Through KIND's support we have been able to offer street homeless youth a host of services, including meals, medical and mental healthcare, and a continuum of care designed to help them find housing and the stability they need.”                    <br/><br/>
+                -Alexander Roque, President and Executive Director, The Ali Forney Center
+            </div>
+        </div>
+    </div>
+    <div class="griditem">
+        <div class="uppergrid">
+        <div class="top_area" style="background: #24356E;">
+            <img class="topimg" src="${URLUtils.staticURL('/images/impact/grid3/image 36.png')}" alt="KIND Snack & Give Back">
+            <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/grid3/Group 3059.png')}" alt="KIND Snack & Give Back">
+        </div>
+        <div class="header">
+            KIND<sup>®</sup> HEROES<br/>
+            benefiting Legacies Alive
+        </div>
+        <div class="copy">
+            Legacies Alive’s mission is to strengthen and support the Gold Star Families of our nation’s fallen heroes, bringing national awareness to their lives and character. Our 2022 donation supports their awareness efforts.        </div>
+        </div>
+            <div class="quotegrid" style="border-top: 2px solid #24356E;">
+            <img class="quoteimg" style="" src="${URLUtils.staticURL('/images/impact/grid3/qblue.png')}" alt="KIND Snack & Give Back">
+            <div class="quote" style="color: #24356E;">
+                KIND has made an impact on Legacies Alive by bringing awareness to our nation's Gold Star Families and by bringing KINDness into their homes with handwritten letters to the families of our Fallen Heroes. We are grateful for this exemplary act of kindness and our continued partnership with KIND.”
+            <br/><br/>
+                -John Dudo, Executive Director, Legacies Alive
+            </div>
+        </div>
+    </div>
+    <div class="griditem">
+        <div class="uppergrid">
+        <div class="top_area" style="background: #85322D;">
+            <img class="topimg" src="${URLUtils.staticURL('/images/impact/grid3/image 37.png')}" alt="KIND Snack & Give Back">
+            <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/grid3/Group 24.png')}" alt="KIND Snack & Give Back">
+        </div>
+        <div class="header">
+            KIND<sup>®</sup> EQUALITY<br/>
+            benefiting FoodCorps
+        </div>
+        <div class="copy">
+            FoodCorps creates welcoming school food environments for kids of all cultures and identities. Our 2022 donation supports their efforts to provide access to healthy foods and nutrition education to all kids.
+        </div>
+        </div>
+        <div class="quotegrid" style="border-top: 2px solid #85322D;">
+            <img class="quoteimg" style="" src="${URLUtils.staticURL('/images/impact/grid3/qred.png')}" alt="KIND Snack & Give Back">
+            <div class="quote" style="color: #85322D;">
+                This partnership is helping to ensure that every child will have food education and access to nourishing meals in school by 2030. We are honored to partner with KIND to nourish the futures of thousands of children and their communities.”
+                <br/><br/>
+                -Dr. Robert S. Harvey, President, FoodCorps
+            </div>
+   </div>
+    </div>
+</div>
+</div>
+
+<div class="mobile">
+    <div class="legacy_slider" style="position: relative">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="uppergrid">
+                <div class="top_area" style="background: #955023;">
+                    <img class="topimg" src="${URLUtils.staticURL('/images/impact/image 35.png')}" alt="KIND Snack & Give Back">
+                    <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/Group 23.png')}" alt="KIND Snack & Give Back">
+                </div>
+                <div class="header">
+                    KIND<sup>®</sup> PRIDE<br/>
+                    benefiting The Ali Forney Center
+                </div>
+                <div class="copy">
+                    The Ali Forney Center is the nation’s largest non-profit organization aiding homeless LGBTQIA+ youth. Our 2022 donation supports their housing and healthcare services.
+                </div>
+                    </div>
+                <div class="quotegrid" style="border-top: 2px solid #955023;">
+                    <img class="quoteimg" src="${URLUtils.staticURL('/images/impact/quotes.png')}" alt="KIND Snack & Give Back">
+                    <div class="quote" style="color: #955023;">
+                        We are humbled by and grateful for KIND's continued and generous support of our homeless LGBTQ youth. The KIND team and community of consumers have demonstrated for LGBTQ homeless youth that they are valued and cared for no matter what. Through KIND's support we have been able to offer street homeless youth a host of services, including meals, medical and mental healthcare, and a continuum of care designed to help them find housing and the stability they need.”                    <br/><br/>
+                        -Alexander Roque, President and Executive Director, The Ali Forney Center
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="uppergrid">
+                <div class="top_area" style="background: #24356E;">
+                    <img class="topimg" src="${URLUtils.staticURL('/images/impact/grid3/image 36.png')}" alt="KIND Snack & Give Back">
+                    <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/grid3/Group 3059.png')}" alt="KIND Snack & Give Back">
+                </div>
+                <div class="header">
+                    KIND<sup>®</sup> HEROES<br/>
+                    benefiting Legacies Alive
+                </div>
+                <div class="copy">
+                    Legacies Alive’s mission is to strengthen and support the Gold Star Families of our nation’s fallen heroes, bringing national awareness to their lives and character. Our 2022 donation supports their awareness efforts.        </div>
+                </div>
+                    <div class="quotegrid" style="border-top: 2px solid #24356E;">
+                    <img class="quoteimg" style="" src="${URLUtils.staticURL('/images/impact/grid3/qblue.png')}" alt="KIND Snack & Give Back">
+                    <div class="quote" style="color: #24356E;">
+                        KIND has made an impact on Legacies Alive by bringing awareness to our nation's Gold Star Families and by bringing KINDness into their homes with handwritten letters to the families of our Fallen Heroes. We are grateful for this exemplary act of kindness and our continued partnership with KIND.”
+                        <br/><br/>
+                        -John Dudo, Executive Director, Legacies Alive
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="uppergrid">
+                <div class="top_area" style="background: #85322D;">
+                    <img class="topimg" src="${URLUtils.staticURL('/images/impact/grid3/image 37.png')}" alt="KIND Snack & Give Back">
+                    <img class="comm_grid_3_float" src="${URLUtils.staticURL('/images/impact/grid3/Group 24.png')}" alt="KIND Snack & Give Back">
+                </div>
+                <div class="header">
+                    KIND<sup>®</sup> EQUALITY<br/>
+                    benefiting FoodCorps
+                </div>
+                <div class="copy">
+                    FoodCorps creates welcoming school food environments for kids of all cultures and identities. Our 2022 donation supports their efforts to provide access to healthy foods and nutrition education to all kids.
+                </div>
+                    </div>
+                <div class="quotegrid" style="border-top: 2px solid #85322D;">
+                    <img class="quoteimg" style="" src="${URLUtils.staticURL('/images/impact/grid3/qred.png')}" alt="KIND Snack & Give Back">
+                    <div class="quote" style="color: #85322D;">
+                        This partnership is helping to ensure that every child will have food education and access to nourishing meals in school by 2030. We are honored to partner with KIND to nourish the futures of thousands of children and their communities.”
+                        <br/><br/>
+                        -Dr. Robert S. Harvey, President, FoodCorps
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .uppergrid {
+        height: 680px;
+    }
+    .legacy_slider {
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        overflow-x: hidden;
+        margin-top: 30px;
+    }
+    .legacy_slider .copy {
+        font-family: main;
+        font-size: 15px;
+        line-height: 20px;
+        color: #565656;
+        height: 180px;
+    }
+    .legacy_slider .header {
+        margin-top: 100px;
+        color: black;
+        font-size: 26px;
+        line-height: 32px;
+        margin-bottom: 40px;
+        font-family: main;
+    }
+</style>
+
+<script>
+    const legacyslider = new Swiper('.legacy_slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 20,
+        grabCursor: true,
+        paginationClickable: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next-kind',
+            prevEl: '.swiper-button-prev-kind',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "1.2",
+    });
+    legacyslider.on("slideChange", function() {
+        if (legacyslider.realIndex > 0) {
+            jQuery(".swiper-button-prev-kind").css("opacity", "1");
+        } else {
+            jQuery(".swiper-button-prev-kind").css("opacity", "0");
+        }
+        jQuery(".swiper-button-next-kind").css("opacity", "1");
+    });
+    legacyslider.on("reachEnd", function() {
+        jQuery(".swiper-button-next-kind").css("opacity", "0");
+    });
+</script>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .swiper-button-next-kind, .swiper-button-prev-kind {
+            display: none;
+        }
+    }
+    .swiper-button-next-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        right: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 1;
+    }
+    .swiper-button-next-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .swiper-button-prev-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        left: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 0;
+    }
+    .swiper-button-prev-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<style>
+    .movedown20 {
+        margin-bottom: 80px !important;
+    }
+    .quoteimg {
+        height: fit-content;
+        margin-right: 30px;
+        margin-top: 80px;
+    }
+    .quotegrid {
+        display: flex;
+    }
+    .community_grid_3 .quote {
+        padding-top: 60px;
+        font-family: medium;
+    }
+    .community_grid_3 .header {
+        margin-top: 100px;
+        color: black;
+        font-size: 26px;
+        line-height: 32px;
+        margin-bottom: 40px;
+        font-family: main;
+    }
+    .community_grid_3 .copy {
+        font-family: main;
+        font-size: 15px;
+        line-height: 20px;
+        color: #565656;
+        margin-bottom: 60px;
+    }
+    .community_grid_3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 40px;
+        margin-top: 100px;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        align-items: stretch;
+        justify-items: center;
+        margin-bottom: 80px;
+    }
+    @media screen and (max-width: 440px) {
+        .big.comm, .impact_two_column_1_container_welcome .para {
+            width: calc(100% - 40px) !important;
+            margin-left: 0px !important;
+        }
+        .community_grid_3 .griditem {
+            margin-bottom: 30px;
+        }
+        .community_grid_3 {
+            grid-template-columns: 1fr !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            grid-gap: 40px !important;
+        }
+        .quotegrid {
+            flex-direction: column;
+        }
+        .quoteimg {
+            height: 25px;
+            width: 25px;
+        }
+        .community_grid_3 .header {
+            margin-top: 40px;
+        }
+    }
+    @media screen and (max-width: 440px) {
+        .top_area .topimg {
+            margin-right: 0px !important;
+        }
+        .bluearea.orange {
+            margin: 0px !important;
+            margin-bottom: 40px !important;
+        }
+        .big.welcome {
+            font-size: 32px !important;
+            line-height: 48px !important;
+        }
+    }
+    .top_area .topimg {
+        top: -40px;
+        max-height: 274px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        object-fit: contain;
+    }
+    .top_area {
+        position: relative;
+        border-radius: 20px;
+    }
+    .community_grid_3 .griditem {
+        position: relative;
+    }
+    .comm_grid_3_float {
+        position: absolute !important;
+        bottom: -60px;
+        top: unset !important;
+        z-index: 55;
+        left: -20px !important;
+    }
+    .comm_grid_3 {
+        font-size: 42px;
+        line-height: 48px;
+        font-family: main;
+        margin-bottom: 40px;
+    }
+</style>

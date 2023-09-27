@@ -1,0 +1,166 @@
+{
+  "name": "B2b Why grid",
+  "group": "layouts",
+  "attribute_definition_groups": [
+    {
+      "id": "widthgroup",
+      "attribute_definitions": [
+        {
+          "id": "width",
+          "name": "Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol1",
+          "name": "Width Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthcol2",
+          "name": "Width Columns 2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthmobile1",
+          "name": "Width Mobile Columns",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "widthmobile2",
+          "name": "Width Mobile Columns 2",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": [
+      {
+        "id":"column1",
+        "name":"Column 1",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column2",
+        "name":"Column 2",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column3",
+        "name":"Column 3",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column4",
+        "name":"Column 4",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column5",
+        "name":"Column 5",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column6",
+        "name":"Column 6",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column7",
+        "name":"Column 7",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column8",
+        "name":"Column 8",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      },
+      {
+        "id":"column9",
+        "name":"Column 9",
+        "max_components":999,
+        "component_type_exclusions": [
+          { "type_id": "layouts.1column" },
+          { "type_id": "layouts.2column" },
+          { "type_id": "layouts.3column" },
+          { "type_id": "layouts.4column" },
+          { "type_id": "layouts.gridcomponentlayout" },
+          { "type_id": "einstein.noanchorgrid" }
+        ]
+      }
+  ]
+}

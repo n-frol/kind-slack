@@ -1,0 +1,205 @@
+<div class="container st-container st-container--padded">
+    <div class="checkoutsteps"
+        style="text-transform: uppercase; font-family:HelveticaNeue-Bold, Helvetica, sans-serif; font-size:12px;
+        letter-spacing:1.5px; margin-left:-10px; padding-bottom:10px;">
+        <isif condition="${pdict.currentStage == "shipping"}">
+            <a id="stepcart" class="stepprev" href="/cart">CART</a> > <b class="stepcurrent">SHIPPING</b> > PAYMENT
+            > REVIEW
+        </isif>
+        <isif condition="${pdict.currentStage == "payment"}">
+            <a id="stepcart" class="stepprev" href="/cart">CART</a> > <a id="stepship" class="stepprev"
+                href="checkout?stage=shipping">SHIPPING</a> > <b class="stepcurrent">PAYMENT</b> > REVIEW
+        </isif>
+        <isif condition="${pdict.currentStage == "placeOrder"}">
+            <a id="stepcart" class="stepprev" href="/cart">CART</a> > <a id="stepship" class="stepprev"
+                href="checkout?stage=shipping">SHIPPING</a> > <a id="steppay" class="stepprev"
+                href="checkout?stage=payment">PAYMENT</a> > <b class="stepcurrent">REVIEW</b>
+        </isif>
+    </div>
+    <div class="row">
+        <h1 class="c-page-header-w-login__heading">
+            ${Resource.msg('title.checkout', 'checkout', null)}
+        </h1>
+    </div>
+    <div id="checkout-main" class="data-checkout-stage <isprint value=" ${mainClassString}" encoding="off" />"
+    data-customer-type="${pdict.customer.registeredUser ? 'registered' : 'guest'}"
+    data-checkout-stage="${pdict.currentStage}"
+    data-checkout-get-url="${URLUtils.https('CheckoutServices-Get')}"
+    data-checkout-express-checkout="${isExpressCheckout}"
+    data-checkout-reference-transaction="${isReferenceTransaction}"
+    data-checkout-zero-total="${isZeroTotal}"
+    >
+
+    <style>
+    .c-page-header-w-login__heading {
+        margin: auto;
+    }
+        .stepprev {
+            color: black;
+            text-decoration: none;
+        }
+
+        .stepcurrent {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .checkoutsteps {
+            color: gray;
+        }
+
+        @media screen and (max-width:440px) {
+            .c-page-header-w-login__heading {
+                margin: 0px;
+            }
+            .c-page-header-w-login__total {
+                display: none !important;
+            }
+        }
+    </style>
+
+    <!----------------------------------------------------------------------------------->
+    <!-- Help and Phone -->
+    <!----------------------------------------------------------------------------------->
+
+    <div class="row d-md-none c-page-header-w-login__total">
+        <span class="grand-total-label">${Resource.msgf('label.number.items.in.cart', 'cart', null,
+                                        pdict.order.items.totalQuantity)}</span>
+        <span class="grand-total-price">${pdict.order.totals.subTotal}</span>
+    </div>
+    <div class="row justify-content-between">
+        <div class="st-checkout-main st-main-w-sidebar">
+
+            <!----------------------------------------------------------------------------------->
+            <!-- Checkout Forms: Shipping, Payment, Coupons, Billing, etc -->
+            <!----------------------------------------------------------------------------------->
+
+            <div class="alert c-alert alert-danger c-alert--danger error-message" role="alert">
+                <p class="error-message-text"></p>
+            </div>
+
+            <!-- Step 1: Shipping -->
+            <isinclude template="checkout/shipping/shipping" />
+            <div class="card shipping-summary st-checkout-main__card st-checkout-main__card--summary">
+                <div class="card-header clearfix  st-checkout-main__header st-checkout-main__header--summary">
+                    <h2 class="pull-left st-checkout-main__heading h4">${Resource.msg('heading.checkout.shipping',
+                                                                        'checkout', null)}</h2>
+                    <span class="edit-button pull-right mr-0 st-checkout-main__update">
+                        ${Resource.msg('action.edit.step', 'checkout', null)}</span>
+                </div>
+                <div class="card-body st-checkout-main__content st-checkout-main__content--summary">
+                    <isinclude template="checkout/shipping/shippingSummary" />
+                </div>
+            </div>
+
+            <!-- Step 2: Payment and Billing-->
+            <isif condition="${!isZeroTotal}">
+                <isinclude template="checkout/billing/billing" />
+                <div class="card payment-summary st-checkout-main__card st-checkout-main__card--summary">
+                    <div class="card-header clearfix  st-checkout-main__header st-checkout-main__header--summary">
+                        <iscomment> Hide billing for $0 order totals </iscomment>
+                        <h2 class="pull-left st-checkout-main__heading h4">${Resource.msg('heading.payment',
+                                                                            'checkout', null)}</h2>
+                        <span class="edit-button pull-right mr-0 st-checkout-main__update">
+                            ${Resource.msg('action.edit.step', 'checkout', null)}</span>
+                    </div>
+
+                    <div class="card-body st-checkout-main__content st-checkout-main__content--summary">
+                        <isinclude template="checkout/billing/billingSummary" />
+                    </div>
+                </div>
+            </isif>
+
+            <isif condition="${dw.system.Site.current.getCustomPreferenceValue('kount_IsEnabled')}">
+                <isinclude url="${URLUtils.url('K-ExampleVerification')}"/>
+            </isif>
+
+            <!----------------------------------------------------------------------------------->
+            <!-- Checkout Workflow Buttons -->
+            <!----------------------------------------------------------------------------------->
+            <div class="row">
+                <div class="col-12 col-sm-8 next-step-button st-checkout-main__next-step">
+                    <div>
+                        <button onclick="$('.btn-show-details').click()" class="btn btn-primary btn-block submit-shipping js-submit-shipping" type="submit"
+                            name="submit" value="submit-shipping" <isif
+                            condition="${pdict.order.usingMultiShipping && !pdict.order.shippable}">disabled</isif>>
+                            <isif condition="${isExpressCheckout || isZeroTotal}">
+                                ${Resource.msg('button.next.place.order', 'checkout', null)}
+                            <iselse/>
+                                ${Resource.msg('button.next.payment', 'checkout', null)}
+                            </isif>
+                        </button>
+
+                        <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit"
+                            value="submit-payment">
+                            ${Resource.msg('button.next.place.order', 'checkout', null)}
+                        </button>
+
+                        <button class="btn btn-primary btn-block place-order"
+                            data-action="${URLUtils.url('CheckoutServices-PlaceOrder')}" type="submit" name="submit"
+                            value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <isinclude template="checkout/checkoutSidebar" />
+    </div>
+</div>
+
+<isif condition="${!empty(pdict.order) && !empty(pdict.order.totals) && pdict.order.totals.grandTotalDecimal > dw.system.Site.current.getCustomPreferenceValue("wholesale_threshhold")}">
+<div class="checkout-popup">
+    <div class="popup-header"></div>
+    <button type="button" onclick="$('.checkout-popup').hide();" class="close close-button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+    </button>
+    <div style="padding:15px;">
+    <iscontentasset aid="wholesale-suggest" />
+</div>
+</div>
+</isif>
+
+<style>
+    .popup-header {
+        width: 100%;
+        height: 30px;
+        background: black;
+        padding: 0px !important;
+    }
+    .close-button {
+        top: 2px;
+        position: absolute;
+        right: 2px;
+    }
+    .checkout-popup {
+        z-index: 100;
+        display:none;
+        text-align:center;
+        max-width: 600px;
+        position:fixed;
+        bottom:5px;
+        left:5px;
+        background: white;
+        border: 1px black solid;
+        border-radius: 5px;
+    }
+    .desktop-wholesale-benefits {
+        display: block;
+    }
+    .mobile-wholesale-benefits {
+        display: none;
+    }
+    @media screen and (max-width: 450px) {
+        .desktop-wholesale-benefits {
+            display: none;
+        }
+        .mobile-wholesale-benefits {
+            list-style-position: inside;
+            display: block;
+        }
+        .checkout-popup {
+            bottom: 0px;
+            left: 0px;
+            max-width: 100%;
+        }
+    }
+</style>

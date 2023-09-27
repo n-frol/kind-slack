@@ -1,0 +1,197 @@
+<div class="live_grid_7">
+    <img class="topimage7" src="${URLUtils.staticURL('/images/impact/grid6/image 110.png')}" alt="Impact Planet Grid 7 Image" />
+    <img class="heartimg mobile" src="${URLUtils.staticURL('/images/impact/grid4/Vector 622.png')}" alt="Impact Planet Grid 7 Image" />
+    <img class="heartimg desktop" src="${URLUtils.staticURL('/images/impact/grid5/Vector 622.png')}" alt="Impact Planet Grid 7 Image" />
+    <div class="colorgrid">
+    <div class="orangegrid griditem2">
+        <img class="ulimage" src="${URLUtils.staticURL('/images/impact/grid6/Group 3155.png')}" alt="Impact Planet Grid 7 Image" />
+        <img class="llimage" src="${URLUtils.staticURL('/images/impact/grid6/Frame 3130.png')}" alt="Impact Planet Grid 7 Image" />
+        <div class="thispara one">
+            <b>Supporting refugees and displaced people around the world through our partnership with CHOOSE LOVE.</b>
+            <br/><br/>
+            In the UK, we launched three special-edition bars with wrappers designed by talented Iranian artist Majid Adin, drawing inspiration from the kindness he experienced as a refugee. We donated £50,000 to support the charity’s humanitarian aid and advocacy for refugees around the world.
+        </div>
+    </div>
+    <div class="greengrid griditem2">
+        <img class="midimage" src="${URLUtils.staticURL('/images/impact/grid6/Frame 3087.png')}" alt="Impact Planet Grid 7 Image" />
+        <div class="thispara two">
+            <b>Celebrating everyday heroes like foster carer Jo Newby, who has dedicated her life to caring for others.</b><br/><br/>
+
+            Nominated by her husband for being the true definition of kindness, Jo received the 2022 UK KIND Hero Award to recognize her tireless efforts to help hundreds of members of the community during the past two decades and better the lives of local pan-disabled youths and children in need. Over the course of 18 years, Jo has fostered 92 children. We were proud to recognize Jo’s kind heart with a statue in her honor on the River Thames, created using 3D scanning technology and made from recycled materials.       </div>
+    </div>
+    <div class="bluegrid griditem5">
+        <img class="righttimeimg" src="${URLUtils.staticURL('/images/impact/grid7/continent-bars_mobile.png')}" alt="Impact Planet Grid 7 Image" />
+        <div class="thispara three">
+            <b>Advancing our commitment to sustainability.</b>
+<br/><br/>
+            In the UK, we introduced new packaging that incorporates recycled content made from advanced recycling, reducing virgin plastic use. The project is a unique ‘closed loop’ collaboration. Created for maximum circularity, the new material is produced through the recycling of used mixed plastic that would otherwise be destined for incineration or landfill – making it eligible for drop-off recycling in the UK and curbside recycling in Ireland.        </div>
+    </div>
+</div>
+</div>
+
+<style>
+    .heartimg.desktop {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 0;
+    }
+    .impact_section.live_section {
+        overflow-x: hidden;
+    }
+    .righttimeimg {
+        top: -160px;
+        position: relative;
+    }
+    .midimage {
+        position: relative;
+    }
+    .thispara.two, .thispara.one, .thispara.three {
+        font-family: medium;
+        padding: 0px 20px;
+    }
+    @media screen and (max-width: 440px){
+        .moveover {
+            left: 0px !important;
+        }
+        .righttimeimg {
+            position: absolute;
+            top: -180px !important;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+        }
+        .live_kinder {
+            margin-top: 250px;
+        }
+        .live_grid_7 {
+            margin-bottom: 50px;
+        }
+        .topimage7 {
+            position: absolute;
+            top: 0px;
+            left: 0;
+        }
+        .colorgrid {
+            grid-template-columns: 1fr !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            position: relative;
+            top: 160px;
+        }
+        .llimage, .ulimage, .midimage, .righttimeimg {
+        }
+        .thispara.one, .thispara.two, .thispara.three {
+            top: 0px !important;
+        }
+        .ulimage {
+            top: 100px !important;
+        }
+        .thispara.one {
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        .llimage {
+            bottom: -150px !important;
+            right: -30px !important;
+            left: unset !important;
+            z-index: 100;
+            width: 250px;
+        }
+        .midimage {
+            position: absolute !important;
+            left: 0;
+            width: 150px;
+            top: -60px !important;
+        }
+        .orangegrid {
+            top: 0px !important;
+        }
+        .greengrid, .bluegrid {
+            top: 0px !important;
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        .bluegrid {
+            top: 0px !important;
+        }
+     }
+    .llimage {
+        position: absolute !important;
+        top: unset !important;
+        bottom: -250px;
+        left: 0;
+    }
+    .thispara.three {
+        position: relative;
+        top: -150px;
+    }
+    .thispara.one {
+        position: relative;
+        top: 150px;
+    }
+    .thispara.two {
+        position: relative;
+        top: -200px;
+    }
+    .midimage {
+        top: -190px;
+    }
+    .ulimage {
+        position: absolute !important;
+        left: 0px;
+        top: -140px !important;
+    }
+    .colorgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        grid-gap: 20px;
+        align-items: flex-start;
+    }
+    .colorgrid .griditem {
+        border-radius: 20px;
+        padding: 10px 30px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+    }
+    .orangegrid {
+        max-width: 440px;
+        background: #EDA900;
+        position: relative;
+        top: -250px;
+        border-radius: 20px;
+        padding-bottom: 300px;
+    }
+    @media screen and (max-width: 440px){
+        .orangegrid {
+            padding-bottom: 0px;
+        }
+    }
+    .greengrid {
+        max-width: 440px;
+        background: #B9BE10;
+        position: relative;
+        top: -90px;
+        border-radius: 20px;
+    }
+    .bluegrid {
+        max-width: 440px;
+        background: #61B3E4;
+        position: relative;
+        top: -170px;
+        border-radius: 20px;
+    }
+    .live_grid_7 {
+        position: relative;
+        text-align: center;
+    }
+    .live_grid_7 .img1 {
+        max-width: 1000px;
+        margin: auto;
+        z-index: 1;
+    }
+</style>

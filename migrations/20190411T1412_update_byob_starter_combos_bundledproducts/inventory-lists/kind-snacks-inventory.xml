@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">
+    <inventory-list>
+        <header list-id="kind-snacks-inventory">
+            <default-instock>false</default-instock>
+            <description>KIND Snacks Inventory</description>
+            <use-bundle-inventory-only>false</use-bundle-inventory-only>
+            <on-order>false</on-order>
+        </header>
+
+        <records>
+            <record product-id="17008">
+                <allocation-timestamp>2019-03-20T15:05:48.851Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="17019">
+                <allocation-timestamp>2019-03-20T15:06:26.514Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="17017">
+                <allocation-timestamp>2019-03-20T15:06:08.006Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="17004">
+                <allocation-timestamp>2019-03-20T15:06:26.527Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="30600">
+                <allocation-timestamp>2019-03-20T15:06:51.756Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="26199">
+                <allocation-timestamp>2019-03-20T15:07:14.013Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="30602">
+                <allocation-timestamp>2019-03-20T15:09:23.729Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="20306">
+                <allocation-timestamp>2019-03-20T15:09:43.112Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="24853">
+                <allocation-timestamp>2019-03-20T15:09:54.302Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="20002">
+                <allocation-timestamp>2019-03-20T15:10:05.908Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+            <record product-id="25791">
+                <allocation-timestamp>2019-03-20T15:11:38.547Z</allocation-timestamp>
+                <perpetual>true</perpetual>
+                <preorder-backorder-handling>none</preorder-backorder-handling>
+                <on-order>0</on-order>
+                <turnover>0</turnover>
+            </record>
+
+        </records>
+    </inventory-list>
+</inventory>

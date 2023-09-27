@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+    <slot-configuration slot-id="home-slot-a" context="global" configuration-id="test-banner-kind-minis" default="true" assigned-to-site="true">
+        <template>slots/content/marketingBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="test-banner-kind-minis"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+</slot-configurations>

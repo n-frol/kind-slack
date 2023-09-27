@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<url-rules xmlns="http://www.demandware.com/xml/impex/urlrules/2012-12-01">
+    <general-settings>
+        <lower-case-urls>true</lower-case-urls>
+        <blank-substitute>-</blank-substitute>
+        <character-replacements-enabled>true</character-replacements-enabled>
+        <character-replacements-for-page-url-enabled>true</character-replacements-for-page-url-enabled>
+    </general-settings>
+    <category-rule>[ category-path, [ attribute, custom.categorySlug ], / ]</category-rule>
+    <category-page-url-override>true</category-page-url-override>
+    <category-trailing-slash>true</category-trailing-slash>
+    <category-offline-url-generation>true</category-offline-url-generation>
+    <category-search-refinement-url-enabled>false</category-search-refinement-url-enabled>
+    <product-rule>[[ category, [ category-path, [ attribute, custom.categorySlug ], / ] ], /, [ attribute, name]]</product-rule>
+    <product-page-url-override>true</product-page-url-override>
+    <product-id-separator>-</product-id-separator>
+    <folder-rule>[ folder-path, [ attribute, displayName, noname ], / ]</folder-rule>
+    <folder-page-url-override>true</folder-page-url-override>
+    <folder-trailing-slash>true</folder-trailing-slash>
+    <folder-offline-url-generation>true</folder-offline-url-generation>
+    <folder-search-refinement-url-enabled>false</folder-search-refinement-url-enabled>
+    <content-rule>[ folder ]</content-rule>
+    <content-page-url-override>true</content-page-url-override>
+    <content-id-separator>/</content-id-separator>
+    <pipeline-aliases xml:lang="x-default">
+        <pipeline-alias pipeline="Account-PasswordReset">passwordreset</pipeline-alias>
+        <pipeline-alias pipeline="OrderGroove-Auth">auth</pipeline-alias>
+        <pipeline-alias pipeline="Default-Offline">offline</pipeline-alias>
+        <pipeline-alias pipeline="Home-Show">home</pipeline-alias>
+        <pipeline-alias pipeline="COSummary-Start">revieworder</pipeline-alias>
+        <pipeline-alias pipeline="BYOB-PopulateOrderGrooveSubscription">populateogsubscription</pipeline-alias>
+        <pipeline-alias pipeline="SiteMap-Start">sitemap</pipeline-alias>
+        <pipeline-alias pipeline="Order-Confirm">orderconfirmation</pipeline-alias>
+        <pipeline-alias pipeline="Error-Start">error</pipeline-alias>
+        <pipeline-alias pipeline="Account-MSI">msi</pipeline-alias>
+        <pipeline-alias pipeline="Account-Show">account</pipeline-alias>
+        <pipeline-alias pipeline="Compare-Show">compare</pipeline-alias>
+        <pipeline-alias pipeline="GiftRegistry-Search">giftregistrysearch</pipeline-alias>
+        <pipeline-alias pipeline="Product-PickYourSnacks">chooseyoursnacks</pipeline-alias>
+        <pipeline-alias pipeline="Default-Start">homepage</pipeline-alias>
+        <pipeline-alias pipeline="PowerReviews-WriteReviewPage">writereview</pipeline-alias>
+        <pipeline-alias pipeline="Search-ShowMenu">searchmenu</pipeline-alias>
+        <pipeline-alias pipeline="Account-SetNewPasswordConfirm">confirmednewpassword</pipeline-alias>
+        <pipeline-alias pipeline="GiftCert-Purchase">giftcertpurchase</pipeline-alias>
+        <pipeline-alias pipeline="Account-StartRegister">register</pipeline-alias>
+        <pipeline-alias pipeline="Search-ShowContent">contentsearch</pipeline-alias>
+        <pipeline-alias pipeline="Cart-Show">cart</pipeline-alias>
+        <pipeline-alias pipeline="Account-EditProfile">profile</pipeline-alias>
+        <pipeline-alias pipeline="CustomerService-Show">help</pipeline-alias>
+        <pipeline-alias pipeline="Account-PasswordResetDialogForm">resetform</pipeline-alias>
+        <pipeline-alias pipeline="Account-SetNewPassword">setpassword</pipeline-alias>
+        <pipeline-alias pipeline="GiftRegistryCustomer-Show">giftregistryshow</pipeline-alias>
+        <pipeline-alias pipeline="COBilling-Start">billing</pipeline-alias>
+        <pipeline-alias pipeline="Wishlist-ShowOther">showotherwishlist</pipeline-alias>
+        <pipeline-alias pipeline="Checkout-Begin">checkout</pipeline-alias>
+        <pipeline-alias pipeline="GiftCert-Edit">giftcertedit</pipeline-alias>
+        <pipeline-alias pipeline="Address-List">addressbook</pipeline-alias>
+        <pipeline-alias pipeline="CustomerService-ContactUs">contactus</pipeline-alias>
+        <pipeline-alias pipeline="PaymentInstruments-List">wallet</pipeline-alias>
+        <pipeline-alias pipeline="Home-ErrorNotFound">404</pipeline-alias>
+        <pipeline-alias pipeline="Order-History">orders</pipeline-alias>
+        <pipeline-alias pipeline="Wishlist-Show">wishlist</pipeline-alias>
+        <pipeline-alias pipeline="Login-Show">login</pipeline-alias>
+        <pipeline-alias pipeline="BYOB-List">byoblist</pipeline-alias>
+        <pipeline-alias pipeline="Search-Show">search</pipeline-alias>
+        <pipeline-alias pipeline="COShipping-Start">shipping</pipeline-alias>
+        <pipeline-alias pipeline="OrderGroove-OrderPlacement">ordergroove</pipeline-alias>
+        <pipeline-alias pipeline="Wishlist-Search">searchwishlists</pipeline-alias>
+        <pipeline-alias pipeline="Stores-Find">stores</pipeline-alias>
+        <pipeline-alias pipeline="GiftRegistry-ShowRegistryByID">showgiftregistrybyid</pipeline-alias>
+        <pipeline-alias pipeline="GiftRegistry-Start">giftregistry</pipeline-alias>
+    </pipeline-aliases>
+    <pipeline-trailing-slash>false</pipeline-trailing-slash>
+    <pipeline-perform-redirect>false</pipeline-perform-redirect>
+    <character-replacements xml:lang="x-default">
+        <character-replacement>
+            <character>%</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>ñ</character>
+            <replacement>n</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>&amp;</character>
+            <replacement>-</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>©</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>,</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>®</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>#</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>ô</character>
+            <replacement>o</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>í</character>
+            <replacement>i</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>ú</character>
+            <replacement>u</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>ó</character>
+            <replacement>o</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>+</character>
+            <replacement>-</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>'</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>"</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>(</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>)</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>™</character>
+            <replacement/>
+        </character-replacement>
+        <character-replacement>
+            <character>é</character>
+            <replacement>e</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>á</character>
+            <replacement>a</replacement>
+        </character-replacement>
+        <character-replacement>
+            <character>â</character>
+            <replacement>a</replacement>
+        </character-replacement>
+    </character-replacements>
+    <search-refinement-url-settings>
+        <position>after</position>
+        <segment-delimiter>slash</segment-delimiter>
+        <refinements-delimiter>slash</refinements-delimiter>
+        <value-delimiter>minus</value-delimiter>
+        <conflicting-value-delimiter>blank</conflicting-value-delimiter>
+        <exclude-pipeline-alias-type>none</exclude-pipeline-alias-type>
+        <product-name-identifier>prefn</product-name-identifier>
+        <product-value-identifier>prefv</product-value-identifier>
+        <content-name-identifier>crefn</content-name-identifier>
+        <content-value-identifier>crefv</content-value-identifier>
+    </search-refinement-url-settings>
+</url-rules>
+

@@ -1,0 +1,9 @@
+<isif condition="${!empty(parentHeading)}">
+    <div class="row c-bio-block__parent-header th-kind-media-grid__parent-header page-offset-top page-offset-bottom">
+        <div class="col-12 text-center">
+            <isif condition="${!empty(parentHeading)}">
+                <h1 class="c-bio-block__parent-header__heading">${parentHeading}</h1>
+            </isif>
+        </div>
+    </div>
+</isif>

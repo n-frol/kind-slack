@@ -1,0 +1,5 @@
+<body>
+    <isloop items="${pdict.formFields.keySet()}" var="key">
+        ${key}: ${pdict.formFields.get(key)} <br />
+    </isloop>
+</body>

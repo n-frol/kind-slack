@@ -1,0 +1,38 @@
+<!--- TEMPLATENAME: tfcLibraries.isml
+Implements a reference to the javascript and css libraries employed by the True Fit service
+--->
+
+<isscript>
+    var trueFitClientId = dw.system.Site.current.preferences.custom.TrueFitClientID;
+    var trueFitEnvironment = dw.system.Site.current.preferences.custom.TrueFitEnvironment.getValue();
+
+    var autoCalculate = "false";
+    if (pdict.order) {
+        autoCalculate = "true";
+    }
+</isscript>
+
+<script type="text/javascript">
+    (function(){
+        var a={};
+        function g(l){
+        a[l]=function(r,e,o){
+        var w=window,d=document,p=[],t,s,x;
+        w.tfcapi=t=w.tfcapi||function(){
+        t.q=t.q||[];
+        t.q.push(arguments);};
+        o&&(o.forceMobile===true||(o.mobileMaxWidth && window.innerWidth < o.mobileMaxWidth))&&p.push('deviceType=mobile');
+        o&&o.autoCalculate===false&&p.push('autoCalculate=${autoCalculate}');
+        x=d.getElementsByTagName('script')[0];
+        s=d.createElement('script');
+        s.type='text/javascript';s.async=true;
+        s.src='//'+r+(e==='dev'||e==='staging'?'-'+e:'')+'-cdn'+
+        (d.location.protocol==='https:'?'s':'')+
+        '.truefitcorp.com/fitrec/'+r+'/js/'+l+'.js?'+p.join('&');
+        x.parentNode.insertBefore(s,x);}}
+        g('fitrec');
+        g('tracker');
+        return a;
+        // Don't change anything above this line
+    })().fitrec('${trueFitClientId}', '${trueFitEnvironment}', {forceMobile:false, autoCalculate: false});
+</script>

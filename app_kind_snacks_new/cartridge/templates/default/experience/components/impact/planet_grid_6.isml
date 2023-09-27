@@ -1,0 +1,36 @@
+<div class="planet_grid_6">
+    <div class="griditem">
+        <div class="head">
+            driving progress through intermodal transportation
+        </div>
+        <div class="copy">
+            How do KIND snacks make their way to your kitchen cabinet quickly and safely? That’s the responsibility of our transportation team, who manage the logistics. Over the past two years, the team has taken the initiative to re-evaluate our freight logistics through intermodal transportation – the use of both trains and trucks. Working with our transportation partner, we’re taking steps to make our product more sustainable and challenging ourselves to go bigger, do more, and reduce our impact.
+        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid7/Group 3286.png')}" alt="Impact Planet 6 Image 1" />
+    </div>
+</div>
+
+<style>
+    .planet_grid_6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        grid-gap: 100px;
+    }
+    .planet_grid_6 .head {
+        font-size: 48px;
+        line-height: 54px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .planet_grid_6 .copy {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        font-family: medium;
+    }
+</style>

@@ -1,0 +1,72 @@
+{
+    "step-types":
+    {
+        "pipeline-step":
+        [
+            {
+                "@type-id":"custom.CustomFeeds",
+                "pipeline":"CustomFeeds-Process",
+                "description":"Custom Feeds Exports",
+                "parameters":
+                {
+                    "parameter":
+                    [
+                        {
+                            "@name":"ExportCatalogs",
+                            "description":"Should we export catalogs?",
+                            "@type":"boolean",
+                            "@required":"false"
+                        },
+                        {
+                            "@name":"ExportOrders",
+                            "description":"Should we export orders?",
+                            "@type":"boolean",
+                            "@required":"false"
+                        },
+                        {
+                            "@name":"DaysToExportOrders",
+                            "description":"[Orders] # of days creationDate back",
+                            "@type":"long",
+                            "@required":"false"
+                        },
+                        {
+                            "@name":"ExportCustomers",
+                            "description":"Should we export customer profiles?",
+                            "@type":"boolean",
+                            "@required":"false"
+                        },
+                        {
+                            "@name":"DaysToExportCustomers",
+                            "description":"[Customers] # of days lastModified back",
+                            "@type":"long",
+                            "@required":"false"
+                        }
+                    ]
+                },
+                "status-codes":
+                {
+                    "status":
+                    [
+                        {
+                            "@code":"ERROR",
+                            "description":"Error occurred when Custom Feeds pipeline was executed!"
+                        },
+                        {
+                            "@code":"OK",
+                            "description":"Pipeline 'CustomFeeds-Process' was executed successful!"
+                        }
+                    ]
+                }
+            }
+        ],
+        "script-module-step": [{
+            "@type-id": "custom.script.CustomFeeds",
+            "timeout-in-seconds": "180000",
+            "module": "int_customfeeds/cartridge/scripts/export/jobsteps/CustomFeeds",
+            "function": "generate",
+            "parameters": {
+                "parameters": []
+            }
+        }]
+    }
+}

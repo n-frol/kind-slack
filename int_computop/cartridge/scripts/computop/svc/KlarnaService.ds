@@ -1,0 +1,16 @@
+/**
+ * Service class for method klarna
+ */
+
+/* Script includes */
+var AbstractComputopService = require( "./AbstractComputopService" );
+
+var KlarnaService = AbstractComputopService.extend(
+{
+    init : function() {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorKlarnaGatewayPath');
+    }
+});
+//Export the configured service singleton
+module.exports = (new KlarnaService()).getService();

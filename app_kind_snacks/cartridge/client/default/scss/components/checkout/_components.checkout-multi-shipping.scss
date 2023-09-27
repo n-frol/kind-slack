@@ -1,0 +1,40 @@
+/* ============================================================================
+Multi Shipping
+============================================================================ */
+
+/**
+ * Establish styles for multiple shipments section of the checkout page
+ */
+
+$ns: "c-checkout-multi-shipping";
+
+.#{$ns} {
+    &__card {
+        border: none;
+
+        & + & {
+            border-top: 2px solid $primary;
+            margin-bottom: 28px;
+            padding-top: 10px;
+        }
+        &__header {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 10px;
+
+            @include media-breakpoint-up(md) {
+                padding-top: 12px;
+            }
+        }
+    }
+    & &__hidden {
+        display: none;
+    }
+    &__actions {
+        margin-top: 3px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+        }
+    }
+}

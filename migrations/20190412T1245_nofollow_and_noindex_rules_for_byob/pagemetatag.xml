@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page-meta-tags xmlns="http://www.demandware.com/xml/impex/pagemetatag/2016-08-22">
+    <page-meta-tag-rules>
+        <product-listing-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="BYOB Robots" meta-tag-id="robots">
+                <rule xml:lang="x-default">noindex, nofollow</rule>
+            </page-meta-tag-rule>
+        </product-listing-page-meta-tag-rules>
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="BYOB Starter Combo Robots" meta-tag-id="robots">
+                <rule xml:lang="x-default">nofollow, noindex</rule>
+            </page-meta-tag-rule>
+        </content-detail-page-meta-tag-rules>
+    </page-meta-tag-rules>
+</page-meta-tags>
+

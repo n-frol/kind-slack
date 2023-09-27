@@ -1,0 +1,15 @@
+<isscript>
+    // Make sure templateClass is at least defined, so we don't have to add it to every template touching this one
+    var templateClass = typeof templateClass === 'undefined' ? '' : templateClass;
+</isscript>
+
+<div class="c-product-tile__tile-body__footer<isif condition="${!empty(templateClass)}"> ${templateClass}__tile-body__footer</isif> row tile-body-footer">
+    <div class="c-product-tile__tile-body__footer__ratings ratings<isif condition="${!empty(templateClass)}"> ${templateClass}__tile-body__footer__ratings</isif> col-6 col-xs-12 col-sm-6">
+        <div class="s-powerreviews s-powerreviews-product-tile-ratings">
+            <isinclude template="product/components/ratings" />
+        </div>
+    </div>
+    <div class="c-product-tile__tile-body__footer__compare<isif condition="${!empty(templateClass)}"> ${templateClass}__tile-body__compare</isif> compare col-6 col-sm-6 hidden-lg-down">
+        <isinclude template="product/components/compare" />
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="c-byob-category-nav js-slider" data-infinite="true" data-slidestoshow="${pdict.slidescount}"
+    data-slidestoscroll="${pdict.slidescount}" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+    data-slidestoscroll-768="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3" data-slidestoshow-768="1"
+    data-dots="true" data-arrows="false">
+    <iscomment>Intentionally overwrites byobCategory</iscomment>
+    <div class="testimonial">
+        <img src="${pdict.image.src.desktop}" />
+        <div class="quote">
+        "<isprint value="${pdict.quote}" encoding="off" />
+        <isif condition="${(pdict.readmore != "undefined")}">
+        <a href="#" onclick="showreadmore(this)">... Read More</a>
+        <div class="readmoretext">
+            ${pdict.readmore}"
+        </div>
+        <iselse>
+        "
+        </isif>
+        </div>
+        <div class="name">${pdict.name}</div>
+    </div>
+</div>
+
+<style>
+@media only screen 
+  and (min-width: 1024px)  {
+.s-slick .slick-slide > div {
+     height: 100%;
+}
+}
+.readmoretext {
+    display: none;
+}
+.testimonial {
+    padding: 0px 20px !important;
+}
+.testimonial .quote {
+    margin-bottom:15px;
+}
+.testimonial .name {
+    font-size: 16px;
+}
+.testimonial img {
+    width: 225px;
+}
+</style>

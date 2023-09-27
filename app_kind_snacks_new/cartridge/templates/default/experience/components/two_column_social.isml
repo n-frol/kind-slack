@@ -1,0 +1,198 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<div class="fixed_container">
+    <h3 class="social_header">${pdict.headline}</h3>
+    <div class="social_swiper">
+        <isscript>
+            var social_card_region = pdict.regions.slides;
+            social_card_region.setClassName("swiper-wrapper");
+            // mark all pages as carousel
+            social_card_region.setComponentClassName("swiper-slide");
+        </isscript>
+        <isprint value="${social_card_region.render()}" encoding="off"/>
+    </div>
+
+    <div class="social_cards_mobile">
+        <isscript>
+            var social_card_region = pdict.regions.slides;
+            social_card_region.setClassName("social_mobile_wrapper");
+            // mark all pages as carousel
+            social_card_region.setComponentClassName("social_mobile_card");
+        </isscript>
+        <isprint value="${social_card_region.render()}" encoding="off"/>
+    </div>
+</div>
+<style>
+    .social_swiper .swiper-slide:not(.swiper-slide-active){
+        opacity: 0 !important;
+    }
+    .fixed_container {
+        position: relative;
+    }
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+    }
+    .test_holder {
+        display: block;
+    }
+    .social_cards_mobile {
+        display: none;
+    }
+    @media screen and (max-width: 864px) {
+        .social_swiper {
+            display: none !important;
+        }
+        .social_cards_mobile {
+            display: block !important;
+        }
+    }
+    .social_header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .social_swiper {
+        height: 500px !important;
+        width: 100%;
+        position: relative;
+        overflow-y: hidden;
+    }
+    .social_swiper .swiper-wrapper {
+        overflow-y: hidden;
+        height: 100% !important;
+    }
+    .swiper-container .swiper-slide {
+        height: -webkit-max-content!important;
+        height: -moz-max-content!important;
+        height: max-content!important;
+    }
+    .test_holder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+    }
+    .scroll_area {
+        display: flex;
+        flex-direction: column;
+    }
+    .test_holder .left, .test_holder .right {
+        width: 50%;
+        height: 500px;
+        display: inline-block;
+        float: left;
+    }
+    .test_slide .swiper-wrapper {
+        justify-items: center;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .changeme {
+        width: 90%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .social_card_container {
+        height: unset !important;
+    }
+    .social_cards_mobile .left {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .social_cards_mobile .right {
+        width: 100%;
+        margin-bottom: 80px;
+    }
+
+    @media screen and (max-width: 864px) {
+        .social_card_container .right .social_card_image {
+            max-width: 100%;
+        }
+    }
+</style>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    let mediamatch = gsap.matchMedia();
+
+    mediamatch.add("(min-width: 865px)", () => {
+        gsap.to(".h2", {
+            scrollTrigger: {
+                trigger: ".fixed_container",
+                start: "top 150px",
+                end: '+=1500',
+                pin: true,
+                scrub: 2,
+                onEnter: function () {
+                    social_card_swiper.mousewheel.enable();
+
+                },
+                onLeaveBack: function () {
+                    social_card_swiper.mousewheel.disable();
+
+                }
+            },
+        });
+    });
+
+    const social_card_swiper = new Swiper('.social_swiper', {
+        direction: 'vertical',
+        loop: false,
+        speed: 1000,
+        effect: 'fade',
+        slidesPerView: '1',
+        freeMode: false,
+        autoHeight: true,
+        edgeSwipeThreshold: 100,
+        scrollbar: {
+            el: '.swiper-scrollbar-social',
+            hide: false
+        },
+        keyboard: {
+            enabled: true,
+        },
+        mousewheel: {
+            enabled: true,
+            sensitivity: 1,
+            releaseOnEdges: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        }
+    });
+
+    social_card_swiper.on("reachBeginning", function() {
+        setTimeout(function () {
+            social_card_swiper.params.mousewheel.releaseOnEdges = true;
+        }, 1500);
+        $("body").removeClass("no_scroll");
+    });
+    social_card_swiper.on("reachEnd", function() {
+        setTimeout(function () {
+            social_card_swiper.params.mousewheel.releaseOnEdges = true;
+        }, 1500);
+        $("body").removeClass("no_scroll");
+    });
+    social_card_swiper.on("transitionEnd", function () {
+        var ri = social_card_swiper.realIndex;
+        var slide = social_card_swiper.slides[ri];
+        var img = $(slide).find(".social_card_image").attr("data-img");
+        $(".changeme").fadeOut(500, function() {
+            $(".changeme").attr("src", img).delay(100).fadeIn(500);
+        });
+    });
+
+    $(function() {
+        var first = social_card_swiper.slides[0];
+        var img = $(first).find(".social_card_image").attr("data-img");
+        $(".changeme").attr("src", img);
+    });
+</script>

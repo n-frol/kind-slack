@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="sample_size-chart">
+        <display-name xml:lang="x-default">Sample Size Chart</display-name>
+        <description xml:lang="x-default">Currently exists for the sole purpose of generating the "size chart" link on appropriate pdp's</description>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;table border="1" cellpadding="1" cellspacing="1" style="width:500px;"&gt;&#13;
+	&lt;tbody&gt;&#13;
+		&lt;tr&gt;&#13;
+			&lt;th&gt;Size&lt;/th&gt;&#13;
+			&lt;th&gt;Units&lt;/th&gt;&#13;
+		&lt;/tr&gt;&#13;
+		&lt;tr&gt;&#13;
+			&lt;td&gt;Md&lt;/td&gt;&#13;
+			&lt;td&gt;1&lt;/td&gt;&#13;
+		&lt;/tr&gt;&#13;
+		&lt;tr&gt;&#13;
+			&lt;td&gt;Lg&lt;/td&gt;&#13;
+			&lt;td&gt;2&lt;/td&gt;&#13;
+		&lt;/tr&gt;&#13;
+	&lt;/tbody&gt;&#13;
+&lt;/table&gt;&#13;
+&#13;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

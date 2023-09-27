@@ -1,0 +1,111 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+    var theid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+</isscript>
+<div class="b2bwhycontainer">
+    <h3>${pdict.header}</h3>
+    <div class="perks">
+    <div class="b2bperk">
+        <isprint value="${pdict.regions.column1.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk">
+        <isprint value="${pdict.regions.column2.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk">
+        <isprint value="${pdict.regions.column3.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk">
+        <isprint value="${pdict.regions.column4.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="showextra" style="font-family:'HelveticaNeue-Bold', Helvetica, sans-serif; font-size: 20px; color: white; padding: 20px 25px; padding-top:0px; font-weight:700; position:relative; top:-20px;"
+    onclick='jQuery(".extra").show(); jQuery(this).hide(); jQuery(".hideextra").show();'>see all benefits  &or;</div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column5.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column6.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column7.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column8.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column9.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+    <div class="b2bperk extra">
+        <isprint value="${pdict.regions.column10.setClassName(" region region_landscape-small " + pdict.id).render()}"
+            encoding="off" />
+    </div>
+<div class="hideextra" style="font-family:'HelveticaNeue-Bold', Helvetica, sans-serif; font-size: 20px; color: white; padding: 20px 25px; padding-top:0px; font-weight:700; display:none; position:relative; top:-20px;"
+    onclick='jQuery(".extra").hide(); jQuery(this).hide(); jQuery(".showextra").show();'>collapse all benefits  &and;</div>
+</div>
+</div>
+<style>
+    @media screen and (min-width:1025px) {
+        .perks {
+        }
+        .b2bperk {
+            width: 28%;
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .b2bwhycontainer {
+        background: #095D66;
+        margin: auto;
+        padding: 35px;
+        padding-left: 30px;
+    }
+    .showextra {
+        display: none;
+    }
+    }
+
+    @media screen and (min-width:440px) and (max-width:1024px) {
+        .b2bperk {
+            width: 48%;
+            display: inline-block;
+        }
+        .showextra {
+            display:none;
+        }
+        .b2bwhycontainer {
+        background: #095D66;
+        margin: auto;
+        padding: 35px;
+    }
+    }
+
+    @media screen and (max-width:440px) {
+        .b2bperk {
+            width: 100%;
+            display: inline-block;
+        }
+        .extra {display:none; }
+        .b2bwhycontainer {
+        background: #095D66;
+        margin: auto;
+        padding: 10px;
+    }
+    }
+
+    .b2bwhycontainer h3 {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+</style>

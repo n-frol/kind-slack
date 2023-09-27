@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+@import "~kind/sfra/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "~kind/sfra/bootstrapOverrides";
+@import "~kind/sfra/utilities/responsiveUtils";
+@import "~font-awesome/scss/font-awesome";
+@import "~flag-icon-css/sass/flag-icon";
+@import "~kind/sfra/components/common";
+@import "components/header";
+@import "~kind/sfra/components/footer";
+@import "~kind/sfra/components/hero";
+@import "~kind/sfra/components/headers";
+@import "~kind/sfra/components/notification";
+//@import url(https://fonts.googleapis.com/css?family=Dosis&subset=latin-ext);
+@import "~kind/sfra/components/pricing";
+@import "~kind/sfra/components/productTiles";
+@import "~kind/sfra/components/tabs";
+@import "~kind/sfra/components/breadcrumb";
+@import "~kind/sfra/components/spinner";
+@import "~kind/sfra/miniCart";
+@import "~kind/sfra/components/tooltip";
+@import "~kind/sfra/components/headerSearch";
+
+

@@ -1,0 +1,36 @@
+<isif condition="${!empty(pdict.productlineitem)}">
+
+	<isscript>
+		var GTM = require('int_google/cartridge/scripts/GTM');
+		var pli = pdict.productlineitem;
+		var pid = pli.productID;
+		var variant;
+
+		if (!empty(pli.product) && pli.product.isVariant()) {
+			pid = pli.product.masterProduct.ID;
+			variant = pli.productID;
+		}
+
+		var products = [{
+			'name': pli.productName,
+			'id': pid,
+			'price': pli.adjustedPrice.divide(pli.quantityValue).decimalValue.toString(),
+			'variant': variant,
+			'quantity': pli.quantityValue,
+			'category': (!empty(pli.category) ? GTM.GetCategoryPath(pli.category) : null),
+		}];
+
+	</isscript>
+
+	<script>
+		dataLayer.push({
+		  'event': 'addToCart',
+		  'ecommerce': {
+			'add': {
+			  'products': <isprint value="${JSON.stringify(products, null, 2)}" encoding="off">
+			}
+		  }
+		});
+	</script>
+
+</isif>

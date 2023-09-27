@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="about-us">
+        <display-name xml:lang="x-default">About Us</display-name>
+		<online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/globalContent</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>test-banner-for-your-body</value>
+                <value>test-full-width-cta</value>
+                <value>test-banner-snack-pack</value>
+            </custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="about-us"/>
+        </folder-links>
+    </content>
+    <content content-id="test-banner-for-your-body">
+        <display-name xml:lang="x-default">do the kind thing for your body, your taste buds &amp; your world&lt;sup&gt;&amp;reg;&lt;/sup&gt;</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/featuredContainer</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">We believe if you can't pronounce an ingredient, it shouldn’t go into your body. Actually, it shouldn’t even go into your pantry. KIND&lt;sup&gt;&amp;reg;&lt;/sup&gt; products are made from nutritionally-dense ingredients like whole nuts, fruits and whole grains - no secret ingredients and no artificial flavors, preservatives or sweeteners. Nothing to hide&lt;sup&gt;&amp;reg;&lt;/sup&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">for your body</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/test/about-us_ingredients_grains_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a class="c-featured-container__content__link" href="ingredients-a-z"&gt;&#13;
+        &lt;span class="c-featured-container__content__link__title arrow-link"&gt;ingredients A-Z&lt;/span&gt;&#13;
+        &lt;span class="c-featured-container__content__link__description"&gt;learn more about what's in our snacks&lt;/span&gt;&#13;
+&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="slotHeading" xml:lang="x-default">do the kind thing for your body, your taste buds &amp; your world&lt;sup&gt;&amp;reg;&lt;/sup&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+    <content content-id="test-banner-snack-pack">
+        <display-name xml:lang="x-default">Test Snack Pack</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/marketingBanner</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundImage">images/test/20181009_SnackPack-Homepage-Background.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrow">20 Snacks for $20! &lt;a href="$url('Home-Show')$"&gt;See Terms&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetEyebrowColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">try the KIND Snack Pack!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeadingColor">white</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show','cgid','kind-nut-bars')$"&gt;Shop Now&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+    <content content-id="test-full-width-cta">
+        <display-name xml:lang="x-default">Test Full Width CTA</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/fullWidthCallToAction</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#F2F2F2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">take a look at everything we put in our snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">want to learn more about our delicious ingredients?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show','cgid','kind-nut-snacks')$"&gt;KIND Nut Bars&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">full</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

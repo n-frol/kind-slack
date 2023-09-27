@@ -1,0 +1,39 @@
+
+<div class="card c-account-dashboard__card-body">
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">${Resource.msg('label.payment','account',null)}</div>
+        <isif condition="${pdict.account.payment}">
+            <a href="${URLUtils.url('PaymentInstruments-List')}" class="pull-right c-account-dashboard__card-header__link">${Resource.msg('link.view','account',null)}</a>
+        </isif>
+    </div>
+    <isif condition="${pdict.account.payment}">
+
+        <isif condition="${pdict.account.payment.creditCardType === 'PayPal'}">
+            <iscomment> PayPal Billing Agreement Payment Instrument </iscomment>
+            <div class="card-body card-body-positioning">
+                <div>
+                    <iscomment> PayPal Logo </iscomment>
+                    <p>${pdict.account.payment.creditCardType}</p>
+                    <iscomment> Masked Card #</iscomment>
+                    <p>${Resource.msgf('label.payment.billingagreeementid', 'account', null, pdict.account.payment.maskedCreditCardNumber)}</p>
+                </div>
+            </div>
+        <iselseif condition="${pdict.account.payment.paymentMethod === 'DW_APPLE_PAY'}">
+            <iscomment> Apple PayPayment Instrument </iscomment>
+            <div class="card-body card-info-group">
+                <p class="c-account-dashboard__card-body__card-description">${Resource.msg('label.payment.credit','account',null)} ${pdict.account.payment.creditCardType}</p>
+                <p class="c-account-dashboard__card-body__card-description">************${pdict.account.payment.maskedCreditCardNumber}</p> 
+            </div>
+        <iselse/>
+            <iscomment> Credit Card Payment Instrument </iscomment>
+            <div class="card-body card-info-group">
+                <p class="c-account-dashboard__card-body__card-description">${Resource.msg('label.payment.credit','account',null)} ${pdict.account.payment.creditCardType}</p>
+                <p class="c-account-dashboard__card-body__card-description">${pdict.account.payment.maskedCreditCardNumber}</p>
+                <p class="c-account-dashboard__card-body__card-description">${Resource.msg('label.payment.ending','account',null)} ${pdict.account.payment.creditCardExpirationMonth}/${pdict.account.payment.creditCardExpirationYear}</p>
+            </div>
+        </isif>
+    </isif>
+    <div class="text-center c-account-dashboard__card-footer">
+        <a href="${URLUtils.url('PaymentInstruments-AddPayment')}" aria-label="add new payment method"   class="c-account-dashboard__card-header__link" >${Resource.msg('link.addnew','account',null)} </a>
+    </div>
+</div>

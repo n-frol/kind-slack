@@ -1,0 +1,168 @@
+/* ============================================================================
+Quantity Field
+============================================================================ */
+
+/**
+ * Establish styles for custom quantity fields with plus and minus buttons.
+ */
+
+$ns: "c-qty";
+
+.#{$ns} {
+    align-items: center;
+    display: flex;
+    margin: 0;
+
+    &__wrap {
+        display: inline-block;
+        margin-top: 9px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 16px;
+        }
+    }
+    &__input {
+        background-color: $grey1;
+        font-family: $font-family-primary;
+        font-size: 18px;
+        height: 44px;
+        margin-right: 12px;
+        margin-left: 12px;
+        max-width: 46px;
+        min-width: 44px;
+        width: auto;
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            margin-right: 13px;
+            margin-left: 13px;
+        }
+
+        &[type="number"] {
+            border: none;
+            border-bottom: 2px solid $primary;
+            padding: 10px 5px 12px 5px;
+            width: 44px;
+
+            @supports (appearance: none) or (-moz-appearance: textfield) {
+                appearance: none;
+                -moz-appearance: textfield;
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            display: none;
+        }
+
+    }
+
+    &__label {
+        font-size: 18px;
+        letter-spacing: -.5px;
+        margin-bottom: 14px;
+        text-transform: lowercase;
+    }
+    &__btn {
+        background-color: #fff;
+        border: 2px solid $primary;
+        border-radius: 100%;
+        color: $body-color;
+        height: 44px;
+        line-height: 1;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        width: 44px;
+
+        &:active,
+        &:focus,
+        &:hover {
+            border-color: $primary !important;
+        }
+
+        &:disabled {
+            opacity: .4;
+        }
+
+        &__icon {
+            display: block;
+            height: 18px;
+            margin: auto;
+            pointer-events: none;
+            width: 18px;
+        }
+
+    }
+    &__num-items {
+        display: block;
+        font-size: 14px;
+        margin-top: 4px;
+        text-align: center;
+        text-transform: lowercase;
+    }
+
+    &__in-box-label {
+        position: absolute;
+        color: #fff;
+        top: 2px;
+        padding-left: 8px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    &__add-to-box-btn--enabled {
+        .c-qty__btn--decrease, .c-qty__input, .c-qty__in-box-label {
+            display: none;
+        }
+
+        .c-qty__btn--increase {
+            max-width: 210px !important;
+            width: 100% !important;
+            background-color: black;
+            color: white;
+            img {
+                display: none;
+            }
+        }
+
+        .c-qty__btn--increase:hover {
+            background-color: black !important;
+            color: white;
+            cursor: pointer;
+        }
+
+        .c-qty__btn--increase::before {
+            content: 'ADD TO BOX';
+        }
+    }
+}
+
+.#{$ns}.mini {
+    margin: 0;
+    .c-qty__btn {
+        outline: 0;
+    }
+    @include media-breakpoint-up(lg) {
+        .c-qty__btn {
+            width: 35px;
+            height: 35px;
+            border-width: 1px;
+        }
+        .c-qty__input[type="number"] {
+            width: 52px;
+            height: 35px;
+            min-height: 0;
+            min-width: 0;
+        }
+        .c-qty__btn__icon {
+            width: 11px;
+            height: 11px;
+        }
+    }
+    @include media-breakpoint-up(md) {
+        margin-bottom: 30px;
+    }
+}

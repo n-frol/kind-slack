@@ -1,0 +1,25 @@
+<isset name="productCopy" value="${pdict.product}" scope="page"/>
+<isset name="product" value="${pdict.product}" scope="page"/>
+<isset name="isBundle" value="${false}" scope="page"/>
+<isset name="isQuickView" value="${true}" scope="page"/>
+<isset name="isProductSet" value="${false}" scope="page" />
+
+<isif condition="${!empty(product.backgroundColor)}">
+    <isset name="cssVars" value="${'--pdp-main__bg: ' + product.backgroundColor + ';'}" scope="page" />
+</isif>
+
+<div class="product-quickview st-modal-quickview__product product-${product.productType} col product-wrapper product-detail"
+    style="<isif condition="${!empty(product.backgroundColor)}">${'--pdp-main__bg: ' + product.backgroundColor + '; '}</isif>
+        <isif condition="${!empty(product.imageNavigationColor)}">${'--image-nav-color: ' + product.imageNavigationColor + '; '}</isif>"
+    data-pid="${product.id}">
+
+        <isinclude template="product/productDetailsTop2" />
+
+        <iscomment>Make sure bundle item details get included when appropriate, so that adding to the cart works as expected</iscomment>
+        <isif condition="${!empty(product.bundledProducts) && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}">
+            <div class="d-none">
+                <isinclude template="product/components/bundleItems" />
+            </div>
+        </isif>
+
+</div>

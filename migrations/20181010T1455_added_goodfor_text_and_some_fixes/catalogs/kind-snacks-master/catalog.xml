@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="289">
+        <custom-attributes>
+            <custom-attribute attribute-id="goodFor">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;strong&gt;Good For:&lt;/strong&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Home-Show')$"&gt;Make Lunch Interesting&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Home-Show')$"&gt;Guilt-free Indulgence&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </product>
+
+</catalog>

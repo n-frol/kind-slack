@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>KIND Almond Acres Initiative</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script src="${URLUtils.staticURL('js/vr/aframe.min.js')}"></script>
+    <script src="${URLUtils.staticURL('js/vr/app-content.js')}"></script>
+    <script src="${URLUtils.staticURL('js/vr/main.js')}"></script>
+    <script src="${URLUtils.staticURL('js/vr/SPE.min.js')}"></script>
+    <script src="${URLUtils.staticURL('js/vr/howler.min.js')}"></script>
+    <script src="${URLUtils.staticURL('js/vr/components.js')}"></script>
+
+    <isinclude template="google/googlemodules" />
+    <isgoogletagmanager datalayer="${pdict.DataLayer}" />
+    <isgtmremarketing pagetype="${pdict.gtmPageType}" />
+
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="${URLUtils.staticURL('images/vr/favicon.ico')}" />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2048-2732.jpg')}"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2732-2048.jpg')}"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1668-2388.jpg')}"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2388-1668.jpg')}"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1536-2048.jpg')}"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2048-1536.jpg')}"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1668-2224.jpg')}"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2224-1668.jpg')}"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1620-2160.jpg')}"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2160-1620.jpg')}"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1290-2796.jpg')}"
+        media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2796-1290.jpg')}"
+        media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1179-2556.jpg')}"
+        media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2556-1179.jpg')}"
+        media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1284-2778.jpg')}"
+        media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2778-1284.jpg')}"
+        media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1170-2532.jpg')}"
+        media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2532-1170.jpg')}"
+        media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1125-2436.jpg')}"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2436-1125.jpg')}"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1242-2688.jpg')}"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2688-1242.jpg')}"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-828-1792.jpg')}"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1792-828.jpg')}"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1242-2208.jpg')}"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-2208-1242.jpg=')}"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-750-1334.jpg')}"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1334-750.jpg')}"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-640-1136.jpg')}"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+    />
+    <link
+        rel="apple-touch-startup-image"
+        href="${URLUtils.staticURL('images/vr/apple-splash-1136-640.jpg')}"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    />
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register("${URLUtils.staticURL('js/vr/sw.js')}")
+            });
+        }
+    </script>
+</head>
+<body>
+<isgoogletagmanagernoscript />
+<a-scene game-state="allSelectableIcons: .hotspot;" renderer="antialias: true" background-noise>
+    <!-- Assets -->
+    <a-assets>
+        <video id="video-1" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/video-1.mp4')}" playsinline webkit-playsinline preload="auto"></video>
+        <video id="video-2" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/video-2.mp4')}" playsinline webkit-playsinline preload="auto"></video>
+        <video id="video-3" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/video-3.mp4')}" playsinline webkit-playsinline preload="auto"></video>
+        <video id="video-4" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/video-4.mp4')}" playsinline webkit-playsinline preload="auto"></video>
+        <video id="video-5" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/video-5.mp4')}" playsinline webkit-playsinline preload="auto"></video>
+        <img id="background" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/orchard.png')}" />
+        <img id="particle" crossorigin="anonymous" src="${URLUtils.staticURL('images/vr/particle.png')}" />
+        <audio id="noise" preload="auto" src="${URLUtils.staticURL('images/vr/background.mp3')}" crossorigin="anonymous"></audio>
+        <audio id="ding" preload="auto" src="${URLUtils.staticURL('images/vr/ding.mp3')}" crossorigin="anonymous"></audio>
+        <a-asset-item id="hotspot-1" src="${URLUtils.staticURL('images/vr/recycle.gltf')}"></a-asset-item>
+        <a-asset-item id="hotspot-2" src="${URLUtils.staticURL('images/vr/irrigation.gltf')}"></a-asset-item>
+        <a-asset-item id="hotspot-3" src="${URLUtils.staticURL('images/vr/harvest.gltf')}"></a-asset-item>
+        <a-asset-item id="hotspot-4" src="${URLUtils.staticURL('images/vr/cover.gltf')}"></a-asset-item>
+        <a-asset-item id="hotspot-5" src="${URLUtils.staticURL('images/vr/biochar.gltf')}"></a-asset-item>
+        <a-asset-item id="video-player-model" src="${URLUtils.staticURL('images/vr/video-player.gltf')}"></a-asset-item>
+        <a-asset-item id="video-plane-model" src="${URLUtils.staticURL('images/vr/video-plane.gltf')}"></a-asset-item>
+        <a-asset-item id="video-play-btn-model" src="${URLUtils.staticURL('images/vr/video-play-btn.gltf')}"></a-asset-item>
+        <a-asset-item id="video-close-btn-model" src="${URLUtils.staticURL('images/vr/video-close-btn.gltf')}"></a-asset-item>
+        <a-asset-item id="welcome-container-model" src="${URLUtils.staticURL('images/vr/welcome-container.gltf')}"></a-asset-item>
+        <a-asset-item id="start-btn-model" src="${URLUtils.staticURL('images/vr/start-btn.gltf')}"></a-asset-item>
+        <a-asset-item id="tracker-btn-model" src="${URLUtils.staticURL('images/vr/tracker-btn.gltf')}"></a-asset-item>
+        <a-asset-item id="scene" src="${URLUtils.staticURL('images/vr/kind-scene.gltf')}"></a-asset-item>
+        <a-asset-item id="congrats-container-model" src="${URLUtils.staticURL('images/vr/congrats-container.gltf')}"></a-asset-item>
+        <a-mixin id="hotspot" hotspot particles shadow scale="1.5 1.5 1.5"></a-mixin>
+        <a-mixin id="welcome" text="align: center; anchor: center; baseline: top;"></a-mixin>
+        <a-mixin id="headline" text="width: 3.4; wrapCount: 20; lineHeight: 55;"></a-mixin>
+        <a-mixin id="copy" text="width: 5; wrapCount: 46; lineHeight: 55;"></a-mixin>
+        <a-mixin id="centered" text="align: center; anchor: center; baseline: top;"></a-mixin>
+        <a-mixin id="roboto" text="font: ${URLUtils.staticURL('images/vr/Roboto-msdf.json')}; fontImage: ${URLUtils.staticURL('images/vr/Roboto-msdf.png')}; shader:msdf; color: black;"></a-mixin>
+    </a-assets>
+    <!-- Welcome Container -->
+    <a-entity id="welcome-container">
+        <a-gltf-model
+            shadow
+            cast
+            id="welcome-model"
+            src="#welcome-container-model"
+            placer__start="child: Start; element: #start-btn"
+            placer__headline="child: Header; element: #welcome-headline"
+            placer__copy="child: Copy; element: #welcome-copy"
+        ></a-gltf-model>
+        <a-gltf-model shadow cast id="start-btn" start-btn src="#start-btn-model" class="interactable"></a-gltf-model>
+        <a-text id="welcome-headline" mixin="welcome headline roboto" insert-copy></a-text>
+        <a-text id="welcome-copy" mixin="welcome copy roboto" insert-copy></a-text>
+    </a-entity>
+    <!-- Congrats Container-->
+    <a-entity id="congrats-container" visible="false">
+        <a-gltf-model
+            shadow
+            cast
+            id="congrats-model"
+            src="#congrats-container-model"
+            placer__headline="child: Header; element: #congrats-headline"
+            placer__copy="child: Copy-1; element: #congrats-copy"
+            placer__footer="child: Copy-2; element: #congrats-footer"
+        ></a-gltf-model>
+        <a-text id="congrats-headline" value="All Finished!" mixin="welcome headline roboto" insert-copy></a-text>
+        <a-text id="congrats-copy" align="center" baseline="top" anchor="center" mixin="copy roboto" insert-copy></a-text>
+        <a-text id="congrats-footer" align="center" baseline="top" anchor="center" mixin="copy roboto" width="4" link="href: https://www.kindsnacks.com/our-mission.html; on: click" insert-copy></a-text>
+    </a-entity>
+    <!-- Video Container -->
+    <a-entity id="video-container" visible="false">
+        <a-gltf-model
+            id="video-model"
+            src="#video-player-model"
+            placer__play="child: Play; element: #video-play-button"
+            placer__close="child: Close; element: #video-close-button"
+            placer__player="child: Screen; element: #video-plane"
+            placer__copy="child: copy-holder; element: #video-copy"
+            placer__headline="child: title-holder; element: #video-headline"
+            shadow
+            class="interactable"
+        ></a-gltf-model>
+        <a-gltf-model id="video-plane" src="#video-plane-model" material="src: #video-1" shadow></a-gltf-model>
+        <a-gltf-model id="video-play-button" src="#video-play-btn-model" class="interactable" shadow video-play-button></a-gltf-model>
+        <a-gltf-model id="video-close-button" src="#video-close-btn-model" class="interactable" shadow video-close-button></a-gltf-model>
+        <a-text id="video-headline" class="video-headline" anchor="left" baseline="bottom" line-height="108" wrap-count="40" width="3.7" height="auto" mixin="roboto"></a-text>
+        <a-text id="video-copy" class="video-copy" anchor="left" height="4.5" width="1.7" line-height="55" wrap-count="40" baseline="top" value="" mixin="roboto"></a-text>
+    </a-entity>
+    <!-- Tracker Model -->
+    <a-gltf-model id="tracker-btn" src="#tracker-btn-model" placer__copy="child: counter; element: #tracker-copy" cast shadow tracker-btn>
+        <a-text id="tracker-copy" align="center" baseline="bottom" width="3" value="0 / 5" mixin="roboto"></a-text>
+    </a-gltf-model>
+    <!-- Hotspots -->
+    <a-entity id="icon-group" visible="false">
+        <a-gltf-model id="button1" src="#hotspot-1" class="interactable hotspot" mixin="hotspot"></a-gltf-model>
+        <a-gltf-model id="button2" src="#hotspot-2" class="interactable hotspot" mixin="hotspot"></a-gltf-model>
+        <a-gltf-model id="button3" src="#hotspot-3" class="interactable hotspot" mixin="hotspot"></a-gltf-model>
+        <a-gltf-model id="button4" src="#hotspot-4" class="interactable hotspot" mixin="hotspot"></a-gltf-model>
+        <a-gltf-model id="button5" src="#hotspot-5" class="interactable hotspot" mixin="hotspot"></a-gltf-model>
+    </a-entity>
+    <!-- Scene Model -->
+    <a-gltf-model
+        id="scene"
+        src="#scene"
+        button-placer__button1="buttonTarget: Button-1; videoTarget: video-1; button: #button1"
+        button-placer__button2="buttonTarget: Button-2; videoTarget: video-2; button: #button2"
+        button-placer__button3="buttonTarget: Button-3; videoTarget: video-3; button: #button3"
+        button-placer__button4="buttonTarget: Button-4; videoTarget: video-4; button: #button4"
+        button-placer__button5="buttonTarget: Button-5; videoTarget: video-5; button: #button5"
+        placer__welcome="child: welcome; element: #welcome-container"
+        placer__congrats="child: welcome; element: #congrats-container"
+        placer__tracker="child: tracker; element: #tracker-btn"
+    ></a-gltf-model>
+    <!--Lights -->
+    <a-light type="ambient" intensity="1.1" position="0 0 0"></a-light>
+    <a-light type="directional" intensity="0.5" position="10 10 10" color="#EFEFFF"></a-light>
+    <!-- Controls -->
+    <a-entity id="rig">
+        <a-entity id="camera" fov="75" position="0 1.75 0" camera mouse-cursor look-controls="reverseMouseDrag: false;">
+            <a-entity id="cursor" position="0 0 -0.1" raycaster="objects: .interactable; far: 2000;" cursor="rayOrigin: mouse;"></a-entity>
+        </a-entity>
+    </a-entity>
+    <a-entity raycaster="objects: .interactable; far: 2000;" laser-controls="hand: left"></a-entity>
+    <a-entity raycaster="objects: .interactable; far: 2000;" laser-controls="hand: right"></a-entity>
+    <!-- Background Image-->
+    <a-sky src="#background" rotation="0 -70 0"></a-sky>
+</a-scene>
+
+<script>
+    window.natureSounds = new Howl({
+        src: document.querySelector('#noise')
+            .getAttribute('src'),
+        volume: 0.25,
+        loop: true,
+    });
+    window.natureSounds.play();
+    window.dingSound = new Howl({
+        src: document.querySelector('#ding')
+            .getAttribute('src'),
+        volume: 1,
+        loop: false,
+    });
+    var div_list = document.querySelectorAll('.hotspot'); // returns NodeList
+    var div_array = [...div_list]; // converts NodeList to Array
+    div_array.forEach(div => {
+        div.addEventListener('click', function() {
+            window.dingSound.play();
+        });
+    });
+</script>
+</body>
+</html>

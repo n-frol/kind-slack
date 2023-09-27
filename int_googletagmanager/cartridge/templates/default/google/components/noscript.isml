@@ -1,0 +1,11 @@
+<iscomment>
+Tag manager no script module
+</iscomment>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerEnabled') &&
+				   !empty(dw.system.Site.current.getCustomPreferenceValue('googleTagManagerContainerID'))}">
+    <isset name="googleTagManagerContainerID" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerContainerID')}" scope="page" />
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${googleTagManagerContainerID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</isif>

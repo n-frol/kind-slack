@@ -1,0 +1,217 @@
+/* ============================================================================
+   Billboard Grid
+   ============================================================================ */
+
+/**
+ * Provides styles for billboard grids
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-billboard-grid;
+.#{$ns} {
+    &__parent-header {
+        &__heading {
+            letter-spacing: -2.2px;
+            margin-bottom: 0;
+            text-transform: lowercase;
+
+            @include media-breakpoint-up(md) {
+                letter-spacing: -3.4px;
+            }
+        }
+    }
+    &__item {
+        @include make-col(12);
+
+        margin-bottom: 50px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        @include media-breakpoint-up(sm) {
+            @include make-col(6);
+
+            margin-bottom: 64px;
+        }
+        @include media-breakpoint-up(lg) {
+            @include make-col(4);
+        }
+
+        // Billboard Grid heading
+        &__container-header {
+            color: black;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: -3.4px;
+            margin: 0 auto;
+            max-width: 850px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 60px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+        // Billboard Grid Content
+        &__content {
+            display: flex;
+                flex-direction: column;
+            height: 100%;
+            min-height: 270px;
+
+            &__image-wrapper + &__wrapper {
+                align-items: center;
+            }
+            &__wrapper {
+                display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                height: 100%;
+                padding: 28px 15px 15px;
+                text-align: center;
+
+                @include media-breakpoint-up(md) {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+            }
+            &__image-wrapper {
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                width: 100%;
+
+                @include media-breakpoint-up(md) {
+                    min-height: 225px;
+                }
+            }
+            &__image {
+                width: 400px;
+
+                @include media-breakpoint-up(sm) {
+                    max-width: 275px;
+                }
+                @include media-breakpoint-up(md) {
+                    max-width: 225px;
+                }
+            }
+            &__heading-body-wrap {
+                @include make-col(12);
+            }
+            &__heading {
+                font-size: 24px;
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                line-height: 1.17;
+                letter-spacing: -.8px;
+                margin-bottom: 8px;
+                text-transform: none;
+            }
+            &__body {
+                font-size: 16px;
+                line-height: 1.75;
+                letter-spacing: .3px;
+                margin-bottom: 15px;
+            }
+            &__link {
+                display: block;
+                padding: 0;
+                text-decoration: none;
+                text-transform: none;
+                &:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+                &__title {
+                    color: black;
+                    display: block;
+                    font-weight: 700;
+                    font-size: 18px;
+                    letter-spacing: -0.8px;
+                    line-height: 1.2em;
+                    &::after {
+                        border-right: 2px solid black;
+                        border-top: 2px solid black;
+                        content: "";
+                        display: inline-block;
+                        height: 10px;
+                        margin-bottom: 1px;
+                        margin-left: 5px;
+                        transform: rotate(45deg);
+                        width: 10px;
+                    }
+                }
+                &__description {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    letter-spacing: 0.3px;
+                }
+            }
+            &__links {
+                align-self: flex-end;
+                font-size: 12px;
+                line-height: 1.2;
+                letter-spacing: 1.6px;
+                text-transform: uppercase;
+            }
+            &::after {
+                clear: both;
+                content: "";
+                display: block;
+            }
+            &--center {
+                .#{$ns}__content__image-wrapper {
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        width: 60%;
+                    }
+                }
+            }
+            &--left {
+                .#{$ns}__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        float: left;
+                    }
+                }
+                .#{$ns}__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-left: 70%;
+                    }
+                }
+            }
+            &--right {
+                .#{$ns}__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        float: right;
+                    }
+                }
+                .#{$ns}__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-right: 70%;
+                    }
+                }
+            }
+        }
+    }
+    &__parent-footer {
+        font-size: 12px;
+        font-weight: 700;
+        justify-content: center;
+        letter-spacing: 1.5px;
+    }
+}

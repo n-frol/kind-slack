@@ -1,0 +1,199 @@
+/**
+ * Service class for method credit direct
+ */
+/* Api includes */
+var cdpmLogger = require('dw/system/Logger').getLogger('paymentOperator', 'paymentOperator');
+var HashMap    = require('dw/util/HashMap');
+
+/* Script includes */
+var AbstractComputopService = require('./AbstractComputopService');
+var Blowfish = require('~/cartridge/scripts/computop/lib/Blowfish');
+var logPrefix = 'PAYMENTOPERATOR_PAYGATE - CreditDirectCaptureService.ds\n\t';
+
+/**
+ * @module CreditDirectService
+ */
+var CreditDirectRefundService = AbstractComputopService.extend({
+    init: function () {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorCreditDirectRefundPath');
+    },
+
+    /**
+     * Implements the function that should be used to prepare the service call request objects
+     *
+     * @param {dw.svc.HTTPService}    svc       The service itself
+     * @param {dw.util.Map}           params    Map of key value pairs that have to be added as parameters to the call
+     *
+     * @return String The string that has to be sent to the service
+     */
+    createRequest : function( svc, params) {
+
+        //sets the service call endpoint
+        if ( !empty(this.relativeURLPath) ) {
+            svc.URL = svc.configuration.credential.URL + this.relativeURLPath;
+        }
+
+        //adding header values
+        if ( !empty(this.requestHeaders) ) {
+            for ( var headerID in this.requestHeaders ) {
+                svc.addHeader(headerID, this.requestHeaders[headerID]);
+            }
+        }
+
+        //setting request encoding
+        if ( !empty(this.encoding) && this.encoding != 'UTF-8') {
+            svc.setEncoding(this.encoding);
+        }
+
+        //setting the authentication mechanism which is default NONE
+        svc.setRequestMethod('NONE');
+
+        //setting request method
+        svc.setRequestMethod('POST');
+
+        //create requestData as string
+        var requestData = '';
+        if ( !empty(params) ) {
+            if(!empty(params.CCNr) && params.CCNr != ''){
+                params.CCNr = params.CCNr.replace(/ /g,'');
+            }
+            requestData = this.joinAttributes(params, '=', '&');
+        }
+
+        // log used service url for debugging purposes
+        cdpmLogger.info(logPrefix + 'Called service: ' + svc.URL );
+
+        var merchantId = this.getSitePreference('paymentOperatorMerchantID');
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+        var etiID = this.getSitePreference('paymentOperatorEtiID');
+
+        var encrypted = Blowfish.encryptBlowfish(requestData, merchantCode);
+
+        svc.addParam('MerchantID', merchantId);
+        svc.addParam('Len', requestData.length);
+        svc.addParam('Data', encrypted);
+        svc.addParam('EtiID', etiID);
+
+        var logRequestData = 'Request data (encrypted): MerchantID=' + merchantId
+            + '&Len=' + requestData.length
+            + '&Data=' + encrypted
+            + '&EtiID=' + etiID;
+        cdpmLogger.info(logPrefix + logRequestData);
+
+        //setting the out file if defined
+        if ( !empty(this.outfile) ) {
+            svc.setOutFile(this.outfile);
+        }
+
+        return this;
+    },
+    /**
+     * Decrypt response
+     *
+     * @param {dw.svc.HTTPService} svc - service instance
+     * @param {dw.net.HTTPClient} httpClient - client instance
+     * @returns {dw.util.HashMap} - paygate response
+     */
+    parseResponse: function (svc, httpClient) {
+        var result;
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+        try {
+            if (200 == httpClient.getStatusCode()) {
+                var responseObject = this.splitAttributes(httpClient.text, '=', '&');
+                cdpmLogger.info(logPrefix + 'Raw response: ' + httpClient.text);
+                result = responseObject.hasOwnProperty('Data') ? this.decryptResponse(responseObject.Data, merchantCode) : '';
+                if (result == '' || result == null) {
+                    result = this.parseSecureData(httpClient.text);
+                } else {
+                    result = this.toParameterMap(result);
+                }
+                // log response data for debugging
+                this.logResponse(result);
+            }
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at parseResponse:\n' +
+                '\tError while fetching / decrypting the response!';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+            cdpmLogger.error(eString);
+        }
+        return result;
+    },
+
+    /**
+     * decode non encrypted 3D Secure response
+     *
+     * @param {string} data - encrypted paygate response
+     * @returns {dw.util.HashMap} - decrypted paygate response as hash map
+     */
+    parseSecureData: function (data) {
+        var result = new HashMap();
+        data = data.replace(/acsurl=/g, '');
+
+        // PaReq parameter
+        var paReqPosition = data.search(/pareq=/g),
+            paReq = '',
+            acsUrl = '';
+
+        if (paReqPosition != -1) {
+            var paReyParameterCandidate : String = data.substr(paReqPosition + 6);
+            var nextParameterPosition = paReyParameterCandidate.search(/\&/g);
+            if (nextParameterPosition != -1) {
+                paReq = paReyParameterCandidate.substring(0, nextParameterPosition);
+            } else {
+                paReq = paReyParameterCandidate;
+            }
+        }
+
+        // TransId parameter
+        var transIdPosition = data.search(/TransID=/g);
+        var transId = '';
+        if (transIdPosition != -1) {
+            var transIdCandidate = data.substr(transIdPosition + 8);
+            var newParameterPosition = transIdCandidate.search(/\&/g);
+            if (newParameterPosition != -1) {
+                transId = transIdCandidate.substring(0, newParameterPosition);
+            } else {
+                transId = transIdCandidate;
+            }
+        }
+
+        // modified TermId parameter
+        var termUrlPosition = data.search(/termurl=/g);
+        var termUrl = '';
+        if (termUrlPosition != -1) {
+            termUrl = data.substr(termUrlPosition + 8);
+            // remove  term url param
+            acsUrl = data.substr(0, termUrlPosition -1);
+        } else {
+            // no term url found
+            acsUrl = data;
+        }
+
+        if (paReqPosition != -1) {
+            try {
+                // remove pares param
+                acsUrl = acsUrl.substr(0, paReqPosition -1) + acsUrl.substr(paReqPosition + 6 + paReq.length);
+            } catch (e) {
+                // parsed param could not be removed
+                var eString = logPrefix + '\tERROR at parseSecureData:';
+                eString += Object.keys(e).map(function (key) {
+                    return '\n\t' + key + ': ' + e[key];
+                }).join();
+                cdpmLogger.error(eString);
+            }
+        }
+
+        result.put('ACSURL', acsUrl);
+        result.put('PaReq', paReq);
+        result.put('TransId', transId);
+        result.put('TermUrl', termUrl);
+
+        return result;
+    },
+
+});
+//Export the configured service singleton
+module.exports = (new CreditDirectRefundService()).getService();

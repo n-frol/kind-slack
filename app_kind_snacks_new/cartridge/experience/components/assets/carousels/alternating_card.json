@@ -1,0 +1,88 @@
+{
+    "name": "Alternating Card",
+    "group": "carousels",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "image_mobile",
+                    "name": "Image Mobile",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "background",
+                    "name": "Background Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": true
+                },
+                {
+                    "id": "headline",
+                    "name": "Cards title",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "name": "Cards description",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "padding",
+                    "name": "Padding Below",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "paddingm",
+                    "name": "Padding Below Mobile",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "ctatext",
+                    "name": "CTA Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctalink",
+                    "name": "CTA Link",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"benefits",
+            "name":"Benefits",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}

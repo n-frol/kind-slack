@@ -1,0 +1,93 @@
+/* ============================================================================
+Recommendation
+============================================================================ */
+
+/**
+ * Styling for recommendations block
+ */
+
+ $ns: "c-recommendation";
+
+.#{$ns} {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: 70px;
+    }
+
+    &__title {
+        color: $grey7;
+        font-size: 30px;
+        letter-spacing: -1.5px;
+        line-height: normal;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 40px;
+        }
+    }
+
+    &__slider {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            max-width: 1320px;
+        }
+
+        &__controls {
+            display: flex;
+                justify-content: center;
+            width: 100%;
+
+            &__arrow {
+                background-color: transparent;
+                border: 2px solid transparent;
+                height: 28px;
+                min-height: 0;
+                min-width: 0;
+                opacity: .75;
+                position: absolute;
+                    bottom: auto;
+                    top: 50%;
+                transform: translateY(-50%) rotateZ(45deg);
+                width: 28px;
+                z-index: 2;
+
+                &:active,
+                &:hover {
+                    background-color: transparent !important; // override the style from base.buttons without having an overly complex selector hierarchy
+                    opacity: 1;
+                }
+            }
+            &__prev {
+                border-bottom-color: $black;
+                border-left-color: $black;
+                left: -20px;
+
+                &:active,
+                &:hover {
+                    border-bottom-color: $black;
+                    border-left-color: $black;
+                }
+            }
+            &__next {
+                border-right-color: $black;
+                border-top-color: $black;
+                right: -20px;
+
+                &:active,
+                &:hover {
+                    border-right-color: $black;
+                    border-top-color: $black;
+                }
+            }
+        }
+    }
+}

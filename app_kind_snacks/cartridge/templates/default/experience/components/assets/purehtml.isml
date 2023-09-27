@@ -1,0 +1,12 @@
+<isprint value="${pdict.html}" encoding="off" />
+<style>
+.purehtml-center {
+    display: flex !important;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    }
+    .region:before {
+        content: unset;
+    }
+</style>

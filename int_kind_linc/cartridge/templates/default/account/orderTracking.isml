@@ -1,0 +1,12 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/account/orderTrack.css');
+        assets.addCss('/css/account/profile.css');
+    </isscript>
+    <div class="container receipt st-container--padded">
+        <div id="letslinc-params" data-shop-id="${pdict.shopId}" <isif condition="${pdict.isDevActive}">data-staging="true"</isif> ></div>
+        <div class="linc" data-source="orderdetails" data-order-id="${pdict.orderId}" data-email="${pdict.email}" data-custom-class="mobile" ></div>
+        <script type="text/javascript" src="https://connect.letslinc.com/v1/myAccountWidget.js"></script>
+    </div>
+</isdecorate>

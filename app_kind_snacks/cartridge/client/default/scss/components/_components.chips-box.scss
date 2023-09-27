@@ -1,0 +1,68 @@
+/* ============================================================================
+Chips
+============================================================================ */
+
+/**
+ * Styles for the chips on the page Layout
+*/
+$ns: c-chips-box;
+.#{$ns} {
+    font-family: $font-family-primary;
+
+    &--config {
+        margin-top: 5px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 9px;
+        }
+    }
+    &__item {
+        background-color: $grey-chips;
+        border-radius: 10px;
+        color: $black !important; ///*in global style this class has chain of parent classes*/
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        line-height: 11px;
+        padding: 3px 5px 2px 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-top: 16px;
+        &:hover {
+            text-decoration: none;
+        }
+        &__close-icon {
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            height: 16px;
+            margin-left: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+            vertical-align: middle;
+            width: 16px;
+            &:hover {
+                background-color: $grey3;
+            }
+            &::before,
+            &::after {
+                background-color: $black;
+                content: "";
+                display: inline-block;
+                height: 1px;
+                position: absolute;
+                top: 7px;
+                right: 3px;
+                transform: rotate(45deg);
+                width: 10px;
+            }
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    &-no-margin {
+        margin-top: 0;
+    }
+}

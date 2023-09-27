@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="occasion">
+                <display-name xml:lang="x-default">Occasion</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>true</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>true</mandatory-flag>
+                <visible-flag>true</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+                <select-multiple-flag>true</select-multiple-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">fuel for your morning run</display>
+                        <value>fuel-your-morning-run</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">breakfast at home</display>
+                        <value>breakfast-at-home</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">add some fruit to your day</display>
+                        <value>add-some-fruit</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">make lunch interesting</display>
+                        <value>make-lunch-interesting</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">snack healthy while on-the-go</display>
+                        <value>healthy-on-the-go</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">after school snack</display>
+                        <value>after-school-snack</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">power for your workout</display>
+                        <value>power-your-workout</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">guilt-free indulgence</display>
+                        <value>guilt-free-indulgence</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">evening snack</display>
+                        <value>evening-snack</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+</metadata>

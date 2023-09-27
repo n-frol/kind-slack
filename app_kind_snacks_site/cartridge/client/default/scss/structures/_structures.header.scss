@@ -1,0 +1,174 @@
+/* ============================================================================
+Site Header
+============================================================================ */
+
+/**
+ * Establish styles for the site header and non-component elements within
+ */
+
+$ns: st-header;
+
+.#{$ns} {
+    border-bottom: 1px solid $grey11;
+
+    @include media-breakpoint-down(md) {
+        position: relative;
+        z-index: 51;
+    }
+
+    &.has-expanded-menu {
+        border-bottom-color: $grey11;
+    }
+
+    &__container {
+        @include media-breakpoint-down(md) {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &__navbar {
+        &--logo {
+            display: block;
+            text-align: right;
+            width: auto;
+
+            &__img {
+                width: 100%;
+            }
+
+            &__link {
+                padding-bottom: 9px;
+                width: 75px;
+
+                @include media-breakpoint-up(lg) {
+                    padding-bottom: 24px;
+                    width: 100px;
+                }
+            }
+        }
+        &--utilities {
+            color: $white;
+            justify-content: flex-end;
+            margin: 0 -19px 0 0;
+
+            @include media-breakpoint-up(lg) {
+                margin-right: -25px;
+            }
+
+            &__icon {
+                &__img {
+                    height: 20px;
+                    width: auto;
+                }
+            }
+        }
+        & &__toggler {
+            background-color: transparent;
+            border: 2px solid transparent;
+            margin-left: -2px;
+            min-width: 0;
+
+            &:active {
+                background-color: inherit !important;
+            }
+        }
+
+        &__search-toggle {
+            @include background-svg($svg-search);
+
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            line-height: 1;
+            min-height: 0;
+            min-width: 0;
+            outline: none;
+            padding-bottom: 0;
+            padding-left: 0;
+            padding-right: 0;
+            width: auto;
+
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: transparent !important; // Important to override styles that would require to specific of a selector
+                border: none !important; // Important to override styles that would require to specific of a selector
+                outline: none;
+            }
+
+            &:hover {
+                @include background-svg($svg-search-red);
+            }
+        }
+    }
+    &__inner {
+        display: grid;
+            grid-template-columns: 1fr auto 1fr;
+        min-height: 54px;
+        z-index: 10;
+
+        @include media-breakpoint-up(lg) {
+            position: static;
+        }
+
+        &::after { // Prevent modal from affecting BG of header
+            background-color: $white;
+            content: '';
+            height: 100%;
+            position: absolute;
+                left: calc(50% - 50vw); // Move to page edge
+                top: 0;
+                z-index: -1;
+            width: 100vw;
+        }
+    }
+    .modal-background {
+        display: none !important; // Override inline style
+    }
+
+    &__utility-link {
+        height: 20px;
+        vertical-align: middle;
+        width: 20px;
+
+        &--account-guest {
+            @include background-svg($svg-account-guest);
+
+            &:hover {
+                @include background-svg($svg-account-guest-red);
+            }
+        }
+
+        &--account-user {
+            @include background-svg($svg-account-user);
+
+            &:hover {
+                @include background-svg($svg-account-user-red);
+            }
+        }
+
+        &--minicart {
+            @include background-svg($svg-minicart);
+
+            width: 22px;
+
+            &:hover {
+                @include background-svg($svg-minicart-red);
+            }
+
+            &.is-filled {
+                @include background-svg($svg-minicart-filled);
+
+                &:hover {
+                    @include background-svg($svg-minicart-filled-red);
+                }
+            }
+        }
+    }
+}

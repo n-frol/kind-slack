@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="isByobMaster">
+                <display-name xml:lang="x-default">BYOB Master</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="isBlockedAccess">
+                <display-name xml:lang="x-default">Block Access</display-name>
+                <type>boolean</type>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>false</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="productDetails">
+                <display-name xml:lang="x-default">Product Attributes</display-name>
+                <attribute attribute-id="productType"/>
+                <attribute attribute-id="containerType"/>
+                <attribute attribute-id="productClassID"/>
+                <attribute attribute-id="backgroundColor"/>
+                <attribute attribute-id="badge"/>
+                <attribute attribute-id="texture"/>
+                <attribute attribute-id="occasion"/>
+                <attribute attribute-id="benefits"/>
+                <attribute attribute-id="featuredAssets"/>
+                <attribute attribute-id="nutritionFactsImage"/>
+                <attribute attribute-id="nutritionNotes"/>
+                <attribute attribute-id="featuredHeading"/>
+                <attribute attribute-id="notInProductLabel"/>
+                <attribute attribute-id="notInProductBody"/>
+                <attribute attribute-id="sizeChartId"/>
+                <attribute attribute-id="isByobMaster"/>
+                <attribute attribute-id="isBlockedAccess"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

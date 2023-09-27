@@ -1,0 +1,97 @@
+/* ============================================================================
+   Graphical Asset
+   ============================================================================ */
+
+/**
+ * Handles the styling of graphical asset HTMLs
+ */
+
+$ns: s-graphical-asset;
+
+.#{$ns} {
+
+    sup {
+        font-size: .5em;
+        line-height: .8em;
+        position: relative;
+            top: -.7em;
+    }
+
+    &__links {
+
+        ul {
+            @include pxl-list-flat();
+        }
+
+        a {
+            background-color: black;
+            color: white;
+            display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            padding: 12px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            &:hover {
+                background-color: black;
+                color: white;
+                text-decoration: none;
+            }
+
+            &.btn-outline-black {
+                background-color: transparent;
+                border: 2px solid $black;
+                color: $black;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $black;
+                    color: $black;
+                }
+            }
+
+            &.btn-outline-white {
+                background-color: transparent;
+                border: 2px solid $white;
+                color: $white;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 2px solid $white;
+                    color: $white;
+                }
+            }
+
+            &.link {
+                display: inline-block;
+                background-color: transparent;
+                color: black;
+                font-size: 12px;
+                padding: 0;
+                position: relative;
+                text-decoration: none;
+
+                &::after {
+                    background-color: black;
+                    content: "";
+                    display: block;
+                    height: 2px;
+                    position: absolute;
+                       bottom: -2px;
+                    width: 100%;
+                }
+            }
+
+        }
+
+    }
+    .v2 & {
+        min-height: 100%;
+        position:relative;
+        overflow:hidden;
+        @include media-breakpoint-up(md) {
+            margin: 0 20px;
+        }
+    }
+}

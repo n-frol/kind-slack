@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="SlotConfiguration">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="slotBackgroundColor">
+                <display-name xml:lang="x-default">Slot Background Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="slotBody">
+                <display-name xml:lang="x-default">Slot Body</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="slotHeading">
+                <display-name xml:lang="x-default">Slot Heading</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="customFields">
+                <display-name xml:lang="x-default">Custom Fields</display-name>
+                <attribute attribute-id="slotHeading"/>
+                <attribute attribute-id="slotBody"/>
+                <attribute attribute-id="slotBackgroundColor"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

@@ -1,0 +1,27 @@
+<isif condition="${pdict.idme.isIDmeButtonActive === true}">
+<div class="s-idme">
+    <div class="collapsible">
+    <h2 class="title s-idme__collaps-title" style="font-size:14px;">${pdict.idme.collapseTitle}</h2>
+    <div class="content s-idme__content">
+        <span id="idme-wallet-button"
+            data-scope="${pdict.idme.scope}"
+            data-client-id="${pdict.idme.clientId}"
+            data-redirect="${URLUtils.https('IDme-Results')}"
+            data-text="${pdict.idme.buttonDataText}"
+            data-response="code",
+            data-state="${pdict.idme.state}",
+            data-logo="${pdict.idme.logo}",
+            data-hero="${pdict.idme.heroImage}",
+            data-display=link>
+        </span>
+        <script src="https://s3.amazonaws.com/idme/developer/idme-buttons/assets/js/idme-wallet-button.js"></script>
+    </div>
+    </div>
+</div>
+</isif>
+
+<style>
+.s-idme__collaps-title {
+    font-size:14px !important;
+}
+</style>

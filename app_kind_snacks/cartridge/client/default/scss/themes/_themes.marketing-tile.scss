@@ -1,0 +1,75 @@
+/* ============================================================================
+   Marketing Tile
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the marketing tile
+ */
+
+ $ns: th-kind-marketing-tile;
+ $component: c-marketing-tile;
+ $scope: s-graphical-asset;
+ 
+ .#{$ns} {
+ 
+     // Marketing Tile Component
+     &.#{$component} {
+ 
+         .#{$component} {
+ 
+             // Marketing Tile Heading
+             &__heading {
+                 font-family: $font-family-primary;
+                 font-size: 18px;
+                 letter-spacing: -0.5px;
+             }
+ 
+             // Marketing Tile Body
+             &__body {
+                 font-family: $font-family-primary;
+                 font-size: 18px;
+                 letter-spacing: -0.5px;
+             }
+ 
+             // Marketing Tile Links
+             &__links {
+                 font-family: $font-family-secondary;
+                 letter-spacing: 0.3px;
+                 line-height: 1.56;
+                 margin-top: 22px;
+             }
+ 
+         }
+ 
+     }
+ 
+     // Graphical Asset Scope
+     &.#{$scope} {
+ 
+         .#{$scope} {
+ 
+             // Graphical Asset Links
+             &__links {
+ 
+                 a {
+                     background: none;
+                     border-bottom: 2px solid;
+                     padding: 0;
+                     text-transform: none;
+
+                     &:hover {
+                         border-color: transparent;
+                         color: white;
+                         text-decoration: none;
+                     }
+ 
+                 }
+ 
+             }
+ 
+         }
+ 
+     }
+ 
+ }
+ 

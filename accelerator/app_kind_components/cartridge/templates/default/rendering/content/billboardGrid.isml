@@ -1,0 +1,26 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<isif condition="${!empty(pdict.content)}">
+    <isset name="slotcontent" value="${pdict.content}" scope="page" />
+    <isset name="parentGraphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(slotcontent)}" scope="page" />
+    <isset name="parentHeading" value="${parentGraphicalAsset.heading}" scope="page" />
+    <isset name="parentBody" value="${parentGraphicalAsset.body}" scope="page" />
+    <isset name="parentBG" value="${parentGraphicalAsset.backgroundColor}" scope="page" />
+    <isset name="parentLinks" value="${parentGraphicalAsset.links}" scope="page" />
+    <isset name="parentID" value="${pdict.content.ID}" scope="page" />
+
+    <isif condition="${'childrenContentAssetIDS' in slotcontent.custom && !empty(slotcontent.custom.childrenContentAssetIDS)}">
+
+            <isloop items="${slotcontent.custom.childrenContentAssetIDS}" var="assetID" status="loopstatus">
+                <isset name="contentAsset" value="${dw.content.ContentMgr.getContent(assetID)}" scope="page" />
+                <isif condition="${!empty(contentAsset)}">
+                    <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+                    <isif condition="${!empty(graphicalAsset)}">
+                        <isinclude template="components/billboardGrid/billboardGrid" />
+                    </isif>
+                </isif>
+            </isloop>
+    </isif>
+</isif>

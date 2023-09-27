@@ -1,0 +1,48 @@
+<isset name="site" value="${require('dw/system/Site').getCurrent()}" scope="page" />
+<iscomment>
+    FFR Removal of Talkable
+    <isset name="isReferralDashboardEnabled" value="${!empty(site.getCustomPreferenceValue('talkableDashboard')) ? site.getCustomPreferenceValue('talkableDashboard') : false}" scope="page" />
+</iscomment>
+<isif condition="${!pdict.CurrentCustomer.authenticated}">
+    <div class="user hidden-md-down">
+    <isif condition="${dw.system.Site.getCurrent().name == "Kind B2B"}">
+        <a href="#" data-toggle="modal"
+           data-target="#loginmodal" class="st-header__utility-link st-header__utility-link--account-guest">
+            <span class="user-message sr-only">Account Login</span>
+        </a>
+    <iselseif condition="${dw.system.Site.getCurrent().name == "KIND Snacks"}"/>
+        <a href="${URLUtils.https('Account-Show')}" class="st-header__utility-link st-header__utility-link--account-guest">
+            <span class="user-message sr-only">${Resource.msg('label.login', 'account', null)}</span>
+        </a>
+    <iselse/>
+        <a href="${URLUtils.https('Account-Show')}">
+            <span class="user-message"><img src="${URLUtils.staticURL('/images/login-white.png')}" alt="${pdict.name ? pdict.name : 'Account login'}" aria-label="Account login" class="st-header__navbar--utilities__icon__img" /></span>
+        </a>
+    </isif>
+    </div>
+<iselse/>
+    <div class="user hidden-md-down" tabindex="0">
+        <a href="${URLUtils.https('Account-Show')}" class="st-header__utility-link st-header__utility-link--account-user">
+            <span class="user-message">
+                <isif condition="${dw.system.Site.getCurrent().name != "Creative Snacks"}">
+                    <span class="sr-only">${Resource.msg('label.profile', 'account', null)}</span>
+                <iselse/>
+                    <img src="${URLUtils.staticURL('/images/login-white.png')}" alt="${pdict.name}" class="st-header__navbar--utilities__icon__img" />
+                </isif>
+            </span>
+        </a>
+        <div class="popover popover-bottom account-popover">
+            <a href="${URLUtils.https('Account-Show')}">${Resource.msg('link.header.myaccount', 'account', null)}</a>
+
+            <iscomment> Talkable Referral Dashboard Link
+            FFR Removal of Talkable
+            <isif condition="${isReferralDashboardEnabled}">
+                <a title="${Resource.msg('talkable.referral.dashboard', 'talkable', null)}" href="${URLUtils.https('Talkable-Dashboard')}">
+                    ${Resource.msg('talkable.referral.dashboard', 'talkable', null)}
+                </a>
+            </isif>
+            </iscomment>
+            <a href="${URLUtils.url('Login-Logout')}">${Resource.msg('link.header.logout', 'account', null)}</a>
+        </div>
+    </div>
+</isif>

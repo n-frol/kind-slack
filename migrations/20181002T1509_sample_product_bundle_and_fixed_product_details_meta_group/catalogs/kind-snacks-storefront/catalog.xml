@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+
+    <category-assignment category-id="sample_variety-packs" product-id="sample_snack-pack">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="kind-nut-bars" product-id="289-1">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

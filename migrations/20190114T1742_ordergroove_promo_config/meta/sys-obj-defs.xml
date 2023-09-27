@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Promotion">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveInclusion">
+                <display-name xml:lang="x-default">OrderGroove Inclusion</display-name>
+                <description xml:lang="x-default">Allow promotions of class product to be applied to subscription items (OrderGroove).</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="isCheckAddressFraud">
+                <display-name xml:lang="x-default">Check Address Fraud</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="flags">
+                <display-name xml:lang="x-default">Flags</display-name>
+                <attribute attribute-id="isCheckAddressFraud"/>
+                <attribute attribute-id="OrderGrooveInclusion"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

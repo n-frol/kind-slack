@@ -1,0 +1,56 @@
+<iscomment>
+    Because this content relies on user information, the state of the customer's product list, it should not be cached
+</iscomment>
+<iscache type="relative" hour="0" minute="0" />
+
+<isset name="byobList" value="${pdict.byobList}" scope="page" />
+<isset name="BYOBHelpers" value="${require('*/cartridge/scripts/helpers/byobHelpers')}" scope="page" />
+<isset name="byobRoot" value="${dw.system.Site.current.getCustomPreferenceValue('byobRootCategoryID')}" scope="page" />
+
+<isif condition="${!empty(byobList) && !empty(byobList.custom.boxSku)}">
+    <iscomment> Set BYOB List Variables </iscomment>
+    <isset name="byobBoxCount" value="${BYOBHelpers.getBYOBListItemCount(byobList)}" scope="page" />
+    <isset name="byobResetUrl" value="${dw.web.URLUtils.https('BYOB-List', 'action', 'removeall', 'json', true)}"
+        scope="page" />
+    <isset name="curBoxProduct" value="${dw.catalog.ProductMgr.getProduct(byobList.custom.boxSku)}" scope="page" />
+
+    <isif condition="${!empty(curBoxProduct) && !empty(curBoxProduct.getOrderableRecommendations(3))}">
+        <isscript>
+            // Initialize productSearch and productIds variables, for use in productTiles template
+            pdict.productSearch = pdict.productSearch || {};
+            pdict.productSearch.isUseSecondaryTile  = true;
+            pdict.productSearch.productIds = pdict.productSearch.productIds || [];
+        </isscript>
+
+        <iscomment>
+            Loop through recommendations of the BYOB container product to
+            get the Starter Combo Products & render the tiles.
+        </iscomment>
+        <isloop items="${curBoxProduct.getOrderableRecommendations(3)}" var="starterComboRecommendation">
+            <isset name="starterCombo" value="${starterComboRecommendation.recommendedItem}" scope="page" />
+            <isscript>
+                pdict.productSearch.productIds.push({
+                    productID: starterCombo.ID
+                });
+            </isscript>
+        </isloop>
+
+        <iscomment> Starter-Combo Tiles </iscomment>
+        <div class="container js-byob-combo-container c-starter-combo-tile__container js-byob-grid c-byob-redesign--try-wrap"
+            data-byob-count="${byobBoxCount}" data-byob-reset-url="${byobResetUrl}"
+            data-byob-generic-error="${Resource.msg('error.update.technicalissue', 'search', null)}"
+            data-box-sku="${byobList.custom.boxSku || ''}">
+
+            <iscomment> Modal Container </iscomment>
+            <div class="modal st-modal show js-byob-alert d-none"></div>
+            <div class="row">
+                <isinclude template="search/components/productTiles" />
+            </div>
+
+        </div>
+
+        <a href="${URLUtils.https('Search-Show', 'cgid', byobRoot)}" class="c-starter-combo-tile__add-button js-combo-tiles-add-button c-byob-redesign--customize-btn">
+            ${Resource.msg('label.customize-myself', 'byob', null)}
+        </a>
+    </isif>
+</isif>

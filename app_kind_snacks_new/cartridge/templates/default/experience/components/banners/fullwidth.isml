@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/fullwidth.css')}" />
+<isif condition="${pdict.theme == 'onrails'}">
+<div class="full_page_hero onrails">
+<iselse>
+    <div class="full_page_hero">
+</isif>
+<isif condition="${pdict.showmode == 'video'}">
+    <video style="display:block" playsinline autoplay muted loop defaultMuted class="hero-background" onclick="toggleVideo(this)">
+        <source src="${pdict.video.httpsURL}" type="video/mp4" />
+        <source src="${pdict.video_mobile.httpsURL}" type="video/mp4" media="all and (max-width: 440px)" />
+    </video>
+</isif>
+<isif condition="${pdict.showmode == 'image'}">
+    <picture style="display:block;" class="hero-background">
+        <srcset media="(max-width: 440px)" srcset="${pdict.image_mobile.src.mobile}"/>
+        <img class="hero-image ${pdict.theme}" src="${pdict.image.src.desktop}" alt="demo image"/>
+    </picture>
+</isif>
+<isif condition="${pdict.showscroll}">
+    <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+        <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+    </a>
+</isif>
+    <div class="content_container ${pdict.theme}">
+        <h1 class="headline biggest ${pdict.theme}">
+            <isprint value="${pdict.headline}" encoding="off" />
+        </h1>
+        <isif condition="${pdict.description}">
+        <div class="description font-normal">
+            <isprint value="${pdict.description}" encoding="off" />
+        </div>
+        </isif>
+        <isif condition="${pdict.CTA1Text}">
+            <a href="${pdict.CTA1Link}" aria-label="${pdict.CTA1Aria}" class="button font-small">${pdict.CTA1Text}</a>
+        </isif>
+        <isif condition="${pdict.CTA2Text}">
+            <a style="${pdict.opacity}" aria-label="${pdict.CTA2Aria}" href="${pdict.CTA2Link}" class="button secondary font-small">${pdict.CTA2Text}</a>
+        </isif>
+    </div>
+    <isif condition="${pdict.showgradient == true}">
+        <div class="image_gradient ${pdict.theme}"></div>
+    </isif>
+    <isif condition="${pdict.eyebrow}">
+        <h3 class="eyebrow ${pdict.theme}">
+            <isprint value="${pdict.eyebrow}" encoding="off" />
+        </h3>
+    </isif>
+    <isif condition="${pdict.showmode == 'video'}">
+        <div class="button_container_2">
+            <button class="buttonPlay" aria-label="Play"><img style="${pdict.opacity}" src="${URLUtils.staticURL('images/Play.png')}" alt="Play" /></button>
+            <button class="buttonPause" aria-label="Pause"><img style="${pdict.opacity}" src="${URLUtils.staticURL('images/Pause.png')}" alt="Pause" /></button>
+        </div>
+    </isif>
+</div>
+
+<script>
+    $(document).on("click", ".scroll_indicator_scroll", function() {
+        $('html,body').animate({ scrollTop: $(this).closest(".experience-component").prop("scrollHeight")}, 800);
+    });
+</script>
+
+<isif condition="${pdict.showmode == 'video'}">
+    <script>
+        var v = document.getElementsByClassName('hero-background')[0];
+        var play = document.getElementsByClassName('buttonPlay')[0];
+        var pause = document.getElementsByClassName('buttonPause')[0];
+        /* play button */
+        document.getElementsByClassName('buttonPlay')[0].addEventListener('click',function(e){
+            v.play();
+            play.style.display = "none";
+            pause.style.display = "block";
+            },true);
+        /* pause button */
+        document.getElementsByClassName('buttonPause')[0].addEventListener('click',function(e){
+            v.pause();
+            pause.style.display = "none";
+            play.style.display = "block";
+            },true);
+
+        function toggleVideo(player)
+        {
+            player.paused ? player.play() : player.pause();
+            if (player.paused) {
+                play.style.display = "block";
+                pause.style.display = "none";
+            } else {
+                play.style.display = "none";
+                pause.style.display = "block";
+            }
+        }
+    </script>
+</isif>

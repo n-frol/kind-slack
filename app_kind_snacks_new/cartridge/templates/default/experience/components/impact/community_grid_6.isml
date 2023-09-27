@@ -1,0 +1,73 @@
+<div class="comm_grid_6">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/Group 3064.png')}" alt="Impact" class="comm_grid_6_img" />
+        <div class="head">
+            350k bars
+            <div class="copy">
+                donated to Feeding America, World Central Kitchen, and the American Red Cross in support of Hurricanes Fiona and Ian
+            </div>
+        </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/Group 3066.png')}" alt="Impact" class="comm_grid_6_img" />
+        <div class="head">
+            44k products
+            <div class="copy">
+                donated to support relief efforts in Turkey and Syria
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .comm_grid_6 {
+            grid-template-columns: 1fr !important;
+        }
+    }
+    .comm_grid_6 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        grid-gap: 20px;
+        max-width: 1200px;
+        margin: auto;
+        grid-auto-rows: 1fr;
+        margin-top: 80px !important;
+    }
+    @media screen and (max-width: 440px) {
+        .comm_grid_6 .griditem, .comm_grid_7 .griditem {
+            flex-direction: column;
+        }
+    }
+    .comm_grid_6 .griditem {
+        background: #F3F3F3;
+        padding: 20px;
+        display: flex;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .comm_grid_6 img {
+        display: inline-block;
+        float: left;
+        object-fit: contain;
+    }
+    .comm_grid_6 .head, .comm_grid_6 .copy {
+        text-align: left;
+    }
+    .comm_grid_6 .head {
+        font-size: 44px;
+        line-height: 40px;
+        font-family: main;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .comm_grid_6 .copy {
+        font-size: 18px;
+        font-family: medium;
+        line-height: 24px;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(0,0,0,.3);
+    }
+</style>

@@ -1,0 +1,106 @@
+{
+  "name": "Medium Double Thing Solo",
+  "description": "Image, black box, two CTA",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Image Desktop",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "background_tab",
+          "name": "Image Tablet",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "background_mobile",
+          "name": "Image Mobile",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "bannertext",
+          "name": "Banner Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "headertext",
+          "name": "Header Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "copytext",
+          "name": "Copy Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "productid",
+          "name": "Quick view product",
+          "type": "product",
+          "required": false
+        },
+        {
+          "id": "anchor",
+          "name": "Anchor ID",
+          "type": "string",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "textcontent2",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background2",
+          "name": "Image Right",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "bannertext2",
+          "name": "Banner Text Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "headertext2",
+          "name": "Header Text Right",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "copytext2",
+          "name": "Copy Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "productid2",
+          "name": "Quick view product",
+          "type": "product",
+          "required": false
+        },
+        {
+          "id": "anchor2",
+          "name": "Anchor ID",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

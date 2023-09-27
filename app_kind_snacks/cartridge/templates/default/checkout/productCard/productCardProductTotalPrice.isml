@@ -1,0 +1,6 @@
+<span class="strike-through
+<isif condition=${!lineItem.priceTotal.nonAdjustedPrice}>non-adjusted-price</isif>"
+>
+    ${lineItem.priceTotal.nonAdjustedPrice}
+</span>
+<span class="pricing line-item-total-price-amount item-total-${lineItem.UUID} c-product-card__qty-price__total__amt subtext">${lineItem.priceTotal.price}</span>

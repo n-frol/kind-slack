@@ -1,0 +1,35 @@
+<div class="card c-account-dashboard__card-body">
+    <div class="c-account-dashboard__card-header clearfix">
+        <div class="pull-left">
+            <isif condition="${siteID === 'CreativeSnacks'}">
+                ${Resource.msg('page.title.myaccount','account',null)}
+            <iselse/>
+                ${Resource.msg('label.profile','account',null)}
+            </isif>
+        </div>
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <a href="${URLUtils.url('Account-EditProfile')}" aria-label="edit profile" class="pull-right c-account-dashboard__card-header__link">${Resource.msg('link.edit','account',null)}</a>
+        </isif>
+    </div>
+    <div class="card-body">
+        <dl>
+            <dt class="c-account-dashboard__card-body__card-term">${Resource.msg('label.profile.firstname','account',null)}</dt>
+            <dd class="c-account-dashboard__card-body__card-description">${pdict.account.profile.firstName}</dd>
+        </dl>
+        <dl>
+            <dt class="c-account-dashboard__card-body__card-term">${Resource.msg('label.profile.lastname','account',null)}</dt>
+            <dd class="c-account-dashboard__card-body__card-description">${pdict.account.profile.lastName}</dd>
+        </dl>
+        <dl>
+            <dt class="c-account-dashboard__card-body__card-term">${Resource.msg('label.profile.email','account',null)}</dt>
+            <dd class="c-account-dashboard__card-body__card-description">${pdict.account.profile.email}</dd>
+        </dl>
+        <!-- <isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <dl>
+                <dt class="c-account-dashboard__card-body__card-term">${Resource.msg('label.profile.phone','account',null)}</dt>
+                <dd class="c-account-dashboard__card-body__card-description">${pdict.account.profile.phone}</dd>
+            </dl>
+        </isif> -->
+
+    </div>
+</div>

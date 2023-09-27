@@ -1,0 +1,72 @@
+/* ============================================================================
+Cart Product Card Product Price
+============================================================================ */
+
+/**
+ * Styles for the cart Cart Product Card Product Price
+*/
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-cart-card-product-price;
+
+.#{$ns} {
+    /**
+     * use !important - in global style this class has chain of parent classes
+    */
+    color: $black;
+    flex: 0 0 100%;
+    font-family: $font-family-primary;
+    font-size: 14px !important;
+    letter-spacing: -0.3px;
+    line-height: normal;
+    padding-right: 0;
+    text-transform: lowercase;
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+        flex-basis: 50%;
+        max-width: 50%;
+        padding-top: 25px;
+    }
+    @include media-breakpoint-up(lg) {
+        align-items: center;
+        display: flex;
+        flex-basis: 40%;
+        max-width: 40%;
+    }
+    @include media-breakpoint-up(xl) {
+        flex: 0 0 32%;
+        max-width: 32%;
+    }
+
+    &__wrapper {
+        justify-content: space-between;
+        margin-left: -6px;
+        margin-right: -6px;
+
+        @include media-breakpoint-up(lg) {
+            width: 100%;
+        }
+    }
+    &__col,
+    &__line-item-promo {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+    &__col {
+        margin-bottom: 8px;
+        max-width: 100px;
+    }
+    &__label {
+        font-size: 14px !important;
+        letter-spacing: -0.3px;
+        padding-bottom: 4px;
+    }
+    &__line-item-promo {
+        color: $promo-red;
+        font-size: 15px;
+        letter-spacing: 0.3px;
+        line-height: 2;
+    }
+}

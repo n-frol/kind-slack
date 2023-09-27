@@ -1,0 +1,78 @@
+<!--  Steps bar -->
+<isinclude template="rendering/category/components/byobCategoryNav/stepContainer" />
+
+<!--  style for this could be found inside /components/product/_components.product-details.scss; class: productShortDescription-->
+<!-- Product Name -->
+
+<div
+    class="c-product-details c-product-details--wide st-product-top__section-byob ${pdict.templateClass}__section ${pdict.templateClass}__section-byob  ${pdict.templateClass}__section--details ${pdict.templateClass}__section--details--${product.category.id}">
+    <!-- Product Name & description -->
+    <div class="c-product-details__wrap">
+        <h1 class="product-name c-product-details__name js-product-name c-product-details__name-byob">
+            <span class="value" itemprop="name" content="${Resource.msg('label.byob-title', 'byob', null)}">${Resource.msg('label.byob-title', 'byob', null)}</span>
+        </h1>
+
+        <div class="value c-product-details__description" itemprop="description" content="${Resource.msg('label.byob-description', 'byob', null)}">${Resource.msg('label.byob-description', 'byob', null)}</div>
+
+        <span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}"></span>
+        <span class="value" itemprop="sku" content="${product.masterId}"></span>
+
+        <isif condition="${!empty(product.badge) && !empty(product.badge.value)}">
+            <div class="st-product-top__callout badge_callout ${pdict.templateClass}__callout">
+                ${product.badge}
+            </div>
+        </isif>
+    </div>
+</div>
+<div class="c-product-details__step-title">
+    <h1>${Resource.msg('label.step1-title', 'byob', null)}</h1>
+</div>
+
+<div class="c-product-details__image-wrap">
+    <div class="st-product-top ${pdict.templateClass} is-lifestyle">
+        <div
+            class="container st-product-top__container ${pdict.templateClass}__container ${pdict.templateClass}__container--${product.category.id} no-offset show-badge">
+
+            <isloop items="${product.byobVariants}" var="byobVariant" status="loopstatus">
+                <isset name="product" value="${byobVariant}" scope="page" />
+                <isobject object="${product.raw}" view="detail">
+                    <div class="basis-wrapper product-detail product-wrapper js-MBYOB-variant-${product.id}"
+                        data-pid="${product.id}" data-byob="${product.masterId === 'MBYOB' ? true : false}"
+                        data-loop="${loopstatus.index}" data-gtm-pack-size="${product.byobVariantSize} ${Resource.msg('label.snacks', 'byob', null)}" itemid="${product.masterId}" itemprop="itemReviewed"
+                        id="pr-${product.masterId}" itemscope itemtype="http://schema.org/Product">
+
+                        <isinclude template="product/productDetailsTopBYOB" />
+                    </div>
+
+                </isobject>
+            </isloop>
+        </div>
+        <div style="clear: both"></div>
+        <div
+            class="add-to-cart-actions c-product-add-to-cart c-product-add-to-cart-byob-btn c-product-add-to-cart--flex-wrapper js-add-to-cart">
+            <button class="pdpbyob-add-to-cart add-to-cart js-byob-get-choose-variant js-byob-get-started-url btn btn-primary c-product-add-to-cart--get-started__btn"
+                data-pid="${pdict.selectedBox ? pdict.selectedBox.boxSku : ''}"
+                data-url="${pdict.addToCartUrl}"
+                data-og-module="pdp_nocontent"
+                data-og-every="${pdict.selectedBox && pdict.selectedBox.ogEvery ? pdict.selectedBox.ogEvery : 0}"
+                data-og-every-period="${pdict.selectedBox && pdict.selectedBox.ogEveryPeriod ? pdict.selectedBox.ogEveryPeriod : 0}"
+                ${pdict.selectedBox ? "" : "disabled"}
+                <isif condition="${pdict.showConfirmEmptyDialog === 'true'}">
+                    data-confirmempty-url="${pdict.confirmEmptyUrl}"
+                    data-toggle="modal"
+                    data-target="${'#'}byob-pdp-empty-list"
+                </isif>
+                data-show-confirm-empty-dialog="${pdict.showConfirmEmptyDialog}"
+                >
+                    <isif condition="${empty(pdict.byobList)}">
+                        ${Resource.msg('button.getstarted', 'common', null)}
+                    <iselse>
+                        ${Resource.msg('button.continueediting', 'common', null)}
+                    </isif>
+            </button>
+        </div>
+
+        <isinclude template="/product/components/confirmEmptyByobList" sf-toolkit="off" />
+
+    </div>
+</div>

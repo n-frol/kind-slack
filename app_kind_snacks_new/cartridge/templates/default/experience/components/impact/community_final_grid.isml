@@ -1,0 +1,72 @@
+<div class="community_kinder">
+    <div class="header">
+        kinder to our planet
+    </div>
+    <div class="toright makecenter" style="">
+    <img src="${URLUtils.staticURL('/images/impact/Group 3153.png')}" alt="Impact" class="bodies_section_2" />
+    <a href="javascript:void(0)" class="primary dark welcomelink" data-s="planet_section">GO TO PLANET</a>
+</div>
+</div>
+<style>
+    @media screen and (max-width: 440px) {
+        .makecenter {
+            text-align: center;
+            right: 0px !important;
+        }
+        .community_kinder img {
+            position: relative !important;
+            left: 0px !important;
+            top: -40px !important;
+        }
+        .community_kinder .header {
+            top: 290px !important;
+            transform: none !important;
+            left: 20px !important;
+        }
+        .community_kinder {
+            height: 500px !important;
+            margin-bottom: 0px !important;
+        }
+        .community_kinder a {
+            top: 90px !important;
+        }
+        .centeryellow {
+            grid-template-columns: 1fr !important;
+        }
+        .centeryellow .personimg {
+            margin-top: 30px !important;
+        }
+    }
+    .community_kinder {
+        width: 100%;
+        background: white;
+        position: relative;
+        height: 360px;
+        margin-bottom: 360px;
+    }
+    .community_kinder .header {
+        position: absolute;
+        left: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: unset;
+        font-size: 52px;
+        line-height: 47px;
+        color: black;
+        font-family: main;
+        max-width: 400px;
+    }
+    .toright {
+        position: absolute;
+        right: 60px;
+    }
+    .community_kinder img {
+        position: relative;
+        left: 0px;
+        top: 40px;
+    }
+    .community_kinder a {
+        position: relative;
+        top: 0px;
+    }
+</style>

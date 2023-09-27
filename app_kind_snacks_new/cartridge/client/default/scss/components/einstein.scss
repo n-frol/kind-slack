@@ -1,0 +1,74 @@
+@import '../globals/variables.scss';
+
+.yotpo-bottomline {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.yotpo .yotpo-bottomline .yotpo-icon-star, .yotpo .yotpo-bottomline .yotpo-icon-half-star, .yotpo .yotpo-bottomline .yotpo-icon-empty-star {
+    color: black !important;
+    background: none !important;
+}
+.yotpo-bottomline {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+.text-container {
+    position: absolute;
+    bottom: 15px;
+}
+.rec_prod_img {
+    min-width: 200px;
+    padding-top: 60px;
+    padding-left: 50px;
+    padding-right: 60px;
+    padding-bottom: 45px;
+    position: relative;
+    top: 80px;
+    padding: 0px !important;
+}
+.rec_prod_name {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-family: main;
+    color: black;
+}
+.rec_prod_price {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 5px;
+    color: black;
+    font-family: main;
+}
+.rec_prod_price span {
+    font-size: 14px;
+    font-family: medium;
+    color: #555555;
+}
+
+.text-m {
+    display: none;
+}
+
+.recs_slide .swiper-wrapper {
+    margin-bottom: 60px;
+}
+
+.recs_slide .swiper-scrollbar {
+    @media screen and (max-width: 440px) {
+        margin-left: 0px !important;
+        width: 100% !important;
+    }
+}
+
+.rec_header {
+    letter-spacing: .25px;
+    margin-bottom: 30px;
+}

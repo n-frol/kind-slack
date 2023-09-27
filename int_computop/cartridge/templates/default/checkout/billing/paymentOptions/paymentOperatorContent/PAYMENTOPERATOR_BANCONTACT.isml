@@ -1,0 +1,20 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_BANCONTACT.isml --->
+<isset name="bancontactFields" value="${ pdict.forms.billingForm.bancontact }" scope="page"/>
+
+<fieldset class="paymentoperator-bancontact-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group <isif condition=${ bancontactFields.accountholdername.mandatory === true }>required</isif> ${ bancontactFields.accountholdername.htmlName }">
+                <label class="form-control-label" for="bancontact_accountholdername">${ Resource.msg('bancontactFields.accountholdername','paymentoperator',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="bancontact_accountholdername"
+                           value=""
+                    <isprint value=${ bancontactFields.accountholdername.attributes } encoding="off"/>
+                    autocomplete="accountholdername"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</fieldset>

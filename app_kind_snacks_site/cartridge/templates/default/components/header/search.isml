@@ -1,0 +1,31 @@
+<button class="st-header__navbar__search-toggle st-header__utility-link search-toggle js-toggle js-btn-toggle" data-js-toggle-focus="site-search input" data-js-toggle-ns="#site-search">
+    <span class="search-toggle__icon">
+<isif condition="${dw.system.Site.getCurrent().name != "Creative Snacks"}">
+        <span class="sr-only">${Resource.msg('label.header.banner', 'search', null)}</span>
+        <iselse/>
+            <img src="${URLUtils.staticURL('/images/search.png')}" class="st-header__navbar--utilities__icon__img" alt="Search the site" />
+        </isif>
+    </span>
+</button>
+<div id="site-search" class="site-search c-site-search js-site-search">
+    <div class="container">
+        <div class="row c-site-search__row">
+            <form role="search" action="${URLUtils.url('Search-Show')}" method="get" name="simpleSearch" class="c-site-search__form">
+                <span class="c-site-search__icon"><img src="${URLUtils.staticURL('/images/search-black.svg')}" class="c-site-search__icon__img" alt="Search the site" /></span>
+                <input class="form-control search-field c-site-search__input c-site-search__input--search"
+                    type="search"
+                    name="q"
+                    value=""
+                    placeholder="${Resource.msg('label.header.searchwatermark', 'common', null)}"
+                    autocomplete="off"
+                    aria-label="${Resource.msg('label.header.searchwatermark', 'common', null)}" />
+                <div class="c-site-search__close hidden-md-down" tabindex="0" aria-label="close" data-js-toggle-close="true"></div>
+                <div class="suggestions-wrapper c-site-search__suggestions-wrapper js-suggestions-wrapper" data-url="${URLUtils.url('SearchServices-GetSuggestions', 'q')}"></div>
+                <input type="hidden" value="${pdict.locale}" name="lang">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="search-button">
+    <i class="fa fa-search"></i>
+</div>

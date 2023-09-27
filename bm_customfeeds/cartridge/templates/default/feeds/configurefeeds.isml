@@ -1,0 +1,26 @@
+<isdecorate template="application/ExtJS5ApplicationFrame.isml">
+	<iscontent type="text/html" charset="UTF-8" compact="true">
+<isscript>
+    var resources = JSON.stringify({
+		urlAllFeeds : URLUtils.url('BMCustomFeeds-GetFeeds').toString(),
+		urlSaveFeed : URLUtils.url('BMCustomFeeds-SaveFeed').toString()
+	});
+</isscript>
+<script type="text/javascript">
+	var resources = <isprint value="${resources}" encoding="off">;
+</script>
+<link rel="stylesheet" href="${URLUtils.staticURL('/ext-resources/ext-ux-statusbar/statusbar.css')}" />
+<script src="${URLUtils.absStatic('/ext-core/ux/statusbar/StatusBar.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/ext-store/CustomObjectServerConfig.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/ext-store/ObjectStore.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/ProductPicker.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/OrderPicker.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/CustomerPicker.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/FeedFormPanel.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/MainPanel.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/FeedPanel.js')}" type="text/javascript"></script>
+<script src="${URLUtils.absStatic('/js/customfeedsui.js')}" type="text/javascript"></script>
+
+<div id="customfeeds-ui"></div>
+
+</isdecorate>

@@ -1,0 +1,47 @@
+{
+    "name": "Image Component",
+    "description": "Image Component",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "overlay_image",
+                    "name": "Overlay Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "cta",
+                    "name": "CTA",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctalink",
+                    "name": "Cta Link",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

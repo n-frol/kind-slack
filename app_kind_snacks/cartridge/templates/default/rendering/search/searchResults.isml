@@ -1,0 +1,26 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+    <isset name="catId" value="${dw.catalog.CatalogMgr.getCategory(pdict.category)}" scope="page" />
+
+    <isinclude template="search/components/catHeader" />
+    <iscomment>
+        The following commented-out issslot tags allow these slots to be available in the slot configuration.
+    </iscomment>
+    <iscomment>
+        <isslot id="cat-banner" context="category" description="Category page top slot." context-object="${catId}" />
+        <isslot id="marketing-tile-a" description="Marketing Tile A" context="category" context-object="${catId}" />
+        <isslot id="marketing-tile-b" description="Marketing Tile B" context="category" context-object="${catId}" />
+        <isslot id="marketing-tile-c" description="Marketing Tile C" context="category" context-object="${catId}" />
+        <isslot id="category-slot-f" context="category" description="Category Slot F" context-object="${catId}" />
+        <isslot id="category-slot-g" context="category" description="Category Slot G" context-object="${catId}" />
+    </iscomment>
+
+    <isinclude template="rendering/search/searchResultsNoDecorator" />
+    <isinclude template="product/compareBar" />
+
+</isdecorate>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <folder folder-id="contact">
+        <display-name xml:lang="x-default">Have Questions?</display-name>
+        <description xml:lang="x-default">we have answers.</description>
+        <online-flag>false</online-flag>
+        <template>rendering/folder/contact</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="globalPartnership">
+        <display-name xml:lang="x-default">Our New Global Partnership</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="contact"/>
+        </folder-links>
+    </content>
+
+    <content content-id="allergens">
+        <display-name xml:lang="x-default">Allergens</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="contact"/>
+        </folder-links>
+    </content>
+
+    <content content-id="instructions-contact">
+        <display-name xml:lang="x-default">Contact Instructions</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3 style="text-align: center;"&gt;need to speak with someone?&lt;/h3&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;Contact us directly at (1) 855.884.KIND (5463)&lt;br /&gt;&#13;
+Monday - Friday, 9 AM - 5 PM EST&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="footer-column-3">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="#0"&gt;Support&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="$url('Search-ShowContent', 'fdid', 'contact')$" title="Go to Contact Us"&gt;Contact Us &amp; FAQ&lt;/a&gt;&lt;/li&gt;&#13;
+                &lt;li&gt;&lt;a href="#0" title="Go to Gift Certificates"&gt;Gift Certificates&lt;/a&gt;&lt;/li&gt;  &lt;!-- UPDATE THIS WHEN WE HAVE THE PAGE --&gt;&#13;
+                &lt;li&gt;&lt;a href="#0" title="Go to Help"&gt;Help&lt;/a&gt;&lt;/li&gt;  &lt;!-- UPDATE THIS WHEN WE HAVE THE PAGE --&gt;&#13;
+                &lt;li&gt;&lt;a href="#0" title="Go to Site Map"&gt;Sitemap&lt;/a&gt;&lt;/li&gt;  &lt;!-- UPDATE THIS WHEN WE HAVE THE PAGE --&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_support --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

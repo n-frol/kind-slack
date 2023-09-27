@@ -1,0 +1,224 @@
+/**
+ * Utility class to map a given field to a product attribute value
+ *
+ * @namespace
+ */
+var StringUtils: dw.util.StringUtils = require('dw/util/StringUtils');
+var ProductFieldMapper = function () {
+};
+
+/**
+ * Supported system attributes
+ */
+ProductFieldMapper.SYSTEM_ATTRIBUTES = ['EAN', 'ID', 'UPC', 'brand', 'creationDate', 'facebookEnabled',
+    'lastModified', 'longDescription', 'manifacturerName', 'manifacturerSKU',
+    'minOrderQuantity', 'name', 'onlineFlag', 'onlineFrom', 'onlineTo',
+    'pageDescription', 'pageKeywords', 'pageTitle', 'pageURL', 'pinterestEnabled',
+    'searchPlacement', 'searchRank', 'searchable', 'searchableIfUnavailable',
+    'shortDescription', 'siteMapChangeFrequency', 'siteMapIncluded', 'siteMapPriority',
+    'stepQuantity', 'storeReceipName', 'storeTaxClass', 'taxClassID',
+    'template', 'unit'];
+
+/**
+ * Returns the value of the product for the given field. Field is eiher a system
+ * attribute or a custom attribute prefixed with 'custom.'
+ */
+ProductFieldMapper.getField = function (product: dw.catalog.Product, field: String, format: String) {
+    // no field, can't do anything
+    if (empty(field) || product == null) {
+        return '';
+    }
+    try {
+        // FR - Capability to pull data from Master Product if needed
+        if (field.indexOf('parent.') != -1) {
+            product = product.getVariationModel().master != null ? product.getVariationModel().master : product;
+            field = field.substring(7);
+        }
+
+        //string
+        if (field.indexOf('{') != -1) {
+            var s = field.substring(field.indexOf("{") + 1, field.indexOf("}"))
+
+            var sa = s.split("_");
+            var st = sa.join(" ");
+            return st;
+        }
+
+        // special fields
+        if (field == 'google_product_cat') {
+            return product.custom.googleProductCategory[0].replace(/;&;amp\\;/g,"&amp;").replace(/;&;gt\\;/g,"&gt;");
+        }
+
+        if (field.indexOf('image.') != -1 && field.length > 5) {
+            var imageIndex = field.substring(6); //pull out the number after the .
+            var img = product.getImage(format || 'medium', imageIndex);
+            if (img == null) {
+                return '';
+            }
+            return img.httpURL;
+        }
+        if (field == 'image' || field == 'g:image_link') {
+            var img = product.getImage(format || 'medium', 0);
+            if (img == null) {
+                return '';
+            }
+            return img.httpURL;
+        }
+        if (field == 'url') {
+            return dw.web.URLUtils.http('Product-Show', 'pid', product.ID);
+        }
+        if (field == 'price') {
+            return dw.util.StringUtils.formatMoney(product.priceModel.price);
+        }
+        if (field == 'gprice') {
+            return parseFloat(Math.round(product.priceModel.price * 100) / 100).toFixed(2);
+        }
+        if (field == 'pricevalue') {
+            if (format) {
+                return dw.util.StringUtils.formatNumber(product.priceModel.price.value, format, 'en_US');
+            }
+            return dw.util.StringUtils.formatNumber(product.priceModel.price.value, '#.00', 'en_US');
+        }
+        if (field == 'category') {
+            var pc = product.primaryCategory;
+            if (pc != null) {
+                return pc.displayName;
+            }
+            return '';
+        }
+        if (field == 'googleproductcategories') {
+            var pc = product.primaryCategory;
+            if (pc != null && 'googleCategory' in pc.custom) {
+                return pc.custom.googleCategory;
+            }
+            return '';
+        }
+        //KIND-FX - Update to return availability
+        if (field == 'allocation') {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                var inventoryRecord = availability.inventoryRecord
+                if (inventoryRecord != null) {
+                    var availableToSell = inventoryRecord.allocation;
+                    return availableToSell;
+                }
+            }
+        }
+        if (field == 'ats') {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                var inventoryRecord = availability.inventoryRecord
+                if (inventoryRecord != null) {
+                    var availableToSell = inventoryRecord.ATS;
+                    return availableToSell;
+                }
+            }
+        }
+
+        if (field == "avail_text") {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                switch (availability.getAvailabilityStatus()) {
+                    case "IN_STOCK":
+                        var s = "in stock";
+                        break;
+                    case "NOT_AVAILABLE":
+                        var s = "out of stock";
+                        break;
+                    default:
+                        var s = "preorder";
+                        break;
+                }
+                return s;
+            }
+        }
+
+        if (field == "availability_text") {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                switch (availability.getAvailabilityStatus()) {
+                    case "IN_STOCK":
+                        var s = "in stock";
+                        break;
+                    case "NOT_AVAILABLE":
+                        var s = "out of stock";
+                        break;
+                    default:
+                        var s = "preorder";
+                        break;
+                }
+                return s;
+            }
+        }
+
+        if (field == 'allocationdate') {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                var inventoryRecord = availability.inventoryRecord
+                if (inventoryRecord != null) {
+                    var resetDate = inventoryRecord.allocationResetDate;
+                    return StringUtils.formatDate(resetDate, 'yyyy-MM-dd\'T\'HH:mm:ss.000\'Z\'');
+                }
+            }
+        }
+        if (field == 'perpetualflag') {
+            var availability = product.getAvailabilityModel();
+            if (availability != null) {
+                var inventoryRecord = availability.inventoryRecord
+                if (inventoryRecord != null) {
+                    var perpetualflag = inventoryRecord.perpetual;
+                    return perpetualflag.toString();
+                }
+            }
+        }
+
+
+        // now handle generic attributes
+        var result = '';
+
+        // handle custom attributes
+        if (field.indexOf('custom.') == 0) {
+            var cname = field.substr(7);
+            if (cname in product.custom) {
+                result = product.custom[cname];
+            }
+        }
+        // handle system attributes
+        if (ProductFieldMapper.SYSTEM_ATTRIBUTES.indexOf(field) > -1) {
+            result = product[field];
+        }
+        if (format && result instanceof Date) {
+            result = dw.util.StringUtils.formatCalendar(new dw.util.Calendar(result), format);
+        }
+        return result;
+    } catch (e) {
+        dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').error('Error occured while mapping field {0} for product {1}', field, product.ID);
+    }
+    return null;
+};
+
+/**
+ * Parses a given field definition as string and return a field object
+ */
+ProductFieldMapper.parseField = function (attributeAsStr: String) {
+    var typeDef = dw.object.SystemObjectMgr.describe('Product');
+    var field = attributeAsStr.split(/(?:\{\{| |\}\})/g).filter(function (t) {
+        return !empty(t)
+    })[0];
+    if (field.indexOf('var:') == 0) {
+        field = field.substring(4).replace(':', '.');
+    }
+    var fieldAsJson = {}
+    if (attributeAsStr.indexOf('format="') > -1) {
+        fieldAsJson.format = attributeAsStr.split('format="')[1].split('"')[0];
+    }
+    if (field.indexOf('custom.') == 0) {
+        if (typeDef.getCustomAttributeDefinition(field.substr(7)) != null) {
+            fieldAsJson.attribute = field;
+        }
+    } else {
+        fieldAsJson.attribute = field;
+    }
+    dw.system.Logger.getLogger('GlobalFeedExport', 'GlobalFeedExport').debug('Parsed mapping for field {0} to field {1}', attributeAsStr, JSON.stringify(fieldAsJson));
+    return fieldAsJson;
+}

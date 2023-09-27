@@ -1,0 +1,90 @@
+// Header Banner
+
+.header-banner {
+    .close-button {
+        display: none;
+    }
+    @media (min-width: 1024px) {
+        padding: 0;
+        .content {
+            padding: 10px 0;
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .content {
+            margin-right: 0;
+            p {
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Navigation Tabs
+
+.navigation-tabs {
+    position: absolute;
+    z-index: 9;
+    top: -35px;
+    right: 15px;
+    display: block;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
+
+    .navigation-tab {
+        background: #fff;
+        padding: 3px 10px 3px 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border: 1px solid #1A1818;
+        height: 35px;
+        border-bottom: none;
+        margin: 0 0.5px;
+        img {
+            width: 40px;
+        }
+        &.active {
+            margin-top: -6px;
+            height: 48px;
+            padding-top: 6px;
+        }
+        &.nav-tab-1 {
+            float: left;
+            &.active {
+                background: #000;
+                border-color: #000;
+            }
+        }
+        &.nav-tab-2 {
+            float: right;
+            &.active {
+                background: #1A1818;
+            }
+        }
+    }
+}
+
+// Mobile 
+
+.brand-partner-mobile {
+    padding-top: 12px;
+    img {
+        width: 100px;
+        margin-top: 15px;
+    }
+
+    .user-message {
+        font-size: 14px;
+    }
+}
+
+.base-copy {
+    @media (max-width: 1024px) {
+        font-size: 14px ;
+    }
+}

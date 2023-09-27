@@ -1,0 +1,136 @@
+<isif condition="${!session.isCustomerAuthenticated()}">
+    <div class="card st-sidebar__card collapsible is-active desktoponly loginaccord">
+        <h2 class="st-sidebar__heading h4 title">${Resource.msg('heading.order.login', 'checkout', null)}</h2>
+
+        <div class="card-body order-total-summary c-checkout-price-summary js-accordion-body">
+            <div class="desklogin">
+                <isinclude template="/loginradius/login" />
+            <div style="margin-top: 20px;"></div>
+            <a class="checkout-create" href="${URLUtils.url('Login-Show')}?action=register&lrforwardurl=checkout">${Resource.msg('heading.order.create', 'checkout', null)}</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card st-sidebar__card collapsible is-active desktoponly" style="display:none;">
+        <h2 class="st-sidebar__heading h4 title">${Resource.msg('heading.order.create', 'checkout', null)}</h2>
+        <div class="card-body order-total-summary c-checkout-price-summary js-accordion-body">
+        <div class="deskcreate">
+            <isinclude template="/loginradius/userRegistration" />
+            <a class="checkout-login" href="${URLUtils.url('Account-Show')}">${Resource.msg('heading.order.gologin', 'checkout', null)}</a>
+        </div>
+        </div>
+    </div>
+    
+    <div class="mobileonly">
+        <a class="loginfor" href="#" data-toggle="modal" data-target="#loginmodal">Log in for a faster checkout</a>
+
+    </div>
+    <iselse>
+        <h4 class="welcomeback">welcome back, <a href="${URLUtils.url('Account-Show')}" aria-label="${Resource.msg('label.account.msg', 'common', null)}">${session.customer.profile.firstName}!</a></h4>
+</isif>
+
+<style>
+.welcomeback {
+    letter-spacing: 0px;
+    font-size: 22px;
+    padding-bottom:20px;
+    padding-left: 15px;
+}
+.price {
+    color: #777777;
+}
+.content-loginradius-stayLogin {
+    display:none;
+}
+    .mobileonly {
+        display: none;
+        background: white;
+    }
+    .st-sidebar__card {
+    padding: 10px 20px;
+    }
+
+    .desktoponly {
+        display: block;
+    }
+
+ @media screen and (max-width:440px) {
+        .modal-backdrop {
+        }
+        .st-sidebar {
+            margin-top: 10px !important;
+        }
+        .loginradius-submit {
+            margin-bottom: -10px;
+        }
+ }
+
+    @media screen and (max-width:869px) {
+        .modal-backdrop {
+        }
+        .welcomeback {
+            padding: 0px 15px;
+            text-transform: uppercase;
+            font-weight:700;
+            font-size: 12px;
+            margin-top: 0px !important;
+            padding-bottom: 38px;
+        }
+        .regbody, .loginbody {
+            max-height: 470px;
+            overflow: auto;
+        }
+
+        .desktoponly {
+            display: none;
+        }
+
+        .mobileonly {
+            display: block;
+            background: white;
+            padding-bottom: 28px;
+            letter-spacing: .5px;
+            font-weight: 700;
+        }
+    }
+
+    .st-sidebar__heading {
+        font-size: 24px;
+    }
+
+.loginfor {
+    padding-left: 15px;
+}
+
+.checkout-login-mobile {
+    padding-bottom: 15px;
+}
+
+    .checkout-create,
+    .checkout-login,
+    .loginfor,.checkout-create-mobile,
+    .checkout-login-mobile {
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+        font-weight: 700;
+        padding-top: 20px;
+        letter-spacing: 0.15em;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .s-oauth-providers:before {
+        content: "" !important;
+    }
+
+    .s-oauth-providers {
+        width: 46%;
+        padding-right: 0px;
+        margin: 0px;
+        margin-top: 10px !important;
+        padding-left: 0px;
+    }
+
+    .s-oauth-providers:first-child {
+        margin-right: 6%;
+    }
+</style>

@@ -1,0 +1,176 @@
+/* ============================================================================
+Product Main/Top Area
+============================================================================ */
+
+/**
+ * Establish styles for the main/top area of the product shared across templates like PDPs and quickview
+ */
+
+$ns: st-product-top;
+
+.#{$ns} {
+    background-color: $white;
+
+    // Ensure that the split background goes all the way across the page without overextending the colored portion
+    @include media-breakpoint-up(lg) {
+        background-image: linear-gradient(
+            to right,
+            var(--pdp-main__bg, #{$white}) 45%,
+            white 45%
+        );
+    }
+
+    &__container {
+        padding-left: 15px;
+        padding-right: 15px;
+        @include media-breakpoint-up(lg) {
+            background-image: linear-gradient(
+                to right,
+                var(--pdp-main__bg, #{$white}) 54.5%,
+                white 54.5%
+            ); // The actual split background, positioned to the elements
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+    &__section {
+        padding: 21px 15px;
+        width: 100%;
+    }
+    &__callout {
+        font-size: 16px;
+        letter-spacing: 0.1px;
+        margin-right: 18px;
+        text-transform: lowercase;
+    }
+}
+
+.#{$ns} {
+    &__container {
+        &.no-offset {
+            .c-product-description {
+                padding: 0;
+                font-size: 16px;
+                margin: 15px 0 0;
+            }
+
+            @include media-breakpoint-up(lg) {
+                padding-left: 0;
+                background-image: linear-gradient(
+                    to right,
+                    var(--pdp-main__bg, #{$white}) 56.5%,
+                    white 54.5%
+                );
+                .carousel-inner {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                .c-product-primary-images {
+                    padding-left: 0;
+                }
+                .st-pdp-main__section {
+                    padding-left: 35px;
+                    padding-top: 30px;
+                }
+            }
+        }
+        &.show-badge {
+            .st-product-top__row {
+                position: relative;
+            }
+            .st-product-top__row--auto {
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+            }
+
+            .badge_callout {
+                display: none;
+            }
+            .badge {
+                display: block;
+            }
+        }
+    }
+    .badge {
+        @include media-breakpoint-up(lg) {
+            left: 50%;
+            right: auto;
+        }
+    }
+}
+
+.#{$ns}.is-lifestyle {
+    .st-product-top__section.c-product-primary-images {
+        padding: 0;
+        background-color: var(--pdp-main__bg);
+        line-height: 0;
+        z-index: 1;
+    }
+    .c-product-primary-images__carousel__img {
+        max-width: 70%;
+        margin: 20px auto 40px;
+        background-color: var(--pdp-main__bg);
+        &.big {
+            max-width: none;
+            margin: 0;
+        }
+    }
+
+    .carousel-inner {
+        width: 100%;
+        margin: 0;
+        z-index: 1;
+    }
+}
+
+.badge {
+    display: none;
+    position: absolute;
+    right: 15px;
+    z-index: 100;
+    top: 30px;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-size: 16px;
+    @include media-breakpoint-up(lg) {
+        border: 1px solid white;
+        width: 85px;
+        height: 85px;
+        padding-top: 4px;
+        padding-left: 4px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Yotpo
+ ============================================================================ */
+.#{$ns} {
+    .yotpo.bottomLine,
+    .yotpo {
+        .yotpo-bottomline .yotpo-stars,
+        .yotpo-stars {
+            margin-left: 0 !important;
+            .yotpo-icon {
+                width: 14px !important;
+                height: 14px !important;
+                margin: 0 1px 0 0;
+                &.rating-star.yotpo-icon-empty-star {
+                    background-position: -200px 0;
+                }
+                &.rating-star.yotpo-icon-star {
+                    background-position: -171px 0;
+                }
+                &.rating-star.yotpo-icon-half-star {
+                    background-position: -185px 0;
+                }
+            }
+        }
+        .text-m {
+            font-size: 9px;
+            color: $grey10 !important;
+            line-height: 1;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}

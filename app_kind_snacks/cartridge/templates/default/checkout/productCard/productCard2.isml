@@ -1,0 +1,130 @@
+<div class="c-product-card product-line-item js-order-item js-product-detail" data-pid="${lineItem.id}"
+    data-product-line-item="${lineItem.UUID}" data-is-byob-master="${lineItem.isByobMaster ? 'true' : 'false'}"
+    data-is-exclude-to-add-basket="${lineItem.price.sales.value > 0 ? 'false': 'true'}">
+    <div class="c-product-card__header line-item-header">
+        <isscript>
+            // Make sure minicart is at least declared
+            var miniCart = typeof miniCart === 'undefined' ? '' : miniCart;
+        </isscript>
+
+        <isif condition="${!empty(miniCart) && miniCart}">
+            <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+        <iselse/>
+            <isinclude template="checkout/productCard/productCardProductName" />
+        </isif>
+    </div>
+    <isif condition="${lineItem.quantityOptions.minOrderQuantity > 1}">
+        ${Resource.msgf('msg.minOrderQuantity', 'checkout', null, lineItem.quantityOptions.minOrderQuantity)}
+    </isif>
+
+    <div class="c-product-card__details product-line-item-details" style="display:inline-block;">
+        <div class="c-product-card__details__image item-image" style="display: inline-block">
+            <img class="product-image" <isif
+                condition="${!empty(lineItem.responsiveImages) && !empty(lineItem.responsiveImages[0])}">
+            src="${lineItem.responsiveImages[0].normal.imageUrlDefault}"
+            srcset="${lineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + lineItem.responsiveImages[0].normal.imageUrlLarge + ' 2x'}"
+        <iselse/>
+            src="${URLUtils.staticURL('images/noimagelarge.png')}"
+            </isif>
+            alt="${!empty(lineItem.images.large) ? lineItem.images.large[0].alt : lineItem.displayName}"
+            title="${!empty(lineItem.images.large) ? lineItem.images.large[0].title : lineItem.displayName}">
+        </div>
+
+        <div class="c-product-card__details__attributes item-attributes c-product-card_creative__details__attributes">
+            <div class="line-item-attributes">
+
+
+                <isif condition="${siteID === " CreativeSnacks"}">
+                    <div class="line-item-header">
+                        <isif condition="${!empty(miniCart) && miniCart}">
+                            <isinclude template="checkout/productCard/productCardProductNameAndRemove" />
+                        <iselse/>
+                            <isinclude template="checkout/productCard/productCardProductName" />
+                        </isif>
+                    </div>
+                </isif>
+
+                <isloop items="${lineItem.variationAttributes}" var="attribute">
+                    <isif condition="${attribute.isVisible}">
+                        <div class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</div>
+                    </isif>
+                </isloop>
+                <div class="item-options">
+                    <isloop items="${lineItem.options}" var="option">${option.displayName}</isloop>
+                </div>
+                <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent()
+                                 .getCustomPreferenceValue('OrderGrooveEnable') == true}">
+                    <isif condition="${!empty(pdict.isConfirmStage) && pdict.isConfirmStage == true}">
+                        <div class="og-offer" data-og-module="conf" data-og-product="${lineItem.id}"></div>
+                    <iselseif condition=${miniCart} />
+                        <div class="og-offer" data-og-module="cart_flydown"
+                        data-og-product="${lineItem.id}"></div>
+                    <iselse/>
+                        <div style="color:#777777" class="og-offer line-item-attributes" data-og-module="or" data-og-product="${lineItem.id}">
+                        </div>
+                    </isif>
+                </isif>
+                <isif condition="${!empty(lineItem.totalItemQuantity)}">
+                    <div class="line-item-attributes">
+                        <isprint value="${lineItem.totalItemQuantity}" style="INTEGER" encoding="off" />
+                        <isif condition="${!empty(lineItem.productTypeDetail)}">
+                            ${lineItem.productTypeDetail}
+
+                            <isif condition="${!empty(lineItem.containerType)}">
+                                ${Resource.msg('global.per', 'common', null) + ' ' + lineItem.containerType}
+                            </isif>
+                        </isif>
+                    </div>
+                </isif>
+            </div>
+            <div class="line-item-attributes">
+                <isscript>
+                // Make sure variable isn't undeclared, since an empty check wouldn't work
+                var productCardQtyPrice = typeof productCardQtyPrice === 'undefined' ? true : productCardQtyPrice;
+             </isscript>
+                ${Resource.msg('label.each.item.price', 'cart', null)}:
+                <isset name="price" value="${lineItem.price}" scope="page" />
+                <div style="display:inline-block; margin-left:5px;">
+                    <isinclude template="/product/components/pricing/main.isml" />
+                </div>
+            </div>
+
+            <div class="line-item-attributes">
+                    <div class="line-item-total-text qty-card-quantity-label" style="display:inline-block;">
+                        ${Resource.msg('field.selectquantity', 'cart', null)}:
+                    </div>
+                    <div class="pricing qty-card-quantity-count c-product-card__qty-price__qty__amt" style="display:inline-block;">
+                        <isprint value="${lineItem.quantity}" formatter="##" /></div>
+                    <input type="hidden" class="quantity-select" value="${lineItem.quantity}" />
+                    <isif condition="${!empty(pdict.isOrderHistory) && pdict.isOrderHistory}">
+                        <input type="hidden" class="add-to-cart-url" value="${URLUtils.url('Cart-AddMultipleProducts')}">
+                        <input type="hidden" class="js-forward-url" value="${URLUtils.url('Cart-Show')}">
+                        <isif condition="${pdict.boxContents.hasOwnProperty(lineItem.boxId)}">
+                            <ul class="d-none">
+                                <isloop items="${pdict.boxContents[lineItem.boxId]}" var="boxContentItem">
+                                    <li class="bundle-item"><span class="product-id">${boxContentItem.id}</span><label class="quantity" data-quantity="${boxContentItem.quantity}">${boxContentItem.quantity}</label></li>
+                                </isloop>
+                            </ul>
+                        </isif>
+                    </isif>
+
+
+            </div>
+            <div class="line-item-attributes">
+                ${Resource.msg('label.total.price', 'cart', null)}:
+                <div style="display:inline-block; margin-left:5px;">
+                    <div class="item-total-${lineItem.UUID} price">
+                        <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .og-widget {
+        font-size: 0.813rem !important;
+    }
+</style>

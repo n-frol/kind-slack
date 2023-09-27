@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="sample_video-callout">
+        <display-name xml:lang="x-default">Sample Video Callout</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;h4&gt;what makes us KIND&lt;/h4&gt;&#13;
+&#13;
+&lt;p&gt;Here at KIND, we choose to say &amp;quot;AND&amp;quot; instead of &amp;quot;OR.&amp;quot; We seek to challenge assumptions, think creatively and avoid false compromises. We call this our &amp;ldquo;AND Philosophy&amp;rdquo; and it applies to everything we do. From the snacks we create to the kindness we spread, we never settle for &amp;quot;good enough.&amp;quot;&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyTwo">&lt;h4&gt;our culture&lt;/h4&gt;&#13;
+&#13;
+&lt;p&gt;You won't hear the word 'employee' around here. We're team members, working collaboratively towards our shared goal: To make healthy and tasty snacks the new norm, and make the world a little bit kinder. We're ambitious, we know, but we know it&amp;rsquo;s the nuts that change the world. Jerks need not apply.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">want a job you're nuts about?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetVideoURL">https://www.youtube.com/embed/mqyPWEU3LHk</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

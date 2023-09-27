@@ -1,0 +1,22 @@
+<isif condition="${catId}">
+        <div class="hero slant-down search-banner c-cat-banner s-cat-banner">
+                <isslot id="cat-banner" context="category" description="Category page top slot."
+                        context-object="${catId}" />
+        </div>
+        <iselse>
+                <div class="hero slant-down search-banner c-cat-banner s-cat-banner">
+                        <div class="c-cat-banner__inner">
+                                <div class="container c-cat-banner__container">
+                                        <div class="row c-cat-banner__row">
+                                                <h1 class="c-cat-banner__heading">
+                                                        <isif condition="${pdict.productSearch.isCategorySearch}">
+                                                                ${pdict.productSearch.category.name}
+                                                                <iselse>
+                                                                        ${Resource.msg('label.header.banner', 'search', null)}
+                                                        </isif>
+                                                </h1>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+</isif>

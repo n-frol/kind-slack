@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="294">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1</min-order-quantity>
+        <step-quantity>1</step-quantity>
+        <display-name xml:lang="x-default">almond &amp; coconut</display-name>
+        <short-description xml:lang="x-default">KIND® bars</short-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>true</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/17128-mobile-kind-nut-bars-almond-coconut_opt-min.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/17128-mobile-kind-nut-bars-almond-coconut_opt-min.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/17128-mobile-kind-nut-bars-almond-coconut_opt-min.png"/>
+            </image-group>
+            <image-group view-type="swatch">
+                <image path="images/17128-mobile-kind-nut-bars-almond-coconut_opt-min.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="productClassID">BAR</custom-attribute>
+        </custom-attributes>
+        <classification-category catalog-id="kind-snacks-storefront">kind-nut-bars</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+</catalog>

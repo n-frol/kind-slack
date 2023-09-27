@@ -1,0 +1,61 @@
+/* ============================================================================
+   Checkboxes & Radio Buttons
+   ============================================================================ */
+
+/**
+ * Styles the checkbox and radio button components
+ */
+
+ $ns: "c-form-elements";
+
+.#{$ns} {
+    &__row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+    &__col {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    &__btn {
+        margin-bottom: 25px;
+        margin-top: 5px;
+    }
+    &__subscribe {
+        margin-top: -13px;
+    }
+}
+
+ .custom-control {
+    padding-left: 0;
+}
+
+.custom-checkbox .custom-control-label::before {
+    background: $white;
+    border-radius: 0;
+    border: 2px solid $primary;
+    box-shadow: none !important;
+    content: none;
+    height: 16px;
+    width: 16px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-color: $white;
+    border: 2px solid $primary;
+    content: none;
+    padding-left: 0;
+}
+
+.invalid-feedback, .form-control.is-invalid {
+    font-family: $font-family-primary;
+    font-weight: 700;
+}
+.invalid-feedback {
+    font-size: 12px;
+}
+
+.form-group.required .form-control-label::before {
+    content: "*";
+    color: #c00;
+}

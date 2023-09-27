@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="test-full-width-cta">
+        <display-name xml:lang="x-default">Test Full Width CTA</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#F2F2F2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">take a look at everything we put in our snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">want to learn more about our delicious ingredients?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show','cgid','kind-nut-snacks')$"&gt;KIND Nut Bars&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">full</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

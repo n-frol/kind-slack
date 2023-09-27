@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:vertexinc:o-series:tps:6:0" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Jurisdiction level specification. Declararion of structures and data types.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="JurisdictionLevelCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Identifies the common classification of a jurisdiction, based on its geopolitical or taxing context.</xsd:documentation>
+      <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="60"/>
+      <xsd:enumeration value="APO">
+        <xsd:annotation>
+          <xsd:documentation>Army and Air Force Post Office box. This value may also be used for Diplomatic Post Office (DPO) box.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="BOROUGH">
+        <xsd:annotation>
+          <xsd:documentation>An entity that acts as a self-governing body on the local level.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CITY">
+        <xsd:annotation>
+          <xsd:documentation>An incorporated municipality in which definite boundaries and legal powers are set forth in a charter granted by the state.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COUNTRY">
+        <xsd:annotation>
+          <xsd:documentation>An entity that acts as a self-governing body, based on a special common geographic area of interest</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="COUNTY">
+        <xsd:annotation>
+          <xsd:documentation>An entity within a state or country, used for administrative purposes, created by territorial division for the purpose of local government.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="DISTRICT">
+        <xsd:annotation>
+          <xsd:documentation>A local jurisdiction, which may or may not follow city or county boundaries, in which taxes or fees are imposed to benefit a specific purpose.  Examples include Special Purpose Districts, Municipal Transportation Authorities, Transit Districts, Community Improvement Districts, Transportation Development Districts, Hospital Districts, Local Improvement Districts, Public Improvement Districts, School Districts, and Police Jurisdictions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="FPO">
+        <xsd:annotation>
+          <xsd:documentation>(Military) Field Post Office.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="LOCAL_IMPROVEMENT_DISTRICT">
+        <xsd:annotation>
+          <xsd:documentation>A municipality that provides local government functions. </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PARISH">
+        <xsd:annotation>
+          <xsd:documentation>An entity within a state or country, used for administrative purposes, created by territorial division for the purpose of local government (most often seen in Louisiana). </xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="PROVINCE">
+        <xsd:annotation>
+          <xsd:documentation>A territorial unit that acts in an administrative function or organized political system within a country. Provinces in Canada are similar to states in the United States.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SPECIAL_PURPOSE_DISTRICT">
+        <xsd:annotation>
+          <xsd:documentation>A local jurisdiction that does not follow city or county boundaries.
+Examples include municipal transportation authorities (MTAs), hospitals,
+and school districts.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="STATE">
+        <xsd:annotation>
+          <xsd:documentation>A territorial unit that acts in an administrative function or organized political system within a country. States in the United States are similar to provinces in Canada.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TERRITORY">
+        <xsd:annotation>
+          <xsd:documentation>A non-sovereign geographic region within a country.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TOWNSHIP">
+        <xsd:annotation>
+          <xsd:documentation>An incorporated municipality in which definite boundaries and legal powers are set forth in a charter granted by the state, similar to a city.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TRADE_BLOCK">
+        <xsd:annotation>
+          <xsd:documentation>A type of intergovernmental agreement where regional barriers to trade are reduced or eliminated among member countries.
+</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="TRANSIT_DISTRICT">
+        <xsd:annotation>
+          <xsd:documentation>A special-purpose district organized as either a corporation authorized
+ by statute, or a government agency that provides public transportation
+ within a specific region.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="JurisdictionLevel" type="JurisdictionLevelCodeType">
+    <xsd:annotation>
+      <xsd:documentation>Jurisdiction level structure.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

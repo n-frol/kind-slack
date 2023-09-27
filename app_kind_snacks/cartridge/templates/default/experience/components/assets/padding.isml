@@ -1,0 +1,35 @@
+<isif condition="${!pdict.usemargins}">
+<div class="padder-${pdict.idd}" style="background:${pdict.bg}"></div>
+<iselse>
+    <div class="margin-${pdict.idd}" style="background:${pdict.bg}"></div>
+</isif>
+<style>
+.padder-${pdict.idd} {
+    padding-top: ${pdict.amount}px;
+    padding-bottom: ${pdict.amount}px;
+}
+.margin-${pdict.idd} {
+    margin-top: ${pdict.amount}px;
+    margin-bottom: ${pdict.amount}px;
+}
+@media(max-width:1024px) {
+    .padder-${pdict.idd} {
+        padding-top: ${pdict.amount_tablet}px;
+        padding-bottom: ${pdict.amount_tablet}px;
+    }
+    .margin-${pdict.idd} {
+        margin-top: ${pdict.amount_tablet}px;
+        margin-bottom: ${pdict.amount_tablet}px;
+    }
+}
+@media(max-width:768px) {
+    .padder-${pdict.idd} {
+        padding-top: ${pdict.amount_mobile}px;
+        padding-bottom: ${pdict.amount_mobile}px;
+    }
+    .margin-${pdict.idd} {
+        margin-top: ${pdict.amount_mobile}px;
+        margin-bottom: ${pdict.amount_mobile}px;
+    }
+}
+</style>

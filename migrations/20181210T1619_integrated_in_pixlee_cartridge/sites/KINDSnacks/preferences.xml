@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances>
+            <preference preference-id="PixleeAccountID">1422</preference>
+            <preference preference-id="PixleeEnabled">true</preference>
+            <preference preference-id="PixleeWidgetId">1255720</preference>
+            <preference preference-id="SkuReference">Product ID</preference>
+        </all-instances>
+    </custom-preferences>
+</preferences>
+

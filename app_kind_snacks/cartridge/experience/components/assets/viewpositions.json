@@ -1,0 +1,47 @@
+{
+  "name": "View Positions",
+  "description": "View Positions",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "shared",
+      "name": "Shared Content",
+      "description": "Shared Attributes",
+      "attribute_definitions": [
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "header",
+          "name": "Header",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "copy",
+          "name": "Copy",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Background Color",
+          "type": "custom",
+          "editor_definition": {
+            "type": "kind.colorpicker"
+          },
+          "required": false
+        },
+        {
+          "id": "link",
+          "name": "Link",
+          "type": "text",
+          "required": false
+        }
+  ]
+}],
+  "region_definitions": []
+}

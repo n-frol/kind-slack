@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="accountholdername" label="giropay.accountholdername" type="string" mandatory="true"
+            missing-error="giropay.accountholdernameerror"
+            range-error="giropay.accountholdernameerror"/>
+
+    <field formid="accountnumber"
+            label="giropay.accountnumber" type="string" mandatory="true"
+            value-error="giropay.accountnumbererror"/>
+
+</form>

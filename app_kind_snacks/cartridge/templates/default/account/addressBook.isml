@@ -1,0 +1,83 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/addressBook.js');
+        assets.addCss('/css/account/addressBook.css');
+    </isscript>
+    <isinclude template="account/deleteAddressModal"/>
+
+    <h1 class="title title-display-banner">${Resource.msg('label.addressbook','account',null)}</h1>
+    <div style='margin: auto;
+    text-align: center; max-width: 500px; line-height: 20px;
+    padding-bottom: 20px; color: #2b636f; font-family: "HelveticaNeue-Bold", Helvetica, sans-serif'>
+        To manage addresses for your subscription orders, please go to your <a style="color: #2b636f;" href="/msi">Manage Subscriptions page</a>.
+    </div>
+    <div class="container">
+        <div style="display:none;" class="address-alert alert c-alert alert-danger c-alert--danger alert-dismissible valid-cart-error fade show"
+             role="alert">
+
+        </div>
+        <isif condition="${empty(pdict.addressBook)}">
+            <div class="row justify-content-center">
+                <div class="col">
+                    <h3 class="title title-display-banner c-account-dashboard__no-entries">${Resource.msg('msg.no.saved.addresses.yet','address',null)}</h3>
+                </div>
+            </div>
+        </isif>
+        <!-- Rows for addresses in the Address Book -->
+        <isloop items="${pdict.addressBook}" var="address">
+            <div class="row justify-content-center" id="uuid-${address.address.UUID}">
+                <div class="col-sm-8 col-md-8 c-account-dashboard__summary-page">
+                    <div class="card c-account-dashboard__card-body">
+                        <div class="c-account-dashboard__card-header">
+                            <div class="address-heading pull-left">${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.address.ID}</div>
+                            <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.address.ID)}" class="pull-right c-account-dashboard__card-header__link">${Resource.msg('link.edit','account',null)}</a>
+                        </div>
+                        <div class="card-body card-body-positioning">
+                            <div>${address.address.firstName} ${address.address.lastName}</div>
+                            <isif condition="${!empty(address.address.companyName)}">
+                                <div>${address.address.companyName}</div>
+                            </isif>
+                            <div>${address.address.address1}</div>
+                            <isif condition="${!empty(address.address.address2)}">
+                                <div>${address.address.address2}</div>
+                            </isif>
+                            <div>${address.address.city}, ${address.address.stateCode} ${address.address.postalCode}</div>
+                            <div>${address.address.phone}</div>
+                            <div>${address.address.email}</div>
+                            <isif condition="${address.address.ID !== pdict.addressBook[0].address.ID}">
+                                <div class="card-make-default-link">
+                                    <a href="${URLUtils.url('Address-SetDefault', 'addressId', address.address.ID)}" class="c-account-dashboard__card-header__link">${Resource.msg('link.addressbook.makedefault','account',null)}</a>
+                                </div>
+                            </isif>
+                            <button
+                                type="button"
+                                class="c-account-dashboard__remove-btn remove-address"
+                                data-toggle="modal"
+                                data-target="#deleteAddressModal"
+                                data-id="${address.address.ID}"
+                                data-url="${pdict.actionUrls.deleteActionUrl}"
+                            <isprint value="${ address.address.ID == pdict.addressBook[0].address.ID ? 'data-default="true"' : '' }" encoding="off" />>
+                            &times;
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isloop>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 col-md-8 c-account-dashboard__summary-page">
+                <div class="row c-account-dashboard__bottom">
+                    <div class="col text-center">
+                        <a href="${URLUtils.url('Account-Show')}" class="btn btn-outline-primary c-account-dashboard__btn">
+                            ${Resource.msg('link.profile.backtomyaccount','account',null)}
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-primary c-account-dashboard__btn">${Resource.msg('button.addnew','account',null)}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

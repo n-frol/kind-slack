@@ -1,0 +1,90 @@
+/* ============================================================================
+   Glossary
+   ============================================================================ */
+
+/**
+ * Provides a glossary
+ */
+
+ $ns: c-glossary;
+
+ .#{$ns} {
+    color: $darker-gray;
+    margin-bottom: 170px;
+
+     &__header {
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 130px;
+        }
+
+         .#{$ns}__heading {
+            color: $darker-gray;
+            font-size: 40px;
+            margin-bottom: 20px;
+         }
+
+         .#{$ns}__subheading {
+            font-size: 16px;
+            text-align: center;
+        }
+     }
+
+     &__starts-with {
+         font-size: 288px;
+         line-height: 1.25;
+         text-align: center;
+
+        @include media-breakpoint-up(sm) {
+            line-height: 0.2;
+            text-align: left;
+        }
+    }
+
+    &__item {
+        margin-bottom: 20px;
+
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 300px;
+        }
+    }
+
+    &__components {
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+     &__component {
+         border-bottom: 1px solid $horizontal-rule-grey;
+         padding-bottom: 16px;
+         padding-top: 16px;
+
+         &:first-child {
+             border-top: 1px solid $horizontal-rule-grey;
+         }
+
+         &__name {
+             font-size: 18px;
+             display: flex;
+             justify-content: space-between;
+             line-height: 1;
+
+            &.has-expanded &__expand {
+                transform: rotate(90deg);
+            }
+
+            &__expand {
+                height: 20px;
+                transition: 0.25s ease-in-out;
+                width: 20px;
+            }
+         }
+
+         &__description {
+            display: none;
+            line-height: 1.25;
+            padding-top: 16px;
+            padding-right: 40px;
+         }
+     }
+ }

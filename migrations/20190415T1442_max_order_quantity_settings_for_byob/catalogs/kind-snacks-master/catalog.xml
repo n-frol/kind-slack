@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="vbyob20">
+        <custom-attributes>
+            <custom-attribute attribute-id="maxOrderQuantity">1.0</custom-attribute>
+        </custom-attributes>
+    </product>
+
+    <product product-id="vbyob40">
+        <custom-attributes>
+            <custom-attribute attribute-id="maxOrderQuantity">1.0</custom-attribute>
+        </custom-attributes>
+    </product>
+
+</catalog>

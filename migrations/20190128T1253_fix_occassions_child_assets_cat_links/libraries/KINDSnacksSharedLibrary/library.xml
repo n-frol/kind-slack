@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="add-some-fruit">
+        <display-name xml:lang="x-default">add some fruit to your day</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Add Some Fruit to Your Day | Include More Fruit in Your Diet | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Adding fruit to your diet can be difficult, make it easier by enjoying a KIND snack packed with fruit and other tasty ingredients.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#B41782</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">add some fruit to your day</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_fruit_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'add-some-fruit')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="after-school-snack">
+        <display-name xml:lang="x-default">After School Snack</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">After School Snacks | Easy &amp; Healthy After School Snacks | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">After school snacks should be convenient and healthy! KIND's snack bars have a taste kids love, with flavors like peanut butter chocolate chip and honey oat.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#4DC1DF</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">After School Snack</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/Kids_Group_Shot_Still_withLunchbox_1122x748_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'after-school-snack')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="breakfast-at-home">
+        <display-name xml:lang="x-default">breakfast at home</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Breakfast at Home | Wholesome Breakfast for Kids &amp; Adults | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Enjoy a delicious breakfast at home with KIND bars and clusters, all made with ingredients you can see like whole grains, nuts, and fruit.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#61B4E4</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">breakfast at home</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_breakfast_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'breakfast-at-home')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="evening-snack">
+        <display-name xml:lang="x-default">Evening Snack</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Evening Snacks | Tasty &amp; Healthy Evening Snacks | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Enjoy tasty and healthy evening snacks made from rich ingredients like whole nuts, sweet chocolate chunks, and savory spices.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#262729</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Evening Snack</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_evening_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'evening-snack')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="fuel-your-morning-run">
+        <display-name xml:lang="x-default">Fuel Your Morning Run</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Fuel Your Morning Run | Healthy Snacks for Runners | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Fuel your morning run and shop healthy snacks for runners by KIND, bars are the perfect to snack before your run and are convenient enough to bring with you.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#732181</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">fuel for your morning run</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_run_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show','cgid','fuel-your-morning-run')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="guilt-free-indulgence">
+        <display-name xml:lang="x-default">Guilt-free Indulgence</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Guilt-Free Indulgence | Guilt-Free Snacks for Your Cravings | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Satisfy your cravings with guilt-free snacks in flavors like dark chocolate cherry cashew, salted caramel and dark chocolate nut, and dark chocolate almond mint.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#83603F</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Guilt-free Indulgence</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_guilt-free-indulgence_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'guilt-free-indulgence')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="healthy-on-the-go">
+        <display-name xml:lang="x-default">snack healthy while on-the-go</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Healthy Snacks On-the-Go | Healthy, Portable Snacks | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Enjoy easy, healthy snacks on-the-go all made from ingredients you can recognize, like whole nuts, chocolate chunks, and fruits.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#E1D74E</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">snack healthy while on-the-go</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_on-the-go_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'healthy-on-the-go')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+	
+    <content content-id="make-lunch-interesting">
+        <display-name xml:lang="x-default">Make Lunch Interesting</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Make Lunch Interesting | Delicious &amp; Healthy Lunch Snacks | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Having trouble keeping lunch interesting? KIND's bars and clusters make delicious and healthy lunchtime snack additions - whether it's for you or the kids.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#095C66</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Make Lunch Interesting</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_lunch_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'make-lunch-interesting')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="power-your-workout">
+        <display-name xml:lang="x-default">Power For Your Workout</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes>
+            <page-title xml:lang="x-default">Power Your Workout | Healthy Pre &amp; Post-Workout Snacks | KIND Snacks</page-title>
+            <page-description xml:lang="x-default">Pre-workout snacks can help you power your workouts, KIND bars are the perfect workout snack with natural sugars and protein.</page-description>
+        </page-attributes>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#4B8B2A</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Power For Your Workout</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/content-banners/shop-by-occasion_workout_opt.jpg</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cgid', 'power-your-workout')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+	
+</library>

@@ -1,0 +1,57 @@
+<!-- Subtotal -->
+<div class="c-cart-totals__order-summary__row row">
+    <div class="col-8">
+        ${Resource.msg('label.total.subtotal','cart',null)}
+    </div>
+    <div class="col-4 text-right sub-total">
+        ${pdict.totals.subTotal}
+    </div>
+</div>
+
+<div class="c-cart-totals__order-summary__row row">
+    <div class="col-8">
+        ${Resource.msg('label.shipping.cost','cart',null)}
+    </div>
+    <div class="col-4 text-right shipping-cost">
+        ${pdict.totals.totalShippingCost}
+    </div>
+</div>
+
+<!--- Shipping Discount --->
+<div class="c-cart-totals__order-summary__row row shipping-discount <isif condition="${pdict.totals.shippingLevelDiscountTotal.value === 0}">hide-shipping-discount</isif>">
+    <div class="col-8">
+        ${Resource.msg('label.shipping.discount', 'common', null)}
+    </div>
+    <div class="col-4 text-right shipping-discount-total">
+        - ${pdict.totals.shippingLevelDiscountTotal.formatted}
+    </div>
+</div>
+
+<!-- Sales Tax -->
+<div class="c-cart-totals__order-summary__row row">
+    <div class="col-8">
+        ${Resource.msg('label.sales.tax','cart',null)}
+    </div>
+    <div class="col-4 text-right tax-total">
+        ${pdict.totals.totalTax}
+    </div>
+</div>
+
+<!--- Order Discount --->
+<div class="c-cart-totals__order-summary__row row is-order-discount order-discount <isif condition="${pdict.totals.orderLevelDiscountTotal.value === 0}">hide-order-discount</isif>">
+    <div class="col-8">
+        ${Resource.msg('label.order.discount', 'common', null)}
+    </div>
+    <div class="col-4 text-right order-discount-total">
+        - ${pdict.totals.orderLevelDiscountTotal.formatted}
+    </div>
+</div>
+
+<div class="c-cart-totals__order-summary__total row">
+    <div class="c-cart-totals__order-summary__total__col col-8">
+        ${Resource.msg('label.totals.total','cart',null)}
+    </div>
+    <div class="c-cart-totals__order-summary__total__col col-4 text-right grand-total">
+        ${pdict.totals.grandTotal}
+    </div>
+</div>

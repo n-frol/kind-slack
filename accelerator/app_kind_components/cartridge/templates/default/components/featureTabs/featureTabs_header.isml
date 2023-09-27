@@ -1,0 +1,14 @@
+<isif condition="${(!empty(parentHeading) || !empty(parentBody))}">
+    <div class="container">
+    <div class="row c-feature-tabs__parent-header th-kind-feature-tabs__parent-header page-offset-top page-offset-bottom">
+        <div class="col-12 text-center">
+            <isif condition="${!empty(parentHeading)}">
+                <h1 class="c-feature-tabs__parent-header__heading">${parentHeading}</h1>
+            </isif>
+            <isif condition="${!empty(parentBody)}">
+                <div>${parentBody}</div>
+            </isif>
+        </div>
+    </div>
+    </div>
+</isif>

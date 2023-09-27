@@ -1,0 +1,110 @@
+/* ============================================================================
+   Featured Container
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Featured Container component
+ */
+
+$ns: th-kind-featured-container;
+$component: c-featured-container;
+$scope: s-featured-container;
+
+.#{$ns} {
+
+    // Featured Container Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__item {
+                &__content {
+                    // Featured Container Heading
+                    &__heading {
+                        font-family: $font-family-primary;
+                    }
+
+                    // Featured Container Body
+                    &__body {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Featured Container Links
+                    &__link {
+                        &__title {
+                            font-family: $font-family-primary;
+                            &:hover {
+                                color: $san-marino;
+                            }
+                        }
+                        &__description {
+                            font-family: $font-family-secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+                    background-color: transparent;
+                    color: inherit;
+                    font-family: $font-family-primary;
+                    font-size: 14px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        text-decoration: none;
+
+                        .arrow-link {
+                            color: $grey5;
+                        }
+                    }
+
+                    .arrow-link,
+                    .arrow-link-subtext {
+                        text-transform: none;
+                    }
+                    .arrow-link {
+                        color: black;
+                        font-weight: 700;
+                        font-size: 18px;
+                        letter-spacing: -0.8px;
+                        line-height: 1.2em;
+
+                        &::after {
+                            border-right: 2px solid black;
+                            border-top: 2px solid black;
+                            content: "";
+                            height: 10px;
+                            margin-bottom: 1px;
+                            margin-left: 5px;
+                            -webkit-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            width: 10px;
+                        }
+                    }
+                    .arrow-link-subtext {
+                        background-color: transparent;
+                        color: inherit;
+                        font-family: $font-family-secondary;
+                        font-size: 14px;
+                        text-transform: none;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

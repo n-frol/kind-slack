@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Content">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="graphicalAssetPrimaryButtonBackgroundColor">
+                <display-name xml:lang="x-default">Primary Button Background Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetPrimaryButtonColor">
+                <display-name xml:lang="x-default">Primary Button Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetSecondaryButtonBackgroundColor">
+                <display-name xml:lang="x-default">Secondary Button Background Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetSecondaryButtonColor">
+                <display-name xml:lang="x-default">Secondary Button Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+           <attribute-group group-id="graphicalContentAsset">
+                <display-name xml:lang="x-default">Graphical Content Asset</display-name>
+                <attribute attribute-id="graphicalAssetBackgroundImage"/>
+                <attribute attribute-id="graphicalAssetBackgroundColor"/>
+                <attribute attribute-id="graphicalAssetImage"/>
+                <attribute attribute-id="graphicalAssetHeading"/>
+                <attribute attribute-id="graphicalAssetHeadingColor"/>
+                <attribute attribute-id="graphicalAssetEyebrow"/>
+                <attribute attribute-id="graphicalAssetEyebrowColor"/>
+                <attribute attribute-id="graphicalAssetBody"/>
+                <attribute attribute-id="graphicalAssetBodyColor"/>
+                <attribute attribute-id="graphicalAssetContentColor"/>
+                <attribute attribute-id="graphicalAssetLinks"/>
+                <attribute attribute-id="graphicalAssetPrimaryButtonColor"/>
+                <attribute attribute-id="graphicalAssetPrimaryButtonBackgroundColor"/>
+                <attribute attribute-id="graphicalAssetSecondaryButtonColor"/>
+                <attribute attribute-id="graphicalAssetSecondaryButtonBackgroundColor"/>
+                <attribute attribute-id="graphicalAssetURL"/>
+                <attribute attribute-id="graphicalAssetTextAlign"/>
+                <attribute attribute-id="graphicalAssetContentXPosition"/>
+                <attribute attribute-id="graphicalAssetContentYPosition"/>
+                <attribute attribute-id="graphicalAssetMobileOnly"/>
+                <attribute attribute-id="graphicalAssetTabletOnly"/>
+                <attribute attribute-id="graphicalAssetVideoURL"/>
+                <attribute attribute-id="graphicalAssetWrapper"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

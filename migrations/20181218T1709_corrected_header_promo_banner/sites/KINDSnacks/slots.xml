@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="header-banner-m" context="global" configuration-id="free2dayshiporderover300" default="true" assigned-to-site="true">
+        <description>HTML slot for Free 2 Day Shipping</description>
+        <template>slots/content/headerBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="header-banner-m_content"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

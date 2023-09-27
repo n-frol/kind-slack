@@ -1,0 +1,159 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/carousels.css')}" />
+
+<div class="carousel-container ${pdict.theme}">
+    <div class="heading-container">
+        <h4 class="slider-headline" style="font-size: ${pdict.headingfont}; line-height: ${pdict.headingline}"><isprint value="${pdict.headline}" encoding="off" /></h4>
+        <isif condition="${pdict.showviewall}">
+            <a href="/all-snacks" class="caption view-all">VIEW ALL</a>
+        </isif>
+        <isif condition="${pdict.description}">
+            <div class="slider-description">
+                ${pdict.description}
+            </div>
+        </isif>
+    </div>
+    <!-- Slider main container -->
+    <div class="slider" data-slidewidth="${pdict.slideswidth}" style="margin-bottom:50px;">
+        <div class="swiper-container">
+            <isscript>
+            var carouselRegion = pdict.regions.slides;
+            carouselRegion.setClassName("swiper-wrapper");
+            // mark all pages as carousel
+            carouselRegion.setComponentClassName("swiper-slide");
+            </isscript>
+            <isprint value="${carouselRegion.render()}" encoding="off"/>
+            <!-- pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- scrollbar -->
+            <div class="swiper-scrollbar"></div>
+
+            <!-- buttons -->
+            <div class="swiper-button-prev-kind">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.36612 18.8839L0.411165 10.9289C-0.0769903 10.4408 -0.0769902 9.64932 0.411165 9.16116L8.36612 1.20621C8.85427 0.718057 9.64573 0.718058 10.1339 1.20621C10.622 1.69437 10.622 2.48583 10.1339 2.97398L3.06282 10.045L10.1339 17.1161C10.622 17.6043 10.622 18.3957 10.1339 18.8839C9.64573 19.372 8.85427 19.372 8.36612 18.8839Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="swiper-button-next-kind">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.63388 1.11612L10.5888 9.07107C11.077 9.55922 11.077 10.3507 10.5888 10.8388L2.63388 18.7938C2.14573 19.2819 1.35427 19.2819 0.866117 18.7938C0.377961 18.3056 0.377961 17.5142 0.866117 17.026L7.93719 9.95495L0.866117 2.88388C0.377961 2.39573 0.377961 1.60427 0.866117 1.11612C1.35427 0.627961 2.14573 0.627961 2.63388 1.11612Z" fill="black"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .swiper-button-next-kind, .swiper-button-prev-kind {
+            display: none;
+        }
+    }
+    .swiper-button-lock {
+        display: block !important;
+    }
+    .swiper-button-next-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        right: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 1;
+    }
+    .swiper-button-next-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .swiper-button-prev-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        left: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 0;
+    }
+    .swiper-button-prev-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .slider .swiper-slide {
+        width: ${pdict.slideswidth}px !important;
+    }
+    @media screen and (max-width: 768px) {
+        .slider .swiper-slide {
+            width: ${pdict.slideswidthmobile}px !important;
+        }
+        .slider-description {
+            float: unset;
+        }
+    }
+    .carousel-container.onrails {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @media screen and (max-width: 768px) {
+        .carousel-container.onrails {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .heading-container {
+            grid-template-columns: 1fr !important;
+        }
+    }
+</style>
+
+<script>
+    const cat_slider = new Swiper('.swiper-container', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 20,
+        grabCursor: true,
+        paginationClickable: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next-kind',
+            prevEl: '.swiper-button-prev-kind',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "auto",
+    });
+
+
+    cat_slider.on("slideChange", function() {
+       if (cat_slider.realIndex > 0) {
+           jQuery(".swiper-button-prev-kind").css("opacity", "1");
+       } else {
+           jQuery(".swiper-button-prev-kind").css("opacity", "0");
+       }
+        jQuery(".swiper-button-next-kind").css("opacity", "1");
+    });
+    cat_slider.on("reachEnd", function() {
+        jQuery(".swiper-button-next-kind").css("opacity", "0");
+    });
+</script>

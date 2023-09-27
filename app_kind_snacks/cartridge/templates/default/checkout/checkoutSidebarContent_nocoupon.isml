@@ -1,0 +1,29 @@
+<div class="card st-sidebar__card">
+    <div class="card-header st-sidebar__header">
+        <h2 class="st-sidebar__heading h4">${Resource.msg('heading.order.summary', 'checkout', null)}</h2>
+    </div>
+    <div class="card-body order-total-summary c-checkout-price-summary">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+</div>
+<isinclude template="cart/cartRemoveCouponModal" />
+<div class="card-body order-total-summary c-sidebar-product-summary">
+    <isinclude template="checkout/orderProductSummary" />
+</div>
+
+<style>
+.checkoutPromo {
+    padding: 10px 20px;
+}
+    .checkoutPromo .col-12 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .checkoutPromo .row {
+        margin-right: -20px;
+        margin-left: -20px;
+    }
+    .c-cart-coupon-display__code {
+        background: #f3f3f3;
+    }
+</style>

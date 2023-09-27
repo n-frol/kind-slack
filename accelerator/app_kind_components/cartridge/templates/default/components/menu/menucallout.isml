@@ -1,0 +1,3 @@
+<div style="background:${graphicalAsset.backgroundColor}; color:${graphicalAsset.bodyColor}; text-align:${graphicalAsset.textAlign}" class="menucallout">
+${graphicalAsset.body}
+</div>

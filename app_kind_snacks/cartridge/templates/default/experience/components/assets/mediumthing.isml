@@ -1,0 +1,197 @@
+<isscript>
+   var assets = require('*/cartridge/scripts/assets');
+   assets.addJs('/js/gifting.js');
+</isscript>
+<div class="double_medium_container" id="${pdict.anchor}">
+    <div class="medium_container medium_container_first">
+        <div class="banner-container">
+            <div class="banner">
+            <isprint value="${pdict.bannertext}" encoding="off" />
+            </div>
+        </div>
+        <div class="left">
+            <img src="${pdict.image.src.desktop}" alt="q" />
+        </div>
+        <div class="right">
+            <div class="rightcontainer">
+                <div class="flexbreak"></div>
+                <h3>
+                <isprint value="${pdict.headertext}" encoding="off" />
+                </h3>
+                <div class="flexbreak"></div>
+                <div class="copy">
+                <isprint value="${pdict.copytext}" encoding="off" />
+                </div>
+                <button class="c-product-tile__image-container__quickview quickview btn btn-light" 
+            data-link="/on/demandware.store/Sites-KINDSnacks-Site/en_US/Product-ShowQuickView?pid=${pdict.pid.ID}" data-is-blocked-access="false" data-impulse-upsell="true" title="Quick Shop" type="button">
+            Quick Shop
+        </button>
+                <div class="flexbreak"></div>
+                <a href="test">View Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="medium_container" id="${pdict.anchor2}">
+     <div class="banner-container">
+            <div class="banner">
+            <isprint value="${pdict.bannertext2}" encoding="off" />
+            </div>
+        </div>
+        <div class="left">
+            <img src="${pdict.image2.src.desktop}" alt="q" />
+        </div>
+        <div class="right">
+            <div class="rightcontainer">
+                <div class="flexbreak"></div>
+                <h3>
+                <isprint value="${pdict.headertext2}" encoding="off" />
+                </h3>
+                <div class="flexbreak"></div>
+                <div class="copy">
+                <isprint value="${pdict.copytext2}" encoding="off" />
+                </div>
+<button class="c-product-tile__image-container__quickview quickview btn btn-light" 
+            data-link="/on/demandware.store/Sites-KINDSnacks-Site/en_US/Product-ShowQuickView?pid=${pdict.pid2.ID}" data-is-blocked-access="false" data-impulse-upsell="true" title="Quick Shop" type="button">
+            Quick Shop
+        </button>
+                <div class="flexbreak"></div>
+                <a href="test">View Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    @media only screen and (max-width: 1024px) and (min-width: 769px) {
+        .medium_container h3 {
+            font-size: 28px !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) and (min-width: 425px) {
+            .medium_container h3 {
+                font-size:24px;
+            }
+    }
+.medium_container .left img {
+    width:585px;
+}
+    .double_medium_container {
+        max-width: 1280px;
+        margin: auto;
+    }
+
+    .banner-container {
+        position: relative;
+    }
+
+    .medium_container .banner {
+z-index: 999;
+    position: absolute;
+    top: -10px;
+        left: 0px;
+        right: 0px;
+        background: black;
+        padding: 5px;
+        margin-bottom: 0px !important;
+        color: white;
+        text-align: center;
+        font-family: HelveticaNeue-Bold;
+        width: 200px;
+        margin: auto;
+    }
+
+    @media only screen and (max-width: 425px) {
+        .medium_container {
+            width:100% !important;
+        }
+        .banner-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 0px;
+        }
+
+        .medium_container .left {
+            width: 100% !important;
+        }
+
+        .medium_container .right {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+
+    .medium_container .copy {
+        margin-bottom: 20px;
+        font-family: georgia;
+    }
+
+    .medium_container h3 {
+        margin-bottom: 20px;
+    }
+
+    .medium_container button {
+        margin-bottom: 10px;
+    }
+
+    .btn-light {
+        width: 200px;
+    }
+
+    .btn-light-white {
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        cursor: pointer;
+    }
+
+    .flexbreak {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    .medium_container {
+        width: 45.75%;
+        margin: auto;
+        float: left;
+        margin-bottom:30px;
+    }
+
+    .medium_container_first {
+        margin-right: 5%;
+    }
+
+    .medium_container .left {
+        width: 100%;
+        display: inline-block;
+        float: left;
+        position: relative;
+    }
+
+    .medium_container .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: black;
+        color: white;
+        height: auto;
+        text-align: center;
+        padding: 30px;
+        flex-wrap: wrap;
+        position: relative;
+        height:332px;
+    }
+
+    .medium_container .right .banner {
+        font-family: HelveticaNeue-Bold;
+        margin-bottom: 40px;
+    }
+
+    .medium_container a {
+        font-family: HelveticaNeue-Bold;
+        color: white;
+        text-transform: uppercase;
+    }
+</style>

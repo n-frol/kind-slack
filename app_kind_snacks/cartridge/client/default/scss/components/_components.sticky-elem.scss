@@ -1,0 +1,16 @@
+/* ============================================================================
+Sticky Element Component
+============================================================================ */
+
+/**
+ * Syles dynamically sticky elements
+ */
+
+$ns: c-sticky-elem;
+
+.#{$ns} {
+    &.is-sticky {
+        position: fixed;
+            z-index: 10;
+    }
+}

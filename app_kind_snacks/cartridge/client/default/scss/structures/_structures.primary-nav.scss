@@ -1,0 +1,359 @@
+/* ============================================================================
+Primary Navigation
+============================================================================ */
+
+/**
+ * Establish styles for the site's primary navigation menu
+ */
+
+$ns: st-primary-nav;
+
+// Use placeholder so scopes.header-nav doesn't pull into anything more than it needs to
+%#{$ns}__link {
+    color: inherit;
+    font-size: 24px;
+    margin-top: 12px;
+    padding: 1px 0;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @include media-breakpoint-up(lg) {
+        font-size: inherit;
+        margin: 14px 16px 11px
+    }
+}
+%#{$ns}__dropdown {
+    border: 0 none;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding: 10px $setting-gutter;
+    position: absolute;
+        left: calc(-100% - 20px);
+        top: 0;
+    transition: $slide-out-animation, 0s .5s height; // Add to the SFRA transition so closing boxes don't lose their height till after they're off screen
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        height: auto;
+        margin-top: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 1px 0;
+        pointer-events: none;
+        position: relative;
+        transition: .3s opacity, 0s .3s max-height, 0s .3s z-index;
+        z-index: -1;
+    }
+
+    .#{$ns}__dropdown {
+        &__link {
+            font-size: 16px;
+            margin-bottom: 16px;
+            margin-top: 11px;
+        }
+
+        &__top-category {
+            display: flex;
+                align-items: center;
+            padding: 0;
+            width: 100%;
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+                padding-left: $setting-gutter;
+            }
+
+            &:active {
+                background-color: transparent;
+            }
+
+            & .#{$ns}__link,
+            & .#{$ns}__close-menu {
+                @include make-col(6);
+
+                flex-shrink: 1;
+                margin: 13px 0 10px;
+            }
+
+            & .#{$ns}__link {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .show > & {
+        @include media-breakpoint-down(md) {
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            transition: $slide-out-animation; // Declared in SFRA menu.scss
+        }
+    }
+}
+
+// Placeholder to be used by different selectors that can't be easily merged
+%#{$ns}__caret-up {
+    border-bottom: none;
+    border-left: 1px solid #fff;
+    border-right: none;
+    border-top: 1px solid #fff;
+    margin-top: 0;
+}
+.s-header-nav ul {
+    left: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.#{$ns} {
+    color: $primary;
+    display: flex;
+        align-items: center;
+    font-family: $font-family-primary;
+    left: -100%;
+    transition: left 0.5s cubic-bezier(0, 1, 0.5, 1);
+    z-index: 4;
+    padding-left: 20px;
+
+    @include media-breakpoint-down(md) {
+        overflow-y: scroll;
+        padding: 0;
+        position: absolute;
+            top: 100%;
+            margin-top:50px;
+    }
+    @include media-breakpoint-up(lg) {
+        color: $white;
+        left: auto;
+        height: auto !important;
+    }
+
+    &.is-in {
+        left: 0;
+        min-width: 50%;
+
+        @include media-breakpoint-up(md) {
+            left: -45px;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 100%;
+        }
+
+        .#{$ns}__item {
+            display: block;
+            position: static;
+
+            @include media-breakpoint-up(lg) {
+                display: list-item;
+                position: relative;
+            }
+        }
+        .#{$ns}__dropdown {
+            top: 0;
+
+            @include media-breakpoint-up(lg) {
+                top: 100%;
+            }
+        }
+    }
+
+    & &__close-menu {
+        display: block;
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+    &__close-menu {
+        font-family: $font-family-primary;
+        text-align: right;
+
+        &__link {
+            justify-content: flex-end;
+            text-decoration: none;
+
+            &::before {
+                @include background-svg($svg-arrow-back);
+            }
+        }
+    }
+
+    &__navbar {
+        align-items: flex-start;
+        height: 100%;
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(lg) {
+            height: auto !important;
+        }
+
+        // Hide since it's only used to be copied into sub menus
+        > .#{$ns}__close-menu {
+            display: none;
+        }
+    }
+    & &__menu {
+        flex-direction: column;
+
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+    }
+    &__menu-group {
+        @include media-breakpoint-down(md) {
+            background-color: $white;
+            padding: 10px 0px 0;
+        }
+    }
+    &__item {
+        &:hover,
+        &.show {
+            > .#{$ns}__dropdown {
+                @include media-breakpoint-up(lg) {
+                    // Large max height to account for large menu
+                    max-height: 9999999999px;
+                    opacity: 1;
+                    pointer-events: auto;
+                    transition: .3s opacity;
+                    z-index: 1;
+                }
+            }
+
+            > .#{$ns}__link {
+                border-bottom-color: $white;
+            }
+        }
+        &:hover {
+            > .#{$ns}__dropdown-toggle {
+                &::after {
+                    @extend %#{$ns}__caret-up;
+                }
+            }
+        }
+        &.show {
+            > .#{$ns}__link {
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+            > .#{$ns}__dropdown {
+            left: 0;
+        }
+        }
+
+        &--account {
+            background-color: $grey1;
+            &:not(:last-child) a {
+                &:after {
+                    content: '';
+                    border-bottom: 1px solid #ddd;
+                    display: block;
+                    padding-bottom:10px;
+                    position: relative;
+                    left: 0px;
+                    width: 90%;
+            }
+        }
+
+            // Allows us to create the gray box around the login menu to be borderless and match the comp
+            padding-left: $setting-gutter;
+            padding-right: $setting-gutter;
+            width:355px;
+
+            &::before {
+                content: '';
+                background-color: $grey1;
+                position: absolute;
+                    bottom: -20px;
+                    left: 0px;
+                    right: 0px;
+                    top: 0;
+                z-index: -1;
+
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__link {
+        @extend %st-primary-nav__link;
+
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+            border-bottom-color: $white;
+        }
+
+        // Create a stronger selecter
+        &.#{$ns} {
+            &__link {
+                &--account {
+                    border-bottom: none;
+                }
+            }
+        }
+        &--account {
+            font-size: 14px;
+        }
+    }
+    & &__link {
+        color: inherit;
+    }
+    &__dropdown-toggle,
+    &__close-menu__link {
+        display: flex;
+            align-items: center;
+    }
+    &__dropdown-toggle::after,
+    &__close-menu__link::before {
+        @include media-breakpoint-down(md) {
+            background-position: center top;
+            background-size: 100%;
+            border-left: none;
+            border-top: none;
+            content: '';
+            display: inline-block;
+            height: 30px;
+            transform: none;
+            width: 30px;
+            position: relative;
+            top: 10px;
+            right: 10px;
+        }
+    }
+    .backarrow::before {
+        content: '';
+        top:0px;
+        right: 0px;
+    }
+    &__dropdown-toggle {
+        justify-content: space-between;
+
+        &::after {
+            border-bottom: 1px solid #fff;
+            border-left: none;
+            border-right: 1px solid #fff;
+            border-top: none;
+            margin-top: -8px;
+
+            .show & {
+                @extend %#{$ns}__caret-up;
+            }
+
+            @include media-breakpoint-down(md) {
+                @include background-svg($svg-arrow-forward);
+            }
+        }
+    }
+    &__dropdown {
+        @extend %#{$ns}__dropdown;
+    }
+
+    .dropdown-item {
+        padding: 0;
+    }
+}

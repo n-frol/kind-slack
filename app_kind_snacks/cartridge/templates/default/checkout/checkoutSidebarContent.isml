@@ -1,0 +1,142 @@
+<isif condition="${pdict.currentStage == "placeOrder"}">
+    <div class="sumcard card st-sidebar__card collapsible is-active">
+        <iselse>
+            <div class="sumcard card st-sidebar__card collapsible">
+</isif>
+
+<h2 class="st-sidebar__heading h4 title thesummary">${Resource.msg('heading.order.summary', 'checkout', null)}</h2>
+<div class="card-body order-total-summary c-checkout-price-summary js-accordion-body">
+    <isinclude template="checkout/orderTotalSummary" />
+
+<div style="margin-bottom:20px"></div>
+
+    <isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isif condition="${siteID !== 'kind_b2b' && siteID !== 'CreativeSnacks'}">
+        <!-- =========================================== -->
+        <!--             CHANGEUP INJECTION              -->
+        <!-- =========================================== -->
+        <isinclude template="changeUp/checkout/checkout" />
+</isif>
+
+    <isif condition="${pdict.currentStage !== "placeOrder"}">
+        <div class="checkoutPromo">
+            <isinclude template="cart/cartPromoCode" />
+            <div class="coupons-and-promos col-12 mb-2">
+                <isinclude template="cart/cartCouponDisplay" />
+            </div>
+        </div>
+        <isinclude template="cart/cartRemoveCouponModal" />
+
+        <isif condition="${siteID !== 'CreativeSnacks'}">
+            <div class="s-idme--checkout">
+                <isinclude template="idmebutton" />
+            </div>
+        </isif>
+    </isif>
+    <isset name="miniCart" value="${false}" scope="page" />
+    <div class="order-product-summary c-sidebar-product-summary__card">
+        <div class="c-sidebar-product-summary__container">
+
+            <isloop items="${pdict.order.shipping}" var="shippingModel" status="shipmentLoopState">
+                <isif condition="${!empty(shippingModel.productLineItems.items)}">
+                    <isif condition="${shipmentLoopState.first}">
+                        <div class="product-summary-block">
+                    </isif>
+                    <div class="shipment-block c-sidebar-product-summary__shipment-block checkout_product_cards">
+                        <h2 class="multi-shipping h4 mb-0"></h2>
+                        <isinclude template="checkout/orderProductSummaryCards" />
+                       
+                    </div>
+        </div>
+                    <a class="sumlink" href="javascript:void(0);" onclick="$('.thesummary').click()">CLOSE ORDER SUMMARY</a>
+
+        </isif>
+        </isloop>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+<style>
+.line-item-attributes {
+    color: #777777; 
+}
+.c-sidebar-product-summary__card {
+    margin-top: 20px;
+}
+.product-summary-block {
+    margin-bottom: 10px;
+}
+.sumlink {
+    text-align:center;
+    margin:auto;
+    padding:20px;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    display: none;
+}
+    @media screen and (max-width: 440px) {
+        .sumlink {
+            display: block;
+        }
+        .st-sidebar__card {
+            padding: 0px 20px;
+            margin-bottom: 20px;
+        }
+         .st-sidebar { 
+             padding: 0px 10px !important;
+         }
+         .modal-dialog {
+             padding: 0px 10px;
+         }
+    }
+
+    .st-sidebar {
+        background: white;
+        padding: 0px;
+    }
+
+    .st-sidebar-container {
+        background: #f3f3f3;
+        padding: 20px ​15px 10px;
+    }
+
+    .sidebar-padder {
+        padding: 15px 0px;
+        background: white;
+    }
+
+    @media screen and (max-width: 440px) {
+        .c-checkout-product-summary {
+            display:none;
+        }
+        .c-sidebar-product-summary__container {
+            padding: 20px 15px;
+        }
+        .sidebar-padder {
+        padding: 10px 0px;
+        background: white;
+    }
+    }
+
+    .checkoutPromo {
+    padding: 10px 20px;
+    }
+
+    .checkoutPromo .col-12 {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .checkoutPromo .row {
+        margin-right: -20px;
+        margin-left: -20px;
+    }
+
+    .c-cart-coupon-display__code {
+        background: #f3f3f3;
+    }
+</style>

@@ -1,0 +1,28 @@
+<!--- TEMPLATENAME: paymentOperatorTab.isml --->
+<isscript>
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = !empty(selectedPaymentInstruments) && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var isActive = !empty(selectedPaymentInstrument) && selectedPaymentInstrument.paymentMethod === paymentOption.ID;
+    var lowerId = paymentOption.ID.toLowerCase();
+    var tabContent = ['#', lowerId, '-content'].join('');
+
+    // Set a default if no payment method is selected.
+    if (empty(selectedPaymentInstrument) &&
+        paymentOption.ID.equals('PAYMENTOPERATOR_CREDIT_DIRECT')
+    ) {
+        isActive = true;
+    }
+</isscript>
+
+<isif condition="${ paymentOption.ID.indexOf('PAYMENTOPERATOR_') > -1 }">
+    <isset name="payMethodName" value="${ paymentOption.ID === 'PAYMENTOPERATOR_CREDIT_DIRECT' ? Resource.msg('creditdirect.displayname', 'paymentoperator', null) : paymentOption.name}" scope="page" />
+    <li class="nav-item c-tabs__item ${isActive ? 'c-tabs__item--active' : ''} js-custom-tab-item" data-method-id="${ paymentOption.ID }">
+        <a class="nav-link c-tabs__label ${isActive ? 'c-tabs__label--active' : ''} js-custom-tab-label ${ lowerId + '-tab' } ${ isActive ? 'active' : '' }"
+            data-toggle="tab"
+            href="${tabContent}"
+            role="tab"
+        >
+            <isprint value="${ payMethodName }" />
+        </a>
+    </li>
+</isif>

@@ -1,0 +1,197 @@
+{
+    "name": "Cards Content",
+    "group": "cards",
+    "attribute_definition_groups": [
+        {
+            "name": "Heading",
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "heading",
+                    "name": "Heading",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+        "id": "UpperLeft",
+        "name": "Upper Left",
+            "attribute_definitions": [
+                {
+                    "id": "positionul",
+                    "name": "Position",
+                    "type": "enum",
+                    "values": ["Upperleft", "UpperRight", "LowerLeft", "LowerRight"],
+                    "required": true
+                },
+                {
+                    "id": "themeul",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["Full", "BGImage"],
+                    "required": true
+                },
+                {
+                    "id": "headerul",
+                    "name": "Header",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "descriptionul",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaul",
+                    "name": "CTA Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imageul",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                }
+                ]
+        },
+        {
+            "id": "UpperRight",
+            "name": "Upper Right",
+            "attribute_definitions": [
+                {
+                    "id": "positionur",
+                    "name": "Position",
+                    "type": "enum",
+                    "values": ["Upperleft", "UpperRight", "LowerLeft", "LowerRight"],
+                    "required": true
+                },
+                {
+                    "id": "themeur",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["Full", "BGImage"],
+                    "required": true
+                },
+                {
+                    "id": "headerur",
+                    "name": "Header",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "descriptionur",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaur",
+                    "name": "CTA Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imageur",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "BottomLeft",
+            "name": "Bottom Left",
+            "attribute_definitions": [
+                {
+                    "id": "positionbl",
+                    "name": "Position",
+                    "type": "enum",
+                    "values": ["Upperleft", "UpperRight", "LowerLeft", "LowerRight"],
+                    "required": true
+                },
+                {
+                    "id": "themebl",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["Full", "BGImage"],
+                    "required": true
+                },
+                {
+                    "id": "headerbl",
+                    "name": "Header",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "descriptionbl",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctabl",
+                    "name": "CTA Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imagebl",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "BottomRight",
+            "name": "Bottom Right",
+            "attribute_definitions": [
+                {
+                    "id": "positionbr",
+                    "name": "Position",
+                    "type": "enum",
+                    "values": ["Upperleft", "UpperRight", "LowerLeft", "LowerRight"],
+                    "required": true
+                },
+                {
+                    "id": "themebr",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["Full", "BGImage"],
+                    "required": true
+                },
+                {
+                    "id": "headerbr",
+                    "name": "Header",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "descriptionbr",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctabr",
+                    "name": "CTA Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "imagebr",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+
+    ]
+}

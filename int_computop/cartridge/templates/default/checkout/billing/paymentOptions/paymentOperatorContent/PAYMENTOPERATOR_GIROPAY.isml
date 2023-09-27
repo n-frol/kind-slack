@@ -1,0 +1,46 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_GIROPAY.isml --->
+<isset name="giropayFields" value="${ pdict.forms.billingForm.giropay }" scope="page"/>
+
+<isscript>
+    var isEVO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorGiropayVendor') == 'EVO';
+</isscript>
+
+<fieldset class="paymentoperator-giropay-form">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ giropayFields.accountholdername.mandatory === true }>required</isif>
+            ${ giropayFields.accountholdername.htmlName }">
+                <label class="form-control-label" for="giropay_accountholdername">${ Resource.msg('giropay.accountholdername','paymentoperator',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control" id="giropay_accountholdername"
+                           value=""
+                    <isprint value=${ giropayFields.accountholdername.attributes } encoding="off"/>
+                    autocomplete="accountholdername"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <isif condition="${ isEVO }">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                <isif condition=${ giropayFields.accountnumber.mandatory === true }>required</isif>
+                ${ giropayFields.accountnumber.htmlName }">
+                    <label class="form-control-label" for="giropay_accountnumber">${ Resource.msg('giropay.accountnumber','paymentoperator',null) }</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="giropay_accountnumber"
+                               value=""
+                        <isprint value=${ giropayFields.accountnumber.attributes } encoding="off"/>
+                        autocomplete="accountnumber"
+                        >
+                        <div class="invalid-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </isif>
+</fieldset>

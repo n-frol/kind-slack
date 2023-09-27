@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.cancellation">
+        <object-attribute attribute-id="customerKey">oms.cancellation</object-attribute>
+        <object-attribute attribute-id="description">Cancellation notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "orderNumber": "orderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "amountRefunded": "amountRefunded"&#13;
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.refund">
+        <object-attribute attribute-id="customerKey">oms.refund</object-attribute>
+        <object-attribute attribute-id="description">Refund notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "orderNumber": "orderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "amountRefunded": "amountRefunded"&#13;
+}</object-attribute>
+    </custom-object>
+
+</custom-objects>

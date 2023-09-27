@@ -1,0 +1,54 @@
+image: node:10.15.3
+
+pipelines:
+  custom: # Pipelines that are triggered manually
+    deployment-to-sandbox: # Sand box deployment
+      - variables:
+          - name: Hostname
+      - step:
+          caches:
+            - node
+          script:
+            - npm install -g yarn
+      - step:
+          name: Deployment to sandbox
+          trigger: manual
+          script:
+            - yarn install
+            - yarn lint
+            - yarn build
+            - yarn kind-ci push -h $Hostname -u $username -p $password -v $apiversion -e $clientid -t clientpassword
+            - yarn kind-ci activate -h $Hostname -u $username -p $password -v $apiversion -e $clientid -t clientpassword
+    deployment-to-development: # Development deployment
+      - step:
+          caches:
+            - node
+          script:
+            - npm install -g yarn
+      - step:
+          name: Deploy to development
+          deployment: Development
+          trigger: manual
+          script:
+            - yarn install
+            - yarn lint
+            - yarn build
+            - yarn kind-ci push development_$BITBUCKET_BUILD_NUMBER -h $Hostname -u $username -p $password -v $apiversion -e $clientid -t $clientpassword
+            - yarn kind-ci activate development_$BITBUCKET_BUILD_NUMBER -h $Hostname -u $username -p $password -v $apiversion -e $clientid -t $clientpassword
+    deployment-to-Staging: # Staging deployment
+      - step:
+          caches:
+            - node
+          script:
+            - npm install -g yarn
+      - step:
+          name: Deploy to stating
+          deployment: Staging
+          trigger: manual
+          script:
+            - yarn install
+            - yarn lint
+            - yarn build
+            - yarn kind-ci push master_$BITBUCKET_BUILD_NUMBER -h $webdav -u $username -p $password -v $apiversion -e $clientid -t $clientpassword -k $cert_key -c $cert_pem -b $cert_cert
+            - yarn kind-ci activate master_$BITBUCKET_BUILD_NUMBER -h $Hostname -u $username -p $password -v $apiversion -e $clientid -t $clientpassword  
+

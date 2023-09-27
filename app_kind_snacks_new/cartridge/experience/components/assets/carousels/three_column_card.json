@@ -1,0 +1,82 @@
+{
+    "name": "Grid",
+    "group": "carousels",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "mobile_carousel",
+                    "name": "make carousel for mobile",
+                    "type": "boolean",
+                    "required": true
+                },
+                {
+                    "id": "columnscount",
+                    "name": "columns count",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "columnscountipad",
+                    "name": "columns count ipad",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "columnscountmobile",
+                    "name": "columns count mobile",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "gridgap",
+                    "name": "Space between items",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "mmaxwidth",
+                    "name": "max width",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "background",
+                    "name": "Background Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "maxwidth",
+                    "name": "max width",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"slides",
+            "name":"Slides",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}

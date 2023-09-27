@@ -1,0 +1,28 @@
+<iscomment>
+    File: product/componenets/productList/byobListItem.isml
+    Description: Rendering template for display of the BYOB ProductList.
+    CSS Namespace: c-byob-product-list
+</iscomment>
+
+<isset name="byobItemImageSrcset" value="" scope="page" />
+<isif condition="${!empty(byobItem.responsiveImages) && !empty(byobItem.responsiveImages[0])}">
+    <isset name="byobItemImageUrl" value="${byobItem.responsiveImages[0].imageUrlDefault}" scope="page" />
+    <isset name="byobItemImageSrcset"
+        value="${byobItem.responsiveImages[0].imageUrlDefault + ', ' + byobItem.responsiveImages[0].imageUrlLarge + ' 2x'}"
+        scope="page" />
+<iselse/>
+    <isset name="byobItemImageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+</isif>
+
+<isif condition="${!empty(byobItemImageSrcset)}">
+    <iscomment> Image with Source Set Attribute </iscomment>
+    <img class="product-image" src="${byobItemImageUrl}"
+        alt="${byobItem.responsiveImages[0].imageAlt}"
+        title="${byobItem.responsiveImages[0].imageAlt}"
+        srcset="${byobItemImageSrcset}" />
+<iselse/>
+    <iscomment> Image without Source Set Attribute </iscomment>
+    <img class="product-image" src="${byobItemImageUrl}"
+        alt="${!empty(byobItem.images.large) ? byobItem.images.large[0].alt : byobItem.displayName}"
+        title="${!empty(byobItem.images.large) ? byobItem.images.large[0].title : byobItem.displayName}" />
+    </isif>

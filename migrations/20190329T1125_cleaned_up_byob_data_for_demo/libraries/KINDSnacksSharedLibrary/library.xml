@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="header-navigation">
+        <display-name xml:lang="x-default">Header Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+	&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Search-Show','cgid','occasions')$" title="Ways to Snack"&gt;Ways to Snack&lt;/a&gt;&#13;
+            &lt;ul&gt;&#13;
+	        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion"&gt;By Occasion&lt;/a&gt;&#13;
+                    &lt;ul&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/fuel-your-morning-run"&gt;fuel for your morning run&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/breakfast-at-home"&gt;breakfast at home&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/add-some-fruit-to-your-day"&gt;add some fruit to your day&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/make-lunch-interesting"&gt;make lunch interesting&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/snacks-on-the-go"&gt;snack healthy while on-the-go&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/after-school-snacks"&gt;after school snack&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/power-your-workout"&gt;power for your workout&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/guilt-free"&gt;guilt-free indulgence&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-occasion/evening-snacks"&gt;evening snack&lt;/a&gt;&lt;/li&gt;&#13;
+                    &lt;/ul&gt;&#13;
+                &lt;/li&gt;&#13;
+	        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor"&gt;By Flavor&lt;/a&gt;&#13;
+                    &lt;ul&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/chocolate/"&gt;chocolate&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/fruit/"&gt;fruit&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/nut-butter/"&gt;nut butter&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/savory/"&gt;savory&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/spiced/"&gt;spiced&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-flavor/sweet-salty/"&gt;sweet &amp; salty&lt;/a&gt;&lt;/li&gt;	&#13;
+                    &lt;/ul&gt;&#13;
+                &lt;/li&gt;&#13;
+	        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit"&gt;By Benefit&lt;/a&gt;&#13;
+                    &lt;ul&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/5-grams-sugar-or-less/"&gt;5g sugar or less&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/no-trans-fat/"&gt;0g trans fat&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/dairy-free/"&gt;dairy free recipe&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/100-percent-whole-grains/"&gt;100% whole grains&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/high-fiber/"&gt;good source of fiber&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/high-protein/"&gt;good source of protein&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/low-fat/"&gt;low fat&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/low-glycemic-index/"&gt;low glycemic index&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/low-sodium/"&gt;low sodium&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/non-gmo/"&gt;no genetically engineered ingredients&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/no-added-sugar/"&gt;no added sugar&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/nut-free/"&gt;nut free recipe&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/peanut-free/"&gt;peanut free recipe&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/tree-nut-free/"&gt;tree nut free recipe&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/soy-free/"&gt;soy free recipe&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/kosher/"&gt;kosher&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/gluten-free/"&gt;gluten free&lt;/a&gt;&lt;/li&gt;&#13;
+	                 &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="/ways-to-snack/by-benefit/vegan/"&gt;vegan&lt;/a&gt;&lt;/li&gt;&#13;
+                    &lt;/ul&gt;&#13;
+                &lt;/li&gt;&#13;
+            &lt;/ul&gt;&#13;
+        &lt;/li&gt;&#13;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Product-Show', 'pid', 'mbyob')$"&gt;Build Your Own Box&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Page-Show', 'cid', 'snack-club')$"&gt;Snack Club&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Page-Show', 'cid', 'our-mission')$" title="Our Mission"&gt;Our Mission&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="urn:vertexinc:o-series:tps:6:0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0" xml:lang="en-us">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:include schemaLocation="../tax/VertexInc-Core.xsd"/>
+  <xsd:include schemaLocation="../tax/VertexInc-Common.xsd"/>
+  <xsd:annotation>
+    <xsd:documentation>Tax Area Response message.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:complexType name="TaxAreaResponseType" mixed="false">
+    <xsd:annotation>
+      <xsd:documentation>Tax Area Response type structure</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="TaxgisResponseType">
+        <xsd:sequence>
+          <xsd:element name="TaxAreaResult" type="TaxAreaResultType" minOccurs="0" maxOccurs="unbounded">
+            <xsd:annotation>
+              <xsd:documentation>A set of one or more geographic areas that correspond to a unique combination of tax jurisdictions where the tax area's boundaries are derived from the overlay of the geographic areas that form the domain of those jurisdictions.</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,25 @@
+$ns: c-marketing-tile;
+
+.#{$ns} {
+    &__wrapper {
+        padding: 30px;
+    }
+
+    &__image {
+        &-wrapper {
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}
+
+.link-helvetica {
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 12px;
+    text-decoration: underline;
+}

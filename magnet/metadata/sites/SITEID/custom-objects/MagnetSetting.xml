@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="MagnetSetting" object-id="orders-job">
+        <object-attribute attribute-id="dateValue">2016-10-09T20:16:24.000+0000</object-attribute>
+        <object-attribute attribute-id="value">{}</object-attribute>
+    </custom-object>
+
+</custom-objects>

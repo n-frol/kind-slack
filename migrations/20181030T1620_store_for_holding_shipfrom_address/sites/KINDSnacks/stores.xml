@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stores xmlns="http://www.demandware.com/xml/impex/store/2007-04-30">
+    <store store-id="vertexDistCenter">
+        <name>Vertex Distribution Center</name>
+        <address1>250 Coromar Drive</address1>
+        <city>Goleta</city>
+        <postal-code>93117-3697</postal-code>
+        <state-code>CA</state-code>
+        <country-code>US</country-code>
+        <store-locator-enabled-flag>false</store-locator-enabled-flag>
+        <demandware-pos-enabled-flag>false</demandware-pos-enabled-flag>
+        <pos-enabled-flag>false</pos-enabled-flag>
+        <custom-attributes>
+            <custom-attribute attribute-id="countryCodeValue">US</custom-attribute>
+        </custom-attributes>
+    </store>
+
+</stores>

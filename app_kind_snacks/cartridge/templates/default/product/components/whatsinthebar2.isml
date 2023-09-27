@@ -1,0 +1,27 @@
+
+        <div class="c-product-witb collapsible-sm ${product.isByobMaster ? 'is-active active' : ''}">
+                <h2 class="c-product-witb__header title">
+                    ${!empty(product.featuredHeading) ? product.featuredHeading : 'Featured Ingredients'}
+                </h2>
+            <isif condition="${!empty(product.featuredAssets)}">
+                <div class="content">
+                  <isloop items="${product.featuredAssets}" var="assetId">
+                            <isset name="asset" value="${dw.content.ContentMgr.getContent(assetId)}" scope="page" />
+
+                            <isif condition="${empty(asset)}">
+                                <iscontinue>
+                            </isif>
+
+                            <div class="c-product-witb__slide">
+                                <div class="c-product-witb__slide__inner">
+                                    <div class="c-product-witb__slide__content">
+                                        <isif condition="${!empty(asset.custom.graphicalAssetHeading)}">
+                                            <h3 class="c-product-witb__slide__content__heading">${asset.custom.graphicalAssetHeading}</h3>
+                                        </isif>
+                                    </div>
+                                </div>
+                            </div>
+                     </isloop>
+                </div>
+            </isif>
+        </div>

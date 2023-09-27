@@ -1,0 +1,55 @@
+<a class="image_text_link" href="${pdict.url}">
+<img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" class="three_column_image" />
+<div class="image_text_header">${pdict.headline}</div>
+<div class="image_text_copy">${pdict.copy}</div>
+</a>
+<style>
+    .image_text_link {
+        text-decoration: none;
+    }
+    .image_text_copy {
+        padding-bottom: 40px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        text-decoration: none;
+        color: black;
+        margin: auto;
+    }
+    .image_text_header {
+        font-size: 24px;
+        line-height: 32px;
+        font-family: main;
+        padding-bottom: 13px;
+        padding-top: 20px;
+        text-decoration: none;
+        color: black;
+        margin: auto;
+        letter-spacing: -1px;
+    }
+    .image_text_header:hover{
+        text-decoration: underline;
+        color: black;
+    }
+</style>
+
+<script>
+    var t = $('.image_text_header');
+    t.each(function(i) {
+       $(this).css("width", $(this).parent().find('.three_column_image').width() + 10);
+    });
+    var tt = $('.image_text_copy');
+    tt.each(function(i) {
+        $(this).css("width", $(this).parent().find('.three_column_image').width());
+    });
+    $(window).on("resize", function() {
+        var t = $('.image_text_header');
+        t.each(function(i) {
+            $(this).css("width", $(this).parent().find('.three_column_image').width() + 10);
+        });
+        var tt = $('.image_text_copy');
+        tt.each(function(i) {
+            $(this).css("width", $(this).parent().find('.three_column_image').width());
+        });
+    });
+</script>

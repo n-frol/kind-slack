@@ -1,0 +1,61 @@
+<div class="live_grid_5">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Rectangle 2824.png')}" alt="Impact Planet Grid 7 Image" />
+        <div class="quotearea">
+        <div class="quote">
+            “Research shows that having a designated space to be yourself not only improves work performance but improves our overall wellbeing. It's so important for me that folks in my community know that I am someone they can always come to for anything - I want to be a shoulder to lean on, someone to talk through experiences with, and someone who loves others unconditionally.”
+        </div>
+        <div class="person">
+            <b>Collin Worley</b><br/>
+            Consumer Insights Analyst and KIND & Proud KRG Lead at KIND
+        </div>
+    </div>
+    </div>
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid4/Rectangle 2826.png')}" alt="Impact Planet Grid 7 Image" />
+        <div class="quotearea">
+        <div class="quote">
+            “Our team members drive us to be true to our mission and our values and ensure that we always lead with empathy, compassion, and honesty. When we are hitting our mark, we are sure to celebrate our wins and lift each other up, and when we are missing by a mile, we are strong and honest enough to call out our faults and take up the challenge to do better."
+            </div>
+            <div class="person">
+            <b>Ryanne Goodwine</b><br/>
+                Manager, Governance, Risk and Compliance, KRG Lead, Culture Champion and 2022 Values Champion Award Winner at KIND
+        </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .quotearea {
+        position: relative;
+        top: -60px;
+    }
+    .live_grid_5 img {
+        position: relative;
+        top: -100px !important;
+        left: 30px;
+    }
+    .live_grid_5 .quote {
+        font-size: 24px;
+        line-height: 30px;
+        font-family: main;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+    @media screen and (max-width: 440px) {
+        .live_grid_5 .quote {
+            font-size: 18px !important;
+            line-height: 24px !important;
+            font-family: main;
+            margin-bottom: 20px;
+            margin-left: 20px !important;
+        }
+    }
+    .live_grid_5 .person {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        margin-bottom: 20px;
+        margin-left: 30px;
+    }
+</style>

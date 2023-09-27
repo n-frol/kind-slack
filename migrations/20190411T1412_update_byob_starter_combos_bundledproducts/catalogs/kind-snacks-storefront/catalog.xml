@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+    <category-assignment category-id="byob-test" product-id="17008">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="17019">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="17017">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="17004">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-test" product-id="30600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="30602">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="26199">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="20306">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-test" product-id="24853">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="20002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-test" product-id="25791">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-category1" product-id="24853">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="20002">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="25791">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-category4" product-id="30600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category4" product-id="26199">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category4" product-id="30602">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category4" product-id="20306">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-category1" product-id="17008">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="17019">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="17017">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="17004">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+    <category-assignment category-id="byob-category1" product-id="30600">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="30602">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="26199">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="byob-category1" product-id="20306">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+</catalog>

@@ -1,0 +1,56 @@
+/* ============================================================================
+    Image Gallery
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Image Gallery component
+ */
+
+$ns: th-kind-image-gallery;
+$component: c-image-gallery;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Image Gallery Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__item {
+                &__content {
+                    // Image Gallery Heading
+                    &__heading {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Image Gallery Body
+                    &__body {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Image Gallery Links
+                    &__link {
+                        &__title {
+                            font-family: $font-family-primary;
+                            &:hover {
+                                color: $san-marino;
+                            }
+                        }
+                        &__description {
+                            font-family: $font-family-secondary;
+                        }
+                    }
+                    &__links {
+                        font-family: $font-family-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+    }
+
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="289-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="benefits">
+                <value>benefit_0gTransFat</value>
+                <value>benefit_5gSugarOrLess</value>
+                <value>benefit_goodSourceOfFiber</value>
+                <value>benefit_lowGlycemicIndex</value>
+                <value>benefit_lowSodium</value>
+                <value>benefit_sample-1</value>
+            </custom-attribute>
+        </custom-attributes>
+    </product>
+</catalog>

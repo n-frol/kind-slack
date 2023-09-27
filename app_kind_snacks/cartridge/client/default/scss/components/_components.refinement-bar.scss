@@ -1,0 +1,148 @@
+/* ============================================================================
+Refinement Bar
+============================================================================ */
+
+/**
+ * Styles for refinement bar for search results
+*/
+$ns: c-refinement-bar;
+
+.#{$ns} {
+    /**
+        * use !important - in global style this class has chain of parent classes
+        */
+    &.col-md-3 {
+        &__btn-box {
+            display: block;
+        }
+
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            left: 0;
+            right: auto;
+            top: 0;
+            transition: all 0.5s ease;
+            z-index: 0 !important;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: block !important;
+        height: auto;
+
+        &__btn-box {
+            padding: 20px 0 0;
+
+            &__btn {
+                color: $grey7;
+                line-height: 36px;
+            }
+        }
+    }
+
+    &__header {
+        &__bar {
+            /**
+             * use !important - in global style this class has chain of parent classes
+            */
+            background-color: #f2f2f2 !important;
+            border-bottom: none 0 !important;
+            &__result-count {
+                font-family: $font-family-primary;
+                letter-spacing: -0.3px;
+                line-height: 17px;
+                text-transform: lowercase;
+            }
+
+            // Stronger selector
+            & &__close {
+                background-image: none;
+                min-width: 60px;
+                width: 100px;
+            }
+            &__close {
+                /**
+                 * use !important - in global style this class has chain of parent classes
+                */
+                font-size: 14px !important;
+                font-weight: bold;
+                letter-spacing: -0.3px;
+                margin-right: 0 !important;
+                min-height: 16px;
+                opacity: 1;
+                padding-right: 0 !important;
+                position: relative;
+                text-align: right;
+                text-transform: lowercase;
+
+                &__text,
+                &__icon {
+                    vertical-align: middle;
+                }
+                &__icon {
+                    display: inline-block;
+                    height: 18px;
+                    position: relative;
+                    width: 18px;
+
+                    &::before,
+                    &::after {
+                        background-color: $black;
+                        content: "";
+                        display: inline-block;
+                        height: 1px;
+                        position: absolute;
+                        top: 7px;
+                        right: -4px;
+                        transform: rotate(45deg);
+                        width: 20px;
+                    }
+                    &::after {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+    &__btn-box {
+        /**
+         * use !important - in global style this class has chain of parent classes
+        */
+        padding: 20px 0 0 !important;
+        &__btn {
+            color: $grey7;
+            line-height: 36px;
+            min-width: 0;
+            white-space: normal;
+        }
+    }
+}
+
+.v2 .#{$ns} {
+    &__btn-box {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+    }
+    &__header__bar__result-count {
+        display: none;
+    }
+    &__header__bar__close.pull-right.close {
+        float: left !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-left: 0;
+        z-index: 100 !important;
+    }
+}
+
+.no-padding {
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.no-margin {
+    margin-top: 0;
+    background: white;
+}

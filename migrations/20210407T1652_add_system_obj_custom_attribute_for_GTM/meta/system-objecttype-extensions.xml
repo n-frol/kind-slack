@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="GTMCode">
+                <display-name xml:lang="x-default">GTM Code</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="quickShopBadgePushTrigger">
+                <display-name xml:lang="x-default">Quick Shop Badge Push Trigger</display-name>
+                <type>set-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Google">
+                <display-name xml:lang="x-default">Google</display-name>
+                <attribute attribute-id="GTMCode" />
+                <attribute attribute-id="quickShopBadgePushTrigger"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="ProductLineItem">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gtmItemListName">
+                <display-name xml:lang="x-default">GTM Item List Name</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="gtmItemVariant">
+                <display-name xml:lang="x-default">GTM Item Variant</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="GTM">
+                <display-name xml:lang="x-default">GTM</display-name>
+                <attribute attribute-id="gtmItemVariant" />
+                <attribute attribute-id="gtmItemListName" />
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="Content">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="gtmPromotionName">
+                <display-name xml:lang="x-default">GTM Promotion Name</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="GTM">
+                <display-name xml:lang="x-default">Google Tag Manager</display-name>
+                <attribute attribute-id="gtmPromotionName" />
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

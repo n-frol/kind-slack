@@ -1,0 +1,104 @@
+// =================================================================================================
+// Breakpoints
+// =================================================================================================
+
+$grid-columns: 12;
+$default-feature: min-width;
+
+/// Extra-Extra-Small responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$xxs-px: 360px !default;
+
+/// Extra-Small responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$xs-px: 480px !default;
+
+
+/// Small responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$sm-px: 541px !default;
+
+
+/// Medium responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$md-px: 660px !default;
+
+/// Large responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$lg-px: 840px !default;
+
+
+/// Extra-Large responsive breakpoint viewport size in pixels
+/// @author PixelMEDIA
+/// @group Responsive
+$xl-px: 981px !default;
+
+
+// =================================================================================================
+// Mobile First Queries
+// =================================================================================================
+
+/// (Mobile First) Extra-Extra-Small-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$xxs-view-up: min-width em($xxs-px) !default;
+
+/// (Mobile First) Extra-Small-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$xs-view-up: min-width em($xs-px) !default;
+
+/// (Mobile First) Small-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$sm-view-up: min-width em($sm-px) !default;
+
+/// (Mobile First) Medium-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$md-view-up: min-width em($md-px) !default;
+
+/// (Mobile First) Large-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$lg-view-up: min-width em($lg-px) !default;
+
+/// (Mobile First) Extra-Large-Up responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$xl-view-up: min-width em($xl-px) !default;
+
+
+// =================================================================================================
+// Desktop First Queries
+// =================================================================================================
+
+/// (Desktop First) Extra-Small-Down responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$xs-view-down: max-width em($xs-px - 1) !default;
+
+/// (Desktop First) Small-Down responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$sm-view-down: max-width em($sm-px - 1) !default;
+
+/// (Desktop First) Medium-Down responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$md-view-down: max-width em($md-px - 1) !default;
+
+/// (Desktop First) Large-Down responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$lg-view-down: max-width em($lg-px - 1) !default;
+
+/// (Desktop First) Extra-Large-Down responsive breakpoint
+/// @author PixelMEDIA
+/// @group Responsive
+$xl-view-down: max-width em($xl-px - 1) !default;

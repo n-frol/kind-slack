@@ -1,0 +1,149 @@
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<isif condition="${!empty(pdict.flash)}">
+    <isset name="responses" value="${pdict.flash}" scope="page" />
+    <isinclude template="product/components/productAlerts" />
+</isif>
+
+<div class="cart-error-messaging cart-error c-alert__alerts-container">
+    <isif condition="${!empty(pdict.valid) && pdict.valid.error && !pdict.items.empty}">
+        <div class="alert c-alert alert-danger c-alert--danger alert-dismissible valid-cart-error fade show"
+            role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            ${pdict.valid.message}
+        </div>
+    </isif>
+</div>
+<isif condition="${pdict.items.empty}">
+    <div class="container cart-empty c-cart-empty">
+        <h1 class="c-cart-empty__message">${Resource.msg('info.cart.empty.msg', 'cart', null)}</h1>
+        <div class="col-sm-12 col-12 c-cart-empty__btn-box">
+            <a class="c-cart-empty__btn-box__continue-shopping continue-shopping-link btn btn-primary"
+                href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping', 'cart', null)}">
+                ${Resource.msg('link.continue.shopping', 'cart', null)}
+            </a>
+        </div>
+    </div>
+<iselse/>
+    <div class="container cart cart-page page-offset-top js-cart">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="title">
+                    ${Resource.msg('title.your.shopping.cart', 'cart', null)}
+                </h1>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <!---product cards--->
+            <div class="col c-cart-product-info__wrap">
+                <isloop items="${pdict.items}" var="lineItem">
+                        <iscomment> removing isMaster. Adding in this comment due to incorrect merge</iscomment>
+                    <isif condition="${lineItem.productType === 'bundle'}">
+                        <iscomment>Include variables that won't be initialized normally without loading the
+                            standard product card first</iscomment>
+                        <isset name="hasEmbeddedBonusProducts"
+                            value="${lineItem.bonusProductLineItemUUID === 'bonus'}" scope="page" />
+                        <isset name="bonusproductlineitem"
+                            value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}"
+                            scope="page" />
+                        <isset name="bonuslineitemrow"
+                            value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page" />
+                        <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus' && hasEmbeddedBonusProducts}">
+                            <isif condition="${lineItem.discountLineItems.length > 0}">
+                                <div class="freegift" style="">
+                                    <img src="${URLUtils.staticURL('/images/gift.png')}" alt="free gift icon"/>
+                                    <div class="freegift-wrap">
+                                        <span>${Resource.msg('text.qualify.for.gift', 'cart', null)}</span>
+                                        <span class="freegift_link" onclick="document.getElementById('bonus-product-button').click()">${Resource.msg('text.choose.here', 'cart', null)}</span>
+                                    </div>
+                                </div>
+                            </isif>
+                        </isif>
+                    </isif>
+                 </isloop>
+                
+                <isscript>
+                    var variationHelpers = require('*/cartridge/scripts/helpers/variationHelpers.js');
+                </isscript>
+                <iscomment> PRODUCTS </iscomment>
+                <div class="c-cart-product-info first card product-info">
+                    <div class="row align-items-start row-baseline">
+                        <div class="col-lg-8 product-card-header-title">
+                            ${Resource.msg('text.title.product', 'cart', null)}
+                        </div>
+                        <div class="c-cart-card-product-price col product-card-footer col-lg-4">
+                            <div class="c-cart-card-product-price__wrapper row">
+                                <div class="col-4 c-cart-card-product-price__col">${Resource.msg('text.title.each', 'cart', null)}</div>
+                                <div class="col-5 c-cart-card-product-price__col line-item-quantity">${Resource.msg('text.title.quantity', 'cart', null)}</div>
+                                <div class="col-3 c-cart-card-product-price__col line-item-total-price">${Resource.msg('text.title.total', 'cart', null)}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <isloop items="${pdict.items}" var="lineItem">
+                    <isif condition="${lineItem.productType === 'bundle' && !lineItem.isByobMaster === true}">
+                        <iscomment>Include variables that won't be initialized normally without loading the
+                            standard product card first</iscomment>
+                        <isset name="hasEmbeddedBonusProducts" value="${lineItem.bonusProductLineItemUUID === 'bonus'}" scope="page" />
+                        <isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page" />
+                        <isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page" />
+                        <isinclude template="cart/productCard/cartBundleCardCS" />
+                        <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                        <isscript>
+                            bonuses.push(lineItem)
+                        </isscript>
+                        </isif>
+                    <iselseif condition="${false && lineItem.appliedPromotions}" />
+                        <div style="color:#61B3E4 !important; text-transform:none" class="bonus-line-item-msg">
+                            ${Resource.msg('text.lineitem.bonus.msg', 'cart', null)}:</div>
+                        <isset name="productLineItem" value="${lineItem}" scope="page" />
+                    <iselseif condition="${empty(lineItem.boxId) || lineItem.isByobMaster}"/>
+                        <isinclude template="cart/productCard/cartProductCardCS" />
+                    </isif>
+                </isloop>
+
+                <isloop items="${pdict.items}" var="lineItem">
+                    <isif condition="${lineItem.productType === 'bundle' && !lineItem.isByobMaster === true}">
+                        <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                            <isinclude template="cart/productCard/cartEmbeddedBonusProductsCS" />
+                        </isif>
+                    <iselseif condition="${false && lineItem.appliedPromotions}" />
+                        <div style="color:#61B3E4 !important; text-transform:none" class="bonus-line-item-msg">
+                            ${Resource.msg('text.lineitem.bonus.msg', 'cart', null)}:</div>
+                        <isset name="productLineItem" value="${lineItem}" scope="page" />
+                        <isinclude template="cart/productCard/cartNestedBonusProductCardCS" />
+                    <iselseif condition="${empty(lineItem.boxId) || lineItem.isByobMaster}" />
+                    </isif>
+                </isloop>
+
+                <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
+                    <isinclude template="cart/productCard/cartEmbeddedBonusProductsCS" />
+                </isif>
+            </div>
+            <!---totals, and checkout actions--->
+            <div class="c-cart-totals col st-sidebar st-sidebar--narrow totals u-background__color-white">
+                <div class="c-cart-totals__order-summary">
+                    <div class="c-cart-totals__order-summary__title">
+                        ${Resource.msg('heading.order.summary', 'checkout', null)}</div>
+                    <isinclude template="cart/cartTotals" />
+                </div>
+                <isinclude template="cart/cartApproachingDiscount" />
+                <isinclude template="cart/cartPromoCode" />
+                <div class="coupons-and-promos col-12 mb-2">
+                    <isinclude template="cart/cartCouponDisplay" />
+                </div>
+                <div class="c-cart-totals__checkout-btn row">
+                    <div class="col-12 checkout-continue">
+                        <isinclude template="cart/checkoutButtons" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <isinclude template="cart/cartRemoveProductModal" />
+    <isinclude template="cart/cartRemoveCouponModal" />
+</isif>

@@ -1,0 +1,6 @@
+<isscript>
+    // Make sure productNumberId is set.  This allows us to override it specifically in places that don't want to use the product ID, like bundle items.
+    var productNumberId = typeof productNumberId === 'undefined' || empty(productNumberId) ? product.id : productNumberId;
+</isscript>
+${Resource.msg('label.item', 'product', null)}
+<span class="product-id" itemprop="productID" >${productNumberId}</span>

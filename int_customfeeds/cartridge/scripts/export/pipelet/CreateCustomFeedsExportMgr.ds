@@ -1,0 +1,143 @@
+/**
+ * Creates and registers export handlers from their custom object definitions
+ *
+ *----------- used with Platform Job Framework
+ * @input ExportCustomers : Object
+ * @input DaysToExportCustomers : Object
+ * @input ExportCatalogs : Object
+ * @input ExportOrders : Object
+ * @input DaysToExportOrders : Object
+ *----------- used with Community Suite Job Framework
+ * @input WorkflowComponent : Object The WorkFlowComponentInstance of the current workflow
+ *----------- used alwys
+ * @output CustomFeedsExportMgr : Object
+ * 
+ */
+importPackage( dw.system );
+importPackage( dw.io );
+importScript('export/CustomFeedsExportMgr.ds');
+importScript('export/handlers/CSVExportHandler.ds');
+importScript('export/handlers/TemplateExportHandler.ds');
+var CustomFeedsExportMgr = getCustomFeedsExportMgr();
+var CSVExportHandler = getCSVExportHandler();
+var TemplateExportHandler = getTemplateExportHandler();
+
+function execute( args : PipelineDictionary ) : Number
+{
+    var executionContexts = {
+                                ExportCatalogs : false, 
+                                ExportOrders : false, 
+                                ExportCustomers : false, 
+                                DaysToExportCustomers : 1, 
+                                DaysToExportOrders : 1
+                            };
+    
+    if(args.WorkflowComponent != null) {
+        //if we execute via Community Job Framework
+        executionContexts.ExportCatalogs = args.WorkflowComponent.getParameterValue('ExportCatalogs');
+        executionContexts.ExportOrders = args.WorkflowComponent.getParameterValue('ExportOrders');
+        executionContexts.ExportCustomers = args.WorkflowComponent.getParameterValue('ExportCustomers');
+        executionContexts.DaysToExportCustomers = args.WorkflowComponent.getParameterValue('DaysToExportCustomers');
+        executionContexts.DaysToExportOrders = args.WorkflowComponent.getParameterValue('DaysToExportOrders');
+    } else {
+        //if we execute via Platform Job Framework
+        executionContexts.ExportCatalogs = args.ExportCatalogs;
+        executionContexts.ExportOrders = args.ExportOrders;
+        executionContexts.ExportCustomers = args.ExportCustomers;
+        executionContexts.DaysToExportCustomers = args.DaysToExportCustomers;
+        executionContexts.DaysToExportOrders = args.DaysToExportOrders;
+    }
+    
+    var exportMgr = new CustomFeedsExportMgr(executionContexts);
+    registerConfigurableHandlers(exportMgr, args.WorkflowComponent, dw.system.Site.getCurrent().getID(), executionContexts);
+    
+    args.CustomFeedsExportMgr = exportMgr;
+    
+    return PIPELET_NEXT;
+}
+
+/**
+ * Helper function which handles the custom objects
+ */
+function registerConfigurableHandlers(exportMgr, cmp, currentSite, executionContexts){
+    for each(var co in dw.object.CustomObjectMgr.getAllCustomObjects('CustomFeedConfig')) {
+        
+        // we should not register handlers, if current site is not configured
+        // for this custom feeds
+        var assignedSites : List = co.custom.assignedSites;
+        
+        // skip the execution of current export handler, if workflow component
+        // does not enable it with a parameter
+        switch(co.custom.feedContext.value) {
+            case 'Catalog' : 
+                if (!executionContexts.ExportCatalogs) { 
+                    continue;
+                }
+                break;
+            case 'Order' : 
+                if (!executionContexts.ExportOrders) { 
+                    continue;
+                }
+                break;
+            case 'Customer' : 
+                if (!executionContexts.ExportCustomers) { 
+                    continue;
+                } 
+                break;
+        }
+        
+        if(assignedSites.indexOf(currentSite) === -1) {
+            if(cmp) cmp.addMessage('Attention -> Custom Feed is not configured to run for ' + currentSite + '. We will not register feed export handler.', 'INFO');
+            continue;
+        }
+        
+        var folder : File = new File(co.custom.folderName);
+        if(!folder.exists() && !folder.mkdirs()){
+            throw new Error('Could not create folder '+co.custom.folderName);
+        }
+        var fileName = co.custom.fileName.replace(/\{\{[^}]*\}\}/g,function(a : String){
+            var parts : Array = a.split(/(?:\{\{| |\}\})/g);
+        var variable = parts[1];
+        if(variable == 'timestamp'){
+            var format = 'yyyyMMddhhmmss';
+            parts.forEach(function(part : String){
+                if(part.indexOf('format=') == 0){
+                    format = part.substring(0,part.length-1).substring(8);
+                }
+            });
+            return dw.util.StringUtils.formatCalendar(Site.getCalendar(),format);
+        }
+        if(variable == 'countrycode'){
+            return dw.util.Locale.getLocale(Site.getCurrent().defaultLocale).country;
+        }
+        return '';
+        });
+        var file = new File(folder,fileName);
+        var encoding = co.custom.fileEncoding || 'UTF-8';
+        if(!file.exists() && !file.createNewFile()){
+            throw new Error('Could not create export file');
+        }
+        
+        if(cmp) cmp.addMessage('Registering Configurable Feed ' + co.custom.id, 'INFO');
+        if(co.custom.type == 'XML'){
+            exportMgr.registerExportHandler(new TemplateExportHandler(new FileWriter(file, encoding), co.custom.configuration, co.custom.feedContext.value));
+        }else if(co.custom.type == 'CSV'){
+            var lines : Reader = new Reader(co.custom.configuration);
+            var config = {separator : ','};
+            var line;
+            while((line = lines.readLine()) !=null){
+                if(line.indexOf('separator ') == 0){
+                    config.separator = line.substring(10);
+                }else if(!config.fields){
+                    // use first line as fields
+                    config.fields = line.split(config.separator);
+                }else if(!config.header){
+                    // if there are more lines, we previously read the header
+                    config.header = config.fields;
+                    config.fields = line.split(config.separator);
+                }
+            }
+            exportMgr.registerExportHandler(new CSVExportHandler(new FileWriter(file, encoding), config.separator, config.fields, config.header, co.custom.feedContext.value));
+        }
+    }
+}

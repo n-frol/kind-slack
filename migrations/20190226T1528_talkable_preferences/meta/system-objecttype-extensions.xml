@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="talkableSiteId">
+                <display-name xml:lang="x-default">Talkable Site ID</display-name>
+                <type>string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+
+            <attribute-definition attribute-id="talkablePostCheckout">
+                <display-name xml:lang="x-default">Post Purchase Campaign</display-name>
+                <description xml:lang="x-default">Shown on the Checkout Success page</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <attribute-definition attribute-id="talkableStandalone">
+                <display-name xml:lang="x-default">Invite Campaign</display-name>
+                <description xml:lang="x-default">Shown on a specific page, e.g. /share</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <attribute-definition attribute-id="talkableDashboard">
+                <display-name xml:lang="x-default">Advocate Dashboard Campaign</display-name>
+                <description xml:lang="x-default">Added to the My Account section</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <attribute-definition attribute-id="talkableFloatingWidget">
+                <display-name xml:lang="x-default">Floating Widget Popup Campaign</display-name>
+                <description xml:lang="x-default">Shown on every page</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+
+        <group-definitions>
+            <attribute-group group-id="talkable">
+                <display-name xml:lang="x-default">Talkable</display-name>
+                <attribute attribute-id="talkableSiteId"/>
+                <attribute attribute-id="talkablePostCheckout"/>
+                <attribute attribute-id="talkableStandalone"/>
+                <attribute attribute-id="talkableDashboard"/>
+                <attribute attribute-id="talkableFloatingWidget"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>
+

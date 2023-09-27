@@ -1,0 +1,37 @@
+/* ============================================================================
+Navigation Content Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML user-created elements in the navigation content template
+ */
+
+$ns: s-navigation-content;
+
+.#{$ns} {
+    &__navigation {
+        text-align: center;
+
+        ul {
+            list-style: none;
+            margin-bottom: 0;
+            text-align: center;
+        }
+        li {
+            display: inline-block;
+        }
+        a {
+            border-bottom: 4px solid transparent;
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 28px 18px;
+
+            &.active,
+            &.cur-page,
+            &:hover {
+                border-bottom-color: $black;
+            }
+        }
+    }
+}

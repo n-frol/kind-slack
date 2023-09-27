@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="ugc-sharing">
+        <display-name xml:lang="x-default">UGC Sharing</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p style="text-align: center;"&gt;&lt;a href="https://twitter.com/KINDSnacks" target="_blank"&gt;&lt;img alt="" src="images/twitter-black.svg?$staticlink$" title="" /&gt;&lt;/a&gt;&lt;a href="https://www.facebook.com/KINDSnacks/" target="_blank"&gt;&lt;img alt="" src="images/facebook-black.svg?$staticlink$" title="" /&gt;&lt;/a&gt;&lt;a href="https://www.instagram.com/kindsnacks/" target="_blank"&gt;&lt;img alt="" src="images/instagram-black.svg?$staticlink$" title="" /&gt;&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

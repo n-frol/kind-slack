@@ -1,0 +1,46 @@
+{
+    "name": "Dynamic Item",
+    "description": "Dynamic Item",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "Item",
+            "name": "Item to use",
+            "description": "The item to use for this slide",
+            "attribute_definitions": [
+                {
+                    "id": "icon",
+                    "name": "Icon",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "cta",
+                    "name": "CTA",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "url",
+                    "name": "CTA Link",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

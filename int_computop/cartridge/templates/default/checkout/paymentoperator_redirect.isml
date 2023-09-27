@@ -1,0 +1,4 @@
+<!--- TEMPLATENAME: paymentoperator_redirect.isml --->
+<script type="text/javascript">
+	top.location.href = '<isprint value="${ pdict.PaymentOperatorUrl }" encoding="off"/>'
+</script>

@@ -1,0 +1,6 @@
+<select class="c-locale-switcher js-locale-switcher custom-select custom-select--white">
+    <option class="c-locale-switcher__option" value="en-US" data-href="">${Resource.msg('country.abbreviations.usa', 'common', null)}</option>
+    <option class="c-locale-switcher__option" value="en-CA" data-href="http://www.kindsnacks.ca/">${Resource.msg('country.abbreviations.ca', 'common', null)} (${Resource.msg('lang.abbreviations.en', 'common', null)})</option>
+    <option class="c-locale-switcher__option" value="fr-CA" data-href="http://www.kindsnacks.ca/fr">${Resource.msg('country.abbreviations.ca', 'common', null)} (${Resource.msg('lang.abbreviations.fr', 'common', null)})</option>
+    <option class="c-locale-switcher__option" value="en-UK" data-href="http://www.kindsnacks.co.uk">${Resource.msg('country.abbreviations.uk', 'common', null)}</option>
+</select>

@@ -1,0 +1,245 @@
+$error: rgba(248, 43, 43, 0.904);
+
+#dashboard-wrapper {
+    position: relative;
+    min-width: 300px;
+    max-width: 900px;
+
+    button {
+        padding: 0.5em 0.9375em;
+        font-size: 1em;
+        background-color: rgb(179, 179, 179);
+        margin-right: 0.625em;
+        border-radius: 0.3125em;
+    }
+
+    h3 {
+        border-bottom: 0.0625em solid lightgray;
+        padding-bottom: 0.3125em;
+    }
+
+    section {
+        margin-bottom: 3.125em;
+    }
+
+    label {
+        font-size: 1.1em;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .section-desc {
+        background-color: rgb(231, 231, 231);
+        border: 0.0625em solid gray;
+        font-size: 0.9em;
+        padding: 0.625em 1.5625em;
+        margin-bottom: 2.5em;
+
+        li {
+            margin-bottom: 0.3125em;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .second-level {
+            list-style-type: circle;
+            margin: 0.625em 0;
+        }
+    }
+
+    #verified-flag-wrapper {
+        margin-bottom: 0.625em;
+    }
+
+    #category-exclusions {
+        height: 12.625em;
+    }
+
+    #charity-search {
+        padding: 0.3125em 0.375em;
+        font-size: 1.2em;
+        border-color: rgb(150, 150, 150);
+        width: 100%;
+    }
+
+    #search-input-wrapper {
+        position: relative;
+    }
+
+    #search-clear-control {
+        position: absolute;
+        top: 0.375em;
+        right: 0.625em;
+        font-size: 1.7em;
+        z-index: 1;
+        color: rgb(75, 75, 75);
+    }
+
+    #search-error {
+        margin-top: 0.625em;
+        color: $error;
+        opacity: 1;
+        transition: opacity 0.5s;
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    #charity-button-wrapper {
+        opacity: 1;
+        margin-top: 1.25em;
+        transition: opacity 0.5s;
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    .charity-data {
+        width: 100%;
+        color: rgb(75, 75, 75);
+        border: none;
+    }
+
+    #featured-list {
+        list-style-type: none;
+
+        li {
+            position: relative;
+            margin-bottom: 0.5em;
+        }
+
+        i {
+            position: absolute;
+            left: -1.5625em;
+            top: 0.1875em;
+            font-size: 1.3em;
+        }
+    }
+
+    #notify-box {
+        position: fixed;
+        left: 50%;
+        right: 50%;
+        width: 12.5em;
+        margin-left: -6.25em;
+        text-align: center;
+        border-radius: 0.3125em;
+        font-size: 1em;
+        opacity: 1;
+        padding: 0.625em 1.25em;
+        transition: opacity 0.5s;
+        color: black;
+        z-index: 2;
+
+        &.success {
+            background-color: rgba(49, 172, 49, 0.87);
+        }
+
+        &.failure {
+            background-color: $error;
+        }
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    #form-error {
+        opacity: 1;
+        margin-top: 1.25em;
+        color: $error;
+        font-size: 1.2em;
+        transition: opacity 0.5s;
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    #donation-type-wrapper {
+        label {
+            display: block;
+        }
+
+        select {
+            margin-bottom: 1.25em;
+        }
+    }
+
+    #donation-type-actor,
+    #donation-type-option,
+    #donation-type-amount,
+    #charity-search {
+        padding: 0.3125em;
+        font-size: 1.2em;
+    }
+
+    #donation-type-amount {
+        border-color: rgb(150, 150, 150);
+    }
+
+    #donation-type-amount-wrapper {
+        opacity: 1;
+        margin-top: 1.25em;
+        transition: opacity 0.5;
+
+        &.hide {
+            opacity: 0;
+        }
+
+        label {
+            display: block;
+        }
+    }
+
+    #roundup-whole-flag-wrapper {
+        label {
+            display: inline;
+            font-size: 1.1em;
+        }
+    }
+
+    #customer-search-toggle-wrapper {
+        margin: 1.25em 0;
+    }
+
+    #total-donations-display-wrapper {
+        .section-desc {
+            line-height: 2;
+        }
+
+        .total-donations-field {
+            margin-bottom: 1.5em;
+        }
+
+        #total-donations-start-input-wrapper,
+        #total-donations-minimum-input-wrapper {
+            label {
+                display: block;
+                font-size: 1.1em;
+
+                &.error {
+                    color: $error;
+                    font-weight: bold;
+                }
+            }
+
+            input {
+                display: block;
+                font-size: 1.2em;
+                padding: 0.3125em;
+                border-color: rgb(150, 150, 150);
+
+                &.error {
+                    border-color: $error;
+                }
+            }
+        }
+    }
+}

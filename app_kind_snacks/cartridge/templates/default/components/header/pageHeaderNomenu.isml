@@ -1,0 +1,20 @@
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<header class="c-header-nomenu s-sticky-header">
+    <nav role="navigation">
+        <div class="header container c-header-nomenu__container">
+            <div class="col-12">
+                <div style="text-align: center;" class="navbar-header brand row c-header-nomenu__row c-header-nomenu__row--brand">
+                    <a href="${URLUtils.url('Home-Show')}" class="c-header-nomenu__logo-link" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                        <isif condition="${siteID === "CreativeSnacks"}">
+                            <img src="${URLUtils.staticURL('/images/creative_logo.png')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        <iselseif condition="${siteID === "KINDSnacks"}"/>
+                            <img src="${URLUtils.staticURL('/images/logo-black.png')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.creative.storename', 'common', null)}" />
+                        <iselse/>
+                            <img style="margin:auto; text-align: center;" src="${URLUtils.staticURL('/images/logo-black.svg')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.creative.storename', 'common', null)}" />
+                        </isif>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,33 @@
+/* ============================================================================
+Shop navigation
+============================================================================ */
+
+/**
+ * Establish styles for the shop navigation menu
+ * Dropdown from the "shop" nav item including the featured nav and category nav
+ */
+
+@import '~kind/structures/structures.shop-navigation';
+
+$ns: st-shop-navigation;
+
+.#{$ns} {
+    &__menu {
+        max-height: 90vh;
+        max-height: 90dvh;
+        overflow-x: hidden; // Also sets y to 'auto'
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            max-height: none;
+            overflow: unset;
+            left: 0 !important; // Important because of the strength of interfering style, which can't really be done away with
+        }
+
+        &::before {
+            @include media-breakpoint-up(lg) {
+                width:  100%
+            }
+        }
+    }
+}

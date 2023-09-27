@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="loginradius_id">
+                <display-name xml:lang="x-default">LoginRadius Email Id</display-name>
+                <description xml:lang="x-default">A user ID that identifies the Accounts Email Provider ID </description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="loginradius_uid">
+                <display-name xml:lang="x-default">LoginRadius Account Id</display-name>
+                <description xml:lang="x-default">A unique Account ID to Identify all of the customers Social Accounts</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="loginradius_profile">
+                <display-name xml:lang="x-default">LoginRadius additional Profile fields</display-name>
+                <attribute attribute-id="loginradius_id"/>
+                <attribute attribute-id="loginradius_uid"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

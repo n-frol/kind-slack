@@ -1,0 +1,444 @@
+<div class="planet_grid_8">
+    <div class="desktopipad">
+    <img class="top" src="${URLUtils.staticURL('/images/impact/grid5/Group 3108.png')}" alt="Impact Two Column 2 Image" />
+    <div class="blackdot">
+    </div>
+    <div class="leftcont">
+        <img src="${URLUtils.staticURL('/images/impact/grid5/bee.png')}" alt="Impact Two Column 2 Image" />
+        <img class="beeimg" src="${URLUtils.staticURL('/images/impact/grid6/Group 3110.png')}" alt="Impact Two Column 2 Image" />
+        <img class="beeimg2" src="${URLUtils.staticURL('/images/impact/grid6/Group 3109.png')}" alt="Impact Two Column 2 Image" />
+        <div class="thetext">
+            <div class="head">2022</div>
+            <div class="copy">
+                We began a long-standing partnership with the University of California Davis, a leading academic institution for bee and pollinator health. To date, we have invested $350,000 in the university’s Williams Lab to support its pioneering bee health research.
+            </div>
+        </div>
+    </div>
+    <div class="bluedot"></div>
+    <img class="lineone" src="${URLUtils.staticURL('/images/impact/grid5/bluelineright.png')}" alt="Impact Two Column 2 Image" />
+    <img class="yellowline" src="${URLUtils.staticURL('/images/impact/grid5/yellowline.png')}" alt="Impact Two Column 2 Image" />
+    <img class="redlineright" src="${URLUtils.staticURL('/images/impact/grid5/redlineright.png')}" alt="Impact Two Column 2 Image" />
+    <img class="redlineleft" src="${URLUtils.staticURL('/images/impact/grid5/redlineleft.png')}" alt="Impact Two Column 2 Image" />
+    <img class="bluelineleft" src="${URLUtils.staticURL('/images/impact/grid5/bluelineleft.png')}" alt="Impact Two Column 2 Image" />
+    <img class="greenlineright" src="${URLUtils.staticURL('/images/impact/grid5/greenlineright.png')}" alt="Impact Two Column 2 Image" />
+    <div class="bluearea">
+        <div class="head">2020</div>
+        <div class="copy">
+            We became the first snack company committed to sourcing 100% of our almonds from bee-friendly farms on a mass balance basis by 2025.</div>
+    </div>
+    <div class="yellowdot"></div>
+    <div class="rightsecond">
+        <iframe width="437" height="250" src="https://www.youtube.com/embed/vvjdiBXUH7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="head" style="color:black">2022 &#35;BeeDayBash</div>
+        <div class="copy" style="color:black">Our &#35;BeeDayBash created a buzz, engaging nearly 20 million users on TikTok and educating our consumers about the
+            importance of pollinators through our advocacy education <a href="https://www.youtube.com/watch?v=vvjdiBXUH7Y" class="normallink">video</a>.</div>
+    </div>
+    <div class="rightthird">
+        <img class="beeimg3" src="${URLUtils.staticURL('/images/impact/grid6/Layer_11.png')}" alt="Impact Two Column 2 Image" />
+        <div class="head" style="color:white">2023</div>
+        <div class="copy" style="color:white">
+            We’re implementing and testing the benefits of cover crops as one of our five practices at the KIND Almond Acres Initiative. Cover crops help create important pollinator habitats!
+        </div>    </div>
+    <div class="leftsecond">
+        <div class="head">2022</div>
+        <div class="copy">
+            We built public awareness and appreciation for the important role that pollinators play within our food system on World Bee Day, partnering with TikTok influencers and the platform’s vibrant bee community.
+        </div>
+        </div>
+    <div class="leftthird">
+        <div class="head">2023</div>
+        <div class="copy">
+            As of May 2023, we’ve sourced 51% of our almonds from bee-friendly farmland on a mass balance basis, halfway toward our 100% commitment by 2025.
+        </div>
+    </div>
+    <img class="theline" src="${URLUtils.staticURL('/images/impact/grid5/Vector 197.png')}" alt="Impact Two Column 2 Image" />
+    <div class="reddot1"></div>
+    <div class="reddot2"></div>
+    <div class="greendot"></div>
+    <div class="bluedot2"></div>
+    </div>
+
+    <div class="mobileipad">
+        <img class="top" src="${URLUtils.staticURL('/images/impact/grid5/Group 3108.png')}" alt="Impact Two Column 2 Image" />
+        <div class="blackdot"></div>
+
+        <div class="bluedot"></div>
+        <div class="bluearea margined" style="">
+            <div class="head">2020</div>
+            <div class="copy">
+                We became the first snack company committed to sourcing 100% of our almonds from bee-friendly farms on a mass balance basis by 2025.</div>
+        </div>
+
+        <div class="yellowdot"></div>
+        <img class="mobileimg" src="${URLUtils.staticURL('/images/impact/grid5/bee.png')}" alt="Impact Two Column 2 Image" />
+        <div class="thetext" style="margin-bottom: 40px;">
+            <div class="head">2022</div>
+            <div class="copy">
+                We began a long-standing partnership with the University of California Davis, a leading academic institution for bee and pollinator health. To date, we have invested $350,000 in the university’s Williams Lab to support its pioneering bee health research.
+            </div>
+        </div>
+
+        <div class="reddot1"></div>
+        <div class="leftsecond" style="max-width: 350px !important;">
+            <div class="head">2022</div>
+            <div class="copy">
+                We built public awareness and appreciation for the important role that pollinators play within our food system on World Bee Day, partnering with TikTok influencers and the platform’s vibrant bee community.
+            </div>
+        </div>
+
+        <div class="reddot1"></div>
+        <div class="rightsecond">
+            <iframe width="350" height="250" src="https://www.youtube.com/embed/vvjdiBXUH7Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <div class="head" style="color:black; background: white;">2022 &#35;BeeDayBash</div>
+            <div class="copy" style="color:black; background: white;">
+                Our &#35;BeeDayBash created a buzz, engaging nearly 20 million users on TikTok and educating our consumers about the
+                importance of pollinators through our advocacy education <a href="https://www.youtube.com/watch?v=vvjdiBXUH7Y" class="normallink">video</a>.</div>
+            </div>
+
+        <div class="greendot" style="top: -40px !important;"></div>
+        <div style="margin-bottom:60px;"></div>
+        <div class="greendot"></div>
+
+        <div class="rightthird" style="margin-bottom: 40px">
+            <img class="beeimg2" src="${URLUtils.staticURL('/images/impact/grid6/Group 3109.png')}" alt="Impact Two Column 2 Image" />
+            <div class="head" style="color:black">2023</div>
+            <div class="copy" style="color:black">
+                We’re implementing and testing the benefits of cover crops as one of our five practices at the KIND Almond Acres Initiative. Cover crops help create important pollinator habitats!
+            </div>
+        </div>
+
+        <div class="bluedot"></div>
+        <div class="leftthird" style="max-width: 350px !important; margin-bottom: 60px;">
+            <div class="head">2023</div>
+            <div class="copy">
+                As of May 2023, we’ve sourced 51% of our almonds from bee-friendly farmland on a mass balance basis, halfway toward our 100% commitment by 2025.
+            </div>
+        </div>
+        <img class="theline" src="${URLUtils.staticURL('/images/impact/grid5/Vector 197.png')}" alt="Impact Two Column 2 Image" />
+    </div>
+</div>
+
+<style>
+    .beeimg3 {
+        bottom: unset;
+        right: -50px;
+        left: unset;
+        top: -100px;
+        position: absolute;
+    }
+    .beeimg {
+        position: absolute;
+        left: 20px;
+        top: -50px;
+    }
+    @media screen and (max-width: 440px) {
+        .beeimg2 {
+            right: -10px !important;
+            bottom: 180px !important;
+        }
+    }
+    .beeimg2 {
+        position: absolute;
+        top: unset;
+        bottom: 130px;
+        right: -50px;
+        left: unset;
+    }
+    .margined {
+        margin-right: 45px;
+    }
+    .mobileipad {
+        display: none;
+    }
+    @media only screen and (max-width: 1024px) {
+        .theline {
+            position: absolute;
+            top: 200px !important;
+            height: 2300px !important;
+            z-index: 0;
+        }
+        .leftsecond, .rightsecond, .leftthird, .rightthird {
+            left: 0px !important;
+            top: 0px !important;
+            max-width: 350px !important;
+            margin: auto;
+            z-index: 10;
+            background: white;
+        }
+        .reddot1, .greendot {
+            position: relative !important;
+            top: 10px !important;
+            margin-top: 40px !important;
+            z-index: 10;
+        }
+        .bluedot {
+            z-index: 10;
+            width: 20px;
+            height: 20px;
+            background-color: #0078AB;
+            border-radius: 50%;
+            position: relative !important;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 10px !important;
+        }
+        .yellowdot {
+            position: relative !important;
+            top: 10px !important;
+            z-index: 10;
+        }
+        .mobileipad .top {
+            width: 350px !important;
+        }
+        .mobileimg {
+            max-width: 350px !important;
+            margin:auto;
+            z-index: 10;
+            position: relative;
+        }
+        .blackdot {
+            position: relative;
+            top: 185px !important;
+            z-index: 10;
+        }
+        .bluearea {
+            background: #61B3E4;
+            max-width: 350px !important;
+            position: relative;
+            margin: auto;
+            top: 0px !important;
+            left: 0px !important;
+            margin-bottom: 60px;
+            z-index: 10;
+            margin-left: 40px;
+        }
+        .thetext {
+            max-width: 350px;
+            margin: auto !important;
+            z-index: 10;
+            position: relative;
+        }
+
+        .desktopipad {
+            display: none !important;
+        }
+        .mobileipad {
+            display: block !important;
+            padding-bottom: 10px;
+        }
+        .planet_grid_8 {
+            height: auto !important;
+        }
+    }
+    .bluelineleft {
+    position: absolute;
+        top: 1240px;
+        left: 380px;
+    }
+    .greenlineright {
+        position: absolute;
+        top: 1140px;
+    }
+    .redlineright {
+        position: absolute;
+        top: 695px;
+    }
+    .redlineleft {
+        position: absolute;
+        top: 940px;
+        left: 380px;
+    }
+    .lineone {
+        position: absolute;
+        top: 320px;
+    }
+    .yellowline {
+        position: absolute;
+        top: 388px;
+        left: 380px;
+    }
+    .reddot1, .reddot2, .greendot, .bluedot2 {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .reddot1, .reddot2 {
+        background: #D8262E;
+    }
+    .reddot1 {
+        top: 700px;
+    }
+    .reddot2 {
+        top: 950px;
+    }
+    .greendot {
+        top: 1150px;
+    }
+    .bluedot2 {
+        top: 1250px;
+    }
+    .greendot {
+        background: #B9BE10;
+    }
+    .bluedot2 {
+        background: #61B3E4;
+    }
+    .theline {
+        width: 3px;
+        position: absolute;
+        top: 260px;
+        height: 1200px;
+    }
+    .leftsecond, .leftthird {
+        padding: 20px;
+        position: relative;
+        max-width: 440px !important;
+        border-radius: 20px;
+    }
+    .leftsecond {
+        background: #D8262E;
+        top: -750px;
+        right: 70px;
+    }
+    .leftthird {
+        background: #61B3E4;
+        top: -650px;
+        right: 70px;
+    }
+    .rightthird {
+        background: #B9BE10;
+        max-width: 440px;
+        position: relative;
+        left: 630px;
+        top: -350px;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .rightsecond {
+        max-width: 440px;
+        position: relative;
+        top: -450px;
+        left: 630px;
+    }
+    .rightsecond img {
+        margin-bottom: 20px;
+    }
+    .yellowdot {
+        z-index: 10;
+        background: #EDA900;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 400px;
+        right: 0;
+        margin: auto;
+    }
+    .planet_grid_8 .bluearea {
+        background: #0078AB;
+        max-width: 440px !important;
+        position: relative;
+        left: 630px;
+        top: -520px;
+    }
+    @media screen and (max-width: 440px) {
+        .planet_grid_8 .bluearea {
+            background: #0078AB;
+            max-width: 350px !important;
+            position: relative;
+            left: 630px;
+            top: -520px;
+            margin: auto !important;
+        }
+    }
+    .planet_grid_8 .head {
+        font-size: 28px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-family: main;
+        text-align: left;
+        z-index: 10;
+    }
+    .planet_grid_8 .copy {
+        z-index: 10;
+        font-size: 18px;
+        text-align: left;
+        line-height: 24px;
+        color: #ffffff;
+        font-family: 'medium';
+    }
+    .leftcont {
+        max-width: 440px;
+        text-align: left;
+        border-radius: 20px;
+        position: relative;
+        right: 70px;
+    }
+    .thetext {
+        background: #EDA900;
+        padding: 40px;
+        -webkit-border-bottom-right-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+        -moz-border-radius-bottomright: 20px;
+        -moz-border-radius-bottomleft: 20px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .thetext .copy {
+        font-size: 18px;
+        line-height: 24px;
+        color: #ffffff;
+        font-family: main;
+    }
+    .thetext .head {
+        font-size: 28px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-family: main;
+    }
+    .blackdot {
+        z-index: 10;
+        width: 20px;
+        height: 20px;
+        background-color: #000000;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 255px;
+    }
+    .bluedot {
+        z-index: 10;
+        width: 20px;
+        height: 20px;
+        background-color: #0078AB;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 330px;
+    }
+    .planet_grid_8 {
+        text-align: center;
+        max-width: 1000px;
+        margin: auto;
+        position: relative;
+        height: 1500px;
+    }
+    .planet_grid_8 .top {
+        width: 470px;
+        margin-bottom: 30px;
+    }
+</style>

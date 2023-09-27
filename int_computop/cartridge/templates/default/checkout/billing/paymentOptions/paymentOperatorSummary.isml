@@ -1,0 +1,3 @@
+<div class="paymentoperator-selected-payment">
+    ${ payment.paymentMethod }
+</div>

@@ -1,0 +1,10 @@
+<!--- TEMPLATENAME: paymentOperatorPayment.isml --->
+<div class="paymentoperator-selected-payment">
+    ${ payment.paymentMethod }
+</div>
+<isif condition="${ payment.paymentMethod == 'PAYMENTOPERATOR_EASYCREDIT' }">
+    <div class="payment-amount">
+        <span class="label">${ Resource.msg('paymentoperator.text.easycredit.reference','paymentoperatoreasycredit',null) }:</span>
+        <span class="value"><isprint value="${ payment.easyCreditTransactionID }" /></span>
+    </div>
+</isif>

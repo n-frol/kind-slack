@@ -1,0 +1,30 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+
+<div class="c-product-tile__image-container c-byob-product-tile__image-container image-container">
+    <isset name="imgSrc" value="" scope="page" />
+    <isset name="imgSrcset" value="" scope="page" />
+
+    <isif condition="${!empty(pdict.responsiveImages)}">
+        <isset name="responsiveImg" value="${pdict.responsiveImages[0]}" scope="page" />
+        <isset name="imgSrc" value="${responsiveImg.imageUrlDefault}" scope="page" />
+        <isset name="imgSrcset" value="${responsiveImg.imageUrlDefault + ', ' + responsiveImg.imageUrlLarge + ' 2x'}" scope="page" />
+    <iselse>
+        <isset name="imgSrc" value="${URLUtils.staticURL('images/noimagemedium.jpg')}" scope="page" />
+    </isif>
+
+    <img class="c-product-tile__image-container__image c-byob-product-tile__image-container__image tile-image"
+        src="${imgSrc}"
+        <isif condition="${!empty(imgSrcset)}">
+        srcset="${imgSrcset}"
+        </isif>
+        itemprop="image"
+        alt="${!empty(product.images) && !empty(product.images.large) && !empty(product.images.large[0]) ? product.images.large[0].alt : product.productName}"
+        title="${!empty(product.images) && !empty(product.images.large) && !empty(product.images.large[0]) ? product.images.large[0].title : product.productName}" />
+    <isif condition="${pdict.display.showQuickView}">
+        <button class="c-product-tile__image-container__quickview c-byob-product-tile__image-container__quickview js-info-quickview btn btn-primary" data-link="${pdict.urls.quickView}" title="${Resource.msg('button.quickview', 'common', null)}" type="button">
+            <img src="${URLUtils.staticURL('images/info-icon.svg')}" class="c-byob-product-tile__image-container__quickview__icon" alt="${Resource.msg('button.info', 'common', null)}" />
+        </button>
+    </isif>
+</div>

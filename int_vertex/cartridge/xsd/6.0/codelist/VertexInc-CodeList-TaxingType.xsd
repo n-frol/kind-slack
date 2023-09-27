@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:vertexinc:o-series:tps:6:0" targetNamespace="urn:vertexinc:o-series:tps:6:0" elementFormDefault="qualified" attributeFormDefault="unqualified" version="6.0">
+  <xsd:annotation>
+    <xsd:documentation>Copyright Vertex Inc. 2007-2012 All Rights Reserved</xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>Taxing type specification. Declararion of structures and data types.</xsd:documentation>
+  </xsd:annotation>
+  <xsd:simpleType name="TaxingType">
+    <xsd:annotation>
+      <xsd:documentation>These values are tax type enumerations.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="SALES">
+        <xsd:annotation>
+          <xsd:documentation>A tax imposed on the privilege of making sales. Sales taxes are typically imposed on intrastate transactions.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="SELLER_USE">
+        <xsd:annotation>
+          <xsd:documentation>A tax imposed on the amount charged for the transfer of title or possession of tangible personal property and/or services. The tax is collected when the seller and the purchaser are located in different taxing authorities.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="CONSUMERS_USE">
+        <xsd:annotation>
+          <xsd:documentation>Tax liability that is imposed on the storage, use, consumption, and, sometimes, distribution of property or services. Consumer use taxes typically arise when the seller that provides the goods or services is not registered to bill and collect the tax in a taxing jurisdiction.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="VAT">
+        <xsd:annotation>
+          <xsd:documentation>Value Added Tax (VAT) is imposed on all possible entity types of taxpayer (such as individuals and enterprises) on the sale price of goods or certain services. VAT typically applies to the sale and importation of goods and also applies to processing, repair, or replacement services carried out in the taxing country.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="IMPORT_VAT">
+        <xsd:annotation>
+          <xsd:documentation>Import VAT is charged when goods are imported into one jurisdiction (country) from another jurisdiction (country). This is the VAT paid by the Importer of Record on goods brought in from another jurisdiction (country). The tax is paid at the time the goods clear customs unless they go into a suspended state. The tax would then be due when the goods enter into free circulation.
+
+For VAT purposes, the jurisdictions (countries) in the EU are affiliated together as a trade block. The EU acts as a single jurisdiction (country) for VAT purposes. Specific territories that trade with the EU are excluded from VAT.  These territories are the Island of Heligoland and the territory of Büsingen  (Germany); Ceuta, Melilla, and Canary Island (Spain); Livigno, Campione d'Italia, and the Italian waters of Lake Lugano (Italy); the French Overseas Departments of Guadeloupe, French Guiana, Martinque and  and Reunion, and Monaco (France); Mount Athos, also known asa Agion Poros (Greece).</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="NONE">
+        <xsd:annotation>
+          <xsd:documentation>No tax is imposed.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

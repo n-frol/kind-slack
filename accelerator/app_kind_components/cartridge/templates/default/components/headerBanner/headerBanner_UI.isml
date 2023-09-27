@@ -1,0 +1,60 @@
+<style>
+    <isset name="ns" value="${'c-header-banner'}" scope="page" />
+
+    /*
+     * Colors
+     */
+    <isif condition="${!empty(graphicalAsset.contentColor)}">
+        .${ns}.${assetID},
+        .${ns}.${assetID} a {
+            color: ${graphicalAsset.contentColor};
+        }
+
+        .${ns}.${assetID} svg {
+            color: ${graphicalAsset.contentColor};
+            stroke: ${graphicalAsset.contentColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.backgroundColor)}">
+         .${ns}.${assetID} {
+             background-color: ${graphicalAsset.backgroundColor};
+         }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.bodyColor)}">
+        .${ns}.${assetID},
+        .${ns}.${assetID} a {
+            color: ${graphicalAsset.bodyColor};
+        }
+
+        .${ns}.${assetID} svg {
+            color: ${graphicalAsset.bodyColor};
+            stroke: ${graphicalAsset.bodyColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.mobileOnly) && graphicalAsset.mobileOnly}">
+         .${ns}.${assetID} {
+             display: none !important;
+         }
+
+        @media (max-width: 768px) {
+        .${ns}.${assetID} {
+            display: block !important;
+        }
+    }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.tabletOnly) && graphicalAsset.tabletOnly}">
+         .${ns}.${assetID} {
+             display: none !important;
+         }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .${ns}.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+</style>

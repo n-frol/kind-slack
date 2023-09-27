@@ -1,0 +1,44 @@
+<isloop items="${bundleItems}" var="bundledLineItem" style="padding-bottom:0px;">
+    <div class="bundled-line-item bundle-item clearfix border-bottom-0 pl-3">
+        <div class="line-item-name">
+            <span>${bundledLineItem.productName}</span>
+        </div>
+        <div style="color:black">
+        pack size: ${bundledLineItem.quantity.toFixed(0)} count
+        </div>
+        <div class="d-flex flex-row">
+            <div
+                class="c-cart-product-info__item-image c-cart-product-info__item-image--bundled item-image item-image--bundled">
+                <isset name="lineItemImageSrcset" value="" scope="page" />
+                <isif
+                    condition="${!empty(bundledLineItem.responsiveImages) && !empty(bundledLineItem.responsiveImages[0])}">
+                    <isset name="lineItemImageUrl" value="${bundledLineItem.responsiveImages[0].normal.imageUrlDefault}"
+                        scope="page" />
+                    <isset name="lineItemImageSrcset"
+                        value="${bundledLineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + bundledLineItem.responsiveImages[0].normal
+                               .imageUrlLarge + ' 2x'}"
+                        scope="page" />
+                    <iselse>
+                        <isset name="lineItemImageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}"
+                            scope="page" />
+                </isif>
+                <img class="product-image" src="${lineItemImageUrl}"
+                    alt="${!empty(bundledLineItem.images.large) ? bundledLineItem.images.large[0].alt : bundledLineItem.displayName}"
+                    title="${!empty(bundledLineItem.images.large) ? bundledLineItem.images.large[0].title : bundledLineItem.displayName}"
+                    <isif condition="${!empty(lineItemImageSrcset)}"> srcset="${lineItemImageSrcset}"</isif>>
+            </div>
+            <div class="item-attributes">
+                <isloop items="${bundledLineItem.variationAttributes}" var="attribute">
+                    <p class="line-item-attributes">${attribute.displayName}: ${attribute.displayValue}</p>
+                </isloop>
+                <div class="item-options">
+                    <isloop items="${bundledLineItem.options}" var="option">
+                        <div class="line-item-option">${option}</div>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+        <div class="product-id" style="display:none;">${bundledLineItem.id}</div>
+        <label style="display:none;" class="quantity" data-quantity="${bundledLineItem.quantity}"></label>
+    </div>
+</isloop>

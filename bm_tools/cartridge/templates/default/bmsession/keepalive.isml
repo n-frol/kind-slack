@@ -1,0 +1,24 @@
+<isdecorate template="application/MenuFrame">
+	<iscontent type="text/html" charset="UTF-8">
+	<isinclude template="inc/Modules">
+	<!-- Page Navigator -->
+	<isset name="TOP_URL" value="${URLUtils.url('SiteNavigationBar-ShowMenuitemOverview', 'CurrentMenuItemId', pdict.CurrentHttpParameterMap.CurrentMenuItemId)}" scope="PAGE">
+	<ISBreadcrumb name1="${pdict.CurrentHttpParameterMap.mainmenuname.stringValue}" url1="${TOP_URL.toString()}" name2="BM Session Keep Alive">
+	<!-- EO Page Navigator -->
+	<hr/>
+	<h1 class="overview_title">BM Session Keep Alive</h1>
+	<h2 class="table_title_description">This Business Manager Module Keeps Your Business Manager Session From Timing Out</h2>
+	<isscript>
+		var isProduction = (dw.system.System.instanceType === dw.system.System.PRODUCTION_SYSTEM);
+	</isscript>
+	<script>
+	var isProd = ${isProduction};
+	if (!isProd) {
+		var timeout = 300000; //5 mins
+		setTimeout(function() {
+			location.reload();	
+		}, timeout);
+	}
+	</script>
+	<img src="${URLUtils.staticURL('./heart.gif')}">
+</isdecorate>

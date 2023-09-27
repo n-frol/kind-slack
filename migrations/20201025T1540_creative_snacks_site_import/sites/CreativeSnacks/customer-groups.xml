@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer-groups xmlns="http://www.demandware.com/xml/impex/customergroup/2007-06-30">
+    <customer-group group-id="Employee">
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="General">
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="PWEmployee">
+        <description>Static employee group for 40% off KINDTEAM discount</description>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="AddressFraudCheck">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>session.custom.hasAddressFraud</attribute-path>
+                        <operator>is-false</operator>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="BYOB">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>session.custom.byobInCart</attribute-path>
+                        <operator>is-true</operator>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Big Spenders">
+        <description>Customer's who have spent more then $200 in the last month</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.activeData.orderValueMonth</attribute-path>
+                        <operator>is-greater-than</operator>
+                        <number>200.0</number>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="DL Affiliates">
+        <description>Team members of the KIND Foundation, PeaceWorks Foundation, Lubetzky Foundation, and Equilibra</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@empatico.org</string>
+                        <string>@equilibra.us</string>
+                        <string>@lubetzky.org</string>
+                        <string>@onevoicemovement.org</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="DL VIPs">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>dleipzig@adl.org</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Gifting">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>kindgifting@kindsnacks.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="IDME">
+        <description>15% Discount</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>session.custom.idmegroup</attribute-path>
+                        <operator>contains</operator>
+                        <string>medical</string>
+                        <string>military</string>
+                        <string>nurse</string>
+                        <string>responder</string>
+                        <string>student</string>
+                        <string>teacher</string>
+                    </condition>
+                    <condition>
+                        <attribute-path>session.custom.idmegroup_verified</attribute-path>
+                        <operator>is-true</operator>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="KIND Team - Dynamic">
+        <description>Dynamic KIND team group for quarterly product discount</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@kindsnacks.com</string>
+                    </condition>
+                </condition-group>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>CConcepcion@equilibrapm.com</string>
+                        <string>cjwheeler1@gmail.com</string>
+                    </condition>
+                </condition-group>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>sayemm77+stgbyob@gmail.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="KSDev">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>ksdev@kindsnacks.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Mars Team">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@banfield.com</string>
+                        <string>@Banfield.net</string>
+                        <string>@bluepearlvet.com</string>
+                        <string>@cafosa.com</string>
+                        <string>@effem.com</string>
+                        <string>@effemfamily.com</string>
+                        <string>@MSS.EFFEM.COM</string>
+                        <string>@petpartnersusa.com</string>
+                        <string>@ROYALCANIN.COM</string>
+                        <string>@THE-COCOA-EXCHANGE.COM</string>
+                        <string>@WRIGLEY.COM</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="NewPartners">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@305fitness.com</string>
+                        <string>@elliman.com</string>
+                        <string>@id-logistics.com</string>
+                        <string>@laundryservice.com</string>
+                        <string>@ncsports.org</string>
+                        <string>@pixleeteam.com</string>
+                        <string>@pwc.com</string>
+                        <string>@randfdigital.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="NewPartners10">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@cigna.com</string>
+                        <string>@metlife.com</string>
+                        <string>@soundcloud.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="PartnerDiscountProgram">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@305fitness.com</string>
+                        <string>@aa.com</string>
+                        <string>@alaskaair.com</string>
+                        <string>@alladapt.com</string>
+                        <string>@americanpackaging.com</string>
+                        <string>@americanparknetwork.com</string>
+                        <string>@atriumstaff.com</string>
+                        <string>@BDTCap.com</string>
+                        <string>@beforebrands.com</string>
+                        <string>@bluemoondigital.co</string>
+                        <string>@cameronsseafood.com</string>
+                        <string>@cariboucoffee.com</string>
+                        <string>@channeladvisor.com</string>
+                        <string>@chapul.com</string>
+                        <string>@cigna.com</string>
+                        <string>@circularedge.com</string>
+                        <string>@coffeebean.com</string>
+                        <string>@coffeeww.com</string>
+                        <string>@computop.com</string>
+                        <string>@delta.com</string>
+                        <string>@deltacommunitycu.com</string>
+                        <string>@deltaprivatejets.com</string>
+                        <string>@Drysoda.com</string>
+                        <string>@eboveandbeyond.com</string>
+                        <string>@ellenos.com</string>
+                        <string>@elliman.com</string>
+                        <string>@endeavorair.com</string>
+                        <string>@fedex.com</string>
+                        <string>@forrester.com</string>
+                        <string>@gap.com</string>
+                        <string>@gimmehealth.com</string>
+                        <string>@gorillagroup.com</string>
+                        <string>@id-logistics.com</string>
+                        <string>@id.me</string>
+                        <string>@juicebeauty.com</string>
+                        <string>@karasscreative.com</string>
+                        <string>@kennethcole.com</string>
+                        <string>@klaviyo.com</string>
+                        <string>@letslinc.com</string>
+                        <string>@linkedin.com</string>
+                        <string>@lt.life</string>
+                        <string>@malnove.com</string>
+                        <string>@metlife.com</string>
+                        <string>@mltvacations.com</string>
+                        <string>@monroe-energy.com</string>
+                        <string>@ncsports.org</string>
+                        <string>@obexp.com</string>
+                        <string>@ordergroove.com</string>
+                        <string>@pebblepost.com</string>
+                        <string>@peets.com</string>
+                        <string>@pereless.com</string>
+                        <string>@pixelmedia.com</string>
+                        <string>@precisionsportsent.com</string>
+                        <string>@premierway.com</string>
+                        <string>@pwc.com</string>
+                        <string>@randfdigital.com</string>
+                        <string>@right.com</string>
+                        <string>@romarklogistics.com</string>
+                        <string>@salesforce.com</string>
+                        <string>@sendaathletics.com</string>
+                        <string>@snacknation.com</string>
+                        <string>@socialcode.com</string>
+                        <string>@sonoco.com</string>
+                        <string>@soundcloud.com</string>
+                        <string>@specright.com</string>
+                        <string>@sprecright.com</string>
+                        <string>@starbucks.com</string>
+                        <string>@statebags.com</string>
+                        <string>@swanandlegend.com</string>
+                        <string>@themazegroup.com</string>
+                        <string>@united.com</string>
+                        <string>@vertexinc.com</string>
+                        <string>@wnco.com</string>
+                        <string>@yellowleafhammocks.com</string>
+                        <string>@yotpo.com</string>
+                        <string>@zeel.com</string>
+                        <string>@zmags.com</string>
+                        <string>@zocdoc.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Partners">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>contains</operator>
+                        <string>@delta.com</string>
+                        <string>@deltacommunitycu.com</string>
+                        <string>@deltaprivatejets.com</string>
+                        <string>@endeavorair.com</string>
+                        <string>@mltvacations.com</string>
+                        <string>@monroe-energy.com</string>
+                        <string>@ordergroove.com</string>
+                        <string>eboveandbeyond.com</string>
+                        <string>jaggedpeak.com</string>
+                        <string>ordergroove.com</string>
+                        <string>pixelmedia.com</string>
+                        <string>pixleeteam.com</string>
+                        <string>powerreviews.com</string>
+                        <string>salesforce.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="UAT20%OffPartner">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>ends-with</operator>
+                        <string>@partner123.com</string>
+                        <string>@partnertest123.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="mobilegroup">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>session.custom.device</attribute-path>
+                        <operator>is-equal</operator>
+                        <string>mobile</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="snackClubOrder">
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>session.custom.snackClubOrder</attribute-path>
+                        <operator>is-true</operator>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="vertexTestCustomerGroup">
+        <description>A customer group for testing the customer class assignment for the Vertex service API call.</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>ends-with</operator>
+                        <string>pixelmedia.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes>
+            <custom-attribute attribute-id="customerClassCode">specialized</custom-attribute>
+            <custom-attribute attribute-id="customerClassCodeID">merchant</custom-attribute>
+        </custom-attributes>
+    </customer-group>
+
+    <customer-group group-id="Everyone">
+        <description>Represents all customers of the site, both unregistered and registered.</description>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Registered">
+        <description>Represents all registered customers of the site.</description>
+        <custom-attributes/>
+    </customer-group>
+
+    <customer-group group-id="Unregistered">
+        <description>Represents all unregistered customers of the site.</description>
+        <custom-attributes/>
+    </customer-group>
+
+</customer-groups>

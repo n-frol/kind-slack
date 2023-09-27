@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<promotions xmlns="http://www.demandware.com/xml/impex/promotion/2008-01-31">
+
+    <campaign campaign-id="approaching-discount">
+        <enabled-flag>true</enabled-flag>
+        <campaign-scope>
+            <applicable-online/>
+        </campaign-scope>
+        <customer-groups match-mode="any">
+            <customer-group group-id="Everyone"/>
+        </customer-groups>
+    </campaign>
+
+    <promotion promotion-id="order-approaching-discount">
+        <enabled-flag>true</enabled-flag>
+        <archived-flag>false</archived-flag>
+        <searchable-flag>false</searchable-flag>
+        <exclusivity>no</exclusivity>
+        <name xml:lang="x-default">order-approaching-discount</name>
+        <callout-msg xml:lang="x-default">20% off</callout-msg>
+        <order-promotion-rule>
+            <discount-only-qualifying-products>false</discount-only-qualifying-products>
+            <discounts condition-type="order-total">
+                <discount>
+                    <threshold>100.0</threshold>
+                    <percentage>20.0</percentage>
+                </discount>
+            </discounts>
+            <enable-upsells>true</enable-upsells>
+            <exclude-discounted-products>false</exclude-discounted-products>
+        </order-promotion-rule>
+    </promotion>
+
+    <promotion promotion-id="shipping-approaching-discount">
+        <enabled-flag>true</enabled-flag>
+        <archived-flag>false</archived-flag>
+        <searchable-flag>false</searchable-flag>
+        <exclusivity>no</exclusivity>
+        <name xml:lang="x-default">shipping-approaching-discount</name>
+        <callout-msg xml:lang="x-default">free shipping</callout-msg>
+        <shipping-promotion-rule>
+            <shipping-methods/>
+            <discounts condition-type="shipment-total">
+                <discount>
+                    <threshold>200.0</threshold>
+                    <free/>
+                </discount>
+            </discounts>
+            <enable-upsells>true</enable-upsells>
+        </shipping-promotion-rule>
+    </promotion>
+
+    <promotion-campaign-assignment promotion-id="order-approaching-discount" campaign-id="approaching-discount">
+        <qualifiers match-mode="any">
+            <customer-groups/>
+            <source-codes/>
+            <coupons/>
+        </qualifiers>
+    </promotion-campaign-assignment>
+
+    <promotion-campaign-assignment promotion-id="shipping-approaching-discount" campaign-id="approaching-discount">
+        <qualifiers match-mode="any">
+            <customer-groups/>
+            <source-codes/>
+            <coupons/>
+        </qualifiers>
+    </promotion-campaign-assignment>
+
+</promotions>

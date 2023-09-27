@@ -1,0 +1,33 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_IDEAL.isml --->
+<isset name="idealFields" value="${ pdict.forms.billingForm.ideal }" scope="page"/>
+
+<isscript>
+    var isPPRO = require('dw/system/Site').getCurrent().getCustomPreferenceValue('paymentOperatorUsePPRO');
+</isscript>
+
+<isif condition="${ !isPPRO }">
+    <fieldset class="paymentoperator-ideal-form">
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group
+                <isif condition=${ idealFields.issuerid.mandatory === true }>required</isif>
+                ${ idealFields.issuerid.htmlName }">
+                    <label class="form-control-label" for="ideal_issuerid">${Resource.msg('ideal.issuerid','paymentoperator',null)}</label>
+                    <select class="form-control custom-select" id="ideal_issuerid" <isprint value=${ idealFields.issuerid.attributes} encoding="off"/>>
+                        <isloop items=${ idealFields.issuerid.options } var="issuer">
+                            <option id="${ issuer.id }" value="${ issuer.htmlValue }"
+                            <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                && issuer.id == pdict.order.billing.payment.selectedPaymentInstruments[0].issuerid}">
+                                selected
+                            </isif> >
+                            ${ issuer.label }
+                            </option>
+                        </isloop>
+                    </select>
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</isif>

@@ -1,0 +1,12 @@
+{
+    "hooks": [
+        {
+            "name": "vertex.basket.taxes",
+            "script": "./cartridge/scripts/hooks/taxes.js"
+        },
+        {
+            "name": "dw.order.calculateTax",
+            "script": "./cartridge/scripts/hooks/cart/calculate.js"
+        }
+    ]
+}

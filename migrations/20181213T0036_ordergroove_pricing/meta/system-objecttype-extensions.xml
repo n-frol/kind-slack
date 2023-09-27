@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="OrderGrooveDiscountType">
+                <display-name xml:lang="x-default">Auto Delivery Product Discount Type</display-name>
+                <description xml:lang="x-default">The type of discount to apply to all auto delivery products in the cart based on the OrderGroove cookie.</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Amount</display>
+                        <value>Amount</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Percent</display>
+                        <value>Percent</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Price Book</display>
+                        <value>PriceBook</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+		</custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="OrderGroove">
+                <display-name xml:lang="x-default">OrderGroove Configurations</display-name>
+                <attribute attribute-id="OrderGrooveEnable"/>
+                <attribute attribute-id="OrderGrooveMerchantID"/>
+                <attribute attribute-id="OrderGrooveMerchantHashKey"/>
+                <attribute attribute-id="OrderGrooveStaticDomain"/>
+                <attribute attribute-id="OrderGrooveEmail"/>
+                <attribute attribute-id="OrderGrooveAddresses"/>
+                <attribute attribute-id="OrderGrooveShippingMethod"/>
+                <attribute attribute-id="OrderGrooveSession"/>
+                <attribute attribute-id="OrderGrooveShipping"/>
+                <attribute attribute-id="OrderGrooveBilling"/>
+                <attribute attribute-id="OrderGrooveLabel"/>
+                <attribute attribute-id="OrderGrooveToken"/>
+                <attribute attribute-id="OrderGrooveCardHolder"/>
+                <attribute attribute-id="OrderGrooveCardNumber"/>
+                <attribute attribute-id="OrderGrooveCardType"/>
+                <attribute attribute-id="OrderGrooveCardExpiration"/>
+                <attribute attribute-id="OrderGrooveSubscription"/>
+                <attribute attribute-id="OrderGrooveTracking"/>
+                <attribute attribute-id="OrderGrooveOfferID"/>
+                <attribute attribute-id="OrderGrooveDiscountType"/>
+                <attribute attribute-id="OrderGrooveDiscountValue"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

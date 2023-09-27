@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="sample_out-of-stock">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Sample - Out of Stock</display-name>
+        <short-description xml:lang="x-default">Sweet cravings ✔ salty cravings ✔ healthy cravings ✔. Our best-selling bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent.</short-description>
+        <long-description xml:lang="x-default">Sweet cravings ✔ salty cravings ✔ healthy cravings ✔. Our best-selling bar is a simple blend of Brazilian sea salt sprinkled over whole nuts and drizzled with dark chocolate. With 5g of sugar, it's a satisfying, nutty snack that only seems indulgent.</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+            <image-group view-type="medium">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+            <image-group view-type="small">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+        </images>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="backgroundColor">#095c66</custom-attribute>
+            <custom-attribute attribute-id="badge">Best Seller</custom-attribute>
+            <custom-attribute attribute-id="benefits">
+                <value>benefit_0gTransFat</value>
+                <value>benefit_5gSugarOrLess</value>
+                <value>benefit_goodSourceOfFiber</value>
+                <value>benefit_lowGlycemicIndex</value>
+                <value>benefit_lowSodium</value>
+                <value>benefit_sample-1</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="containerType">Box</custom-attribute>
+            <custom-attribute attribute-id="featuredAssets">
+                <value>featured_almonds</value>
+                <value>featured_sample</value>
+            </custom-attribute>
+            <custom-attribute attribute-id="featuredHeading">What's in the Bar?</custom-attribute>
+            <custom-attribute attribute-id="notInProductBody">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent molestie efficitur nisl, in laoreet purus auctor in. Sed quis ipsum id orci ultricies laoreet vitae nec nulla. Aenean consequat, eros sed tempor gravida, purus purus pretium mauris, in sagittis tortor arcu eget est. Duis et posuere lectus.</custom-attribute>
+            <custom-attribute attribute-id="notInProductLabel">What's not in this bar?</custom-attribute>
+            <custom-attribute attribute-id="nutritionFactsImage">images/sample_kind_nutrition.jpg</custom-attribute>
+            <custom-attribute attribute-id="nutritionNotes">Product formulation and packaging may change.</custom-attribute>
+            <custom-attribute attribute-id="productType">Bar</custom-attribute>
+            <custom-attribute attribute-id="totalItemQuantity">20.0</custom-attribute>
+        </custom-attributes>
+        <classification-category catalog-id="kind-snacks-storefront">kind-nut-bars</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <category-assignment category-id="root" product-id="sample_out-of-stock">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

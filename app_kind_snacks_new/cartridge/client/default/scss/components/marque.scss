@@ -1,0 +1,71 @@
+@import '../globals/variables.scss';
+
+.marque-wrapper {
+    font-family: main;
+    &.light {
+        background: #EBA900;
+        text-align: center;
+        font-size: 20px;
+        padding: 19.5px 0px;
+        letter-spacing: 1px;
+        font-family: main;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mobile {
+            padding: 17.5px 0px;
+        }
+    }
+    &.dark {
+        background: #000000;
+        text-align: center;
+        color: white;
+        font-size: 20px;
+        padding: 20px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mobile {
+            padding: 17.5px 0px;
+        }
+        & .marque-item {
+            & .marque_link {
+                & .marque_item {
+                    &:hover {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            color: #FFFFFF;
+        }
+    }
+}
+
+.marque-item {
+    margin-right: 20px;
+    display:flex;
+    align-items: center;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    @include mobile {
+        margin-left: 20px;
+    }
+    & span {
+        position: relative;
+        @include ipad {
+            top: 0px;
+        }
+        @include mobile {
+            top: 0px;
+        }
+    }
+}
+.marque-item img {
+    width: 40px;
+    height: 40px;
+    @include ipad {
+        display: none;
+    }
+    @include mobile {
+        display:none;
+    }
+}

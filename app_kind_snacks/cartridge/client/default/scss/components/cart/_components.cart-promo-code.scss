@@ -1,0 +1,49 @@
+/* ============================================================================
+Cart: Promo Code
+============================================================================ */
+
+/**
+ * Styles for receiving of Promo Code
+*/
+$ns: c-cart-promo-code;
+
+.#{$ns} {
+    /**
+     * use !important - in global style this class has chain of parent classes
+    */
+    font-family: $font-family-primary;
+    padding-left: 0;
+    padding-right: 0;
+    &__optional {
+        margin-bottom: -10px;
+        margin-top: 20px;
+    }
+    &__form {
+        margin-bottom: 9px;
+        margin-top: 20px;
+        &__label {
+            color: $grey7;
+            font-size: 16px;
+            margin-bottom: 11px;
+        }
+        &__field {
+            height: 46px;
+        }
+        &__apply-btn {
+            color: $grey7;
+            line-height: 23px;
+            min-height: 48px;
+            min-width: 50px;
+        }
+        &__error {
+            color: $alizarin-crimson !important;
+            font-size: 12px;
+            letter-spacing: -0.3px;
+            text-transform: lowercase;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

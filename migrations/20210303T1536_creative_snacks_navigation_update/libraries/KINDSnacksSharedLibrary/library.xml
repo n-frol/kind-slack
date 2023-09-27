@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="header-navigation-cs">
+        <display-name xml:lang="x-default">Header Navigation Creative Snacks</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+	&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Page-Show', 'cid', 'about_creativesnacks')$" title="About Us"&gt;About&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;li class="nav-item"&gt;&lt;a class="nav-link" href="$url('Page-Show', 'cid', 'retailers_creativesnacks')$" title="Retailers"&gt;Where To Find Us&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

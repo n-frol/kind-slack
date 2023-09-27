@@ -1,0 +1,34 @@
+{
+    "name": "Partner Slide",
+    "description": "Partner Slide",
+    "group": "Slides",
+    "attribute_definition_groups": [
+        {
+            "id": "Partner",
+            "name": "Partner to use",
+            "description": "The partner to use for this slide",
+            "attribute_definitions": [
+                {
+                    "id": "partnerimage",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "partnercopy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "url",
+                    "name": "Url",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

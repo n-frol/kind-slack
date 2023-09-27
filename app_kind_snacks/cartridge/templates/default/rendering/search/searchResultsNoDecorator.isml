@@ -1,0 +1,131 @@
+<isset name="isByob"
+    value="${(!empty(pdict.productSearch) && !empty(pdict.productSearch.isBYOBSearch) && pdict.productSearch.isBYOBSearch)}"
+    scope="page" />
+    <isset name="isSwap"
+    value="${pdict.isSwap}"
+    scope="page" />
+<isscript>
+    var isAttributeRefinementAvailable = false;
+    var isPriceRefinementAvailable = false;
+    var productSearchRefinements = pdict.productSearch.refinements;
+    for (var i = 0; i < productSearchRefinements.length; i++) {
+        var refinement = productSearchRefinements[i];
+        if(!isAttributeRefinementAvailable && refinement.isAttributeRefinement) {
+            isAttributeRefinementAvailable = refinement.isAttributeRefinement;
+        }
+        if(!isPriceRefinementAvailable && refinement.isPriceRefinement) {
+            isPriceRefinementAvailable = refinement.isPriceRefinement;
+        }
+    }
+</isscript>
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+
+<isset name="catObject" value="${pdict.cat}" scope="page" />
+<isset name="catThumb" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+<isset name="catThumbSrcset" value="" scope="page" />
+
+
+<isif condition="${!empty(pdict.cat) && !empty(pdict.cat.thumbnail)}">
+    <isset name="responsiveImg" value="${responsiveImageUtils.getResponsiveImage(pdict.cat.thumbnail, '', 'jpg')}"
+        scope="page" />
+    <isset name="catThumb" value="${responsiveImg.imageUrlDefault}" scope="page" />
+    <isset name="catThumbSrcset" value="${responsiveImg.imageUrlDefault + ', ' + responsiveImg.imageUrlLarge + ' 2x'}"
+        scope="page" />
+</isif>
+<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
+    <isinclude template="reporting/reportingUrls" />
+</isif>
+
+<isset name="isConfigCat" value="${(pdict.productSearch.isCategorySearch || !empty(pdict.productSearch.category)) && pdict.productSearch.category
+                                 .isConfigurationCategory}" scope="page" />
+
+<div class="container search-results c-search-results v2 ${isByob ? 'c-search-byob__refinement-bar' : ''}">
+    <isif condition="${isByob}">
+        <button class="filter-results c-search-results__bar__filter-results col-12 no-border text-left">${Resource.msg('link.filters', 'search', null)}</button>
+    </isif>
+    <div class="${isByob ? 'c-search-byob__results__nav' : 'c-search-results__nav'} row search-nav<isif condition="
+        ${isConfigCat}"> c-search-results__nav--config</isif>">
+        <isif condition="${!pdict.productSearch.isCategorySearch}">
+            <div class="nav-tabs-wrapper">
+
+            </div>
+        </isif>
+    </div>
+    <div class="row">
+        <div class="tab-pane container active" id="product-search-results" role="tabpanel" aria-expanded="true">
+
+            <isif condition="${isByob}">
+                <isset name="byobAllProductsCat"
+                    value="${dw.system.Site.current.getCustomPreferenceValue('byobRootCategoryID')}" scope="page" />
+                <isset name="isByobAllProductsCat"
+                    value="${!empty(byobAllProductsCat) && pdict.productSearch.category.id === byobAllProductsCat}"
+                    scope="page" />
+            </isif>
+
+            <isif condition="${pdict.productSearch.productIds.length > 0}">
+                <div class="row ${isByob ? 'c-search-byob__results c-byob-redesign' : ''}">
+                    <isif condition="${isAttributeRefinementAvailable || isPriceRefinementAvailable}">
+
+                        <isinclude url="${pdict.refineurl}" />
+                    </isif>
+                    <isif condition="${isByobAllProductsCat}">
+                        <isif condition="${pdict.isByob && !pdict.isSwap}">
+                            <isinclude template="search/components/byobSearch" />
+                        </isif>
+                    <isif condition="${pdict.isSwap}">
+                            <isinclude template="search/components/swapSearch" />
+                        </isif>
+                    </isif>
+                </div>
+
+                <div class="c-byob-redesign">
+                <div class="c-byob-redesign__chips-wrapper">
+                    <isinclude template="search/refinements/chips" />
+                    <a class="c-byob-redesign__chips-wrapper__reset_btn js-chisps-clear-all" href="${pdict.productSearch.resetLink}">${Resource.msg('link.reset', 'search', null)}</a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-end position-relative${isByob ? ' c-search-byob__results c-byob-redesign' : ''}">
+
+                    <div
+                        class="c-search-results__content-box u-background__color-grey9 js-content-box col-sm-12 col-md-8 right">
+                        <div class="c-search-results__content-box__container container">
+
+                            <div class="row product-grid js-byob-grid c-search-results--space-around "
+                                itemtype="http://schema.org/SomeProducts" itemid="#product"
+                                data-box-sku="${pdict.boxSku || ''}">
+                                <isif condition="${pdict.productSearch.count === 0}">
+                                    <span class="c-search-results__bar__result-count__count">
+                                        ${Resource.msg('label.noresultsfor', 'search', null)} ${pdict.productSearch.searchKeywords}
+                                    </span>
+                                </isif>
+                                <isinclude template="search/productGrid" />
+                                <div class="scrollToTop js-scroll-to-top" aria-label="${Resource.msg('button.scrolltotop', 'byob', null)}">${Resource.msg('button.scrolltotop', 'byob', null)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-search-results__content-box js-content-box col-sm-12 col-md-4 left">
+                        <div class="c-search-results__content-box__container container">
+                            <isscript>
+                            if (isByob && !isSwap) {
+                                var finalurl = URLUtils.https("") + "/en_US/BYOB-List";
+                            }
+                            if (isSwap) {
+                                var finalurl = URLUtils.https("") + "/en_US/SWAP-List?ref="+pdict.reflink;
+                            }
+                            </isscript>
+                            <isinclude url="${finalurl}" />
+                        </div>
+                    </div>
+                </div>
+            </isif>
+            
+            <iscomment> <div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-expanded="false">
+                <div id="content-search-results" class="row content-grid-header justify-content-center">
+                </div>
+            </div> </iscomment>
+        </div>
+    </div>
+</div>

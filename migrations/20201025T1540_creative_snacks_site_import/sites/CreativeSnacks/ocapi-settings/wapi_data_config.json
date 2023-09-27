@@ -1,0 +1,24 @@
+{
+  "_v":"18.8",
+  "clients":
+  [ 
+    {
+      "client_id":"cbd547e7-11c4-4ed1-a777-cbd938ab5d08",
+      "resources":
+      [
+        {
+          "resource_id":"/inventory_lists/**",
+          "methods":["get","post","patch","delete"],
+          "read_attributes":"(**)",
+          "write_attributes":"(**)"
+        },
+{
+          "resource_id":"/customer_lists/**",
+          "methods":["get"],
+          "read_attributes":"(**)",
+          "write_attributes":"(**)"
+        }
+      ]
+    }
+  ]
+}

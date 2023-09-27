@@ -1,0 +1,139 @@
+<isif condition="${pdict.sellable !== false}">
+<iscache type="relative" minute="0" hour="0">
+<isscript>
+var grps = session.getCustomer().getCustomerGroups();
+var names = [];
+</isscript>
+<isloop items="${grps}" var="g">
+<isscript>
+names.push(g.ID);
+</isscript>
+</isloop>
+<isif condition="${(dw.system.Site.getCurrent().name === "Kind B2B" && names.indexOf("Approved") > -1) || dw.system.Site.getCurrent().name === "KIND Snacks"}">
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isQuickView" value="${pdict.isQuickView}" scope="page" />
+<isset name="isBundle" value="${pdict.product.productType === 'bundle'}" scope="page" />
+
+<iscache type="relative" minute="0" hour="0">
+<div class="u-width-100">
+    <!-- Attributes and Quantity -->
+    <isinclude template="product/components/mainAttributes" />
+    <isset name="qty" value="${Number(empty(pdict.CurrentHttpParameterMap.Quantity.stringValue) ? 1 : pdict.CurrentHttpParameterMap.Quantity.stringValue).toFixed()}" scope="page" />
+
+    <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+        <iscomment>Don't show dropdown for attributes without multiple variants to select from</iscomment>
+        <isif condition="${!empty(attr.values) && attr.values.length === 1}">
+            <iscontinue>
+        </isif>
+        <div class="c-product-variation-attribute js-product-variation-attribute" data-attr="${attr.id}">
+            <isinclude template="product/components/variationAttribute" />
+            <!-- Size Chart -->
+            <isif condition="${attr.id === 'gear-size' && !empty(product.sizeChartId)}">
+                <div class="size-chart c-product-variation-attribute__size-chart">
+                    <isinclude template="product/components/sizeChart" />
+                </div>
+            </isif>
+        </div>
+    </isloop>
+    <isif condition="${product.raw.custom.isCheckAddressFraud || product.isByobMaster}">
+        <input type="hidden" name="Quantity" id="Quantity" class="c-qty__input input-text quantity-select js-qty__input" value="1"/>
+    <iselse>
+    <isif condition="${product.minOrderQuantity > 1}">
+    <div>
+    This item has a minimum purchase quantity of ${(product.minOrderQuantity.toFixed(0))}.
+    </div>
+    </isif>
+        <div class="simple-quantity c-qty__wrap">
+            <label for="Quantity" class="c-qty__label js-qty__label">
+                <isif condition="${!empty(product.totalItemQuantity)}">
+                    <isprint value="${product.totalItemQuantity}" style="INTEGER" encoding="off" /> <isif condition="${!empty(product.productTypeDetail)}">${product.productTypeDetail}</isif>
+                    <isif condition="${!empty(product.containerType)}">
+                         ${Resource.msg('global.per', 'common', null)} ${product.containerType}
+                    </isif>
+                <iselse>
+                    ${Resource.msg('global.quantity', 'common', null)}
+                </isif>
+            </label>
+
+            <isinclude template="product/components/quantity" />
+
+            <div class="c-qty__num-items js-qty__num-items">
+                <span class="js-qty__num-items__container"
+                    <isif condition="${!empty(product.containerType)}">
+                         data-container="${product.containerType}">
+                        <isif condition="${product.minOrderQuantity.toFixed(0) === 1 || product.minOrderQuantity.toFixed(0) === '1'}">
+                            ${product.containerType}
+                        <iselse>
+                            <isscript>
+                                var textUtils = require('~/cartridge/client/default/js/components/textUtils'); // var pluralContainer = qtyInput.methods.pluralize(product.containerType);
+                                var containerPlural = textUtils.pluralize(product.containerType);
+                            </isscript>
+                            ${containerPlural}
+                        </isif>
+                    <iselse>
+                        >
+                    </isif>
+                </span>
+            </div>
+        </div>
+    </isif>
+
+    <isif condition="${!empty(product.options)}">
+        <isinclude template="product/components/options" />
+    </isif>
+
+    <div class="js-product-variation-details">
+        <isinclude template="product/productAddToCartVariableContent" />
+    </div>
+
+    <div class="hidden-sm-down c-product-details__global-display">
+        <isslot id="product-global-display" description="Displayed under the cart button on the product page" context="global" />
+    </div>
+</div>
+<iselse>
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <br />
+    <div class="simple-quantity c-qty__wrap" style="width:100%;">
+        <label class="c-qty__label js-qty__label">
+            <isif condition="${!empty(product.totalItemQuantity)}">
+                <isprint value="${product.totalItemQuantity}" style="INTEGER" encoding="off" />
+                <isif condition="${!empty(product.productTypeDetail)}">${product.productTypeDetail}</isif>
+                <isif condition="${!empty(product.containerType)}">
+                    ${Resource.msg('global.per', 'common', null)} ${product.containerType}
+                </isif>
+                <iselse>
+                    ${Resource.msg('global.quantity', 'common', null)}
+            </isif>
+        </label>
+    </div>
+
+<isif condition="${names.indexOf("Denied") > -1 }">
+    <div class="row cart-and-ipay c-product-add-to-cart__inner">
+        <div class="col-sm-12">
+          <b>Unfortunately your application isn't a fit for the Wholesale program at this time. We hope you'll consider ordering snacks from our retail site at
+          <a href="https://www.kindsnacks.com#login">www.kindsnacks.com.</a></b>
+        </div>
+    </div>
+    <iselseif condition="${names.indexOf("Pending") > -1 }">
+    <div class="row cart-and-ipay c-product-add-to-cart__inner">
+        <div class="col-sm-12">
+          <b>pricing available upon application approval</b>
+        </div>
+    </div>
+    <iselse>
+    <div class="row cart-and-ipay c-product-add-to-cart__inner">
+        <div class="col-sm-12">
+            <a href="${URLUtils.https('Home-Show')}#register" class="btn btn-primary" style="width:unset; margin-bottom:10px;">Apply to see pricing</a>
+            <br/>
+            <isif condition="${!session.isCustomerAuthenticated()}">
+            Already have an account? <a class="clear-modals" href="${URLUtils.https('Home-Show')}#login"> Log in</a>
+            </isif>
+        </div>
+    </div>
+    </isif>
+</isif>
+<iselse>
+<div style="min-width:370px">
+<isprint value="${pdict.nfsmessage}" encoding="off" />
+</div>
+</isif>

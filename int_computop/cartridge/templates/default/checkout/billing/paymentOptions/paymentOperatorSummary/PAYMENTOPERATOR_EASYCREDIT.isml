@@ -1,0 +1,31 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR_EASYCREDIT.isml --->
+<iscomment>
+    Template for rendering PaymentOperator easyCredit payment information on checkout overview.
+</iscomment>
+
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+
+<isscript>
+    var ecInterestAmount = pdict.paymentOperator.ecInterestAmount;
+    var easyCreditTerm = pdict.paymentOperator.EasyCreditTerm;
+    var easyCreditRepaymentText = pdict.paymentOperator.EasyCreditRepaymentText;
+    var easyCreditUrlPrecontractInformation = pdict.paymentOperator.EasyCreditUrlPrecontractInformation;
+</isscript>
+
+<div class="form-row">
+    <div class="paymentoperator-selected-payment">${Resource.msg('paymentoperator.text.easycredit.infoheader', 'paymentoperatoreasycredit', null)}</div>
+
+    <isif condition="${ ecInterestAmount
+                 && easyCreditTerm
+                 && easyCreditRepaymentText
+                 && easyCreditUrlPrecontractInformation
+                 }">
+        <p>
+            ${Resource.msgf('paymentoperator.text.easycredit.term', 'paymentoperatoreasycredit', null, easyCreditTerm)}
+        </p>
+        <isprint value="${ easyCreditRepaymentText }" encoding="off" />
+        <p>
+            <a href="${ easyCreditUrlPrecontractInformation }" title="${Resource.msg('paymentoperator.text.easycredit.urlprecontracttitle', 'paymentoperatoreasycredit', null)}" target="_blank">${ Resource.msg('paymentoperator.text.easycredit.urlprecontracttext', 'paymentoperatoreasycredit', null) }</a>
+        </p>
+    </isif>
+</div>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-master">
+
+    <product product-id="289-1">
+        <display-name xml:lang="x-default">Dark Chocolate Nuts &amp; Sea Salt</display-name>
+        <images>
+            <image-group view-type="small">
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+            </image-group>
+        </images>
+    </product>
+    <product product-id="sample_snack-pack">
+        <ean/>
+        <upc/>
+        <unit/>
+        <min-order-quantity>1.0</min-order-quantity>
+        <step-quantity>1.0</step-quantity>
+        <display-name xml:lang="x-default">Sample - Snack Pack</display-name>
+        <short-description xml:lang="x-default">Enjoy 20 delicious snacks with our online-exclusive Snack Pack! This perfect mix of KIND favorites is ready for all your daily snacking needs.</short-description>
+        <long-description xml:lang="x-default">&lt;h2&gt;what's in the snack pack?&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Enjoy 20 delicious snacks with our online-exclusive Snack Pack! This perfect mix of KIND favorites is ready for all your daily snacking needs.&amp;nbsp;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Like to start your day with whole grains? Try KIND&amp;reg; Breakfast bars or KIND Healthy Grains&amp;reg; clusters. Need to snack healthy while on the go? Enjoy KIND&amp;reg; bars, KIND Healthy Grains&amp;reg; bars and Pressed by KIND&amp;reg; bars! Looking for plant-based protein? Try KIND Protein&amp;trade; bars.&amp;nbsp;&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;Plus, all of our snacks are crafted with delicious, wholesome ingredients like nuts, fruits and whole grains to keep your body and your taste buds happy!&lt;/p&gt;</long-description>
+        <store-force-price-flag>false</store-force-price-flag>
+        <store-non-inventory-flag>false</store-non-inventory-flag>
+        <store-non-revenue-flag>false</store-non-revenue-flag>
+        <store-non-discountable-flag>false</store-non-discountable-flag>
+        <online-flag>true</online-flag>
+        <available-flag>false</available-flag>
+        <searchable-flag>true</searchable-flag>
+        <images>
+            <image-group view-type="large">
+                <image path="images/Screen Shot 2018-10-02 at 11.37.53 AM.png"/>
+                <image path="images/17751-mobile-kind-nut-bars-dark-chocolate-nuts-sea-salt_opt-min.png"/>
+                <image path="images/17156-mobile-kind-nut-bars-peanut-butter-dark-chocolate_opt-min.png"/>
+            </image-group>
+        </images>
+        <brand>KIND Bars</brand>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="imageNavigationColor">#000</custom-attribute>
+            <custom-attribute attribute-id="backgroundColor">#e5e5e5</custom-attribute>
+            <custom-attribute attribute-id="badge">New</custom-attribute>
+            <custom-attribute attribute-id="containerType">Box</custom-attribute>
+            <custom-attribute attribute-id="productType">Snack</custom-attribute>
+            <custom-attribute attribute-id="totalItemQuantity">20.0</custom-attribute>
+        </custom-attributes>
+        <bundled-products>
+            <bundled-product product-id="289-1">
+                <quantity>2.0</quantity>
+            </bundled-product>
+            <bundled-product product-id="290">
+                <quantity>1.0</quantity>
+            </bundled-product>
+        </bundled-products>
+        <classification-category>root</classification-category>
+        <pinterest-enabled-flag>false</pinterest-enabled-flag>
+        <facebook-enabled-flag>false</facebook-enabled-flag>
+        <store-attributes>
+            <force-price-flag>false</force-price-flag>
+            <non-inventory-flag>false</non-inventory-flag>
+            <non-revenue-flag>false</non-revenue-flag>
+            <non-discountable-flag>false</non-discountable-flag>
+        </store-attributes>
+    </product>
+
+    <category-assignment category-id="root" product-id="sample_snack-pack">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+    <category-assignment category-id="root" product-id="289-1">
+        <primary-flag>true</primary-flag>
+    </category-assignment>
+
+</catalog>

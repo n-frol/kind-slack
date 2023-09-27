@@ -1,0 +1,73 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/purchaseBlock/purchaseBlock_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container st-container st-container--padded">
+            <div class="row">
+    </isif>
+        <div class="c-purchase-block ${assetID} th-kind-purchase-block s-graphical-asset">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container st-container st-container--padded">
+                    <div class="row">
+            </isif>
+            <div class="c-purchase-block__content
+                <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-purchase-block__content--${graphicalAsset.contentXPosition.value}
+                </isif>
+            ">
+                <isif condition="${!empty(graphicalAsset.heading) || !empty(graphicalAsset.eyebrow)}">
+                <div class="c-purchase-block__content__header">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h2 class="c-purchase-block__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h2>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.eyebrow)}">
+                        <h3 class="c-purchase-block__content__sub-heading">
+                            <isprint value="${graphicalAsset.eyebrow}" encoding="off" />
+                        </h3>
+                    </isif>
+                </div>
+                </isif>
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 400)}" scope="page" />
+                    <div class="c-purchase-block__content__image__wrapper">
+                        <img class="c-purchase-block__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+                <div class="c-purchase-block__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-purchase-block__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-purchase-block__content__links s-graphical-asset__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.bodyTwo)}">
+                        <div class="c-purchase-block__content__body-two">
+                            <isprint value="${graphicalAsset.bodyTwo}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

@@ -1,0 +1,33 @@
+<div class="imgtextcontain">
+    <img class="brand_promise_img" src="${pdict.image.src.desktop}" alt="" />
+    <div style="text-align:center" class="text_middle">
+        <h3 style="text-transform:none">${pdict.header}</h3>
+        <div style="text-transform:none">${pdict.copy}</div>
+        <a class="subtitle" href="${pdict.link}">learn more</a>
+    </div>
+</div>
+
+<style>
+    .imgtextcontain {
+        display: flex;
+        align-content: center;
+        padding-bottom: 65px;
+        align-items:center;
+    }
+
+    .brand_promise_img {
+        width: 495px;
+        float: left;
+        padding-right:25px;
+    }
+
+    @media screen and (max-width:425px) {
+        .imgtextcontain {
+            display:block;
+            padding-bottom: 35px;
+        }
+        .brand_promise_img {
+            padding-right:0px;
+        }
+    }
+</style>

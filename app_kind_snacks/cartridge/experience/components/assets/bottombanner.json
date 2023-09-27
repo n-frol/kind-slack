@@ -1,0 +1,33 @@
+{
+  "name": "Gifting, Full Width Banner Bottom",
+  "description": "Image, black box, two CTA",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "richtext",
+          "name": "Content",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Background",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "image",
+          "name": "Card Image",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

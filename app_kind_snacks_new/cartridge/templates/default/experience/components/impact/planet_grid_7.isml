@@ -1,0 +1,92 @@
+<div class="planet_grid_7 desktop">
+    <div class="griditem">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Rectangle 2818.png')}" alt="Impact Planet Grid 7 Image" />
+    </div>
+    <div class="griditem">
+        <div class="head">
+            "Caring about people and the planet is who we are behind the scenes, it’s in the fabric of how our organization started, and it’s at the core of our being. And we’re unwilling to compromise that."
+        </div>
+        <div class="copy">Laura Eory, Director of Transportation at KIND</div>
+    </div>
+</div>
+
+<div class="planet_grid_7 mobile" style="display: none">
+    <div class="quote" style="padding-left: 20px; padding-right: 20px;">
+        <div class="head">
+            "Caring about people and the planet is who we are behind the scenes, it’s in the fabric of how our organization started, and it’s at the core of our being. And we’re unwilling to compromise that."
+        </div>
+        <div class="person">
+            <img style="float:left; width: 35%; margin-right: 20px;" src="${URLUtils.staticURL('/images/impact/grid3/Rectangle 2818.png')}" alt="Impact Planet Grid 7 Image" />
+            <div class="persont" style="position: relative; top: 0px; color:#939393; font-size: 16px; font-family:medium">
+                Laura Eory, Director of Transportation at KIND
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .live_grid_2 img {
+        height: 265px;
+    }
+    @media screen and (max-width: 440px) {
+        .planet_grid_7.mobile .head {
+            font-size: 22px !important;
+            line-height: 25px !important;
+            max-width: 100% !important;
+        }
+        .centeryellow {
+            width: calc(100% - 40px) !important;
+            margin-left: 0px !important;
+            padding: 80px 20px !important;
+        }
+        .centeryellow img {
+            justify-self: unset !important;
+        }
+        .live_kinder img {
+            max-width: 100% !important;
+        }
+        .planet_grid_7.mobile {
+            padding-bottom: 20px !important;
+        }
+        .centerme .para2, .centerme .header3 {
+            margin-left: 20px;
+            width: calc(100% - 40px);
+            font-size: 22px !important;
+            line-height: 25px !important;
+        }
+        .planet_grid_7 {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            grid-template-columns: 1fr !important;
+        }
+    }
+    .planet_grid_7 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 60px;
+        padding: 50px 0;
+        align-items: center;
+    }
+    .planet_grid_7 .griditem:first-child {
+        justify-self: flex-end;
+    }
+    .planet_grid_7 .griditem:last-child {
+        justify-self: flex-start;
+    }
+    .planet_grid_7 .head {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 36px;
+        color: white;
+        margin-bottom: 20px;
+        font-family: main;
+        max-width: 85%;
+    }
+    .planet_grid_7 .copy {
+        color: #939393;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: meduim;
+    }
+</style>

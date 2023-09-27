@@ -1,0 +1,90 @@
+<div class="bundled-line-item clearfix">
+    <div class="row justify-content-between">
+        <div class="col-lg-7">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-row">
+                    <a href="${URLUtils.url('Product-Show', 'pid', productLineItem.id)}" class="item-image c-cart-product-info__item-image">
+                        <isset name="lineItemImageSrcset" value="" scope="page" />
+                        <isif condition="${!empty(productLineItem.responsiveImages) && !empty(productLineItem.responsiveImages[0])}">
+                            <isset name="lineItemImageUrl" value="${productLineItem.responsiveImages[0].normal.imageUrlDefault}" scope="page" />
+                            <isset name="lineItemImageSrcset" value="${productLineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + productLineItem.responsiveImages[0].normal.imageUrlLarge + ' 2x'}" scope="page" />
+                        <iselse>
+                            <isset name="lineItemImageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+                        </isif>
+
+                        <isset name="lineItemImageAlt" value="${productLineItem.productName}" scope="page" />
+                        <isif condition="${!empty(productLineItem.images.large)}">
+                            <isset name="lineItemImageAlt" value="${productLineItem.images.large[0].alt}" scope="page" />
+                        </isif>
+
+                        <img class="product-image" src="${lineItemImageUrl}" alt="${lineItemImageAlt}" title="${productLineItem.images.large[0].title}"
+                            <isif condition="${!empty(lineItemImageSrcset)}"> srcset="${lineItemImageSrcset}"</isif>>
+                    </a>
+                    <style>
+                        .pushleft {
+                            margin-left: 50px !important;
+                        }
+                        @media screen and (max-width: 1024px) {
+                            .pushleft {
+                                margin-left: 0px !important;
+                            }
+                        }
+                    </style>
+                    <div class="item-attributes d-flex flex-row centered pushleft">
+                        <div class="c-product-card-header line-item-header">
+                            <div class="c-product-card-header__title line-item-name">${productLineItem.productName}</div>
+                        </div>
+                        <div class="editgift">${Resource.msg('text.remove.edit','cart',null)}</div>
+                        <div class="item-options">
+                            <isloop items="${productLineItem.options}" var="option">
+                                <div class="line-item-option">${option}</div>
+                            </isloop>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .editgift, .removegift {
+                    font-size: 14px!important;
+    letter-spacing: -.3px;
+        margin-right: .625em;
+        text-decoration: underline;
+        cursor: pointer;
+            font-family: HelveticaNeue-Bold,Helvetica,sans-serif;
+            }
+        </style>
+        <div class="col-12 d-lg-none"></div>
+        <div class="col-lg-5 product-card-footer c-cart-card-product-price">
+            <div class="row c-cart-card-product-price__wrapper">
+                <div class="col-4 c-cart-card-product-price__col">
+                    <p class="line-item-price-info c-cart-card-product-price__label line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>
+                    <isif condition="${!empty(productLineItem.bonusUnitPrice)}">
+                            <isset name="bonusUnitPrice" value="${productLineItem.bonusUnitPrice}" scope="page"/>
+                        <iselse>
+                            <isset name="bonusUnitPrice" value="FREE" scope="page"/>
+                        </isif>
+                    <span style="text-transform: uppercase;" class="value price c-product-add-to-cart__prices__price">${bonusUnitPrice}</span>
+                </div>
+                <div class="col-5 c-cart-card-product-price__col line-item-quantity">
+                    <p class="c-quantity-form__label line-item-pricing-info quantity-label">${Resource.msg('field.selectquantity','cart',null)}</p>
+                    <p><isprint value="${productLineItem.quantity}" formatter="#"/></p>
+                </div>
+                <div class="col-3 c-cart-card-product-price__col line-item-total-price">
+                    <p class="c-cart-card-product-price__label line-item-price-info">
+                        ${Resource.msg('label.total.price','cart',null)}
+                    </p>
+                    <div class="price">
+                        <div class="pricing line-item-total-price-amount item-total-${productLineItem.UUID}">
+                        <isif condition="${productLineItem.priceTotal.price == '$0.00'}">
+                        <div style="text-transform:none">FREE</div>
+                            <iselse>
+                            ${productLineItem.priceTotal.price}
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

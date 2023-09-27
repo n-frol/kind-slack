@@ -1,0 +1,91 @@
+<span>
+    <isscript>
+        var price = Object.hasOwnProperty.call(pdict, 'newproduct') ? typeof pdict.newproduct.price !== 'undefined' && !empty(pdict.newproduct.price) ? pdict.newproduct.price : null : null;
+        if (price == null) {
+            price = finalOrigPrice;
+        }
+    </isscript>
+    <isset name="finalOrigPrice" value="${price}" scope="page" />
+    <isset name="isLineItemExist" value="${typeof lineItem !== 'undefined' && !empty(lineItem)}" scope="page" />
+
+    <isif condition="${finalOrigPrice && finalOrigPrice.list !== null}">
+        <isset name="price" value="${finalOrigPrice.list}" scope="page" />
+        <iscomment> <meta itemprop="priceCurrency" content="${price && price.currency ? price.currency : ''}" /> </iscomment>
+        <span class="strike-through list js-list-price--ad-hoc">
+            <span class="value" itemprop="price" content="${price.decimalPrice}">
+                <isinclude template="/product/components/pricing/formatted" />
+            </span>
+        </span>
+
+        <isscript>
+            var activeProductPromotion = typeof activeProductPromotion === 'undefined' ? '' : activeProductPromotion; // Make sure variable is at least declared, so it's not required in every single template
+        </isscript>
+
+        <isif condition="${!empty(activeProductPromotion) && !empty(activeProductPromotion.calloutMsg)}">
+            <div class="d-none promotion-callout js-list-price--ad-hoc__callout s-ordergroove__promo-callout">
+                <isprint value="${activeProductPromotion.calloutMsg}" encoding="off" />
+            </div>
+        </isif>
+    </isif>
+
+    <isif condition="${finalOrigPrice && finalOrigPrice.sales !== null}">
+        <isset name="price" value="${finalOrigPrice.sales}" scope="page" />
+        <iscomment> <meta itemprop="priceCurrency" content="${price && price.currency ? price.currency : ''}" /> </iscomment>
+    </isif>
+    <isif condition="${!empty(pdict.product) && !pdict.product.outOfStock && pdict.product.autoShipEligible == true && finalOrigPrice.spPrice && !empty(finalOrigPrice.spPrice.value)}">
+	    <span class="snack-pack-price js-list-price--snack-pack d-none">
+            <span>${finalOrigPrice.spPrice.formatted}</span>
+	    </span>
+    </isif>
+    <isif condition="${!empty(pdict.product) && !pdict.product.outOfStock && pdict.product.autoShipEligible == true && finalOrigPrice.ogPrice && !empty(finalOrigPrice.ogPrice.value)}">
+        <iscomment>d-none will be forcefully overridden by the OG styles.  So it's only hidden until it's pulled into the widget</iscomment>
+	    <span class="og-sale-price d-none js-list-price--og-sale">
+            <br />
+            <span>${finalOrigPrice.ogPrice.formatted}</span>
+	    </span>
+    </isif>
+
+    <isif condition="${isLineItemExist}">
+        <isif condition="${finalOrigPrice && finalOrigPrice.list === null && lineItem.priceTotal.nonAdjustedPrice}">
+            <isscript>
+                 var formatMoney = require('dw/util/StringUtils').formatMoney;
+                 var money = require('dw/value/Money');
+                 var nonAdjustedPrice = lineItem.priceTotal.nonAdjustedPrice.replace('$',"").replace(',','');
+                 var newNonAdjustedPrice = new money(Number(nonAdjustedPrice),lineItem.price.sales.currency).divide(Number(lineItem.quantity));
+                 var formatNonAdjustedPrice = formatMoney(newNonAdjustedPrice);
+            </isscript>
+            <span class="strike-through list js-list-price--ad-hoc">
+                ${formatNonAdjustedPrice}
+            </span>
+        </isif>
+    </isif>
+
+    <span class="sales js-list-price--sales">
+        <isif condition="${isLineItemExist}">
+            <isif condition="${!empty(lineItem.priceTotal.price)}">
+                <isscript>
+                    var formatMoney = require('dw/util/StringUtils').formatMoney;
+                    var money = require('dw/value/Money');
+                    var priceTotal = lineItem.priceTotal.price.replace('$',"").replace(',','');
+                    var clbPrice = new money(Number(priceTotal),lineItem.price.sales.currency).divide(Number(lineItem.quantity));
+                    var formatClbPrice = formatMoney(clbPrice);
+                </isscript>
+                ${formatClbPrice}
+            <iselse>
+                <isinclude template="/product/components/pricing/formatted" />
+            </isif>
+        <iselse>
+            <isinclude template="/product/components/pricing/formatted" />
+        </isif>
+    </span>
+
+
+    <isscript>
+        var snackPackMessage = typeof snackPackMessage === 'undefined' ? '' : snackPackMessage; // Make sure variable is at least declared, so it's not required in every single template
+    </isscript>
+    <isif condition="${!empty(snackPackMessage)}">
+        <div class="snack-pack-message promotion-callout js-snack-pack-message d-none">
+            ${snackPackMessage}
+        </div>
+    </isif>
+</span>

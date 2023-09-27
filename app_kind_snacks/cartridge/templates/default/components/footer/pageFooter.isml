@@ -1,0 +1,100 @@
+<isset name="isKlaviyoEnabled" value="${!empty(dw.system.Site.current.getCustomPreferenceValue('klaviyo_enabled')) ? dw.system.Site.current.getCustomPreferenceValue('klaviyo_enabled') : false}" scope="page" />
+<footer class="st-global-footer s-global-footer">
+    <div class="st-global-footer__wrapper st-global-footer__wrapper--secondary c-email-signup">
+        <div class="container">
+        <iscomment>
+        Removal of Marketing Cloud footer and inclusion of Klaviyo footer subscribe
+            <isinclude url="${URLUtils.url('MCSubscription-SubscribeFooter')}" />
+        </iscomment>
+         <isif condition="${siteID === "CreativeSnacks"}">
+                        <a href="${URLUtils.url('Home-Show')}" class="st-global-footer__logo creative_snacks_footer_logo" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                            <img src="${URLUtils.staticURL('/images/creative_logo.png')}" class="st-header__navbar--logo__img" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </a>
+                    <iselse/>
+                        <a href="${URLUtils.url('Home-Show')}" class="st-global-footer__logo" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                            <img src="${URLUtils.staticURL('/images/logo.svg')}" class="st-global-footer__logo-img" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </a>
+                    </isif>
+        <isif condition="${isKlaviyoEnabled}">
+            <isinclude url="${URLUtils.url('Klaviyo-FooterSubscribe')}" />
+        <iselse/>
+            <isinclude url="${URLUtils.url('MCSubscription-SubscribeFooter')}" />
+        </isif>
+        </div>
+    </div>
+    <div class="st-global-footer__wrapper st--footer col-12">
+        <div class="container container--narrow">
+            <div class="s-global-footer__navigation footer-container row">
+                <div class="footer-item footer-logo col-lg-3">
+
+                </div>
+                <div class="s-global-footer__section footer-item col-lg collapsible-md column-1">
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <iscontentasset aid="cs-footer-column-1"/>
+                    <iselse/>
+                        <iscontentasset aid="footer-column-1"/>
+                    </isif>
+                </div>
+                <div class="s-global-footer__section footer-item col-lg collapsible-md column-2">
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <iscontentasset aid="cs-footer-column-2"/>
+                    <iselse/>
+                        <iscontentasset aid="footer-column-2"/>
+                    </isif>
+                </div>
+                <div class="s-global-footer__section footer-item col-lg collapsible-md column-3">
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <iscontentasset aid="cs-footer-column-3"/>
+                    <iselse/>
+                        <iscontentasset aid="footer-column-3"/>
+                    </isif>
+                </div>
+                <div class="s-global-footer__section footer-item col-lg collapsible-md column-4">
+                    <isif condition="${siteID !== 'CreativeSnacks'}">
+                        <iscontentasset aid="footer-column-4"/>
+                    <iselse/>
+                        <iscontentasset aid="cs-footer-column-4"/>
+                    </isif>
+                </div>
+                <div class="s-global-footer__section footer-item col-lg collapsible-md column-5">
+                    <isif condition="${siteID !== 'CreativeSnacks'}">
+                        <iscontentasset aid="footer-column-5" />
+                    <iselse/>
+                        <iscontentasset aid="cs-footer-social-navigation"/>
+                    </isif>
+                </div>
+            </div>
+            <div class="st-global-footer__utility s-global-footer__utility row">
+                <isif condition="${siteID !== 'CreativeSnacks'}">
+                    <div class="col-lg-3 s-global-footer__social">
+                            <iscontentasset aid="footer-social-navigation"/>
+                    </div>
+                </isif>
+                <div class="s-global-footer__utility-links col-lg-10">
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <iscontentasset aid="cs-footer-utility-navigation">
+                    <iselse/>
+                        <iscontentasset aid="footer-utility-navigation">
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Klaviyo Include -->
+    <isif condition="${isKlaviyoEnabled}">
+        <isscript>
+        var KlaviyoUtils = require('*/cartridge/scripts/utils/klaviyo/KlaviyoUtils');
+        var context = KlaviyoUtils.getContext();
+        </isscript>
+        <isinclude url="${URLUtils.url('Klaviyo-RenderKlaviyo',
+        'title', request.pageMetaData.title,
+            'pagecontexttype', (!empty(context)) ? ''+context : null,
+            'pagecontexttitle', ('pageContext' in this && !empty(pageContext)) ? ''+pageContext.title : null,
+            'searchterm', request.httpParameterMap.q.stringValue,
+        'searchresultscount', (!empty(pdict.productSearch) ? ''+pdict.productSearch.count : null),
+        'productid', (!empty(pdict.product) ? pdict.product.id : null),
+        'pagecgid',  request.httpParameterMap.cgid.stringValue,
+        'orderno', (!empty(pdict.order) ? pdict.order.orderNumber : null)
+        )}"/>
+    </isif>
+</footer>

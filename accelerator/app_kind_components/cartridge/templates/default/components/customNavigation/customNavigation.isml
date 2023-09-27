@@ -1,0 +1,11 @@
+<isif condition="${!empty(contentAsset.custom.navigation)}">
+    <div class="container th-kind-custom-navigation c-custom-navigation">
+        <div class="row">
+            <div class="col-12">
+                <div class="s-custom-navigation c-custom-navigation__content">
+                    <isprint value="${contentAsset.custom.navigation}" encoding="off" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isif>

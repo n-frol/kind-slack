@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="omsPaymentIndicator">
+                <display-name xml:lang="x-default">OMS Payment Indicator</display-name>
+                <type>enum-of-int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Not Paid</display>
+                        <value>0</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Partially Paid</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Paid</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="JDE">
+                <display-name xml:lang="x-default">JDE</display-name>
+                <attribute attribute-id="isExportedJDE"/>
+                <attribute attribute-id="omsPaymentIndicator"/>
+                <attribute attribute-id="isRefunded"/>
+                <attribute attribute-id="confirmedShipments"/>
+                <attribute attribute-id="sentShipmentEmails"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

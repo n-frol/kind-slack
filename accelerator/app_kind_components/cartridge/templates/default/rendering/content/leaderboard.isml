@@ -1,0 +1,11 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<isif condition="${!empty(pdict.content)}">
+    <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(pdict.content)}" scope="page" />
+    <isset name="assetID" value="${pdict.content.ID}" scope="page" />
+    <isif condition="${!empty(graphicalAsset)}">
+        <isinclude template="components/leaderboard/leaderboard" />
+    </isif>
+</isif>

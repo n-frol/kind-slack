@@ -1,0 +1,229 @@
+
+<isif condition="${pdict.sellable !== false}">
+    <iscache type="relative" minute="0" hour="0">
+      <isscript>
+    var grps = session.getCustomer().getCustomerGroups();
+    var names = [];
+    </isscript>
+    <isloop items="${grps}" var="g">
+        <isscript>
+        names.push(g.ID);
+        </isscript>
+    </isloop>
+    <isset name="product" value="${pdict.product}" scope="page" />
+    <isset name="isQuickView" value="${pdict.isQuickView}" scope="page" />
+    <isset name="isBundle" value="${pdict.product.productType === 'bundle'}" scope="page" />
+    <isset name="wholesaler" value="${dw.system.Site.getCurrent().name === "Kind B2B"}" scope="page" />
+    <isset name="approvedWholesaler" value="${wholesaler && names.indexOf("Approved") > -1}" scope="page" />
+    <isset name="OGEnabled" value="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')}" scope="page" />
+    <isif condition="${empty(product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book'))}">
+    <isset name="snackPackMessage" value="${null}" scope="page" />
+    <iselse>
+        <isset name="snackPackMessage" value="${product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book').priceInfo}" scope="page" />
+    </isif>
+
+
+
+    <isif condition="${wholesaler && !approvedWholesaler}">
+         <div class="quantity">
+            <isif condition="${!empty(product.totalItemQuantity)}">
+                (<isprint value="${product.totalItemQuantity}" style="INTEGER" encoding="off" />
+                <isif condition="${!empty(product.productTypeDetail)}">${product.productTypeDetail}</isif>
+                <isif condition="${!empty(product.containerType)}">
+                    ${Resource.msg('global.per', 'common', null)} ${product.containerType}
+                </isif>)
+            <iselse>
+                ${Resource.msg('global.quantity', 'common', null)}
+            </isif>
+        </div>
+        <isif condition="${names.indexOf("Denied") > -1 }">
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                <b>Unfortunately your application isn't a fit for the Wholesale program at this time. We hope you'll consider ordering snacks from our retail site at
+                <a href="https://www.kindsnacks.com#login">www.kindsnacks.com.</a></b>
+                </div>
+            </div>
+            <iselseif condition="${names.indexOf("Pending") > -1 }">
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                <b>pricing available upon application approval</b>
+                </div>
+            </div>
+            <iselse>
+            <div class="row cart-and-ipay c-product-add-to-cart__inner mt-2">
+                <div class="col-sm-12">
+                    <a href="${URLUtils.https('Home-Show')}#register" class="btn btn-primary js-gtm-apply" style="width:unset; margin-bottom:10px;">Apply to see pricing</a>
+                    <br/>
+                    <isif condition="${!session.isCustomerAuthenticated()}">
+                        ${Resource.msg('label.have-account', 'byob', null)}
+                        <a href="#" class="clear-modals" data-toggle="modal"
+                                data-target="#loginmodal"> ${Resource.msg('label.log-in', 'byob', null)}</a>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    <iselseif condition="${!wholesaler || approvedWholesaler}">
+
+            <!-- Attributes -->
+            <isinclude template="product/components/mainAttributes" />
+            <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                <iscomment>Don't show dropdown for attributes without multiple variants to select from</iscomment>
+                <isif condition="${!empty(attr.values) && attr.values.length === 1}">
+                    <iscontinue>
+                </isif>
+                <div class="w-100 c-product-variation-attribute js-product-variation-attribute" data-attr="${attr.id}">
+                    <isinclude template="product/components/variationAttribute" />
+                    <!-- Size Chart -->
+                    <isif condition="${attr.id === 'gear-size' && !empty(product.sizeChartId)}">
+                        <div class="size-chart c-product-variation-attribute__size-chart">
+                            <isinclude template="product/components/sizeChart" />
+                        </div>
+                    </isif>
+                </div>
+            </isloop>
+
+
+            <div class="order-groove-v2 w-100">
+                <div class="prices-qs w-100">
+                        <!-- Prices -->
+
+                                <div class="js-standard-price standard-price">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/pdpMain" />
+                                </div>
+
+                            <div class="simple-quantity c-qty__wrap">
+                                <isif condition="${!empty(product.totalItemQuantity)}">
+                                    (<isprint value="${product.totalItemQuantity}" style="INTEGER" encoding="off" /> <isif condition="${!empty(product.productTypeDetail)}">${product.productTypeDetail}</isif><isif condition="${!empty(product.containerType)}">${Resource.msg('global.per', 'common', null)}${product.containerType}</isif>)
+                                </isif>
+                            </div>
+                        <div class="impulseUpsellContainer"></div>
+                    </div>
+            </div>
+
+
+            <div class="${OGEnabled ? 's-ordergroove s-pdp-og order-groove-v2' : ''}">
+                <isif condition="${OGEnabled}">
+                    <isscript>
+                        var ProductMgr = require('dw/catalog/ProductMgr');
+                        var OGProduct = ProductMgr.getProduct(product.id);
+                        var snackPack = OGProduct.getPriceModel().getPriceBookPrice("snack-pack-price-book").getValueOrNull();
+                    </isscript>
+                        <isif condition="${isQuickView}">
+                            <isif condition="${!empty(snackPack)}">
+                                <div class="og-offer clearfix" data-og-module="qv_snackpack" data-og-product="*"></div>
+                            <iselse/>
+                                <div class="og-offer clearfix" data-og-module="qv" data-og-product="*"></div>
+                            </isif>
+                        <iselse/>
+                            <isif condition="${!empty(snackPack)}">
+                                <div class="og-offer" data-og-module="pdp_snackpack" data-og-product="*"></div>
+                            <iselse/>
+                                <div class="og-offer" data-og-module="pdp" data-og-product="*"></div>
+                            </isif>
+                        </isif>
+
+                <iselse>
+
+                        <iscomment>The OrderGroove widget can't be made to appear when the product is out of stock.  So instead display a non-functioning</iscomment>
+                        <isinclude template="product/components/pricing/ogMockWidget" />
+
+                </isif>
+            </div>
+
+            <iscomment>Active promo, if applicable, will display with OG price, and should also be removed from normal promo block
+            Saving as a variable allows for coordinating this</iscomment>
+            <isset name="activeProductPromotion" value="" scope="page" />
+            <isif condition="${!empty(dw.campaign.PromotionMgr.activePromotions) && !empty(product)}">
+                <isset name="productPromotions" value="${dw.campaign.PromotionMgr.activeCustomerPromotions.getProductPromotions(product.raw)}" scope="page" />
+
+                <isif condition="${!empty(productPromotions)}">
+                    <isscript>
+                        var PROMOTION_CLASS_PRODUCT = require('dw/campaign/Promotion').PROMOTION_CLASS_PRODUCT;
+                        var lowestPrice;
+                        var promotionIter = productPromotions.iterator();
+                        while (promotionIter.hasNext()) {
+                            var curPromotion = promotionIter.next();
+                            var tempPrice = curPromotion.getPromotionalPrice(product.raw);
+
+                            var tempPrice = !empty(product.options.currentOptionModel)
+                                ? curPromotion.getPromotionalPrice(product.raw, product.options.currentOptionModel)
+                                : curPromotion.getPromotionalPrice(product.raw, product.raw.optionModel);
+
+                            if (curPromotion.promotionClass && curPromotion.promotionClass.equals(PROMOTION_CLASS_PRODUCT) && tempPrice.available && (empty(lowestPrice) || (tempPrice.value < lowestPrice.value))) {
+                                activeProductPromotion = curPromotion;
+                                lowestPrice = tempPrice;
+                            }
+                        }
+                    </isscript>
+                </isif>
+            </isif>
+
+            <div class="js-upsell-container">
+                <isif condition="${product.promotions && product.promotions.length > 0 && product.promotions[0].calloutMsg.length > 0}">
+                    <div class="promotions c-product-add-to-cart__promotions text-left w-100">
+                        <isinclude template="product/components/promotions" />
+                    </div>
+                </isif>
+
+                <isif condition="${!empty(product.options)}">
+                    <isinclude template="product/components/options" />
+                </isif>
+
+                <isinclude template="product/components/productAvailability" />
+
+                <isif condition="${product.raw.custom.isCheckAddressFraud || product.isByobMaster}">
+                    <input type="hidden" name="Quantity" id="Quantity" class="c-qty__input input-text quantity-select js-qty__input" value="1"/>
+
+                <iselse>
+
+                    <isinclude template="product/components/quantity" />
+                    <isif condition="${product.minOrderQuantity > 1}">
+                        <div class="w-100 min-quantity">
+                            <p>A minimum quantity of ${(product.minOrderQuantity.toFixed(0))} is required for this product.</p>
+                        </div>
+                    </isif>
+
+                </isif>
+
+            </div>
+
+            <div class="add-to-cart-actions c-product-add-to-cart js-add-to-cart">
+                <div class="${OGEnabled ? 's-pdp-og' : ''}">
+                    <!-- Cart and [Optionally] Apple Pay -->
+                    <isif condition="${product.isByobMaster}">
+                        <isinclude template="product/components/createByobList" />
+                    <iselseif condition="${pdict.addToCartUrl}"/>
+                        <isinclude template="product/components/addToCartProduct" />
+                    <iselse/>
+                        <isinclude template="product/components/updateProduct" />
+                    </isif>
+                </div>
+            </div>
+
+
+            <div class="hidden-sm-down c-product-details__global-display">
+                <isslot id="product-global-display" description="Displayed under the cart button on the product page" context="global" />
+            </div>
+    </isif>
+<iselse>
+    <div style="min-width:370px">
+        <isprint value="${pdict.nfsmessage}" encoding="off" />
+    </div>
+</isif>
+
+    <isscript>
+        var ProductMgr = require('dw/catalog/ProductMgr');
+        var p = ProductMgr.getProduct(pdict.product.id);
+        var masterID = pdict.product.id;
+        if (p.isVariant) {
+            var master = p.getMasterProduct();
+            masterID = master.ID;
+        } else {
+            masterID = p.ID;
+        }
+    </isscript>
+    <isif condition="${p.custom.showPriceSpider == true}">
+        <div class="ps-widget" ps-sku="${masterID}"></div>
+    </isif>
+

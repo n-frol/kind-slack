@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="yotpoRatingStorage" object-id="M17111">
+        <object-attribute attribute-id="average_score">4.7</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17117">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17118">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17119">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17121">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17124">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17125">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17128">
+        <object-attribute attribute-id="average_score">4.9</object-attribute>
+        <object-attribute attribute-id="total_reviews">10</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17150">
+        <object-attribute attribute-id="average_score">4.9</object-attribute>
+        <object-attribute attribute-id="total_reviews">15</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17156">
+        <object-attribute attribute-id="average_score">4.4</object-attribute>
+        <object-attribute attribute-id="total_reviews">9</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17179">
+        <object-attribute attribute-id="average_score">4.5</object-attribute>
+        <object-attribute attribute-id="total_reviews">17</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17181">
+        <object-attribute attribute-id="average_score">4.1</object-attribute>
+        <object-attribute attribute-id="total_reviews">8</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17190">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17193">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">5</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17224">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17226">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17227">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17228">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17715">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17750">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17751">
+        <object-attribute attribute-id="average_score">4.2</object-attribute>
+        <object-attribute attribute-id="total_reviews">26</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17752">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M17758">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">5</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18052">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">8</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18053">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">5</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18054">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">7</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18055">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">7</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18056">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18070">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18421">
+        <object-attribute attribute-id="average_score">4.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">2</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M18629">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M19338">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M19982">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M19983">
+        <object-attribute attribute-id="average_score">4.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M19984">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M19985">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M20800">
+        <object-attribute attribute-id="average_score">3.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M20801">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M20802">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M20803">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M20805">
+        <object-attribute attribute-id="average_score">4.7</object-attribute>
+        <object-attribute attribute-id="total_reviews">6</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M21014">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M21019">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M21415">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M22402">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M22832">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M23018">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M23048">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M23227">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24201">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24202">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24203">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24205">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24210">
+        <object-attribute attribute-id="average_score">2.7</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24211">
+        <object-attribute attribute-id="average_score">3.2</object-attribute>
+        <object-attribute attribute-id="total_reviews">10</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24443">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M24480">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M25878">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M25879">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26185">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26186">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26187">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26188">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26672">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26674">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26695">
+        <object-attribute attribute-id="average_score">3.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26696">
+        <object-attribute attribute-id="average_score">4.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26697">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26698">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26699">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26700">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26704">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26705">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26706">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26707">
+        <object-attribute attribute-id="average_score">4.1</object-attribute>
+        <object-attribute attribute-id="total_reviews">7</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26709">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26710">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26711">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26712">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26713">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26969">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M26970">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27000">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27171">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27361">
+        <object-attribute attribute-id="average_score">4.8</object-attribute>
+        <object-attribute attribute-id="total_reviews">8</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27362">
+        <object-attribute attribute-id="average_score">4.3</object-attribute>
+        <object-attribute attribute-id="total_reviews">6</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27363">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27369">
+        <object-attribute attribute-id="average_score">4.5</object-attribute>
+        <object-attribute attribute-id="total_reviews">2</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27620">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27740">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27877">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27879">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27880">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27882">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27883">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M27884">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">3</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28195">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">2</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28203">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28204">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28205">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28347">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28348">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28349">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28496">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">4</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28497">
+        <object-attribute attribute-id="average_score">3.5</object-attribute>
+        <object-attribute attribute-id="total_reviews">2</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28499">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">6</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28501">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28503">
+        <object-attribute attribute-id="average_score">5.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">1</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28504">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28505">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28506">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28510">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M28977">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="M29942">
+        <object-attribute attribute-id="average_score">0.0</object-attribute>
+        <object-attribute attribute-id="total_reviews">0</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="yotpoRatingStorage" object-id="MBYOB">
+        <object-attribute attribute-id="average_score">4.7</object-attribute>
+        <object-attribute attribute-id="total_reviews">9</object-attribute>
+    </custom-object>
+
+</custom-objects>

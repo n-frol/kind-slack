@@ -1,0 +1,69 @@
+<isscript>
+    var isByob = typeof isByob !== 'undefined' ? isByob : null;
+    if (empty(isByob) && !empty(pdict.productSearch.isBYOBSearch)) {
+        isByob = pdict.productSearch.isBYOBSearch;
+    } else if (empty(isByob)) {
+        isByob = false;
+    }
+    var dwCategory = null;
+</isscript>
+<isloop items="${pdict.productSearch.productIds}" var="productByCategory" status="loopstate">
+    <isif condition="${productByCategory}">
+        <div class="c-product-set__wrap c-byob-redesign__tile-wrap js-subcategory-container" data-cid="${productByCategory.category.id}"
+            style="display:contents;">
+            <h4 id="${productByCategory.category.id}" class="cluster-category-title">${productByCategory.category.name}</h4>
+            <isif condition="${!dwCategory && pdict.productSearch.category}">
+                <isset name="dwCategory"
+                    value="${dw.catalog.CatalogMgr.getCategory(pdict.productSearch.category.id)}" scope="page" />
+                <isif condition="${!empty(dwCategory) && dw.system.Site.getCurrent().name != " Kind B2B"}">
+                    <isif condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[0]}">
+                        <isslot id="marketing-tile-a" description="Marketing Tile A" context="category"
+                            context-object="${dwCategory}" />
+                        <iselseif
+                            condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[1]}" />
+                        <isslot id="marketing-tile-b" description="Marketing Tile B" context="category"
+                            context-object="${dwCategory}" />
+                        <iselseif
+                            condition="${typeof loopState !== 'undefined' && loopState.count === pdict.productSearch.category.marketingTiles[2]}" />
+                        <isslot id="marketing-tile-c" description="Marketing Tile C" context="category"
+                            context-object="${dwCategory}" />
+                    </isif>
+                </isif>
+            </isif>
+            <isloop items="${productByCategory.products}" var="product" status="loopState">
+                <div class="c-product-tile__wrap no-padding js-show-qty" data-gridindex="${loopState.index}"
+                    data-gridname="${pdict.productSearch.productListName}">
+                    <isobject object="${product.productSearchHit}" view="searchhit">
+                        <isif condition="${pdict.productSearch.category}">
+                            <isif condition="${pdict.productSearch.category.isConfigurationCategory}">
+                                <iscomment> BYOB Category Search Tiles </iscomment>
+                                <isinclude
+                                    url="${URLUtils.url('Tile-ConfigurationCategoryShow', 'pid', product.productID, 'swatches', true, 'ratings', true,
+                                         'showQuickView', true, 'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge', true,
+                                         'cgid', pdict.productSearch.category.id, 'compare', pdict.compareEnabled, 'isbyob', isByob)}" />
+                            <iselse/>
+                                <iscomment> General Category Search Tiles </iscomment>
+                                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true, 'showQuickView', true,
+                                                'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge', true, 'cgid', pdict.productSearch
+                                                .category.id, 'compare', pdict.compareEnabled)}" />
+                            </isif>
+                        <iselse/>
+                            <iscomment> Starter Combo Tiles </iscomment>
+                            <isif
+                                condition="${!empty(pdict.productSearch.isUseSecondaryTile) && pdict.productSearch.isUseSecondaryTile}">
+                                <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true, 'showQuickView', true,
+                                                'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge', true, 'template',
+                                                'product/starterComboTile', 'isbyob', true)}" />
+                            <iselse/>
+                                <iscomment> General Search Tiles </iscomment>
+                                <isinclude
+                                    url="${URLUtils.url('Tile-Show', 'pid', product.productID, 'swatches', true, 'ratings', true, 'showQuickView', true,
+                                         'shortDescription', true, 'totalItemQuantity', true, 'texture', true, 'badge', true)}" />
+                            </isif>
+                        </isif>
+                    </isobject>
+                </div>
+            </isloop>
+        </div>
+    </isif>
+</isloop>

@@ -1,0 +1,4 @@
+<iscomment>Store the variable in the pdict so it doesn't cause an issue when it's not set.</iscomment>
+<isset name="isBundle" value="${true}" scope="pdict" />
+
+<isinclude template="product/productDetails" />

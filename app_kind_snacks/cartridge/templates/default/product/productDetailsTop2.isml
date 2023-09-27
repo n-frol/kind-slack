@@ -1,0 +1,83 @@
+<iscomment>Top/main area of PDP separated out to be used in multiple places</iscomment>
+
+<iscomment> Power Reviews Enabled - Site Pref </iscomment>
+<isset name="isPowerReviewsEnabled"
+    value="${!empty(dw.system.Site.current.getCustomPreferenceValue('PR_Online_Status')) ? dw.system.Site.current
+           .getCustomPreferenceValue('PR_Online_Status') : false}"
+    scope="page" />
+
+<div class="st-product-top ${pdict.templateClass} is-lifestyle">
+    <div
+        class="container st-product-top__container ${pdict.templateClass}__container ${pdict.templateClass}__container--${product.category.id} no-offset show-badge">
+
+        <div class="row st-product-top__row ${pdict.templateClass}__row ${pdict.templateClass}__row--${product.category.id}<isif condition="
+            ${isBundle}"> product-bundle</isif>">
+
+            <isif condition="${!empty(product.badge) && !empty(product.badge.value)}">
+                <div class="badge round-button">
+                    <div class="round-button-circle">
+                        <span class="round-button">${product.badge}</span>
+                    </div>
+                </div>
+            </isif>
+
+            <!-- Product Images Carousel -->
+            <isinclude template="product/components/imageCarousel" />
+
+            <div
+                class="c-product-details st-product-top__section ${pdict.templateClass}__section ${pdict.templateClass}__section--details ${pdict.templateClass}__section--details--${product.category.id}">
+                <!---Breadcrumbs--->
+
+                <iscomment>Scope for product breadcrumbs because we need to maintain the same styles across multiple
+                    templates
+                    Alternatives feel too complicated, since pageBreadcrumbs is used across nearly the entire site
+                </iscomment>
+                <div
+                    class="product-breadcrumb st-product-top__breadcrumb ${pdict.templateClass}__breadcrumb s-product-breadcrumbs">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                </div>
+
+                <!-- Product Name -->
+                <h1 class="product-name c-product-details__name js-product-name" id="productName">
+                    <span class="value" itemprop="name" content="${product.productName}">${product.productName}</span>
+                </h1>
+                <span class="value" itemprop="brand" content="${Resource.msg('global.brandname', 'common', null)}">
+                </span>
+                <span class="value" itemprop="sku" content="${product.masterId}"></span>
+
+                <isif condition="${!empty(product.badge) && !empty(product.badge.value)}">
+                    <div class="st-product-top__callout badge_callout ${pdict.templateClass}__callout">
+                        ${product.badge}
+                    </div>
+                </isif>
+
+                <iscomment>Yotpo Stars</iscomment>
+                <isif condition="${pdict.yotpoWidgetData.isRatingEnabled}">
+                    <div class="w-100 st-product-top__callout ${pdict.templateClass}__callout">
+                        <isinclude template="product/components/productRating" />
+                    </div>
+                    <isif condition="${pdict.yotpoAggregateData && pdict.yotpoAggregateData.total_reviews && pdict.yotpoAggregateData.total_reviews > 0}">
+                        <div itemprop="AggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                            <span class="value" itemprop="ratingCount" content="${pdict.yotpoAggregateData.total_reviews}"></span>
+                            <span class="value" itemprop="ratingValue" content="${pdict.yotpoAggregateData.average_score}"></span>
+                        </div>
+                    </isif>
+                </isif>
+
+                <iscomment> Description for v2 </iscomment>
+                <isif condition="${!product.isByobMaster}">
+                    <div class="description c-product-description st-product-top-product-description">
+                        <isinclude template="product/components/description">
+                    </div>
+                </isif>
+                 <div class="js-product-variation-details w-100">
+                <isscript>
+                    var finalurl = URLUtils.https("") + "/en_US/Product-AddToCart?pid=" + product.id + "&isQuickView=" + isQuickView;
+                </isscript>
+                <isinclude url="${finalurl}" />
+                </div> <!--end variaton details -->
+
+            </div>
+        </div>
+    </div>
+</div>

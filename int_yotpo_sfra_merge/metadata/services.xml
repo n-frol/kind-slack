@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+
+    <service-credential service-credential-id="int_yotpo_sfra_merge.https.get.bottomline.api.cred">
+        <url>https://api.yotpo.com/products/:appkey/:sku/bottomline</url>
+        <user-id/>
+        <password/>
+    </service-credential>
+
+    <service service-id="int_yotpo_sfra_merge.https.get.bottomline.api">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>YotpoRESTAPIEndpoints</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>int_yotpo_sfra.rest.api.profile</profile-id>
+        <credential-id>int_yotpo_sfra_merge.https.get.bottomline.api.cred</credential-id>
+    </service>
+
+
+</services>

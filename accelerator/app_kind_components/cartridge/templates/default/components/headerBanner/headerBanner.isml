@@ -1,0 +1,38 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isinclude template="components/headerBanner/headerBanner_UI" />
+<isif condition="${!empty(graphicalAsset.body)}">
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container">
+            <div class="row">
+    </isif>
+        <div class="header-banner ${assetID} c-header-banner slide-up">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container">
+                    <div class="row">
+            </isif>
+                    <div class="col-12">
+                        <div class="close-button pull-right">
+                            <button type="button" class="close" aria-label="Close">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="32px" viewBox="-7.939 -7.939 32 32" overflow="visible" enable-background="new -7.939 -7.939 32 32" xml:space="preserve">
+                                    <path id="Line-5_1_" fill="none" stroke-width="1.5" stroke-linecap="square" d="M15.203,1.061L1.061,15.203" stroke="currentColor" />
+                                    <path id="Line-5-Copy_1_" fill="none" stroke-width="1.5" stroke-linecap="square" d="M15.203,15.203L1.061,1.061" stroke="currentColor" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="content">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </div>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

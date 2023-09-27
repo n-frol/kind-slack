@@ -1,0 +1,64 @@
+
+<div class="card ghost payment st-checkout-main__ghost ${ isExpressCheckout ? 'checkout-hidden' : '' }">
+    <div class="card-header st-checkout-main__ghost__header__wrap">
+        <span class="checkout-card-header st-checkout-main__ghost__header st-checkout-main__heading h4">${Resource.msg('heading.payment', 'checkout', null)}</span>
+    </div>
+</div>
+
+<iscomment> Payment Form Section </iscomment>
+<div class="card payment-form st-checkout-main__card ${ isExpressCheckout ? 'checkout-hidden' : '' }">
+    <div class="card-header st-checkout-main__header">
+        <h2 class="st-checkout-main__heading h4">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+    </div>
+    <div class="card-body st-checkout-main__content">
+
+        <isscript>
+            var trackingHelpers = require('int_googletagmanager/cartridge/scripts/helpers/trackingHelpers');
+            var isSnackClub = trackingHelpers.isSnackClub();
+        </isscript>
+
+        <isif condition="${isSnackClub}">
+            <isset name="contentAsset" value="${dw.content.ContentMgr.getContent('snack-club-legal')}" scope="page" />
+            <isif condition="${!empty(contentAsset)}">
+                <isprint value="${contentAsset.custom.body}" encoding="off" />
+            </isif>
+        </isif>
+
+        <iscomment> Payment Form </iscomment>
+        <form autocomplete="on" method="POST" action="${URLUtils.url('CheckoutServices-SubmitPayment')}"
+            data-address-mode="${!pdict.order.billing.billingAddress.address ? 'new' : 'edit'}"
+            <isprint value=${pdict.forms.billingForm.attributes} encoding="off" /> novalidate>
+
+            <!-------------------------------------------------------------------------->
+            <!-- Payment Options                                                      -->
+            <!-------------------------------------------------------------------------->
+            <fieldset class="c-checkout-billing__methods">
+                <isinclude template="checkout/billing/paymentOptions" />
+            </fieldset>
+
+            <!-------------------------------------------------------------------------->
+            <!-- Billing Address Selector                                             -->
+            <!-------------------------------------------------------------------------->
+            <fieldset class="address-selector-block">
+                <div class="form-group" style="overflow-x:hidden;">
+
+                    <isinclude template="checkout/billing/addressSelector" />
+                    <div class="invalid-feedback"></div>
+                    <div class="row st-checkout-main__update-add">
+                        <a class="btn-show-details st-checkout-main__update">${Resource.msg('action.update.address', 'checkout', null)}</a>
+                        <a class="btn-add-new st-checkout-main__add-new">${Resource.msg('action.add.new', 'checkout', null)}</a>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-------------------------------------------------------------------------->
+            <!-- Billing Address                                                      -->
+            <!-------------------------------------------------------------------------->
+            <fieldset class="billing-address">
+                <isinclude template="checkout/billing/billingAddress" />
+            </fieldset>
+
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+        </form>
+    </div>
+</div>

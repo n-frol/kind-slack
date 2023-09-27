@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="autoplaySpeed">
+                    <display-name xml:lang="x-default">Autoplay Speed</display-name>
+                    <type>double</type>
+                    <mandatory-flag>false</mandatory-flag>
+                    <externally-managed-flag>false</externally-managed-flag>
+                    <default-value>3000.0</default-value>
+                </attribute-definition>
+                <attribute-definition attribute-id="isArrows">
+                    <display-name xml:lang="x-default">Are Navigation Arrows Enabled?</display-name>
+                    <type>boolean</type>
+                    <mandatory-flag>false</mandatory-flag>
+                    <externally-managed-flag>false</externally-managed-flag>
+                    <default-value>false</default-value>
+                </attribute-definition>
+                <attribute-definition attribute-id="isAutoplay">
+                    <display-name xml:lang="x-default">Is Autoplay Enabled?</display-name>
+                    <type>boolean</type>
+                    <mandatory-flag>false</mandatory-flag>
+                    <externally-managed-flag>false</externally-managed-flag>
+                    <default-value>false</default-value>
+                </attribute-definition>
+                <attribute-definition attribute-id="isDots">
+                    <display-name xml:lang="x-default">Is Dot Navigation Enabled?</display-name>
+                    <type>boolean</type>
+                    <mandatory-flag>false</mandatory-flag>
+                    <externally-managed-flag>false</externally-managed-flag>
+                    <default-value>false</default-value>
+                </attribute-definition>
+            </custom-attribute-definitions>
+            <group-definitions>
+                <attribute-group group-id="SliderConfiguration">
+                    <display-name xml:lang="x-default">Slider Configuration</display-name>
+                    <attribute attribute-id="isAutoplay"/>
+                    <attribute attribute-id="autoplaySpeed"/>
+                    <attribute attribute-id="isArrows"/>
+                    <attribute attribute-id="isDots"/>
+                </attribute-group>
+            </group-definitions>
+        </type-extension>
+
+    <type-extension type-id="Appeasement">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="appeasementNumber">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="createdBy">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="creationDate"/>
+            <attribute-definition attribute-id="invoiceNumber">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="lastModified"/>
+            <attribute-definition attribute-id="modifiedBy">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="reasonCode">
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Dissatisfied Customer</display>
+                        <value>DISSATISFIED_CUSTOMER</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Manufacturing Defect</display>
+                        <value>MANUFACTURING_DEFECT</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Delayed Delivery</display>
+                        <value>DELAYED_DELIVERY</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Product Not Received</display>
+                        <value>PRODUCT_NOT_RECEIVED</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="reasonNote">
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="status">
+                <value-definitions immutable="true">
+                    <value-definition>
+                        <display xml:lang="x-default">OPEN</display>
+                        <value>OPEN</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">COMPLETED</display>
+                        <value>COMPLETED</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </system-attribute-definitions>
+    </type-extension>
+</metadata>

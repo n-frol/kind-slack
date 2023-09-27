@@ -1,0 +1,27 @@
+{
+  "name": "Gifting, Full Width Coupon",
+  "description": "Coupon full width under banner",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "richtext",
+          "name": "Content",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "background",
+          "name": "Background",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

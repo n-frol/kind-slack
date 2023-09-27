@@ -1,0 +1,56 @@
+/* ============================================================================
+    Bio Block
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Bio Block component
+ */
+
+$ns: th-kind-bio-block;
+$component: c-bio-block;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Bio Block Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__item {
+                &__content {
+                    // Bio Block Heading
+                    &__heading {
+                        font-family: $font-family-primary;
+                    }
+
+                    // Bio Block Body
+                    &__body {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Bio Block Links
+                    &__link {
+                        &__title {
+                            font-family: $font-family-primary;
+                            &:hover {
+                                color: $san-marino;
+                            }
+                        }
+                        &__description {
+                            font-family: $font-family-secondary;
+                        }
+                    }
+                    &__links {
+                        font-family: $font-family-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+    }
+
+}

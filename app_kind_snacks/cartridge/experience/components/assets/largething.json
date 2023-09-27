@@ -1,0 +1,63 @@
+{
+  "name": "Large Double Thing",
+  "description": "Image, black box, two CTA",
+  "group": "Gifting",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "background",
+          "name": "Image Desktop",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "background_tab",
+          "name": "Image Tablet",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "background_mobile",
+          "name": "Image Mobile",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "bannertext",
+          "name": "Banner Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "headertext",
+          "name": "Header Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "copytext",
+          "name": "Copy Text",
+          "type": "markup",
+          "required": false
+        },
+        {
+          "id": "productid",
+          "name": "Quick view product",
+          "type": "product",
+          "required": false
+        },
+        {
+          "id": "anchor",
+          "name": "Anchor ID",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

@@ -1,0 +1,38 @@
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="pli-shipping-summary-template" class="d-none" >
+    <h3 class="shipping-header-text st-checkout-main__sub-title subtitle st-checkout-main__sub-title subtitle--summary">${Resource.msg('heading.shipping.to', 'checkout', null)}:</h3>
+    <p class="st-checkout-main__summary-details subtext">
+        <span class="ship-to-message"></span>
+        <span class="ship-to-name"></span>
+        <span class="ship-to-address1"></span>
+        <span class="ship-to-address2"></span>
+        <span class="ship-to-city-st-zip"><span class="ship-to-city"></span> <span class="ship-to-st"></span> <span class="ship-to-zip"></span> </span>
+        <span class="ship-to-email"></span>
+        <span class="ship-to-phone"></span>
+    </p>
+    <h5 class="st-checkout-main__sub-title subtitle">${Resource.msg('heading.shipping.method', 'checkout', null)}:<span></span></h5>
+    <div class="row c-checkout-shipping-address__selected-method">
+        <p class="col-8 c-checkout-shipping-address__selected-method__label subtext">
+            <span class="display-name c-checkout-shipping-address__selected-method__label__name"></span>
+            <span class="arrival-time"></span>
+        </p>
+        <p class="col-4 text-right">
+            <span class="price c-checkout-shipping-address__selected-method__price subtext">
+                
+            </span>
+        </p>
+    </div>
+
+    <div class="summary-details gift-summary">
+        <h3 class="st-checkout-main__sub-title subtitle">${Resource.msg('heading.gift.message', 'checkout', null)}</h3>
+        <div class="c-checkout-shipping-gift__summary subtext">
+            <div class="c-checkout-shipping-gift__summary__label js-gift-summary-label d-none">
+                <span class="d-none js-gift-to">${Resource.msg('label.gift.to', 'checkout', null)}</span>
+                <span class="d-none js-gift-from">${Resource.msg('label.gift.from', 'checkout', null)}</span>
+            </div>
+            <div class="gift-message-summary"></div>
+        </div>
+    </div>
+</div>

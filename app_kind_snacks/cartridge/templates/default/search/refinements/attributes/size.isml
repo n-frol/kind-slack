@@ -1,0 +1,10 @@
+<li title="${refinementValue.title}" class="c-refinements__values__item col-sm-2 col-md-12 ${!refinementValue.selectable ? 'disabled' : ''}">
+    <a href="${refinementValue.url}" class="${!refinementValue.selectable ? 'disabled' : ''} c-refinements__values__item__link" <isif condition="${!refinementValue.selectable}">disabled</isif>>
+        <isif condition="${refinementValue.selected && refinementValue.selectable}">
+            <span class="c-refinements__values__item__link__custom-check-checked is-checked"></span>
+        <iselse>
+            <span class="c-refinements__values__item__link__custom-check"></span>>
+        </isif>
+        <span class="${refinementValue.swatchId}<isif condition="${refinementValue.selected && refinementValue.selectable}">is-selected</isif>">${refinementValue.displayValue}</span>
+    </a>
+</li>

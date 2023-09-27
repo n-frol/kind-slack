@@ -1,0 +1,31 @@
+<!--- TEMPLATENAME: paymentOperatorContent.isml --->
+<isscript>
+    var formHelpers = require('/int_computop/cartridge/scripts/computop/helpers/formHelpers');
+
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var isActive = selectedPaymentInstrument && selectedPaymentInstrument.paymentMethod === paymentOption.ID;
+
+    // If no instrument is selected, go to default
+    if (empty(selectedPaymentInstrument)) {
+        // Switch to having Paypal as the active default if the customer's first saved payment method (their default), is a Paypal agreement
+        if (!empty(pdict.customer) && !empty(pdict.customer.customerPaymentInstruments) && !empty(pdict.customer.customerPaymentInstruments[0].creditCardType) && pdict.customer.customerPaymentInstruments[0].creditCardType === 'PayPal') {
+            if (paymentOption.ID.equals('PAYMENTOPERATOR_PAYPAL')) {
+                isActive = true;
+            }
+        } else if (paymentOption.ID.equals('PAYMENTOPERATOR_CREDIT_DIRECT')){
+            // Default to showing credit card
+            isActive = true;
+        }
+    }
+</isscript>
+<isif condition="${ formHelpers.getPaymentForm(paymentOption.ID) }">
+    <isscript>
+        var templateName = "checkout/billing/paymentOptions/paymentOperatorContent/" + paymentOption.ID;
+        var contentName = paymentOption.ID.toLowerCase() + '-content';
+    </isscript>
+
+    <div class="tab-pane ${contentName + (isActive ? ' active' : '')}" id="${contentName}" role="tabpanel">
+        <isinclude template="${ templateName }" />
+    </div>
+</isif>

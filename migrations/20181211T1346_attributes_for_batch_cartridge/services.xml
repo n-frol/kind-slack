@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="redshift.sftp.credentials">
+        <url>sftp://azsftp.kindsnacks.com</url>
+        <user-id>SFCC</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+    <service-profile service-profile-id="redshift.sftp.profile">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>1</rate-limit-calls>
+        <rate-limit-millis>1000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>1</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+    <service service-id="redshift.sftp">
+        <service-type>SFTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>redshiftsftp</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>false</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>redshift.sftp.profile</profile-id>
+        <credential-id>redshift.sftp.credentials</credential-id>
+    </service>
+</services>

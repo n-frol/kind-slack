@@ -1,0 +1,11 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isdecorate template="common/layout/page">
+
+    <isslot id="folder-slot-a" context="folder" context-object="${pdict.contentSearch.folder}" description="Slot for displaying content relevant to the current folder" />
+    <isslot id="folder-slot-b" context="folder" context-object="${pdict.contentSearch.folder}" description="Slot for displaying content relevant to the current folder" />
+    <isslot id="folder-slot-c" context="folder" context-object="${pdict.contentSearch.folder}" description="Slot for displaying content relevant to the current folder" />
+    <isslot id="folder-slot-d" context="folder" context-object="${pdict.contentSearch.folder}" description="Slot for displaying content relevant to the current folder" />
+    <isslot id="folder-slot-e" context="folder" context-object="${pdict.contentSearch.folder}" description="Slot for displaying content relevant to the current folder" />
+
+</isdecorate>

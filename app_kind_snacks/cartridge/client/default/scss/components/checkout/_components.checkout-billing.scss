@@ -1,0 +1,54 @@
+/* ============================================================================
+Checkout Billing
+============================================================================ */
+
+/**
+ * Establish styles for checkout page's payment block
+ */
+
+$ns: c-checkout-billing;
+
+.#{$ns} {
+    &__methods {
+        padding-bottom: 10px;
+    }
+    &__payment-instruments {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    &__saved-payment-instrument {
+        line-height: 1.45;
+
+        &--selected {
+            background-color: $grey1;
+        }
+        &__code {
+            @include media-breakpoint-up(md) {
+                flex-basis: 28%;
+                max-width: 28%;
+            }
+        }
+        &__info {
+            @include media-breakpoint-up(md) {
+                flex-basis: 72%;
+                max-width: 72%;
+            }
+            padding-top: 5px;
+        }
+    }
+    &__add-payment {
+        &__btn {
+            margin-top: $setting-gutter;
+        }
+    }
+}
+
+#payonaccount-content {
+    &.is-approved .alert-danger {
+       display: none;
+    }
+    p {
+        color: black;
+        font-weight: bold;
+    }
+}

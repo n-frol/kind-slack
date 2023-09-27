@@ -1,0 +1,198 @@
+<!--- TEMPLATENAME: PAYMENTOPERATOR.isml --->
+<isset name="klarnaFields" value="${ pdict.forms.billingForm.klarna }" scope="page"/>
+
+<fieldset class="klarna-form">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group-multiple required">
+                <label class="form-control-label" for="year">${Resource.msg('paymentoperator.dob','paymentoperator',null)}</label>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ klarnaFields.year.mandatory === true}>required</isif>
+        ${ klarnaFields.year.htmlName }">
+                <label class="form-control-label checkout-hidden" for="year"></label>
+                <select class="form-control custom-select" id="year"
+                    <isprint value=${klarnaFields.year.attributes} encoding="off"/>>
+                    <isloop items=${klarnaFields.year.options} var="year">
+                        <option id="${year.id}" value="${year.htmlValue}"
+                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                            && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                            && year.id == pdict.order.billing.payment.selectedPaymentInstruments[0].year}">
+                            selected
+                        </isif> >
+                        ${year.label}
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ klarnaFields.month.mandatory === true}>required</isif>
+        ${ klarnaFields.month.htmlName }">
+                <label class="form-control-label checkout-hidden" for="month"></label>
+                <select class="form-control custom-select" id="month"
+                    <isprint value=${klarnaFields.month.attributes} encoding="off"/>>
+                    <isloop items=${klarnaFields.month.options} var="month">
+                        <option id="${month.id}" value="${month.htmlValue}"
+                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                && month.id == pdict.order.billing.payment.selectedPaymentInstruments[0].month}">
+                            selected
+                        </isif> >
+                        ${month.label}
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group
+        <isif condition=${ klarnaFields.day.mandatory === true}>required</isif>
+        ${ klarnaFields.day.htmlName }">
+                <label class="form-control-label checkout-hidden" for="day"></label>
+                <select class="form-control custom-select" id="day"
+                    <isprint value=${klarnaFields.day.attributes} encoding="off"/> autocomplete="pm-day">
+                    <isloop items=${klarnaFields.day.options} var="day">
+                        <option id="${day.id}" value="${day.htmlValue}"
+                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                    && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                    && day.id == pdict.order.billing.payment.selectedPaymentInstruments[0].day}">
+                            selected
+                        </isif> >
+                        ${day.label}
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group
+        <isif condition=${ klarnaFields.gender.mandatory === true }>required</isif>
+        ${ klarnaFields.gender.htmlName }">
+                <label class="form-control-label" for="gender">${Resource.msg('resource.gender','forms',null)}</label>
+
+                <select class="form-control custom-select" id="gender"
+                <isprint value=${klarnaFields.gender.attributes} encoding="off"/> autocomplete="pm-gender">
+                    <isloop items=${klarnaFields.gender.options} var="gender">
+                        <option id="${gender.id}" value="${gender.htmlValue}"
+                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                && gender.id == pdict.order.billing.payment.selectedPaymentInstruments[0].gender}">
+                            selected
+                        </isif> >
+                        ${ gender.label }
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ klarnaFields.ssn.mandatory === true }>required</isif>
+            ${ klarnaFields.ssn.htmlName }">
+                <label class="form-control-label" for="klarna_ssn">${ Resource.msg('klarna.ssn','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control ssn" id="klarna_ssn"
+                           value=""
+                    <isprint value=${ klarnaFields.ssn.attributes } encoding="off"/>
+                    autocomplete="ssn"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ klarnaFields.mobilenumber.mandatory === true }>required</isif>
+            ${ klarnaFields.mobilenumber.htmlName }">
+                <label class="form-control-label" for="klarna_mobilenumber">${ Resource.msg('klarna.mobilenumber','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control mobilenumber" id="klarna_mobilenumber"
+                           value=""
+                    <isprint value=${ klarnaFields.mobilenumber.attributes } encoding="off"/>
+                    autocomplete="mobilenumber"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ klarnaFields.housenumber.mandatory === true }>required</isif>
+            ${ klarnaFields.housenumber.htmlName }">
+                <label class="form-control-label" for="klarna_housenumber">${ Resource.msg('klarna.housenumber','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control housenumber" id="klarna_housenumber"
+                           value=""
+                    <isprint value=${ klarnaFields.housenumber.attributes } encoding="off"/>
+                    autocomplete="housenumber"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+                <isif condition=${ klarnaFields.companyorperson.mandatory === true }>required</isif>
+                ${ klarnaFields.companyorperson.htmlName }">
+                <label class="form-control-label" for="klarna_companyorperson">${Resource.msg('klarna.companyorperson','forms',null)}</label>
+                <select class="form-control custom-select" id="klarna_companyorperson" <isprint value=${ klarnaFields.companyorperson.attributes} encoding="off"/>>
+                    <isloop items=${ klarnaFields.companyorperson.options } var="companyorperson">
+                        <option id="${ companyorperson.id }" value="${ companyorperson.htmlValue }"
+                        <isif condition="${pdict.order.billing.payment.selectedPaymentInstruments
+                                    && pdict.order.billing.payment.selectedPaymentInstruments.length > 0
+                                    && companyorperson.id == pdict.order.billing.payment.selectedPaymentInstruments[0].companyorperson}">
+                            selected
+                        </isif> >
+                        ${ companyorperson.label }
+                        </option>
+                    </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group
+            <isif condition=${ klarnaFields.reference.mandatory === true }>required</isif>
+            ${ klarnaFields.reference.htmlName }">
+                <label class="form-control-label" for="klarna_reference">${ Resource.msg('klarna.reference','forms',null) }</label>
+                <div class="">
+                    <input type="text" class="form-control reference" id="klarna_reference"
+                           value=""
+                    <isprint value=${ klarnaFields.reference.attributes } encoding="off"/>
+                    autocomplete="reference"
+                    >
+                    <div class="invalid-feedback"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</fieldset>
+

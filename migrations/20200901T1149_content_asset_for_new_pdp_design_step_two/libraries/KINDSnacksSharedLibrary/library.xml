@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="byob-navigation">
+        <display-name xml:lang="x-default">BYOB Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template>rendering/content/content-navigation.isml</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="childrenContentAssetIDS">
+                <value>nav-pick-a-starter-combo</value>
+                <value>nav-select-some-snacks</value>
+            </custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="nav-pick-a-starter-combo">
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p class="c-product-details__text-not-sure"&gt;&lt;strong &gt;Not sure where to start?&lt;/strong&gt;&lt;/p&gt;&#13;
+&lt;p class="c-product-details__text-not-sure__description" &gt;Let us do the hard part. Choosing one of our pre-selected assortments will fill your box with some of our favorite snacks, but you can swap out any and make it your own!&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">curated assortment</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">KIND-img1.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Page-Show', 'cid', 'starter-combos')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="nav-select-some-snacks">
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetHeading">customize it myself</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">KIND-img2.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-Show', 'cgid', 'byob')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

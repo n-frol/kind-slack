@@ -1,0 +1,16 @@
+/* ============================================================================
++Header Banner
++============================================================================ */
+
+/**
++ * Establish styles for the header banner above the header itself
++ * This is the element that can be slid closed
++ */
+
+ @import '~kind/components/header/components.banner';
+
+$ns: c-header-banner;
+
+.#{$ns} {
+    font-weight: normal;
+}

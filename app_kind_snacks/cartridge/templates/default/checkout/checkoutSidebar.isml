@@ -1,0 +1,32 @@
+<!----------------------------------------------------------------------------------->
+<!-- Order Totals, Details and Summary -->
+<!----------------------------------------------------------------------------------->
+<div class="st-sidebar">
+    <isif condition="${!session.isCustomerAuthenticated()}">
+        <div class="st-sidebar-container force380">
+            <isinclude template="checkout/checkoutSidebarLogin" />
+        </div>
+         <div class="sidebar-padder"></div>
+        <iselse>
+            <isinclude template="checkout/checkoutSidebarLogin" />
+
+    </isif>
+    <div class="st-sidebar-container">
+        <isinclude template="checkout/checkoutSidebarContent" />
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 769px) {
+        .force380 {
+            min-height: unset;
+        }
+        .st-sidebar {
+            order: 1;
+        }
+
+        .st-checkout-main {
+            order: 2;
+        }
+    }
+</style>

@@ -1,0 +1,32 @@
+/* ============================================================================
+Checkout Price Summary
+============================================================================ */
+
+/**
+ * Establish styles for checkout page's price summary block
+ */
+
+$ns: c-checkout-price-summary;
+
+.#{$ns} {
+    margin-bottom: 0;
+    padding: 3px 0;
+
+    &__item {
+        &__label,
+        &__amt {
+            margin-bottom: 11px;
+        }
+    }
+    &__total {
+        border-top: 2px solid $primary;
+        margin-top: 2px;
+        padding-bottom: 0;
+        padding-top: 20px;
+
+        &__label,
+        &__amt {
+            margin-bottom: 0;
+        }
+    }
+}

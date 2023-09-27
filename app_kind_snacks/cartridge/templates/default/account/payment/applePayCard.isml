@@ -1,0 +1,35 @@
+<iscomment> Computop Custom Variables </iscomment>
+<isset name="paymentOperatorCCNrClass" value="${paymentInstrument.paymentOperatorCCNr ? 'paymentoperator-card ' : '';}" scope="page" />
+<isset name="paymentInstrumentUUID" value="${'uuid-' + paymentInstrument.UUID}" scope="page" />
+
+<div class="${paymentOperatorCCNrClass}row justify-content-center" id="${paymentInstrumentUUID}">
+    <div class="col-sm-8 col-md-8 c-account-dashboard__summary-page">
+        <div class="card c-account-dashboard__card-body">
+            <isinclude template="account/payment/paymentCardHeader" />
+            <div class="card-body card-body-positioning">
+                <div>
+                    <iscomment> Card Type </iscomment>
+                    <p>${Resource.msg('label.payment.credit', 'account', null)} ${paymentInstrument.creditCardType}</p>
+
+                    <iscomment> Masked Card #</iscomment>
+                    <p>***************${paymentInstrument.maskedCreditCardNumber}</p>
+                </div>
+
+                <iscomment> Remove payment method button </iscomment>
+                <isif condition="${paymentInstrument.UUID !== pdict.defaultPaymentInstrument}">
+                    <button type="button" class="c-account-dashboard__remove-btn remove-payment" data-toggle="modal"
+                        data-target="#deletePaymentModal" data-id="${paymentInstrument.UUID}" data-card="${paymentInstrument.maskedCreditCardNumber}"
+                        data-url="${pdict.actionUrl}">
+                        &times;
+                    </button>
+                </isif>
+            </div>
+
+            <iscomment> Make default payment instrument button </iscomment>
+            <isif condition="${paymentInstrument.UUID !== pdict.defaultPaymentInstrument}">
+                <button class="js-make-payment-instrument-default" data-url="${URLUtils.url('PaymentInstruments-SetDefaultPayment')}"
+                    data-uuid="${paymentInstrument.UUID}">${Resource.msg('label.make.default', 'forms', 'null')}</button>
+            </isif>
+        </div>
+    </div>
+</div>

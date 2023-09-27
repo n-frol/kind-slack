@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="general-error-a" context="global" configuration-id="general-error-a" default="true" assigned-to-site="true">
+        <template>slots/product/grid-product.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <products>
+                <product product-id="289"/>
+                <product product-id="290"/>
+                <product product-id="292"/>
+                <product product-id="293"/>
+                <product product-id="294"/>
+                <product product-id="295"/>
+            </products>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

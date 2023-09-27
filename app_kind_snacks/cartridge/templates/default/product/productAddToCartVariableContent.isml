@@ -1,0 +1,146 @@
+<iscomment>Content that varies based on the status of the product, and which will need to be pulled in every time the variation is changed, if applicable</iscomment>
+
+<isset name="product" value="${pdict.product}" scope="page" />
+
+<isif condition="${empty(product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book'))}">
+    <isset name="snackPackMessage" value="${null}" scope="page" />
+<iselse>
+    <isset name="snackPackMessage" value="${product.raw.getPriceModel().getPriceBookPriceInfo('snack-pack-price-book').priceInfo}" scope="page" />
+</isif>
+
+<iscomment>Active promo, if applicable, will display with OG price, and should also be removed from normal promo block
+Saving as a variable allows for coordinating this</iscomment>
+<isset name="activeProductPromotion" value="" scope="page" />
+<isif condition="${!empty(dw.campaign.PromotionMgr.activePromotions) && !empty(product)}">
+    <isset name="productPromotions" value="${dw.campaign.PromotionMgr.activeCustomerPromotions.getProductPromotions(product.raw)}" scope="page" />
+
+    <isif condition="${!empty(productPromotions)}">
+        <isscript>
+            var PROMOTION_CLASS_PRODUCT = require('dw/campaign/Promotion').PROMOTION_CLASS_PRODUCT;
+            var lowestPrice;
+            var promotionIter = productPromotions.iterator();
+            while (promotionIter.hasNext()) {
+                var curPromotion = promotionIter.next();
+                var tempPrice = curPromotion.getPromotionalPrice(product.raw);
+
+                var tempPrice = !empty(product.options.currentOptionModel)
+                    ? curPromotion.getPromotionalPrice(product.raw, product.options.currentOptionModel)
+                    : curPromotion.getPromotionalPrice(product.raw, product.raw.optionModel);
+
+                if (curPromotion.promotionClass && curPromotion.promotionClass.equals(PROMOTION_CLASS_PRODUCT) && tempPrice.available && (empty(lowestPrice) || (tempPrice.value < lowestPrice.value))) {
+                    activeProductPromotion = curPromotion;
+                    lowestPrice = tempPrice;
+                }
+            }
+        </isscript>
+    </isif>
+</isif>
+
+<!-- Product Availability -->
+<isif condition="${product.outOfStock}">
+    <div class="row align-items-end mb-2 c-product-add-to-cart__out-of-stock">
+        <iscomment>Keep empty block to mirror layout on in-stock comp</iscomment>
+        <div class="col prices c-product-add-to-cart__prices pb-0 pb-md-2">
+            <!-- Prices -->
+        </div>
+        <!-- Applicable Promotions -->
+        <div class="col promotions c-product-add-to-cart__promotions text-left">
+            <isinclude template="product/components/promotions" />
+        </div>
+    </div>
+    <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')}">
+        <div class="s-ordergroove s-pdp-og">
+            <iscomment>The OrderGroove widget can't be made to appear when the product is out of stock.  So instead display a non-functioning</iscomment>
+            <isinclude template="product/components/pricing/ogMockWidget" />
+        </div>
+    </isif>
+    <isinclude template="product/components/productAvailability" />
+</isif>
+<isif condition="${!product.outOfStock}">
+    <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')}">
+        <div class="row align-items-end mb-2">
+            <iscomment>If we're using the OrderGroove price, make the intial layout better match the widget's to minimize the "jump" when it loads</iscomment>
+            <isif condition="${product.autoShipEligible && !empty(product.price.ogPrice)}">
+                <div class="col prices c-product-add-to-cart__prices pb-0 pb-md-2">
+                    <!-- Applicable Promotions -->
+                    <div class="col promotions c-product-add-to-cart__promotions text-left">
+                        <isinclude template="product/components/promotions" />
+                    </div>
+                    <!-- Prices --> 
+                    <div class="prices pb-0 pt-0pl-3 u-width-100 position-relative">
+                        <isset name="price" value="${product.price}" scope="page" />
+                        <isinclude template="product/components/pricing/main" />
+                    </div>
+                </div>
+            <iselse>
+                <div class="col prices c-product-add-to-cart__prices pb-0 pb-md-2">
+                    <!-- Prices -->
+                    <div class="prices pb-0 pb-md-2">
+                        <isset name="price" value="${product.price}" scope="page" />
+                        <isinclude template="product/components/pricing/main" />
+                    </div>
+                </div>
+                <!-- Applicable Promotions -->
+                <div class="col promotions c-product-add-to-cart__promotions text-left">
+                    <isinclude template="product/components/promotions" />
+                </div>
+            </isif>
+        </div>
+        <isscript>
+            var ProductMgr = require('dw/catalog/ProductMgr');
+            var OGProduct = ProductMgr.getProduct(product.id);
+            var snackPack = OGProduct.getPriceModel().getPriceBookPrice("snack-pack-price-book").getValueOrNull();
+        </isscript>
+        <div class="s-ordergroove s-pdp-og">
+            <isif condition="${isQuickView}">
+                <isif condition="${!empty(snackPack)}">
+                    <div class="og-offer clearfix" data-og-module="qv_snackpack" data-og-product="*"></div>
+                <iselse/>
+                    <div class="og-offer clearfix" data-og-module="qv" data-og-product="*"></div>
+                </isif>
+            <iselse/>
+                <isif condition="${!empty(snackPack)}">
+                    <div class="og-offer" data-og-module="pdp_snackpack" data-og-product="*"></div>
+                <iselse/>
+                    <div class="og-offer" data-og-module="pdp" data-og-product="*"></div>
+                </isif>
+            </isif>
+            <div class="js-og-pricing c-ordergroove-pricing">
+                <div class="js-og-pricing__ad-hoc c-ordergroove-pricing__ad-hoc"></div>
+                <div class="js-og-pricing__subscription c-ordergroove-pricing__subscription"></div>
+            </div>
+        </div>
+    <iselse>
+        <iscomment>If OrderGroove isn't enabled at all, use the standard price/promotions layout</iscomment>
+        <div class="col prices c-product-add-to-cart__prices pb-0 pb-md-2">
+            <!-- Prices -->
+            <div class="prices pb-0 pb-md-2">
+                <isset name="price" value="${product.price}" scope="page" />
+                <isinclude template="product/components/pricing/main" />
+            </div>
+        </div>
+        <!-- Applicable Promotions -->
+        <div class="col promotions c-product-add-to-cart__promotions text-left">
+            <isinclude template="product/components/promotions" />
+        </div>
+    </isif>
+
+    <isinclude template="product/components/productAvailability" />
+
+    <div class="add-to-cart-actions c-product-add-to-cart js-add-to-cart">
+        <div class="s-pdp-og">
+            <!-- Cart and [Optionally] Apple Pay -->
+            <isif condition="${product.isByobMaster}">
+                <isinclude template="product/components/createByobList" />
+            <iselseif condition="${pdict.addToCartUrl}"/>
+                <isinclude template="product/components/addToCartProduct" />
+            <iselse/>
+                <isinclude template="product/components/updateProduct" />
+            </isif>
+
+            <div class="c-ordergroove-pricing c-ordergroove-pricing--ad-hoc js-og-pricing--ad-hoc">
+                <span class="js-og-pricing__ad-hoc c-ordergroove-pricing__ad-hoc"></span>
+            </div>
+        </div>
+    </div>
+</isif>

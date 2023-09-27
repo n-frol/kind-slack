@@ -1,0 +1,30 @@
+<isinclude template="components/modules" sf-toolkit="off" />
+<div id="byob-pdp-empty-list" class="modal st-modal js-byob-alert-pdp">
+    <div class="modal-dialog st-modal__dialog c-starter-combo-alert fade show" role="alert" aria-labelledby="dialog-heading">
+     <h2 id="dialog-heading">Remove ${pdict.product.id}</h2>
+        <div class="modal-content st-modal__content c-starter-combo-alert__content">
+            <div class="modal-header st-modal__header delete-confirmation-header justify-content-end">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body st-modal__body">
+                <iscomment> Content Asset </iscomment>
+                <div class="c-starter-combo-alert__content-asset">
+                    <iscontentasset aid="byob-empty-your-box" />
+                </div>
+            </div>
+
+            <iscomment> Action Buttons </iscomment>
+            <div class="modal-footer st-modal__footer c-starter-combo-alert__footer">
+                <button type="button"
+                    class="btn btn-primary js-byob-confirm-empty"
+                    data-add-url="${!empty(pdict.addToCartUrl) ? pdict.addToCartUrl : ''}"
+                    data-pid="${pdict.product.id}">
+                    ${Resource.msg('button.byob.emptyyourbox', 'product', null)}
+                </button>
+                <button type="button" class="btn btn-secondary js-byob-close-alert" data-dismiss="alert" aria-label="Cancel">
+                    ${Resource.msg('button.byob.cancel', 'product', null)}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

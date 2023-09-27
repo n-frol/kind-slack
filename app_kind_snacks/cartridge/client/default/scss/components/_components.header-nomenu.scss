@@ -1,0 +1,27 @@
+/* ============================================================================
+Header - No menu
+============================================================================ */
+
+/**
+ * Establish styles for simplified (nomenu) version of the site header
+ */
+
+$ns: "c-header-nomenu";
+
+.#{$ns} {
+    background-color: $primary;
+
+    &__row {
+        &--brand {
+            justify-content: center;
+            padding-bottom: 16px;
+        }
+    }
+    &__logo-link {
+        width: 55px;
+
+        &__img {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,75 @@
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+/**
+ * Styles the button compenent
+ */
+
+ // !imporatant used to overwrite ugly bootstrap
+
+$ns: c-email-signup;
+
+.#{$ns} {
+
+    &__form {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 348px;
+        width: 100%;
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    }
+
+    &__input,
+    &__input[type="text"] {
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        height: 44px;
+        max-width: 216px;
+        width: 100% !important;
+        height: 48px;
+        border-radius: 0;
+        padding-left: 15px;
+
+
+        &::placeholder {
+            color: white;
+        }
+
+        &:focus {
+            border-color: white;
+            box-shadow: none;
+            outline: 0;
+        }
+
+        &.is-invalid {
+            border-color: $alizarin-crimson;
+        }
+    }
+
+    &__input {
+        &__group {
+            flex: 0 1 216px;
+        }
+    }
+
+
+    &__button {
+        flex-shrink: 0;
+        line-height: 1;
+        height: 48px;
+        min-height: 0;
+        min-width: 0;
+        padding-right: 20px;
+        padding-left: 20px;
+        position: relative;
+            left: -2px;
+        width: auto;
+    }
+
+}

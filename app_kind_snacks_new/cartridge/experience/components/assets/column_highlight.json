@@ -1,0 +1,42 @@
+{
+    "name": "Column Highlight",
+    "description": "Column Highlight",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "image_placement",
+                    "name": "Image Placement",
+                    "type": "enum",
+                    "required": true,
+                    "values": ["left", "right"]
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

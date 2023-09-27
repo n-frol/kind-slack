@@ -1,0 +1,20 @@
+Name: REST Client
+Id: humao.rest-client
+Description: REST Client for Visual Studio Code
+Version: 0.23.0
+Publisher: Huachao Mao
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+###
+
+GET https://partner-api-staging.changeupforcharity.com/partner/v1/salesforce/config
+content-type: application/json
+x-changeup-api-key: WwbNwwBJsrgBCNX+D+HJsEgoCSsHxoQ0y4xfjfkosLo0cTrsc02g0//jlrG6Q164RtBy6XCm2XT2kU8RfaeXhA==
+
+###
+
+GET https://partner-api-staging.changeupforcharity.com/partner/v1/cause/search?organization_name=alaska
+content-type: application/json
+x-changeup-api-key: WwbNwwBJsrgBCNX+D+HJsEgoCSsHxoQ0y4xfjfkosLo0cTrsc02g0//jlrG6Q164RtBy6XCm2XT2kU8RfaeXhA==
+
+###

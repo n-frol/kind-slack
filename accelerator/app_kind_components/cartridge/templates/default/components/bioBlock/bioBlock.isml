@@ -1,0 +1,54 @@
+<isif condition="${loopstatus.first}">
+    <div class="container c-bio-block ${assetID} th-kind-bio-block s-graphical-asset">
+        <isinclude template="components/bioBlock/bioBlock_header" />
+        <div class="row">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/bioBlock/bioBlock_UI" />
+    <div class="c-bio-block__item th-kind-bio-block__item">
+        <isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                        || !empty(graphicalAsset.links))}">
+
+            <div class="c-bio-block__item__content
+                <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-bio-block__item__content--${graphicalAsset.contentXPosition.value}
+                </isif>
+            ">
+                <isif condition="${!empty(graphicalAsset.image)}">
+                    <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 611, 1222)}" scope="page" />
+                    <div class="c-bio-block__item__content__image-wrapper">
+                        <img class="c-bio-block__item__content__image" src="${responsiveImage.imageUrlDefault}"
+                            srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                            alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                    </div>
+                </isif>
+                <div class="c-bio-block__item__content__wrapper">
+                    <isif condition="${!empty(graphicalAsset.heading)}">
+                        <h4 class="c-bio-block__item__content__heading">
+                            <isprint value="${graphicalAsset.heading}" encoding="off" />
+                        </h4>
+                    </isif>
+                    <isif condition="${!empty(graphicalAsset.body)}">
+                        <div class="c-bio-block__item__content__body">
+                            <isprint value="${graphicalAsset.body}" encoding="off" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(graphicalAsset.links)}">
+                        <div class="c-bio-block__item__content__links">
+                            <isprint value="${graphicalAsset.links}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </isif>
+    </div>
+</isif>
+<isif condition="${loopstatus.last}">
+    </div>
+</div>
+</isif>

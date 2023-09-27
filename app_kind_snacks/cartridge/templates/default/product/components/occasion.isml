@@ -1,0 +1,6 @@
+<div class="c-product-good-for__content">
+    <span class="c-product-good-for__heading">${Resource.msg('label.goodfor', 'product', null)}:</span>
+    <isloop items="${product.occasion}" var="occasion" status="loopstatus">
+        <a class="c-product-good-for__link" href="${occasion.URL}">${occasion.value}</a>${!loopstatus.last ? ',' : ''}
+    </isloop>
+</div>

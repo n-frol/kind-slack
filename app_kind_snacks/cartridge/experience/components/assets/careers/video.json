@@ -1,0 +1,63 @@
+{
+  "name": "Video/Image",
+  "description": "Video/Image",
+  "group": "Career",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Video",
+      "description": "Video to show",
+      "attribute_definitions": [
+        {
+          "id": "video",
+          "name": "Video File",
+          "type": "file",
+          "required": false
+        },
+        {
+          "id": "youtubeurl",
+          "name": "Youtube URL",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "image",
+          "name": "Image File",
+          "type": "image",
+          "required": false
+        },
+        {
+          "id": "poster",
+          "name": "Preload file",
+          "type": "file",
+          "required": false
+        },
+        {
+          "id": "use_video",
+          "name": "Use Video and not Image",
+          "type": "boolean",
+          "required": false
+        },
+        {
+          "id": "width",
+          "name": "Object Width",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "padding",
+          "name": "Object Padding",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "paddingmobile",
+          "name": "Object Padding Mobile",
+          "type": "string",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

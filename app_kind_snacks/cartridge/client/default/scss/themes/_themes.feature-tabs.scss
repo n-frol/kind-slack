@@ -1,0 +1,81 @@
+/* ============================================================================
+    Feature Tabs
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the Feature Tabs component
+ */
+
+$ns: th-kind-feature-tabs;
+$component: c-feature-tabs;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Feature Tabs Component
+    &.#{$component} {
+
+        .#{$component} {
+            &__nav {
+                display: none;
+                font-family: $font-family-primary;
+
+                @include media-breakpoint-up(md) {
+                    display: flex;
+                }
+
+                &__item {
+                    cursor: pointer;
+                }
+            }
+            &__item {
+                &__content {
+                    // Feature Tabs Heading
+                    &__heading {
+                        font-family: $font-family-primary;
+                    }
+
+                    // Feature Tabs Body
+                    &__body {
+                        font-family: $font-family-secondary;
+                    }
+
+                    // Feature Tabs Links
+                    &__link {
+                        &__title {
+                            font-family: $font-family-primary;
+                            &:hover {
+                                color: $san-marino;
+                            }
+                        }
+                        &__description {
+                            font-family: $font-family-secondary;
+                        }
+                    }
+                    &__links {
+                        font-family: $font-family-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+        a {
+            color: inherit;
+        }
+        .tab-content > .tab-pane {
+            display: block;
+
+            @include media-breakpoint-up (md) {
+                display: none;
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+}

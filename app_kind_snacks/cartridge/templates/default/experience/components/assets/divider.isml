@@ -1,0 +1,16 @@
+<div class="divider" style=""></div>
+
+<style>
+.divider {
+    border-bottom:2px solid black; padding-top:30px; padding-bottom:30px;
+}
+    @media screen and (max-width:900px) {
+        .divider {
+            padding-bottom: 30px;
+            width: 80%;
+            margin:auto;
+            padding-top: 0px;
+            margin-bottom:30px;
+        }
+    }
+</style>

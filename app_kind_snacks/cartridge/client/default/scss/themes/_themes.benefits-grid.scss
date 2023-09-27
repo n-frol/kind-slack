@@ -1,0 +1,71 @@
+/* ============================================================================
+    Benefits Grid
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the benefits grid component
+ */
+
+ $ns: th-kind-benefits-grid;
+ $component: c-benefits-grid;
+ $scope: s-graphical-asset;
+
+ .#{$ns} {
+
+     // Benefits Grid Component
+     &.#{$component} {
+
+         .#{$component} {
+             &__item {
+                 &__content {
+                     // Benefits Grid Heading
+                     &__heading {
+                         font-family: $font-family-primary;
+                     }
+
+                     // Benefits Grid Body
+                     &__body {
+                         font-family: $font-family-secondary;
+                     }
+
+                     // Benefits Grid Links
+                     &__link {
+                         &__title {
+                             font-family: $font-family-primary;
+                             &:hover {
+                                 color: $san-marino;
+                             }
+                         }
+                         &__description {
+                             font-family: $font-family-secondary;
+                         }
+                     }
+                     &__links {
+                         font-family: $font-family-primary;
+                     }
+                 }
+             }
+         }
+     }
+
+     // Graphical Asset Scope
+     &.#{$scope} {
+        .#{$scope} {
+            &__links {
+                a {
+                    background-color: transparent;
+                    border: 2px solid $primary;
+                    color: $primary;
+                    line-height: 1.4;
+
+                    &:hover {
+                        background-color: $primary;
+                        color: $white;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+     }
+
+ }

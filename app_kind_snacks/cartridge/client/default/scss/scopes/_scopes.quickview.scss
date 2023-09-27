@@ -1,0 +1,18 @@
+/* ============================================================================
+Quickview
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements created in the quickview
+ */
+
+$ns: s-quickview;
+
+.#{$ns} {
+    &__product-description {
+        h4 {
+            letter-spacing: -1.2px;
+            margin-bottom: 16px;
+        }
+    }
+}

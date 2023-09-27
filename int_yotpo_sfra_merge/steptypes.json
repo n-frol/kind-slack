@@ -1,0 +1,32 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.Yotpo.YotpoRatingsPopulate",
+                "@supports-parallel-execution": "false",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Calls the Yotpo BottomLine service and populates ratings custom objects",
+                "module": "int_yotpo_sfra_merge/cartridge/scripts/job/RatingsPopulate.js",
+                "function": "populate",
+                "transactional": "false",
+                "timeout-in-seconds": "900",
+                "parameters": {
+                    "parameter": []
+                },
+                "status-codes": {
+                    "status": [
+                        {
+                            "@code": "ERROR",
+                            "description": "Used when the step failed with an error."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when the step finished successfully."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

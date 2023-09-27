@@ -1,0 +1,10 @@
+<iscache type="relative" minute="0" hour="0">
+<isset name="templateClass" value="c-byob-product-tile" scope="page" />
+<isset name="isByobTile" value="${true}" scope="page" />
+<isset name="byobItem" value="${pdict.byobItem}" scope="page" />
+<isset name="minQuantity" value="${pdict.minQuantity}" scope="page" />
+<isset name="maxQuantity" value="${pdict.maxQuantity}" scope="page" />
+<isset name="decrementDisabled" value="${pdict.decrementDisabled}" scope="page" />
+<isset name="incrementDisabled" value="${pdict.incrementDisabled}" scope="page" />
+
+<isinclude template="product/components/swap_quantity" />

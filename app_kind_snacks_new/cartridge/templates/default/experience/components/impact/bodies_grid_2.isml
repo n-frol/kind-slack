@@ -1,0 +1,193 @@
+<div class="bodies_grid_2">
+    <div class="grid_2_flex">
+        <div class="grid_22_flex" style="display: flex; margin-bottom: 40px;">
+        <div>
+            <img src="${URLUtils.staticURL('/images/impact/Group 3103.png')}" alt="Impact" class="bodies_section_2" />
+        </div>
+        <div class="grid2text">
+            <div class="grid2head">
+                Increasing access to nutritious food with Wellfare
+            </div>
+            <div class="grid2copy">
+                We’re investing in organizations addressing food insecurity in groundbreaking ways. Our multi-year partnership with Wellfare kicked off in 2022. Through product donations, volunteering, and an annual gift, we’re proud to support the non-profit’s mission to solve food insecurity in New York City as they think “outside the box” with their
+                <a class="normallink" target="_blank" style="color: white; text-transform: none !important;" href="https://www.wellfare.org/better-box">Better Box</a> program.
+            </div>
+        </div>
+        </div>
+        <div class="grid_22_flex" style="display: flex">
+            <div>
+                <img src="${URLUtils.staticURL('/images/impact/grid5/Group 3102.png')}" alt="Impact" class="bodies_section_2" />
+            </div>
+            <div class="grid2text">
+                <div class="grid2head">
+                    Nourishing kids’ health, education, and sense of belonging with FoodCorps
+                </div>
+                <div class="grid2copy" style="margin-bottom: 90px;">
+                    To elevate our KIND Snack & Give Back EQUALITY Bar partner, we’re supporting FoodCorps’ efforts to ensure every child has access to food education and nourishing food in schools.
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="grid_2_slider" style="position: relative">
+            <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                    <img src="${URLUtils.staticURL('/images/impact/grid7/welfare-video-static-1_desktop.png')}" alt="Impact" class="bodies_section_2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="${URLUtils.staticURL('/images/impact/grid7/welfare-video-static-2_desktop.png')}" alt="Impact" class="bodies_section_2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="${URLUtils.staticURL('/images/impact/grid7/welfare-video-static-3_desktop.png')}" alt="Impact" class="bodies_section_2" />
+                    </div>
+            </div>
+            <!-- buttons -->
+            <div class="swiper-button-prev-kind">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.36612 18.8839L0.411165 10.9289C-0.0769903 10.4408 -0.0769902 9.64932 0.411165 9.16116L8.36612 1.20621C8.85427 0.718057 9.64573 0.718058 10.1339 1.20621C10.622 1.69437 10.622 2.48583 10.1339 2.97398L3.06282 10.045L10.1339 17.1161C10.622 17.6043 10.622 18.3957 10.1339 18.8839C9.64573 19.372 8.85427 19.372 8.36612 18.8839Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="swiper-button-next-kind">
+                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="20" viewBox="0 0 11 20" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2.63388 1.11612L10.5888 9.07107C11.077 9.55922 11.077 10.3507 10.5888 10.8388L2.63388 18.7938C2.14573 19.2819 1.35427 19.2819 0.866117 18.7938C0.377961 18.3056 0.377961 17.5142 0.866117 17.026L7.93719 9.95495L0.866117 2.88388C0.377961 2.39573 0.377961 1.60427 0.866117 1.11612C1.35427 0.627961 2.14573 0.627961 2.63388 1.11612Z" fill="black"/>
+                </svg>
+            </div>
+        </div>
+</div>
+
+<script>
+    const grid2slide = new Swiper('.grid_2_slider', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 20,
+        grabCursor: true,
+        paginationClickable: true,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next-kind',
+            prevEl: '.swiper-button-prev-kind',
+        },
+        keyboard: {
+            enabled: true,
+        },
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            draggable: true, // draggable scrollbar
+            snapOnRelease: true
+        },
+        slidesPerView: "2.5",
+    });
+    grid2slide.on("slideChange", function() {
+        if (grid2slide.realIndex > 0) {
+            jQuery(".swiper-button-prev-kind").css("opacity", "1");
+        } else {
+            jQuery(".swiper-button-prev-kind").css("opacity", "0");
+        }
+        jQuery(".swiper-button-next-kind").css("opacity", "1");
+    });
+    grid2slide.on("reachEnd", function() {
+        jQuery(".swiper-button-next-kind").css("opacity", "0");
+    });
+</script>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .swiper-button-next-kind, .swiper-button-prev-kind {
+            display: none;
+        }
+    }
+    .swiper-button-next-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        right: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 1;
+    }
+    .swiper-button-next-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .swiper-button-prev-kind {
+        position: absolute;
+        top: 35%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 50;
+        left: 0px;
+        border: 1px solid black;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: white;
+        opacity: 0;
+    }
+    .swiper-button-prev-kind svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width: 440px) {
+        .grid_2_slider {
+            margin-left: 20px !important;
+        }
+        .grid_22_flex {
+            flex-direction: column;
+        }
+        .grid_2_flex img {
+            margin-left: 20px !important;
+            margin-bottom: 20px !important;
+        }
+        .bodies_grid_2 {
+            grid-template-columns: 1fr !important;
+        }
+        .grid2text {
+            margin-left: 20px !important;
+        }
+    }
+    .grid_2_slider {
+        overflow-x:hidden;
+        margin-left: 50px;
+    }
+    .grid2head {
+        font-size: 28px;
+        line-height: 32px;
+        font-family: main;
+        margin-bottom: 20px;
+    }
+    .grid2copy {
+        font-size: 18px;
+        line-height: 21px;
+        font-family: medium;
+    }
+    .grid2text {
+        margin-left: 110px;
+        color: white;
+    }
+    .bodies_grid_2 {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        background: black;
+    }
+    .grid_2_flex {
+        padding-top: 60px;
+        display: flex;
+        flex-direction: column;
+    }
+    .grid_2_flex img {
+        margin-left: 60px;
+        margin-right: 50px;
+    }
+</style>

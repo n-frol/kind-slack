@@ -1,0 +1,70 @@
+<a class="partner_link" style="cursor: pointer; text-decoration: none; color: black; height: auto;" href="${pdict.url}">
+<div class="partner_container" style="background: #F5F5F5; border-radius: 20px; margin-bottom: 30px; height: auto;">
+<div class="partner_img" style="text-align:left;">
+    <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+</div>
+<div class="paragraph partner_text">
+    ${pdict.copy}
+</div>
+</div>
+</a>
+<script>
+    $(document).ready(function() {
+        var maxHeight = -1;
+
+        $('.partner_container').each(function() {
+            maxHeight = maxHeight > $(this).height() ? maxHeight : $(this).height();
+        });
+
+        $('.partner_container').each(function() {
+            $(this).height(maxHeight);
+        });
+    });
+</script>
+<style>
+    .slider .swiper-slide {
+        height: unset !important;
+    }
+    .partner_img {
+        padding-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+    }
+    .partner_text {
+        margin-left: 20px;
+        padding-bottom: 60px;
+        text-align: left;
+        margin-right: 20px;
+        letter-spacing: -1px !important;
+        text-decoration: none;
+    }
+    @media screen and (max-width: 768px) {
+        .partner_text {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+    @media screen and (max-width: 764px) {
+        .slider-headline {
+            font-size: 36px;
+            line-height: 42px;
+            letter-spacing: -1px;
+            margin-bottom:20px;
+        }
+    }
+    .slider-description {
+        width: 80%;
+        margin-left: auto;
+        fonat-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+    }
+    @media screen and (max-width: 768px) {
+        .slider-description {
+            width: 100%;
+            margin-left: 0px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+</style>

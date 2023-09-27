@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+	<!-- field for credit card uuid -->
+    <field formid="creditcarduuid" label="creditcard.creditcarduuid" type="string" mandatory="false"/>
+
+</form>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+        <attribute-definition attribute-id="useLongPostalCodes">
+                <display-name xml:lang="x-default">Use Long Postal Codes?</display-name>
+                <description xml:lang="x-default">Setting to switch between using 5 digit postal codes or 5+4 digit postal codes for the SmartyStreets address verification service's returned address results.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="SmartyStreets">
+                <display-name xml:lang="x-default">SmartyStreets Configuration</display-name>
+                <attribute attribute-id="isSmartyStreetsEnabled"/>
+                <attribute attribute-id="useLongPostalCodes"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

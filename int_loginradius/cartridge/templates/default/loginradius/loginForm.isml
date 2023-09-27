@@ -1,0 +1,11 @@
+ <div class="alert alert-danger invalid-feedback loginradius-error loginradius-error--login js-loginradius-error-login"></div>
+
+<div id="js-loginradius-container-login"
+    class="loginradius-container--login js-loginradius-onload"
+    data-lr-login-registration-url="${URLUtils.https('LoginRadius-Start')}"
+    data-lr-forwarding-url="${pdict.loginRadiusForwardingURL}"
+    data-lr-type="login"
+    data-lr-enabled="${!empty(pdict.loginRadius.enabled) ? pdict.loginRadius.enabled : true}"
+    data-lr-api-key="${!empty(pdict.loginRadius.key) ? pdict.loginRadius.key : dw.system.Site.current.getCustomPreferenceValue('loginRadiusApiKey')}"
+    data-lr-reset-password-url="${!empty(pdict.loginRadius.resetPasswordUrl) ? pdict.loginRadius.resetPasswordUrl : ''}">
+</div>

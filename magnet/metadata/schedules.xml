@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schedules xmlns="http://www.demandware.com/xml/impex/schedules/2007-03-31">
+    <schedule schedule-id="MagnetJobs">
+        <description/>
+        <enabled-flag>false</enabled-flag>
+        <priority>0</priority>
+        <execution-scope>site</execution-scope>
+        <pipeline>
+            <name>MagnetJobs</name>
+            <startnode>Start</startnode>
+        </pipeline>
+        <sites>
+            <site site-id="SITEID"/>
+        </sites>
+        <recurrence>
+            <date-from>2016-04-12Z</date-from>
+            <start-time>01:48:00.000Z</start-time>
+            <interval>5m</interval>
+            <day-of-week>
+                <weekday>Sunday</weekday>
+                <weekday>Monday</weekday>
+                <weekday>Tuesday</weekday>
+                <weekday>Wednesday</weekday>
+                <weekday>Thursday</weekday>
+                <weekday>Friday</weekday>
+                <weekday>Saturday</weekday>
+            </day-of-week>
+        </recurrence>
+        <notification>
+            <enabled-flag>false</enabled-flag>
+            <hang-detection-enabled-flag>false</hang-detection-enabled-flag>
+            <failure-rule>continue</failure-rule>
+        </notification>
+    </schedule>
+</schedules>

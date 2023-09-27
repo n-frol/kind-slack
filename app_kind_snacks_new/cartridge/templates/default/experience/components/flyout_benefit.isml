@@ -1,0 +1,63 @@
+<div class="flyout_benefit_contain" style="position:relative;">
+<img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" class="flyout_benefit_icon info-popout" />
+<div class="paragraph benefit_copy" style="font-family:${pdict.fontstyle}">${pdict.text}</div>
+    <div class="flyout_benefit_info">
+        <h5 class="flyout_benefit_info_header">${pdict.text}</h5>
+        <div class="flyout_benefit_info_copy">${pdict.copy}</div>
+        <svg class="popout-close" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"> <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" fill="black"></path> </svg>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('.info-popout').mouseenter(function() {
+            $(this).parent().find('.flyout_benefit_info').toggle();
+        });
+        $('.info-popout').mouseleave(function() {
+            $(this).parent().find('.flyout_benefit_info').toggle();
+        });
+        $('.popout-close').click(function() {
+            $(this).parent().hide();
+        });
+        if (window.innerWidth <= 440) {
+            $(".flyout_benefit_info")
+                .each(function () {
+                    var $this = $(this);
+                    $this.css({
+                        'left': -$this.parent()
+                            .offset().left
+                    });
+                });
+        }
+    });
+</script>
+
+<style>
+    .popout-close {
+        color: black;
+        position: absolute;
+        top: 10;
+        right: 10;
+    }
+    .flyout_benefit_info_copy {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .flyout_benefit_contain {
+        position: relative;
+    }
+    .flyout_benefit_info {
+        position: absolute;
+        top: -200px;
+        left: -125px;
+        width: 400px;
+        background: white;
+        color: black;
+        padding: 30px;
+        display: none;
+        border-radius: 16px;
+        z-index: 1000;
+        text-align: left;
+        border: 1px solid #F5F5F5;
+    }
+</style>

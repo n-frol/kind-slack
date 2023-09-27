@@ -1,0 +1,149 @@
+.container {
+    max-width: 100%;
+
+    @include media-breakpoint-up(md) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @include media-breakpoint-up(xl) {
+        max-width: map-get($container-max-widths, xxl);
+     }
+ }
+.carousel {
+    .icon-prev,
+    .icon-next {
+        background-color: $white;
+        font-size: 1.875em;
+        // width and height here need to use rem units because the font size used here is 30px
+        height: 3rem;
+        padding-top: 0.24em;
+        width: 3rem;
+
+        &::before {
+            color: black;
+            font-family: 'FontAwesome';
+        }
+    }
+
+    .icon-prev {
+        &::before {
+            content: '\f104';
+        }
+    }
+
+    .icon-next {
+        &::before {
+            content: '\f105';
+        }
+    }
+    .carousel-control-prev {
+        justify-content: flex-start;
+    }
+
+    .carousel-control-next {
+        justify-content: flex-end;
+    }
+}
+
+.nav-tabs {
+
+    .nav-link {
+        color: $nav-tabs-link-hover-border-color;
+    }
+}
+
+.card {
+    margin-bottom: 1em;
+}
+
+.card-header {
+    border-bottom: none;
+
+    h4 {
+        margin-bottom: 0;
+    }
+}
+
+.modal .modal-body {
+    flex: 0 0 auto;
+}
+
+.dropdown-menu {
+    &.show {
+        display: flex;
+    }
+}
+.dropdown-toggle {
+    &::after {
+        border: none;
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        height: 8px;
+        margin-left: 8px;
+        transform: rotateZ(45deg);
+        vertical-align: middle;
+        width: 8px;
+    }
+}
+
+dt {
+    color: $gray-700;
+    font-weight: normal;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border: 1px solid black;
+    background: $grey1; /* For browsers that do not support gradients */
+    background: linear-gradient($grey1, $grey3); /* Standard syntax */
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::after {
+    background-image: $svg-check;
+}
+
+.custom-radio .custom-control-label::before {
+    border: 1px solid black;
+    background: $grey3; /* For browsers that do not support gradients */
+    background: linear-gradient($grey3, $grey5); /* Standard syntax */
+}
+
+.modal-open {
+    position: fixed;
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        overflow-y: auto; // The position fixed will still prevent users from scrolling.  This just prevents the mini jump from adding/removing the scroll bar
+    }
+}
+.custom-select {
+    @supports (appearance: none) or (-webkit-appearance: none) or (-moz-appearance: none) {
+        @include background-svg($svg-arrow-down);
+
+        appearance: none;
+        background-color: $white;
+        background-position: calc(100% - 12px) center;
+        background-repeat: no-repeat;
+        background-size: 16px;
+    }
+}
+
+.alert-dismissible {
+    .close {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: .7;
+}
+.st-modal-quickview__body {
+    overflow:hidden;
+}
+.pl-40 {
+    padding-left: 40px !important;
+}

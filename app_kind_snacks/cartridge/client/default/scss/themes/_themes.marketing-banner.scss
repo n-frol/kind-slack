@@ -1,0 +1,65 @@
+/* ============================================================================
+   Marketing Banner
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the marketing banner component
+ */
+
+$ns: th-kind-marketing-banner;
+$component: c-marketing-banner;
+$scope: s-graphical-asset;
+
+.#{$ns} {
+
+    // Marketing Banner Component
+    &.#{$component} {
+
+        .#{$component} {
+
+            // Marketing Banner Eyebrow
+            &__eyebrow {
+                font-family: $font-family-primary;
+                letter-spacing: .125em;
+            }
+
+            // Marketing Banner Heading
+            &__heading {
+                font-family: $font-family-primary;
+            }
+
+            // Marketing Banner Links
+            &__links {
+                font-family: $font-family-primary;
+                font-size: 12px;
+                letter-spacing: 1.5px;
+            }
+
+        }
+
+    }
+
+    // Graphical Asset Scope
+    &.#{$scope} {
+
+        .#{$scope} {
+
+            // Graphical Asset Links
+            &__links {
+
+                a {
+
+                    &:hover {
+                        color: white;
+                        text-decoration: none;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}

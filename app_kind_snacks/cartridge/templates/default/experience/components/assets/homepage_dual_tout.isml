@@ -1,0 +1,156 @@
+<div class="container mobilefull">
+<div class="homepage_dual_tout ${pdict.extra_class}">
+    <a href="${pdict.link}">
+    <div class="left">
+        <picture>
+            <img src="${pdict.image.src.desktop}" />
+        </picture>
+        <div class="text-container">
+            <h3 class="left_h3">
+                <span>
+                    <isprint value="${pdict.header}" encoding="off" />
+                <span>
+            </h3>
+            <div class="copy">
+                ${pdict.copy}
+            </div>
+        </div>
+    </div>
+    </a>
+    <a href="${pdict.link_r}">
+    <div class="right">
+        <picture>
+            <img src="${pdict.image_r.src.desktop}" />
+        </picture>
+        <div class="text-container">
+            <h3 class="right_h3">
+                <span>
+                    <isprint value="${pdict.header_r}" encoding="off" />
+                </span>
+            </h3>
+            <div class="copy">
+                ${pdict.copy_r}
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
+</div>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800&display=swap');
+
+.creative-snacks .homepage_dual_tout {
+    font-family: 'Poppins', sans-serif !important;
+    width: 1300px;
+    margin: 0 auto;
+    height: 820px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.creative-snacks .homepage_dual_tout .left, .creative-snacks .homepage_dual_tout .right {
+    max-height: 100%;
+}
+.homepage_dual_tout .right:hover .right_h3, .homepage_dual_tout .left:hover .left_h3 {
+    text-decoration: none;
+}
+.creative-snacks .homepage_dual_tout img {
+    width: 590px;
+}
+.creative-snacks .homepage_dual_tout .text-container {
+    background: #B7312C;
+    padding: 45px 55px 55px 55px;
+    width: 590px;
+}
+.creative-snacks .homepage_dual_tout .left_h3, .creative-snacks .homepage_dual_tout .right_h3 {
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 48px;
+    text-transform: none;
+    font-family: 'Poppins', sans-serif !important;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+}
+
+.creative-snacks .homepage_dual_tout .left_h3 span, .creative-snacks .homepage_dual_tout .right_h3 span {
+    align-self: center;
+}
+
+.creative-snacks .homepage_dual_tout .copy  {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 20px;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+@media(max-width: 768px)  {
+    .mobilefull {
+        padding: 0px;
+    }
+    .creative-snacks .homepage_dual_tout {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .creative-snacks .homepage_dual_tout .left_h3, .creative-snacks .homepage_dual_tout .right_h3 {
+        text-transform: none;
+        font-weight: 600;
+        font-size: 34px;
+        line-height: 40px;
+    }
+    .creative-snacks .homepage_dual_tout .copy {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        padding-top: 20px;
+    }
+    .creative-snacks .homepage_dual_tout .text-container {
+        width: 100%;
+        padding: 45px 10px;
+    }
+    .creative-snacks .homepage_dual_tout img {
+        width: 100%;
+    }
+    .creative-snacks .homepage_dual_tout .right {
+        margin-top: 20px;
+    }
+}
+
+@media(min-width: 1024px) and (max-width: 1439px)  {
+    .creative-snacks .homepage_dual_tout {
+        width: 900px;
+        height: unset;
+    }
+    .creative-snacks .homepage_dual_tout .full_width_image_container .text-container {
+        width: 40%;
+        padding-top: 30px;
+    }
+    .creative-snacks .homepage_dual_tout .left, .creative-snacks .homepage_dual_tout .right {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .creative-snacks .homepage_dual_tout img {
+        width: 100%;
+    }
+    .creative-snacks .homepage_dual_tout .text-container {
+        width: 100%;
+        padding: 45px 10px;
+    }
+    .creative-snacks .homepage_dual_tout .left_h3, .creative-snacks .homepage_dual_tout .right_h3 {
+        text-transform: none;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .creative-snacks .homepage_dual_tout .copy  {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        padding-top: 10px;
+    }
+}
+</style>

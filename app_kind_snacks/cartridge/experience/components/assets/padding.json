@@ -1,0 +1,46 @@
+{
+  "name": "Padding",
+  "description": "Padding",
+  "group": "Homepage",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "amount",
+          "name": "Padding Amount",
+          "type": "text",
+          "required": false
+        },
+        {
+          "id": "bg",
+          "name": "BG Color",
+          "type": "string",
+          "required": false
+        },
+      {
+          "id": "amount_tablet",
+          "name": "Padding Amount Tablet",
+          "type": "text",
+          "required": false
+      },
+        {
+          "id": "amount_mobile",
+          "name": "Padding Amount Mobile",
+          "type": "text",
+          "required": false
+        },
+          {
+              "id": "use_margins",
+              "name": "Use Margins",
+              "type": "boolean",
+              "required": false,
+              "default_value": false
+          }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

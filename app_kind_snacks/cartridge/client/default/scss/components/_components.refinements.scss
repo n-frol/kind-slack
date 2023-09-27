@@ -1,0 +1,242 @@
+/* ============================================================================
+Refinements
+============================================================================ */
+
+/**
+ * Styles for refinements for search results
+*/
+$ns: c-refinements;
+
+.#{$ns} {
+    margin-top: 12px;
+    &__card {
+        border-bottom: 1px solid $black;
+        font-family: $font-family-primary;
+        padding: 0;
+        &__card-header {
+            border-bottom: none 0;
+            color: $black;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 50px;
+            letter-spacing: -0.5px;
+            padding-left: 13px;
+            padding-right: 13px;
+            position: relative;
+            text-transform: lowercase;
+            @include media-breakpoint-up(md) {
+                border-bottom: 1px solid $black;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 400;
+            }
+            .#{$ns}__arrow {
+                border: 0;
+                border-bottom: 1px solid $black;
+                border-left: 1px solid $black;
+                display: inline-block;
+                height: 8px;
+                transform: rotate(-45deg);
+                transition: all 0.5s ease;
+                width: 8px;
+                margin-left: 8px;
+                position: relative;
+                top: -3px;
+            }
+            &.has-expanded {
+                .#{$ns}__arrow {
+                    transform: rotate(133deg);
+                    top: 3px;
+                }
+            }
+        }
+        &__card-body {
+            display: none;
+            font-size: 14px;
+            letter-spacing: -0.3px;
+            padding: 16px 13px 0 13px;
+            text-transform: lowercase;
+        }
+        @include media-breakpoint-up(lg) {
+            border-bottom: 0 none;
+        }
+    }
+    &__values {
+        margin: 0;
+        /**
+         * use !important - in global style this class has chain of parent classes
+        */
+        padding-bottom: 20px !important;
+
+        &__item {
+            list-style-type: none;
+            line-height: 14px;
+            max-width: 100%;
+            padding-bottom: 12px;
+
+            &__link {
+                color: $black !important;
+                display: flex;
+                text-decoration: none;
+
+                &__custom-check,
+                &__,
+                &__custom-radio,
+                &__custom-radio-checked {
+                    border: 2px solid $black;
+                    display: inline-block;
+                    height: 20px;
+                    margin-right: 8px;
+                    vertical-align: middle;
+                    width: 20px;
+                }
+                &__custom-radio,
+                &__custom-radio-checked,
+                &__custom-radio-checked::before {
+                    border-radius: 50%;
+                }
+                &__custom-check-checked,
+                &__custom-radio-checked {
+                    position: relative;
+                }
+                &__custom-check-checked::before,
+                &__custom-radio-checked::before {
+                    background-color: $black;
+                    content: "";
+                    height: 12px;
+                    position: absolute;
+                    top: 2px;
+                    left: 2px;
+                    vertical-align: top;
+                    width: 12px;
+                }
+                &__custom-check {
+                    flex-shrink: 0;
+                    margin-right: 12px;
+
+                    &__text {
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+                @include media-breakpoint-up(lg) {
+                    &__custom-check,
+                    &__custom-check-checked,
+                    &__custom-radio,
+                    &__custom-radio-checked {
+                        height: 16px;
+                        width: 16px;
+                    }
+                    &__custom-check-checked::before,
+                    &__custom-radio-checked::before {
+                        height: 8px;
+                        width: 8px;
+                    }
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 0 !important;
+        }
+    }
+    .v2 & {
+        margin: 0;
+        &__values__item__link__custom-check-checked,
+        &__values__item__link__custom-radio-checked,
+        &__values__item__link__custom-check,
+        &__values__item__link__custom-radio {
+            margin-right: 12px;
+            height: 20px;
+            width: 20px;
+        }
+        &__values__item__link__custom-check-checked::before,
+        &__values__item__link__custom-radio-checked::before {
+            background: url(../images/white-checkmark.png) no-repeat center;
+            background-size: 8px;
+            background-color: black;
+            height: 20px;
+            width: 20px;
+            top: 0;
+            left: 0;
+        }
+        .c-refinements__values__item__link__custom-check__text {
+            color: $black;
+        }
+        @include media-breakpoint-up(md) {
+            &.refinements::before {
+                color: #888;
+                font-size: 12px;
+            }
+            .c-search-results__sort {
+                padding-bottom: 0;
+                @include media-breakpoint-up(md) {
+                    margin-top: 0;
+                }
+            }
+            &__card__card-header {
+                border-bottom: none;
+                line-height: 34px;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                .c-refinements__arrow {
+                    position: static;
+                    vertical-align: middle;
+                    margin-left: 10px;
+                    margin-bottom: 7px;
+                }
+            }
+            &__card {
+                width: auto;
+                display: inline-block;
+                @include media-breakpoint-up(sm) {
+                    border-bottom: none;
+                }
+            }
+            &__card__card-body {
+                position: absolute;
+                background: white;
+                border: 2px solid black;
+                z-index: 1;
+            }
+        }
+    }
+    &__title {
+        display: none;
+        @include media-breakpoint-up(md) {
+            display: block;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            color: #808080;
+            margin-top: 8px;
+            margin-right: 15px;
+        }
+    }
+}
+/*need to refactor selects, since appearance:none
+is being used in base we can't override styles*/
+.v2 .c-search-results__sort {
+    > div::after {
+        color: $primary;
+        content: "\f107";
+        font-family: FontAwesome;
+        font-size: 16px;
+        pointer-events: none;
+        position: absolute;
+        top: 2px;
+        right: 20px;
+    }
+}
+
+.grey {
+    background: #f2f2f2;
+    padding-right: 0;
+}

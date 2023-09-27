@@ -1,0 +1,120 @@
+<iscomment>
+a/b testing set above regular info since it is important for legal remove d-none here and apply d-none to
+</iscomment>
+<isscript>
+var theurl = dw.web.URLUtils.url('SWAP-Changebar', 'pid', product.id);
+    var theprod = dw.catalog.ProductMgr.getProduct(product.id);
+    var theconnected = theprod.custom.connected_products;
+    var conar = theconnected.split(",");
+</isscript>
+
+
+<div class="connected_container">
+<isinclude url="${URLUtils.url('Product-ConnectedProducts', 'pid', product.id)}" />
+</div>
+<div class="container container-narrow st-container st-product-description-info__container--description v1 d-none position-relative">
+
+    <div class="c-product-witb__container">
+        <div class="c-product-witb">
+            <h2 class="c-product-witb__header title">
+                ${!empty(product.featuredHeading) ? product.featuredHeading : 'Featured Ingredients'}
+            </h2>
+            <isinclude template="product/components/whatsinthebar" />
+        </div>
+    </div>
+</div>
+
+    <isset name="varietyPack" value="${isBundle && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}" scope="page" />
+    <isset name="hasComponents" value="${!empty(product.components) && (empty(product.isHiddenComponents) || !product.isHiddenComponents)}" scope="page" />
+    <isset name="isGear" value="${pdict.breadcrumbs && pdict.breadcrumbs[0] && pdict.breadcrumbs[0].htmlValue === 'KIND Gear'}" scope="page" />
+<isif condition="${!isGear}">
+    <div class="container st-container st-product-description-info__container--description v2">
+        <div class="row st-product-description-info__row--description">
+
+            <div class="${product.isByobMaster || hasComponents || varietyPack ? 'col-12': 'st-product-description-info__col--description one-third'}">
+
+                <isif condition="${hasComponents}">
+                    <div class="collapsible-sm active is-active">
+                        <h2 class="title"> ${product.featuredHeading || 'What\'s in this variety pack?'}</h2>
+                        <div class="content">
+                            <isinclude template="product/components/componentItems" />
+                            <p class="fine-print">${Resource.msg('info.variety.nutrition', 'product', null)}</p>
+                        </div>
+                    </div>
+                </isif>
+                <isif condition="${varietyPack}">
+                    <div class="collapsible-sm active is-active">
+                        <h2 class="title"> ${product.featuredHeading || 'What\'s in this variety pack?'}</h2>
+                        <div class="content">
+                            <isinclude template="product/components/bundleItems" />
+                            <p class="fine-print">${Resource.msg('info.variety.nutrition', 'product', null)}</p>
+                        </div>
+                    </div>
+                </isif>
+
+                    <isif condition="${!empty(product.occasion)}">
+                        <div class="c-product-good-for s-product-good-for">
+                            <isinclude template="product/components/occasion" />
+                        </div>
+                    </isif>
+
+                    <isif condition="${!empty(product.featuredAssets)}">
+                                <div class="c-product-witb__container ${product.isByobMaster ? 'byob-style mb-5' : 'list-style'}">
+                                        <isinclude template="product/components/whatsinthebar2" />
+                                </div>
+                    </isif>
+                    <isif condition="${product.isByobMaster}">
+                            <div class="description s-product-description">
+                                <isinclude template="product/components/description" />
+                            </div>
+                    </isif>
+
+                    <iscomment>Mobile only version of benefits block</iscomment>
+                    <isif condition="${!empty(product.benefits) && !varietyPack && !hasComponents}">
+                        <div class="c-product-benefits__info-section">
+                            <div class="c-product-benefits s-product-benefits collapsible-sm checkmark">
+                                <h2 class="title">
+                                    ${Resource.msg('label.keybenefits', 'product', null)}
+                                </h2>
+                                <div class="content">
+                                <isinclude template="product/components/benefits" />
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+                   <!-- end col-12 col-description -->
+        </div>
+        <isif condition="${!varietyPack && !hasComponents}">
+            <div class="st-product-description-info__col--description two-thirds">
+                <div class="c-product-nutrition ${!empty(product.servingsize) ? 'show-chart' : ''}">
+                    <isinclude template="product/components/nutrition" />
+                    <isinclude template="product/components/nutritionChart" />
+                </div>
+            </div>
+        </isif>
+        <isif condition="${pdict.isByob == "true"}">
+            <button class="btn btn-primary plp-button js-add-to-cart-modal" data-pid="${pdict.paramsPid}" <isif condition="${pdict.isByobListFull}">disabled</isif>>
+                ${Resource.msg('label.add.to.box', 'byob', null)}
+            </button>
+            </isif>
+            <isif condition="${pdict.isSwap == "true"}">
+            <button onclick='(function(e){
+$.ajax({
+        method: "POST",
+        url: "${theurl}",
+        data: { pid: ${product.id} }
+    }).done(function (addRespData, status, xhr) {
+        const $listContainer = $(".js-byob-list-body-wrap");
+        $listContainer.empty().html(addRespData);
+    });
+    $(".c-byob-product-tile--active").removeClass("c-byob-product-tile--active");
+    $(".swapbar_${product.id}").addClass("c-byob-product-tile--active");
+    $(".swapthebar").text("set as default");
+    $(".swapthebar_${product.id}").text("selected");
+}).call(this)' class="swapthebar swapthebar_${product.id}" data-item-pid="${product.id}" data-addurl="${dw.web.URLUtils.url('SWAP-Changebar', 'pid', product.id)}">
+        Set as Default
+        </button>
+        </isif>
+    </div>
+</isif>
+</div>

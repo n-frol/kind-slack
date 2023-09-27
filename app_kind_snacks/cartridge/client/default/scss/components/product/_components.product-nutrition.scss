@@ -1,0 +1,111 @@
+/* ============================================================================
+PDP Nutrition
+============================================================================ */
+
+/**
+ * Establish styles for the nutrition block on the PDP.
+ */
+
+$ns: c-product-nutrition;
+
+.#{$ns} {
+    width: 100%;
+    position: relative;
+    &__heading {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        margin-bottom: 1px;
+        text-transform: uppercase;
+    }
+    &__facts-image {
+        margin-bottom: $setting-gutter;
+        @include media-breakpoint-up(md) {
+            max-width:97%;
+        }
+    }
+    &__notes {
+        font-size: 14px;
+        max-width: 535px;
+        opacity: .5;
+    }
+    @include media-breakpoint-up(md) {
+        border-left: 1px solid #808080;
+        padding-left: 63px!important;
+    }
+}
+
+.nutrition-chart-container {
+    display: none;
+    .v2 &.collapsible-sm {
+        border-bottom: none;
+    }
+}
+.nutrition-chart-info {
+    p {
+        margin: 1.25rem 0;
+        font-size: 14px;
+        @include media-breakpoint-up(lg) {
+            margin: 0 0 1.25rem;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        display: inline-block;
+        width: calc(100% - 403px);
+        vertical-align: top;
+    }
+}
+.nutrition-chart {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+    .title-rows {
+        margin-bottom: 6px;
+    }
+    .small {
+        line-height: 1.2;
+        font-size: 12px;
+        &.col-2 {
+            padding-right: 0;
+            text-align: right;
+        }
+    }
+    .data > div {
+        border-bottom: 1px solid black;
+        line-height: 2.4;
+    }
+    .row > div {
+        padding-left: 0;
+    }
+    hr {
+        border-top: 4px solid black;
+        margin-top: 0;
+        padding: 0;
+        margin-bottom: 0;
+    }
+    .col-2.c-product-nutrition__item {
+        text-align: right;
+        padding-right: 0;
+    }
+    &.aside-view {
+        @include media-breakpoint-up(lg) {
+            width: 393px;
+            display: inline-block;
+            margin-right: 0;
+            padding-right: 55px;
+            vertical-align: top;
+        }
+    }
+}
+
+.show-chart {
+    .nutrition-image {
+        display: none;
+    }
+    .nutrition-chart-container {
+        display: block;
+    }
+    @include media-breakpoint-up(lg) {
+        padding-top: 0!important;
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Social Card",
+    "description": "Social Card",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "imagemobile",
+                    "name": "Image Mobile",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "text",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+
+    ]
+}
+

@@ -1,0 +1,31 @@
+<isif condition="${shippingModel.shippingAddress}">
+    <h3 class="st-checkout-main__sub-title subtitle st-checkout-main__sub-title subtitle--summary pt-0">${Resource.msg('heading.shipping.address', 'checkout', null)}:</h3>
+    <isinclude template="checkout/shipping/shippingCardShippingAddress" />
+</isif>
+
+<isif condition="${shippingModel.selectedShippingMethod}">
+    <h3 class="st-checkout-main__sub-title subtitle st-checkout-main__sub-title subtitle--summary">${Resource.msg('heading.shipping.method', 'checkout', null)}:
+        <span>
+            <isif condition="${shippingModel.productLineItems.items && shippingModel.productLineItems.items.length > 1}">
+                - ${shippingModel.productLineItems.items.length.toFixed(0)} ${pdict.order.resources.items}
+            </isif>
+        </span>
+    </h3>
+    <div class="row c-checkout-shipping-address__selected-method">
+        <p class="col-8 c-checkout-shipping-address__selected-method__label subtext">
+            <span class="display-name c-checkout-shipping-address__selected-method__label__name">${(shippingModel.selectedShippingMethod && shippingModel.selectedShippingMethod.displayName) ? shippingModel.selectedShippingMethod.displayName : ''}</span>
+            <isif condition="${!empty(shippingModel.selectedShippingMethod.estimatedArrivalTime)}">
+                <span class="arrival-time">(${shippingModel.selectedShippingMethod.estimatedArrivalTime})</span>
+            </isif>
+        </p>
+        <p class="col-4 text-right">
+            <span class="price c-checkout-shipping-address__selected-method__price subtext">
+                <isif condition="${!empty(shippingModel.selectedShippingMethod.shippingCost)}">
+                    ${shippingModel.selectedShippingMethod.shippingCost}
+                </isif>
+            </span>
+        </p>
+    </div>
+</isif>
+
+<isinclude template="checkout/shipping/giftMessageSummary" />

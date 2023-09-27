@@ -1,0 +1,344 @@
+/**
+ * Abstract service class for all socket payments
+ */
+ /* API includes */
+var cdpmLogger  = require('dw/system/Logger').getLogger('paymentOperator', 'paymentOperator');
+var HashMap     = require('dw/util/HashMap');
+var Site        = require('dw/system/Site').getCurrent();
+
+// Script includes
+var Blowfish = require('~/cartridge/scripts/computop/lib/Blowfish');
+var HTTPBaseService = require( './HTTPBaseService' );
+
+// Module level declarations
+var logPrefix = 'PAYMENTOPERATOR_PAYMENTGATE - AbstractComputopService.ds:\n';
+
+var AbstractComputopService = HTTPBaseService.extend(
+{
+    init : function() {
+        this._super( 'live.computop.paygate' );
+        this.requestMethod = 'POST';
+        // set encoding to UTF-8 as default
+        this.encoding = this.encoding || 'UTF-8';
+        // computop is per default without authentication
+        this.authentication = 'NONE';
+        // request header
+        this.requestHeaders = {
+            'Content-type': 'application/x-www-form-urlencoded',
+            'Connection': 'Close'
+        };
+    },
+
+    /**
+    * Implements the function that should be used to prepare the service call request objects
+    *
+    * @param {dw.svc.HTTPService}    svc       The service itself
+    * @param {dw.util.Map}           params    Map of key value pairs that have to be added as parameters to the call
+    *
+    * @return String The string that has to be sent to the service
+    */
+    createRequest : function( svc, params) {
+
+        //sets the service call endpoint
+        if ( !empty(this.relativeURLPath) ) {
+            svc.URL = [ svc.URL, this.relativeURLPath ].join('');
+        }
+
+        //adding header values
+        if ( !empty(this.requestHeaders) ) {
+            for ( var headerID in this.requestHeaders ) {
+                svc.addHeader(headerID, this.requestHeaders[headerID]);
+            }
+        }
+
+        //setting request encoding
+        if ( !empty(this.encoding) && this.encoding != 'UTF-8') {
+            svc.setEncoding(this.encoding);
+        }
+
+        //setting the authentication mechanism which is default NONE
+        svc.setRequestMethod('NONE');
+
+        //setting request method
+        svc.setRequestMethod('POST');
+
+        //create requestData as string
+        var requestData = '';
+        if ( !empty(params) ) {
+            if(!empty(params.CCNr) && params.CCNr != ''){
+                params.CCNr = params.CCNr.replace(/ /g,'');
+            }
+            requestData = this.joinAttributes(params, '=', '&');
+        }
+
+        // log used service url for debugging purposes
+        cdpmLogger.info(logPrefix + 'Called service: ' + svc.URL );
+
+        var merchantId = this.getSitePreference('paymentOperatorMerchantID');
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+        var etiID = this.getSitePreference('paymentOperatorEtiID');
+
+        var encrypted = Blowfish.encryptBlowfish(requestData, merchantCode);
+
+        svc.addParam('MerchantID', merchantId);
+        svc.addParam('Len', requestData.length);
+        svc.addParam('Data', encrypted);
+        svc.addParam('EtiID', etiID);
+
+        var logRequestData = 'Request data (encrypted): MerchantID=' + merchantId
+            + '&Len=' + requestData.length
+            + '&Data=' + encrypted
+            + '&EtiID=' + etiID;
+        cdpmLogger.info(logPrefix + logRequestData);
+
+        //setting the out file if defined
+        if ( !empty(this.outfile) ) {
+            svc.setOutFile(this.outfile);
+        }
+
+        return this;
+    },
+
+    /**
+     * Decrypt response
+     *
+     * @return {dw.util.HashMap} - Returns a hash map of the response.
+     */
+    parseResponse : function( svc, httpClient ) {
+        var result;
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+        try {
+            if ( 200 == httpClient.getStatusCode() ) {
+                var responseObject = this.splitAttributes(httpClient.text, '=', '&');
+
+                // Log the raw response.
+                cdpmLogger.info(logPrefix + '\tRaw response: {0}',
+                    httpClient.text);
+
+                if ( responseObject.hasOwnProperty('Data') ) {
+                    result = this.decryptResponse(responseObject.Data, merchantCode);
+                    result = this.toParameterMap(result);
+                } else if ( responseObject.hasOwnProperty('TransID') &&
+                    this.getSitePreference('paymentOperatorProcessUnencryptedResponse')
+                ) {
+                    cdpmLogger.warn(logPrefix +
+                        '\tMissing Data parameter in response, ' +
+                        'but TransID found: {0}\n' +
+                        '\tTrying to use unencrypted parameters.\n' +
+                        '\tSee raw response for parameter details.',
+                        responseObject.TransID);
+                    result = this.toParameterMap(httpClient.text);
+                } else {
+                    cdpmLogger.error(logPrefix +
+                        'ERROR: Param Data missing in response from paygate!');
+                    result = new HashMap();
+                }
+
+                // log response data for debugging
+                this.logResponse(result);
+            } else {
+                cdpmLogger.warn(logPrefix +
+                    '\tService call failure: Response Code: {0}',
+                    httpClient.text );
+                cdpmLogger.info(logPrefix + '\tRaw response: {0}' +
+                    httpClient.text);
+            }
+        } catch (e) {
+            var eString = logPrefix +
+                '\tERROR while fetching / decrypting the response:\n'
+            eString += Object.keys(e).map(function (key) {
+                '\n\t' + key + ': ' + e[key];
+            }).join();
+            cdpmLogger.error(eString);
+            result = new HashMap();
+        }
+        return result;
+    },
+
+    /**
+    * Log response for debugging & tracking purposes.
+    *
+    * @param {dw.util.HashMap} - The response hash map.
+    */
+    logResponse: function(map) {
+        var result = '';
+        if ( map ) {
+            var responseArray = [],
+                attrValue;
+            for ( var attrID in map ) {
+                if ( this.getFieldNeedsToBeMasked( attrID ) ) {
+                    attrValue = this.getMaskedFieldValue(map.get(attrID));
+                } else {
+                    attrValue = map.get(attrID);
+                }
+                responseArray.push( [attrID, attrValue].join( '=' ) );
+            }
+            result = responseArray.join( '&' );
+        }
+        cdpmLogger.info(logPrefix + 'Decrypted response: {0}', result);
+    },
+
+    /**
+     * Check if given field needs to become obfuscated for logging
+     *
+     * @param {string} name - The name of the field.
+     * @returns {boolean} - True if the field should be masked in the logs.
+     */
+    getFieldNeedsToBeMasked: function(name) {
+        var maskedFieldsForLog = [
+            'AccBank',
+            'AccNr',
+            'AccOwner',
+            'AccIBAN',
+            'BLZV',
+            'IBAN',
+            'BIC',
+            'IssuerID',
+            'CCNr',
+            'CCCVC',
+            'CCExpiry'
+        ];
+        return maskedFieldsForLog.indexOf( name ) != -1;
+    },
+
+    /**
+    * Values will be partly or completely (if less than 4 chars in size) masked with *
+    *
+    * @param String
+    * @return String
+    */
+    getMaskedFieldValue: function(value) {
+        var tmpResult = '' + value,
+            result = '',
+            padding = tmpResult.length;
+
+        if ( tmpResult.length > 4 ) {
+            result = tmpResult.substr(-4);
+            padding = tmpResult.length - 4;
+        }
+        for ( var i = 0; i < padding; i++ ) {
+            result = '*' + result;
+        }
+        return result;
+    },
+
+    /**
+     * Convert request data object to string
+     *
+     * @return String The params url-encoded
+     */
+    joinAttributes : function ( object, innerJoinChar, outerJoinChar ) {
+        if ( object && innerJoinChar && outerJoinChar) {
+            var resultArray = [];
+            for ( var attrID in object ) {
+                resultArray.push( [attrID, object[attrID] ].join( innerJoinChar ) );
+            }
+            return resultArray.join( outerJoinChar );
+        }
+    },
+
+    /**
+     * Split response url params into key -> value object
+     *
+     * @return object
+     */
+    splitAttributes : function ( result, innerJoinChar, outerJoinChar ) {
+        if ( result && innerJoinChar && outerJoinChar ) {
+            var resultObject = {};
+            var resultKeyValues = result.split( outerJoinChar );
+            for each ( var resultKeyValue in resultKeyValues ) {
+                var keyValue = resultKeyValue.split( innerJoinChar );
+                if ( keyValue.length > 1) {
+                    resultObject[ keyValue[0] ] = keyValue[1];
+                } else {
+                    resultObject[ keyValue[0] ] = null;
+                }
+            }
+            return resultObject;
+        }
+    },
+
+    /**
+     * Converting response string into parametermap
+     *
+     * @return HashMap
+     */
+    toParameterMap : function(data) {
+        var hMap = new HashMap();
+        if ( !empty(data) ) {
+            var qs = data;
+            qs = qs.replace(/\+/g, ' ');
+            var args = qs.split('&'); // parse out name/value pairs
+            for ( var i = 0; i < args.length; i++ ) {
+                var value;
+                var pair = args[i].split('=');
+                var name = unescape(pair[0]);
+                if ( pair.length == 2 ){
+                    value = unescape(pair[1]);
+                } else {
+                    pair.shift();
+                    value = unescape(pair.join('='));
+                }
+                hMap.put(name, value);
+            }
+        }
+        return hMap;
+    },
+
+    /**
+     * Encrypt data with blowfish
+     *
+     * @return {string} - The encrypted data.
+     */
+    encryptRequest : function ( payload, encryptKey ) {
+        var result = '';
+        try {
+            result = Blowfish.encryptBlowfish(payload, encryptKey);
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at encryptRequest:';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+
+            cdpmLogger.error(eString);
+        }
+        return result;
+    },
+
+    /**
+     * Decrypt data with blowfish
+     *
+     * @return String The decrypted string
+     */
+    decryptResponse: function ( result: String, encryptKey: String ) {
+        var decrypted : String = '';
+        try {
+            decrypted = Blowfish.decryptBlowfish(result, encryptKey);
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at decryptRequest:';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+
+            cdpmLogger.error(eString);
+        }
+
+        return decrypted;
+    },
+
+    /**
+    * Helper function to retrieve specific config value
+    *
+    * @return String
+    */
+    getSitePreference: function ( key ) {
+        var result = null;
+        result = Site.getCustomPreferenceValue(key);
+        if ( empty(result) ) {
+            result = '';
+        }
+        return result;
+    }
+});
+//Export the configured service singleton
+module.exports = AbstractComputopService;

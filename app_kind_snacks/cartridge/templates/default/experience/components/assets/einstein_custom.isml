@@ -1,0 +1,57 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/einstein.js');
+</isscript>
+
+<div class="recs_slide" data-url="${pdict.productLoadUrl}">
+
+</div>
+<div class="rec_cats" data-forced="${pdict.force_infront}" data-cats="${pdict.categories}"></div>
+
+<script>
+    var einsteinUtils = window.CQuotient;
+    var recs;
+    function recommendationsReceived(resp) {
+        var cats = $(".rec_cats").attr("data-cats");
+        cats = cats.split(",");
+        var forced = $(".rec_cats").attr("data-forced").split(",");
+        recs = resp["recently-viewed"].recs;
+        var ids = [];
+        recs.forEach(ele => ids.push(ele.id));
+        var trimids = ids.slice(0, ${pdict.max_slides});
+        $.ajax({
+            url: $(".recs_slide").attr("data-url"),
+            type: 'get',
+            dataType: 'html',
+            data: {
+                prods: JSON.stringify(trimids),
+                cats: JSON.stringify(cats),
+                forced: JSON.stringify(forced)
+            },
+            success: function (html) {
+                $(".recs_slide").html(html);
+            },
+            error: function () {
+            }
+        });
+    }
+
+    var params = {
+        userId: einsteinUtils.getCQUserId(),
+        cookieId: einsteinUtils.getCQCookieId(),
+        ccver: '1.01'
+    };
+    var recommender = "recently-viewed";
+
+    if (einsteinUtils.getRecs) {
+        einsteinUtils.getRecs(einsteinUtils.clientId, recommender, params, recommendationsReceived);
+    } else {
+        einsteinUtils.widgets = einsteinUtils.widgets || []; // eslint-disable-line no-param-reassign
+        einsteinUtils.widgets.push({
+            recommenderName: recommender,
+            parameters: params,
+            callback: recommendationsReceived
+        });
+    }
+
+</script>

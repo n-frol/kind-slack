@@ -1,0 +1,27 @@
+<isdecorate template="common/layout/page">
+    <isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/content.css');
+    </isscript>
+
+    <isif condition="${!empty(pdict.content)}">
+
+        <isif condition="${!empty(pdict.content.custom.hideBanner) && pdict.content.custom.hideBanner}">
+            <script>
+                var promoBanner = document.getElementsByClassName('header-banner');
+                promoBanner[0].style.display = 'none';
+            </script>
+        </isif>
+        <div class="container main-container s-knd-legacy s-knd-legacy--generic-page pt-5 pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <isprint value="${pdict.content.body}" encoding="off" />
+                </div>
+            </div>
+        </div>
+    </isif>
+
+</isdecorate>
+
+

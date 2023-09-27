@@ -1,0 +1,8 @@
+<body>
+    <p><isprint value="${Resource.msg('email.donations.interest', 'forms', null)}" encoding="off" /></p>
+    <p><isprint value="${Resource.msg('email.donations.responsetime', 'forms', null)}" encoding="off" /></p>
+    <p><isprint value="${Resource.msg('email.donations.wholesale', 'forms', null)}" encoding="off" /></p>
+    To learn more about our mission, read more <a href="${dw.web.URLUtils.abs('Page-Show', 'cid', 'our-mission')}">here.</a>
+    <p><isprint value="${Resource.msg('email.donations.thankyou', 'forms', null)}" encoding="off" /></p>
+    <p><isprint value="${Resource.msg('email.donations.team', 'forms', null)}" encoding="off" /></p>
+</body>

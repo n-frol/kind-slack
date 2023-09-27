@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="Report-MissingBillingData" priority="0">
+        <description>Creates a CSV export file detailing any missing billing address data from customer default payment instruments.</description>
+        <parameters/>
+        <flow>
+            <context site-id="KINDSnacks"/>
+            <step step-id="reportMissingBillingData" type="custom.report.missingbilling" enforce-restart="false">
+                <description>Report the missing billing data</description>
+                <parameters/>
+                <rules>
+                    <on-exit status="ERROR">
+                        <stop-job/>
+                    </on-exit>
+                </rules>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2019-03-14Z</date>
+                <time>22:04:25.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>

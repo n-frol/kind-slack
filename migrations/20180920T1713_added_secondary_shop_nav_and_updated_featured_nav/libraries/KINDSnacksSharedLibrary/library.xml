@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="featured-navigation">
+        <display-name xml:lang="x-default">Featured Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;ul&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show', 'cgid', 'newarrivals')$"&gt;New Arrivals&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;li&gt;&lt;a href="$url('Search-Show', 'q', 'Top Sellers')$"&gt;Top Sellers&lt;/a&gt;&lt;/li&gt;&#13;
+&lt;/ul&gt;&#13;
+&lt;ul&gt;&#13;
+&lt;li class="featured-products"&gt;Featured Products&#13;
+	&lt;ul&gt;&#13;
+		&lt;li&gt;&lt;a href="$url('Product-Show', 'pid', 289)$"&gt;Dark Chocolate Nuts &amp; Sea Salt&lt;/a&gt;&lt;/li&gt;&#13;
+		&lt;li&gt;&lt;a href="$url('Product-Show', 'pid', 290)$"&gt;Peanut Butter Dark Chocolate&lt;/a&gt;&lt;/li&gt;&#13;
+	&lt;/ul&gt;&#13;
+	&lt;/li&gt;&#13;
+&lt;/u&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+    <content content-id="shop-secondary-navigation">
+        <display-name xml:lang="x-default">Shop Secondary Navigation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;a href="$url('Contact-Show')$"&gt;Help me Decide&lt;/a&gt;&#13;
+&lt;a href="$url('Search-Show')$"&gt;Shop all Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

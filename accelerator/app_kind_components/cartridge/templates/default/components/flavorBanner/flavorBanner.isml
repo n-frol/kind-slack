@@ -1,0 +1,54 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/flavorBanner/flavorBanner_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container st-container st-container--narrow c-flavor-banner__container">
+            <div class="row c-flavor-banner__row">
+    </isif>
+        <div class="c-flavor-banner ${assetID} th-kind-flavor-banner s-graphical-asset
+            <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-flavor-banner--${graphicalAsset.contentXPosition.value}</isif>">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container st-container st-container--narrow c-flavor-banner__container">
+                    <div class="row c-flavor-banner__row">
+            </isif>
+                        <isif condition="${!empty(graphicalAsset.image)}">
+                            <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 890)}" scope="page" />
+                            <div class="c-flavor-banner__image__wrapper">
+                                <img class="c-flavor-banner__image" src="${responsiveImage.imageUrlDefault}"
+                                    srcset="${responsiveImage.imageUrlDefault},
+                                                    ${responsiveImage.imageUrlLarge} 2x"
+                                    alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                            </div>
+                        </isif>
+                        <div class="c-flavor-banner__content">
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-flavor-banner__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.body)}">
+                                <div class="c-flavor-banner__body">
+                                    <isprint value="${graphicalAsset.body}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-flavor-banner__links s-graphical-asset__links">
+
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

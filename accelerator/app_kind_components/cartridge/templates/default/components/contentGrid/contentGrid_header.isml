@@ -1,0 +1,14 @@
+<isif condition="${!empty(parentHeading) || !empty(parentBody)}">
+    <div class="row c-content-grid__parent-header th-kind-content-grid__parent-header page-offset-top pt-md-0">
+        <div class="col-12 text-center">
+            <isif condition="${!empty(parentHeading)}">
+                <h1 class="c-content-grid__parent-header__heading">${parentHeading}</h1>
+            </isif>
+            <isif condition="${!empty(parentBody)}">
+                <div class="c-content-grid__parent-header__body">
+                    <isprint value="${parentBody}" encoding="off" />
+                </div>
+            </isif>
+        </div>
+    </div>
+</isif>

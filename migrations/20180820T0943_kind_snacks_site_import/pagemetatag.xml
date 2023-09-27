@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page-meta-tags xmlns="http://www.demandware.com/xml/impex/pagemetatag/2016-08-22">
+    <page-meta-tag-definitions>
+	    <page-meta-tag-definition meta-tag-id="robots" type="name"/>
+	    <page-meta-tag-definition meta-tag-id="description" type="name"/>
+	    <page-meta-tag-definition meta-tag-id="title" type="title"/>
+	    <page-meta-tag-definition meta-tag-id="property" type="property"/>
+	    <page-meta-tag-definition meta-tag-id="name" type="name"/>
+	    <page-meta-tag-definition meta-tag-id="empty" type="name"/>
+	    <page-meta-tag-definition meta-tag-id="empty2" type="name"/>
+	    <page-meta-tag-definition meta-tag-id="empty3" type="name"/>
+	</page-meta-tag-definitions>
+
+	<page-meta-tag-rules>
+	   <home-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="hp-description" meta-tag-id="description">
+                <description>Description text for the first entry point of a web-site.</description>
+                <rule xml:lang="x-default">Shop for shoes, clothing and more on the official ${Site.displayName ELSE Site.id} website.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="hp-title" meta-tag-id="title">
+                <description>Title for the first entry point of a site.</description>
+                <rule xml:lang="x-default">Home Page Title for ${Site.displayName ELSE Site.id}.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="hp-property" meta-tag-id="property">
+                <rule xml:lang="x-default">Home Page Property for ${Site.displayName ELSE Site.id}.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="hp-name" meta-tag-id="name">
+                <rule xml:lang="x-default">Home Page Name for ${Site.displayName ELSE Site.id}.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="hp-unassigned" meta-tag-id="robots">
+                <description>Simply index this site and follow all links.</description>
+                <rule xml:lang="x-default">index, follow</rule>
+            </page-meta-tag-rule>
+        </home-page-meta-tag-rules>
+	   <product-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="pdp-description" meta-tag-id="description">
+                <rule xml:lang="x-default">${Product.pageDescription ELSE Product.name} DEFAULT - This and other products are available on ${Host} today! Find all ${Site.displayName ELSE Site.id} collections.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-title" meta-tag-id="title">
+                <rule xml:lang="x-default">Detail Page Title for ${Product.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-property" meta-tag-id="property">
+                <rule xml:lang="x-default">Detail Page Property for ${Product.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-name" meta-tag-id="name">
+                <rule xml:lang="x-default">Detail Page Name for ${Product.ID}</rule>
+            </page-meta-tag-rule>
+
+            <page-meta-tag-rule rule-id="pdp-description-url-catalog" meta-tag-id="description">
+                <rule xml:lang="x-default">Test called with URL: ${OriginalRequestURL}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-title-url-catalog" meta-tag-id="title">
+                <rule xml:lang="x-default">Page Meta Tag Integration Test for Product ${Product.ID} | ${Site.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-property-url-catalog" meta-tag-id="property">
+                <rule xml:lang="x-default">Inherited from products primary category ${Category.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="pdp-name-url-catalog" meta-tag-id="name">
+                <rule xml:lang="x-default">Executed by URLPageMetaTagTestEC</rule>
+            </page-meta-tag-rule>
+        </product-detail-page-meta-tag-rules>
+
+        <product-listing-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="plp-robots" meta-tag-id="robots">
+                <rule xml:lang="x-default">${IF SearchRefinement.refinementColor OR SearchRefinement.size THEN Constant('noindex,nofollow,noarchive') ELSE Constant('index,follow,archive')},noydir,noodp</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="plp-description" meta-tag-id="description">
+                <rule xml:lang="x-default">DEFAULT - Find products in ${Category.displayName} ${SearchPhrase('for the search phrase ?') ELSE SearchRefinement.refinementColor(', ', 'in the color ?') OR(' and ') SearchRefinement.size('-', 'in the size ?')} | ${Site.displayName}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="plp-title" meta-tag-id="title">
+                <rule xml:lang="x-default">Listing Page Title for ${Category.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="plp-property" meta-tag-id="property">
+                <rule xml:lang="x-default">Listing Page Property for ${Category.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="plp-name" meta-tag-id="name">
+                <rule xml:lang="x-default">Listing Page Name for ${Category.ID}</rule>
+            </page-meta-tag-rule>
+        </product-listing-page-meta-tag-rules>
+
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="cdp-description" meta-tag-id="description">
+                <rule xml:lang="x-default">${Content.pageDescription ELSE Content.ID} DEFAULT - This and other content is available on ${Host} today! Find all ${Site.displayName ELSE Site.id} articles.</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="cdp-title" meta-tag-id="title">
+                <rule xml:lang="x-default">Detail Page Title for ${Content.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="cdp-property" meta-tag-id="property">
+                <rule xml:lang="x-default">Detail Page Property for ${Content.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="cdp-name" meta-tag-id="name">
+                <rule xml:lang="x-default">Detail Page Name for ${Content.ID}</rule>
+            </page-meta-tag-rule>
+        </content-detail-page-meta-tag-rules>
+
+        <content-listing-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="clp-robots" meta-tag-id="robots">
+                <rule xml:lang="x-default">${IF SearchRefinement.contentType OR SearchRefinement.contentSize THEN Constant('noindex,nofollow,noarchive') ELSE Constant('index,follow,archive')},noydir,noodp</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="clp-description" meta-tag-id="description">
+                <rule xml:lang="x-default">DEFAULT - Find content in ${Folder.displayName ELSE Folder.ID} ${SearchPhrase('for the search phrase ?') ELSE SearchRefinement.contentType(', ', 'in the type ?') OR(' and ') SearchRefinement.contentSize('-', 'in the article size ?')} | ${Site.displayName}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="clp-title" meta-tag-id="title">
+                <rule xml:lang="x-default">Listing Page Title for ${Folder.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="clp-property" meta-tag-id="property">
+                <rule xml:lang="x-default">Listing Page Property for ${Folder.ID}</rule>
+            </page-meta-tag-rule>
+            <page-meta-tag-rule rule-id="clp-name" meta-tag-id="name">
+                <rule xml:lang="x-default">Listing Page Name for ${Folder.ID}</rule>
+            </page-meta-tag-rule>
+        </content-listing-page-meta-tag-rules>
+    </page-meta-tag-rules>
+</page-meta-tags>

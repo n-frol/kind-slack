@@ -1,0 +1,56 @@
+<isset name="isConfirmationStage" value="${ typeof isConfirmationStage === 'undefined' ? false : isConfirmationStage}" scope="page" />
+
+<!--- Shipping Address --->
+<isloop var="shippingModel" items="${pdict.order.shipping}" status="shippingLoop">
+    <isif condition="${shippingLoop.first}">
+        <div class="single-shipping" data-shipment-summary="${shippingModel.UUID}">
+            <isinclude template="checkout/shipping/shippingTitle"/>
+            <isif condition="${shippingModel.shippingAddress !== null}">
+                <isset name="address" value="${shippingModel.shippingAddress}" scope="page"/>
+            <iselse>
+                <isset name="address" value="{}" scope="page"/>
+            </isif>
+            <div class="summary-details shipping st-checkout-main__summary-details subtext">
+                <isinclude template="checkout/addressSummary" />
+                <div class="shipping-email">
+                    ${shippingModel.shippingAddress && shippingModel.shippingAddress.email ? shippingModel.shippingAddress.email : ''}
+                </div>
+                <div class="shipping-phone">
+                    ${shippingModel.shippingAddress && shippingModel.shippingAddress.phone ? shippingModel.shippingAddress.phone : ''}
+                </div>
+            </div>
+
+            <!--- Shipping information --->
+            <p class="summary-section-label shipping-method-label st-checkout-main__sub-title subtitle">${Resource.msg('label.order.shipping.method', 'confirmation', null)}</p>
+            <div class="row summary-details c-checkout-shipping-methods__summary">
+                <div class="col-${!isConfirmationStage ? '4' : '12'} c-checkout-shipping-address__selected-method__label subtext">
+                    <p class="shipping-method">
+                        <span class="shipping-method-title">${shippingModel.selectedShippingMethod.displayName}</span>
+                        <span class="shipping-method-arrival-time">
+                            <isif condition="${shippingModel.selectedShippingMethod.estimatedArrivalTime}">
+                                ( ${shippingModel.selectedShippingMethod.estimatedArrivalTime} )
+                            </isif>
+                        </span>
+                    </p>
+                </div>
+                <isif condition="${empty(isConfirmationStage) || !isConfirmationStage}" >
+                    <div class="col-4">
+                        <p class="text-right pricing shipping-method-price c-checkout-shipping-address__selected-method__price subtext">
+                            ${shippingModel.selectedShippingMethod.shippingCost}
+                        </p>
+                    </div>
+                </isif>
+            </div>
+            <isinclude template="checkout/shipping/giftMessageSummary" />
+        </div>
+    </isif>
+</isloop>
+
+<div class="multi-shipping summary-details c-checkout-shipping-methods__summary">
+    <h3 class="st-checkout-main__sub-title subtitle">
+        ${Resource.msg('heading.shipping.address', 'checkout', null)}:
+    </h3>
+    <p class="summary-section-label shipping-addr-label c-checkout-shipping-address__label subtext">
+        ${Resource.msg('order.summery.section.text', 'order', null)}
+    </p>
+</div>

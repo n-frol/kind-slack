@@ -1,0 +1,2492 @@
+<div class="s-knd-legacy main-container catalog-category-view col3-layout product-page-content">
+    <div class="main">
+    <div class="col-wrapper">
+    <div class="col-main"><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[]}</script>
+    <style type="text/css">/************** Carousel Styles **************/
+
+
+        /*rotating-slider*/
+        body {
+            overflow-x: hidden;
+        }
+        .rotating-slider {
+            margin: -22em auto;
+            height: 360px;
+            position: relative;
+            width: 480px;
+        }
+        .rotating-slider ul.direction-controls {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .rotating-slider ul.direction-controls li.left-arrow {
+            position: absolute;
+            top: 129%;
+            right: 106%;
+            transform: translateY(-50%);
+            z-index: 5;
+        }
+
+        .rotating-slider ul.direction-controls li.right-arrow {
+            position: absolute;
+            top: 129%;
+            left: 113%;
+            transform: translateY(-50%);
+            z-index: 5;
+        }
+
+        .rotating-slider ul.direction-controls li button {
+            background:red;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: 700;
+            height: 1.5em;
+            line-height: 1.5em;
+            padding: 0;
+            text-align: center;
+            transition: background 0.25s;
+            width: 1.5em;
+        }
+
+        .rotating-slider ul.slides {
+            border-radius: 50%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%) rotate(0);
+            transform-origin: center center;
+            width: 100%;
+        }
+        .rotating-slider ul.slides li {
+            background-position: center;
+            background-size: cover;
+            display: block;
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            text-align: center;
+            transform-origin: bottom center;
+            width: 100%;
+        }
+
+        body {
+            background: #61b3e4;
+            font-family: "Roboto Slab", sans-serif;
+            font-weight: 500;
+            overflow: hidden;
+        }
+
+
+        .rotating-slider ul.slides li .inner {
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+
+
+        /** Updated Styles **/
+
+        .main-container ul li::before {
+            margin-right: 0px;
+            content: '';
+            padding-right: 0;
+        }
+
+
+        .group-product {
+
+            transform:translate(-34px, 212px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+        .group-product-protein {
+
+            transform: translate(-94px, 180px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+
+        .group-product-core {
+
+            transform: translate(-104px, 177px) rotate(0deg);
+            position: relative;
+            width: 500px;
+            height: 400px;
+        }
+
+        .group-product-hgb {
+
+            transform: translate(-104px, 188px) rotate(0deg);
+            position: relative;
+            width: 500px;
+            height: 400px;
+        }
+
+
+        .group-product-kids {
+            transform: translate(-90px, 173px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+        .group-product-breakfast {
+            transform: translate(-94px, 215px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+        .group-product-fruit-bites {
+            transform: translate(-77px, 211px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+        .group-product-mini {
+            transform: translate(-74px, 225px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+
+        .group-product-pressed {
+            transform: translate(-90px, 175px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+        .group-product-ss {
+            transform: translate(-95px, 175px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+
+
+        .group-product-bags {
+            transform: translate(-74px, 212px) rotate(0deg);
+            position: relative;
+            width: 450px;
+            height: 400px;
+        }
+
+        p.control-title-sub-text {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            color: #888888 !important;
+            font-weight: 600 !important;
+            word-spacing: 1px;
+            height: 53px;
+            padding-top: 4%;
+            padding-bottom: 14%;
+            margin-bottom: -1%;
+        }
+
+
+        p.control-title-sub-text-up {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            color: #888888 !important;
+            font-weight: 600 !important;
+            word-spacing: 1px;
+            height: 53px;
+            padding-top: 4%;
+            padding-bottom: 14%;
+            margin-bottom: -1%;
+        }
+
+
+        #layout .product-details .jumbo-product-promo-button[style] {
+            background: #000 !important;
+            border: 2px solid #000 !important;
+            color: #fff !important;
+            display: block !important;
+            text-transform: uppercase !important;
+            font-weight: 400 !important;
+            font-size: 0.8em !important;
+            line-height: 25px !important;
+            width: 186px !important;
+            margin: auto !important;
+        }
+
+
+        .product-details {
+            position: absolute;
+            top: 83%;
+            left: -5%;
+            text-align: center;
+            z-index: 20;
+            height: 210px;
+            width: 483px;
+        }
+
+        /** Product Groups **/
+
+
+        /** Core **/
+
+        img.DarkChocolateNut {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.CaramelAlmondSeaSalt {
+            position: absolute;
+            top: -210px;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.PeanutButterDark {
+            position: absolute;
+            top: -220px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+        /** Protein **/
+
+        img.DoubleDarkChocolateNut {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.CrunchyPeanutButter {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.ToastedCaramelNut {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.HGDarkChocolateChunk {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+
+
+
+
+        /** Kids **/
+
+        img.ChewyHoneyOat {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.ChewyChocolateChip {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.ChewyPeanutButter {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+        /** breakfast **/
+
+        img.DarkChocolateCocoa {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.PeanutButterBananaDarkChocolate {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.PeanutButter_Small {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+
+
+        /** clusters **/
+
+        img.VanillaBlueberry_Small {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.OatsHoney_Small {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.HPeanutButter_SmallCluster {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+
+        /** fruit bites **/
+
+        img.FruitBites_MangoApple {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.FruitBites_StrawberryCherryApple {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.FruitBites_CherryApple_Pouch {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+
+
+        /** mini **/
+
+        img.MINI_DarkChocolateCherryCashew {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.MINI_CaramelAlmondSeaSalt {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.MINI_DarkChocolateNutsSeaSalt {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 4;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.MINI_PeanutButterDarkChocolate {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+
+        /** pressed **/
+
+        img.PRESSED_DarkChocolateBanana {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.PRESSED_MangoApple {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.PRESSED_DarkChocolateStrawberry {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+
+        /** ss **/
+
+        img.KoreanChili_Small {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.RoastedJalapeno_Small {
+            top: -210px;
+            position: absolute;
+            left: -38px;
+            z-index: 3;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        img.ThaiSweetChili_Small {
+            position: absolute;
+            top: -210px;
+            left: -40px;
+            z-index: 2;
+            transition: top .5s ease-in-out;
+            -webkit-transition: top .5s ease-in-out;
+            -moz-transition: top .5s ease-in-out;
+            -o-transition: top .5s ease-in-out;
+        }
+
+        .bottom-portion {
+            width: 100%;
+            position: relative;
+            -webkit-box-shadow: -1px -9px 29px -1px rgba(0,0,0,0.23);
+            -moz-box-shadow: -1px -9px 29px -1px rgba(0,0,0,0.23);
+            box-shadow: -1px -9px 29px -1px rgba(0,0,0,0.23);
+            height: 1800px;
+            margin-top: 547px;
+            background-color: #fff;
+            height: auto;
+        }
+
+        .main-container .std section#layout {
+            margin-top: 0px;
+            padding: 25px 0 0;
+
+        }
+
+        h1.product-head {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #fff !important;
+            font-size: 44px !important;
+            letter-spacing: 1px !important;
+            font-weight: 500 !important;
+        }
+
+
+        .active-slide {
+            opacity: 1;
+            -webkit-animation-name: faderactive;
+            -webkit-animation-duration:2s;
+            animation-name: faderactive;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            transition: ease-in;
+            -webkit-transition: ease-in;
+            -moz-transition: ease-in;
+            -o-transition: ease-in;
+            -ms-transition: ease-in;
+        }
+
+
+        @-webkit-keyframes faderactive {
+            from {opacity: 0.5;}
+            to {opacity: 1;}
+        }
+
+        @keyframes faderactive {
+            from {opacity: 0.5;}
+            to {opacity: 1;}
+        }
+
+
+
+        .previous-slide {
+
+            opacity: 0.5;
+            -webkit-animation-name: faderprevious;
+            -webkit-animation-duration:2s;
+            animation-name: faderprevious;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            transition: ease-in;
+            -webkit-transition: ease-in;
+            -moz-transition: ease-in;
+            -o-transition: ease-in;
+            -ms-transition: ease-in;
+        }
+
+
+        @-webkit-keyframes faderprevious {
+            from {opacity: 1;}
+            to {opacity: 0.5;}
+        }
+
+        @keyframes faderprevious {
+            from {opacity: 1;}
+            to {opacity: 0.5;}
+        }
+
+
+
+
+        .next-slide {
+
+            opacity: 0.5;
+            -webkit-animation-name: fadernext;
+            -webkit-animation-duration:2s;
+            animation-name: fadernext;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            transition: ease-in;
+            -webkit-transition: ease-in;
+            -moz-transition: ease-in;
+            -o-transition: ease-in;
+            -ms-transition: ease-in;
+        }
+
+
+        @-webkit-keyframes fadernext {
+            from {opacity: 1;}
+            to {opacity: 0.5;}
+        }
+
+        @keyframes fadernext {
+            from {opacity: 1;}
+            to {opacity: 0.5;}
+        }
+
+
+        .center-prod-gen {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 182px;
+            top: -187px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .left-prod-gen {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 62px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .right-prod-gen {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 295px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+
+        .center-prod-protein {
+            display: inline-block;
+            position: absolute;
+            color: #fff;
+            left: 157px;
+            top: -177px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .left-prod-protein {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 51px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .right-prod-protein {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 255px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+
+        .center-prod-ss {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 157px;
+            top: -175px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .left-prod-ss {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 46px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .right-prod-ss {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 261px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+        .center-prod-pressed {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 152px;
+            top: -167px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .left-prod-pressed {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 52px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .right-prod-pressed {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 253px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+
+        .left-prod-mini {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 33px;
+            top: -86px;
+            width: 43px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            transform: rotate(-28deg);
+        }
+
+        .center-prod-mini {
+            display: inline-block;
+            position: absolute;
+            color: #fff;
+            left: 112px;
+            top: -127px;
+            width: 53px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+            transform: rotate(-10deg);
+        }
+
+
+        .right-prod-mini {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 196px;
+            top: -126px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            transform: rotate(6deg);
+        }
+
+
+        .right-prod-mini-2 {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 280px;
+            top: -86px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            transform: rotate(24deg);
+        }
+
+
+        .active-slide .group-product-hgb .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: -8px;
+            top: -197px;
+            width: 156px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+        .active-slide .group-product-hgb .center-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 142px;
+            top: -197px;
+            width: 146px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+        .active-slide .group-product-hgb .right-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 267px;
+            top: -197px;
+            width: 146px;
+            height: 300px;
+            transform: rotate(12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+
+        .active-slide .group-product-core .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 62px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-core .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 265px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(12deg);
+        }
+
+        .active-slide .group-product-core .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 165px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+        }
+
+
+
+        .active-slide .group-product-protein .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 62px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-protein .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 265px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(12deg);
+        }
+
+        .active-slide .group-product-protein .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 165px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+        }
+
+
+        .active-slide .group-product-ss .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 62px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-ss .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 265px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(12deg);
+        }
+
+        .active-slide .group-product-ss .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 165px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+        }
+
+
+        .active-slide .group-product-pressed .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 62px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-pressed .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 265px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(12deg);
+        }
+
+        .active-slide .group-product-pressed .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 165px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+        }
+
+
+        .active-slide .group-product-mini .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 33px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(5deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+        .active-slide .group-product-mini .center-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 104px;
+            top: -186px;
+            width: 80px;
+            height: 300px;
+            transform: rotate(-6deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+
+        .active-slide .group-product-mini .right-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 183px;
+            top: -186px;
+            width: 80px;
+            height: 300px;
+            transform: rotate(10deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+
+        .active-slide .group-product-mini .right-target-2 {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 263px;
+            top: -186px;
+            width: 150px;
+            height: 300px;
+            transform: rotate(0deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+
+        .active-slide .group-product-kids .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 62px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+        .active-slide .group-product-kids .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 265px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transform: rotate(12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+        .active-slide .group-product-kids .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 165px;
+            top: -186px;
+            width: 100px;
+            height: 300px;
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+        .active-slide .group-product-breakfast .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 12px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-breakfast .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 245px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+        .active-slide .group-product-breakfast .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 131px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+
+        .active-slide .group-product-bags .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 12px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+
+        }
+
+        .active-slide .group-product-bags .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 245px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(12deg);
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+        .active-slide .group-product-bags .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 131px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transition: top 0.5s ease-in-out;
+            -webkit-transition: top 0.5s ease-in-out;
+            -moz-transition: top 0.5s ease-in-out;
+            -o-transition: top 0.5s ease-in-out;
+        }
+
+
+
+
+        .active-slide .group-product-fruit-bites .left-target {
+            display: inline-block;
+            z-index: 999;
+            position: absolute;
+            left: 12px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(-12deg);
+            transition: top 1s ease-in-out;
+            -webkit-transition: top 1s ease-in-out;
+            -moz-transition: top 1s ease-in-out;
+            -o-transition: top 1s ease-in-out;
+
+        }
+
+        .active-slide .group-product-fruit-bites .right-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 245px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+            transform: rotate(12deg);
+        }
+
+        .active-slide .group-product-fruit-bites .center-target {
+            display: inline-block;
+            z-index: 20;
+            position: absolute;
+            left: 131px;
+            top: -186px;
+            width: 120px;
+            height: 300px;
+        }
+
+
+
+        .active-slide .group-product-core .left-target:hover + .CaramelAlmondSeaSalt {
+
+            top: -92px;
+            transition: top 1s;
+
+        }
+
+
+        .active-slide .group-product-core .center-target:hover + .DarkChocolateNut {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-core .right-target:hover + .PeanutButterDark {
+
+            top: -92px;
+        }
+
+
+
+
+        .active-slide .group-product-pressed .left-target:hover + .PRESSED_DarkChocolateBanana {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-pressed .center-target:hover + .PRESSED_MangoApple {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-pressed .right-target:hover + .PRESSED_DarkChocolateStrawberry {
+
+            top: -92px;
+        }
+
+
+
+
+
+        .active-slide .group-product-protein .left-target:hover + .DoubleDarkChocolateNut {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-protein .center-target:hover + .CrunchyPeanutButter {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-protein .right-target:hover + .ToastedCaramelNut {
+
+            top: -92px;
+        }
+
+
+
+        .active-slide .group-product-ss .left-target:hover + .KoreanChili_Small {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-ss .center-target:hover + .RoastedJalapeno_Small {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-ss .right-target:hover + .ThaiSweetChili_Small {
+
+            top: -92px;
+        }
+
+        .active-slide .group-product-kids .left-target:hover + .ChewyHoneyOat {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-kids .center-target:hover + .ChewyChocolateChip {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-kids .right-target:hover + .ChewyPeanutButter {
+
+            top: -92px;
+        }
+
+
+
+
+        .active-slide .group-product-breakfast .left-target:hover + .DarkChocolateCocoa {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-breakfast .center-target:hover + .PeanutButterBananaDarkChocolate {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-breakfast .right-target:hover + .PeanutButter_Small {
+
+            top: -92px;
+        }
+
+
+
+
+        .active-slide .group-product-bags .left-target:hover + .VanillaBlueberry_Small  {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-bags .center-target:hover + .OatsHoney_Small {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-bags .center-target:hover ~ .HPeanutButter_SmallCluster  {
+
+            top: -92px;
+
+        }
+
+
+
+
+        .active-slide .group-product-bags .right-target:hover + .HPeanutButter_SmallCluster {
+
+            top: -92px;
+        }
+
+
+
+
+
+        .active-slide .group-product-fruit-bites .left-target:hover + .FruitBites_MangoApple {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-fruit-bites .center-target:hover + .FruitBites_StrawberryCherryApple {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-fruit-bites .right-target:hover + .FruitBites_CherryApple_Pouch {
+
+            top: -92px;
+        }
+
+
+
+
+        .active-slide .group-product-mini .left-target:hover + .MINI_DarkChocolateCherryCashew {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-mini .center-target:hover + .MINI_CaramelAlmondSeaSalt {
+
+            top: -92px;
+
+        }
+
+
+        .active-slide .group-product-mini .right-target:hover + .MINI_DarkChocolateNutsSeaSalt {
+
+            top: -92px;
+        }
+
+
+        .active-slide .group-product-mini .right-target-2:hover + .MINI_PeanutButterDarkChocolate{
+
+            top: -92px;
+        }
+
+
+
+
+        .left-prod-hgb {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 43px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .right-prod-hgb {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 305px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+
+        .right-prod-kids {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 250px;
+            top: -156px;
+            width: 60px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+        .left-prod-kids {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 62px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+        .center-prod-kids {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 162px;
+            top: -177px;
+            width: 60px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .center-prod-break {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 159px;
+            top: -177px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .right-prod-break {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 295px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+        .left-prod-break {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 45px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+        .center-prod-clust {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 206px;
+            top: -177px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .right-prod-clust {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 308px;
+            top: -146px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+        .left-prod-clust {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 5px;
+            top: -156px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+
+
+
+        .right-prod-fruit {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 270px;
+            top: -108px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+        .center-prod-fruit {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 152px;
+            top: -128px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+            z-index: 1;
+        }
+
+
+        .left-prod-fruit {
+            display: inline-block;
+            z-index: 1;
+            position: absolute;
+            color: #fff;
+            left: 32px;
+            top: -106px;
+            width: 63px;
+            font-size: 0.8em;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            text-align: center;
+        }
+
+
+        /**** iPhone 6 -7 - 8 ****/
+
+        @media only screen
+        and (min-device-width : 375px)
+        and (max-device-width : 667px)
+        and (orientation : portrait) {
+
+
+            .main-container .std #layout .minicaramel {
+                transform: translate(-33px, 46px) rotate(84deg);
+            }
+
+
+            .minischoc {
+                transform: translate(-13%,-19%) rotate(80deg);
+
+            }
+
+        }
+
+
+
+        /**** iPhone 6 -7 - 8 + ****/
+
+
+        /* Portrait */
+        @media only screen
+        and (min-device-width: 414px)
+        and (max-device-width: 736px)
+        and (-webkit-min-device-pixel-ratio: 3)
+        and (orientation: portrait) {
+
+            .main-container .std #layout .minicaramel {
+                transform: translate(-33px, 46px) rotate(84deg);
+            }
+
+
+            .minischoc {
+                transform: translate(-13%,-19%) rotate(80deg);
+
+            }
+
+
+
+
+
+        }
+
+
+        /**** Samsung 8 ****/
+
+        @media only screen
+        and (min-device-width: 360px)
+        and (max-device-width: 740px)
+        and (orientation: portrait) {
+            .main-container .std #layout .minicaramel {
+                transform: translate(-33px, 46px) rotate(84deg);
+            }
+
+
+            .minischoc {
+                transform: translate(-13%,-19%) rotate(80deg);
+
+            }
+
+        }
+
+
+        /**** iPad iPad 1, 2, Mini and Air  ****/
+
+        @media only screen
+        and (min-device-width: 768px)
+        and (max-device-width: 1024px)
+        and (orientation: portrait) {
+
+            .main-container #layout .rotating-slider p.control-title-sub-text {
+                height: 109px;
+                padding-top: 4%;
+                padding-bottom: 14%;
+                margin-bottom: -1%;
+            }
+
+            .main-container #layout .rotating-slider p.control-title-sub-text-up {
+
+                height: 109px;
+                padding-top: 4%;
+                padding-bottom: 14%;
+                margin-bottom: -1%;
+            }
+
+            .main-container #layout .rotating-slider .product-details h4.control-title {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 2.2em;
+                line-height: 1em;
+                height: 80px;
+                padding-top: 4%;
+                padding-bottom: 4%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+        }
+
+
+        /**** iPad Pro  ****/
+
+        @media only screen
+        and (min-device-width: 1024px)
+        and (max-device-width: 1366px)
+        and (orientation: portrait) {
+
+            .main-container #layout .rotating-slider p.control-title-sub-text {
+                height: 109px;
+                padding-top: 4%;
+                padding-bottom: 14%;
+                margin-bottom: -1%;
+            }
+
+            .main-container #layout .rotating-slider p.control-title-sub-text-up {
+
+                height: 109px;
+                padding-top: 4%;
+                padding-bottom: 14%;
+                margin-bottom: -1%;
+            }
+
+            .main-container #layout .rotating-slider .product-details h4.control-title {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-size: 2.2em;
+                line-height: 1em;
+                height: 80px;
+                padding-top: 4%;
+                padding-bottom: 4%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+        }
+
+
+
+
+        /**** Navigation Instruction ****/
+
+        .not-loaded {
+            visibility: hidden;
+        }
+
+
+        .main-container #layout a {
+
+            border-bottom: none;
+        }
+
+
+        .Absolute-Center {
+            width: 85%;
+            height: 6%;
+            overflow: auto;
+            margin: auto;
+            position: absolute;
+            top: -88%; left: 0; bottom: 0; right: 0;
+            -webkit-animation: opacfade 1s normal forwards ease-in;
+            -moz-animation:    opacfade 1s normal forwards ease-in;
+            -o-animation:      opacfade 1s normal forwards ease-in;
+            animation:         opacfade 1s normal forwards ease-in;
+            z-index: 9999;
+            border-radius: 20px;
+
+        }
+
+
+        .Center-Block {
+            background: #000;
+            color: #FFF;
+            padding: 31px 10px;
+            text-transform: uppercase;
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            letter-spacing: 1px;
+            font-size: 1em;
+            line-height: 19px;
+            font-weight: normal;
+        }
+
+        img.arrowguide {
+            width: 118px;
+            margin: auto;
+        }
+
+        h4.swipe-instruct {
+            margin-top: 13px;
+        }
+
+
+
+        @-webkit-keyframes opacfade {
+            0%   { opacity: 0; }
+            100% { opacity: 0.8; }
+        }
+        @-moz-keyframes opacfade {
+            0%   { opacity: 0; }
+            100% { opacity: 0.8; }
+        }
+        @-o-keyframes opacfade {
+            0%   { opacity: 0; }
+            100% { opacity: 0.8; }
+        }
+        @keyframes opacfade {
+            0%   { opacity: 0; }
+            100% { opacity: 0.8; }
+        }
+    </style>
+    <div class="family_wrapper">
+    <div class="std"><!----- Carousel Section ----->
+    <section class="section" id="layout" style="position:relative;">
+    <div class="Center-Block Absolute-Center" style="display: none"><img alt="" class="arrowguide" src="images/products-page/arrow-guide-lg.png?$staticlink$" />
+    <h4 class="swipe-instruct">Swipe left or right to explore more categories</h4>
+    </div>
+
+    <h1 class="product-head">our products</h1>
+
+    <div id="controller-panel">&nbsp;</div>
+
+    <div class="rotating-slider">
+    <ul class="slides not-loaded">
+        <li>
+        <div class="inner"><!-- Core -->
+        <div class="group-product-core">
+            <a href="$url('Home-Show')$" class="left-target"></a>
+            <img alt="" class="CaramelAlmondSeaSalt" src="images/products-page/CaramelAlmondSeaSalt_hi.png?$staticlink$" />
+            <span class="left-prod-gen">caramel almond &amp; sea salt</span>
+            <a href="$url('Home-Show')$" class="center-target"></a>
+            <img alt="" class="DarkChocolateNut" src="images/products-page/DarkChocolateNutsSeaSalt_hi.png?$staticlink$" />
+             <span class="center-prod-gen">dark chocolate nuts &amp; sea salt</span>
+             <a href="$url('Home-Show')$" class="right-target"></a>
+             <img alt="" class="PeanutButterDark" src="images/products-page/PeanutButterDarkChocolate_hi_update_2.png?$staticlink$" /> <span class="right-prod-gen">peanut butter dark chocolate</span></div>
+        </div>
+        </li>
+        <li>
+            <div class="inner">
+                <!-- HGB -->
+                <div class="group-product-hgb">
+                                                <a href="https://www.kindsnacks.com/products/oats-honey-toasted-coconut-bar" class="left-target"></a>
+                    <img src="images/products-page/US_KHGBar-Wrapper_OatsHoney_large_hi-min.png?$staticlink$" class="HGBarOatsHoney">
+                    <span class="left-prod-hgb">oats &amp; honey with toasted coconut</span>
+                                                <a href="https://www.kindsnacks.com/products/almond-butter-dark-chocolate" class="center-target"></a>
+                    <img src="images/products-page/US_KHGB-Wrapper_AlmondButterDarkChocolate_large_hi-min.png?$staticlink$" class="HGBAlmondButterDarkChocolate">
+                    <span class="center-prod-gen">almond butter dark chocolate</span>
+                                                <a href="https://www.kindsnacks.com/products/dark-chocolate-chunk-bar" class="right-target"></a>
+                    <img src="images/products-page/US_KHGBar-Wrapper_DarkChocolateChunk_large_hi-min.png?$staticlink$" class="HGDarkChocolateChunk">
+                    <span class="right-prod-hgb">dark chocolate chunk</span>
+                </div>
+
+            </div>
+        </li>
+        <li>
+                <div class="inner">
+
+                        <!-- kids -->
+                        <div class="group-product-kids">
+                                                        <a href="https://www.kindsnacks.com/products/chewy-honey-oat-kids" class="left-target"></a>
+                            <img src="images/products-page/ChewyHoneyOat_Small_hi-min.png?$staticlink$" class="ChewyHoneyOat">
+                            <span class="left-prod-kids">chewy honey oat</span>
+                                                        <a href="https://www.kindsnacks.com/products/chewy-chocolate-chip-kids" class="center-target"></a>
+                            <img src="images/products-page/ChewyChocolateChip_Small_hi-min.png?$staticlink$" class="ChewyChocolateChip">
+                            <span class="center-prod-kids">chewy chocolate chip</span>
+                                                        <a href="https://www.kindsnacks.com/products/chewy-peanut-butter-chocolate-chip-kids" class="right-target"></a>
+                            <img src="images/products-page/ChewyPeanutButter_Small_hi-min.png?$staticlink$" class="ChewyPeanutButter">
+                            <span class="right-prod-kids">chewy peanut butter chocolate chip</span>
+
+
+                        </div>
+                </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- breakfast -->
+                        <div class="group-product-breakfast">
+                                                        <a href="https://www.kindsnacks.com/products/dark-chocolate-cocoa-breakfast-bar" class="left-target"></a>
+                            <img src="images/products-page/DarkChocolateCocoa_Protein_Small_hi-min.png?$staticlink$" class="DarkChocolateCocoa">
+                            <span class="left-prod-break">dark chocolate cocoa</span>
+                                                        <a href="https://www.kindsnacks.com/products/peanut-butter-banana-dark-chocolate" class="center-target"></a>
+                            <img src="images/products-page/PeanutButterBananaDarkChocolate_Small_hi-min.png?$staticlink$" class="PeanutButterBananaDarkChocolate">
+                            <span class="center-prod-break">peanut butter banana dark chocolate</span>
+                                                        <a href="https://www.kindsnacks.com/products/peanut-butter-breakfast-bar" class="right-target"></a>
+                            <img src="images/products-page/PeanutButter_Small_hi-min.png?$staticlink$" class="PeanutButter_Small">
+                            <span class="right-prod-break">peanut butter</span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- clusters -->
+                        <div class="group-product-bags">
+                                                        <a href="https://www.kindsnacks.com/products/vanilla-blueberry-flax-seed-clusters" class="left-target"></a>
+                            <img src="images/products-page/VanillaBlueberry_Small_hi-min.png?$staticlink$" class="VanillaBlueberry_Small">
+                            <span class="left-prod-clust">vanilla blueberry clusters</span>
+                                                        <a href="https://www.kindsnacks.com/products/oats-honey-toasted-coconut-clusters" class="center-target"></a>
+                            <img src="images/products-page/OatsHoney_Small_hi-min.png?$staticlink$" class="OatsHoney_Small">
+                            <span class="center-prod-clust">oats &amp; honey clusters</span>
+                                                        <a href="https://www.kindsnacks.com/products/peanut-butter-clusters" class="right-target"></a>
+                            <img src="images/products-page/PeanutButter_Small_cluster_hi-min.png?$staticlink$" class="HPeanutButter_SmallCluster">
+                            <span class="right-prod-clust">peanut butter clusters</span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- fruit bites -->
+                        <div class="group-product-fruit-bites">
+                                                        <a href="https://www.kindsnacks.com/products/mango-pineapple-apple" class="left-target"></a>
+                            <img src="images/products-page/FruitBites_MangoApple_Pouch_Small_hi-min.png?$staticlink$" class="FruitBites_MangoApple">
+                            <span class="left-prod-fruit">mango pineapple apple</span>
+                                                        <a href="https://www.kindsnacks.com/products/strawberry-cherry-apple" class="center-target"></a>
+                            <img src="images/products-page/FruitBites_StrawberryCherryApple_Pouch_Small_hi-min.png?$staticlink$" class="FruitBites_StrawberryCherryApple">
+                            <span class="center-prod-fruit">strawberry cherry apple</span>
+                                                        <a href="https://www.kindsnacks.com/products/cherry-apple" class="right-target"></a>
+                            <img src="images/products-page/FruitBites_CherryApple_Pouch_Small_hi-min.png?$staticlink$" class="FruitBites_CherryApple_Pouch">
+                            <span class="right-prod-fruit">cherry apple</span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- pressed -->
+                        <div class="group-product-pressed">
+                                                        <a href="https://www.kindsnacks.com/products/dark-chocolate-banana" class="left-target"></a>
+                            <img src="images/products-page/PRESSED_DarkChocolateBanana_Large_hi-min.png?$staticlink$" class="PRESSED_DarkChocolateBanana">
+                            <span class="left-prod-pressed">dark chocolate banana</span>
+                                                        <a href="https://www.kindsnacks.com/products/mango-apple-chia-bar" class="center-target"></a>
+                            <img src="images/products-page/PRESSED_MangoApple_Large_hi-min.png?$staticlink$" class="PRESSED_MangoApple">
+                            <span class="center-prod-pressed">mango apple chia</span>
+                                                        <a href="https://www.kindsnacks.com/products/dark-chocolate-strawberry" class="right-target"></a>
+                            <img src="images/products-page/PRESSED_DarkChocolateStrawberry_Large_hi-min.png?$staticlink$" class="PRESSED_DarkChocolateStrawberry">
+                            <span class="right-prod-pressed">dark chocolate strawberry</span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- ss -->
+                        <div class="group-product-ss">
+                                                        <a href="https://www.kindsnacks.com/products/sweet-cayenne-bbq-bar" class="left-target"></a>
+                            <img src="images/products-page/SweetCayenneBBQ_Small_hi-min-OPT.png?$staticlink$" class="KoreanChili_Small">
+                            <span class="left-prod-ss">sweet cayenne bbq</span>
+                                                        <a href="https://www.kindsnacks.com/products/roasted-jalapeno-bar" class="center-target"></a>
+                            <img src="images/products-page/RoastedJalapeno_Small_hi-min.png?$staticlink$" class="RoastedJalapeno_Small">
+                            <span class="center-prod-ss">roasted jalapeno</span>
+                                                        <a href="https://www.kindsnacks.com/products/thai-sweet-chili-bar" class="right-target"></a>
+                            <img src="images/products-page/ThaiSweetChili_Small_hi-min.png?$staticlink$" class="ThaiSweetChili_Small">
+                            <span class="right-prod-ss">thai sweet chili</span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- minis -->
+                        <div class="group-product-mini">
+                                                        <a href="https://www.kindsnacks.com/products/peanut-butter-dark-chocolate-dark-chocolate-cherry-cashew-minis" class="left-target"></a>
+                            <img src="images/products-page/MINI_DarkChocolateCherryCashew_Small_hi-min.png?$staticlink$" class="MINI_DarkChocolateCherryCashew">
+                            <span class="left-prod-mini">dark chocolate cherry cashew</span>
+                                                        <a href="https://www.kindsnacks.com/products/dark-chocolate-nuts-sea-salt-caramel-almond-sea-salt-minis" class="center-target"></a>
+                            <img src="images/products-page/MINI_CaramelAlmondSeaSalt_Small_hi-min.png?$staticlink$" class="MINI_CaramelAlmondSeaSalt">
+                            <span class="center-prod-mini">caramel almond &amp; sea salt</span>
+                                                        <a href="https://www.kindsnacks.com/products/dark-chocolate-nuts-sea-salt-caramel-almond-sea-salt-minis" class="right-target"></a>
+                            <img src="images/products-page/MINI_DarkChocolateNutsSeaSalt_Small_hi-min.png?$staticlink$" class="MINI_DarkChocolateNutsSeaSalt">
+                            <span class="right-prod-mini">dark chocolate nuts &amp; sea salt</span>
+                                                        <a href="https://www.kindsnacks.com/products/peanut-butter-dark-chocolate-dark-chocolate-cherry-cashew-minis" class="right-target-2"></a>
+                            <img src="images/products-page/MINI_PeanutButterDarkChocolate_Small_hi-min.png?$staticlink$" class="MINI_PeanutButterDarkChocolate">
+                            <span class="right-prod-mini-2">peanut butter dark chocolate </span>
+                        </div>
+                    </div>
+        </li>
+        <li>
+                <div class="inner">
+                        <!-- Protein -->
+                        <div class="group-product-protein">
+                                                        <a href="https://www.kindsnacks.com/products/double-dark-chocolate-nut" class="left-target"></a>
+                            <img src="images/products-page/DoubleDarkChocolateNut_hi-min.png?$staticlink$" class="DoubleDarkChocolateNut">
+                            <span class="left-prod-protein">double dark chocolate nut</span>
+                                                        <a href="https://www.kindsnacks.com/products/crunchy-peanut-butter" class="center-target"></a>
+                            <img src="images/products-page/CrunchyPeanutButter_hi-min.png?$staticlink$" class="CrunchyPeanutButter">
+                            <span class="center-prod-protein">crunchy peanut butter</span>
+                                                        <a href="https://www.kindsnacks.com/products/toasted-caramel-nut" class="right-target"></a>
+                            <img src="images/products-page/ToastedCaramelNut_hi-min.png?$staticlink$" class="ToastedCaramelNut">
+                            <span class="right-prod-protein">toasted caramel nut</span>
+                        </div>
+                    </div>
+        </li>
+    </ul>
+
+    <div class="kind-nut-bars">
+    <div class="product-details">
+    <h4 class="control-title">KIND<sup>&reg;</sup> bars</h4>
+
+    <p class="control-title-sub-text">whole ingredients like nuts, mixed with fruits and spices bound together with honey</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'kind-nut-bars')$" style="background:#000;border: 2px solid #000;color:#fff;display: block; text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="kids" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND kids<sup>&trade;</sup> bars</h4>
+
+    <p class="control-title-sub-text">kid-sized granola bars with 100% whole grains and no artificial colors, flavors or preservatives</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'kids')$" style="background:#000;border: 2px solid #000;color:#fff;display: block; text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="hgb" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND healthy grains<sup>&reg;</sup> bars</h4>
+
+    <p class="control-title-sub-text">5+ super grains baked into a tasty, convenient snack</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'healthy-grains-bars')$" style="background:#000;border: 2px solid #000;color:#fff;display: block; text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="breakf" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND <sup>&reg;</sup> breakfast bars</h4>
+
+    <p class="control-title-sub-text-up">soft baked with a crispy outside, these bars are a perfect part of an on-the-go breakfast</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'kind-breakfast-bars')$" style="background:#000;border: 2px solid #000;color:#fff;display: block; text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="cluster" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND healthy grains<sup>&reg;</sup> clusters</h4>
+
+    <p class="control-title-sub-text">a five super grain blend of oats, millet, buckwheat, amaranth, and quinoa combined into perfect-sized clusters</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'healthy-grains-clusters')$" style="background:#000;border: 2px solid #000;color:#fff;display: block;text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="fruitbite" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">fruit bites</h4>
+
+    <p class="control-title-sub-text-up">bite-sized snacks made with just fruit</p>
+    <a class="jumbo-product-promo-button button" href="/products/fruit-bites" style="background:#000;border: 2px solid #000;color:#fff;display: block; text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="mini" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND<sup>&reg;</sup> minis</h4>
+
+    <p class="control-title-sub-text-up">mini bar, massive flavor</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'kind-minis')$" style="background:#000;border: 2px solid #000;color:#fff;display: block;text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="pressed" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">pressed by KIND<sup>&reg;</sup></h4>
+
+    <p class="control-title-sub-text-up">1-2 servings of fruit per bar</p>
+    <a class="jumbo-product-promo-button button" href="/products/pressed-by-kind" style="background:#000;border: 2px solid #000;color:#fff;display: block;text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="protein" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND protein from real food<sup>&trade;</sup></h4>
+
+    <p class="control-title-sub-text">creamy. crunchy. delicious. a protein bar that doesn't taste like one</p>
+    <a class="jumbo-product-promo-button button" href="$url('Search-Show', 'cgid', 'kind-protein')$" style="background:#000;border: 2px solid #000;color:#fff;display: block;text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+
+    <div class="ssbars" style="display: none">
+    <div class="product-details">
+    <h4 class="control-title">KIND<sup>&reg;</sup> sweet &amp; spicy bars</h4>
+
+    <p class="control-title-sub-text-up">bold and savory flavors packed with 10g of plant-based protein</p>
+    <a class="jumbo-product-promo-button button" href="/products/sweet-spicy" style="background:#000;border: 2px solid #000;color:#fff;display: block;text-transform: uppercase;font-weight: 400;font-size: 0.8em;line-height: 25px;width: 186px;">shop all</a></div>
+    </div>
+    </div>
+
+    <div class="bottom-portion"><!----- Product list Section ----->
+    <div class="container">
+    <div class="feature-grid-row feature-middle">
+    <article class="grid-item core-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-nut-bars')$">KIND<sup>&reg;</sup> bars</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-nut-bars')$"><img alt="" class="coredarkchoc" src="images/products-page/DarkChocolateNutsSeaSalt_hi.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-nut-bars')$">whole ingredients like nuts, mixed with fruits and spices bound together with honey </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'kind-nut-bars')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item kids-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'kids')$">KIND kids<sup>&trade;</sup> bars</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'kids')$"><img alt="" class="kidschewychocchip" src="images/products-page/ChewyChocolateChip_Small_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'kids')$">kid-sized granola bars with 100% whole grains and no artificial colors, flavors or preservatives </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'kids')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item protein-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-protein')$">KIND protein from real food<sup>&trade;</sup></a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-protein')$"><img alt="" class="proteinpeanutcrunch" src="images/products-page/CrunchyPeanutButter_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-protein')$">creamy. crunchy. delicious. a protein bar that doesn't taste like one </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'kind-protein')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item hgb-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-bars')$">KIND healthy grains<sup>&reg;</sup> bars</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-bars')$"><img alt="" class="hgbbar" src="images/products-page/US_KHGB-Wrapper_AlmondButterDarkChocolate_large_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-bars')$">5+ super grains baked into a tasty, convenient snack </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'healthy-grains-bars')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item clusters-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-clusters')$">KIND healthy grains<sup>&reg;</sup> clusters</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-clusters')$"><img alt="" class="clusterpeanutbutter" src="images/products-page/PeanutButter_Small_cluster_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'healthy-grains-clusters')$">a five super grain blend of oats, millet, buckwheat, amaranth, and quinoa combined into perfect-sized clusters </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'healthy-grains-clusters')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item breakfast-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-breakfast-bars')$">KIND<sup>&reg;</sup> breakfast bars</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-breakfast-bars')$"><img alt="" class="breakfastpb" src="images/products-page/PeanutButterBananaDarkChocolate_Small_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-breakfast-bars')$">soft baked with a crispy outside, these bars are a perfect part of an on-the-go breakfast </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'kind-breakfast-bars')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item pressed-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'pressed-by-KIND')$">pressed by KIND<sup>&reg;</sup></a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'pressed-by-KIND')$"><img alt="" class="pressedstrawchoc" src="images/products-page/PRESSED_DarkChocolateStrawberry_Large_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'pressed-by-KIND')$">1-2 servings of fruit per bar </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'pressed-by-KIND')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item fruit-bites-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'fruit-bites')$">fruit bites</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'fruit-bites')$"><img alt="" class="fruitbitestrawapple" src="images/products-page/FruitBites_StrawberryCherryApple_Pouch_Small_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'fruit-bites')$">bite-sized snacks made with just fruit </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'fruit-bites')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item minis-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-minis')$">KIND<sup>&reg;</sup> minis</a></h4>
+    </header>
+
+    <a class="inner" href="$url('Search-Show', 'cgid', 'kind-minis')$"><div class="image-container mini-container"><img alt="" class="minischoc" src="images/products-page/MINI_DarkChocolateNutsSeaSalt_Small_hi-min.png?$staticlink$" title="" /> <img alt="" class="minicaramel" src="images/products-page/MINI_CaramelAlmondSeaSalt_Small_hi-min.png?$staticlink$" title="" /> </div></a>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'kind-minis')$">mini bar, massive flavor </a></p>
+
+    <div class="text-center shop-all mini-shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'kind-minis')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item ss-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'sweet-spicy')$">KIND<sup>&reg;</sup> sweet &amp; spicy bars</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'sweet-spicy')$"><img alt="" class="ssjalapeno" src="images/products-page/RoastedJalapeno_Small_hi-min.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'sweet-spicy')$">bold and savory flavors packed with 10g of plant-based protein </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'sweet-spicy')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item variety-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Search-Show', 'cgid', 'variety')$">variety packs</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Search-Show', 'cgid', 'variety')$"><img alt="" class="protein-stacked" src="images/products-page/protein-group.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Search-Show', 'cgid', 'variety')$">can't choose? we packed multiple flavors into one box </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Search-Show', 'cgid', 'variety')$">Shop all</a></div>
+    </div>
+    </article>
+
+    <article class="grid-item snack-club-prod-group">
+    <div class="wrapper">
+    <header>
+    <h4 class="product-title"><a class="inner" href="$url('Product-Show', 'pid', 'M27000')$">not sure what to try?</a></h4>
+    </header>
+
+    <div class="image-container"><a class="inner" href="$url('Product-Show', 'pid', 'M27000')$"><img alt="" class="coredarkchoc" src="images/products-page/DarkChocolateNutsSeaSalt_hi.png?$staticlink$" title="" /> </a></div>
+
+    <p class="product-details-plp"><a class="inner" href="$url('Product-Show', 'pid', 'M27000')$">enjoy 20 fan-favorite snacks with our exclusive Snack Pack! </a></p>
+
+    <div class="text-center shop-all"><a class="button-outline-white" href="$url('Product-Show', 'pid', 'M27000')$">Shop all</a></div>
+    </div>
+    </article>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+
+    <div class="block block-list block-amseorichdata" itemscope="" itemtype="http://schema.org/Product">
+    <div class="block-title"><strong><meta itemprop="name" content="Products"></strong></div>
+
+    <div class="block-content">
+    <div class="ratings" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating"><meta itemprop="ratingValue" content="4.53"><meta itemprop="reviewCount" content="1242"><meta itemprop="ratingCount" content="1409">
+    <div class="rating-box" style="display: none;">
+    <div class="rating" style="width:90.6897%">&nbsp;</div>
+    </div>
+
+    <div class="rating-links" style="display: none">1242 Review(s)</div>
+    </div>
+
+    <div class="price-box" itemprop="offers" itemscope="" itemtype="http://schema.org/AggregateOffer">
+    <p class="minimal-price"><meta class="price-label" content="Minimal Price:"><span class="price"> <meta itemprop="priceCurrency" content="USD"> </span></p>
+
+    <div style="display: none">2.50</div>
+    <meta itemprop="lowPrice" content="2.5">
+
+    <p>&nbsp;</p>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="col-left sidebar">&nbsp;</div>
+    </div>
+
+    <div class="col-right sidebar">&nbsp;</div>
+    </div>
+    </div>
+        </div>

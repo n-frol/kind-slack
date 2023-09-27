@@ -1,0 +1,22 @@
+<!-- Quantity Drop Down Menu -->
+<div class="bonus-quantity col-sm-6 c-quantity-form">
+    <label class="c-quantity-form__label">${Resource.msg('label.quantity', 'common', null)}</label>
+    <div class="c-quantity-form__select-wrapper u-width-auto">
+        <select class="bonus-quantity-select custom-select form-control quantity quantity-select c-quantity-form__custom-select">
+            <isloop items="${product.quantities}" var="quantity">
+                <isif condition="${quantity.value > pdict.maxPids}">
+                    <iscontinue>
+                </isif>
+
+                <option value="${quantity.value}"
+                    <isif condition="${product.productType !== 'bundle'}">
+                        data-url="${quantity.url}"
+                    </isif>
+                    ${quantity.selected ? 'selected' : ''}
+                >
+                    ${quantity.value}
+                </option>
+            </isloop>
+        </select>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+/* ============================================================================
+Checkout Shipping Gift
+============================================================================ */
+
+/**
+ * Establish styles for shipping gift section of the checkout page
+ */
+
+$ns: "c-checkout-shipping-gift";
+
+.#{$ns} {
+    &__checkbox {
+        &__group {
+            margin-bottom: 12px;
+            margin-top: 5px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 0;
+            }
+        }
+    }
+    & &__checkbox {
+        margin-bottom: 0;
+    }
+    &__summary {
+        line-height: 1.5;
+        margin-bottom: $grid-gutter-width;
+    }
+
+    &__message {
+        overflow-wrap: break-word;
+    }
+}

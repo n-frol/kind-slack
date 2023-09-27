@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer-groups xmlns="http://www.demandware.com/xml/impex/customergroup/2007-06-30">
+    <customer-group group-id="vertexTestCustomerGroup">
+        <description>A customer group for testing the customer class assignment for the Vertex service API call.</description>
+        <membership-rule>
+            <included-customers>
+                <condition-group match-mode="all">
+                    <condition>
+                        <attribute-path>customer.profile.email</attribute-path>
+                        <operator>ends-with</operator>
+                        <string>pixelmedia.com</string>
+                    </condition>
+                </condition-group>
+            </included-customers>
+        </membership-rule>
+        <custom-attributes>
+            <custom-attribute attribute-id="customerClassCode">specialized</custom-attribute>
+            <custom-attribute attribute-id="customerClassCodeID">merchant</custom-attribute>
+        </custom-attributes>
+    </customer-group>
+</customer-groups>

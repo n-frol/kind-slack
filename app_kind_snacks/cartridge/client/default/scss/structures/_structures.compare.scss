@@ -1,0 +1,71 @@
+/* ============================================================================
+Compare Products Page Main Area
+============================================================================ */
+
+/**
+ * Establish styles for the main area of the compare products page
+ */
+
+ $ns: st-compare;
+
+.#{$ns} {
+    background-color: transparent;
+    margin-bottom: 92px;
+    max-width: 100%;
+    table-layout: fixed;
+    width: 100%;
+
+    &__products {
+
+        &__tile {
+            position: relative;
+            vertical-align: top;
+        }
+
+        &__action {
+            margin-bottom: 34px;
+            text-align: center;
+        }
+
+        &__add-to-cart {
+            max-width: 216px;
+        }
+
+        &__remove {
+            display: inline-block;
+            height: 24px;
+            position: absolute;
+                right: 0;
+                top: 0;
+            width: 24px;
+
+            &:before {
+                @include background-svg($svg-close-bold);
+
+                background-size: cover;
+                content: '';
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    &__attributes {
+        font-family: $font-family-primary;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        text-transform: lowercase;
+
+        &__row {
+            &:nth-of-type(odd) {
+                background-color: $light-gray;
+            }
+        }
+
+        &__col {
+            border-left: 1px solid black;
+        }
+    }
+}

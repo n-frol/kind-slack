@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coupons xmlns="http://www.demandware.com/xml/impex/coupon/2008-06-17">
+    <coupon coupon-id="kindwelcome">
+        <enabled-flag>true</enabled-flag>
+        <case-insensitive>true</case-insensitive>
+        <redemption-limits>
+            <allow-multiple-codes-per-order>false</allow-multiple-codes-per-order>
+        </redemption-limits>
+        <system-codes>
+            <max-number-of-codes>100000</max-number-of-codes>
+            <code-length>16</code-length>
+            <include-vowels>true</include-vowels>
+            <include-dashes>true</include-dashes>
+            <algorithm>F2</algorithm>
+        </system-codes>
+    </coupon>
+</coupons>

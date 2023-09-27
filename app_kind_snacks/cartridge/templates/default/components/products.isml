@@ -1,0 +1,57 @@
+    <isscript>
+        var dataSlick = JSON.stringify({
+           arrows: true,
+            dots: true,
+            infinite: true,
+            slidesToScroll: 1,
+            slidesToShow: 1,
+            nextArrow: '<button class="carousel-control-next c-product-witb__slider__controls__arrow c-product-witb__slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next js-slider__controls__next slick-next slick-arrow" type="button" data-slide="next" style=""><span class="sr-only">Next</span></button>',
+            prevArrow: '<button class="carousel-control-prev c-product-witb__slider__controls__arrow c-product-witb__slider__controls__prev c-slick-slider__controls__arrow c-slick-slider__controls__prev js-slider__controls__prev slick-prev slick-arrow" type="button" data-slide="prev" style=""><span class="sr-only">Previous</span></button>',
+            responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 9999,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }]
+        });
+    </isscript>
+
+<div class="s-slick">
+    <div class="c-recommendation__slider js-slider js-recommendation-slider" data-slick='<isprint value="${dataSlick}" encoding="off">'>
+        <isloop items="${products}" var="product" status="loopstate">
+            <isset name="listName" value="${typeof listName !== 'undefined' ? listName : 'None'}" scope="page" />
+            <div data-gridname="${listName}" data-gridindex="${loopstate.index}">
+                <isscript>
+                    var showQuickView = typeof showQuickView === 'undefined' ? false : showQuickView; // Make sure showQuickview is initialized, since not all templates will be using it
+                </isscript>
+                <isobject object="${product}" view="recommendation">
+                    <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'showQuickView', showQuickView)}" />
+                </isobject>
+            </div>
+        </isloop>
+    </div>
+    <div class="c-recommendation__slider__controls js-slider__controls controls-black">
+        <iscomment>Hide arrows here so jQuery can get them.  Allows for generating buttons using SFRA functions that imageCarousel.js won't have access to</iscomment>
+        <button class="carousel-control-prev c-recommendation__slider__controls__arrow c-recommendation__slider__controls__prev js-slider__controls__prev slick-prev d-none" type="button" data-slide="prev">
+            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+        </button>
+
+        <button class="carousel-control-next c-recommendation__slider__controls__arrow c-recommendation__slider__controls__next js-slider__controls__next slick-next d-none" type="button" data-slide="next">
+            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+        </button>
+
+    </div>
+</div>

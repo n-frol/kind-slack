@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="isMultiShipActive">
+                <display-name xml:lang="x-default">Is Multi-Shipping Enabled?</display-name>
+                <description xml:lang="x-default">Enable multiple shipments to different shipping addresses.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="CheckoutConfiguration">
+            <display-name xml:lang="x-default">Checkout Configurations</display-name>
+            <attribute attribute-id="isMultiShipActive"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

@@ -1,0 +1,72 @@
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+/**
+ * Styles the Compare components
+ */
+
+$ns: c-compare-bar;
+
+.#{$ns} {
+    background-color: $light-gray;
+    display: none;
+    position: fixed;
+        bottom: 0;
+    width: 100%;
+    z-index: 1;
+
+    &__product-slots {
+        height: 206px;
+    }
+
+    &__slot {
+        background-color: white;
+        border: 2px solid $grey3;
+        display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        height: 150px;
+        margin: 0 auto;
+        position: relative;
+
+        &__img {
+            flex-shrink: 0;
+            max-width: 75%;
+        }
+
+        &__close {
+            background-color: $light-gray;
+            height: 100%;
+            min-height: 0;
+            min-width: 0;
+            width: 25%;
+            &__icon {
+                height: 24px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 24px;
+                &:before {
+                    @include background-svg($svg-close-bold);
+
+                    background-size: cover;
+                    content: '';
+                    display: inline-block;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+        }
+        &__min-products-msg {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    &__action {
+        &__compare,
+        &__clear-all {
+            min-width: 180px;
+        }
+    }
+}

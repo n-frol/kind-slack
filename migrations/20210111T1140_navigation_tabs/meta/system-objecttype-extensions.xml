@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="navigationFirstTabLink">
+                <display-name xml:lang="x-default">Kindsnacks Site Link</display-name>
+                <description xml:lang="x-default">Link to the Kindsnacks site.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="navigationSecondTabLink">
+                <display-name xml:lang="x-default">CreativeSnacks Site Link</display-name>
+                <description xml:lang="x-default">Link to the CreativeSnacks site.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="navigationTabsEnabled">
+                <display-name xml:lang="x-default">Navigation Tabs Enabled</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Navigation Tabs Configs">
+                <display-name xml:lang="x-default">Navigation Tabs Configurations</display-name>
+                <attribute attribute-id="navigationTabsEnabled"/>
+                <attribute attribute-id="navigationFirstTabLink"/>
+                <attribute attribute-id="navigationSecondTabLink"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

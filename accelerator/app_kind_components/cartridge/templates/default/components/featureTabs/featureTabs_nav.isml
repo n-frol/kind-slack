@@ -1,0 +1,36 @@
+<isif condition="${loopStatus.first}">
+    <div class="c-feature-tabs th-kind-feature-tabs s-graphical-asset">
+        <isinclude template="components/featureTabs/featureTabs_header" />
+        <div class="conainter c-feature-tabs__nav__wrap th-kind-feature-tabs__nav__wrap">
+            <div class="row justify-content-center">
+                <ul class="nav nav-tabs nav-fill c-feature-tabs__nav th-kind-feature-tabs__nav c-tabs" role="tablist">
+</isif>
+<isif condition="${!empty(graphicalAsset)}">
+    <isscript>
+        var GetResponsiveImage = require('~/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+    </isscript>
+
+    <isinclude template="components/featureTabs/featureTabs_UI" />
+    <li class="c-feature-tabs__nav__item th-kind-feature-tabs__nav__item nav-item">
+        <a href="${'#' + assetID}" class="nav-link c-feature-tabs__nav__item__link th-kind-feature-tabs__nav__item__link <isif condition="${loopStatus.first}">active show</isif>" role="tab" data-toggle="tab">
+            ${contentAsset.name}
+        </a>
+    </li>
+</isif>
+<isif condition="${loopStatus.last}">
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <isloop items="${assets}" var="asset" status="innerLoopStatus">
+            <isset name="graphicalAsset" value="${asset.graphicalAsset}" scope="page" />
+            <isset name="contentAsset" value="${asset.contentAsset}" scope="page" />
+            <isset name="assetID" value="${asset.assetID}" scope="page" />
+
+            <isinclude template="components/featureTabs/featureTabs" />
+        </isloop>
+    </div>
+
+    </div>
+</isif>

@@ -1,0 +1,22 @@
+/* ============================================================================
+PDP Description
+============================================================================ */
+
+/**
+ * Establish styles for the description block on the PDP.
+ */
+
+$ns: c-product-description;
+
+.#{$ns} {
+    line-height: 1.6;
+    margin-bottom: 28px;
+    max-width: 575px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+        padding-right: 10px;
+    }
+}

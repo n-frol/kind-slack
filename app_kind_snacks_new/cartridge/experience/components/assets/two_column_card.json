@@ -1,0 +1,95 @@
+{
+    "name": "Two Column Card",
+    "description": "Two Column Card",
+    "group": "orchard",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "imagemobile",
+                    "name": "Image Mobile",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "direction",
+                    "name": "Direction",
+                    "type": "enum",
+                    "values": ["normal", "reverse"],
+                    "default_value": "normal",
+                    "required": false
+                },
+                {
+                    "id": "backgroundcolor",
+                    "name": "Background Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "textcolor",
+                    "name": "Text Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "inner_align",
+                    "name": "Inner Align",
+                    "type": "enum",
+                    "values": ["left", "center", "right"],
+                    "default_value": "center",
+                    "required": false
+                },
+                {
+                    "id": "inner_align_t",
+                    "name": "Inner Align Text",
+                    "type": "enum",
+                    "values": ["left", "center", "right"],
+                    "default_value": "center",
+                    "required": false
+                },
+                {
+                    "id": "innerheadline",
+                    "name": "Headline Ineer",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "innercopy",
+                    "name": "Copy Inner",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

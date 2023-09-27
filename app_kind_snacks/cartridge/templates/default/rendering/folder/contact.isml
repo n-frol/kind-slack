@@ -1,0 +1,59 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<isdecorate template="common/layout/page">
+
+    <!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/contact.js');
+    </isscript>
+
+
+    <div class="contact u-background__color-grey9 page-offset-top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h1 class="contact-title col-12 text-center h2-md">
+                    ${pdict.folder.name}
+                </h1>
+                <isif condition="${!empty(pdict.folder.description)}">
+                    <span class="contact-subtitle">
+                        ${pdict.folder.description}
+                    </span>
+                </isif>
+            </div>
+        </div>
+        <div class="container st-container--padded pb-0">
+            <div class="contact-body row u-background__color-white">
+                <iscomment>render the results as two column layout</iscomment>
+                <ul class="folder-content-list c-forward-nav">
+                <isloop items="${pdict.folder.content}" var="asset" status="loopstate">
+
+                    <li class="c-forward-nav__element">
+                        <iscomment>append the search parameters to the article URL</iscomment>
+                        <isset name="articleURL" value="${asset.url.toString()}" scope="page"/>
+
+                        <a class="content-title name-link c-forward-nav__element__link" href="${articleURL}">
+                            <span class="content-name c-forward-nav__element__label">
+                                <span class="c-forward-nav__element__label__name">
+                                    <isprint value="${asset.name}"/>
+                                </span>
+                            </span>
+                        </a>
+
+                    </li>
+
+                </isloop>
+                    <iscomment>Add an empty element to get spacing where</iscomment>
+                    <li class="c-forward-nav__element"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <isinclude template="components/footer/contactFooter" />
+
+</isdecorate>
+
+

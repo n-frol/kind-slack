@@ -1,0 +1,109 @@
+/**
+ * Service class for paymorrow methods
+ */
+/* Api includes */
+var cdpmLogger = require('dw/system/Logger').getLogger('paymentOperator', 'paymentOperator');
+var HashMap    = require('dw/util/HashMap');
+
+/* Script includes */
+var AbstractComputopService = require('./AbstractComputopService');
+
+var Paymorrow = AbstractComputopService.extend({
+    init: function () {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorPaymorrowGatewayPath');
+    },
+
+    /**
+     * Decrypt response
+     *
+     * @param {dw.svc.Service} svc
+     * @param {dw.svc.HttpClient} httpClient
+     * @returns {dw.util.HashMap} - parsed paygate response
+     */
+    parseResponse: function (svc, httpClient) {
+        var result;
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+
+        try {
+            if (200 == httpClient.getStatusCode()) {
+                var responseObject = this.splitAttributes(httpClient.text, '=', '&');
+                cdpmLogger.debug('PAYMORROW raw response: ' + httpClient.text );
+                result = responseObject.hasOwnProperty("Data") ? this.decryptResponse(responseObject.Data, merchantCode) : '';
+
+                if (result == '' || result == null) {
+                    result = this.parseSecureData(httpClient.text);
+                } else {
+                    result = this.toParameterMap(result);
+                }
+                // log response data for debugging
+                this.logResponse(result);
+            }
+        } catch (err) {
+            cdpmLogger.error('Error while fetching / decrypting the response!' + err.fileName + ': ' + err.message + '\n' + err.stack );
+        }
+        return result;
+    },
+
+    /**
+     * decode non encrypted 3D Secure response
+     *
+     * @param {string} data - raw paygate response
+     * @returns {dw.util.HashMap} - parse paygate response to hashmap
+     */
+    parseSecureData: function (data) {
+        var result = new HashMap();
+        data = data.replace(/acsurl=/g, '');
+
+        // PaReq parameter
+        var paReqPosition = data.search(/pareq=/g);
+        var paReq = '';
+        var acsUrl = '';
+
+        if (paReqPosition != -1) {
+            var paReyParameterCandidate : String = data.substr(paReqPosition + 6);
+            var nextParameterPosition = paReyParameterCandidate.search(/\&/g);
+            if (nextParameterPosition != -1) {
+                paReq = paReyParameterCandidate.substring(0, nextParameterPosition);
+            } else {
+                paReq = paReyParameterCandidate;
+            }
+
+            // FIXME why paymorrow service should return a ACS url?
+            // ACS URL parameter
+            acsUrl = data.substr(0, paReqPosition -1).replace(/\?.+$/,'');
+        } else {
+            acsUrl = data;
+        }
+
+        // TransId parameter
+        var transIdPosition = data.search(/TransID=/g);
+        var transId = '';
+        if (transIdPosition != -1) {
+            var transIdCandidate = data.substr(transIdPosition + 8);
+            var newParameterPosition = transIdCandidate.search(/\&/g);
+            if (newParameterPosition != -1) {
+                transId = transIdCandidate.substring(0, newParameterPosition);
+            } else {
+                transId = transIdCandidate;
+            }
+        }
+
+        // modified TermId parameter
+        var termUrlPosition = data.search(/termurl=/g);
+        var termUrl = '';
+        if (termUrlPosition != -1) {
+            termUrl = data.substr(termUrlPosition + 8);
+        }
+
+        result.put('ACSURL', acsUrl);
+        result.put('PaReq', paReq);
+        result.put('TransId', transId);
+        result.put('TermUrl', termUrl);
+
+        return result;
+    },
+
+});
+//Export the configured service singleton
+module.exports = (new Paymorrow()).getService();

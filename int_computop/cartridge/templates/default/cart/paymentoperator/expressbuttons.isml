@@ -1,0 +1,52 @@
+<!--- TEMPLATENAME: cart/paymentoperator/expressbuttons.isml --->
+<isscript>
+    importPackage(dw.system);
+    importPackage(dw.util);
+
+    var locString : String = pdict.locale;
+    var lmUrl : String = "https://www.mastercard.com/mc_us/wallet/learnmore/";
+    var imgUrl : String = "https://www.mastercard.com/mc_us/wallet/img/";
+    var locLmUrl : String = "en/US";
+    var locImgUrl : String = "en/US";
+
+    if (locString == null || locString.size < 2 || locString.equals("default")) {
+        // default
+    } else if ((locString.substr(0,2)).equals("en")) {
+        // default
+    } else if ((locString.substr(0,2)).equals("de")) {
+        locLmUrl = "de/DE";
+        locImgUrl = "de/DE";
+    } else if ((locString.substr(0,2)).equals("es")) {
+        locLmUrl = "es/ES";
+        locImgUrl = "es/ES";
+    } else if ((locString.substr(0,2)).equals("fr")) {
+        locLmUrl = "fr";
+        locImgUrl = "fr/FR";
+    } else if ((locString.substr(0,2)).equals("it")) {
+        locLmUrl = "it";
+    } else if ((locString.substr(0,2)).equals("se")) {
+        locLmUrl = "se";
+    }
+    lmUrl += locLmUrl;
+    imgUrl += locImgUrl + "/mcpp_wllt_btn_chk_180x042px.png";
+</isscript>
+
+<isloop items="${ pdict.expressMethods }" var="expressMethod" status="loopState">
+    <isif condition="${ expressMethod.ID.equals('PAYMENTOPERATOR_MASTERPASS_QUICKCHECKOUT') }">
+        <div class="masterpass-quickcheckout">
+            <iscomment>MasterPass QuickCheckout Button</iscomment>
+            <a class="" role="button" href="${ URLUtils.https('PaymentOperator-MasterpassQuickCheckout') }">
+                <img src="${ imgUrl }"
+                     alt="${ Resource.msg('masterpassquickcheckout.imgalt', 'paymentoperator', 'Checkout with MasterPass') }" />
+            </a>
+        </div>
+        <a href="${ lmUrl }" target="_blank">${ Resource.msg('masterpassquickcheckout.learnmore', 'paymentoperator', 'Learn more') }</a>
+    <iselseif condition="${ expressMethod.ID.equals('PAYMENTOPERATOR_PAYPALEXPRESS') }">
+        <div class="paypal-expresscheckout">
+            <iscomment>PayPal Express Button</iscomment>
+            <a class="" role="button" href="${ URLUtils.https('PaymentOperator-PaypalExpress') }">
+                <img src="${ URLUtils.staticURL('/images/PP_logo_h_150x38.png') }" width:147px><span></span>
+            </a>
+        </div>
+    </isif>
+</isloop>

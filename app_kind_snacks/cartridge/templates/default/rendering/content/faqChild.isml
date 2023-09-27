@@ -1,0 +1,44 @@
+<isdecorate template="common/layout/page">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!----------------------------------------------------------------------------------->
+    <!-- Load Static Assets -->
+    <!----------------------------------------------------------------------------------->
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addJs('/js/contact.js');
+    </isscript>
+    
+    <isif condition="${!empty(pdict.content.custom.hideBanner) && pdict.content.custom.hideBanner}">
+        <script>
+            var promoBanner = document.getElementsByClassName('header-banner');
+            promoBanner[0].style.display = 'none';
+        </script>
+    </isif>
+
+    <isif condition="${!empty(pdict.content)}">
+        <isset name="asset" value="${pdict.content}" scope="page" />
+        <isset name="assetID" value="${asset.ID}" scope="page" />
+
+        <div class="contact-details u-background__color-grey9">
+            <div class="container st-container--padded">
+                <div class="row align-items-center">
+                    <div class="col-2">
+                        <a href="${URLUtils.url('Search-ShowContent', 'fdid', asset.classificationFolder.id)}">
+                            <img src="${URLUtils.staticURL('images/back-button.svg')}" alt="${Resource.msg('link.header.menu.back', 'common', null)}" />
+                        </a>
+                    </div>
+                    <h1 class="contact-details-title h3 col-8 text-center">
+                        ${asset.name}
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <isinclude url="${URLUtils.url('Contact-GetContactForm', 'cid', assetID, 'success', pdict.success, 'formId', 'contact', 'formTemplate', 'contact/faqContactForm.isml')}" />
+
+        <isinclude template="components/footer/contactFooter" />
+
+    </isif>
+
+</isdecorate>

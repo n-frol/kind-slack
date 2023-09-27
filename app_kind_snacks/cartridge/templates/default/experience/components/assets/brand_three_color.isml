@@ -1,0 +1,29 @@
+<div class="triple_color" style="background:${pdict.color}; color:white;">
+    <h3>${pdict.header}</h3>
+    <div class="subtitle" style="color:white">${pdict.copy}</div>
+</div>
+
+<style>
+    .triple_color {
+        width: 33.3%;
+        height: 200px;
+        float: left;
+        text-align: center;
+        padding:10px;
+    }
+
+    .triple_color h3 {
+        padding-top: 65px;
+    }
+
+    @media screen and (max-width:425px) {
+        .triple_color {
+            width: 100%;
+            margin-top: 0px;
+            height:150px;
+        }
+        .triple_color h3 {
+            padding-top: 25px;
+        }
+    }
+</style>

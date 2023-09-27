@@ -1,0 +1,114 @@
+/**
+ * Service class for method credit direct (3d)
+ */
+/* Api includes */
+var omsLogger = require('dw/system/Logger').getLogger('SalesforceOMS', 'service');
+
+/* Script includes */
+var AbstractOmsService = require( "./abstractOmsService" );
+
+// Module level declarations
+var logPrefix = 'Composite-Query - compositeQueryService.ds:\n';
+
+var CompositeQueryService = AbstractOmsService.extend({
+    init : function() {
+        this._super();
+        this.relativeURLPath = '/services/data/' + this.version + '/composite/';
+        // request header
+        this.requestHeaders = {
+            'Authorization': 'Bearer ' + this.getAuthToken(),
+            'Content-Type': 'application/json'
+        };
+    },
+    /**
+     * Implements the function that should be used to prepare the service call request objects
+     *
+     * @param {dw.svc.HTTPService}    svc       The service itself
+     * @param {dw.util.Map}           body    Map of key value pairs that have to be added as body to the call
+     *
+     * @return String The JSON string that has to be sent to the service
+     */
+    createRequest : function( svc,body ) {
+
+        //sets the service call endpoint
+        if ( !empty(this.relativeURLPath) ) {
+            svc.URL = svc.configuration.credential.URL + this.relativeURLPath;
+        }
+
+        //adding header values
+        if ( !empty(this.requestHeaders) ) {
+            for ( var headerID : String in this.requestHeaders ) {
+                var rHeader = this.requestHeaders[headerID];
+                svc.addHeader(headerID, rHeader);
+            }
+        }
+
+        //setting the authentication mechanism which is default NONE
+        svc.setRequestMethod('NONE');
+
+        //setting request method
+        svc.setRequestMethod('POST');
+
+        //setting the out file if defined
+        if ( !empty(this.outfile) ) {
+            svc.setOutFile(this.outfile);
+        }
+
+        var requestBody = JSON.stringify(body);
+
+        return requestBody
+    },
+    getAuthToken: function () {
+        try {
+            var AuthOmsService = require("./authOmsService");
+            AuthOmsService.call();
+            var result = AuthOmsService.getResponse();
+            if (!empty(result)) {
+                var obj = JSON.parse(result)
+                var token = obj.access_token;
+                return token;
+            }
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at getAuthToken:';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+
+            omsLogger.error(eString);
+        }
+        return null;
+    },
+    /**
+     * Implements the function that's ought to be used to parse service responses
+     *
+     * @param {dw.svc.HTTPService} 	svc 		The service itself
+     * @param {dw.net.HTTPClient} 	httpClient 	The response object
+     *
+     * @return {dw.util.Map} The response payload
+     */
+    parseResponse : function( svc: dw.svc.HTTPService, httpClient: dw.net.HTTPClient ) : String {
+        var result = {};
+        try {
+            if (200 == httpClient.getStatusCode()) {
+                var compositeResponse = JSON.parse(httpClient.text);
+                if(Object.prototype.hasOwnProperty.call(compositeResponse, 'compositeResponse')){
+                    // Log the raw response.
+                    omsLogger.info(logPrefix + '\tRaw response: {0}',
+                        httpClient.text);
+                    result = compositeResponse;
+                }
+            }
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at parseResponse:\n' +
+                '\tError while fetching / casting the response!';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+
+            omsLogger.error(eString);
+        }
+        return result;
+    }
+});
+//Export the configured service singleton
+module.exports = (new CompositeQueryService()).getService();

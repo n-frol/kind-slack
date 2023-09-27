@@ -1,0 +1,211 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addJs('/js/search.js'); // Required for loading quickview, as well as OG inside of the quickview
+</isscript>
+
+<style>
+.carousel-item {
+    width: 100%;
+    max-width: 100%;
+}
+.carousel-item img {
+    height: unset;
+}
+</style>
+
+<isif condition="${pdict.carousel_type == "BYOB"}">
+<div class="container" style="padding: 0px">
+    <h1 style="text-align:center">${Resource.msg('home.carousel.heading', 'common', null)}</h1>
+    <div class="byob-category-nav__wrap carousel-homepage-byob">
+        <div class="container s-slick position-relative">
+            <div class="c-byob-category-nav js-slider" data-infinite="false" data-slidestoshow="${pdict.slidescount}"
+                data-slidestoscroll="${pdict.slidescount}" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+                data-slidestoscroll-768="1" data-slidestoscroll-440="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3"
+                data-slidestoshow-768="2" data-slidestoshow-440="1" data-dots="true" data-mobiledots="false" data-arrows="true">
+                <iscomment>Intentionally overwrites byobCategory</iscomment>
+                <isloop items="${dw.catalog.CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories}" var="byobCategory"> ${byobCategory.ID}
+                    <isif condition="${byobCategory.online && byobCategory.hasOnlineProducts() && byobCategory.custom.showInMenu}">
+                        <div class="c-byob-category-nav__item-wrap text-center">
+                            <div href="${URLUtils.url('Search-Show', 'cgid', byobCategory.ID)}"
+                                class="c-byob-category-nav__item c-byob-category-nav__item--${byobCategory.ID} js-category-nav-item<isif condition="
+                                ${pdict.productSearch.category.id === byobCategory.ID}"> is-active </isif>" data-label="${byobCategory.displayName}">
+                                <isif condition="${!empty(byobCategory.thumbnail)}">
+                                    <a class="homepage_car_link" href="${URLUtils.url('Search-Show', 'cgid', byobCategory.ID)}"
+                                        onclick='window.location="${URLUtils.url('Search-Show', 'cgid', byobCategory.ID)}"'>
+                                        <div class="c-byob-category-nav__item__img-wrap">
+                                            <isset name="responsiveImage"
+                                                value="${responsiveImageUtils.getResponsiveImage(byobCategory.custom.homepage_carousel_image, 160)}"
+                                                scope="page" />
+                                            <img class="homepage-carousel-img c-byob-cate16gory-nav__item__img" src="${responsiveImage.imageUrlDefault}"
+                                                alt="${byobCategory.displayName}" />
+                                        </div>
+                                </isif>
+                                    <div class="c-byob-category-nav__item__name namewithcaret">
+                                        <isprint value="${byobCategory.displayName}" encoding="off" /> <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath fill='%23000' fill-rule='evenodd' d='M13.466 11.846l-3.928-3.98a.708.708 0 0 1 0-.995.69.69 0 0 1 .982 0l4.217 4.272a1 1 0 0 1 0 1.405L10.52 16.82a.69.69 0 0 1-.982 0 .708.708 0 0 1 0-.995l3.928-3.98z'/%3E %3C/svg%3E" alt="arrow" />
+                                    </a>
+                                    </div>
+                            </div>
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+            <isif condition="${!pdict.hide_slider_controls}">
+                <div class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                    <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions that
+                        imageCarousel.js won't have access to</iscomment>
+                    <button
+                        class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev d-none"
+                        type="button" data-slide="prev">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                        <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                    </button>
+
+                    <button
+                        class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next d-none"
+                        type="button" data-slide="next">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                        <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                    </button>
+                </div>
+            </isif>
+        </div>
+    </div>
+    </div>
+</isif>
+<isif condition="${pdict.carousel_type == "CreativeSnacks"}">
+    <h1 class="carousel-homepage-creativesnacks-h1">
+        <isif condition="${pdict.headline}">
+            ${pdict.headline}
+        <iselse/>
+            ${Resource.msg('home.carousel.heading', 'common', null)}
+        </isif>
+    </h1>
+    <div class="byob-category-nav__wrap carousel-homepage-byob carousel-homepage-creativesnacks">
+        <div class="container s-slick position-relative">
+            <div class="c-byob-category-nav js-slider" data-infinite="false" data-slidestoshow="${pdict.slidescount}"
+                data-slidestoscroll="1" data-slidestoscroll-1200="1" data-slidestoscroll-1024="1"
+                data-slidestoscroll-768="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3"
+                data-slidestoshow-768="1" data-dots="true" data-arrows="true">
+                <iscomment>Intentionally overwrites byobCategory</iscomment>
+                <isloop items="${dw.catalog.CatalogMgr.getSiteCatalog().getRoot().onlineSubCategories}" var="onlineCategory"> ${onlineCategory.ID}
+                    <isif condition="${onlineCategory.online && onlineCategory.hasOnlineProducts() && onlineCategory.custom.showInMenu}">
+                        <div class="c-byob-category-nav__item-wrap text-center">
+                            <div href="${URLUtils.url('Search-Show', 'cgid', onlineCategory.ID)}"
+                                class="c-byob-category-nav__item c-byob-category-nav__item--${onlineCategory.ID} js-category-nav-item<isif condition="
+                                ${pdict.productSearch.category.id === onlineCategory.ID}"> is-active </isif>" data-label="${onlineCategory.displayName}">
+                                <isif condition="${!empty(onlineCategory.thumbnail)}">
+                                    <a class="homepage_car_link" href="${URLUtils.url('Search-Show', 'cgid', onlineCategory.ID)}"
+                                        onclick='window.location="${URLUtils.url('Search-Show', 'cgid', onlineCategory.ID)}"'>
+                                        <div class="c-byob-category-nav__item__img-wrap">
+                                            <isset name="responsiveImage"
+                                                value="${responsiveImageUtils.getResponsiveImage(onlineCategory.custom.homepage_carousel_image, 250)}"
+                                                scope="page" />
+                                            <img class="homepage-carousel-img c-byob-category-nav__item__img" src="${responsiveImage.imageUrlDefault}"
+                                                alt="${onlineCategory.displayName}" />
+                                        </div>
+                                </isif>
+                                        <div class="c-byob-category-nav__item__name namewithcaret">
+                                            ${onlineCategory.displayName}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+            <div class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions that
+                    imageCarousel.js won't have access to</iscomment>
+                <button
+                    class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev d-none"
+                    type="button" data-slide="prev">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                </button>
+
+                <button
+                    class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next d-none"
+                    type="button" data-slide="next">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</isif>
+<isif condition="${pdict.carousel_type == "Recommender"}">
+<div class="container">
+    <div class="homepage_rec">
+        <isslot id="homepage-einstein" context="global" description="homepage einstein carousel" />
+    </div>
+    </div>
+</isif>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+    .carousel-homepage-byob .c-byob-category-nav__item {
+        opacity: 1;
+    }
+    .carousel-homepage-creativesnacks {
+        padding-top: 50px;
+    }
+    .carousel-homepage-creativesnacks-h1 {
+        font-family: 'Poppins', sans-serif !important;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 42px !important;
+        line-height: 48px;
+        text-align: center;
+    }
+    .carousel-homepage-creativesnacks .c-byob-category-nav__item__name {
+        position: unset !important;;
+        width: unset !important;
+        margin-left: 0 !important;
+    }
+    .carousel-homepage-creativesnacks .c-byob-category-nav__item__img-wrap::after {
+        content: none;
+    }
+
+    .carousel-homepage-creativesnacks .c-slick-slider__controls__arrow {
+        border: 2px solid black !important;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+    }
+    .carousel-homepage-creativesnacks .c-slick-slider__controls__arrow span {
+        width: 11px;
+        height: 11px;
+    }
+    .carousel-homepage-creativesnacks .namewithcaret {
+        font-family: 'Poppins', sans-serif !important;
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .carousel-homepage-creativesnacks .slick-slider {
+        padding-bottom: 0 !important;
+    }
+    .carousel-homepage-creativesnacks .slick-dots button {
+        width: 13px !important;
+        height: 13px !important;
+    }
+    .carousel-homepage-creativesnacks .slick-dots button::after {
+        width: 11px !important;
+        height: 11px !important;
+    }
+    .carousel-homepage-creativesnacks .slick-list {
+        padding-bottom: 0 !important;
+    }
+    .carousel-homepage-creativesnacks .slick-dots {
+        display: ${pdict.hide_slider_controls ? 'flex' : 'none'}
+    }
+
+</style>

@@ -1,0 +1,16 @@
+<isset name="hasGiftMessage" value="${shippingModel.giftTo || shippingModel.giftFrom || shippingModel.giftMessage}" scope="page" />
+<div class="summary-details gift-summary ${hasGiftMessage ? '' : 'd-none'}">
+    <h3 class="summary-section-label st-checkout-main__sub-title subtitle">${Resource.msg('heading.gift.message', 'checkout', null)}</h3>
+    <div class="c-checkout-shipping-gift__summary subtext">
+        <div class="c-checkoug-shipping-gift__summary__label js-gift-summary-label">
+            <div class="js-gift-summary-label-content">
+                <isif condition="${!empty(shippingModel.giftTo) || !empty(shippingModel.giftFrom)}">
+                    ${!empty(shippingModel.giftTo) ? Resource.msg('label.gift.to', 'checkout', null) + ': ' + shippingModel.giftTo : ''} ${!empty(shippingModel.giftFrom) ? Resource.msg('label.gift.from', 'checkout', null) + ': ' + shippingModel.giftFrom : ''}
+                </isif>
+            </div>
+        </div>
+        <div class="c-checkoug-shipping-gift__message gift-message-summary">
+            ${shippingModel.giftMessage ? shippingModel.giftMessage : ''}
+        </div>
+    </div>
+</div>

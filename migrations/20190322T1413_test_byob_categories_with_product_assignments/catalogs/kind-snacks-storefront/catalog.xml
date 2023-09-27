@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="http://www.demandware.com/xml/impex/catalog/2006-10-31" catalog-id="kind-snacks-storefront">
+    <category category-id="byob-test">
+        <display-name xml:lang="x-default">BYOB Test Category</display-name>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <template>rendering/category/byobConfiguration</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category1">
+        <display-name xml:lang="x-default">see all snacks</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>images/byob/see-all.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+            <custom-attribute attribute-id="navActiveBackgroundColor">orange</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category2">
+        <display-name xml:lang="x-default">KIND kids</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_Kids.png</thumbnail>
+        <template>rendering/category/byobConfiguration</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category3">
+        <display-name xml:lang="x-default">KIND bars</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_Core.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="navActiveBackgroundColor">#095c66</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category4">
+        <display-name xml:lang="x-default">KIND protein</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Screen Shot 2018-09-17 at 2.06.32 PM.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category5">
+        <display-name xml:lang="x-default">healthy grains bars</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_HGB.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category6">
+        <display-name xml:lang="x-default">breakfast bars</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_Breakfast.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category7">
+        <display-name xml:lang="x-default">KIND minis</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_Minis (1).png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category category-id="byob-category8">
+        <display-name xml:lang="x-default">BYOB Test Category</display-name>
+        <online-flag>true</online-flag>
+        <parent>byob-test</parent>
+        <thumbnail>Navigation_HGC.png</thumbnail>
+        <template/>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="enableCompare">false</custom-attribute>
+            <custom-attribute attribute-id="isConfigurationCategory">true</custom-attribute>
+            <custom-attribute attribute-id="showInMenu">false</custom-attribute>
+        </custom-attributes>
+    </category>
+
+    <category-assignment category-id="byob-category1" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category1" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category2" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category2" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category3" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category3" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category4" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category4" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category5" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category5" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category6" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category6" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category7" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category7" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category8" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category8" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category1" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category1" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category2" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category2" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category3" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category3" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category4" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category4" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category5" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category5" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category6" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category6" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category7" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category7" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category8" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category8" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category1" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category1" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category2" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category2" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category3" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category3" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category4" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category4" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category5" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category5" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category6" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category6" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category7" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category7" product-id="sampleOutOfStock"/>
+
+    <category-assignment category-id="byob-category8" product-id="M17751"/>
+
+    <category-assignment category-id="byob-category8" product-id="sampleOutOfStock"/>
+
+</catalog>

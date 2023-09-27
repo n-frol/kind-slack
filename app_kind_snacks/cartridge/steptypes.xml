@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<step-types>
+    <script-module-step type-id="custom.wholesaleemail">
+        <description>Send emails for approve and delcined</description>
+        <module>app_kind_snacks/cartridge/scripts/steps/wholesalemail.js</module>
+        <function>download</function>
+        <transactional>false</transactional>
+    </script-module-step>
+</step-types>

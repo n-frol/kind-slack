@@ -1,0 +1,21 @@
+/* ============================================================================
+Catgory Banner
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements in cat-banner content assets
+ */
+
+$ns: "s-cat-banner";
+
+.#{$ns} {
+    p {
+        &:last-child {
+            margin-bottom: 0;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,112 @@
+<style>
+    <isset name="ns" value="${'c-full-width-cta'}" scope="page" />
+
+    /**
+     * Background Image
+     */
+    <isif condition="${!empty(graphicalAsset.backgroundImage)}">
+        <isset name="responsiveBackgroundImage" value="${GetResponsiveImage(graphicalAsset.backgroundImage, 768, 1400)}" scope="page" />
+        <isif condition="${!empty(responsiveBackgroundImage)}">
+            .${ns}.${assetID} {
+                background-image: url('${responsiveBackgroundImage.imageUrlDefault}');
+            }
+            @media screen and (min-width: 768px) {
+                .${ns}.${assetID} {
+                    background-image: url('${responsiveBackgroundImage.imageUrlLarge}');
+                }
+            }
+        </isif>
+    </isif>
+
+    /*
+     * Aligment
+     */
+    <isif condition="${!empty(graphicalAsset.textAlign)}">
+        <isif condition="${graphicalAsset.textAlign.value === 'left'}">
+            .${assetID} .${ns}__wrapper {
+                text-align: left !important;
+                align-items: flex-start !important;
+            }
+        <iselseif condition="${graphicalAsset.textAlign.value === 'right'}">
+            .${assetID} .${ns}__wrapper {
+                text-align: right !important;
+                align-items: flex-end !important;
+            }
+        </isif>
+    </isif>
+
+    /*
+     * Colors
+     */
+    <isif condition="${!empty(graphicalAsset.contentColor)}">
+        .${ns}.${assetID} {
+            color: ${graphicalAsset.contentColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.backgroundColor)}">
+        .${ns}.${assetID} {
+            background-color: ${graphicalAsset.backgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.headingColor)}">
+        .${ns}.${assetID} .${ns}__heading {
+            color: ${graphicalAsset.headingColor} !important;
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.bodyColor)}">
+        .${ns}.${assetID} .${ns}__body {
+            color: ${graphicalAsset.bodyColor} !important;
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonColor)}">
+        .${ns}.${assetID} .s-graphical-asset__links a {
+            color: ${graphicalAsset.primaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.primaryButtonBackgroundColor)}">
+        .${ns}.${assetID} .s-graphical-asset__links a {
+            background-color: ${graphicalAsset.primaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonColor)}">
+        .${ns}.${assetID} .s-graphical-asset__links a.secondary {
+            color: ${graphicalAsset.secondaryButtonColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.secondaryButtonBackgroundColor)}">
+        .${ns}.${assetID} .s-graphical-asset__links a.secondary {
+            background-color: ${graphicalAsset.secondaryButtonBackgroundColor};
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.mobileOnly) && graphicalAsset.mobileOnly}">
+        .${ns}.${assetID} {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .${ns}.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+
+    <isif condition="${!empty(graphicalAsset.tabletOnly) && graphicalAsset.tabletOnly}">
+        .${ns}.${assetID} {
+            display: none !important;
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .${ns}.${assetID} {
+                display: block !important;
+            }
+        }
+    </isif>
+</style>

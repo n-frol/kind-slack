@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances/>
+        <development>
+            <preference preference-id="PRApiKey">1fda4d60-cdaa-4842-9b06-dac3476e8400</preference>
+            <preference preference-id="PRID">79060</preference>
+            <preference preference-id="PRLocalesConfigs">
+                <value>default|1|754271|en_US</value>
+                <value>en_US|1|754271</value>
+            </preference>
+            <preference preference-id="PROrderFeedFileName">orderFeed_KindSnacks</preference>
+            <preference preference-id="PRProductFeedFileName">productFeed_KindSnacks</preference>
+            <preference preference-id="PR_Online_Status">true</preference>
+            <preference preference-id="PR_Sign_In">false</preference>
+            <preference preference-id="defaultCatalogId">kind-snacks-storefront</preference>
+        </development>
+        <staging>
+            <preference preference-id="PRApiKey">1fda4d60-cdaa-4842-9b06-dac3476e8400</preference>
+            <preference preference-id="PRID">79060</preference>
+            <preference preference-id="PRLocalesConfigs">
+                <value>default|1|754271|en_US</value>
+                <value>en_US|1|754271</value>
+            </preference>
+            <preference preference-id="PROrderFeedFileName">orderFeed_KindSnacks</preference>
+            <preference preference-id="PRProductFeedFileName">productFeed_KindSnacks</preference>
+            <preference preference-id="PR_Online_Status">true</preference>
+            <preference preference-id="PR_Sign_In">false</preference>
+            <preference preference-id="defaultCatalogId">kind-snacks-storefront</preference>
+        </staging>
+    </custom-preferences>
+</preferences>
+

@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="${URLUtils.staticURL('css/flyout_squares.css')}"/>
+<div class="dynamic_link_card">
+<img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" class="three_column_image flyout" />
+<h4 class="popout_square_name font-normal dynamic_link_header" href="${pdict.url}">
+
+    <isprint value="${pdict.headline}" encoding="off" />
+    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M15.8978 0.990967C15.8978 0.504962 15.5038 0.110977 15.0178 0.110977L7.09791 0.110977C6.61191 0.110977 6.21792 0.504962 6.21792 0.990967C6.21792 1.47697 6.61191 1.87096 7.09791 1.87096H14.1378V8.91088C14.1378 9.39688 14.5318 9.79087 15.0178 9.79087C15.5038 9.79087 15.8978 9.39688 15.8978 8.91088L15.8978 0.990967ZM1.62225 15.631L15.6401 1.61321L14.3956 0.36872L0.377753 14.3865L1.62225 15.631Z" fill="black"/>
+    </svg>
+</h4>
+
+    <div class="square_flyout">
+        <div class="content">
+            <img src="${pdict.flyout_image.src.desktop}" alt="${pdict.flyout_image.alt}" aria-hidden="true" class="flyout_img" />
+            <div class="onrails">
+                <div class="flyout_headline paragraph largest">${pdict.headline}</div>
+                <div class="flyout_copy paragraph">${pdict.copy}</div>
+                <isif condition="${pdict.regions.benefits.region.size > 0}">
+                    <div class="flyout_benefits_header">OUTCOMES</div>
+                    <isscript>
+                        var benefits = pdict.regions.benefits;
+                        benefits.setClassName("benefits_wrapper");
+                        // mark all pages as carousel
+                        benefits.setComponentClassName("benefits");
+                    </isscript>
+                    <isprint value="${benefits.render()}" encoding="off"/>
+                </isif>
+            </div>
+            <div class="close_flyout">
+                <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"> <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" fill="white"></path> </svg>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    .popout_square_name {
+        bottom: 0px !important;
+        position: unset !important;
+    }
+    .three_column_image.flyout {
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .arrow {
+        position: relative;
+        left: 10px;
+    }
+    .dynamic_link_card {
+        margin-bottom: 40px;
+        text-align: left;
+    }
+    .dynamic_link_header {
+        font-size: 24px;
+        line-height: 32px;
+        font-family: main;
+        letter-spacing: -1px;
+        text-align: left;
+        font-size: 1.25em;
+        width: 95%;
+    }
+    .three_column_item {
+        text-align: center;
+    }
+</style>
+
+<script>
+    jQuery(".popout_square_name, .three_column_image.flyout").click(function() {
+        jQuery(".modal_content").hide();
+        var clone = jQuery(this).parent().find(".square_flyout").clone();
+        jQuery(".modal_content").html(clone);
+        jQuery(".full_modal").show();
+        jQuery(".full_modal .square_flyout").show();
+        jQuery(".modal_content").show();
+        jQuery(".modal_content").css("transform", "none");
+
+        $("body").addClass("modal-open");
+    });
+    jQuery(document).on("click", ".close_flyout", function() {
+        jQuery(".modal_content").hide();
+        jQuery(".full_modal").hide();
+        $("body").removeClass("modal-open");
+    });
+
+    jQuery(document).on("click", ".full_modal", function() {
+        jQuery(".modal_content").hide();
+        jQuery(".full_modal").hide();
+        $("body").removeClass("modal-open");
+    });
+</script>

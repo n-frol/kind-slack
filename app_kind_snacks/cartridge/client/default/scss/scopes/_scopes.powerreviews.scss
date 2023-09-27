@@ -1,0 +1,120 @@
+/* ============================================================================
+Powerreviews Scope
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements injected into the page by PowerReviews
+ * for global styles.
+ */
+
+$ns: s-powerreviews;
+
+// Use placeholder so the hover styles can be shared including in a supports query
+%button-hovers {
+    &:hover {
+        background-color: $grey3;
+        border-color: $grey3;
+        color: $primary;
+
+        * {
+            color: inherit;
+        }
+    }
+}
+
+.#{$ns} {
+    .p-w-r {
+        /*
+        * STARS
+        * Rating Stars can be customized by overriding the
+        * background-image property of the 5 Star-related
+        * CSS classes
+        * --------------------------------------------------
+        * .pr-star-v4-0-filled    // Custom star image - filled 0%
+        * .pr-star-v4-25-filled   // Custom star image - filled 25%
+        * .pr-star-v4-50-filled   // Custom star image - filled 50%
+        * .pr-star-v4-75-filled   // Custom star image - filled 75%
+        * .pr-star-v4-100-filled  // Custom star image - filled 100%
+        */
+        .pr-snippet .pr-snippet-stars-png .pr-star-v4 {
+            width: 10px;
+            height: 10px;
+        }
+        .pr-star-v4-0-filled {
+            background-image: url('../images/powerreviews/pr-star-0.png');
+        }
+        .pr-star-v4-25-filled {
+            background-image: url('../images/powerreviews/pr-star-25.png');
+        }
+        .pr-star-v4-50-filled {
+            background-image: url('../images/powerreviews/pr-star-50.png');
+        }
+        .pr-star-v4-75-filled {
+            background-image: url('../images/powerreviews/pr-star-75.png');
+        }
+        .pr-star-v4-100-filled {
+            background-image: url('../images/powerreviews/pr-star-100.png');
+        }
+
+        .pr-header-title {
+            font-family: $font-family-primary;
+            font-size: 32px;
+        }
+        .pr-header-product-name {
+            color: $primary;
+            font-family: $font-family-primary;
+
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+
+        .pr-btn {
+            border: 2px solid $primary;
+        }
+        .pr-btn-fileinput,
+        .pr-accessible-btn {
+            font-family: $font-family-primary;
+            text-transform: uppercase;
+        }
+        .pr-btn-fileinput {
+            @extend %button-hovers;
+
+            background-color: transparent;
+            color: $primary;
+
+            *,
+            *::after {
+                color: inherit;
+            }
+        }
+        .pr-accessible-btn {
+            @supports (appearance: none) {
+                @extend %button-hovers;
+
+                appearance: none;
+                background-color: $primary;
+                color: $white;
+            }
+        }
+
+        input,
+        select,
+        textarea {
+            border: 2px solid $primary;
+        }
+        .pr-subscript {
+            font-size: 14pt;
+            line-height: 1;
+
+            a {
+                font-size: inherit;
+            }
+        }
+        [type="radio"] {
+            position: initial;
+            left: initial;
+        }
+    }
+}

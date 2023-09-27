@@ -1,0 +1,57 @@
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+
+<isif condition="${siteID !== "kind_b2b" && siteID !== 'CreativeSnacks'}">
+    <script src="${dw.system.Site.current.getCustomPreferenceValue('yotpo_async')}" aync></script>
+    <div class="c-cart-promo-code yotpopromo">
+        <div class="row">
+            <div class="col-12" style="
+                padding-left: 0px;
+        padding-right: 0px;">
+                <div class="yotpo-widget-instance" data-yotpo-instance-id="${dw.system.Site.current.getCustomPreferenceValue('yotpo_checkout_id')}"></div>
+            </div>
+        </div>
+    </div>
+</isif>
+<div class="c-cart-promo-code">
+    <div class="row">
+        <div class="col-12 c-cart-promo-code-col-12">
+            <form action="${URLUtils.url('Cart-AddCoupon').toString()}" class="promo-code-form" method="GET"
+                name="promo-code-form">
+                <div class="c-cart-promo-code__form form-group">
+                    <label class="c-cart-promo-code__form__label"
+                        for="couponCode">${Resource.msg('label.promo.code', 'cart', null)}</label>
+                    <div class="row">
+                        <div class="${siteID === 'CreativeSnacks' ? 'col-7' : 'col-9'} col-md-7 col-xl-8 promo-code-input">
+                            <input type="text" class="c-cart-promo-code__form__field form-control coupon-code-field"
+                                id="couponCode" name="couponCode"
+                                <isif condition="${siteID !== 'CreativeSnacks'}">
+                                    placeholder="${Resource.msg('placholder.text.promo.code.input', 'cart', null)}">
+                                <iselse/>
+                                    placeholder="${Resource.msg('placholder.text.promo.code.cs.input', 'cart', null)}">
+                                </isif>
+                            <div class="c-cart-promo-code__form__error coupon-error">
+                                <span class="coupon-missing-error">${Resource.msg('error.missing.coupon.code', 'cart', null)}</span>
+                                <span class="coupon-error-message"></span>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}" />
+
+                        <div class="${siteID === 'CreativeSnacks' ? 'col-5' : 'col-3'} col-md-5 col-xl-4 promo-code-submit" tabindex="0">
+                            <button type="submit"
+                                class="c-cart-promo-code__form__apply-btn btn promo-code-btn btn-outline-primary">
+                                ${Resource.msg('button.submit.promo.code', 'cart', null)}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+.vs__selected-options input::placeholder {
+    margin-bottom:5px;
+}
+</style>

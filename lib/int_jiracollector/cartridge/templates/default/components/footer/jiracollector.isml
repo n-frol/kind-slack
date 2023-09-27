@@ -1,0 +1,67 @@
+<isif condition="${dw.system.System.getInstanceType() != dw.system.System.PRODUCTION_SYSTEM && 'jiraCollectorEnabled' in dw.system.Site.current.preferences.custom && dw.system.Site.current.preferences.custom.jiraCollectorEnabled == true}">
+    <isscript>
+        var clickStreamNormalized = [];
+        if (!empty(pdict.CurrentSession.clickStream.clicks)) {
+            var csIndex = pdict.CurrentSession.clickStream.clicks.length >= 10 ? -10 : -1 * pdict.CurrentSession.clickStream.clicks.length;
+            var lastTenClickStream = pdict.CurrentSession.clickStream.clicks.slice(csIndex);
+            lastTenClickStream.reverse();
+            for (var i=0; i < lastTenClickStream.length; i++) {
+                var csEntry = lastTenClickStream[i];
+                clickStreamNormalized.push(csEntry.path + "?" + (csEntry.queryString ? csEntry.queryString : ""));
+            }
+        }
+        var clickstreamJson = JSON.stringify("\n" + clickStreamNormalized.join('\n'));
+        var renderTime = new Date();
+    </isscript>
+    <script>
+        window.ATL_JQ_PAGE_PROPS = {
+            environment : {
+                'Host'  : "${request.httpHost}",
+                "RenderTime" : "${renderTime.toISOString()}",
+                'Raw Path' : "${request.httpPath}",
+                "Raw Method" : "${request.httpMethod}",
+                "Raw Query" : "${request.httpQueryString}",
+
+                "RequestID" : "${request.requestID}",
+
+                "Customer.ID" : "${pdict.CurrentCustomer.ID}",
+                "Customer.authenticated" : "${pdict.CurrentCustomer.authenticated}",
+                "Customer.registered" : "${pdict.CurrentCustomer.registered}",
+
+                "Session.sessionID" : "${pdict.CurrentSession.sessionID}",
+                "Cookies.dwsid" : "${request.httpCookies['dwsid'] ? request.httpCookies['dwsid'].value  : ''}",
+
+                "ClickStream" : <isprint value="${clickstreamJson}" encoding="off" />
+            }
+        };
+    </script>
+    <isscript>
+        var summaryErrorText = "";
+        if ('PipelineName' in pdict || 'CurrentStartNodeName' in pdict) {
+            summaryErrorText = summaryErrorText + "Pipeline: " + pdict.PipelineName + "-" + (pdict.CurrentStartNodeName ? pdict.CurrentStartNodeName : "");
+        }
+        if ('ErrorText' in pdict) {
+            summaryErrorText = summaryErrorText + "\n\n" + pdict.ErrorText;
+        }
+    </isscript>
+    <script>
+        window.ATL_JQ_PAGE_PROPS["fieldValues"] = {};
+        window.ATL_JQ_PAGE_PROPS["fieldValues"].description = "";
+        if (window._version) {
+            /* window.ATL_JQ_PAGE_PROPS["fieldValues"].versions = window._version; */
+            window.ATL_JQ_PAGE_PROPS["fieldValues"].description += "Found in version " + window._version;
+        }
+        if (window._buildNumber) {
+            window.ATL_JQ_PAGE_PROPS["fieldValues"].description += "\nBuild Number " + window._buildNumber;
+        }
+    </script>
+    <isif condition="${!empty(summaryErrorText)}">
+        <isscript>
+            var summaryErrorTextJson = JSON.stringify('Describe your issue here. Be sure to leave the error code below\n\n\n{code}\n' + summaryErrorText + '\n{code}');
+        </isscript>
+        <script>
+            window.ATL_JQ_PAGE_PROPS["fieldValues"].description = window.ATL_JQ_PAGE_PROPS["fieldValues"].description + "\n\n" + <isprint value="${summaryErrorTextJson}" encoding="off" />
+        </script>
+    </isif>
+    <script type="text/javascript" src="https://pixelmedia.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-w6uc8u/b/16/a44af77267a987a660377e5c46e0fb64/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=45dfef7f"></script>
+</isif>

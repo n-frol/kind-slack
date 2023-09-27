@@ -1,0 +1,85 @@
+<div class="bodies_grid_1">
+    <div class="bodies_grid_item" style="background: #EDA900">
+        <img src="${URLUtils.staticURL('/images/impact/Group_3190.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            11,000+
+        </div>
+        <div class="bodies_grid_copy">
+            visitors in New York and Houston, who received fresh produce, nuts, whole grains, and KIND bars
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #D8262E">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3191.png')}" alt="Impact" />
+        <div class="bodies_grid_head" style="color: white;">
+            88,000
+        </div>
+        <div class="bodies_grid_copy" style="color: white">
+            pieces of produce distributed and donated
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #B9BE10;">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3192.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            4,000
+        </div>
+        <div class="bodies_grid_copy">
+            pounds of nuts and whole grains distributed and donated
+        </div>
+    </div>
+    <div class="bodies_grid_item" style="background: #61B3E4;">
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3195.png')}" alt="Impact" />
+        <div class="bodies_grid_head">
+            24,000
+        </div>
+        <div class="bodies_grid_copy">
+            bars sampled and donated
+        </div>
+    </div>
+</div>
+
+<style>
+    .adjustpad {
+        padding-bottom: 53px !important;
+    }
+    .bodies_grid_1 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        margin-left: 60px;
+        width: calc(100% - 120px);
+        margin-bottom: 40px;
+    }
+    @media screen and (max-width: 440px) {
+        .bodies_grid_1 {
+            grid-template-columns: 1fr;
+            margin-left: 20px;
+            width: calc(100% - 40px);
+            margin-bottom: 40px;
+        }
+    }
+    .bodies_grid_item {
+        text-align: center;
+        padding: 30px;
+        border-radius: 20px;
+    }
+    .bodies_grid_head {
+        font-size: 56px;
+        line-height: 60px;
+        font-family: main;
+        text-align: left;
+        border-bottom: 2px solid;
+        padding-bottom: 22px;
+        margin-bottom: 22px;
+    }
+    .bodies_grid_copy {
+        font-size: 22px;
+        line-height: 24px;
+        text-align: left;
+    }
+    .bodies_grid_1 img {
+        max-height: 220px;
+        margin-bottom: 20px;
+        width: 100%;
+        object-fit: contain;
+    }
+</style>

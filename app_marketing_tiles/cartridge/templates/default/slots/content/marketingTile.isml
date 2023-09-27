@@ -1,0 +1,16 @@
+<isscript>
+    var GraphicalAssetUtils = require("app_kind_components/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+<isif condition="${!empty(slotcontent)}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isif condition="${!empty(contentAsset)}">
+            <div class="c-product-tile__wrap marketing_tile__wrap">
+                <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+                <isset name="assetID" value="${slotcontent.slotID}" scope="page" />
+                <isif condition="${!empty(graphicalAsset)}">
+                    <isinclude template="components/marketingTile/marketingTile" />
+                </isif>
+            </div>
+        </isif>
+    </isloop>
+</isif>

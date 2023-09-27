@@ -1,0 +1,41 @@
+{
+    "name": "Image Text Card",
+    "description": "Image Text Card",
+    "group": "carousel",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "image",
+                    "name": "Image Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "headline",
+                    "name": "Headline",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy",
+                    "name": "Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "url",
+                    "name": "URL",
+                    "type": "url",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

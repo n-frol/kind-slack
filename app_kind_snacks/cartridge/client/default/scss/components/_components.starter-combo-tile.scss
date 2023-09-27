@@ -1,0 +1,132 @@
+/* ============================================================================
+Starter Combo Tile
+============================================================================ */
+
+/**
+ * Establish styles for starter combo tiles.
+ */
+
+$ns: "c-starter-combo-tile";
+
+.#{$ns} {
+    display: flex;
+    flex-direction: column-reverse; // Only using on mobile, when the order of contents need to switch.  Should minimize accessibility hit
+    padding-top: 20px;
+    margin-bottom: 12px;
+    margin-left: -5px;
+    margin-right: -5px;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        border-bottom: none;
+        display: block;
+        margin-bottom: 46px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    &__image-container {
+        padding-left: 12px;
+        padding-right: 12px;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+    &__body {
+        &__name {
+            font-size: 25px;
+            letter-spacing: -1.6px;
+            line-height: normal;
+        }
+        &__description {
+            font-family: Georgia;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            line-height: normal;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 250px;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 12px;
+            }
+        }
+        &__add-to-box {
+            background-color: $white;
+            border: none;
+            border-bottom: 3px solid $primary;
+            color: $primary;
+            cursor: pointer;
+            font-family: $font-family-primary;
+            font-size: 12px;
+            height: auto;
+            letter-spacing: 1.5px;
+            line-height: 1.5;
+            min-height: 0;
+            min-width: 0;
+            padding-left: 0;
+            padding-right: 0;
+            text-transform: uppercase;
+            width: auto;
+
+            &:active,
+            &:hover {
+                background-color: $white;
+                border: none;
+                border-bottom: 3px solid $primary;
+            }
+        }
+
+        &__add-to-box-step2 {
+            background: black;
+            color: white;
+            padding: 20px 45px;
+            font-size: 14px;
+            border: none;
+            border-bottom: 3px solid $primary;
+
+            &:hover {
+                background: black;
+                color: white;
+                border: none;
+                border-bottom: 3px solid $primary;
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+        margin: 0 auto;
+
+        .row {
+            width: 100%;
+            margin: 0 auto;
+            justify-content: center;
+        }
+    }
+
+    &__add-button {
+        padding: 20px;
+        background-color: white;
+        border: 2px solid black;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        margin: 0 auto 20px;
+        max-width: 350px;
+        display: flex;
+        justify-content: center;
+
+        &:hover {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+    }
+}

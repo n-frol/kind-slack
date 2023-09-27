@@ -1,0 +1,75 @@
+<div class="video-component-container">
+  <div class="video-component-preload">
+    <button id="play-video-btn-js" class="play-video-btn">
+      <img src="${URLUtils.staticURL('images/play-btn.png')}" alt="play-btn" />
+    </button>
+    <img src="${pdict.image.src.desktop}" style="width: 100%; object-fit:cover;" alt="preload-image" />
+  </div>
+  <div class="video-component-content">
+    <isif condition="${pdict.youtube}">
+      <iframe id="yt-video" src="${pdict.youtube}" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+    <iselse/>
+      <video class="videohtml fullheight" id="upl-video" style="width:100%; height: 100%;" playsinline controls="true" poster="${pdict.image.src.desktop}">
+        <source src="${pdict.video.absURL}" type="video/mp4">
+      </video>
+    </isif>
+  </div>
+</div>
+
+
+<style>
+  .video-component-container {
+    width: 1230px;
+    height: 696px;
+    margin: 0 auto;
+  }
+  @media(min-width: 1024px) and (max-width: 1439px) {
+    .video-component-container { 
+      width: 100%;
+      height: 450px;
+    }
+  }
+  @media(min-width: 451px) and (max-width: 768px)  {
+    .video-component-container {
+      width: unset;
+      height: 320px;
+    }
+  }
+  @media(max-width: 450px)  {
+    .video-component-container {
+      width: unset;
+      height: 220px;
+    }
+  }
+  .video-component-container img {
+    width: 100%;
+    height: 100%;
+  }
+  .video-component-container .video-component-preload {
+    position: relative;
+  }
+  .video-component-container .play-video-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 98px;
+    width: 98px;
+    border-radius: 50%;
+    background: none;
+  }
+   .video-component-container .play-video-btn:focus {
+    outline: none;
+  }
+  .video-component-container .play-video-btn img {
+    width: 100%;
+    height: auto;
+  }
+  .video-component-content {
+    display: none;
+  }
+  .video-component-content iframe {
+    width: 100%;
+    height: 100%;
+  }
+</style>

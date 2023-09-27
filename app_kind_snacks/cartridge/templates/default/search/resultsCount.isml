@@ -1,0 +1,36 @@
+<isif condition="${pdict.productSearch.isCategorySearch}">
+    <span class="c-search-results__bar__result-count__count">
+        ${Resource.msgf((pdict.productSearch.count === 1 ? 'label.results.singular' : 'label.results.plural'), 'search', null, pdict.productSearch.count)}
+    </span>
+<iselse>
+    <isif condition="${pdict.productSearch.productIds.length > 0}">
+        <div>
+            <span class="c-search-results__bar__result-count__results-for">
+                ${Resource.msgf('label.resultsfor', 'search', null, pdict.productSearch.count)}
+            </span>
+            <span class="c-search-results__bar__result-count__search-keywords">
+                "${pdict.productSearch.searchKeywords ? pdict.productSearch.searchKeywords : ''}"
+            </span>
+        </div>
+    </isif>
+    <isif condition="${pdict.productSearch.isSearchSuggestionsAvailable &&  pdict.productSearch.productIds.length === 0}">
+        <isloop items="${pdict.productSearch.suggestionPhrases}" alias="phrase" status="loopState" >
+            <isif condition="${loopState.first}">
+                <div>
+                    <span class="c-search-results__bar__result-count__suggestion">${Resource.msg('label.didyoumean', 'search', null)}</span>
+                    <a class="c-search-results__bar__result-count__suggestion-value link" title="${phrase.value}" href="${phrase.url}">${phrase.value}</a>
+                </div>
+                <isif condition="${!loopState.last}">
+                    <div>
+                        <span class="c-search-results__bar__result-count__suggestion">${Resource.msg('label.ormaybe', 'search', null)}</span>
+                </isif>
+            <iselse>
+                <a class ="c-search-results__bar__result-count__suggestion-value link" title="${phrase.value}" href="${phrase.url}">${phrase.value}</a>
+                <isif condition="${loopState.last}"></div><iselse>,&nbsp;</isif>
+            </isif>
+        </isloop>
+    </isif>
+</isif>
+<isif condition="${!pdict.productSearch.productIds.length}">
+    <isinclude template="search/noResultsProduct" />
+</isif>

@@ -1,0 +1,242 @@
+/* ============================================================================
+   Image Gallery
+   ============================================================================ */
+
+/**
+ * Provides styles for Image Galleries
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-image-gallery;
+.#{$ns} {
+
+    &__container {
+        position: relative;
+    }
+    &__parent-header {
+        &__heading {
+            font-size: 40px;
+            letter-spacing: -2.2px;
+            line-height: .95;
+            text-transform: none;
+
+            @include media-breakpoint-up(md) {
+                font-size: 60px;
+                letter-spacing: -3.4px;
+                line-height: 1.27;
+            }
+        }
+    }
+    // Establish a stronger selector
+    & &__slider {
+        margin-left: auto;
+        margin-right: auto;
+
+        @include media-breakpoint-up(lg) {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+    &__slider {
+        max-width: 90%;
+        overflow: visible;
+
+        @include media-breakpoint-up(lg) {
+            max-width: calc(100% + 30px);
+        }
+    }
+    &__item {
+        @include make-col(12);
+
+        height: 100%;
+        margin-bottom: 30px;
+        padding-left: 8px;
+        padding-right: 8px;
+
+        // Featured Container heading
+        &__container-header {
+            color: black;
+            font-size: 40px;
+            line-height: 1;
+            letter-spacing: -3.4px;
+            margin: 0 auto;
+            max-width: 850px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 60px;
+                padding-left: 0px;
+                padding-right: 0px;
+            }
+        }
+        // Featured Container Content
+        &__content {
+            display: flex;
+                flex-direction: column;
+            height: 100%;
+
+            &__wrapper {
+                min-height: 111px;
+                padding: 28px 15px 15px;
+
+                @include media-breakpoint-up(md) {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+            }
+            &__image-wrapper {
+                overflow: hidden;
+                width: 100%;
+            }
+            &__image {
+                width: 100%;
+            }
+            &__heading {
+                color: $white;
+                font-size: 12px;
+                font-style: normal;
+                font-stretch: normal;
+                font-weight: 700;
+                letter-spacing: .3px;
+                line-height: 1.67;
+                margin-bottom: 25px;
+                margin-top: 15px;
+                text-align: left;
+            }
+            &__body {
+                font-size: 16px;
+                line-height: 1.75;
+                letter-spacing: .3px;
+                margin-bottom: 15px;
+            }
+            &__link {
+                display: block;
+                padding: 0;
+                text-decoration: none;
+                text-transform: none;
+                &:hover {
+                    color: black;
+                    text-decoration: none;
+                }
+                &__title {
+                    color: black;
+                    display: block;
+                    font-weight: 700;
+                    font-size: 18px;
+                    letter-spacing: -0.8px;
+                    line-height: 1.2em;
+                    &::after {
+                        border-right: 2px solid black;
+                        border-top: 2px solid black;
+                        content: "";
+                        display: inline-block;
+                        height: 10px;
+                        margin-bottom: 1px;
+                        margin-left: 5px;
+                        transform: rotate(45deg);
+                        width: 10px;
+                    }
+                }
+                &__description {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    letter-spacing: 0.3px;
+                }
+            }
+            &::after {
+                clear: both;
+                content: "";
+                display: block;
+            }
+            &--center {
+                .#{$ns}__content__image-wrapper {
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        width: 60%;
+                    }
+                }
+            }
+            &--left {
+                .#{$ns}__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        float: left;
+                    }
+                }
+                .#{$ns}__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-left: 70%;
+                    }
+                }
+            }
+            &--right {
+                .#{$ns}__content__image-wrapper {
+                    float: none;
+                    margin: 0 auto;
+                    text-align: center;
+                    @include media-breakpoint-up(lg) {
+                        float: right;
+                    }
+                }
+                .#{$ns}__content__wrapper {
+                    margin-left: 0;
+                    @include media-breakpoint-up(lg) {
+                        margin-right: 70%;
+                    }
+                }
+            }
+        }
+    }
+    &__controls {
+        & &__prev,
+        & &__next {
+            background-color: transparent;
+            border: none;
+            border-radius: 100%;
+            box-shadow: 0 1px 5px 0 #000 !important; // Important to override importanted button styl
+            height: 62px;
+            opacity: 1;
+            padding: 0;
+            position: absolute;
+                bottom: auto;
+                top: 50%;
+            transform: translateY(-50%);
+            width: 62px;
+
+            // In this case, using media-breakpoint-up require an extra important that we don't want
+            @include media-breakpoint-down(sm) {
+                display: none !important; // Important to override display style put directly on the element by js
+            }
+
+            &:active,
+            &:focus,
+            &:hover {
+                border: none !important; // Important to override strong selector on base button
+                box-shadow: 0 1px 18px 0 #000 !important; // Important to override importanted button style
+                opacity: 1;
+            }
+        }
+        & &__prev {
+            left: 40px;
+
+            @include media-breakpoint-up(lg) {
+                left: 18px;
+            }
+        }
+        & &__next {
+            right: 40px;
+
+            @include media-breakpoint-up(lg) {
+                right: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,129 @@
+/**
+ * Service class for method credit direct
+ */
+/* Api includes */
+var cdpmLogger = require('dw/system/Logger').getLogger('paymentOperator', 'paymentOperator');
+var HashMap    = require('dw/util/HashMap');
+
+/* Script includes */
+var AbstractComputopService = require('./AbstractComputopService');
+var logPrefix = 'PAYMENTOPERATOR_PAYGATE - CreditDirectService.ds\n\t';
+
+/**
+ * @module CreditDirectService
+ */
+var CreditDirectService = AbstractComputopService.extend({
+    init: function () {
+        this._super();
+        this.relativeURLPath = this.getSitePreference('paymentOperatorCreditDirectGatewayPath');
+    },
+
+    /**
+     * Decrypt response
+     *
+     * @param {dw.svc.HTTPService} svc - service instance
+     * @param {dw.net.HTTPClient} httpClient - client instance
+     * @returns {dw.util.HashMap} - paygate response
+     */
+    parseResponse: function (svc, httpClient) {
+        var result;
+        var merchantCode = this.getSitePreference('paymentOperatorMerchantCode');
+        try {
+            if (200 == httpClient.getStatusCode()) {
+                var responseObject = this.splitAttributes(httpClient.text, '=', '&');
+                cdpmLogger.info(logPrefix + 'Raw response: ' + httpClient.text);
+                result = responseObject.hasOwnProperty('Data') ? this.decryptResponse(responseObject.Data, merchantCode) : '';
+                if (result == '' || result == null) {
+                    result = this.parseSecureData(httpClient.text);
+                } else {
+                    result = this.toParameterMap(result);
+                }
+                // log response data for debugging
+                this.logResponse(result);
+            }
+        } catch (e) {
+            var eString = logPrefix + '\tERROR at parseResponse:\n' +
+                '\tError while fetching / decrypting the response!';
+            eString += Object.keys(e).map(function (key) {
+                return '\n\t' + key + ': ' + e[key];
+            }).join();
+            cdpmLogger.error(eString);
+        }
+        return result;
+    },
+
+    /**
+     * decode non encrypted 3D Secure response
+     *
+     * @param {string} data - encrypted paygate response
+     * @returns {dw.util.HashMap} - decrypted paygate response as hash map
+     */
+    parseSecureData: function (data) {
+        var result = new HashMap();
+        data = data.replace(/acsurl=/g, '');
+
+        // PaReq parameter
+        var paReqPosition = data.search(/pareq=/g),
+            paReq = '',
+            acsUrl = '';
+
+        if (paReqPosition != -1) {
+            var paReyParameterCandidate : String = data.substr(paReqPosition + 6);
+            var nextParameterPosition = paReyParameterCandidate.search(/\&/g);
+            if (nextParameterPosition != -1) {
+                paReq = paReyParameterCandidate.substring(0, nextParameterPosition);
+            } else {
+                paReq = paReyParameterCandidate;
+            }
+        }
+
+        // TransId parameter
+        var transIdPosition = data.search(/TransID=/g);
+        var transId = '';
+        if (transIdPosition != -1) {
+            var transIdCandidate = data.substr(transIdPosition + 8);
+            var newParameterPosition = transIdCandidate.search(/\&/g);
+            if (newParameterPosition != -1) {
+                transId = transIdCandidate.substring(0, newParameterPosition);
+            } else {
+                transId = transIdCandidate;
+            }
+        }
+
+        // modified TermId parameter
+        var termUrlPosition = data.search(/termurl=/g);
+        var termUrl = '';
+        if (termUrlPosition != -1) {
+            termUrl = data.substr(termUrlPosition + 8);
+            // remove  term url param
+            acsUrl = data.substr(0, termUrlPosition -1);
+        } else {
+            // no term url found
+            acsUrl = data;
+        }
+
+        if (paReqPosition != -1) {
+            try {
+                // remove pares param
+                acsUrl = acsUrl.substr(0, paReqPosition -1) + acsUrl.substr(paReqPosition + 6 + paReq.length);
+            } catch (e) {
+                // parsed param could not be removed
+                var eString = logPrefix + '\tERROR at parseSecureData:';
+                eString += Object.keys(e).map(function (key) {
+                    return '\n\t' + key + ': ' + e[key];
+                }).join();
+                cdpmLogger.error(eString);
+            }
+        }
+
+        result.put('ACSURL', acsUrl);
+        result.put('PaReq', paReq);
+        result.put('TransId', transId);
+        result.put('TermUrl', termUrl);
+
+        return result;
+    },
+
+});
+//Export the configured service singleton
+module.exports = (new CreditDirectService()).getService();

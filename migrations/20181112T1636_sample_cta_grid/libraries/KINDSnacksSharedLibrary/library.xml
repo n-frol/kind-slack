@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="sample_folder_3">
+        <display-name xml:lang="x-default">Sample Folder 3</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="try-20-snacks">
+        <display-name xml:lang="x-default">try 20 snacks for $20</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">enjoy 20 fan-favorite snacks with our exclusive Snack Pack!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">try 20 snacks for $20</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/homepage_dual-cta-tout_give-kind-a-try_20180824.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$" class="btn btn--auto-width"&gt;Try Now&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;See Terms&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="have-a-favorite">
+        <display-name xml:lang="x-default">already have a favorite?</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">join the KIND Snack Club for 16% off plus exclusive perks!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">already have a favorite?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/homepage_dual-cta-tout_snack-club-benefits_v2_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$" class="btn btn--auto-width"&gt;Shop All&lt;/a&gt;&lt;/p&gt;&#13;
+&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;Learn About Snack Club&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

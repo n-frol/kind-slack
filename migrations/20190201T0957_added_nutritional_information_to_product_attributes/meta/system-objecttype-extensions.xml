@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Product">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="nutritionals">
+                <display-name xml:lang="x-default">Nutritional Information</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <visible-flag>true</visible-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>false</order-required-flag>
+                <externally-defined-flag>false</externally-defined-flag>
+                <select-multiple-flag>true</select-multiple-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Added Sugars</display>
+                        <value>addedSugar</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Sodium</display>
+                        <value>sodium</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Total Fat</display>
+                        <value>totalFat</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Total Sugars</display>
+                        <value>sugars</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Fiber</display>
+                        <value>dietaryFiber</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Protein</display>
+                        <value>protein</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Calories</display>
+                        <value>calories</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Total Carb</display>
+                        <value>totalCarb</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="productDetails">
+                <display-name xml:lang="x-default">Product Attributes</display-name>
+                <attribute attribute-id="productType"/>
+                <attribute attribute-id="containerType"/>
+                <attribute attribute-id="productClassID"/>
+                <attribute attribute-id="backgroundColor"/>
+                <attribute attribute-id="badge"/>
+                <attribute attribute-id="texture"/>
+                <attribute attribute-id="flavor"/>
+                <attribute attribute-id="occasion"/>
+                <attribute attribute-id="benefits"/>
+                <attribute attribute-id="featuredAssets"/>
+                <attribute attribute-id="nutritionFactsImage"/>
+                <attribute attribute-id="nutritionNotes"/>
+                <attribute attribute-id="featuredHeading"/>
+                <attribute attribute-id="notInProductLabel"/>
+                <attribute attribute-id="notInProductBody"/>
+                <attribute attribute-id="nutritionals"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

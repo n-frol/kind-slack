@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="MarketingCloudDataExportStatus" object-id="KINDSnacks_catalogFeed">
+        <object-attribute attribute-id="lastExportRun">2019-08-05T12:51:11.000+0000</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudDataExportStatus" object-id="KINDSnacks_ordersFeed">
+        <object-attribute attribute-id="lastExportRun">2019-03-11T20:46:33.000+0000</object-attribute>
+    </custom-object>
+
+</custom-objects>

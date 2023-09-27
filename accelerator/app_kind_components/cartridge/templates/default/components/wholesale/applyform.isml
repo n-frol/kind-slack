@@ -1,0 +1,717 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.4.10/cleave.min.js"></script>
+<script src="https://nosir.github.io/cleave.js/dist/cleave-phone.i18n.js"></script>
+<script src="https://parsleyjs.org/dist/parsley.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<isprint value="
+    ${dw.system.Site.current.getCustomPreferenceValue("googlePlacesApiKey")}" />&libraries=places&callback=initService"
+    async defer></script>
+
+<script>
+
+var parse = $('#form').parsley();
+$('#js-loginradius-container-login form').parsley();
+
+window.ParsleyValidator
+        .addValidator('fileextension', function (value, requirement) {
+        		var tagslistarr = requirement.split(',');
+            var fileExtension = value.split('.').pop();
+						var arr=[];
+						$.each(tagslistarr,function(i,val){
+   						 arr.push(val);
+						});
+            if(jQuery.inArray(fileExtension, arr)!='-1') {
+              return true;
+            } else {
+              return false;
+            }
+        }, 32)
+        .addMessage('en', 'fileextension', 'Please only upload .png and .jpg files.');
+
+    $("#myForm").parsley();
+
+    $("#myForm").on('submit', function(e) {
+        var f = $(this);
+        f.parsley().validate();
+        //q
+        if (f.parsley().isValid()) {
+            alert('The form is valid');
+        } else {
+            alert('There are validation errors');
+        }
+
+        e.preventDefault();
+    });
+
+    window.Parsley.addValidator('maxFileSize', {
+  validateString: function(_value, maxSize, parsleyInstance) {
+    var files = parsleyInstance.$element[0].files;
+    return files.length != 1  || files[0].size <= maxSize * 1024;
+  },
+  requirementType: 'integer',
+  messages: {
+    en: 'Please upload a file less than 2MB'
+  }
+});
+
+window.Parsley.addAsyncValidator("checkemail", function (xhr) {
+    r = $.parseJSON(xhr.responseText);
+        if (r.ErrorCode == "1038") {
+            var specificField = $('.email-feedback').hide();
+            return false;
+        }
+        if (r.ErrorCode == "1023") {
+        var specificField = $('.email-feedback').hide();
+        $("#password").parent().show().attr("data-parseley-required", "required").parent().show();
+        $("#confirmpassword").parent().show().attr("data-parseley-required", "required").parent().show();
+         $("#currentPassword").parent().hide().removeAttr("data-parseley-required data-parseley-checkaccount").parent().hide();
+          $("#profuid").val("");
+        $("#profid").val("");
+        //  $('#form').parsley().refresh();
+              $("input:hidden").each(function() {
+        $(this).removeAttr("required");
+});
+$(".hidder:visible").each(function() {
+        $(this).attr("required","required");
+});
+        return true;
+        }
+        var specificField = $('.email-feedback');
+        specificField.html("Email already registered, please enter your password").show();
+        $("#currentPassword").parent().show().attr("data-parseley-required", "required").parent().show();
+        $("#password").parent().hide().removeAttr("data-parseley-required").parent().hide();
+        $("#confirmpassword").parent().hide().removeAttr("data-parseley-required").parent().hide();
+        $("#profuid").val(r.Data[0].Uid);
+        $("#profid").val(r.Data[0].ID);
+
+        // $('#form').parsley().refresh();
+              $("input:hidden").each(function() {
+        $(this).removeAttr("required");
+});
+$(".hidder:visible").each(function() {
+        $(this).attr("required","required");
+});
+        return true;
+        }, "https://api.loginradius.com/identity/v2/manage/account/identities?apikey=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiKey")}" />&apisecret=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiSecret")}" />", {
+});
+
+window.Parsley.addValidator('checkaccount', {
+    validateString: function() {
+        return $.ajax({
+            method: "POST",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            url: "https://api.loginradius.com/identity/v2/auth/login?apikey=<isprint value="${dw.system.Site.current.getCustomPreferenceValue("loginRadiusApiKey")}" />&verificationurl=&loginurl=&emailtemplate=&g-recaptcha-response=",
+            data: JSON.stringify({ email: $("#email").val(), password: $("#currentPassword").val() })
+        });
+    },
+    messages: {en: 'Your password is incorrect.'}
+});
+function initService()
+{
+new Cleave('#phone', {
+    numericOnly: true,
+    blocks: [0, 3, 3, 4],
+    delimiters: ["(", ") ", "-"]
+});
+    document.getElementById("businessaddress").autocomplete = "false";
+var input = document.getElementById('businessaddress');
+var options = {
+  componentRestrictions: {country: 'us'}
+};
+autocomplete = new google.maps.places.Autocomplete(input, options);
+autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+// Get the place details from the autocomplete object.
+var place = autocomplete.getPlace();
+jQuery("#businessaddress").val(place.address_components[0].short_name+" "+place.address_components[1].short_name);
+jQuery("#businesscity").val(place.address_components[3].short_name);
+jQuery("#businessstate").val(place.address_components[5].short_name);
+jQuery("#businesszip").val(place.address_components[7].short_name);
+jQuery("#businesscountry").val(place.address_components[6].short_name);
+}
+
+ window.Parsley.on('form:validate', function (formInstance) {
+      var v =$("#businesstype option:selected").val();
+      if (v <= 10) {
+      $("#businesstype_other").removeAttr("required");
+      } else {
+          $("#businesstype_other").attr("required", "required");
+      }
+
+    var vv =$("#hearaboutus option:selected").val();
+      if (vv <= 10) {
+      $("#hearaboutus_other").removeAttr("required");
+      } else {
+          $("#hearaboutus_other").attr("required", "required");
+      }
+
+  });
+</script>
+
+<style>
+@media (min-width: 544px) {
+.col-sm-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 29% !important;
+    flex: 0 0 29% !important;
+    max-width: 29% !important;
+}
+}
+.tax_exempt {
+    position:relative; top:-5px;
+}
+@media screen and (min-width: 765px) and (max-width: 769px) {
+.col-sm-3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 29% !important;
+    flex: 0 0 29% !important;
+    max-width: 29% !important;
+}
+}
+    @media screen and (max-width: 500px) {
+        .contact-form {
+            width: 100% !important;
+        }
+        .col-sm-3 {
+        }
+    }
+    @media screen and (min-width: 500px) and (max-width:782px) {
+        .loginradius-container--forgotpassword {
+            top: -120px !important;
+        }
+        .col-sm-14 {
+            width: 700px !important;
+        }
+        .col-sm-3 {
+            max-width: 100% !important;
+        }
+        .form-group {
+            width: unset !important;
+        }
+    }
+
+    @media screen and (min-width: 501px) and (max-width:1100px) {
+        }
+        .contact-form {
+            width: 775px;
+        }
+
+        .tax_exempt {
+            top:-5px !important;
+        }
+
+        .tab-content {
+            min-width: unset !important;
+        }
+
+    }
+
+    .invalid-feedback {
+        line-height: 1em;
+    }
+
+    .form-control-label {
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .parsley-errors-list {
+        width: 100%;
+        margin-top: 0.25rem;
+        font-size: 80%;
+        color: #d9272e;
+        font-weight: 700;
+        font-size: 12px;
+        list-style-type: none;
+        font-family: HelveticaNeue-Bold, Helvetica, sans-serif;
+        font-weight: 700;
+    }
+
+    .parsley-error {
+        border: 3px solid red !important;
+    }
+
+    .passed {
+        font-family: helvetica neue bold;
+        color: green;
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        font-size: 1.5em;
+        background: transparent;
+        display: none;
+    }
+
+    .failed {
+        font-family: helvetica neue bold;
+        color: red;
+        position: absolute;
+        right: 20px;
+        top: 40px;
+        font-size: 1.5em;
+        background: transparent;
+        display: none;
+    }
+
+    .email-feedback {
+        color: black;
+    }
+
+    .parsley-error~.failed :not(select),
+    .parsley-success~.passed :not(select) {
+        display: block !important;
+    }
+
+    .parsley-range {
+        color: black;
+        line-height: 1em;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .form-group {
+        width: 100% !important;
+    }
+
+    .pac-container {
+        position: relative;
+        left: 20px !important;
+        top: 100px !important;
+    }
+</style>
+
+<form style="padding:25px; max-width:1200px; margin:auto;"
+    data-parsley-excluded="input[type=button], input[type=submit], input[type=reset], input[type=hidden], [disabled], :hidden #distributor"
+    action="${URLUtils.url('Apply-SubmitForm')}" class="contact-form dropzone" method="POST" id="form"
+    data-parsley-validate>
+    <input style="display:none" id="profuid" name="profuid" />
+    <input style="display:none" id="profid" name="profid" />
+    <input style="display:none" name="cert_b64" value id="cert_b64" />
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required">
+                <label class="form-control-label" for="firstName">
+                    First Name
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text" minlength="2"
+                    class="form-control firstname" id="firstName" value="" name="firstName" required="" maxlength="19"
+                    autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="lastname">
+                    Last Name
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text" minlength="2"
+                    class="form-control lastname" id="lastname" value="" name="lastname" required="" maxlength="20"
+                    autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="email">
+                    Email Address
+                </label>
+                <input data-parsley-validation-threshold="3" data-parsley-trigger="focusout keyup"
+                    data-parseley-required data-parsley-remote data-parsley-remote-validator='checkemail' type="text"
+                    class="form-control email" id="email" value="" name="email" required="" maxlength="60"
+                    autocomplete="" />
+                <div class="invalid-feedback email-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="currentPassword">
+                    Enter your current password
+                </label>
+                <input data-parsley-trigger="submit" data-parsley-checkaccount type="password"
+                    class="form-control currentPassword hidder" id="currentPassword" value="" name="currentPassword"
+                    required maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="password">
+                    create a password
+                </label>
+                <input minlength="6" data-parsley-trigger="focusout" type="password"
+                    class="form-control password hidder" id="password" value="" name="password"
+                    maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required" style="display:none">
+                <label class="form-control-label" for="confirmpassword">
+                    Confirm Password
+                </label>
+                <input data-parsley-equalto=".password" minlength="6" data-parsley-trigger="focusout"
+                    data-parsley-equalto-message="passwords do not match" type="password"
+                    class="form-control confirmpassword hidder" id="confirmpassword" value="" name="confirmpassword"
+                    required maxlength="40" autocomplete="" />
+                <div class="invalid-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row c-form-elements__row">
+
+    </div>
+
+    <div class="row c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="save-credit-card custom-control custom-checkbox ">
+                <input type="checkbox" class="custom-control-input" id="subscribeToNewsletter" name="subtonewsletter"
+                    value="true" checked="checked" />
+                <label for="subscribeToNewsletter">
+                    Subscribe me to KIND email list
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businessname">
+                    business Name
+                </label>
+                <input data-parsley-trigger="focusout" data-parseley-required type="text"
+                    class="form-control businessname" id="businessname" value="" name="businessname" required=""
+                    maxlength="20" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required">
+                <label class="form-control-label" for="businesstype">
+                    Business Type
+                </label>
+                <select data-parsley-trigger="focusout" required class="form-control businesstype custom-select"
+                    name="businesstype" id="businesstype">
+                    <option selected disabled></option>
+                    <option value="Fitness" data-showother=false>Fitness</option>
+                    <option value="Sports RD" data-showother=false>Sports RD</option>
+                    <option value="Restaurant" data-showother=false>Restaurant, Juice Bar, Coffee Shop</option>
+                    <option value="Grocery" data-showother=false>Grocery</option>
+                    <option value="Outdoors" data-showother=false>Outdoor Activity</option>
+                    <option value="Hotel" data-showother=false>Hotel</option>
+                    <option value="Other" data-showother=true>Other</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div id="businesstype_other_row" style="display:none">
+            <div class="col-sm-3 c-form-elements__col" style="min-width: 180px; width: 100%;">
+                <div class="form-group hidden required">
+                    <label class="form-control-label" for="businesstype_other">
+                        please specify
+                    </label>
+                    <input style="min-width:180px" type="text" class="form-control businesstype_other hidder" name="businesstype_other"
+                        id="businesstype_other" value="" required="" maxlength="40" autocomplete="" />
+                    <div class="passed">&#10003;</div>
+                    <div class="failed">X</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businessaddress">
+                    Business Address
+                </label>
+                <input data-parsley-trigger="focusout" type="text" class="form-control businessaddress"
+                    id="businessaddress" value="" name="businessaddress" required="" maxlength="40"
+                    autocomplete="password" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group">
+                <label class="form-control-label" for="businessaddress2">
+                    Business Address 2
+                </label>
+                <input data-parsley-trigger="focusout" type="text" class="form-control businessaddress2"
+                    id="businessaddress2" value="" name="businessaddress2" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businesscity">
+                    business City
+                </label>
+                <input maxlength="25" data-parsley-trigger="focusout" type="text" class="form-control businesscity"
+                    id="businesscity" value="" name="businesscity" required="" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required businessstate">
+                <label class="form-control-label" for="businessstate">
+                    Business State
+                </label>
+                <select data-parsley-trigger="focusout" name="businessstate" required
+                    class="form-control businessstate custom-select" id="businessstate">
+                    <option selected disabled> </option>
+                    <option id="AL" value="AL">Alabama</option>
+                    <option id="AK" value="AK">Alaska</option>
+                    <option id="AZ" value="AZ">Arizona</option>
+                    <option id="AR" value="AR">Arkansas</option>
+                    <option id="CA" value="CA">California</option>
+                    <option id="CO" value="CO">Colorado</option>
+                    <option id="CT" value="CT">Connecticut</option>
+                    <option id="DE" value="DE">Delaware</option>
+                    <option id="FL" value="FL">Florida</option>
+                    <option id="GA" value="GA">Georgia</option>
+                    <option id="HI" value="HI">Hawaii</option>
+                    <option id="DC" value="DC">District of Columbia</option>
+                    <option id="ID" value="ID">Idaho</option>
+                    <option id="IL" value="IL">Illinois</option>
+                    <option id="IN" value="IN">Indiana</option>
+                    <option id="IA" value="IA">Iowa</option>
+                    <option id="KS" value="KS">Kansas</option>
+                    <option id="KY" value="KY">Kentucky</option>
+                    <option id="LA" value="LA">Louisiana</option>
+                    <option id="ME" value="ME">Maine</option>
+                    <option id="MD" value="MD">Maryland</option>
+                    <option id="MA" value="MA">Massachusetts</option>
+                    <option id="MI" value="MI">Michigan</option>
+                    <option id="MN" value="MN">Minnesota</option>
+                    <option id="MS" value="MS">Mississippi</option>
+                    <option id="MO" value="MO">Missouri</option>
+                    <option id="MT" value="MT">Montana</option>
+                    <option id="NE" value="NE">Nebraska</option>
+                    <option id="NV" value="NV">Nevada</option>
+                    <option id="NH" value="NH">New Hampshire</option>
+                    <option id="NJ" value="NJ">New Jersey</option>
+                    <option id="NM" value="NM">New Mexico</option>
+                    <option id="NY" value="NY">New York</option>
+                    <option id="NC" value="NC">North Carolina</option>
+                    <option id="ND" value="ND">North Dakota</option>
+                    <option id="OH" value="OH">Ohio</option>
+                    <option id="OK" value="OK">Oklahoma</option>
+                    <option id="OR" value="OR">Oregon</option>
+                    <option id="PA" value="PA">Pennsylvania</option>
+                    <option id="RI" value="RI">Rhode Island</option>
+                    <option id="SC" value="SC">South Carolina</option>
+                    <option id="SD" value="SD">South Dakota</option>
+                    <option id="TN" value="TN">Tennessee</option>
+                    <option id="TX" value="TX">Texas</option>
+                    <option id="UT" value="UT">Utah</option>
+                    <option id="VT" value="VT">Vermont</option>
+                    <option id="VI" value="VI">Virgin Islands</option>
+                    <option id="VA" value="VA">Virginia</option>
+                    <option id="WA" value="WA">Washington</option>
+                    <option id="WV" value="WV">West Virginia</option>
+                    <option id="WI" value="WI">Wisconsin</option>
+                    <option id="WY" value="WY">Wyoming</option>
+                    <option id="AE" value="AE">Armed Forces Africa</option>
+                    <option id="AA" value="AA">Armed Forces America (exc. Canada)</option>
+                    <option id="AE" value="AE">Armed Forces Canada</option>
+                    <option id="AE" value="AE">Armed Forces Europe</option>
+                    <option id="AE" value="AE">Armed Forces Middle East</option>
+                    <option id="AP" value="AP">Armed Forces Pacific</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="businesszip">
+                    business Zip
+                </label>
+                <input data-parsley-trigger="focusout" type="text" class="form-control businesszip" id="businesszip"
+                    value="" name="businesszip" required="" maxlength="10" minlength="5" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group
+            required">
+                <label class="form-control-label" for="phone">
+                    Phone
+                </label>
+                <input data-parsley-trigger="focusout" data-parsley-pattern="^[\d\+\-\.\(\)\/\s]*$"
+                    data-parseley-pattern-message="Please enter a valid phone number" type="text" data-parseley-required
+                    class="form-control phone" id="phone" value="" name="phone" required minlength="" maxlength=""
+                    autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+    <div class="row  c-form-elements__row">
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required distributor">
+                <label class="form-control-label" for="distributor">
+                    are you currently ordering KIND from a distributor?
+                </label>
+                <select data-parsley-trigger="change" required class="form-control distributor custom-select"
+                    name="distributor" id="distributor">
+                    <option selected disabled></option>
+                    <option value=0>Yes</option>
+                    <option value=1>No</option>
+                </select>
+                <div class="dist-feedback"></div>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required">
+                <label class="form-control-label" for="tax_exempt">
+                    are you tax exempt?
+                </label>
+                <select required style="" data-parsley-trigger="focusout" class="form-control tax_exempt custom-select" name="tax_exempt"
+                    id="tax_exempt">
+                    <option selected disabled></option>
+                    <option value="yes" data-showother=true>Yes</option>
+                    <option value="no" data-showother=false>No</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col" style="display:none" id="tax_exempt_id">
+            <div class="form-group required">
+                <label class="form-control-label" for="tax_exempt_id">
+                    please enter tax exempt id
+                </label>
+                <input style="position:relative; top:-5px;" type="text" class="form-control tax_exempt_id" id="tax_exempt_id" value=""
+                    required name="tax_exempt_id" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row  c-form-elements__row">
+    <div class="col-sm-3 c-form-elements__col" style="position:relative; top:-5px;">
+            <div class="form-group required">
+                <label class="form-control-label" for="businesswebsite">
+                    business Website
+                </label>
+                <input type="text" data-parsley-trigger="focusout" required class="form-control businesswebsite"
+                    id="businesswebsite" value="" name="businesswebsite" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col">
+            <div class="form-group required">
+                <label class="form-control-label" for="hearaboutus">
+                    How did you hear about us?
+                </label>
+                <select data-parsley-trigger="focusout" required class="form-control hearaboutus custom-select"
+                    name="hearaboutus" id="hearaboutus">
+                    <option selected disabled></option>
+                    <option value="KIND Employee Name" data-showother=true>KIND Employee</option>
+                    <option value="Website" data-showother=false>Kind Snacks Website</option>
+                    <option value="Google" data-showother=false>Google</option>
+                    <option value="Facebook" data-showother=false>Facebook</option>
+                    <option value="LinkedIn" data-showother=false>LinkedIn</option>
+                    <option value="Instagram" data-showother=false>Instagram</option>
+                    <option value="Other" data-showother=true>other</option>
+                </select>
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+        <div class="col-sm-3 c-form-elements__col" style="display:none" id="hearaboutus_other_row">
+            <div class="form-group">
+                <label class="form-control-label" for="hearaboutus_other">
+                    please specify
+                </label>
+                <input type="text" class="form-control hearaboutus_other" id="hearaboutus_other" value=""
+                    name="hearaboutus_other" maxlength="40" autocomplete="" />
+                <div class="passed">&#10003;</div>
+                <div class="failed">X</div>
+            </div>
+        </div>
+    </div>
+
+<div class="applyfaq">
+<isprint value="${Resource.msg('b2b.applyfaq','common',null)}" encoding="off" />
+</div>
+
+    <input style="display:none" type="text" class="hidden" id="utm_source" name="utm_source" />
+    <input style="display:none" type="text" class="hidden" id="utm_campaign" name="utm_campaign" />
+    <input style="display:none" type="text" class="hidden" id="utm_medium" name="utm_medium" />
+    <button class="apply_submit g-recaptcha" data-callback="submitCallbackWholesaleApply" data-sitekey="${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"
+       style="max-width: 80%; margin-top:20px; margin-bottom:20px;" type="submit">Submit</button>
+</form>
+
+<script>
+    function submitCallbackWholesaleApply(token) {
+        grecaptcha.ready(function() {
+            var key = $(".apply_submit").attr("data-sitekey");
+            grecaptcha.execute(key, {action: 'wholesaleapply'}).then(function (token) {
+                $.ajax({
+                    url: "/recaptchaverify",
+                    type: "POST",
+                    data: {token: token},
+                    success: function (data) {
+                        if (data.success) {
+                            if (data.score > $(".recaptcha3score").attr("data-recaptcha-score")) {
+                                $(".contact-form").submit();
+                            } else {
+                                $(".recaptcha_error").html($(".recaptcha3_error").attr("data-recaptcha-error"));
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    }
+</script>
+
+<style>
+    @media screen and (max-width: 425px) {
+        .applyfaq {
+            width:300px;
+        }
+    }
+</style>

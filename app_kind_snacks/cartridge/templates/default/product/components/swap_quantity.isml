@@ -1,0 +1,33 @@
+<isscript>
+var theurl = dw.web.URLUtils.url('SWAP-Changebar', 'pid', pdict.itemPid);
+</isscript>
+<button onclick='(function(e){
+$.ajax({
+        method: "POST",
+        url: "${theurl}",
+        data: { pid: ${pdict.itemPid} }
+    }).done(function (addRespData, status, xhr) {
+        const $listContainer = $(".js-byob-list-body-wrap");
+        $listContainer.empty().html(addRespData);
+        var intid = setInterval(function () {
+        if (window.location.href.indexOf("ref=account") > -1) {
+            $(".swapbarconfirm").attr("href","/account");
+        } else {
+            $(".swapbarconfirm").attr("href","/cart");
+        }
+        if ($(".swapbarconfirm").length) {
+            clearInterval(intid);
+        }
+        }, 1000);
+    });
+    $(".c-byob-product-tile--active").removeClass("c-byob-product-tile--active");
+    $(".swapbar_${pdict.itemPid}").addClass("c-byob-product-tile--active");
+    $(".swapthebar").text("set as default");
+    $(".swapthebar_${pdict.itemPid}").text("selected");
+}).call(this)' class="swapthebar swapthebar_${pdict.itemPid}" data-item-pid="${pdict.itemPid}" data-addurl="${dw.web.URLUtils.url('SWAP-Changebar', 'pid', pdict.itemPid)}">
+    <isif condition="${pdict.itemPid === pdict.swapbarid}">
+    selected
+    <iselse>
+    set as default
+    </isif>
+</button>

@@ -1,0 +1,51 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    var variationHelpers = require("*/cartridge/scripts/helpers/variationHelpers");
+</isscript>
+<isloop items="${pdict.prods.toArray()}" var="slide">
+    <isscript>
+        var visibleVariants = variationHelpers.methods.getVisibleVariants(
+            slide.variationModel
+        );
+        var s = visibleVariants[0].custom.size;
+        var num = s.match(/\d+/g);
+
+        var letr =  s.match(/[a-zA-Z]+/g);
+    </isscript>
+    <div class="swiper-slide" data-produrl="${URLUtils.https('Product-Show', 'pid' ,slide.ID)}"
+         style="cursor:pointer; background: #F5F5F5; border-radius: 16px; padding-bottom: 20px;">
+        <isif condition="${slide.custom.badge.value}">
+        <div class="eyebrow inverted short recommender">
+            ${slide.custom.badge}
+        </div>
+        </isif>
+            <img loading="lazy" class="rec_prod_img" src="${responsiveImageUtils.getResponsiveImage(slide.getImages('large')[slide.custom.tileIndex], 250, 250, "", "png").imageUrlDefault}" alt="${slide.name}" />
+            <div class="text-container">
+                <div class="rec_prod_name">
+                    ${slide.name}
+                </div>
+                    <div class="rec_prod_price">
+                ${slide.getPriceModel().getMaxPrice().toFormattedString()} <span class="rec_prod_count">(${num[0] + " " + letr[0]})</span>
+                </div>
+                <div class="yotpo bottomLine"
+                     data-appkey="gM6nbHZs59SkWdrT0zMVhkIcYMLBlgc8x9oWMStq"
+                     data-domain="Domain of the shop"
+                     data-product-id="${slide.ID}"
+                     data-product-models="${slide.ID}"
+                     data-name="${pdict.product.name}}"
+                     data-url="${pdict.product.URL}"
+                     data-image-url="${pdict.product.image}"
+                     data-description="${pdict.product.longDescription}"
+                     data-bread-crumbs="none">
+                </div>
+            </div>
+        </div>
+</div>
+</isloop>
+
+<script>
+    yotpo.refreshWidgets();
+    $(document).on('click', '.recs_slide .swiper-slide', function() {
+        window.location = $(this).attr('data-produrl');
+    });
+</script>

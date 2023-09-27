@@ -1,0 +1,68 @@
+<isscript>
+    var cm = require("dw/content/ContentMgr");
+    var modal = cm.getContent("backordermodal");
+</isscript>
+<div class="row">
+    <div class="col-12 col-sm-10">
+        <ul class="list-unstyled text-danger">
+            <li>
+                <isscript>
+                    // Make sure isBundle is at least declared, since it's a custom variable not every template uses
+                    var isBundle = typeof isBundle === 'undefined' ? false : isBundle;
+                </isscript>
+
+                <isif condition="${product.outOfStock}">
+                    <iscomment>Boolean field, don't need to check if empty</iscomment>
+                    <isloop items="${product.availability.messages}" var="message">
+                        <div class="c-product-out-of-stock">
+                            <div class="c-product-out-of-stock__message">
+                                ${message}<br>
+                                <a href="${product.category.pageUrl}" class="c-product-out-of-stock__link text-danger">
+                                    ${Resource.msg('label.product.alternatives', 'common', null)}
+                                </a>
+                            </div>
+                        </div>
+                    </isloop>
+                    <iselseif condition="${!product.inStock}">
+                        <div class="c-product-details__availability availability-msg">
+                        <span class="c-product-details__availability__status">
+                            <isif condition="${product.availability.messages.length}">
+                                <isif condition="${product.availability.messages[0] == 'Back Order'}">
+                                     <a style="color: #d9272e;" href="#" data-toggle="modal"
+                                        data-target="#backordermodal">
+                                    ${Resource.msg('label.backorder.msg', 'common', null)}
+                                    </a>                                    <isif condition="${!empty(product.availability.inStockDate)}">
+                                        <span class="c-product-details__availability__in-stock-date">
+                                            ${Resource.msgf('label.instockdate.date', 'common', null, product.availability.inStockDate)}
+                                        </span>
+                                    </isif>
+                                <iselseif condition="${product.availability.messages[0] == 'Pre-Order'}">
+                                    ${Resource.msg('label.preorder.msg', 'common', null)}
+                                </isif>
+                            </isif>
+                        </span>
+                        </div>
+                        <iselseif condition="${!product.readyToOrder && !isBundle}">
+                            <div class="c-product-details__availability availability-msg">
+                                ${Resource.msg('info.selectforstock', 'product', 'Select Styles for Availability')}
+                            </div>
+                </isif>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="backordermodal" class="login-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="loginmodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title request-password-title">Backorder</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+                <isprint value="${modal.custom.body}" encoding="off" />
+            </div>
+        </div>
+    </div>
+</div>

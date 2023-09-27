@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Recommendation">
+        <system-attribute-definitions>
+            <attribute-definition attribute-id="recommendationType">
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Product Detail Page - Cross Sell</display>
+                        <value>1</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Component</display>
+                        <value>2</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </system-attribute-definitions>
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="quantityDescription">
+                <display-name xml:lang="x-default">Quantity Description</display-name>
+                <description xml:lang="x-default">(eg. 4 bars, 1 bag, etc)</description>
+                <type>string</type>
+                <localizable-flag>true</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="components">
+                <display-name xml:lang="x-default">Components</display-name>
+                <attribute attribute-id="quantityDescription"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

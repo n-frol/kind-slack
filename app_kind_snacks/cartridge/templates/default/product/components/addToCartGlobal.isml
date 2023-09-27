@@ -1,0 +1,58 @@
+<div class="row cart-and-ipay js-cart-and-ipay">
+    <div class="col-sm-12" style="padding: 0px;">
+        <isif condition="${!empty(pdict.isOGListUpdate) && pdict.isOGListUpdate}">
+            <isif condition="${!dw.system.Site.getCurrent().getCustomPreferenceValue("byob_AutoSwapReplacementEnabled")}">
+            <isscript>
+                var classer = "add-to-cart-global";
+            </isscript>
+            </isif>
+            <input type="hidden" class="og-update-list-url" value="${pdict.ogUpdateListUrl}">
+            <iselse/>
+            <isif condition="${dw.system.Site.getCurrent().getCustomPreferenceValue("byob_AutoSwapReplacementEnabled") && pdict.every != 0}">
+                <isscript>
+                var classer = "add-to-cart-global";
+                </isscript>
+                <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}">
+            <iselse/>
+                  <isscript>
+                var classer = "add-to-cart-global";
+                </isscript>
+                <input type="hidden" class="add-to-cart-url" value="${pdict.addToCartUrl}"/>
+            </isif>
+        </isif>
+        <isscript>
+            if (classer == "null" || classer == null) // eslint-disable=line
+            {
+                var classer = "add-to-cart-global";
+            }
+
+            if(pdict.isByob) {
+                classer += " byob-add-to-cart-plp";
+            }
+        </isscript>
+        <isif condition="${pdict.every > 0}">
+            <button class="${classer} btn btn-primary js-add-to-cart-global" data-pid="${product.id}" <isif
+                condition="${!empty(pdict.isOGListUpdate) && pdict.isOGListUpdate}">
+        </isif>
+        <isif condition="${!empty(pdict.byobPostAddToCartRedirectUrl)}">
+            data-byob-post-add-to-cart-redirect-url="${pdict.byobPostAddToCartRedirectUrl}"
+        </isif>
+        ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+        <iselse>
+            <button class="${classer} btn btn-primary js-add-to-cart-global" ${productList && productList.boxSize == productList.totalInBox ? "" : "disabled"} data-pid="${product.id}" <isif
+                condition="${!empty(pdict.byobPostAddToCartRedirectUrl)}">
+                data-byob-post-add-to-cart-redirect-url="${pdict.byobPostAddToCartRedirectUrl}"
+                </isif>
+                ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+                </isif>
+
+                <isif condition="${product.productType === 'set' || product.productType === 'bundle'}">
+                    ${Resource.msg('button.addboxtocart', 'byob', null)}
+                <iselseif condition="${!empty(pdict.isOGListUpdate) && pdict.isOGListUpdate}">
+                        Update
+                <iselse>
+                    ${Resource.msg('button.addboxtocart', 'byob', null)}
+                </isif>
+            </button>
+    </div>
+</div>

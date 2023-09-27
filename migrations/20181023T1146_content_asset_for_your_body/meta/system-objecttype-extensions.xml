@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Content">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="childrenContentAssetIDS">
+                <display-name xml:lang="x-default">Children Content Asset IDS</display-name>
+                <type>set-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="globalContent">
+                <display-name xml:lang="x-default">Global Content</display-name>
+                <attribute attribute-id="childrenContentAssetIDS"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+</metadata>

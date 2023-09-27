@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Content">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="graphicalAssetBackgroundImage">
+                <display-name xml:lang="x-default">Background Image</display-name>
+                <type>image</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetBackgroundColor">
+                <display-name xml:lang="x-default">Background Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetImage">
+                <display-name xml:lang="x-default">Image</display-name>
+                <type>image</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetHeading">
+                <display-name xml:lang="x-default">Heading</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetHeadingColor">
+                <display-name xml:lang="x-default">Heading Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetEyebrow">
+                <display-name xml:lang="x-default">Eyebrow</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetEyebrowColor">
+                <display-name xml:lang="x-default">Eyebrow Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetBody">
+                <display-name xml:lang="x-default">Body</display-name>
+                <type>html</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetBodyColor">
+                <display-name xml:lang="x-default">Body Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetContentColor">
+                <display-name xml:lang="x-default">Content Color</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetLinks">
+                <display-name xml:lang="x-default">Links</display-name>
+                <type>html</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetURL">
+                <display-name xml:lang="x-default">URL</display-name>
+                <type>html</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetTextAlign">
+                <display-name xml:lang="x-default">Text Align</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Left</display>
+                        <value>left</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Center</display>
+                        <value>center</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Right</display>
+                        <value>right</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetContentXPosition">
+                <display-name xml:lang="x-default">Content Horizontal Position</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Left</display>
+                        <value>left</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Center</display>
+                        <value>center</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Right</display>
+                        <value>right</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetContentYPosition">
+                <display-name xml:lang="x-default">Content Vertical Position</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Top</display>
+                        <value>top</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Middle</display>
+                        <value>middle</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bottom</display>
+                        <value>bottom</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetMobileOnly">
+                <display-name xml:lang="x-default">Mobile Only</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetTabletOnly">
+                <display-name xml:lang="x-default">Tablet Only</display-name>
+                <type>boolean</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetVideoURL">
+                <display-name xml:lang="x-default">Video URL</display-name>
+                <type>string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="graphicalAssetWrapper">
+                <display-name xml:lang="x-default">Wrapper</display-name>
+                <type>enum-of-string</type>
+                <localizable-flag>false</localizable-flag>
+                <site-specific-flag>false</site-specific-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Full</display>
+                        <value>full</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Contained</display>
+                        <value>contained</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="graphicalContentAsset">
+                <display-name xml:lang="x-default">Graphical Content Asset</display-name>
+                <attribute attribute-id="graphicalAssetBackgroundImage"/>
+                <attribute attribute-id="graphicalAssetBackgroundColor"/>
+                <attribute attribute-id="graphicalAssetImage"/>
+                <attribute attribute-id="graphicalAssetHeading"/>
+                <attribute attribute-id="graphicalAssetHeadingColor"/>
+                <attribute attribute-id="graphicalAssetEyebrow"/>
+                <attribute attribute-id="graphicalAssetEyebrowColor"/>
+                <attribute attribute-id="graphicalAssetBody"/>
+                <attribute attribute-id="graphicalAssetBodyColor"/>
+                <attribute attribute-id="graphicalAssetContentColor"/>
+                <attribute attribute-id="graphicalAssetLinks"/>
+                <attribute attribute-id="graphicalAssetURL"/>
+                <attribute attribute-id="graphicalAssetTextAlign"/>
+                <attribute attribute-id="graphicalAssetContentXPosition"/>
+                <attribute attribute-id="graphicalAssetContentYPosition"/>
+                <attribute attribute-id="graphicalAssetMobileOnly"/>
+                <attribute attribute-id="graphicalAssetTabletOnly"/>
+                <attribute attribute-id="graphicalAssetVideoURL"/>
+                <attribute attribute-id="graphicalAssetWrapper"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

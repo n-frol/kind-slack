@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sort xmlns="http://www.demandware.com/xml/impex/sort/2009-05-15">
+    <dynamic-attribute dynamic-attribute-id="BYOB">
+        <weighted-attribute>
+            <attribute-path>product.activeData.unitsMonth</attribute-path>
+            <weight>50</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.availability</attribute-path>
+            <weight>50</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="Jenny Test">
+        <weighted-attribute>
+            <attribute-path>product.activeData.conversionMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>ascending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.ats</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.revenueYear</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>ascending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.lookToBookRatioWeek</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="PT-Product-Performance">
+        <weighted-attribute>
+            <attribute-path>product.activeData.unitsYear</attribute-path>
+            <weight>34</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.lookToBookRatioYear</attribute-path>
+            <weight>33</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.revenueYear</attribute-path>
+            <weight>33</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc">
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.isOrderable</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.unitsMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.ats</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.availability</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="best-sellers-test-segment">
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.isOrderable</attribute-path>
+            <weight>20</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>sorting.predictive-sort</attribute-path>
+            <weight>20</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.unitsMonth</attribute-path>
+            <weight>20</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.ats</attribute-path>
+            <weight>20</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.availability</attribute-path>
+            <weight>20</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="clearance">
+        <weighted-attribute>
+            <attribute-path>product.activeData.conversionWeek</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.ats</attribute-path>
+            <weight>40</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.skuCoverage</attribute-path>
+            <weight>35</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="most-popular">
+        <weighted-attribute>
+            <attribute-path>product.activeData.viewsMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.salesVelocityMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.lookToBookRatioMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.availability</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <dynamic-attribute dynamic-attribute-id="top-sellers">
+        <weighted-attribute>
+            <attribute-path>product.activeData.revenueMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.unitsMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.activeData.lookToBookRatioMonth</attribute-path>
+            <weight>25</weight>
+            <default-value>average</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+        <weighted-attribute>
+            <attribute-path>product.availabilityModel.availability</attribute-path>
+            <weight>25</weight>
+            <default-value>minimum</default-value>
+            <direction>descending</direction>
+        </weighted-attribute>
+    </dynamic-attribute>
+
+    <sorting-rule rule-id="BYOB">
+        <sorting-attributes>
+            <dynamic-attribute dynamic-attribute-id="BYOB" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="best-matches">
+        <description>lrbc rule for go live</description>
+        <sorting-attributes>
+            <attribute>
+                <attribute-path>product.custom.isNew</attribute-path>
+                <direction>descending</direction>
+                <include-text-relevance>false</include-text-relevance>
+            </attribute>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="best-matches-nut-bars">
+        <description>lrbc rule for go live</description>
+        <sorting-attributes>
+            <category-position/>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="best-matches-test-segment">
+        <description>AB testing predictive sort vs. the control rule</description>
+        <sorting-attributes>
+            <attribute>
+                <attribute-path>product.custom.isNew</attribute-path>
+                <direction>descending</direction>
+                <include-text-relevance>false</include-text-relevance>
+            </attribute>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-test-segment" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="best-matches-updated">
+        <description>lrbc rule for go live</description>
+        <sorting-attributes>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="category position">
+        <description>manual sort by category position</description>
+        <sorting-attributes>
+            <category-position/>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="customer-favorites">
+        <description>Sorts by customer ratings</description>
+        <sorting-attributes>
+            <category-position/>
+            <dynamic-attribute dynamic-attribute-id="most-popular" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="most-popular">
+        <description>Sorts by combination of product views, sales velocity, look to book, and availability</description>
+        <sorting-attributes>
+            <dynamic-attribute dynamic-attribute-id="most-popular" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="new">
+        <sorting-attributes>
+            <category-position/>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="new-arrivals">
+        <description>lrbc rule for go live</description>
+        <sorting-attributes>
+            <category-position/>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="pdict">
+        <sorting-attributes>
+            <category-position/>
+            <predictive-sort>
+                <include-text-relevance>false</include-text-relevance>
+            </predictive-sort>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="price-high-to-low">
+        <description>Sorts by price descending</description>
+        <sorting-attributes>
+            <price>
+                <direction>descending</direction>
+            </price>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="price-low-to-high">
+        <description>Sorts by price ascending</description>
+        <sorting-attributes>
+            <price>
+                <direction>ascending</direction>
+            </price>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="product-name-ascending">
+        <description>Sorts by product name A-Z</description>
+        <sorting-attributes>
+            <attribute>
+                <attribute-path>product.name</attribute-path>
+                <direction>ascending</direction>
+                <include-text-relevance>false</include-text-relevance>
+            </attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="product-name-descending">
+        <description>Sorts by product name Z-A</description>
+        <sorting-attributes>
+            <attribute>
+                <attribute-path>product.name</attribute-path>
+                <direction>descending</direction>
+                <include-text-relevance>false</include-text-relevance>
+            </attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="search">
+        <sorting-attributes>
+            <dynamic-attribute dynamic-attribute-id="best-sellers-lrbc" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+            <text-relevance/>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="stock">
+        <description>Displays in stock at top of category and out of stock at the bottom</description>
+        <sorting-attributes>
+            <attribute>
+                <attribute-path>product.availabilityModel.availability</attribute-path>
+                <direction>descending</direction>
+                <include-text-relevance>false</include-text-relevance>
+            </attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule rule-id="top-sellers">
+        <description>Sorts by combination of revenue, units, look to book, and availability</description>
+        <sorting-attributes>
+            <dynamic-attribute dynamic-attribute-id="top-sellers" attribute-context="site">
+                <include-text-relevance>false</include-text-relevance>
+            </dynamic-attribute>
+        </sorting-attributes>
+    </sorting-rule>
+
+    <sorting-rule-assignment category-id="5g-sugar-or-less" rule-id="category position" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="all-snacks" rule-id="best-matches-updated" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="byob" rule-id="BYOB" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="kind-minis" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="kind-nut-bars" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="new-arrivals" rule-id="new-arrivals" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="nut-clusters" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="root" rule-id="best-matches" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="seasonal" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="thins" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-rule-assignment category-id="variety" rule-id="best-matches-nut-bars" rule-context="site"/>
+
+    <sorting-options>
+        <sorting-option option-id="best-matches">
+            <rule-id>best-matches</rule-id>
+            <rule-context>site</rule-context>
+            <display-name xml:lang="x-default">Best Matches</display-name>
+            <display-name xml:lang="fr-FR">Meilleurs résultats</display-name>
+            <display-name xml:lang="it-IT">Migliore corrispondenza</display-name>
+            <display-name xml:lang="ja-JP">一致順</display-name>
+            <display-name xml:lang="zh-CN">最佳匹配</display-name>
+        </sorting-option>
+        <sorting-option option-id="product-name-ascending">
+            <rule-id>product-name-ascending</rule-id>
+            <rule-context>site</rule-context>
+            <display-name xml:lang="x-default">Product Name A-Z</display-name>
+            <display-name xml:lang="fr-FR">Nom de produit de A à Z</display-name>
+            <display-name xml:lang="it-IT">Nome prodotto A - Z</display-name>
+            <display-name xml:lang="ja-JP">商品名 (昇順)</display-name>
+            <display-name xml:lang="zh-CN">产品名称 A 到 Z</display-name>
+        </sorting-option>
+        <sorting-option option-id="product-name-descending">
+            <rule-id>product-name-descending</rule-id>
+            <rule-context>site</rule-context>
+            <display-name xml:lang="x-default">Product Name Z-A</display-name>
+            <display-name xml:lang="fr-FR">Nom de produit de Z à A</display-name>
+            <display-name xml:lang="it-IT">Nome prodotto Z - A</display-name>
+            <display-name xml:lang="ja-JP">商品名 (降順)</display-name>
+            <display-name xml:lang="zh-CN">产品名称 Z 到 A</display-name>
+        </sorting-option>
+        <sorting-option option-id="most-popular">
+            <rule-id>most-popular</rule-id>
+            <rule-context>site</rule-context>
+            <display-name xml:lang="x-default">most popular</display-name>
+        </sorting-option>
+        <sorting-option option-id="best-matches-ab-test">
+            <rule-id>best-matches-test-segment</rule-id>
+            <rule-context>site</rule-context>
+            <display-name xml:lang="x-default">Best Matches</display-name>
+        </sorting-option>
+    </sorting-options>
+
+    <keyword-search-sorting-rule-assignment rule-id="search" rule-context="site"/>
+
+</sort>

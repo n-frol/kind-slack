@@ -1,0 +1,94 @@
+<isif condition="${session.customerAuthenticated && pdict.order.customerNo == session.customer.profile.customerNo}">
+<div style="margin:auto; padding:50px">
+    <div style="max-width: 600px; border:1px solid #ccc;">
+        <h2 style="padding: 5px;">Invoice</h2>
+        <h2 style="padding: 5px;">Order: ${pdict.order.orderNo}</h2>
+
+        <div style="padding: 5px;">
+            <div style="float:left">
+                ${pdict.site.getName()} <br/>
+                <isprint value="${Resource.msg('kind.address', 'address', null)}" encoding="off"/>
+            </div>
+            <div style="float:right">
+                <div>
+                    Order: ${pdict.order.orderNo}
+                </div>
+                <div>
+                    Date: ${pdict.order.creationDate.toDateString()}
+                </div>
+                <div>
+                    Sub Total: ${pdict.order.adjustedMerchandizeTotalPrice.toFormattedString()} <br/>
+                    Shipping: ${pdict.order.adjustedShippingTotalNetPrice.toFormattedString()} <br/>
+                    Tax : ${pdict.order.getTotalTax().toFormattedString()} <br/>
+                    Total: ${pdict.order.totalGrossPrice.toFormattedString()}
+                </div>
+            </div>
+        </div>
+        <div style="clear:both"></div>
+        <div style="border: 1px solid #ccc; padding: 5px;">
+            <div style="border-bottom:1px solid #ccc; padding-bottom:5px;">
+                <h3>Bill To</h3>
+                <div>
+                    ${pdict.order.billingAddress.firstName} ${pdict.order.billingAddress.lastName}
+                </div>
+                <div>
+                    ${pdict.order.billingAddress.address1}
+                    <isif condition="${pdict.order.billingAddress.address2 != null}">
+                        <br/>
+                    ${pdict.order.billingAddress.address2}
+                    </isif>
+                    <br/>
+                    ${pdict.order.billingAddress.city}, ${pdict.order.billingAddress.stateCode} ${pdict.order.billingAddress.postalCode}
+                    <br/>
+                    ${pdict.order.billingAddress.countryCode}
+                    <br/>
+                    <isscript>
+                        var x = pdict.order.billingAddress.phone.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+                    </isscript>
+
+                    ${x[1]+"-" + x[2]+"-"+x[3]}
+                </div>
+            </div>
+            <div>
+                <h3>Shipment</h3>
+                <table border="1" cellpadding="5px">
+                    <tr>
+                        <th>Product Details</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <isloop items="${pdict.order.productLineItems}" var="item">
+                            <td>${item.productName}
+                            <br/>
+                            Item Number: ${item.productID}
+                            <br/>
+                                <isscript>
+                                    var st = item.product.custom.size;
+                                    var regex = new RegExp('([0-9]+)|([a-zA-Z]+)','g');
+                                    var splittedArray = st.match(regex);
+
+                                    var num= splittedArray[0];
+                                    var text = splittedArray[1];
+                                </isscript>
+                                ${num} ${text}
+                            </td>
+                            <td>${item.quantity.value}</td>
+                            <td>${item.adjustedPrice.toFormattedString()}</td>
+                        </isloop>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <iselse>
+        <isdecorate template="common/layout/page">
+            <div style="margin-bottom:20px;"></div>
+            <div class="alert alert-danger invalid-feedback loginradius-error loginradius-error--login js-loginradius-error-login"
+                 style="display:block; width:250px; margin:auto;">
+        Please login to view invoices
+            </div>
+        </isdecorate>
+    </iselse>
+</isif>

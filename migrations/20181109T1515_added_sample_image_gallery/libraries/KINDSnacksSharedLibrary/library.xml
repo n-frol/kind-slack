@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="2016-entrepreneurship-summit">
+        <display-name xml:lang="x-default">2016 Entrepreneurship Summit</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">2016 Entrepreneurship Summit hosted by The KIND Foundation: the KIND Team supported this educational event by giving advice to socially-minded entrepreneurs.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/about-us_carousel_2_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="giving-flowers">
+        <display-name xml:lang="x-default">Giving Flowers</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">One of our favorite ways to spread kindness is by giving our community flowers to pass along to someone else! It’s an easy way to brighten up someone’s day.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/our-mission_carousel_2_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kindness-safari">
+        <display-name xml:lang="x-default">KINDness Safari</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KINDness Safari: we teamed up to give families an opportunity to take part in some kind acts during a fun day at the zoo.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/our-mission_carousel_1_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="uplifting-message">
+        <display-name xml:lang="x-default">Uplifting Message</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#333</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Spotted! A KIND team member leaving an uplifting message for an unsuspecting driver.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/image-galleries/our-mission_carousel_3_opt.png</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

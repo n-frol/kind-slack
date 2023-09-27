@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+	<field formid="accountholdername" label="qiwi.accountholdername" type="string" mandatory="true" max-length="30"
+			missing-error="qiwi.accountholdername.missing"
+			range-error="qiwi.accountholdernameerror"/>
+
+	<field formid="mobilenumber"
+			label="qiwi.mobilenumber" type="string" mandatory="true" max-length="20"
+			missing-error="qiwi.mobilenumber.missing"
+			value-error="qiwi.mobilenumbererror"/>
+
+</form>

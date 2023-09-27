@@ -1,0 +1,98 @@
+/* ============================================================================
+Promo Card
+============================================================================ */
+
+/**
+ * Styles for Promo Cards (primarily header)
+ */
+
+$ns: c-promo-card;
+
+.#{$ns} {
+    display: flex;
+        align-items: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        aspect-ratio: 1 / 1;
+        border-radius: 16px;
+        margin-right: MIN(9.5%, 46px);
+        max-height: 285px;
+        max-width: 285px;
+        width: 43%;
+
+        @media screen and (max-width: 440px) {
+            width: 40% !important;
+        }
+
+        @include media-breakpoint-up(md) {
+            width: 45% !important;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 10px;
+            margin-right: 0;
+            max-height: 100%;
+            max-width: 100%;
+            width: 70% !important;
+        }
+    }
+
+    &__content {
+        @include media-breakpoint-up(lg) {
+            text-align: center;
+        }
+
+        &:hover {
+            .#{$ns} {
+                &__heading,
+                &__body {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__heading {
+        font-size: 24px !important;
+        font-weight: inherit;
+        letter-spacing: -1px;
+        line-height: 30px !important;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 23px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    &__body {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+        @media screen and (max-width: 440px) {
+            font-size: 14px !important;
+            line-height: 18px !important;
+        }
+    }
+
+    &__links {
+        @media screen and (max-width: 440px) {
+            font-size: 12px !important;
+            line-height: 22px !important;
+        }
+        @include media-breakpoint-up(lg) {
+            padding-top: 4px;
+        }
+    }
+}

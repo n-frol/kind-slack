@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="issuerid" label="ideal.issuerid" type="string" mandatory="true"
+            missing-error="ideal.missingissuerid">
+        <options>
+            <option label="ideal.selectissuerid" value=""/>
+            <option label="Rabobank" value="RABONL2U"/>
+            <option label="ING" value="INGBNL2A"/>
+            <option label="Bunq" value="BUNQNL2A"/>
+            <option label="ABN Amro" value="ABNANL2A"/>
+            <option label="ASN Bank" value="ASNBNL21"/>
+            <option label="SNS Bank" value="SNSBNL2A"/>
+            <option label="Regiobank" value="RBRBNL21"/>
+            <option label="Triodos Bank" value="TRIONL2U"/>
+            <option label="Van Lanschot Bankiers" value="FVLBNL22"/>
+            <option label="Knab" value="KNABNL2H"/>
+        </options>
+    </field>
+
+</form>

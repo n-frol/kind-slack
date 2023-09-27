@@ -1,0 +1,20 @@
+
+<isif condition="${pdict.order.items.totalQuantity > 1}">
+    <div class="card-body multi-shipping-checkbox-block st-checkout-shipping__multi-box">
+        <form action="${URLUtils.url('CheckoutShippingServices-ToggleMultiShip')}" novalidate>
+            <fieldset>
+                <div class="custom-control custom-checkbox">
+                    <input name="usingMultiShipping" id="multiShipCheck" type="checkbox" class="st-checkout-shipping__multi-box__checkbox"
+                    <isif condition="${pdict.order.usingMultiShipping && pdict.order.shipping.length > 1}">
+                        checked
+                    </isif>
+                    >
+                    <label class="checkout-checkbox st-checkout-shipping__multi-box__label" for="multiShipCheck">
+                        ${Resource.msg('check.shipping.multiship', 'checkout', null)}
+                    </label>
+                </div>
+            </fieldset>
+        </form>
+        <p>${Resource.msg('msg.multiship.maxnumberofshipments', 'checkout', null)}</p>
+    </div>
+</isif>

@@ -1,0 +1,70 @@
+<isif condition="${!empty(slotcontent)}">
+    <isinclude template="components/definition"/>
+    <isinclude template="components/modules" sf-toolkit="off" />
+    <isset name="slotContent" value="${slotcontent.content}" scope="page" />
+    <isset name="showQuickView" value="${true}" scope="page" />
+    <isset name="parentBG" value="${slotcontent.custom.slotBackgroundColor}" scope="page" />
+    <isset name="parentID" value="${slotcontent.slotID}" scope="page" />
+    <isset name="slickDots" value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsDots')}"
+        scope="page" />
+    <isset name="slickWrapperClasses"
+        value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsWrapper')}" scope="page" />
+    <isset name="slickArrowClasses"
+        value="${dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsArrows')}" scope="page" />
+    <iscontentasset aid="recommendation-customized" />
+    <isscript>
+        var dataSlick = dw.system.Site.current.getCustomPreferenceValue('slickRecommendationsJSON');
+        const productRecommendationGtmHelper= require('*/cartridge/scripts/helpers/gtmHelpers');
+        const recommendations = productRecommendationGtmHelper.setRecommendationProducts(slotContent, slotcontent.custom.__SlotName);
+    </isscript>
+
+    <isif condition="${!empty(recommendations)}">
+        <isgtmpush gtmdata="${recommendations}" />
+    </isif>
+    
+    <div class="byob-category-nav__wrap carousel-homepage-byob">
+        <div class="container s-slick position-relative">
+            <div id="product-recommendations" class="${!empty(slickWrapperClasses) ? slickWrapperClasses : ''}"
+                style="background-color: ${parentBG}">
+                <isif condition="${!empty(slotcontent.calloutMsg)}">
+                    <isprint value="${slotcontent.calloutMsg}" encoding="off" />
+                </isif>
+                <div class="js-slider c-recommendation__slider recommendation-customized js-recommendation-customized"
+                    data-slick='${dataSlick}' data-dots="true" data-arrows="true" data-mobileDots="false">
+                    <isloop items="${slotcontent.content}" var="product" status="loopstate">
+                        <div data-gridindex="${loopstate.index}" data-gtm-item-list-name="${slotcontent.custom.__SlotName}">
+                            <isscript>
+                        var showQuickView = typeof showQuickView === 'undefined' ? false : showQuickView; // Make sure showQuickview is initialized, since not all templates will be using it
+                    </isscript>
+                            <isobject object="${product}" view="recommendation">
+                                <isinclude
+                                    url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'showQuickView', showQuickView, 'itemListName', slotcontent.custom.__SlotName, 'gtmProductIndex', loopstate.index)}" />
+                            </isobject>
+                        </div>
+                    </isloop>
+                </div>
+                <div
+                    class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                    <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA
+                        functions that
+                        imageCarousel.js won't have access to</iscomment>
+                    <button
+                        class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev d-none"
+                        type="button" data-slide="prev">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                        <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                    </button>
+
+                    <button
+                        class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next d-none"
+                        type="button" data-slide="next">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                        <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</isif>

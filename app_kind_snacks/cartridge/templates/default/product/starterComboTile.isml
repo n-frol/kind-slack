@@ -1,0 +1,47 @@
+<div class="c-starter-combo-tile js-byob-combo-tile" data-itemid="${product.id}"
+    data-addtolist-url="${pdict.addToListUrl}" data-confirmempty-url="${pdict.confirmEmptyUrl}">
+
+    <div class="c-starter-combo-tile__image-container image-container c-byob-redesign--try-one-container">
+        <isset name="imgSrc" value="" scope="page" />
+        <isset name="imgSrcset" value="" scope="page" />
+
+        <isif condition="${!empty(pdict.responsiveImages)}">
+            <isset name="responsiveImg" value="${pdict.responsiveImages[0]}" scope="page" />
+            <isset name="imgSrc" value="${responsiveImg.imageUrlDefault}" scope="page" />
+            <isset name="imgSrcset"
+                value="${responsiveImg.imageUrlDefault + ', ' + responsiveImg.imageUrlLarge + ' 2x'}" scope="page" />
+            <iselse>
+                <isset name="imgSrc" value="${URLUtils.staticURL('images/noimagemedium.jpg')}" scope="page" />
+        </isif>
+
+
+        <div class="c-product-details__image-border--step2 c-product-details__image-border--step2--pick c-byob-redesign--try-one-image">
+            <img class="c-starter-combo-tile__image-container__image  tile-image   " src="${imgSrc}" <isif
+                condition="${!empty(imgSrcset)}">
+            srcset="${imgSrcset}"
+            </isif>
+            itemprop="image"
+            alt="${!empty(product.images) && !empty(product.images.large) && !empty(product.images.large[0]) ? product.images.large[0]
+                 .alt : product.productName}"
+            title="" />
+        </div>
+
+
+
+        <div class="c-starter-combo-tile__body">
+            <h2 class="c-starter-combo-tile__body__name">
+                ${product.productName}
+            </h2>
+            <isif condition="${!empty(product.shortDescription)}">
+                <div class="c-starter-combo-tile__body__description">
+                    ${product.shortDescription}
+                </div>
+            </isif>
+            <button class="byob-select-starter-combo c-starter-combo-tile__body__add-to-box c-starter-combo-tile__body__add-to-box-step2 js-byob-starter-combo-init">
+                ${Resource.msg('label.add-to-box', 'byob', null)}
+            </button>
+        </div>
+
+    </div>
+
+</div>

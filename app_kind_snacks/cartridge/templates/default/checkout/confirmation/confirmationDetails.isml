@@ -1,0 +1,25 @@
+<div class="confirm-details">
+
+    <div class="st-checkout-confirmation__header">
+        <h2 class="st-checkout-confirmation__heading">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+        <span>
+            <img src="${URLUtils.staticURL('/images/print.svg')}" alt="${Resource.msg('button.print', 'confirmation', null)}" />
+            <a href="#" onclick="window.print();">${Resource.msg('button.print', 'confirmation', null)}</a>
+        </span>
+    </div>
+    <div class="st-checkout-confirmation__body">
+        <p class="st-checkout-confirmation__body__main-info">
+            <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+            <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+            <br/>
+            <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+            <span class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></span>
+        </p>
+        <isset name="isConfirmationStage" value="${true}" scope="page"/>
+
+
+        <isinclude template="checkout/shipping/shippingSummary" />
+        <isinclude template="checkout/billing/billingSummary" />
+
+    </div>
+</div>

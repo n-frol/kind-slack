@@ -1,0 +1,47 @@
+<isscript>
+    var activeStep = pdict.activeStep ? pdict.activeStep : 0;
+    var activeStep1, activeStep2, activeStep3, backLink;
+    var hideBackStepLink = '';
+    var byobMasterID = dw.system.Site.current.getCustomPreferenceValue('byobMasterProductID');
+
+    switch(activeStep) {
+        case 1:
+            activeStep1 = 'c-product-details__step-active';
+            hideBackStepLink = 'c-product-details__steps__backstep-arrow__hide';
+            backLink = '';
+            break;
+        case 2:
+            activeStep2 = 'c-product-details__step-active';
+            backLink = URLUtils.url('Product-Show', 'pid', byobMasterID);
+            break;
+        case 3:
+            activeStep3 = 'c-product-details__step-active';
+            backLink = URLUtils.url('Product-PickYourSnacks');
+            break;
+        default:
+            activeStep1, activeStep3 = '';
+            activeStep2 = 'c-product-details__step-active';
+            backLink = URLUtils.url('Product-Show', 'pid', byobMasterID);
+    }
+
+</isscript>
+
+<div class="c-product-details__steps--grey-wrapper c-product-details__steps--additional-padding">
+    <div class="c-product-details__steps__backstep ${hideBackStepLink}">
+        <a href="${backLink}" class="c-product-details__steps__backstep-arrow" aria-label="go to previous step"></a>
+    </div>
+    <div class="c-product-details__steps">
+        <div class="c-product-details__steps-hover ${activeStep1}">
+            <div class="c-product-details__steps-item"> 1</div>
+            <p> ${Resource.msg('label.step1', 'byob', null)} </p>
+        </div>
+        <div class="c-product-details__steps-hover ${activeStep2}">
+            <div class="c-product-details__steps-item"> 2</div>
+            <p> ${Resource.msg('label.step2', 'byob', null)} </p>
+        </div>
+        <div class="c-product-details__steps-hover ${activeStep3}">
+            <div class="c-product-details__steps-item"> 3</div>
+            <p> ${Resource.msg('label.step3', 'byob', null)} </p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<isif  condition="${pdict.fullprod.masterProduct.ID}">
+<div id="${dw.util.UUIDUtils.createUUID()}" data-pwr-itemid="${pdict.fullprod.masterProduct.ID}"></div>
+<script>if(typeof PWR_RENDER === 'function')PWR_RENDER()</script>
+<iselse>
+<div id="${dw.util.UUIDUtils.createUUID()}" data-pwr-itemid="${pdict.product.id}"></div>
+<script>if(typeof PWR_RENDER === 'function')PWR_RENDER()</script>
+</isif>

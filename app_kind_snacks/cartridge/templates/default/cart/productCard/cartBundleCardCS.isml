@@ -1,0 +1,85 @@
+<div class="c-cart-product-info card product-info uuid-${lineItem.UUID}">
+    <!--- name and remove buttons --->
+    <div class="row ${bonuslineitemrow} js-cart-item justify-content-between align-items-start cart-bundle-product">
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-lg-12 d-flex flex-row c-product-card__details">
+                    <a href="${URLUtils.url('Product-Show', 'pid', variationHelpers.getVisibleProductID(lineItem.id))}" class="c-cart-product-info__item-image item-image">
+                        <isset name="lineItemImageSrcset" value="" scope="page" />
+                        <isif condition="${!empty(lineItem.responsiveImages) && !empty(lineItem.responsiveImages[0])}">
+                            <isset name="lineItemImageUrl" value="${lineItem.responsiveImages[0].normal.imageUrlDefault}" scope="page" />
+                            <isset name="lineItemImageSrcset" value="${lineItem.responsiveImages[0].normal.imageUrlDefault + ', ' + lineItem.responsiveImages[0].normal.imageUrlLarge + ' 2x'}" scope="page" />
+                        <iselse>
+                            <isset name="lineItemImageUrl" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+                        </isif>
+
+                        <isset name="lineItemImageAlt" value="${lineItem.productName}" scope="page" />
+                        <isif condition="${!empty(lineItem.images.large)}">
+                            <isset name="lineItemImageAlt" value="${lineItem.images.large[0].alt}" scope="page" />
+                        </isif>
+
+                        <img class="product-image" src="${lineItemImageUrl}" alt="${lineItemImageAlt}" title="${lineItem.images.large[0].title}"
+                            <isif condition="${!empty(lineItemImageSrcset)}"> srcset="${lineItemImageSrcset}"</isif>>
+                    </a>
+                    <div class="c-cart-product-info__item-attributes item-attributes">
+                        <isloop items="${lineItem.variationAttributes}" var="attribute">
+                            <div class="c-cart-product-info__item-attributes__attribute col-12 line-item-attributes ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</div>
+                        </isloop>
+                        <isloop items="${lineItem.options}" var="option">
+                            <isif condition="${!!option}" />
+                                <div class="lineItem-options-values" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">
+                                    <div class="c-cart-product-info__item-attributes__attribute line-item-attributes">${option.displayName}</div>
+                                </div>
+                            </isif>
+                        </isloop>
+
+                        <div class="col-12">
+                            <isinclude template="cart/productCard/cartProductCardAvailability" />
+                        </div>
+
+                        <div class="c-product-card-header__btn-wrapper col-12">
+                            <isinclude template="cart/productCard/cartProductCardHeader" />
+                            <div class="edit-and-remove-btns">
+                                <div class="c-product-card-header__btn c-product-card-header__btn--edit product-edit">
+                                    <a href="${URLUtils.url('Cart-GetProduct', 'uuid', lineItem.UUID)}" class="c-product-card-header__btn--edit__link edit" title="${Resource.msg('link.edit.item', 'cart',null)}">${Resource.msg('link.edit.item', 'cart', null)}</a>
+                                </div>
+                                <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                                    <div>
+                                        <button type="button" class="c-product-card-header__btn c-product-card-header__btn--remove remove-product" data-toggle="modal"
+                                                data-target="#removeProductModal" data-pid="${lineItem.id}"
+                                                data-name="${lineItem.productName}"
+                                                data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                                                data-uuid="${lineItem.UUID}"
+                                                aria-label="remove">
+                                            <span aria-hidden="true">Remove</span>
+                                        </button>
+                                    </div>
+                                </isif>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 d-lg-none"></div>
+
+        <isif condition="${!empty(dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable')) && dw.system.Site.getCurrent().getCustomPreferenceValue('OrderGrooveEnable') == true}">
+            <div class="s-cart-og order-groove-v2 s-ordergroove">
+                <div class="og-offer" data-og-module="sc" data-og-product="${lineItem.id}"></div>
+            </div>
+        </isif>
+
+        <isinclude template="cart/productCard/cartProductCardProductPrice" />
+    </div>
+
+    <isif condition="${empty(lineItem.isHiddenComponents) || !lineItem.isHiddenComponents}">
+        <div class="collapsible">
+            <div class="bundle-includes subtext title">${Resource.msg('msg.bundle.includes','cart',null)}</div>
+            <!--- individual bundled line items --->
+            <div class="content">
+                <isinclude template="cart/productCard/cartProductCardBundledItems" />
+            </div>
+        </div>
+    </isif>
+
+</div>

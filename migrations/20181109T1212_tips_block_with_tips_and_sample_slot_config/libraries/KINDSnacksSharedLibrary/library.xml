@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="folder-compliments">
+        <display-name xml:lang="x-default">Compliments Folder</display-name>
+        <description xml:lang="x-default">Holds all the compliments</description>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="tips-block">
+        <display-name xml:lang="x-default">Tips Block</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <template>rendering/content/tipsBlock</template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="contentGeneratorFolderID" xml:lang="x-default">folder-compliments</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">&lt;p style="text-align: center;"&gt;We believe that kindness can change the world. That&amp;rsquo;s why we&amp;rsquo;re on a mission to make the world a little kinder and have been since we were founded in 2004. We call this the&amp;nbsp;&lt;strong&gt;KIND Movement.&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;We&amp;rsquo;d love for you to join us on this journey. As a first step, consider the difference between &amp;ldquo;nice&amp;rdquo; and &amp;ldquo;kind.&amp;rdquo; It&amp;rsquo;s a subtle difference, but it has changed how we see things here at KIND.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;Nice means well, but it&amp;rsquo;s not enough. Kind is different. Nice is polite, but it stays out of it. Kind is honest &amp;ndash; it speaks up and rises to the occasion. Nice doesn&amp;rsquo;t add to problems, but Kind rolls up its sleeves and solves them. Nice doesn&amp;rsquo;t bully, but Kind stands up to bullies. Nice is something you say, whereas Kind is something you do. If we had to sum it up, we&amp;rsquo;d say this:&amp;nbsp;&lt;strong&gt;Nice is passive, but Kind is active.&lt;/strong&gt;&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align: center;"&gt;Now, more than ever, it&amp;rsquo;s time to act with kindness. When we do, we all have the power to make a difference. Ready to get started?&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">make the world a little kinder</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p style="text-align: center;"&gt;REFRESH KIND TIP&amp;nbsp;&lt;img alt="" src="images/icon-refresh.png?$staticlink$" title="" /&gt;&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">contained</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="buy-coffee">
+        <display-name xml:lang="x-default">Buy an Extra Coffee</display-name>
+        <description xml:lang="x-default">Buy an extra coffee and share it with someone</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="donate-clothes">
+        <display-name xml:lang="x-default">Donate Clothes</display-name>
+        <description xml:lang="x-default">Donate lightly used clothes to a local shelter</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="feed-meter">
+        <display-name xml:lang="x-default">Feed Meter</display-name>
+        <description xml:lang="x-default">Add money to an expired meter</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="hodor">
+        <display-name xml:lang="x-default">Hold the Door</display-name>
+        <description xml:lang="x-default">Hold the door for the person behind you</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="share-umbrella">
+        <display-name xml:lang="x-default">Share Your Umbrella</display-name>
+        <description xml:lang="x-default">Share your umbrella with someone caught in the rain</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="pay-for-someone">
+        <display-name xml:lang="x-default">Pay for Someone</display-name>
+        <description xml:lang="x-default">Pay for someone’s toll behind you</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="pay-for-someone2">
+        <display-name xml:lang="x-default">Pay for Someone</display-name>
+        <description xml:lang="x-default">Pay for someone else’s subway or bus fare</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="teach-others">
+        <display-name xml:lang="x-default">Teach Others</display-name>
+        <description xml:lang="x-default">Teach others a skill or subject that you love</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="smile">
+        <display-name xml:lang="x-default">Smile</display-name>
+        <description xml:lang="x-default">Smile at a stranger</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="write-mail">
+        <display-name xml:lang="x-default">Write &amp; Mail</display-name>
+        <description xml:lang="x-default">Write &amp; mail a letter to an old friend</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="write-positive-messages">
+        <display-name xml:lang="x-default">Write Positive Messages</display-name>
+        <description xml:lang="x-default">Write positive messages on sticky notes and place them on a bathroom mirror</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+    <content content-id="write-supportive-letter">
+        <display-name xml:lang="x-default">Write a Supportive Letter</display-name>
+        <description xml:lang="x-default">Write a supportive letter to someone going through a difficult time</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="folder-compliments"/>
+        </folder-links>
+    </content>
+
+</library>

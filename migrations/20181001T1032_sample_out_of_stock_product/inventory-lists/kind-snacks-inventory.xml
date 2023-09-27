@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventory xmlns="http://www.demandware.com/xml/impex/inventory/2007-05-31">
+    <inventory-list>
+        <header list-id="kind-snacks-inventory">
+            <default-instock>false</default-instock>
+            <description>KIND Snacks Inventory</description>
+            <use-bundle-inventory-only>false</use-bundle-inventory-only>
+            <on-order>false</on-order>
+        </header>
+
+        <records>
+
+            <record product-id="sample_out-of-stock">
+                <allocation>0.0</allocation>
+                <perpetual>false</perpetual>
+            </record>
+
+        </records>
+    </inventory-list>
+</inventory>

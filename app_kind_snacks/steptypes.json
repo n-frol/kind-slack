@@ -1,0 +1,71 @@
+{
+  "step-types": {
+    "chunk-script-module-step": [
+      {
+        "@type-id": "custom.datafix.zip",
+        "@supports-organization-context": false,
+        "chunk-size": 100,
+        "description": "Updates the state format to a 2 letter abbreviation for all default payment instruments saved to a customers wallet.",
+        "module": "app_kind_snacks/cartridge/scripts/jobs/customerUpdate/UpdateCustomerDataChunks",
+        "before-step-function": "beforeStep",
+        "total-count-function": "getTotalCount",
+        "read-function": "read",
+        "process-function": "process",
+        "write-function": "write",
+        "after-step-function": "afterStep",
+        "parameters": {
+          "parameter": []
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      }, {
+        "@type-id": "custom.report.missingbilling",
+        "@supports-organization-context": false,
+        "chunk-size": 50,
+        "description": "Checks each customer with a default payment instrument and reports on any missing billing address data.",
+        "module": "app_kind_snacks/cartridge/scripts/jobs/missingBillingData/ReportMissingBillingData",
+        "before-step-function": "beforeStep",
+        "total-count-function": "getTotalCount",
+        "read-function": "read",
+        "process-function": "process",
+        "write-function": "write",
+        "after-step-function": "afterStep",
+        "parameters": {
+          "parameter": [
+            {
+              "@name":"directory",
+              "@type":"string",
+              "@required":"false"
+            }, {
+              "@name":"fileName",
+              "@type":"string",
+              "@required":"false"
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

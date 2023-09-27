@@ -1,0 +1,316 @@
+<isscript>
+    var LoginRadius = require('*/cartridge/models/loginRadius');
+    var loginRadius = new LoginRadius();
+    var loginRadiusForwardingURL = URLUtils.url('Account-Show');
+    var resetpass = URLUtils.https('LoginRadius-PasswordResetForm');
+    pdict.loginRadiusForwardingURL = loginRadiusForwardingURL;
+    pdict.loginRadius = loginRadius;
+</isscript>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/login.css');
+    assets.addJs('/js/login.js');
+</isscript>
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <isinclude sf-toolkit="off" template="/common/scripts" />
+    <isinclude template="/common/htmlHead" />
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://staticw2.yotpo.com/7gvEQ24g0YEs8UVrfnEJwF6qQPJh7rmdspEF4hYV/widget.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <isactivedatahead/>
+
+    <isif condition="${pdict.isProd}">
+        <isinclude template="common/priceSpider" />
+    </isif>
+
+    <isscript>
+        // Check if no css variables variable not set to prevent error
+        var cssVars = typeof cssVars === 'undefined' ? '' : cssVars;
+    </isscript>
+    <isif condition="${!empty(cssVars)}">
+        <style>
+            :root {
+            <isprint value="${cssVars}" encoding="off" />
+            }
+        </style>
+    </isif>
+    <iscomment> Canonical Links </iscomment>
+    <isif condition="${!empty(pdict.canonicalURL)}">
+        <link rel="canonical" href="${pdict.canonicalURL}" />
+    </isif>
+</head>
+<body data-brand="${Resource.msg('global.brandname', 'common', null)}" class="
+        ${!empty(pdict.isBYOB) && pdict.isBYOB ? 'byob-page' : ''}
+        ${dw.system.Site.getCurrent().ID === 'CreativeSnacks' ? 'creative-snacks' : ''}">
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isinclude template="google/googlemodules" />
+<isgoogletagmanagernoscript />
+<div class="recaptcha3score" style="display:none" data-recaptcha-score="${dw.system.Site.getCurrent().getCustomPreferenceValue('recaptcha3_score')}"></div>
+<div class="recaptcha3_error" style="display:none" data-recaptcha-error="${Resource.msg('error.recaptcha3', 'error', null)}"></div>
+<div class="notifyme_error" style="display:none" data-recaptcha-error="${Resource.msg('error.notifyme', 'error', null)}"></div>
+<isif condition="${session.isCustomerAuthenticated()}">
+    <div
+        id="swell-customer-identification"
+        data-authenticated="true"
+        data-email="${session.customer.profile.email}"
+        data-id="${session.customer.profile.customerNo}"
+        data-tags=""
+        style="display:none;"
+    ></div>
+</isif>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .c-site-search {
+            display: none;
+        }
+    }
+    html, body {
+        overflow: initial !important;
+        position: unset !important;
+    }
+    .experience-component { position: relative; }
+    body.no_scroll {
+    }
+    .login-body {
+        max-width: 900px !important;
+        width: 900px !important;
+    }
+    .modal-left, .modal-right {
+        width: 50%;
+        display:inline-block; float:left; border-right: 1px solid;
+        padding: 0px 20px;
+    }
+    .modal-right { border-right: 0px !important; }
+    @media screen and (max-width: 440px) {
+        .login-body {
+            width: 90% !important;
+        }
+        .modal-left, .modal-right {
+            width: 100%;
+            display:inline-block; float:left; border-right: 1px solid;
+            padding: 0px 20px;
+        }
+        .login-body {
+            height: 85%;
+        }
+    }
+    .loginradius-stayLogin {
+        display: none;
+    }
+</style>
+
+<isif condition="${dw.system.Site.getCurrent().name == "Kind B2B"}">
+<div id="loginmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginmodal">
+    <div class="modal-dialog login-body" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title request-password-title">
+                    ${Resource.msg('page.title.myaccount', 'account', null)}
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <div class="card-body">
+                        <h3 class="c-login-block__sub-headers">login</h3>
+                        <isinclude template="/loginradius/login" />
+                    </div>
+                </div>
+                <div class="modal-right">
+                    <isinclude template="account/components/trackOrderForm" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</isif>
+<style>
+    .notify-img {
+        width:45%; float:left;
+    }
+    .notify-text {
+        width:45%; float:right;
+    }
+    @media screen and (max-width: 440px) {
+        .notify-img {
+            display: none;
+        }
+        .notify-text {
+            width: 100%;
+            float: none;
+            max-width: 400px;
+            padding: 20px;
+        }
+    }
+</style>
+<script src="https://www.google.com/recaptcha/api.js?render=${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"></script>
+<div class="nofitymodal modal" tabindex="-1" role="dialog" aria-labelledby="notifymodal" id="notifymodal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title request-password-title">Notify Me</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-bottom: 40px; width:800px;">
+                <img class="notify-img" style="" src="${dw.system.Site.getCurrent().getCustomPreferenceValue('notifyMeImage').httpsURL}" alt="Notify Me" style="width: 100%; height: auto;" />
+                <div class="notify-text" style="">
+                    <div style="color:red;" class="notifyme-error"></div>
+                    <h4 class="notifyme_prodname"></h4>
+                    <div class="notify_form">
+                        <label for="fname">First Name</label>
+                        <input class="form-control notify_fname" id="fname" name="fname"
+                               value="${session.isCustomerAuthenticated() ? session.customer.profile.firstName: ''}"></input>
+                        <label for="lname">Last Name</label>
+                        <input class="form-control notify_lname" id="lname" name="lname"
+                               value="${session.isCustomerAuthenticated() ? session.customer.profile.lastName: ''}"></input>
+                        <label for="email">Email</label>
+                        <input class="form-control notify_email" style="margin-bottom: 20px;" id="email" name="email"
+                               value="${session.isCustomerAuthenticated() ? session.customer.profile.email: ''}"></input>
+                        <label style="display:none" for="email">Phone Number</label>
+                        <input style="display:none" class="form-control notify_phone" style="margin-bottom: 20px;" id="phone" name="phone"
+                               value="${session.isCustomerAuthenticated() ? session.customer.profile.phone: ''}"></input>
+                        <input style="display:none" class="form-control notify_sku" style="margin-bottom: 20px;" id="sku" name="sku"
+                               value=""></input>
+                        <button
+                            data-sitekey="${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"
+                            data-callback='validateCaptcha_NotifyMe'
+                            data-url="${URLUtils.url('Product-NotifyMe')}"
+                            class="g-recaptcha btn btn-primary notifyme-submit">Submit</button>                            </div>
+                    <div class="notify_success" style="display:none">
+                        <h4>${Resource.msg('label.notifyme.header', 'search', null)}</h4>
+                        <p>${Resource.msg('label.notifyme.body', 'search', null)}</p>
+                        <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page ${pdict.action.toLowerCase()}" data-action="${pdict.action}" data-querystring="${pdict.queryString}" >
+    <isinclude template="/components/header/pageHeader" />
+    <div class="dynamic_wrapper">
+        <isslot id="dynamic-banner" description="Dynamic Banner" context="global" />
+    </div>
+    <div class="full_modal"></div>
+    <div class="modal_content"></div>
+    <isreplace/>
+    <isinclude template="/components/footer/pageFooter" />
+</div>
+<div class="error-messaging"></div>
+<div class="modal-background js-modal-background"></div>
+<iscontentasset aid="cookie_hint" />
+<isinclude url="${URLUtils.url('ConsentTracking-Check')}"/>
+<isinclude template="components/footer/jiracollector" />
+
+<script>
+    $(function() {
+
+    });
+</script>
+
+<style>
+    .grecaptcha-badge {
+        visibility: hidden;
+    }
+</style>
+
+<script>
+    function validateCaptcha_NotifyMe() {
+        $('.notifymodal > .modal-body').spinner().start();
+        var fname = $('.notify_fname').val();
+        var lname = $('.notify_lname').val();
+        var email = $('.notify_email').val();
+        if (fname == '' || lname == '' || email == '') {
+            $('.notifyme-error').html($('.notifyme_error').attr('data-recaptcha-error'));
+            return false;
+            $('.notifymodal > .modal-body').spinner().stop();
+        }
+        grecaptcha.ready(function() {
+            var key = $(".notifyme-submit").attr("data-sitekey");
+            grecaptcha.execute(key, {action: 'notifyme'}).then(function(token) {
+                $.ajax({
+                    url: "/recaptchaverify",
+                    type: "POST",
+                    data: {token: token},
+                    success: function(data) {
+                        $('.notifymodal > .modal-body').spinner().stop();
+                        if (data.success) {
+                            if (data.score > $(".recaptcha3score").attr("data-recaptcha-score")) {
+                                var data = {
+                                    name: $(".notify_fname").val() + " " + $(".notify_lname").val(),
+                                    email: $(".notify_email").val(),
+                                    sku: $(".notify_sku").val(),
+                                };
+                                $.ajax({
+                                    method: "POST",
+                                    url: $(".notifyme-submit").attr("data-url"),
+                                    data: data,
+                                    success: function (res) {$(".notify_success").show();
+                                        $(".notifyme-error").hide();
+                                        $(".notify_form").hide();
+                                    },
+                                });
+                            } else {
+                                $(".notifyme-error").html($(".recaptcha3_error").attr("data-recaptcha-error"));
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    }
+</script>
+<style>
+    .full_modal {
+        background: rgba(0,0,0,0.65);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 100;
+    }
+    body.modal-open {
+        position: initial;
+    }
+    .modal_content {
+        display: none;
+    }
+    .modal_content .square_flyout {
+        display: block !important;
+        box-sizing: border-box;
+    }
+    .square_flyout {
+        box-sizing: border-box;
+        padding-bottom: 60px;
+    }
+    .swiper-wrapper {
+        height: auto !important;
+    }
+    section {
+        display: inherit;
+    }
+</style>
+<script>
+    let scrolldist = 0;
+</script>
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="${URLUtils.staticURL('css/globals/global.css')}">
+<link rel="stylesheet" href="${URLUtils.staticURL('css/app.css')}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</body>
+</html>

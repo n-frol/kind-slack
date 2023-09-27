@@ -1,0 +1,6 @@
+<isif condition="${pdict.gtmdata}">
+  <script>
+    window.gtmDataLayer = window.gtmDataLayer || [];
+    gtmDataLayer.push(<isprint value="${JSON.stringify(pdict.gtmdata, null, '\t')}" encoding="off" />);
+  </script>
+</isif>

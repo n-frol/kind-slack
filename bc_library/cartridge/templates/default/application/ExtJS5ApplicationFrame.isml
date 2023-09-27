@@ -1,0 +1,19 @@
+<isdecorate template="application/MenuFrame">
+	<link rel="stylesheet" href="${URLUtils.staticURL('/ext-resources/ext-theme-gray/ext-theme-gray-all.css')}" />
+	<link rel="stylesheet" href="${URLUtils.staticURL('/css/community-suite.css')}" />
+	<script src="${URLUtils.absStatic('/ext-core/ext-all-debug.js')}" type="text/javascript"></script>
+
+	<isreplace/>
+
+	<table style="border:0; margin-top: 75px"><tr><td>
+	
+		<a href="https://xchange.demandware.com/community/developer/community-suite" target="_blank"><img src="${URLUtils.absStatic('/icons/cs-logo-trans-small.png')}"/></a>
+	
+	</td><td>
+	
+		<div><span class="creator overview_title_description">Based on <a href="http://sencha.com" target="_blank">ExtJS5 GPL</a> and icons by <a href="http://famfamfam.com" target="_blank">famfamfam</a></span></div>
+		<div><span class="creator overview_title_description">This editor is part of the Demandware community suite. Use it for your own project. More info at <a href="https://xchange.demandware.com/community/developer/community-suite" target="_blank">Demandware XChange</a></span></div>
+		
+	</td></tr></table>
+	
+</isdecorate>

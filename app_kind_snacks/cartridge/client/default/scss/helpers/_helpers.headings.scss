@@ -1,0 +1,171 @@
+// ============================================================================
+// Headings
+// ============================================================================
+
+$h1_font-family: $font-family-primary !default;
+$h1_font-size: 40px !default;
+$h1--xs-up_font-size: 40px !default;
+$h1--md-up_font-size: 70px !default;
+$h1_font-weight: 400 !default;
+$h1_line-height: 39px;
+$h1--md-up_line-height: 1.25;
+$h1_text-transform: none;
+$h1_letter-spacing: -3.5 !default;
+
+$h2_font-family: $font-family-primary !default;
+$h2_font-size: 32px !default;
+$h2--xs-up_font-size: 32px !default;
+$h2--md-up_font-size: 60px !default;
+$h2_font-weight: 400 !default;
+$h2_line-height: 49px !default;
+$h2--md-up_line-height: 1.1;
+$h2_text-transform: lowercase;
+$h2_letter-spacing: -3.8 !default;
+
+$h3_font-family: $font-family-primary !default;
+$h3_font-size: 28px !default;
+$h3--xs-up_font-size: 28px !default;
+$h3--md-up_font-size: 40px !default;
+$h3_font-weight: 400 !default;
+$h3_line-height: 38px !default;
+$h3_text-transform: lowercase;
+$h3_letter-spacing: -2 !default;
+
+$h1: (
+    font-family: $h1_font-family,
+    font-size: $h1_font-size,
+    font-size--xs-up: $h1--xs-up_font-size,
+    font-size--md-up: $h1--md-up_font-size,
+    font-weight: $h1_font-weight,
+    line-height: $h1_line-height,
+    line-height--md-up: $h1--md-up_line-height,
+    text-transform: $h1_text-transform,
+    letter-spacing: $h1_letter-spacing
+);
+$h2: (
+    font-family: $h2_font-family,
+    font-size: $h2_font-size,
+    font-size--xs-up: $h2--xs-up_font-size,
+    font-size--md-up: $h2--md-up_font-size,
+    font-weight: $h2_font-weight,
+    line-height: $h2_line-height,
+    line-height--md-up: $h2--md-up_line-height,
+    text-transform: $h2_text-transform,
+    letter-spacing: $h2_letter-spacing
+);
+$h3: (
+    font-family: $h3_font-family,
+    font-size: $h3_font-size,
+    font-size--xs-up: $h3--xs-up_font-size,
+    font-size--md-up: $h3--md-up_font-size,
+    font-weight: $h3_font-weight,
+    line-height: $h3_line-height,
+    text-transform: $h3_text-transform,
+    letter-spacing: $h1_letter-spacing
+);
+$h4: (
+    font-family: $font-family-primary,
+    font-size: 24px,
+    letter-spacing: -.8px,
+    line-height: normal
+);
+
+$headings: (
+    h1: $h1,
+    h2: $h2,
+    h3: $h3,
+    h4: $h4
+);
+
+/// Mixin for all our basic heading styles as to allow for double standard heading heirarchy, e.g.
+/// semantically we need an H2, but we want it to be sized like an H1.
+///
+/// @group Styling
+///
+/// @author PixelMEDIA (Jono Herrington)
+///
+/// @param {string} $type - Insert the type of heading style (h1 - h3)
+/// @param {list} $properties - Custom property values for heading
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-heading(h1);
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      font-family: sans-serif;
+///      font-size: 21px;
+///      font-weight: 400;
+///      line-height: 1.2;
+///      text-transform: uppercase;
+///   }
+///
+///   @media (min-width: 400px) {
+///      .usage {
+///         font-size: 24px;
+///      }
+///   }
+///
+///   @media (min-width: 781px) {
+///      .usage {
+///         font-size: 27px;
+///      }
+///   }
+
+@mixin pxl-heading($type: h1, $properties: ()) {
+
+    @if $properties != () {
+
+        $properties: map-merge((
+        font-family: $h1_font-family,
+        font-size: $h1_font-size,
+        font-size--xs-up: $h1--xs-up_font-size,
+        font-size--md-up: $h1--md-up_font-size,
+        font-weight: $h1_font-weight,
+        line-height: $h1_line-height,
+        text-transform: $h1_text-transform,
+        letter-spacing: $h1_letter-spacing
+        ), $properties);
+
+        font-family: map_get($properties, font-family);
+        font-size: map_get($properties, font-size);
+        font-weight: map_get($properties, font-weight);
+        line-height: map_get($properties, line-height);
+        text-transform: map_get($properties, text-transform);
+        letter-spacing: map_get($properties, letter-spacing);
+
+        @include pxl-media($xs-view-up) {
+            font-size: map_get($properties, font-size--xs-up);
+        }
+
+        @include pxl-media($md-view-up) {
+            font-size: map_get($properties, font-size--md-up);
+        }
+
+    } @else {
+
+        $properties: map-get($headings, $type);
+
+        @if $properties {
+            font-family: map_get($properties, font-family);
+            font-size: map_get($properties, font-size);
+            font-weight: map_get($properties, font-weight);
+            line-height: map_get($properties, line-height);
+            text-transform: map_get($properties, text-transform);
+            letter-spacing: map-get($properties, letter-spacing);
+
+            @include pxl-media($xs-view-up) {
+                font-size: map_get($properties, font-size--xs-up);
+            }
+
+            @include pxl-media($md-view-up) {
+                font-size: map_get($properties, font-size--md-up);
+                line-height: map_get($properties, line-height--md-up);
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,89 @@
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<meta charset=UTF-8>
+<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/globals/global.css')}" />
+<style>
+    @media screen and (max-width: 440px) {
+        h1 {
+            font-size: 84px !important;
+            line-height: 72px;
+            letter-spacing: -2px;
+        }
+    }
+</style>
+<div style="text-align:center;">
+    Style Guide
+    <br/>
+    Typography
+</div>
+
+<div class="style_elements">
+<h1>Lorem Ipsum</h1>
+<h2>Lorem Ipsum</h2>
+<h3>Lorem Ipsum</h3>
+<h4>Lorem Ipsum</h4>
+<h5>Lorem Ipsum</h5>
+<h6>Lorem Ipsum</h6>
+<div class="caption">Lorem Ipsum</div>
+<div class="eyebrow">Lorem Ipsum</div>
+<div class="eyebrow bold">Lorem Ipsum</div>
+<div class="paragraph">Lorem Ipsum</div>
+<div class="paragraph bold">Lorem Ipsum</div>
+
+<a href="#" class="primary dark">Primary</a>
+<a href="#" class="primary dark disabled">Disabled</a>
+<a href="#" class="primary light">Primary Light</a>
+<a href="#" class="primary small dark">Primary Dark Small</a>
+<a href="#" class="primary small dark disabled">Primary Dark Small Disabled</a>
+
+<a href="#" class="secondary normal">Secondary</a>
+<a href="#" class="secondary normal disabled">Disabled</a>
+<a href="#" class="secondary light">Secondary Light</a>
+<a href="#" class="secondary small normal">Secondarey Dark Small</a>
+<a href="#" class="secondary small normal disabled">Secondarey Dark Small Disabled</a>
+<a href="#" class="tertiary">Tertiary</a>
+<a href="#" class="tertiary disabled">Tertiary Disabled</a>
+<a href="#" class="tertiary small">Tertiary</a>
+<a href="#" class="tertiary disabled small">Tertiary Disabled</a>
+<div class="accordion">
+    <div class="head">Accordion Head</div>
+    <div class="content">Accordion Content</div>
+</div>
+<div class="accordion">
+    <div class="head small">Accordion Head</div>
+    <div class="content">Accordion Content</div>
+</div>
+<a href="#" class="back_button">Back Button</a>
+<a href="#" class="back_button disabled">Back Button</a>
+<a href="#" class="external_link">External Link</a>
+<a href="#" class="external_link disabled">External Link</a>
+<a href="#" class="icon_copy">Icon Copy</a>
+<a href="#" class="icon_copy disabled">Icon Copy</a>
+<a href="#" class="icon_copy large">Icon Copy Large</a>
+<a href="#" class="icon_copy large disabled">Icon Copy Large</a>
+
+<a href="#" class="link primary">Test</a>
+<a href="#" class="link primary left">Test</a>
+<a href="#" class="link primary right">Test</a>
+<a href="#" class="link secondary">Test</a>
+<a href="#" class="link secondary left">Test</a>
+<a href="#" class="link secondary right">Test</a>
+</div>
+
+<script>
+    var eles = $(".style_elements").children();
+    eles.each(function(ele) {
+        $(this).before("<div>Tag: "+$(this).prop('tagName')+"</div>");
+        var domele = $(this).get(0);
+        var classes = $(this).attr("class");
+        if (classes) {
+            var classnames = $(this)
+                .attr("class")
+                .split(/\s+/);
+            $(this).before("<div>Classes: "+classnames+"</div>");
+        }
+        $(this).after("<div style='border-bottom: 1px solid black; margin-bottom: 40px; margin-top:10px;'></div>");
+    });
+</script>

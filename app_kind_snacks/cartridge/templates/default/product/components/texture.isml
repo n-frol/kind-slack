@@ -1,0 +1,34 @@
+<div class="c-product-texture-bar__content">
+    <div class="c-product-texture-bar__bar__wrap">
+        <div class="c-product-texture-bar__bar">
+        </div>
+        <div class="c-product-texture-bar__bar__dividers">
+            <span  class="c-product-texture-bar__bar__divider"></span>
+            <span  class="c-product-texture-bar__bar__divider"></span>
+            <span  class="c-product-texture-bar__bar__divider"></span>
+        </div>
+        <div class="c-product-texture-bar__bar__points">
+            <span  class="c-product-texture-bar__bar__point"></span>
+            <span  class="c-product-texture-bar__bar__point"></span>
+            <span  class="c-product-texture-bar__bar__point"></span>
+            <span  class="c-product-texture-bar__bar__point"></span>
+        </div>
+
+        <div class="c-product-texture-bar__bar__indicator">
+        </div>
+    </div>
+    <div class="c-product-texture-bar__labels">
+        <div class="c-product-texture-bar__label__wrap">
+            <span class="c-product-texture-bar__label">${Resource.msg('label.texture.soft', 'product', null)}</span>
+        </div>
+        <div class="c-product-texture-bar__label__wrap">
+            <span class="c-product-texture-bar__label">${Resource.msg('label.texture.chewy', 'product', null)}</span>
+        </div>
+        <div class="c-product-texture-bar__label__wrap">
+            <span class="c-product-texture-bar__label">${Resource.msg('label.texture.crunchy', 'product', null)}</span>
+        </div>
+        <div class="c-product-texture-bar__label__wrap">
+            <span class="c-product-texture-bar__label">${Resource.msg('label.texture.hard', 'product', null)}</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<isif condition="${!empty(parentHeading)}">
+    <div class="row c-featured-container__parent-header th-kind-featured-container__parent-header page-offset-top">
+        <div class="col-12 text-center">
+            <h1 class="c-featured-container__parent-header__heading">${parentHeading}</h1>
+        </div>
+    </div>
+</isif>

@@ -1,0 +1,14 @@
+<div class="row cart-and-ipay">
+    <div class="col-sm-12">
+        <input type="hidden" class="add-to-cart-url" value="${pdict.updateCartUrl}">
+        <button class="add-to-cart-global btn btn-primary js-update-list-byob"
+                data-pid="${product.id}"
+                <isif condition="${!empty(pdict.byobPostAddToCartRedirectUrl)}">
+                    data-byob-post-add-to-cart-redirect-url="${pdict.byobPostAddToCartRedirectUrl}"
+                </isif>
+                ${!product.readyToOrder || !product.available ? "disabled" : ""}>
+
+            ${Resource.msg('button.update', 'common', null)}
+        </button>
+    </div>
+</div>

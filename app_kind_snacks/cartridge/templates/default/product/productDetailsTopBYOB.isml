@@ -1,0 +1,21 @@
+<iscomment>Top/main area of PDP separated out to be used in multiple places</iscomment>
+<div class="row st-product-top__row--auto st-product-top__row js-top-byob ${pdict.templateClass}__row ${pdict.templateClass}__row--${product.category.id}<isif condition="
+    ${isBundle}"> product-bundle</isif>">
+    <!-- Product Images Carousel -->
+    <iscomment> c-product-details__image-selected selected class </iscomment>
+    <div class="c-product-details__image-border js-select-this-product">
+        <div class="c-product-details__img-badge">
+            ${product.byobVariantSize} ${Resource.msg('label.snacks', 'byob', null)}
+        </div>
+        <isinclude template="product/components/imageCarouselBYOB" />
+    </div>
+
+    <!-- Product variation details -->
+    <div class="js-product-variation-details details-width">
+        <isscript>
+            var finalurl = URLUtils.https("Product-AddToCart", "pid", byobVariant.id , "isQuickView", isQuickView).toString();
+        </isscript>
+        <isinclude url="${finalurl}" />
+    </div>
+    <!-- End Product variation details -->
+</div>

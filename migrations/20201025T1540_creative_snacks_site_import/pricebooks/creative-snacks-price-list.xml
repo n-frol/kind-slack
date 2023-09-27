@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pricebooks xmlns="http://www.demandware.com/xml/impex/pricebook/2006-10-31">
+    <pricebook>
+        <header pricebook-id="creative-snacks-price-list">
+            <currency>USD</currency>
+            <display-name xml:lang="x-default">Creative Snacks Price List</display-name>
+            <online-flag>true</online-flag>
+        </header>
+
+        <price-tables>
+            <price-table product-id="41460">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41461">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41461-1">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41463">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41463-1">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41464">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41464-1">
+                <amount quantity="1">15.99</amount>
+            </price-table>
+
+            <price-table product-id="41471">
+                <amount quantity="1">28.49</amount>
+            </price-table>
+
+            <price-table product-id="41471-1">
+                <amount quantity="1">28.49</amount>
+            </price-table>
+
+            <price-table product-id="41472">
+                <amount quantity="1">28.49</amount>
+            </price-table>
+
+            <price-table product-id="41472-1">
+                <amount quantity="1">28.49</amount>
+            </price-table>
+
+            <price-table product-id="41473">
+                <amount quantity="1">28.48</amount>
+            </price-table>
+
+            <price-table product-id="41473-1">
+                <amount quantity="1">28.48</amount>
+            </price-table>
+
+        </price-tables>
+    </pricebook>
+</pricebooks>

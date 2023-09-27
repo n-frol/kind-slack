@@ -1,0 +1,63 @@
+/* ============================================================================
+Hamburger Menu
+============================================================================ */
+
+/**
+ * Styles for a three-line "hamburger" style menu
+ * When used for toggling elements, transitions the lines to form an "X"
+ */
+
+$ns: c-hamburger-menu;
+
+.#{$ns} {
+    display: flex;
+        align-items: center;
+    height: 18px;
+    position: relative;
+    width: 28px;
+
+    &__bar,
+    &::before,
+    &::after {
+        background-color: $primary;
+        border-radius: 5px;
+        display: block;
+        height: 2px;
+        overflow: hidden;
+        width: 100%;
+    }
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+            left: 0;
+        transition: .2s transform;
+    }
+    &::before {
+        bottom: calc(50% + 6px);
+    }
+    &::after {
+        top: calc(50% + 6px);
+    }
+    &__bar {
+        transition: .2s opacity;
+    }
+
+    .is-in & {
+        &::before,
+        &::after {
+            bottom: auto;
+            top: calc(50% - 1px);
+        }
+        &::before {
+            transform: rotateZ(45deg);
+        }
+        &::after {
+            transform: rotateZ(-45deg);
+        }
+
+        &__bar {
+            opacity: 0;
+        }
+    }
+}

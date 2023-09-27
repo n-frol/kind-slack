@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="cat-banner-cs-all-snacks">
+        <display-name xml:lang="x-default">All Snacks Category Banner</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#9F1A4C</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundImage">images/category-banners/Mask Group (2).png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">All Snacks</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/category-banners/Group 943.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetWrapper">contained</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

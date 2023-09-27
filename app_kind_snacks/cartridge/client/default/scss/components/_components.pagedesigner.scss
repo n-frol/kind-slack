@@ -1,0 +1,268 @@
+.page-designer-reference {
+    max-width: 100vw;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    & h1 {
+        letter-spacing: 1px !important;
+    }
+    & .c-product-tile--quick-view:hover {
+        border: none !important;
+        border-color: white !important;
+    }
+    .c-product-tile--quick-view {
+        height: unset !important;
+    }
+    .c-product-tile__wrap-inner {
+        height: unset;
+    }
+}
+.experience-assets-homepage_dual_tout {
+    max-width: 100vw;
+}
+@media screen and (max-width: 1040px) {
+    .experience-assets-homepage_dual_tout {
+        max-width: 101.5vw;
+    }
+}
+
+h1, h2, h3 {
+    letter-spacing: unset !important;
+}
+.navbar {
+    text-transform: lowercase;
+}
+body {
+    overflow-x: hidden;
+}
+.homepage_car_link {
+    text-decoration: none;
+    &:hover {
+        color: black;
+    }
+}
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$helvetica-bold: "Helvetica Neue Bold", Helvetica, Arial, sans-serif;
+$georgia: Sentinel A,Sentinel B,Georgia,serif;
+
+.experience-assets-purehtml {
+}
+
+@media screen and (max-width: 450px) {
+    .mobile-12 {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    .testimonial {
+        height: unset !important;
+    }
+    .experience-assets-hungrykind {
+        height: 290px !important;
+    }
+}
+
+.benefitgrid {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 20px;
+    top: -70px;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    @media screen and (max-width: 425px) {
+        grid-template-columns: none;
+        top: -30px;
+    }
+    @media screen and (min-width: 426px) and (max-width:1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width:425px) {
+    .career_rich1 {
+    padding: 20px !important;
+    padding-left: 25px !important;
+    padding-top: 30px !important;
+    }
+}
+.guardrailed {
+    &.homepage_banner_mid {
+        padding-left: 60px;
+        padding-right: 60px;
+        @media screen and (max-width:450px) {
+            padding: 0px;
+        }
+        @media screen and (max-width: 450px) {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+    }
+    padding-left: $setting-gutter2;
+    padding-right: $setting-gutter2;
+    @media screen and (max-width: 450px) {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+.guardrailed-gap {
+    padding-left: $setting-gutter2;
+    padding-right: calc(#{$setting-gutter2} - 0px);
+    @media screen and (max-width: 1024px) {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+.carousel-homepage-byob .s-slick .slick-list {
+    padding-bottom: 50px;
+    .c-byob-category-nav__item__name {
+    position: absolute;
+    width: 250px;
+    margin-left: -30px;
+}
+}
+.homepage-carousel-img {
+    top:0px;
+}
+.experience-assets-carousel {
+    & .c-byob-category-nav__item {
+        font-family: $helvetica-bold !important;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        &:hover {
+            color:black;
+        }
+    }
+}
+.videohtml {
+    @media screen and (max-width: 768px) {
+        max-height:unset;
+    }
+}
+
+.c-site-search__form {
+    margin: 0px !important;
+}
+@media screen and (max-width: 768px) {
+    .homepage_rec {
+        max-height: 400px;
+        margin-bottom: 40px;
+    }
+    & .c-recommendation__title {
+        padding-top: 20px;
+    }
+    .c-product-tile--quick-view:hover {
+        border: none;
+    }
+}
+.homepage_rec .c-recommendation {
+    margin-bottom: 0px;
+}
+.carousel-homepage-byob .slick-track {
+    max-height:200px;
+}
+
+.carousel-homepage-byob .c-byob-category-nav__item__img-wrap::after {
+    height:140px;
+    width: 140px;
+}
+
+.carousel-homepage-byob .c-byob-category-nav__item__img-wrap::after {
+    background: #e5e5e5;
+    z-index: -1;
+}
+
+.test_desktop {
+    display:block;
+    @media screen and (max-width:425px) {
+        display:none;
+    }
+}
+.test_mobile {
+    display:none;
+    background: #F2F2F2;
+    @media screen and (max-width:425px) {
+        display:block;
+    }
+}
+
+.carousel-homepage-byob .slick-track {
+    max-height: unset !important;
+}
+
+.experience-assets-purehtml {
+}
+.experience-assets-careers-video {
+    height: 100%;
+}
+.testimonials {
+    position: relative;
+    background: #F2F2F2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+}
+.testimonial {
+    height:100%;
+    text-align:center;
+    padding: 70px;
+    letter-spacing: normal;
+    @media screen and (max-width: 425px) {
+        padding: 0px;
+        top:0px;
+    }
+    @media screen and (min-width:767px) and (max-width: 1024px) {
+        padding:10px;
+    }
+    &:not(:last-child) {
+    border-right: 1px solid black;
+    height: 90%;
+    }
+    & img {
+        margin-bottom:30px;
+    }
+    & .name {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        font-family: $helvetica;
+        text-transform: uppercase;
+    }
+    .titlee {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 25px;
+        font-family: $helvetica;
+        color: #7D7D7D;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    & .quote {
+        font-size: 16px;
+line-height: 25px;
+font-family: $georgia;
+padding: 0px 25px;
+    }
+}
+
+.pure5 h2 {
+    letter-spacing: normal;
+}
+
+.experience-assets-viewpositions {
+    height: 100%;
+}
+
+@import 'pagedesigner/homepage_banner.scss';
+@import 'pagedesigner/homepage_banner_mid.scss';
+@import 'pagedesigner/homepage_dual_tout.scss';
+@import 'pagedesigner/kindhungry.scss';
+@import 'pagedesigner/homepage_hero.scss';
+@import 'pagedesigner/applyform.scss';

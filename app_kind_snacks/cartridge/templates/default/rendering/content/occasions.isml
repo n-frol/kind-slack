@@ -1,0 +1,537 @@
+<isdecorate template="common/layout/page">
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/occasions.js');
+        assets.addJs('/js/sticky.js');
+    </isscript>
+    <div>
+        <div class="th-kind-navigation-content st-navigation-content s-navigation-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="st-navigation-content__navigation s-navigation-content__navigation">
+                            <ul>
+                                <li>
+                                    <a href="${dw.web.URLUtils.url('Search-Show', 'cgid', 'occasions')}" class="active">Occasions</a>
+                                </li>
+                                <li>
+                                    <a href="${dw.web.URLUtils.url('Search-Show', 'cgid', 'flavors')}">Flavors</a>
+                                </li>
+                                <li>
+                                    <a href="${dw.web.URLUtils.url('Search-Show', 'cgid', 'benefits')}">Benefits</a>
+                                </li>
+                                <li>
+                                    <a href="${dw.web.URLUtils.url('Search-Show', 'cgid', 'products')}">Products</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+</div>
+ <div class="maincontainer">
+ <div class="top-container">
+                    <h3>
+                        when life gets in the way of healthy
+                    </h3>
+                    <h3 style="color: #61b3e4">
+                        be kind to yourself<sup>&trade;</sup>
+                    </h3>
+                    <div class="top-subtext">
+                        It’s not always easy to make healthy choices. That’s why we make finding a healthy snack one less thing to worry about.
+                    </div>
+                </div>
+                <div class="sticky-top-container" style="height:1px;"></div>
+                <div id="sticker" class="sticker" style="">
+                    <select class="custom-select" style="max-width: 1250px; margin:auto; z-index:1; border:1px solid #000;" id="scrollselect">
+                        <option>When do you need to be kind to yourself?</option>
+                        <option data-scroll="id1">On the road</option>
+                        <option data-scroll="id2">Workout fuel</option>
+                        <option data-scroll="id3">Evening snack</option>
+                        <option data-scroll="id4">Stocking up</option>
+                        <option data-scroll="id5">Morning routine</option>
+                        <option data-scroll="id6">Daily commute</option>
+                        <option data-scroll="id14">Fruit fix</option>
+                    </select>
+                    </div>
+<div style="clear:both"></div>
+<div class="mainsection">
+<div class="container1" id="id1" style="margin-top:50px;">
+                    <div class="left-text">
+                        when you have the dreaded layover
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'on-the-road')}'" class="btn-light-white">shop travel friendly snacks</button>
+                    </div>
+                <div class="left-img-container">
+                    <img class="leftimg" src="${URLUtils.staticURL('/images/757a19e9-bd29-4973-8811-1a815f83730e.png')}"
+                        alt="q" />
+
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17179"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17758"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17156"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+                <div class="container2 down100" id="id2">
+                <div class="right-text">
+                        goodbye work, hello workout
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'workout-fuel')}'" class="btn-light-white">shop workout fuel</button>
+                    </div>
+                <div class="right-img-container">
+                    <img class="rightimg"
+                        src="${URLUtils.staticURL('/images/bd215b44-c83a-455b-9100-d55691bb5113.png')}" alt="q" />
+                    
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M20805"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M26709"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M20800"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+
+                <div class="container2 down100" id="id3">
+ <div class="left-text">
+                        take a mini moment for yourself
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'evening-snack')}'" class="btn-light-white">shop guilt free indulgences</button>
+                    </div>
+                <div class="left-img-container">
+                    <img class="leftimg" src="${URLUtils.staticURL('/images/33877826-4bb1-4773-b871-6884399f223a.png')}"
+                        alt="q" />
+                   
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M26672"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M27361"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M18421"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+
+                                <div class="container2 down100" id="id4">
+                 <div class="right-text">
+                        prep your pantry with snacks that will impress
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'stocking-up')}'" class="btn-light-white">shop fan favorites</button>
+                    </div>
+                <div class="right-img-container">
+                    <img class="rightimg"
+                        src="${URLUtils.staticURL('/images/6c74e82f-5f15-44f2-89b4-4de9e5bd62ad.png')}" alt="q" />
+                   
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17751"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17128"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17150"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+
+                                <div class="container2 down100" id="id5">
+  <div class="left-text">
+                        unwrap your morning routine
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'morning-routine')}'" class="btn-light-white">shop breakfast on-the-go</button>
+                    </div>
+                <div class="left-img-container">
+                    <img class="leftimg" src="${URLUtils.staticURL('/images/ce99374c-c5b9-42c5-a855-47d0834c70b8.png')}"
+                        alt="q" />
+                  
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M27883"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M18054"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M26707"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+                <div class="container2 down100" id="id6">
+                 <div class="right-text">
+                        when your commute is at a crawl
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'daily-commute')}'" class="btn-light-white">shop commute snacks</button>
+                    </div>
+                <div class="right-img-container">
+                    <img class="rightimg"
+                        src="${URLUtils.staticURL('/images/213a1820-5e59-4822-9894-7b12393b3f33.png')}" alt="q" />
+                   
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M18052"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M17111"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M27362"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+            
+  <div class="container2 down100" id="id14">
+ <div class="left-text">
+                        when you need your fruit to-go
+                        <br />
+                        <button onclick="window.location.href ='${URLUtils.url('Search-Show', 'cgid', 'fruit-fix')}'" class="btn-light-white">shop fruit favorites</button>
+                    </div>
+                <div class="left-img-container">
+                    <img class="leftimg" src="${URLUtils.staticURL('/images/90fec06a-0f23-4488-8742-b22a74fd2d6e.png')}"
+                        alt="q" />
+                   
+                </div>
+                <div style="clear:both;"></div>
+                <isscript>
+                    var recommendedProducts = [];
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M24201"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M24205"));
+                    recommendedProducts.push(dw.catalog.ProductMgr.getProduct("M24202"));
+                </isscript>
+                <div class="c-recommendation">
+                    <h2 class="c-recommendation__title">
+                        try our top picks
+                    </h2>
+                    <div class="c-recommendation__content">
+                        <isset name="products" value="${recommendedProducts}" scope="page" />
+                        <isinclude template="components/products" />
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+            <style>
+            .topsticker {
+                top: 55px !important;
+            }
+@supports (object-fit:cover) {
+    .sticker {
+    top:55px;
+    }
+}
+            .nav-container-sticky {
+                box-shadow:0px 5px 5px grey;
+            }
+            .sticker {
+                position: -webkit-sticky;
+                width: 95%;
+                background:white; padding:5px; z-index:1; position:sticky; top:55px;
+                    width: 100vw;
+    margin-left: calc(50% - 50vw);
+            }
+           
+            .down100 {
+                top:0px !important;
+            }
+            .top-container {
+                padding:25px;
+            }
+            .top-subtext {
+                max-width: 1000px;
+            }
+            h3 {
+                line-height:28px;
+            }
+            .container2 {
+                position:relative;
+                top:-200px;
+            }
+                /* Smartphones (landscape) ----------- */
+                @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+                    .container1, .container2{
+                              padding-top: 100px;
+          margin-top: -100px;
+      }
+                    body {
+                        overflow: unset;
+                    }
+                    .sticker {
+                        position: -webkit-sticky;
+                        position: sticky;
+                        top: 100px !important;
+                    }
+                    .c-top-level-cat-nav .nav-item {
+                        height:150px;
+                    }
+                    .left-img-container, .right-img-container {
+                        width:100% !important;
+                    }
+                    .top-container {
+                        padding: 20px;
+                    }
+
+                    .c-recommendation__slider__controls__arrow {
+                        top: 35%;
+                    }
+
+                    .c-product-tile--quick-view {
+                        margin-bottom: 0px;
+                    }
+
+                    .left-text,
+                    .right-text {
+                        padding: 25px;
+                        background: black;
+                        color: white;
+                        width: unset !important;
+                        left: 0px !important;
+                        display: inline-block;
+                        position: relative;
+                        font-size: 1.2em;
+                        top: 0px !important;
+                        width: 100% !important;
+                    }
+
+                    .leftimg,
+                    .rightimg {
+                        width: 100% !important;
+                    }
+
+                    .top-container {
+                        margin-top: 0px !important;
+                    }
+
+                    .c-product-tile__tile-body__pdp-link {
+                        text-align: center;
+                    }
+                }
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      .c-top-level-cat-nav .nav-item {
+          height:150px;
+      }
+    .left-text, .right-text {
+    }
+}
+
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 2) 
+  and (orientation: portrait) {
+      .c-top-level-cat-nav .nav-item {
+          height:150px;
+      }
+      .left-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: 700px !important;
+    position: relative;
+    font-size: 1.2em;
+    top: 40px !important;
+    font-size: 1.9em;
+    font-family: Helvetica Bold;
+      }
+      .right-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: 40px !important;
+    position: relative;
+    font-size: 1.2em;
+    top: 90px !important;
+    font-size: 1.9em;
+    font-family: Helvetica Bold;
+  }
+  }
+
+  @media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) 
+  and (orientation: portrait) {
+      .container1, .container2 {
+          padding-top: 100px;
+          margin-top: -100px;
+      }
+      body {
+          overflow: unset;
+      }
+      .sticker {
+          top:100px !important;
+      }
+      .c-top-level-cat-nav .nav-item {
+          height:150px;
+      }
+.left-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: 0px !important;
+    top: 0px !important;
+    position: relative;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    line-height: 1em;
+    font-size: 1.2em;
+    min-height: 258px;
+    display: inline-block;
+        font-size: 1.2em !important;
+    min-height: 258px;
+}
+.right-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: 0px !important;
+    top: 0px !important;
+    position: relative;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    line-height: 1em;
+    font-size: 1.2em;
+    min-height: 258px;
+    display: inline-block;
+        font-size: 1.2em !important;
+    min-height: 258px;
+}
+  }
+                .maincontainer {
+                    max-width: 1500px;
+                    margin: auto;
+                }
+
+                .leftimg {
+                    float: left;
+                }
+
+                .rightimg {
+                }
+
+                .btn-light-white {
+                    cursor: pointer;
+                    border:1px solid white;
+                    background-color: #000;
+                    color: #fff;
+                    width: unset;
+                    margin-top: 25px;
+                    cursor: pointer;
+                }
+
+.left-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: -50px;
+    top:150px;
+    position: relative;
+    font-size: 1.9em;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    line-height: 1em;
+    display:inline-block;
+}
+.left-img-container {
+    display:inline-block;
+    float:left;
+    width:50%;
+}
+.right-img-container {
+    display:inline-block;
+    float:right;
+    width:50%;
+}
+
+                .right-text {
+    padding: 50px;
+    background: black;
+    color: white;
+    width: 50%;
+    display: inline-block;
+    left: 100px;
+    position: relative;
+    font-size: 1.9em;
+    top: 200px;
+    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+    line-height: 1em;
+}
+                }
+
+                .top-subtext {
+                    max-width: 700px;
+                    font-size: .9em;
+                    line-height:22px;
+                }
+
+                .top-container {
+                    max-width: 1300px;
+                    margin: auto;
+                    margin-top: 25px;
+                }
+
+                .top-container h3 {
+                    text-transform: none !important;
+                    letter-spacing: -2;
+                }
+            </style>
+</isdecorate>

@@ -1,0 +1,13 @@
+<div class="c-product-card__header__name line-item-name">${lineItem.productName}</div>
+<isif condition="${!lineItem.isBonusProductLineItem}"/>
+    <div class="c-product-card__header__remove remove-line-item">
+        <button type="button" class="c-product-card__header__remove__btn remove-btn cart-delete-confirmation-btn"
+                data-pid="${lineItem.id}"
+                data-name="${lineItem.productName}"
+                data-action="${pdict.actionUrls.removeProductLineItemUrl}"
+                data-uuid="${lineItem.UUID}"
+                aria-label="remove">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</isif>

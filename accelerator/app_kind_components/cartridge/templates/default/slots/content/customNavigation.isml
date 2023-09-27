@@ -1,0 +1,13 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<isif condition="${!empty(slotcontent)}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isif condition="${!empty(contentAsset)}">
+            <isset name="assetID" value="${contentAsset.ID}" scope="page" />
+
+            <isinclude template="components/customNavigation/customNavigation" />
+        </isif>
+    </isloop>
+</isif>

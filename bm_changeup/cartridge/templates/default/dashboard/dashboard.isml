@@ -1,0 +1,183 @@
+<iscontent type="text/html" charset="UTF-8" />
+
+<isdecorate template="application/MenuFrame">
+    <script defer src="${URLUtils.httpsStatic('js/changeUp.js')}"></script>
+    <link rel="stylesheet" href="${URLUtils.httpsStatic('css/changeUp.css')}" />
+
+    <div id="dashboard-wrapper">
+        <div id="notify-box"></div>
+        <h1 class="overview_title">${Resource.msg('dashboard.header', 'dashboard', null)}</h1>
+
+        <section id="category-exclusions-wrapper">
+            <h3>${Resource.msg('dashboard.exclusions', 'dashboard', null)}</h3>
+            <ul class="section-desc">
+                <li><isprint value="${Resource.msg('dashboard.desc.verifiedcharities', 'dashboard', null)}" encoding="off"/></li>
+                <li><isprint value="${Resource.msg('dashboard.desc.categories', 'dashboard', null)}" encoding="off"/></li>
+            </ul>
+            <div id="verified-flag-wrapper">
+                <input id="verified-charity-flag" type="checkbox" name="verified_charity_flag" ${pdict.config && pdict.config['verified_charity_flag'] ? 'checked' : ''} />
+                <label for="verified_charity_flag">${Resource.msg('dashboard.includeverifiedonly', 'dashboard', null)}</label>
+            </div>
+            <select multiple id="category-exclusions" name="category_exclusions" data-init="${pdict.config && pdict.config['category_exclusions'] && pdict.config['category_exclusions'].toString() || ''}">
+                <option value="culture">${Resource.msg('dashboard.category.artsculture', 'dashboard', null)}</option>
+                <option value="education">${Resource.msg('dashboard.category.education', 'dashboard', null)}</option>
+                <option value="environment-animals">${Resource.msg('dashboard.category.environment', 'dashboard', null)}</option>
+                <option value="health">${Resource.msg('dashboard.category.health', 'dashboard', null)}</option>
+                <option value="human-services">${Resource.msg('dashboard.category.humanservices', 'dashboard', null)}</option>
+                <option value="international">${Resource.msg('dashboard.category.international', 'dashboard', null)}</option>
+                <option value="social-benefit">${Resource.msg('dashboard.category.public', 'dashboard', null)}</option>
+                <option value="religion">${Resource.msg('dashboard.category.religion', 'dashboard', null)}</option>
+                <option value="membership-benefit">${Resource.msg('dashboard.category.membership', 'dashboard', null)}</option>
+                <option value="unclassified">${Resource.msg('dashboard.category.unknown', 'dashboard', null)}</option>
+            </select>
+        </section>
+
+        <section id="charity-search-wrapper">
+            <h3>${Resource.msg('dashboard.charitysearch', 'dashboard', null)}</h3>
+            <ul class="section-desc">
+                <li><isprint value="${Resource.msg('dashboard.desc.customersearchtoggle', 'dashboard', null)}" encoding="off"/></li>
+                <li><isprint value="${Resource.msg('dashboard.desc.search', 'dashboard', null)}" encoding="off"/></li>
+                <li><isprint value="${Resource.msg('dashboard.desc.adddefault', 'dashboard', null)}" encoding="off"/></li>
+                <li><isprint value="${Resource.msg('dashboard.desc.addfeatured', 'dashboard', null)}" encoding="off"/></li>
+            </ul>
+            <div id="customer-search-toggle-wrapper">
+                <input type="checkbox" name="customer_search_toggle" ${pdict.config && pdict.config['customer_search_toggle'] ? 'checked' : ''} />
+                <label for="customer_search_toggle">${Resource.msg('dashboard.customersearchtoggle', 'dashboard', null)}</label>
+            </div>
+            <div id="search-input-wrapper">
+                <input type="text" id="charity-search" data-url="${URLUtils.https('ChangeUp-CharitySearch')}" placeholder="${Resource.msg('dashboard.typetosearch', 'dashboard', null)}" />
+                <i id="search-clear-control" class="fa fa-times-circle" title="${Resource.msg('dashboard.clearsearch', 'dashboard', null)}"></i>
+            </div>
+            <div id="search-error" class="hide"></div>
+            <div id="charity-button-wrapper" class="hide">
+                <button id="select-default-btn">${Resource.msg('dashboard.button.selectdefault', 'dashboard', null)}</button>
+                <button id="add-featured-btn">${Resource.msg('dashboard.button.addfeatured', 'dashboard', null)}</button>
+            </div>
+        </section>
+
+        <form id="changeup-config" action="${URLUtils.https('ChangeUp-SaveConfig')}">
+            <section id="default-charity-wrapper">
+                <h3>${Resource.msg('dashboard.defaultcharity', 'dashboard', null)}</h3>
+                <ul class="section-desc">
+                    <li><isprint value="${Resource.msg('dashboard.desc.default', 'dashboard', null)}" encoding="off"/></li>
+                </ul>
+                <div id="default-charity-data">
+                    <input type="text" class="charity-data" data-charity-data="${pdict.config && JSON.stringify(pdict.config['default_charity'])}" name="default_charity" disabled value="${pdict.config && pdict.config['default_charity'] && pdict.config['default_charity'].display || ''}" />
+                </div>
+            </section>
+            <section id="featured-charities-wrapper">
+                <h3>${Resource.msg('dashboard.featuredcharities', 'dashboard', null)}</h3>
+                <ul class="section-desc">
+                    <li><isprint value="${Resource.msg('dashboard.desc.featuredlist', 'dashboard', null)}" encoding="off"/></li>
+                </ul>
+                <div id="featured-charity-data">
+                    <span id="no-charities-msg">${Resource.msg('dashboard.nofeaturedcharities', 'dashboard', null)}</span>
+                    <ul id="featured-list">
+                        <isif condition="${pdict.config}">
+                            <isloop items="${pdict.config.featured_charities}" var="charity" status="loopstatus">
+                                <li>
+                                    <input class="charity-data" type="text" data-charity-data="${pdict.config && JSON.stringify(charity)}" name="featured_charity_${loopstatus.count}" value="${charity.display}" disabled />
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </li>
+                            </isloop>
+                        </isif>
+                    </ul>
+                </div>
+            </section>
+            <section id="donation-type-wrapper">
+                <h3>${Resource.msg('dashboard.donationtype', 'dashboard', null)}</h3>
+                <ul class="section-desc">
+                    <li><isprint value="${Resource.msg('dashboard.desc.donationtype.actor', 'dashboard', null)}" encoding="off"/>
+                        <ul class="second-level">
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.actor.merchant', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.actor.customer', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.actor.match', 'dashboard', null)}" encoding="off"/></li>
+                        </ul>
+                    </li>
+                    <li><isprint value="${Resource.msg('dashboard.desc.donationtype.option', 'dashboard', null)}" encoding="off"/>
+                        <ul class="second-level">
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.option.fixed', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.option.percentage', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.option.roundup', 'dashboard', null)}" encoding="off"/></li>
+                        </ul>
+                    <li><isprint value="${Resource.msg('dashboard.desc.donationtype.amount', 'dashboard', null)}" encoding="off"/>
+                        <ul class="second-level">
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.amount.fixed', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.donationtype.amount.percentage', 'dashboard', null)}" encoding="off"/></li>
+                        </ul>
+                    </li>
+                </ul>
+                <label for="donation_type_actor">${Resource.msg('dashboard.actor', 'dashboard', null)}</label>
+                <select id="donation-type-actor" name="donation_type_actor" data-init="${pdict.config && pdict.config['donation_type_actor'] || ''}">
+                    <option value="merchant">${Resource.msg('dashboard.actor.merchant', 'dashboard', null)}</option>
+                    <option value="customer">${Resource.msg('dashboard.actor.customer', 'dashboard', null)}</option>
+                    <option value="match">${Resource.msg('dashboard.actor.customermerchant', 'dashboard', null)}</option>
+                </select>
+                <label for="donation_type_option">${Resource.msg('dashboard.option', 'dashboard', null)}</label>
+                <select id="donation-type-option" name="donation_type_option" data-init="${pdict.config && pdict.config['donation_type_option'] || ''}">
+                    <option value="fixed">${Resource.msg('dashboard.donationtype.fixed', 'dashboard', null)}</option>
+                    <option value="percentage">${Resource.msg('dashboard.donationtype.percentage', 'dashboard', null)}</option>
+                    <option value="roundup">${Resource.msg('dashboard.donationtype.roundup', 'dashboard', null)}</option>
+                </select>
+                <div id="donation-type-amount-wrapper" class="hidden">
+                    <label for="donation_type_amount">
+                        <span id="type-amount"></span> <span>${Resource.msg('dashboard.amount', 'dashboard', null)}</span>
+                    </label>
+                    <input id="donation-type-amount" disabled name="donation_type_amount" value="${pdict.config && pdict.config['donation_type_amount'] || ''}" />
+                </div>
+            </section>
+            <section id="donation-display-wrapper">
+                <h3>${Resource.msg('dashboard.donationdisplaytype', 'dashboard', null)}</h3>
+                <ul class="section-desc">
+                    <li><isprint value="${Resource.msg('dashboard.desc.displaytype', 'dashboard', null)}" encoding="off"/>
+                        <ul class="second-level">
+                            <li><isprint value="${Resource.msg('dashboard.desc.displaytype.actualamount', 'dashboard', null)}" encoding="off"/></li>
+                            <li><isprint value="${Resource.msg('dashboard.desc.displaytype.percentage', 'dashboard', null)}" encoding="off"/></li>
+                        </ul>
+                    </li>
+                </ul>
+                <select id="donation-display-type" name="donation_display_type" data-init="${pdict.config && pdict.config['donation_display_type'] || ''}">
+                    <option value="actual">${Resource.msg('dashboard.actualamount', 'dashboard', null)}</option>
+                    <option value="percentage">${Resource.msg('dashboard.donationtype.percentage', 'dashboard', null)}</option>
+                </select>
+            </section>
+            <section id="total-donations-display-wrapper">
+            	<h3>${Resource.msg('dashboard.totaldonationsdisplay', 'dashboard', null)}</h3>
+            	<ul class="section-desc">
+            		<li><strong>${Resource.msg('dashboard.totaldonationsdisplay.enabled', 'dashboard', null)}</strong> - ${Resource.msg('dashboard.desc.totaldonationsdisplay.enabled', 'dashboard', null)}</li>
+            		<li><strong>${Resource.msg('dashboard.totaldonationsdisplay.startvalue', 'dashboard', null)}</strong> - ${Resource.msg('dashboard.desc.totaldonationsdisplay.startvalue', 'dashboard', null)}</li>
+            		<li><strong>${Resource.msg('dashboard.totaldonationsdisplay.minimum', 'dashboard', null)}</strong> - ${Resource.msg('dashboard.desc.totaldonationsdisplay.minimum', 'dashboard', null)}</li>
+            	</ul>
+            	<div id="total-donations-toggle-wrapper" class="total-donations-field">
+	                <input type="checkbox" id="total_donations_toggle" name="total_donations_toggle" ${pdict.config && pdict.config['total_donations_toggle'] ? 'checked' : ''} />
+	                <label for="total_donations_toggle">${Resource.msg('dashboard.totaldonationsdisplay.enabled', 'dashboard', null)}</label>
+	            </div>
+	            <div id="total-donations-start-input-wrapper" class="total-donations-field">
+	            	<label for="total_donations_start">${Resource.msg('dashboard.totaldonationsdisplay.startvalue', 'dashboard', null)}</label>
+	                <input type="text" id="total_donations_start" name="total_donations_start" placeholder="0.00" value="${pdict.config && pdict.config.total_donations_start ? pdict.config.total_donations_start : ''}" />
+	            </div>
+	            <div id="total-donations-minimum-input-wrapper" class="total-donations-field">
+	            	<label for="total_donations_minimum">${Resource.msg('dashboard.totaldonationsdisplay.minimum', 'dashboard', null)}</label>
+	                <input type="text" id="total_donations_minimum" name="total_donations_minimum" placeholder="0.00" value="${pdict.config && pdict.config.total_donations_min ? pdict.config.total_donations_min : ''}" />
+	            </div>
+            </section>
+            <button type="submit">${Resource.msg('dashboard.save', 'dashboard', null)}</button>
+
+            <br /><br />
+            <a href="https://changeup01-tech-prtnr-na08-dw.demandware.net/on/demandware.store/Sites-Site/default/ChangeUp-Dashboardv2?SelectedMenuItem=changeup&CurrentMenuItemId=changeup&csrf_token=8Zl0xUgwM2iTzAin5FIQ6cSnq4vJrnnJ4Z7V2OZ4Bh7uNWWWCXwJy7qOsj1xHXZXnCQ7LwfOKDvO1l5PZdy2WgA2pOtM8p5iL9f2Ddt_osVx1orCrriGzVLjIuYKnoJv4DJVu6Fr7PLD6asMNL5nwFRy9dSm1LJ-EZoaK0RELlTeBZhj7aQ%3d" onclick="return prompt('Enter pin') == 1234">Enable Advanced UI w/PIN</a>
+
+            <isscript>
+            var errorObj = {
+            	default_charity: Resource.msg('dashboard.required.missingdefaultcharity', 'dashboard', null),
+            	min_value: Resource.msg('dashboard.format.min', 'dashboard', null),
+            	start_value: Resource.msg('dashboard.format.start', 'dashboard', null)
+            };
+            var errorMsg = '';
+            try {
+            	errorMsg = JSON.stringify(errorObj);
+            } catch (e) {}
+            </isscript>
+            <div id="form-error" class="hide" data-error-msg="${errorMsg}"></div>
+        </form>
+    </div>
+</isdecorate>

@@ -1,0 +1,59 @@
+/* ============================================================================
+Page Header with Login
+============================================================================ */
+
+/**
+ * Establish styles for page level headers with potential login blocks
+ */
+
+$ns: "c-page-header-w-login";
+
+.#{$ns} {
+    display: flex;
+        align-items: flex-end;
+    margin-bottom: 10px;
+    padding-top: 20px;
+
+    @include media-breakpoint-up(md) {
+        justify-content: center;
+        margin-bottom: 32px;
+        padding-top: 0;
+    }
+
+    &--login {
+        justify-content: space-between;
+
+        @include media-breakpoint-up(md) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__heading,
+    &__login {
+        @include media-breakpoint-up(md) {
+            @include make-col(4);
+        }
+    }
+    &__heading {
+        font-size: 30px;
+        letter-spacing: -1.5px;
+        margin-bottom: 0;
+        text-align: center;
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(md) {
+            margin-bottom: 8px;
+        }
+    }
+    &__login {
+        font-family: $font-family-primary;
+        text-align: right;
+    }
+
+    &__total {
+        display: flex;
+            justify-content: space-between;
+        font-family: $font-family-primary;
+        margin-bottom: 32px;
+    }
+}

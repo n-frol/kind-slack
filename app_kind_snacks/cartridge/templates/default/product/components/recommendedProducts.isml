@@ -1,0 +1,23 @@
+
+<isif condition="${!product.raw.getRecommendations(1).empty}">
+    <isscript>
+        var recommendedProducts = [];
+
+        // Iterate throught the list recommendations for this product.  These will be ordered by position.
+        var recommendations = product.raw.getRecommendations(1).iterator();
+        while (recommendations.hasNext()) {
+            var recommendation = recommendations.next();
+            var recommendedProduct  = recommendation.getRecommendedItem();
+            recommendedProducts.push(recommendedProduct);
+        }
+    </isscript>
+    <div class="c-recommendation">
+        <h2 class="c-recommendation__title">
+            <isprint value="${Resource.msg('label.recommendations', 'product', null)}" encoding="off"/>
+        </h2>
+        <div class="c-recommendation__content">
+            <isset name="products" value="${recommendedProducts}" scope="page"/>
+            <isinclude template="components/products" />
+        </div>
+    </div>
+</isif>

@@ -1,0 +1,248 @@
+<isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/recaptcha.js');
+    </isscript>
+
+<form
+    action="${URLUtils.url('PaymentInstruments-SavePayment', 'UUID', pdict.UUID)}"
+    class="payment-form"
+    method="POST"
+    onsubmit="return false;"
+    name="payment-form" ${pdict.paymentForm.attributes}>
+
+    <input type="hidden" class="form-control" id="cardType" value="" <isprint value="${pdict.paymentForm.cardType.attributes}" encoding="off" /> autocomplete="cc-type">
+
+    <div class="form-group custom-control custom-radio">
+        <input
+            id="paymentOption-Credit"
+            name="paymentOption-Credit"
+            type="radio"
+            class="custom-control-input"
+            checked
+            <isprint value="${pdict.paymentForm.paymentMethod.attributes}" encoding="off" />
+        >
+        <label for="paymentOption-Credit">
+            <span>${Resource.msg('label.payment.credit','payment',null)}</span>
+        </label>
+        <div class="invalid-feedback"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${pdict.paymentForm.cardOwner.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="cardOwner">
+            <isprint value="${pdict.paymentForm.cardOwner.label}" encoding="htmlcontent" />
+        </label>
+        <input type="text" class="form-control" id="cardOwner"
+            <isprint value="${pdict.paymentForm.cardOwner.attributes}" encoding="off" />
+            autocomplete="cc-name">
+        <div class="invalid-feedback">
+            <isprint value="${pdict.paymentForm.cardOwner.error}" encoding="htmlcontent" />
+        </div>
+    </div>
+
+    <isif condition="${pdict.UUID === 0}">
+
+        <div class="form-group">
+            ${pdict.paymentForm.editNumber.label}
+            <span class="info-icon">
+                <img src="${URLUtils.staticURL('/images/icon-tooltip-black.svg')}" class="c-tooltip__icon" alt="${Resource.msg('label.tooltip', 'common', null)}" />
+                <div class="tooltip">
+                    ${Resource.msg('msg.edit.card.tooltip','payment',null)}
+                </div>
+            </span>
+            <p class="masked-card-number">${pdict.paymentForm.editNumber.htmlValue}</p>
+        </div>
+        <iselse>
+
+        <div class="form-group
+            <isif condition="${pdict.paymentForm.cardNumber.mandatory === true}">required</isif>">
+            <label class="form-control-label" for="cardNumber">
+                <isprint value="${pdict.paymentForm.cardNumber.label}" encoding="htmlcontent" />
+            </label>
+            <div>
+                <input type="text" class="form-control" id="cardNumber"
+                    <isprint value="${pdict.paymentForm.cardNumber.attributes}" encoding="off" />
+                    autocomplete="cc-number" placeholder="<isprint value="${pdict.paymentForm.editNumber.htmlValue}" encoding="off" />">
+                <div class="invalid-feedback">
+                    <isprint value="${pdict.paymentForm.cardNumber.error}" encoding="htmlcontent" />
+                </div>
+            </div>
+        </div>
+    </isif>
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="form-group
+                <isif condition="${pdict.paymentForm.expirationMonth.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="month">
+                    <isprint value="${pdict.paymentForm.expirationMonth.label}" encoding="htmlcontent" />
+                </label>
+                <div class="knd-custom-select">
+                    <select class="form-control" id="month" <isprint value="${pdict.paymentForm.expirationMonth.attributes}" encoding="off" /> autocomplete="cc-exp-month">
+                        <isloop items=${pdict.paymentForm.expirationMonth.options} var="month">
+                            <option id="${month.id}" value="${month.htmlValue}" <isif condition="${month.selected}">selected</isif> >${month.label}</option>
+                        </isloop>
+                    </select>
+                </div>
+                <div class="invalid-feedback">
+                    <isprint value="${pdict.paymentForm.expirationMonth.error}" encoding="htmlcontent" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="form-group
+                <isif condition="${pdict.paymentForm.expirationYear.mandatory === true}">required</isif>">
+                <label class="form-control-label" for="year">
+                    <isprint value="${pdict.paymentForm.expirationYear.label}" encoding="htmlcontent" />
+                </label>
+                <div class="knd-custom-select">
+                    <select class="form-control" id="year" <isprint value="${pdict.paymentForm.expirationYear.attributes}" encoding="off" /> autocomplete="cc-exp-year">
+                        <option value="${pdict.paymentForm.expirationYear.options[0].htmlValue}">${pdict.paymentForm.expirationYear.options[0].label}</option>
+                        <isloop items=${pdict.expirationYears} var="year">
+                            <option id="${year}" value="${year}" <isif condition="${year == pdict.paymentForm.expirationYear.value}">selected</isif> >${year}</option>
+                        </isloop>
+                    </select>
+                </div>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group
+                ${pdict.paymentForm.address1.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.address1.htmlName}">
+                <label class="form-control-label" for="billingAddressOne">${Resource.msg('field.billing.address.one','address',null)}</label>
+                <input type="text" class="form-control billingAddressOne" id="billingAddressOne"
+                    value="${pdict.paymentForm.address1.htmlValue ? pdict.paymentForm.address1.htmlValue : ''}"
+                    <isprint value=${pdict.paymentForm.address1.attributes} encoding="off"/>
+                    autocomplete="billing address-line1">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group
+                ${pdict.paymentForm.address2.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.address2.htmlName}">
+                <label class="form-control-label" for="billingAddressTwo">${Resource.msg('field.billing.address.two','address',null)}</label>
+                <input type="text" class="form-control billingAddressTwo" id="billingAddressTwo"
+                    value="${pdict.paymentForm.address2.htmlValue ? pdict.paymentForm.address2.htmlValue : ''}"
+                    <isprint value=${pdict.paymentForm.address2.attributes} encoding="off"/>
+                    autocomplete="billing address-line2">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--- make drop down--->
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group
+                ${pdict.paymentForm.city.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.city.htmlName}">
+                <label class="form-control-label" for="billingAddressCity">${Resource.msg('field.billing.address.city','address',null)}</label>
+                <input type="text" class="form-control billingAddressCity" id="billingAddressCity"
+                    value="${pdict.paymentForm.city.htmlValue ? pdict.paymentForm.city.htmlValue : ''}"
+                    <isprint value=${pdict.paymentForm.city.attributes} encoding="off"/>
+                    autocomplete="billing address-level2">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group
+                ${pdict.paymentForm.states.stateCode.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.states.stateCode.htmlName}">
+                <label class="form-control-label" for="billingState">${Resource.msg('field.billing.address.state','address',null)}</label>
+                <select class="form-control billingState custom-select" id="billingState"
+                    <isprint value=${pdict.paymentForm.states.stateCode.attributes} encoding="off"/>
+                    autocomplete="billing address-level1">
+                        <isloop items=${pdict.paymentForm.states.stateCode.options} var="state">
+                            <option id="${state.id}"  value="${state.htmlValue}"
+                                ${state.id === pdict.paymentForm.states.stateCode.htmlValue ? "selected" : "" } >
+                                ${state.label}
+                            </option>
+                        </isloop>
+                </select>
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group
+                ${pdict.paymentForm.postalCode.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.postalCode.htmlName}">
+                <label class="form-control-label" for="billingZipCode">${Resource.msg('field.billing.address.zip.code','address',null)}</label>
+                <input type="text" class="form-control billingZipCode" id="billingZipCode"
+                    value="${pdict.paymentForm.postalCode.htmlValue ? pdict.paymentForm.postalCode.htmlValue : ''}"
+                    <isprint value=${pdict.paymentForm.postalCode.attributes} encoding="off"/>
+                    autocomplete="billing postal-code">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group
+                ${pdict.paymentForm.phone.mandatory === true ? 'required' : ''}
+                ${pdict.paymentForm.phone.htmlName}">
+                <label class="form-control-label" for="billingPhone">${Resource.msg('field.billing.address.phone','address',null)}</label>
+                <input type="text" class="form-control billingPhone" id="billingPhone"
+                    value="${pdict.paymentForm.phone.htmlValue ? pdict.paymentForm.phone.htmlValue : ''}"
+                    <isprint value=${pdict.paymentForm.phone.attributes} encoding="off"/>
+                    autocomplete="billing postal-code">
+                <div class="invalid-feedback"></div>
+            </div>
+        </div>
+    </div>
+
+    <isif condition="${empty(pdict.UUID)}">
+        <div class="make-default-payment">
+            <div class="form-group custom-control">
+                <input type="checkbox" id="makeDefaultPayment" name="${pdict.paymentForm.makeDefaultPayment.htmlName}" value="true"/>
+                <label class="custom-control-label" for="makeDefaultPayment">
+                    ${Resource.msg('label.payment.checkbox.makedefault', 'payment', null)}
+                </label>
+            </div>
+        </div>
+    <iselse>
+        <input type="hidden" id="makeDefaultPayment" name="${pdict.paymentForm.makeDefaultPayment.htmlName}" value="${pdict.paymentForm.makeDefaultPayment.htmlValue}"/>
+    </isif>
+    <div class="recap-resp invalid-feedback"></div>
+    <br />
+    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+
+    <div class="row">
+        <div class="col">
+            <a href="${URLUtils.url('PaymentInstruments-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+        </div>
+        <div class="col">
+            <button type="submit" id="paymentsubmit" name="save"
+                    data-callback="submitCallbackPayment" data-sitekey="${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"
+                    class="paymentsubmit g-recaptcha btn btn-save btn-block btn-primary c-account-dashboard__bottom">${Resource.msg('button.save','account',null)}</button>
+        </div>
+    </div>
+    <input class="recpatcharesponse" style="display:none" name="recpatcharesponse" />
+    <div class="recaptcha_error" style="color:red;"></div>
+</form>
+
+<script>
+    function submitCallbackPayment(token) {
+        grecaptcha.ready(function() {
+            var key = $(".paymentsubmit").attr("data-sitekey");
+            var data = $(".payment-form").serializeArray();
+            grecaptcha.execute(key, {action: 'updatepayment'}).then(function (token) {
+                $(".recpatcharesponse").val(token);
+                $(".payment-form").submit();
+            });
+        });
+    }
+</script>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.shipment">
+        <object-attribute attribute-id="customerKey">oms.shipment</object-attribute>
+        <object-attribute attribute-id="description">Shipment notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "OrderNumber": "OrderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "address1": "address1",&#13;
+    "address2": "address2",&#13;
+    "city": "city",&#13;
+    "state": "state",&#13;
+    "postalCode": "postalCode",&#13;
+    "productLineItems": "productLineItems",&#13;
+    "trackingURL": "trackingURL"&#13;
+}</object-attribute>
+    </custom-object>
+</custom-objects>

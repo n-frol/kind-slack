@@ -1,0 +1,28 @@
+<iscache type="relative" minute="0" hour="0">
+<isset name="isZeroTotal" value="${!empty(pdict.order) && !empty(pdict.order.totals) && pdict.order.totals.grandTotalDecimal === 0}" scope="page" />
+
+<isscript>
+    var trackingHelpers = require('int_googletagmanager/cartridge/scripts/helpers/trackingHelpers');
+    var isSnackClub = trackingHelpers.isSnackClub();
+    </isscript>
+
+<h3 class="summary-section-label billing-addr-label st-checkout-main__sub-title subtitle">${Resource.msg('label.order.billing.address', 'confirmation', null)}</h3>
+<isif condition="${pdict.order.billing.billingAddress.address !== null}">
+    <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
+    <iselse>
+    <isset name="address" value="{}" scope="page"/>
+</isif>
+
+<div class="summary-details billing st-checkout-main__summary-details subtext">
+     <isinclude template="checkout/addressSummary" />
+</div>
+
+<iscomment> Only show the payment method information if the order was > $0 </iscomment>
+<isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
+
+<isif condition="${isSnackClub}">
+    <isset name="contentAsset" value="${dw.content.ContentMgr.getContent('snack-club-legal')}" scope="page" />
+    <isif condition="${!empty(contentAsset)}">
+        <isprint value="${contentAsset.custom.body}" encoding="off" />
+    </isif>
+</isif>

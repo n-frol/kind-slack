@@ -1,0 +1,277 @@
+<isset name="contactForm" value="${pdict.forms.contactForm}" scope="page" />
+<isset name="addressFields" value="${contactForm.addressFields}" scope="page" />
+<isset name="orderFields" value="${contactForm.orderFields}" scope="page" />
+
+<script src="https://www.google.com/recaptcha/api.js?render=${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"></script>
+<form action="${URLUtils.url('Contact-SubmitForm')}" class="contact-form" method="GET" name="contact-form">
+    <div class="contactform_error" style="color:red;"></div>
+    <div class="form-group
+        ${contactForm.subject.mandatory === true ? 'required' : ''}
+        ${contactForm.subject.htmlName}">
+        <label class="form-control-label" for="contactSubject">
+            ${Resource.msg('label.input.subject', 'forms', null)}
+        </label>
+        <select class="form-control contactSubject custom-select" id="contactSubject"
+            <isprint value=${contactForm.subject.attributes} encoding="off"/>
+            autocomplete="contact subject">
+                <option label=" "></option>
+                <isloop items=${contactForm.subject.options} var="subjectType">
+                    <option id="${subjectType.id}" value="${subjectType.htmlValue}">${subjectType.label}</option>
+                </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${contactForm.subject.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.fullName.mandatory === true ? 'required' : ''}
+        ${contactForm.fullName.htmlName}">
+        <label class="form-control-label" for="contactFullName"  >
+            ${Resource.msg('label.input.name','forms',null)}
+        </label>
+        <input type="text" class="form-control contactFullName" id="contactFullName"
+            value="" <isprint value=${contactForm.fullName.attributes} encoding="off"/>
+            autocomplete="full-name" >
+        <div class="invalid-feedback"><isprint value="${contactForm.fullName.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.company.mandatory === true ? 'required' : ''}
+        ${contactForm.company.htmlName}">
+        <label class="form-control-label" for="contactCompany"  >
+            ${Resource.msg('label.input.company','forms',null)}
+        </label>
+        <input type="text" class="form-control contactCompany" id="contactCompany"
+            value="" <isprint value=${contactForm.company.attributes} encoding="off"/>
+            autocomplete="company" >
+        <div class="invalid-feedback"><isprint value="${contactForm.company.error}" ></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group
+                ${addressFields.email.mandatory === true ? 'required' : ''}
+                ${addressFields.email.htmlName}">
+                <label class="form-control-label" for="contactEmail">
+                    ${Resource.msg('field.shipping.address.email','address',null)}
+                </label>
+                <input type="email" class="form-control contactEmail" id="contactEmail"
+                    value="" <isprint value=${addressFields.email.attributes} encoding="off"/>
+                        autocomplete="email">
+                <div class="invalid-feedback"><isprint value="${addressFields.email.error}" ></div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group
+                ${contactForm.phone.mandatory === true ? 'required' : ''}
+                ${contactForm.phone.htmlName}">
+                <label class="form-control-label" for="contactPhoneNumber">
+                    ${Resource.msg('field.shipping.address.phone','address',null)}
+                </label>
+                <input type="tel" class="form-control contactPhoneNumber" id="contactPhoneNumber"
+                    value="" <isprint value=${contactForm.phone.attributes} encoding="off"/>
+                        autocomplete="tel">
+                <div class="invalid-feedback"><isprint value="${contactForm.phone.error}" ></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.address1.mandatory === true ? 'required' : ''}
+        ${contactForm.address1.htmlName}">
+        <label class="form-control-label" for="contactAddressOne">
+            ${Resource.msg('label.input.address','forms',null)}
+        </label>
+        <input type="text" class="form-control contactAddressOne" id="contactAddressOne"
+            value="" <isprint value=${contactForm.address1.attributes} encoding="off"/>
+            autocomplete="contact address-line1">
+        <div class="invalid-feedback"><isprint value="${contactForm.address1.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.city.mandatory === true ? 'required' : ''}
+        ${contactForm.city.htmlName}">
+        <label class="form-control-label" for="contactAddressCity">
+            ${Resource.msg('field.shipping.address.city','address',null)}
+        </label>
+        <input type="text" class="form-control contactAddressCity" id="contactAddressCity"
+            value="" <isprint value=${contactForm.city.attributes} encoding="off"/>
+            autocomplete="shipping address-level2">
+        <div class="invalid-feedback"><isprint value="${contactForm.city.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.states.stateCode.mandatory === true ? 'required' : ''}
+        ${addressFields.states.stateCode.htmlName}">
+        <label class="form-control-label" for="contactState">
+            ${Resource.msg('field.shipping.address.state','address',null)}
+        </label>
+        <select class="form-control contactState custom-select" id="contactState"
+            <isprint value=${addressFields.states.stateCode.attributes} encoding="off"/>
+            autocomplete="contact address-level1">
+            <isloop items=${addressFields.states.stateCode.options} var="state">
+                <option id="${state.id}" value="${state.htmlValue}">${state.label || ' '}</option>
+            </isloop>
+        </select>
+        <div class="invalid-feedback"><isprint value="${addressFields.states.stateCode.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.postalCode.mandatory === true ? 'required' : ''}
+        ${contactForm.postalCode.htmlName}">
+        <label class="form-control-label" for="contactZipCode">
+            ${Resource.msg('field.shipping.address.zip.code','address',null)}
+        </label>
+        <input type="text" class="form-control contactZipCode" id="contactZipCode"
+            value="" <isprint value=${contactForm.postalCode.attributes} encoding="off"/>
+            autocomplete="contact postal-code">
+        <div class="invalid-feedback"><isprint value="${contactForm.postalCode.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${addressFields.country.mandatory === true ? 'required' : ''}">
+        <input type="hidden" class="form-control country" id="country"
+            <isprint value="${addressFields.country.attributes}" encoding="off" />
+            value="US" />
+    </div>
+
+    <div class="form-group
+        ${orderFields.orderNumber.mandatory === true ? 'required' : ''}
+        ${orderFields.orderNumber.htmlName}">
+        <label class="form-control-label" for="contactOrderNumber">
+            ${Resource.msg('label.input.ordernumber','forms',null)}
+        </label>
+        <input type="text" class="form-control contactOrderNumber" id="contactOrderNumber"
+            value="" <isprint value=${orderFields.orderNumber.attributes} encoding="off"/>
+            autocomplete="contact order-number">
+        <div class="invalid-feedback"><isprint value="${orderFields.orderNumber.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.upc.mandatory === true ? 'required' : ''}
+        ${orderFields.upc.htmlName}">
+        <label class="form-control-label" for="contactUpc">
+            ${Resource.msg('label.input.upc','forms',null)}
+        </label>
+        <input type="text" class="form-control contactUpc" id="contactUpc"
+            value="" <isprint value=${orderFields.upc.attributes} encoding="off"/>
+            autocomplete="contact upc">
+        <div class="form-caption">
+            ${Resource.msg('caption.input.upc','forms',null)}
+        </div>
+        <div class="invalid-feedback"><isprint value="${orderFields.upc.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.product.mandatory === true ? 'required' : ''}
+        ${orderFields.product.htmlName}">
+        <label class="form-control-label" for="contactProduct">
+            ${Resource.msg('label.input.product','forms',null)}
+        </label>
+        <input type="text" class="form-control contactProduct" id="contactProduct"
+            value="" <isprint value=${orderFields.product.attributes} encoding="off"/>
+            autocomplete="contact product">
+        <div class="invalid-feedback"><isprint value="${orderFields.product.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.batchCode.mandatory === true ? 'required' : ''}
+        ${orderFields.batchCode.htmlName}">
+        <label class="form-control-label" for="contactBatchCode">
+            ${Resource.msg('label.input.batchcode','forms',null)}
+        </label>
+        <input type="text" class="form-control contactBatchCode" id="contactBatchCode"
+            value="" <isprint value=${orderFields.batchCode.attributes} encoding="off"/>
+            autocomplete="contact batch-code">
+        <div class="form-caption">
+            ${Resource.msg('caption.input.batchcode','forms',null)}
+        </div>
+        <div class="invalid-feedback"><isprint value="${orderFields.batchCode.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.bestByDate.mandatory === true ? 'required' : ''}
+        ${orderFields.bestByDate.htmlName}">
+        <label class="form-control-label" for="contactbestbyDate">
+            ${Resource.msg('label.input.bestbydate','forms',null)}
+        </label>
+        <input type="date" class="form-control contactBestByDate" id="contactBestByDate"
+            value="" <isprint value=${orderFields.bestByDate.attributes} encoding="off"/>
+            autocomplete="contact best-buy-date">
+        <div class="invalid-feedback"><isprint value="${orderFields.bestByDate.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.purchaseDate.mandatory === true ? 'required' : ''}
+        ${orderFields.purchaseDate.htmlName}">
+        <label class="form-control-label" for="contactPurchaseDate">
+            ${Resource.msg('label.input.purchasedate','forms',null)}
+        </label>
+        <input type="date" class="form-control contactPurchaseDate" id="contactPurchaseDate"
+            value="" <isprint value=${orderFields.purchaseDate.attributes} encoding="off"/>
+            autocomplete="contact purchase-date">
+        <div class="invalid-feedback"><isprint value="${orderFields.purchaseDate.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.storeName.mandatory === true ? 'required' : ''}
+        ${orderFields.storeName.htmlName}">
+        <label class="form-control-label" for="contactStoreName">
+            ${Resource.msg('label.input.storename','forms',null)}
+        </label>
+        <input type="text" class="form-control contactStoreName" id="contactStoreName"
+            value="" <isprint value=${orderFields.storeName.attributes} encoding="off"/>
+            autocomplete="contact store-name">
+        <div class="invalid-feedback"><isprint value="${orderFields.storeName.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${orderFields.storeAddress.mandatory === true ? 'required' : ''}
+        ${orderFields.storeAddress.htmlName}">
+        <label class="form-control-label" for="contactStoreAddress">
+            ${Resource.msg('label.input.storeaddress','forms',null)}
+        </label>
+        <input type="text" class="form-control contactStoreAddress" id="contactStoreAddress"
+            value="" <isprint value=${orderFields.storeAddress.attributes} encoding="off"/>
+            autocomplete="contact store-address">
+        <div class="invalid-feedback"><isprint value="${orderFields.storeAddress.error}" ></div>
+    </div>
+
+    <div class="form-group
+        ${contactForm.comments.mandatory === true ? 'required' : ''}
+        ${contactForm.comments.htmlName}">
+        <label class="form-control-label" for="contactComments">${Resource.msg('label.input.comments', 'forms', null)}</label>
+        <textarea class="form-control contactComments" id="contactComments" rows="6"
+        <isprint value="${contactForm.comments.attributes}" encoding="off" />
+        ></textarea>
+        <div class="invalid-feedback"><isprint value="${contactForm.comments.error}" ></div>
+    </div>
+
+    <div class="form-group">
+        <input type="hidden" class="form-control cid" id="cid"
+            value="${pdict.CurrentHttpParameterMap.cid.stringValue}" name="cid" />
+    </div>
+    <input class="recpatcharesponse" style="display:none" name="recpatcharesponse" />
+    <button type="submit" 
+    name="save" 
+    data-callback="submitCallbackContact" 
+    data-sitekey="${dw.system.Site.current.getCustomPreferenceValue('recaptcha3_key')}"
+    class="g-recaptcha contact-submit btn btn-save btn-block btn-primary">${Resource.msg('button.submit','common',null)}
+    </button>
+
+
+</form>
+
+<script>
+function submitCallbackContact() {
+        grecaptcha.ready(function() {
+
+                var key = $(".contact-submit").attr("data-sitekey");
+                grecaptcha.reset();
+                grecaptcha.execute(key, {action: 'contactus'}).then(function(token) {
+                    $(".recpatcharesponse").val(token);
+                    $(".contact-form").submit();
+            });
+        });
+}
+</script>

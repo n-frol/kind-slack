@@ -1,0 +1,5 @@
+<isif condition="${!empty(slotcontent)}">
+    <isloop items="${slotcontent.content}" var="contentAsset">
+        <isinclude template="components/navigationContent/navigationContent" />
+    </isloop>
+</isif>

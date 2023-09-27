@@ -1,0 +1,63 @@
+<isset name="shippingAddress" value="${pdict.forms.shippingForm.shippingAddress}" scope="page" />
+<div class="shipping-method-list c-checkout-shipping-methods__list"
+    data-select-shipping-method-url="${URLUtils.https('CheckoutShippingServices-SelectShippingMethod')}"
+    data-action-url="${URLUtils.https('CheckoutShippingServices-UpdateShippingMethodsList')}">
+    <input name="shipmentUUID" type="hidden" value="${shippingModel.UUID}" />
+
+    <isscript>
+        // In order for the labels on the shipping methods to correspond to the correct input, we can't be reusing the same ID across multiple forms
+        // Tack on the first five characters of the uuid to the shipping method ID to create
+        var uniqueShippingIdEnd = '-' + shippingModel.UUID.substr(0, 5);
+    </isscript>
+
+    <isloop items="${shippingModel.applicableShippingMethods}" var="shippingMethod" status="loopSate">
+        <div class="c-checkout-shipping-methods__method">
+            <div class="form-check col-9">
+                <isif
+                    condition="${shippingModel.selectedShippingMethod && shippingMethod.ID === shippingModel.selectedShippingMethod.ID}">
+                    <input id="shippingMethod-${shippingMethod.ID + uniqueShippingIdEnd}"
+                        name="${shippingAddress.shippingMethodID.htmlName}" type="radio" class="form-check-input"
+                        value="${shippingMethod.ID}" data-pickup="${shippingMethod.storePickupEnabled}" checked>
+                <iselse/>
+                    <input id="shippingMethod-${shippingMethod.ID + uniqueShippingIdEnd}"
+                        name="${shippingAddress.shippingMethodID.htmlName}" type="radio" value="${shippingMethod.ID}"
+                        class="form-check-input"> 
+                </isif>
+                <label class="form-check-label shipping-method-option"
+                    for="shippingMethod-${shippingMethod.ID + uniqueShippingIdEnd}">
+                    <span class="display-name">${shippingMethod.displayName}</span>
+                </label>
+                <isif condition="${shippingMethod.estimatedArrivalTime}">
+                    <br />
+                    <isif condition="${siteID === 'CreativeSnacks'}">
+                        <span class="arrival-time form-caption">${shippingMethod.estimatedArrivalTime}</span>
+                    <iselse/>
+                        <span class="arrival-time form-caption">(${shippingMethod.estimatedArrivalTime})</span>
+                    </isif>
+                </isif>
+            </div>
+            <div class="col-3 text-right shipping-method-pricing u-text__font-primary">
+                <span class="shipping-cost">${shippingMethod.shippingCost}</span>
+            </div>
+        </div>
+    </isloop>
+</div>
+
+<!---------------------------------------------------------------------------------->
+<!-- Template used by client to redraw shipping methods                           -->
+<!---------------------------------------------------------------------------------->
+<div id="shipping-method-template" style="display:none;">
+    <div class="c-checkout-shipping-methods__method">
+        <div class="form-check col-9">
+            <input type="radio" class="form-check-input" id="shippingMethodRadioButton">
+            <label class="form-check-label shipping-method-option" for="shippingMethodRadioButton">
+                <span class="display-name"></span>
+            </label>
+            <br />
+            <span class="arrival-time form-caption" style="display:none"></span>
+        </div>
+        <div class="col-3 text-right shipping-method-pricing u-text__font-primary">
+            <span class="shipping-cost"></span>
+        </div>
+    </div>
+</div>

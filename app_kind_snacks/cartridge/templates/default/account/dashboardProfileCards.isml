@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-sm-6 c-account-dashboard__left-cards">
+        <isif condition="${siteID == "KINDSnacks"}">
+            <isinclude template="account/manageMySubscriptionCard" />
+        </isif>
+        <!---Order History--->
+        <isif condition="${pdict.account.orderHistory}">
+            <isset name="order" value="${pdict.account.orderHistory}" scope="page" />
+            <isinclude template="account/order/orderHistoryCard" />
+        </isif>
+
+<isif condition="${!pdict.account.isExternallyAuthenticated}">
+            <!---Password--->
+            <isinclude template="account/passwordCard" />
+        </isif>
+
+        <!---Address Book--->
+        <isinclude template="account/addressBookCard" />
+    </div>
+
+    <div class="col-sm-6 c-account-dashboard__right-cards">
+        <isif condition="${siteID == "KINDSnacks"}">
+            <isinclude template="account/rewardsCard" />
+        </isif>
+        <!---Payment--->
+        <isinclude template="account/paymentCard" />
+        <!---Profile--->
+        <isinclude template="account/profileCard" />
+
+    </div>
+</div>

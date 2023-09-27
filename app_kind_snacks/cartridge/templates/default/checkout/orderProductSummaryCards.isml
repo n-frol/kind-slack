@@ -1,0 +1,23 @@
+<isif condition="${!empty(shippingModel)}">
+    <isloop items="${shippingModel.productLineItems.items}" var="lineItem" status="loopState">
+        <isif
+            condition="${lineItem.bonusProductLineItemUUID === 'bonus' || (lineItem.bonusProducts != null && lineItem.bonusProducts.length > 0)}">
+            <div class="c-product-card product-line-item js-order-item js-product-detail ${miniCart ? 'bonus-product-line-item' : ''} uuid-${lineItem.UUID}"
+                data-pid="${lineItem.id}">
+                <isif condition="${siteID === " CreativeSnacks"}">
+                    <isinclude template="checkout/productCard/bonusProductCardCS" />
+                <iselse/>
+                    <isinclude template="checkout/productCard/bonusProductCard" />
+                </isif>
+            </div>
+            <iscomment>Exclude the line items from BYOB boxes. If they're shown, it will be with the box itself
+            </iscomment>
+        <iselseif condition="${empty(lineItem.boxId) || !empty(lineItem.boxContents)}">
+                <isif condition="${siteID === " CreativeSnacks"}">
+                    <isinclude template="checkout/productCard/productCardCS" />
+                <iselse/>
+                            <isinclude template="checkout/productCard/productCard2" />
+                </isif>
+        </isif>
+    </isloop>
+</isif>

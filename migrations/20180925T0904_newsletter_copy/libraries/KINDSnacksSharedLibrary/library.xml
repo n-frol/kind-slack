@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="newsletter-form-copy">
+        <display-name xml:lang="x-default">Newsletter Form Copy</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h2&gt;give KIND&lt;sup&gt;&amp;reg;&lt;/sup&gt; a try&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;sign up for email to recieve 15% off your first order&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

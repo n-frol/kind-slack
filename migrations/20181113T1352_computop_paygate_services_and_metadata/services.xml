@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+
+    <service-credential service-credential-id="live.computop.paygate.cred">
+        <url>https://www.computop-paygate.com/</url>
+        <user-id></user-id>
+        <password encrypted="true" encryption-type="common.export"></password>
+    </service-credential>
+
+    <service-profile service-profile-id="live.computop.paygate.prof">
+        <timeout-millis>5000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>10</rate-limit-calls>
+        <rate-limit-millis>10000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>10</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service service-id="live.computop.paygate">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>computop-paygate</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>live.computop.paygate.prof</profile-id>
+        <credential-id>live.computop.paygate.cred</credential-id>
+    </service>
+
+</services>

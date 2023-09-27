@@ -1,0 +1,21 @@
+/* ============================================================================
+Secondary Shop Navigation Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements within the secondary-shop-navigation content asset
+ */
+
+ $ns: s-secondary-shop-nav;
+
+ .#{$ns} {
+     a {
+         display: block;
+         font-family: $font-family-primary;
+         letter-spacing: -.3px;
+         padding-bottom: 10px;
+         padding-top: 10px;
+         text-align: center;
+         text-decoration: none;
+     }
+ }

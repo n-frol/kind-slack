@@ -1,0 +1,66 @@
+/* ============================================================================
+"Forward" Navigation
+============================================================================ */
+
+/**
+ * Styles buttons, links, and button-like elements that point to somewhere next, have a sub-tree, etc. that are effecitvely leading forward
+*/
+
+$ns: c-forward-nav;
+
+.#{$ns} {
+    font-family: $font-family-primary;
+    list-style: none;
+    width: 100%;
+
+    &__element {
+        border-bottom: 1px solid rgba(253,119,119,.1);
+        padding: 32px;
+
+        @include media-breakpoint-up(md) {
+            padding-left: 54px;
+            padding-right: 54px;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &__link {
+            display: block;
+            text-decoration: none;
+        }
+        &__label {
+            display: flex;
+                justify-content: space-between;
+            font-size: 18px;
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                font-size: 24px;
+            }
+
+            &::after {
+                @include background-svg($svg-arrow-forward);
+
+                background-position: center center;
+                background-size: 30px auto;
+                content: '';
+                display: inline-block;
+                width: 20px;
+
+                @include media-breakpoint-up(md) {
+                    background-size: 36px auto;
+                    width: 24px;
+                    }
+            }
+
+            &__name {
+                &::first-letter {
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+}
+

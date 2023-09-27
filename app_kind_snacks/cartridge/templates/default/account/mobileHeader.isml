@@ -1,0 +1,28 @@
+<isif condition="${!pdict.CurrentCustomer.authenticated}">
+    <li class="nav-item st-primary-nav__item--account d-lg-none" role="menuitem">
+        <a href="${URLUtils.https('Login-Show')}" class="nav-link st-primary-nav__link st-primary-nav__link--account">
+            <span class="user-message">${Resource.msg('link.header.login', 'account', null)}</span>
+        </a>
+    </li>
+<iselse/>
+    <li class="nav-item st-primary-nav__item--account d-lg-none dropdown" role="menuitem">
+        <span class="nav-link nav-link st-primary-nav__link dropdown-toggle st-primary-nav__dropdown-toggle st-primary-nav__link--account" role="button" data-toggle="dropdown">
+            <span class="user-message">${pdict.name}</span>
+        </span>
+        <ul class="dropdown-menu st-primary-nav__dropdown" role="menu" aria-hidden="true">
+            <li class="dropdown-item" role="menuitem">
+                <a href="${URLUtils.https('Account-Show')}" class="dropdown-link st-primary-nav__link st-primary-nav__dropdown__link" role="button">${Resource.msg('link.header.myaccount', 'account', null)}</a>
+            </li>
+            <li class="dropdown-item" role="menuitem">
+                <a href="${URLUtils.url('Login-Logout')}" class="dropdown-link st-primary-nav__link st-primary-nav__dropdown__link" role="button">${Resource.msg('link.header.logout', 'account', null)}</a>
+            </li>
+        </ul>
+    </li>
+</isif>
+
+<li class="wholesale-mobile nav-item st-primary-nav__item--account d-lg-none" role="menuitem">
+    <a href="https://wholesale.kindsnacks.com" class="nav-link st-primary-nav__link st-primary-nav__link--account">
+        <span class="user-message">${Resource.msg('label.wholesale.partners', 'common', null)}</span>
+    </a>
+</li>
+<isinclude template="components/header/navigationTabsMobile" />

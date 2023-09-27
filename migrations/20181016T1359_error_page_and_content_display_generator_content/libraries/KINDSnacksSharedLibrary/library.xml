@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="compliment-tips">
+        <display-name xml:lang="x-default">compliment tips</display-name>
+        <description xml:lang="x-default">Holds all the compliment tips</description>
+        <online-flag>false</online-flag>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="instructions-404">
+        <display-name xml:lang="x-default">instructions-404</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h1 class="st-error__title title"&gt;oops&lt;/h1&gt;&#13;
+&lt;div class="st-error__instructions"&gt;To ease the frustration of this 404 error, have a compliment.&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="page-includes"/>
+        </folder-links>
+        <sitemap-included-flag>true</sitemap-included-flag>
+    </content>
+
+    <content content-id="funny">
+        <display-name xml:lang="x-default">funny</display-name>
+        <description xml:lang="x-default">you're funnier than you think you are</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="grate-proofreader">
+        <display-name xml:lang="x-default">grate proofreader</display-name>
+        <description xml:lang="x-default">your a grate proofreader</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="great-at-what-you-do">
+        <display-name xml:lang="x-default">great at what you do</display-name>
+        <description xml:lang="x-default">you're great at what you do</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="great-sandwiches">
+        <display-name xml:lang="x-default">great sandwiches</display-name>
+        <description xml:lang="x-default">you make great sandwiches</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="mouse-clicking-skills">
+        <display-name xml:lang="x-default">mouse-clicking skills</display-name>
+        <description xml:lang="x-default">you have excellent mouse-clicking skills</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="our-favourite">
+        <display-name xml:lang="x-default">our favourite</display-name>
+        <description xml:lang="x-default">you're our favorite</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="perfect-hair">
+        <display-name xml:lang="x-default">perfect hair</display-name>
+        <description xml:lang="x-default">look at that hair - perfect</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="the-best">
+        <display-name xml:lang="x-default">the best</display-name>
+        <description xml:lang="x-default">you're the best</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+    <content content-id="tired">
+        <display-name xml:lang="x-default">tired</display-name>
+        <description xml:lang="x-default">tired of the compliments? we didn't think so&amp;hellip;</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <folder-links>
+            <classification-link folder-id="compliment-tips"/>
+        </folder-links>
+    </content>
+
+</library>

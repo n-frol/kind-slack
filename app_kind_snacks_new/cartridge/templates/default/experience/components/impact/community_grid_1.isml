@@ -1,0 +1,170 @@
+<div class="impact_two_column_1_container_welcome community noback">
+    <div class="impact_center marginme">
+        <div class="big welcome movedown40">kinder to our</div>
+        <div class="welcome bigger">communities</div>
+        <div class="para">
+            <br/><br/>
+            We’re on a mission to mobilize both everyday and extraordinary acts of kindness – in our own communities and for those who need it most. This year, we expanded our commitment to our communities, celebrated the power of kindness, and championed the charitable efforts of our teammates and partners. Because together we can create a healthier and kinder world, one act and one snack at a time.
+        </div>
+        <div class="bluearea orange nomoving" style="background: #EDA900;">
+            <img class="" src="${URLUtils.staticURL('/images/impact/grid6/Layer_1.png')}" alt="Impact Two Column 1 Image" />
+            <div class="orange_para">
+                We keep kindness at our core, and we will continue to do our part to spread kindness across communities near and far.
+            </div>
+        </div>
+    </div>
+    <div>
+        <img class="fullwidth shiftme" src="${URLUtils.staticURL('/images/impact/image 80_2.png')}" alt="Impact Two Column 1 Image" />
+    </div>
+
+</div>
+<a target="_blank" href="${URLUtils.staticURL('/files/impactreport.pdf')}" class="primary dark red">Download PDF</a>
+<style>
+    .shiftme {
+        position: relative;
+        top: 30px;
+        right: 20px;
+    }
+    .noback {
+        background: white !important;
+    }
+    .nomoving {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .movedown40 {
+        margin-top: 100px;
+    }
+    @media screen and (max-width: 440px) {
+        .community {
+            margin-bottom: 40px !important;
+        }
+        .orange_para {
+            left: 0px !important;
+            width: 100% !important;
+        }
+        .mobileme {
+            grid-template-columns: 1fr !important;
+            margin-top: 0px !important;
+            grid-gap: 20px !important;
+            width: calc(100% - 40px) !important;
+            margin-left: 0px !important;
+            margin-bottom: 40px !important;
+        }
+        .mobileme div:first-child {
+            order: 2;
+        }
+        .mobileme .para {
+            padding: 0px !important;
+        }
+    }
+
+    .nomargin {
+        margin-bottom: 0px !important;
+    }
+    .bluearea {
+        background: #61B3E4;
+        padding: 31px 46px;
+        position: relative;
+        border-radius: 20px;
+    }
+    .orange_para {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        position: relative;
+        left: 90px;
+        width: 80%;
+    }
+    .bluearea img {
+        position: absolute;
+        left: -10px;
+        top: -40px;
+        z-index: 10;
+    }
+    .fullwidth {
+        width: 100%;
+    }
+    .primary.red {
+        position: absolute;
+        top: 20px !important;
+        right: 60px;
+        background: red !important;
+        color: white;
+        width: fit-content;
+    }
+    .primary.impact {
+        margin-bottom: 150px;
+    }
+    .impact_two_column_1_container_welcome .para {
+        margin-bottom: 90px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 60px;
+    }
+    .big.welcome {
+        font-size: 72px;
+        line-height: 58px;
+        font-family: main;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+    }
+    .impact_two_column_1_container_welcome {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background: white;
+        margin-bottom: 200px;
+        position: relative;
+        width: calc(100% - 120px);
+        grid-gap: 160px;
+    }
+    .impact_two_column_1_container_welcome div {
+
+    }
+    @media screen and (max-width: 440px) {
+        .impact_two_column_1_container {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(2, 1fr) !important;
+            height: auto !important;
+            margin-bottom: 40px !important;
+        }
+        .impact_two_column_1_container div:first-child {
+            order: 2;
+        }
+        .impact_two_column_1_container div:last-child {
+            order: 1;
+            background: #F5F5F5;
+        }
+        .primary.impact {
+            margin-bottom: 20px !important;
+            position: relative;
+            left: -10px;
+        }
+        .big {
+            font-size: 112px;
+            line-height: 101px;
+        }
+        .primary.red {
+            display: none;
+        }
+        .impact_two_column_1_container img {
+            height: auto !important;
+            width: 100% !important;
+        }
+        .impact_center {
+            align-self: center;
+            margin-left: 0px !important;
+        }
+    }
+    .impact_two_column_1_container img {
+        height: calc(100% + 100px);
+        width: 100%;
+        max-width: unset;
+        object-fit: cover;
+    }
+</style>

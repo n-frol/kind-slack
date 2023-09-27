@@ -1,0 +1,38 @@
+<div class="c-cart-card-product-price col product-card-footer col-lg-4">
+    <isif condition="${!lineItem.isBonusProductLineItem}"/>
+        <div class="c-cart-card-product-price__wrapper row">
+            <!---item price--->
+            <div class="col-4 c-cart-card-product-price__col line-item-price-${lineItem.UUID}">
+                <div class="c-cart-card-product-price__label line-item-price-info ${pdict.siteID !== 'CreativeSnacks' ? '' : 'd-flex d-lg-none'}">
+                   ${Resource.msg('label.each.item.price','cart',null)}
+                </div>
+                <isset name="price" value="${lineItem.price}" scope="page"/>
+                <isinclude template="/product/components/pricing/main" />
+            </div>
+
+            <!--- quantity --->
+            <div class="col-5 c-cart-card-product-price__col line-item-quantity">
+                <isif condition="${!empty(lineItem.isCheckAddressFraud) && !lineItem.isCheckAddressFraud}">
+                    <isinclude template="checkout/productCard/productCardQuantitySelector" />
+                </isif>
+            </div>
+
+            <!--- line item total price --->
+            <div class="col-3 c-cart-card-product-price__col line-item-total-price">
+                <div class="c-cart-card-product-price__label line-item-price-info ${pdict.siteID !== 'CreativeSnacks' ? '' : 'd-flex d-lg-none'}">
+                    ${Resource.msg('label.total.price','cart',null)}
+                </div>
+                <div class="item-total-${lineItem.UUID} price">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
+            </div>
+
+            <!--- promotions --->
+            <isif condition="${pdict.siteID !== 'CreativeSnacks'}">
+                <div class="line-item-promo c-cart-card-product-price__line-item-promo item-${lineItem.UUID}">
+                    <isinclude template="checkout/productCard/productCardProductPromotions" />
+                </div>
+            </isif>
+        </div>
+    </isif>
+</div>

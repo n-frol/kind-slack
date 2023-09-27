@@ -1,0 +1,186 @@
+/* ============================================================================
+Footer Scope
+============================================================================ */
+
+/**
+ * Establish a scope and styles HTML elements within the footer
+ */
+
+$ns: s-global-footer;
+
+// !important used to overwrite bootstrap
+
+.#{$ns} {
+    background-color: $primary;
+
+    h3 {
+        text-transform: lowercase;
+
+        @include media-breakpoint-up(sm) {
+            line-height: 0px;
+        }
+    }
+
+    li {
+        margin-bottom: 0;
+    }
+
+    ul {
+        @include pxl-list-flat();
+        margin-bottom: 0;
+    }
+
+    &__navigation {
+        @include media-breakpoint-up(md) {
+            margin-left: -30px;
+            margin-right: -30px;
+        }
+
+        a {
+            color: $white;
+            display: inline-block;
+            font-family: $font-family-primary;
+            font-size: 14px;
+            line-height: .95;
+            text-decoration: none;
+            text-transform: none;
+        }
+
+        .st-global-footer__logo {
+            display: inline-block;
+            left: -150px;
+    position: relative;
+    top: -10px;
+        }
+    }
+
+    &__section {
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
+
+        @include media-breakpoint-up(lg) {
+            border-top: 0;
+            border-bottom: 0;
+        }
+
+        + .#{$ns}__section {
+            border-top: 0;
+        }
+
+        h3 a {
+            display: flex;
+                align-items: center;
+            color: white !important;
+            font-size: 20px !important;
+            line-height: 18px !important;
+            padding-top: 15px;
+            padding-bottom: 9px;
+
+            @include media-breakpoint-up(lg) {
+                border-top: 0;
+                display: block;
+                font-size: 18px !important;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            &::after {
+                font-size: 14px !important;
+                margin-left: auto;
+            }
+        }
+
+        ul {
+            margin-bottom: 15px;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__utility {
+        color: white;
+        font-size: 14px;
+
+        ul {
+            @include pxl-list-inline();
+        }
+
+        a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            width: 50%;
+
+            @include media-breakpoint-up(lg) {
+                text-align: left;
+                width: auto;
+            }
+        }
+
+        a + a {
+            @include media-breakpoint-up(lg) {
+                margin-left: 42px;
+            }
+        }
+
+    }
+
+    &__utility-links,
+    &__social {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    &__utility-links {
+        font-size:13px;
+        margin-top: 12px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+        }
+
+    }
+
+    &__social {
+        display: flex;
+            justify-content: center;
+        line-height: 1;
+        margin-top: 30px;
+
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-end;
+            margin-top: 0;
+        }
+
+        a {
+            display: block;
+            height: 32px;
+        }
+    }
+    &__locale {
+        margin-top: 30px;
+        margin-bottom: 30px;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-right: 0;
+            text-align: right;
+        }
+
+        select {
+            @include media-breakpoint-up(lg) {
+                max-width: 53px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .#{$ns} {
+        padding-bottom:150px;
+    }
+}

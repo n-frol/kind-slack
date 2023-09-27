@@ -1,0 +1,44 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+
+<div><!-- dwMarker="content" dwContentID="${contentAsset.UUID}" -->
+    <div class="th-kind-navigation-content st-navigation-content s-navigation-content">
+        <isif condition="${!empty(contentAsset.custom.navigation)}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="st-navigation-content__navigation s-navigation-content__navigation">
+                            <isprint value="${contentAsset.custom.navigation}" encoding="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isif>
+        <isif condition="${!empty(contentAsset.custom.childrenContentAssetIDS)}">
+            <isif condition="${!empty(contentAsset.custom.isTimelineTemplate) && contentAsset.custom.isTimelineTemplate === true}">
+                <isset name="timelineElements" value="${contentAsset.custom.childrenContentAssetIDS}" scope="page" />
+
+                <div class="js-sticky-elem__wrap js-daily-timeline__wrap">
+                    <div class="st-navigation-content__timeline u-background__color-grey9 js-sticky-elem c-sticky-elem" data-footer-cutoff="false">
+                        <isinclude template="components/navigationContent/dailyTimeline" />
+                    </div>
+                </div>
+            </isif>
+
+            <isloop items="${contentAsset.custom.childrenContentAssetIDS}" var="assetID">
+                <isset name="contentAsset" value="${dw.content.ContentMgr.getContent(assetID)}" scope="page" />
+                <isif condition="${!empty(contentAsset)}">
+                    <isset name="graphicalAsset" value="${GraphicalAssetUtils.GetGraphicalAssetFieldValues(contentAsset)}" scope="page" />
+                    <isif condition="${!empty(graphicalAsset)}">
+                        <div id="${assetID}" class="js-daily-timeline__entry c-daily-timeline__entry" >
+                            <isinclude template="components/contentBanner/contentBanner" />
+                        </div>
+                    </isif>
+                </isif>
+            </isloop>
+        </isif>
+    </div>
+</div><!-- END_dwmarker -->
+
+

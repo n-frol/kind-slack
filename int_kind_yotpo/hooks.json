@@ -1,0 +1,20 @@
+{
+    "hooks": [
+        {
+            "name": "app.kind.yotpo.loyalty.newsletter",
+            "script": "./cartridge/scripts/hooks/newsletter.js"
+        },
+        {
+            "name": "app.kind.yotpo.loyalty.order",
+            "script": "./cartridge/scripts/hooks/order.js"
+        },
+        {
+            "name": "app.kind.yotpo.loyalty.customerCreateUpdate",
+            "script": "./cartridge/scripts/hooks/customer.js"
+        },
+        {
+            "name": "dw.ocapi.shop.order.afterPATCH",
+            "script": "./cartridge/scripts/hooks/order/afterPATCH.js"
+        }
+    ]
+}

@@ -1,0 +1,241 @@
+@import '../globals/variables.scss';
+
+.cards_heading {
+    max-width: 40%;
+    padding-left: 60px;
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -1.5px;
+    padding-bottom: 62px;
+    @include mobile {
+        max-width: 100%;
+        padding: 0px 20px;
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 60px;
+    }
+}
+.Full_Screen {
+    & img {
+        @include mobile {
+            height: 100% !important;
+            width: 100%;
+            object-fit: cover;
+            border: 1px solid transparent;
+            border-radius: 20px;
+        }
+        border: 1px solid transparent;
+        border-radius: 20px;
+    }
+}
+.BG_Image {
+    @include mobile {
+        height: 590px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+        max-width: 100%;
+        text-align: center;
+    }
+    & img {
+        @include mobile {
+            max-height: 330px;
+            max-width: 100%;
+            object-fit: cover;
+            border: 1px solid transparent;
+            border-radius: 20px;
+        }
+    }
+}
+.card_text_Full {
+    & h2, & h3 {
+        @include mobile {
+            font-size: 28px;
+            line-height: 34px;
+        }
+    }
+}
+.card_text_Full_Screen {
+    position:absolute;
+    bottom: 40px;
+    padding-left: 40px;
+    color: white;
+    z-index: 2;
+    max-width: 70%;
+    text-align: left;
+    @include mobile {
+        text-align: left;
+        max-width: 100%;
+        bottom: 40px !important;
+        top: unset !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    & .card_description {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        margin-bottom: 32px;
+    }
+    & h2, & h3 {
+        text-decoration: none;
+        color:white;
+        font-size: 36px;
+        line-height: 44px;
+        position: relative;
+        letter-spacing: -1px;
+        margin-bottom: 32px;
+        @include mobile {
+            font-size: 28px !important;
+            line-height: 34px !important;
+            position:  relative;
+        }
+    }
+}
+.card_text_BG_Image {
+    position: absolute;
+    bottom: 40px;
+    padding-left: 40px;
+    max-width: 70%;
+    color: white;
+    text-align: left;
+    & .card_cta {
+        @include mobile {
+            right: 10px;
+        }
+    }
+    & .card_description {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        font-family: medium;
+        color: white;
+        text-decoration: none;
+        margin-bottom: 32px;
+        @include mobile {
+            margin-bottom: 32px;
+        }
+    }
+    & h2, & h3 {
+        text-decoration: none;
+        color:white;
+        font-size: 36px;
+        line-height: 44px;
+        position:  relative;
+        letter-spacing: -1px;
+        margin-bottom: 32px;
+        @include mobile {
+            font-size: 28px !important;
+            line-height: 34px !important;
+            position:  relative;
+            top: 10px;
+        }
+    }
+    @include mobile {
+        position: absolute !important;
+        bottom: 40px !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        width: unset !important;
+        text-align: left !important;
+    }
+}
+.card_slider {
+    display: none;
+    @include mobile {
+        display: block;
+        position:relative;
+        padding-right: 20px;
+    }
+    & .swiper-slide {
+        margin-left: 0px;
+        @include mobile {
+            height: 620px;
+            max-width: 500px;
+            &:first-child {
+                margin-left:10px;
+            }
+        }
+    }
+    & .cta_card {
+        & a {
+            @include mobile {
+                margin-right: 10px !important;
+                width: 75% !important;
+            }
+        }
+    }
+}
+.cards_desktop {
+    display: block;
+    @include mobile {
+        display: none;
+    }
+}
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 45%);
+    grid-template-rows: repeat(3, 200px);
+    grid-gap: 10px 30px;
+    justify-content: center;
+    & img {
+        max-width: 100%;
+    }
+}
+
+.single-card {
+    height: 800px;
+    max-width: 676px;
+    position:relative;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    @include ipad {
+        height: 600px;
+    }
+    & .BG_Image {
+        height: 100%;
+        border: 1px solid transparent;
+        border-radius: 20px;
+    }
+}
+
+.card_cta {
+    & a {
+        display: inline-block;
+    }
+}
+
+.Full_Screen {
+    border: 1px solid transparent;
+    border-radius: 20px;
+    @include mobile {
+        height: 590px;
+    }
+    & img {
+        height: 790px;
+        @include ipad {
+            height: 590px;
+        }
+    }
+    & .image_gradient {
+        border-radius: 20px;
+        bottom: 8px !important;
+        @include mobile {
+            bottom: 30px !important;
+        }
+    }
+}
+
+.card_collection {
+    position: relative;
+}
+
+.single-card-eyebrow {
+    left: 40px !important;
+    @include mobile {
+        top: 20px !important;
+        left: 20px !important;
+    }
+}

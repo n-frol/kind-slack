@@ -1,0 +1,117 @@
+
+
+<isscript>
+    var CustomCOHelpers = require('*/cartridge/scripts/checkout/customCheckoutHelpers');
+    var formHelpers = require('/int_computop/cartridge/scripts/computop/helpers/formHelpers');
+    var customerPaymentInstruments = pdict.customer.customerPaymentInstruments
+    var filteredData = formHelpers.filterApplePayPaymentInstrument(customerPaymentInstruments);
+
+    var activePaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments || [];
+    var paymentMethods = activePaymentInstruments.filter(function(method) {
+        return method.paymentMethod !== 'GIFT_CERTIFICATE';
+    });
+
+    var activePaymentMethod = paymentMethods && paymentMethods.length ?
+        paymentMethods[0].paymentMethod : '';
+
+    // If no instrument is selected, check for a default.
+    if (empty(activePaymentMethod) && customer.authenticated) {
+        var defaultPI = CustomCOHelpers.getCustomerDefaultPaymentInstrument(customer);
+        activePaymentMethod = !empty(defaultPI) && !empty(defaultPI.paymentMethod) ?
+            defaultPI.paymentMethod : 'PAYMENTOPERATOR_CREDIT_DIRECT'
+
+        // Saved PayPal billing agreements use the 'PayPal' type for the payment
+        // method, but it should be set as the standard PayPal method
+        // (PAYMENTOPERATOR_PAYPAL).
+        if (activePaymentMethod === 'PayPal') {
+            activePaymentMethod = 'PAYMENTOPERATOR_PAYPAL';
+        }
+    }
+
+    // Saved credit cards use the default CREDIT_CARD payment method type
+    // for saving in the wallet.
+    if (activePaymentMethod === 'CREDIT_CARD') {
+        activePaymentMethod = 'PAYMENTOPERATOR_CREDIT_DIRECT';
+    }
+
+    // Saved credit cards use the default DW_APPLE_PAY payment method type
+    // for saving in the wallet.
+    if (activePaymentMethod === 'DW_APPLE_PAY' && filteredData.length) {
+        activePaymentMethod = 'PAYMENTOPERATOR_CREDIT_DIRECT';
+    }
+
+    if (activePaymentMethod === 'DW_APPLE_PAY' && !filteredData.length) {
+        activePaymentMethod = '';
+    }
+
+
+</isscript>
+
+<iscomment> Payment Methods - Radio Buttons </iscomment>
+<div class="form-nav billing-nav payment-information"
+     data-payment-method-id="${ activePaymentMethod }"
+     data-is-new-payment="${pdict.customer.registeredUser && filteredData.length ? false : true}"
+>
+    <ul class="nav nav-tabs nav-fill payment-options js-payment-options c-tabs" style="overflow-x:hidden;" role="tablist">
+        <isinclude template="checkout/billing/paymentOptions/paymentOptionsTabs" />
+    </ul>
+</div>
+
+<iscomment> Payment Methods - Content (shown when payment method is active) </iscomment>
+<div class="tab-content js-credit-card-selection-new credit-card-selection-new">
+    <isinclude template="checkout/billing/paymentOptions/paymentOptionsContent" />
+    <isscript>
+        var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+        var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+        var isActive = selectedPaymentInstrument && selectedPaymentInstrument.paymentMethod === 'PAYMENTOPERATOR_PAYPAL';
+
+        // If no instrument is selected, go to default
+        if (empty(selectedPaymentInstrument)) {
+            // Switch to having Paypal as the active default if the customer's first saved payment method (their default), is a Paypal agreement
+            if (!empty(pdict.customer) && !empty(pdict.customer.customerPaymentInstruments) && !empty(pdict.customer.customerPaymentInstruments[0].creditCardType) && pdict.customer.customerPaymentInstruments[0].creditCardType === 'PayPal') {
+                isActive = true;
+            }
+        }
+    </isscript>
+
+    <iscomment> PayPal Redirect Disclaimer </iscomment>
+    <div class="tab-pane <isif condition="${isActive}">active</isif> paymentoperator_paypal-content" id="paymentoperator_paypal-content" role="tabpanel">
+        <span>
+            <isprint value="${'&#10033'}" encoding="off" />
+            <isprint value="${Resource.msg('paymentmethod.paypal.redirectmsg', 'paymentoperator', null)}" encoding="off" />
+        </span>
+    </div>
+
+    <iscomment> Pay On Account
+        Rules for display:
+        1. Customer enabled for pay on account
+        2. Has a credit limit
+        3. If has 0 or order amount is greater than credit limit display messaging instead.
+    </iscomment>
+    <isif condition="${!empty(pdict.customer)}">
+        <isset name="payOnAccountApproved" value="${pdict.customer.profile && pdict.customer.profile.creditApproved &&  pdict.order.totals.grandTotalDecimal < pdict.customer.profile.creditLimit}" scope="page" />
+        <div class="tab-pane ${payOnAccountApproved ? 'is-approved' : ''} payonaccount-content" id="payonaccount-content" role="tabpanel">
+            <span>
+                <isprint value="${'&#10033'}" encoding="off" />
+                <isprint value="${Resource.msg('label.payment.payonaccount', 'payment', null)}" encoding="off" />
+            </span>
+            <p>
+                <isscript>
+                    var Money = require('dw/value/Money');
+                    let creditLimit = Object.hasOwnProperty.call(pdict.customer, 'profile') && Object.hasOwnProperty.call(pdict.customer.profile, 'creditLimit') ?
+                        new Money(pdict.customer.profile.creditLimit, 'USD') :
+                        new Money(0, 'USD');
+                </isscript>
+                ${Resource.msg('payonaccount.messaging.available','payment',null)}
+                <isprint value="${creditLimit}"/>
+            </p>
+            <p class="alert c-alert alert-danger c-alert--danger fade show text-white" role="alert">
+                ${Resource.msg('payonaccount.messaging', 'payment', null)}
+            </p>
+        </div>
+    </isif>
+</div>
+
+<isif condition="${dw.system.Site.current.getCustomPreferenceValue('kount_IsEnabled')}">
+<isinclude url="${URLUtils.url('K-DataCollector')}"/>
+</isif>

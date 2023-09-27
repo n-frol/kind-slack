@@ -1,0 +1,21 @@
+/* ============================================================================
+Icon Buttons
+============================================================================ */
+
+/**
+ * Styles for icon buttons
+*/
+
+$ns: c-icon-button;
+
+.#{$ns} {
+    background-color: transparent !important; // important because of the strength of the selector we want to override
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 0;
+    padding-right: 0;
+    width: auto;
+}
+

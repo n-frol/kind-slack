@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-objects xmlns="http://www.demandware.com/xml/impex/customobject/2006-10-31">
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.account.created">
+        <object-attribute attribute-id="customerKey">account.created</object-attribute>
+        <object-attribute attribute-id="description">Account Created trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "AccountHomeLink": "AccountHomeLink",
+    "Customer.anonymous": "Anonymous",
+    "Customer.ID": "CustomerID",
+    "Customer.note": "Note",
+    "Customer.registered": "Registered",
+    "Profile.birthday": "Birthday",
+    "Profile.companyName": "CompanyName",
+    "Profile.customerNo": "CustomerNumber",
+    "Profile.email": "EmailAddress",
+    "Profile.fax": "Fax",
+    "Profile.female": "Female",
+    "Profile.firstName": "FirstName",
+    "Profile.gender.displayValue": "GenderDisplay",
+    "Profile.gender.value": "GenderValue",
+    "Profile.jobTitle": "JobTitle",
+    "Profile.lastLoginTime": "LastLogin",
+    "Profile.lastName": "LastName",
+    "Profile.lastVisitTime": "LastVisit",
+    "Profile.male": "Male",
+    "Profile.nextBirthday": "NextBirthday",
+    "Profile.phoneBusiness": "PhoneBusiness",
+    "Profile.phoneHome": "PhoneHome",
+    "Profile.phoneMobile": "PhoneMobile",
+    "Profile.preferredLocale": "PreferredLocale",
+    "Profile.previousLoginTime": "PreviousLogin",
+    "Profile.previousVisitTime": "PreviousVisit",
+    "Profile.salutation": "Salutation",
+    "Profile.secondName": "SecondName",
+    "Profile.suffix": "Suffix",
+    "Profile.taxIDMasked": "TaxIDMasked",
+    "Profile.taxIDType.displayValue": "TaxIDTypeDisplay",
+    "Profile.taxIDType.value": "TaxIDTypeValue",
+    "Profile.title": "Title"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.account.lockedOut">
+        <object-attribute attribute-id="customerKey">account.lockedOut</object-attribute>
+        <object-attribute attribute-id="description">Account Locked trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "AccountHomeLink": "AccountHomeLink",
+    "Customer.anonymous": "Anonymous",
+    "Customer.ID": "CustomerID",
+    "Customer.note": "Note",
+    "Customer.registered": "Registered",
+    "Profile.birthday": "Birthday",
+    "Profile.companyName": "CompanyName",
+    "Profile.customerNo": "CustomerNumber",
+    "Profile.email": "EmailAddress",
+    "Profile.fax": "Fax",
+    "Profile.female": "Female",
+    "Profile.firstName": "FirstName",
+    "Profile.gender.displayValue": "GenderDisplay",
+    "Profile.gender.value": "GenderValue",
+    "Profile.jobTitle": "JobTitle",
+    "Profile.lastLoginTime": "LastLogin",
+    "Profile.lastName": "LastName",
+    "Profile.lastVisitTime": "LastVisit",
+    "Profile.male": "Male",
+    "Profile.nextBirthday": "NextBirthday",
+    "Profile.phoneBusiness": "PhoneBusiness",
+    "Profile.phoneHome": "PhoneHome",
+    "Profile.phoneMobile": "PhoneMobile",
+    "Profile.preferredLocale": "PreferredLocale",
+    "Profile.previousLoginTime": "PreviousLogin",
+    "Profile.previousVisitTime": "PreviousVisit",
+    "Profile.salutation": "Salutation",
+    "Profile.secondName": "SecondName",
+    "Profile.suffix": "Suffix",
+    "Profile.taxIDMasked": "TaxIDMasked",
+    "Profile.taxIDType.displayValue": "TaxIDTypeDisplay",
+    "Profile.taxIDType.value": "TaxIDTypeValue",
+    "Profile.title": "Title",
+    "Customer.authenticated": "Authenticated"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.account.passwordChanged">
+        <object-attribute attribute-id="customerKey">account.passwordChanged</object-attribute>
+        <object-attribute attribute-id="description">Password Changed trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "AccountHomeLink": "AccountHomeLink",
+    "Customer.anonymous": "Anonymous",
+    "Customer.ID": "CustomerID",
+    "Customer.note": "Note",
+    "Customer.registered": "Registered",
+    "Profile.birthday": "Birthday",
+    "Profile.companyName": "CompanyName",
+    "Profile.customerNo": "CustomerNumber",
+    "Profile.email": "EmailAddress",
+    "Profile.fax": "Fax",
+    "Profile.female": "Female",
+    "Profile.firstName": "FirstName",
+    "Profile.gender.displayValue": "GenderDisplay",
+    "Profile.gender.value": "GenderValue",
+    "Profile.jobTitle": "JobTitle",
+    "Profile.lastLoginTime": "LastLogin",
+    "Profile.lastName": "LastName",
+    "Profile.lastVisitTime": "LastVisit",
+    "Profile.male": "Male",
+    "Profile.nextBirthday": "NextBirthday",
+    "Profile.phoneBusiness": "PhoneBusiness",
+    "Profile.phoneHome": "PhoneHome",
+    "Profile.phoneMobile": "PhoneMobile",
+    "Profile.preferredLocale": "PreferredLocale",
+    "Profile.previousLoginTime": "PreviousLogin",
+    "Profile.previousVisitTime": "PreviousVisit",
+    "Profile.salutation": "Salutation",
+    "Profile.secondName": "SecondName",
+    "Profile.suffix": "Suffix",
+    "Profile.taxIDMasked": "TaxIDMasked",
+    "Profile.taxIDType.displayValue": "TaxIDTypeDisplay",
+    "Profile.taxIDType.value": "TaxIDTypeValue",
+    "Profile.title": "Title",
+    "Customer.authenticated": "Authenticated"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.account.passwordReset">
+        <object-attribute attribute-id="customerKey">account.passwordReset</object-attribute>
+        <object-attribute attribute-id="description">Password Reset trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "ResetPasswordToken": "ResetPasswordToken",
+    "ResetPasswordLink": "ResetPasswordLink",
+    "AccountHomeLink": "AccountHomeLink",
+    "Customer.anonymous": "Anonymous",
+    "Customer.ID": "CustomerID",
+    "Customer.note": "Note",
+    "Customer.registered": "Registered",
+    "Profile.birthday": "Birthday",
+    "Profile.companyName": "CompanyName",
+    "Profile.customerNo": "CustomerNumber",
+    "Profile.email": "EmailAddress",
+    "Profile.fax": "Fax",
+    "Profile.female": "Female",
+    "Profile.firstName": "FirstName",
+    "Profile.gender.displayValue": "GenderDisplay",
+    "Profile.gender.value": "GenderValue",
+    "Profile.jobTitle": "JobTitle",
+    "Profile.lastLoginTime": "LastLogin",
+    "Profile.lastName": "LastName",
+    "Profile.lastVisitTime": "LastVisit",
+    "Profile.male": "Male",
+    "Profile.nextBirthday": "NextBirthday",
+    "Profile.phoneBusiness": "PhoneBusiness",
+    "Profile.phoneHome": "PhoneHome",
+    "Profile.phoneMobile": "PhoneMobile",
+    "Profile.preferredLocale": "PreferredLocale",
+    "Profile.previousLoginTime": "PreviousLogin",
+    "Profile.previousVisitTime": "PreviousVisit",
+    "Profile.salutation": "Salutation",
+    "Profile.secondName": "SecondName",
+    "Profile.suffix": "Suffix",
+    "Profile.taxIDMasked": "TaxIDMasked",
+    "Profile.taxIDType.displayValue": "TaxIDTypeDisplay",
+    "Profile.taxIDType.value": "TaxIDTypeValue",
+    "Profile.title": "Title",
+    "Customer.authenticated": "Authenticated"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.account.updated">
+        <object-attribute attribute-id="customerKey">account.updated</object-attribute>
+        <object-attribute attribute-id="description">Account Updated trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "AccountHomeLink": "AccountHomeLink",
+    "Customer.anonymous": "Anonymous",
+    "Customer.ID": "CustomerID",
+    "Customer.note": "Note",
+    "Customer.registered": "Registered",
+    "Profile.birthday": "Birthday",
+    "Profile.companyName": "CompanyName",
+    "Profile.customerNo": "CustomerNumber",
+    "Profile.email": "EmailAddress",
+    "Profile.fax": "Fax",
+    "Profile.female": "Female",
+    "Profile.firstName": "FirstName",
+    "Profile.gender.displayValue": "GenderDisplay",
+    "Profile.gender.value": "GenderValue",
+    "Profile.jobTitle": "JobTitle",
+    "Profile.lastLoginTime": "LastLogin",
+    "Profile.lastName": "LastName",
+    "Profile.lastVisitTime": "LastVisit",
+    "Profile.male": "Male",
+    "Profile.nextBirthday": "NextBirthday",
+    "Profile.phoneBusiness": "PhoneBusiness",
+    "Profile.phoneHome": "PhoneHome",
+    "Profile.phoneMobile": "PhoneMobile",
+    "Profile.preferredLocale": "PreferredLocale",
+    "Profile.previousLoginTime": "PreviousLogin",
+    "Profile.previousVisitTime": "PreviousVisit",
+    "Profile.salutation": "Salutation",
+    "Profile.secondName": "SecondName",
+    "Profile.suffix": "Suffix",
+    "Profile.taxIDMasked": "TaxIDMasked",
+    "Profile.taxIDType.displayValue": "TaxIDTypeDisplay",
+    "Profile.taxIDType.value": "TaxIDTypeValue",
+    "Profile.title": "Title",
+    "Customer.authenticated": "Authenticated"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.customerService.contactUs">
+        <object-attribute attribute-id="customerKey">customerService.contactUs</object-attribute>
+        <object-attribute attribute-id="description">Contact Us trigger</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "CurrentForms.contactus.myquestion": "MyQuestion",
+    "CurrentForms.contactus.firstname": "FirstName",
+    "CurrentForms.contactus.lastname": "LastName",
+    "CurrentForms.contactus.email": "CustomerEmailAddress",
+    "CurrentForms.contactus.phone": "Phone",
+    "CurrentForms.contactus.ordernumber": "OrderNumber",
+    "CurrentForms.contactus.comment": "Comment"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.giftCertificate.sendCertificate">
+        <object-attribute attribute-id="customerKey">giftCertificate.sendCertificate</object-attribute>
+        <object-attribute attribute-id="description">Send Gift Certificate trigger, used for newly purchased gift certificates</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{
+    "StoreHomeLink": "StoreHomeLink",
+    "SiteID": "SiteID",
+    "GiftCertificate.amount": "Amount",
+    "GiftCertificate.amount.currencyCode": "AmountCurrencyCode",
+    "GiftCertificate.amount.decimalValue": "AmountDecimalValue",
+    "GiftCertificate.balance": "Balance",
+    "GiftCertificate.balance.currencyCode": "BalanceCurrencyCode",
+    "GiftCertificate.balance.decimalValue": "BalanceDecimalValue",
+    "GiftCertificate.description": "Description",
+    "GiftCertificate.giftCertificateCode": "GiftCertificateCode",
+    "GiftCertificate.recipientName": "RecipientName",
+    "GiftCertificate.recipientEmail": "RecipientEmail",
+    "GiftCertificate.senderName": "SenderName",
+    "GiftCertificate.message": "Message",
+    "GiftCertificate.maskedGiftCertificateCode": "MaskedGiftCertificateCode",
+    "GiftCertificate.merchantID": "MerchantID",
+    "GiftCertificate.orderNo": "OrderNumber"
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.cancellation">
+        <object-attribute attribute-id="customerKey">oms.cancellation</object-attribute>
+        <object-attribute attribute-id="description">Cancellation notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "orderNumber": "orderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "amountRefunded": "amountRefunded"&#13;
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.partialShipment">
+        <object-attribute attribute-id="customerKey">oms.partialShipment.v2</object-attribute>
+        <object-attribute attribute-id="description">Partial shipment notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "OrderNumber": "OrderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "address1": "address1",&#13;
+    "address2": "address2",&#13;
+    "city": "city",&#13;
+    "state": "state",&#13;
+    "postalCode": "postalCode",&#13;
+    "productLineItems": "productLineItems",&#13;
+    "trackingURL": "trackingURL",&#13;
+    "trackingNumber": "trackingNumber"&#13;
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.refund">
+        <object-attribute attribute-id="customerKey">oms.refund</object-attribute>
+        <object-attribute attribute-id="description">Refund notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "orderNumber": "orderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "lastName": "lastName",&#13;
+    "amountRefunded": "amountRefunded"&#13;
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.oms.shipment">
+        <object-attribute attribute-id="customerKey">oms.shipment.dev.4</object-attribute>
+        <object-attribute attribute-id="description">Shipment notification</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "OrderNumber": "OrderNumber",&#13;
+    "firstName": "firstName",&#13;
+    "billingFirstName": "billingFirstName",&#13;
+    "lastName": "lastName",&#13;
+    "address1": "address1",&#13;
+    "address2": "address2",&#13;
+    "city": "city",&#13;
+    "state": "state",&#13;
+    "postalCode": "postalCode",&#13;
+    "productLineItems": "productLineItems",&#13;
+    "trackingURL": "trackingURL",&#13;
+    "trackingNumber": "trackingNumber"&#13;
+}</object-attribute>
+    </custom-object>
+
+    <custom-object type-id="MarketingCloudTriggers" object-id="app.communication.order.confirmation">
+        <object-attribute attribute-id="customerKey">oms.confirm.dev2</object-attribute>
+        <object-attribute attribute-id="description">Order Confirmation trigger, contains details of the placed order. To reflect line items,&#13;
+ use orderAsXML attribute and process as XML within the Marketing Cloud template.&#13;
+To use XML approach, see Marketing Cloud docs: &#13;
+https://developer.salesforce.com/docs/atlas.en-us.noversion.mc-apis.meta/mc-apis/using_triggered_sends_to_confirm_purchases.htm</object-attribute>
+        <object-attribute attribute-id="enabled">true</object-attribute>
+        <object-attribute attribute-id="subscriberAttributes">{&#13;
+    "StoreHomeLink": "StoreHomeLink",&#13;
+    "SiteID": "SiteID",&#13;
+    "orderAsXML": "OrderAsXML",&#13;
+    "Order.affiliatePartnerID": "AffiliatePartnerID",&#13;
+    "Order.affiliatePartnerName": "AffiliatePartnerName",&#13;
+    "Order.capturedAmount": "",&#13;
+    "Order.capturedAmount.currencyCode": "CapturedAmountCurrencyCode",&#13;
+    "Order.capturedAmount.decimalValue": "CapturedAmountDecimalValue",&#13;
+    "Order.createdBy": "",&#13;
+    "Order.customerLocaleID": "",&#13;
+    "Order.customerOrderReference": "",&#13;
+    "Order.exportAfter": "",&#13;
+    "Order.externalOrderNo": "",&#13;
+    "Order.externalOrderStatus": "",&#13;
+    "Order.externalOrderText": "",&#13;
+    "Order.invoiceNo": "",&#13;
+    "Order.orderNo": "OrderNumber",&#13;
+    "Order.orderToken": "",&#13;
+    "Order.remoteHost": "",&#13;
+    "Order.sourceCode": "",&#13;
+    "Order.sourceCodeGroupID": "",&#13;
+    "Order.adjustedMerchandizeTotalGrossPrice": "",&#13;
+    "Order.adjustedMerchandizeTotalGrossPrice.currencyCode": "",&#13;
+    "Order.adjustedMerchandizeTotalGrossPrice.decimalValue": "",&#13;
+    "Order.adjustedMerchandizeTotalNetPrice": "",&#13;
+    "Order.adjustedMerchandizeTotalNetPrice.currencyCode": "",&#13;
+    "Order.adjustedMerchandizeTotalNetPrice.decimalValue": "",&#13;
+    "Order.adjustedMerchandizeTotalPrice": "",&#13;
+    "Order.adjustedMerchandizeTotalPrice.currencyCode": "",&#13;
+    "Order.adjustedMerchandizeTotalPrice.decimalValue": "",&#13;
+    "Order.adjustedMerchandizeTotalTax": "",&#13;
+    "Order.adjustedMerchandizeTotalTax.currencyCode": "",&#13;
+    "Order.adjustedMerchandizeTotalTax.decimalValue": "",&#13;
+    "Order.adjustedShippingTotalGrossPrice": "",&#13;
+    "Order.adjustedShippingTotalGrossPrice.currencyCode": "",&#13;
+    "Order.adjustedShippingTotalGrossPrice.decimalValue": "",&#13;
+    "Order.adjustedShippingTotalNetPrice": "",&#13;
+    "Order.adjustedShippingTotalNetPrice.currencyCode": "",&#13;
+    "Order.adjustedShippingTotalNetPrice.decimalValue": "",&#13;
+    "Order.adjustedShippingTotalPrice": "",&#13;
+    "Order.adjustedShippingTotalPrice.currencyCode": "",&#13;
+    "Order.adjustedShippingTotalPrice.decimalValue": "",&#13;
+    "Order.adjustedShippingTotalTax": "",&#13;
+    "Order.adjustedShippingTotalTax.currencyCode": "",&#13;
+    "Order.adjustedShippingTotalTax.decimalValue": "",&#13;
+    "Order.billingAddress.address1": "",&#13;
+    "Order.billingAddress.address2": "",&#13;
+    "Order.billingAddress.city": "",&#13;
+    "Order.billingAddress.companyName": "",&#13;
+    "Order.billingAddress.countryCode.displayValue": "",&#13;
+    "Order.billingAddress.countryCode.value": "",&#13;
+    "Order.billingAddress.firstName": "",&#13;
+    "Order.billingAddress.fullName": "",&#13;
+    "Order.billingAddress.jobTitle": "",&#13;
+    "Order.billingAddress.lastName": "",&#13;
+    "Order.billingAddress.phone": "",&#13;
+    "Order.billingAddress.postalCode": "",&#13;
+    "Order.billingAddress.postBox": "",&#13;
+    "Order.billingAddress.salutation": "",&#13;
+    "Order.billingAddress.secondName": "",&#13;
+    "Order.billingAddress.stateCode": "",&#13;
+    "Order.billingAddress.suffix": "",&#13;
+    "Order.billingAddress.suite": "",&#13;
+    "Order.billingAddress.title": "",&#13;
+    "Order.channelType.displayValue": "",&#13;
+    "Order.channelType.value": "",&#13;
+    "Order.currencyCode": "",&#13;
+    "Order.customer.anonymous": "",&#13;
+    "Order.customer.authenticated": "",&#13;
+    "Order.customer.ID": "",&#13;
+    "Order.customer.note": "",&#13;
+    "Order.customer.registered": "",&#13;
+    "Order.customer.profile.birthday": "",&#13;
+    "Order.customer.profile.companyName": "",&#13;
+    "Order.customer.profile.customerNo": "",&#13;
+    "Order.customer.profile.email": "",&#13;
+    "Order.customer.profile.fax": "",&#13;
+    "Order.customer.profile.female": "",&#13;
+    "Order.customer.profile.firstName": "",&#13;
+    "Order.customer.profile.gender.displayValue": "",&#13;
+    "Order.customer.profile.gender.value": "",&#13;
+    "Order.customer.profile.jobTitle": "",&#13;
+    "Order.customer.profile.lastLoginTime": "",&#13;
+    "Order.customer.profile.lastName": "",&#13;
+    "Order.customer.profile.lastVisitTime": "",&#13;
+    "Order.customer.profile.male": "",&#13;
+    "Order.customer.profile.nextBirthday": "",&#13;
+    "Order.customer.profile.phoneBusiness": "",&#13;
+    "Order.customer.profile.phoneHome": "",&#13;
+    "Order.customer.profile.phoneMobile": "",&#13;
+    "Order.customer.profile.preferredLocale": "",&#13;
+    "Order.customer.profile.previousLoginTime": "",&#13;
+    "Order.customer.profile.previousVisitTime": "",&#13;
+    "Order.customer.profile.salutation": "",&#13;
+    "Order.customer.profile.secondName": "",&#13;
+    "Order.customer.profile.suffix": "",&#13;
+    "Order.customer.profile.taxIDMasked": "",&#13;
+    "Order.customer.profile.taxIDType.displayValue": "",&#13;
+    "Order.customer.profile.taxIDType.value": "",&#13;
+    "Order.customer.profile.title": "",&#13;
+    "Order.customerEmail": "",&#13;
+    "Order.customerName": "",&#13;
+    "Order.customerNo": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalGrossPrice": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalGrossPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalGrossPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalNetPrice": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalNetPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalNetPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalPrice": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalTax": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalTax.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalTax.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalGrossPrice": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalGrossPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalGrossPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalNetPrice": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalNetPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalNetPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalPrice": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalTax": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalTax.currencyCode": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalTax.decimalValue": "",&#13;
+    "Order.defaultShipment.gift": "",&#13;
+    "Order.defaultShipment.giftMessage": "",&#13;
+    "Order.defaultShipment.ID": "",&#13;
+    "Order.defaultShipment.merchandizeTotalGrossPrice": "",&#13;
+    "Order.defaultShipment.merchandizeTotalGrossPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.merchandizeTotalGrossPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.merchandizeTotalNetPrice": "",&#13;
+    "Order.defaultShipment.merchandizeTotalNetPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.merchandizeTotalNetPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.merchandizeTotalPrice": "",&#13;
+    "Order.defaultShipment.merchandizeTotalPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.merchandizeTotalPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.merchandizeTotalTax": "",&#13;
+    "Order.defaultShipment.merchandizeTotalTax.currencyCode": "",&#13;
+    "Order.defaultShipment.merchandizeTotalTax.decimalValue": "",&#13;
+    "Order.defaultShipment.proratedMerchandizeTotalPrice": "",&#13;
+    "Order.defaultShipment.proratedMerchandizeTotalPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.proratedMerchandizeTotalPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.shipmentNo": "",&#13;
+    "Order.defaultShipment.shippingAddress.address1": "",&#13;
+    "Order.defaultShipment.shippingAddress.address2": "",&#13;
+    "Order.defaultShipment.shippingAddress.city": "",&#13;
+    "Order.defaultShipment.shippingAddress.companyName": "",&#13;
+    "Order.defaultShipment.shippingAddress.countryCode.displayValue": "",&#13;
+    "Order.defaultShipment.shippingAddress.countryCode.value": "",&#13;
+    "Order.defaultShipment.shippingAddress.firstName": "",&#13;
+    "Order.defaultShipment.shippingAddress.fullName": "",&#13;
+    "Order.defaultShipment.shippingAddress.jobTitle": "",&#13;
+    "Order.defaultShipment.shippingAddress.lastName": "",&#13;
+    "Order.defaultShipment.shippingAddress.phone": "",&#13;
+    "Order.defaultShipment.shippingAddress.postalCode": "",&#13;
+    "Order.defaultShipment.shippingAddress.postBox": "",&#13;
+    "Order.defaultShipment.shippingAddress.salutation": "",&#13;
+    "Order.defaultShipment.shippingAddress.secondName": "",&#13;
+    "Order.defaultShipment.shippingAddress.stateCode": "",&#13;
+    "Order.defaultShipment.shippingAddress.suffix": "",&#13;
+    "Order.defaultShipment.shippingAddress.suite": "",&#13;
+    "Order.defaultShipment.shippingAddress.title": "",&#13;
+    "Order.defaultShipment.shippingMethod.currencyCode": "",&#13;
+    "Order.defaultShipment.shippingMethod.description": "",&#13;
+    "Order.defaultShipment.shippingMethod.displayName": "",&#13;
+    "Order.defaultShipment.shippingMethod.ID": "",&#13;
+    "Order.defaultShipment.shippingMethod.taxClassID": "",&#13;
+    "Order.defaultShipment.shippingMethodID": "",&#13;
+    "Order.defaultShipment.shippingTotalGrossPrice": "",&#13;
+    "Order.defaultShipment.shippingTotalGrossPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.shippingTotalGrossPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.shippingTotalNetPrice": "",&#13;
+    "Order.defaultShipment.shippingTotalNetPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.shippingTotalNetPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.shippingTotalPrice": "",&#13;
+    "Order.defaultShipment.shippingTotalPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.shippingTotalPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.shippingTotalTax": "",&#13;
+    "Order.defaultShipment.shippingTotalTax.currencyCode": "",&#13;
+    "Order.defaultShipment.shippingTotalTax.decimalValue": "",&#13;
+    "Order.defaultShipment.totalGrossPrice": "",&#13;
+    "Order.defaultShipment.totalGrossPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.totalGrossPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.totalNetPrice": "",&#13;
+    "Order.defaultShipment.totalNetPrice.currencyCode": "",&#13;
+    "Order.defaultShipment.totalNetPrice.decimalValue": "",&#13;
+    "Order.defaultShipment.totalTax": "",&#13;
+    "Order.defaultShipment.totalTax.currencyCode": "",&#13;
+    "Order.defaultShipment.totalTax.decimalValue": "",&#13;
+    "Order.defaultShipment.trackingNumber": "",&#13;
+    "Order.giftCertificateTotalGrossPrice": "",&#13;
+    "Order.giftCertificateTotalGrossPrice.currencyCode": "",&#13;
+    "Order.giftCertificateTotalGrossPrice.decimalValue": "",&#13;
+    "Order.giftCertificateTotalNetPrice": "",&#13;
+    "Order.giftCertificateTotalNetPrice.currencyCode": "",&#13;
+    "Order.giftCertificateTotalNetPrice.decimalValue": "",&#13;
+    "Order.giftCertificateTotalPrice": "",&#13;
+    "Order.giftCertificateTotalPrice.currencyCode": "",&#13;
+    "Order.giftCertificateTotalPrice.decimalValue": "",&#13;
+    "Order.giftCertificateTotalTax": "",&#13;
+    "Order.giftCertificateTotalTax.currencyCode": "",&#13;
+    "Order.giftCertificateTotalTax.decimalValue": "",&#13;
+    "Order.merchandizeTotalGrossPrice": "",&#13;
+    "Order.merchandizeTotalGrossPrice.currencyCode": "",&#13;
+    "Order.merchandizeTotalGrossPrice.decimalValue": "",&#13;
+    "Order.merchandizeTotalNetPrice": "",&#13;
+    "Order.merchandizeTotalNetPrice.currencyCode": "",&#13;
+    "Order.merchandizeTotalNetPrice.decimalValue": "",&#13;
+    "Order.merchandizeTotalPrice": "",&#13;
+    "Order.merchandizeTotalPrice.currencyCode": "",&#13;
+    "Order.merchandizeTotalPrice.decimalValue": "",&#13;
+    "Order.merchandizeTotalTax": "",&#13;
+    "Order.merchandizeTotalTax.currencyCode": "",&#13;
+    "Order.merchandizeTotalTax.decimalValue": "",&#13;
+    "Order.productQuantityTotal": "",&#13;
+    "Order.shippingTotalGrossPrice": "",&#13;
+    "Order.shippingTotalGrossPrice.currencyCode": "",&#13;
+    "Order.shippingTotalGrossPrice.decimalValue": "",&#13;
+    "Order.shippingTotalNetPrice": "",&#13;
+    "Order.shippingTotalNetPrice.currencyCode": "",&#13;
+    "Order.shippingTotalNetPrice.decimalValue": "",&#13;
+    "Order.shippingTotalPrice": "",&#13;
+    "Order.shippingTotalPrice.currencyCode": "",&#13;
+    "Order.shippingTotalPrice.decimalValue": "",&#13;
+    "Order.shippingTotalTax": "",&#13;
+    "Order.shippingTotalTax.currencyCode": "",&#13;
+    "Order.shippingTotalTax.decimalValue": "",&#13;
+    "Order.totalGrossPrice": "",&#13;
+    "Order.totalGrossPrice.currencyCode": "",&#13;
+    "Order.totalGrossPrice.decimalValue": "",&#13;
+    "Order.totalNetPrice": "",&#13;
+    "Order.totalNetPrice.currencyCode": "",&#13;
+    "Order.totalNetPrice.decimalValue": "",&#13;
+    "Order.totalTax": "",&#13;
+    "Order.totalTax.currencyCode": "",&#13;
+    "Order.totalTax.decimalValue": "",&#13;
+    "Order.capturedAmount.value": "CapturedAmountValue",&#13;
+    "Order.adjustedMerchandizeTotalGrossPrice.value": "",&#13;
+    "Order.adjustedMerchandizeTotalNetPrice.value": "",&#13;
+    "Order.adjustedMerchandizeTotalPrice.value": "",&#13;
+    "Order.adjustedMerchandizeTotalTax.value": "",&#13;
+    "Order.adjustedShippingTotalGrossPrice.value": "",&#13;
+    "Order.adjustedShippingTotalNetPrice.value": "",&#13;
+    "Order.adjustedShippingTotalPrice.value": "",&#13;
+    "Order.adjustedShippingTotalTax.value": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalGrossPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalNetPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedMerchandizeTotalTax.value": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalGrossPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalNetPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalPrice.value": "",&#13;
+    "Order.defaultShipment.adjustedShippingTotalTax.value": "",&#13;
+    "Order.defaultShipment.merchandizeTotalGrossPrice.value": "",&#13;
+    "Order.defaultShipment.merchandizeTotalNetPrice.value": "",&#13;
+    "Order.defaultShipment.merchandizeTotalPrice.value": "",&#13;
+    "Order.defaultShipment.merchandizeTotalTax.value": "",&#13;
+    "Order.defaultShipment.proratedMerchandizeTotalPrice.value": "",&#13;
+    "Order.defaultShipment.shippingTotalGrossPrice.value": "",&#13;
+    "Order.defaultShipment.shippingTotalNetPrice.value": "",&#13;
+    "Order.defaultShipment.shippingTotalPrice.value": "",&#13;
+    "Order.defaultShipment.shippingTotalTax.value": "",&#13;
+    "Order.defaultShipment.totalGrossPrice.value": "",&#13;
+    "Order.defaultShipment.totalNetPrice.value": "",&#13;
+    "Order.defaultShipment.totalTax.value": "",&#13;
+    "Order.giftCertificateTotalGrossPrice.value": "",&#13;
+    "Order.giftCertificateTotalNetPrice.value": "",&#13;
+    "Order.giftCertificateTotalPrice.value": "",&#13;
+    "Order.giftCertificateTotalTax.value": "",&#13;
+    "Order.merchandizeTotalGrossPrice.value": "",&#13;
+    "Order.merchandizeTotalNetPrice.value": "",&#13;
+    "Order.merchandizeTotalPrice.value": "",&#13;
+    "Order.merchandizeTotalTax.value": "",&#13;
+    "Order.shippingTotalGrossPrice.value": "",&#13;
+    "Order.shippingTotalNetPrice.value": "",&#13;
+    "Order.shippingTotalPrice.value": "",&#13;
+    "Order.shippingTotalTax.value": "",&#13;
+    "Order.totalGrossPrice.value": "",&#13;
+    "Order.totalNetPrice.value": "",&#13;
+    "Order.totalTax.value": ""&#13;
+}</object-attribute>
+    </custom-object>
+
+</custom-objects>

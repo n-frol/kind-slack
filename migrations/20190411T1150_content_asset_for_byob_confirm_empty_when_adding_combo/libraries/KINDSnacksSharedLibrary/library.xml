@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="byob-empty-your-box-combo">
+        <display-name xml:lang="x-default">empty your box?</display-name>
+        <description xml:lang="x-default">Displays the content seen on the BYOB modal to confirm that the user would like to remove existing items from their box to add a starter combo.</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <template></template>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">If you add the starter combo to your box, your current items will be removed. Do you wish to continue?</custom-attribute>
+        </custom-attributes>
+    </content>
+</library>

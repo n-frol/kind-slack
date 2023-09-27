@@ -1,0 +1,47 @@
+<div class="full_width_banner" style="background: url('${pdict.image.src.desktop}') no-repeat;">
+    <h1>
+        <isprint value="${pdict.richtext}" encoding="off" />
+    </h1>
+</div>
+
+<style>
+    .full_width_banner {
+        height: 250px;
+        width: 100%;
+        display: flex;
+        margin: auto;
+        background-color: #ddd;
+        background-position: center !important;
+    }
+
+    .full_width_banner h1 {
+        margin: auto;
+        text-align: center;
+        font-family: "HelveticaNeue-Bold", Helvetica, sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 39px;
+        text-transform: unset;
+        letter-spacing: normal;
+        width: 100%;
+    }
+
+    @media (max-width: 425px) {
+        .full_width_banner {
+            background-position-x: -500px !important;
+        }
+    }
+</style>
+<script>
+function checkPosition() {
+
+}
+
+window.addEventListener('resize', function(event){
+    if (window.matchMedia('(max-width: 768px) and (min-width: 425px)').matches) {
+        $(".full_width_banner").css("background", "url('${pdict.image2.src.desktop}')");
+    } else {
+        $(".full_width_banner").css("background", "url('${pdict.image.src.desktop}')");
+    }
+});
+</script>

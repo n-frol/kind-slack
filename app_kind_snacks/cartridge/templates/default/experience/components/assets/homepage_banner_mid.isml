@@ -1,0 +1,38 @@
+<div class="${pdict.bannerClass} ${hasImage}" aria-label="${pdict.copy}" tabindex="0" onclick="window.location.href = '${pdict.link}'">
+    <isif condition="${pdict.full_image_use}">
+        <div class="full_width_image ${pdict.fullClass} ${pdict.hasText} ${pdict.noimage}">
+            <picture>
+                <source media="(max-width: 500px)" srcset="${pdict.full_image_mobile.src.mobile}">
+                <img class="full_width" style="position:relative;" src="${pdict.full_image.src.desktop}" alt="${pdict.full_image.alt}" />
+            </picture>
+        </div>
+        <isif condition="${pdict.image}">
+        <picture class="overlapped">
+        <isif condition="${pdict.image_mobile.src.mobile}">
+            <source media="(max-width: 500px)" style="position: unset;" srcset="${pdict.image_mobile.src.mobile}">
+            </isif>
+            <img class="full_width full_width_small ${pdict.noimage}" style="position: unset;" src="${pdict.image.src.desktop}" alt="${pdict.full_image.alt}" />
+        </picture>
+        </isif>
+        <div class="backgrounded overlapped ${pdict.noimage}" style="background:${pdict.background_color};">
+            <div class="text-container ${pdict.hasText}" style="
+            text-align: ${pdict.text_align};
+            ">
+                <div class="text">
+                    <isif condition="${pdict.eyebrow}">
+                        <div class="eyebrow" style="color:${pdict.text_color};">
+                            <isprint value="${pdict.eyebrow}" encoding="off" />
+                        </div>
+                    </isif>
+                    <h2 style="color:${pdict.text_color};">
+                        <isprint value="${pdict.header}" encoding="off" />
+                    </h2>
+                    <div class="copy" style="color:${pdict.text_color};">
+                        <isprint value="${pdict.copy}" encoding="off" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <iselse>
+    </isif>
+</div>

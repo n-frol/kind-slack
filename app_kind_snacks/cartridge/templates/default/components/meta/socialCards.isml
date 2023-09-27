@@ -1,0 +1,12 @@
+<iscomment> TEMPLATENAME: components/meta/socialCards.isml </iscomment>
+<isset name="socialCards" value="${!empty(pdict.socialCardsData) ? pdict.socialCardsData : null }" scope="page" />
+
+<iscomment> Twitter Cards </iscomment>
+<isif condition="${!empty(socialCards) && !empty(socialCards.twitter)}">
+    <isinclude template="components/meta/twitterCards" />
+</isif>
+
+<iscomment> Open Graph Cards </iscomment>
+<isif condition="${!empty(socialCards) && !empty(socialCards.openGraph)}">
+    <isinclude template="components/meta/openGraphCards" />
+</isif>

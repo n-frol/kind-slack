@@ -1,0 +1,9 @@
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+<isif condition="${!empty(pdict.template)}">
+    <isinclude template="${pdict.template}" />
+<iselse>
+    <div data-pid="${product.id}" data-categoryname="${pdict.productCategory}" class="c-product-tile__wrap-inner">
+        <isinclude template="product/productTile" />
+    </div>
+</isif>

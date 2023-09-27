@@ -1,0 +1,6 @@
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="swapbarid" value="${pdict.swapbarid}" scope="page" />
+<div data-pid="${product.id}" data-categoryname="${pdict.productCategory}"
+    class="c-product-tile__wrap-inner c-byob-product-tile__wrap ">
+    <isinclude template="product/configurationCategoryProductTile" />
+</div>

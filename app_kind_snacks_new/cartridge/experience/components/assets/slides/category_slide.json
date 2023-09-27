@@ -1,0 +1,22 @@
+{
+    "name": "Category Slide",
+    "description": "Category tile to go in slider",
+    "group": "Slides",
+    "attribute_definition_groups": [
+        {
+            "id": "category",
+            "name": "Category to use",
+            "description": "The category to use for this slide",
+            "attribute_definitions": [
+                {
+                    "id": "category",
+                    "name": "Category",
+                    "type": "category",
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
+

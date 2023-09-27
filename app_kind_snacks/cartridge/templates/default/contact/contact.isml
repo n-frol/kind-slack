@@ -1,0 +1,7 @@
+<isdecorate template="common/layout/page">
+    <h1>Contact Page</h1>
+    <iscomment>Creates NICE InContact modal window.  Creates a new modal everytime and destroys it on close.  This is to make sure that the client is only loaded when needed</iscomment>
+    <button class="js-modal-dialog-create js-nice-incontact" data-modal-class="js-modal-dialog-destroy" data-iframe-src="${dw.system.Site.current.getCustomPreferenceValue('niceInContactUrl')}">
+        Contact Us
+    </button>
+</isdecorate>

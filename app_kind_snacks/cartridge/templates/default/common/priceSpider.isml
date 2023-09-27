@@ -1,0 +1,7 @@
+<meta name="ps-key" content="${dw.system.Site.current.getCustomPreferenceValue('pricespiderkey')}">
+<meta name="ps-country" content="US">
+<meta name="ps-language" content="en">
+<script src="//cdn.pricespider.com/1/lib/ps-widget.js" async></script>
+<script type="text/javascript"
+        src="//cdn.pricespider.com/1/${dw.system.Site.current.getCustomPreferenceValue('pricespiderclient')}/ps-utid.js"
+        async></script>

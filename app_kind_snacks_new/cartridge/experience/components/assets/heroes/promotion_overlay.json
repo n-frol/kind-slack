@@ -1,0 +1,96 @@
+{
+    "name": "Promotion Overlay",
+    "group": "banners",
+    "attribute_definition_groups": [
+        {
+            "id": "heading",
+            "attribute_definitions": [
+                {
+                    "id": "theme",
+                    "name": "Theme",
+                    "type": "enum",
+                    "values": ["light", "dark", "onrails"],
+                    "required": true
+                },
+                {
+                    "id": "benefit_direction",
+                    "name": "Benefits Direction",
+                    "type": "enum",
+                    "values": ["horizontal", "vertical"],
+                    "required": true
+                },
+                {
+                    "id": "image",
+                    "name": "Main Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "headline",
+                    "name": "Main Headline",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "headlinecolor",
+                    "name": "Headline Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": true
+                },
+                {
+                    "id": "description",
+                    "name": "Overlay Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "bene_description",
+                    "name": "Benefit Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "overlay_color",
+                    "name": "Overlay Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": true
+                },
+                {
+                    "id": "overlay_text_color",
+                    "name": "Overlay Text Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": true
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+        {
+            "id":"benefits",
+            "name":"Benefits",
+            "component_type_exclusions": [
+                { "type_id": "commerce_layouts.carousel" },
+                { "type_id": "commerce_layouts.mobileGrid1r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r1c" },
+                { "type_id": "commerce_layouts.mobileGrid2r2c" },
+                { "type_id": "commerce_layouts.mobileGrid2r3c" },
+                { "type_id": "commerce_layouts.mobileGrid3r1c" },
+                { "type_id": "commerce_layouts.mobileGrid3r2c" },
+                { "type_id": "commerce_layouts.popularCategories" },
+                { "type_id": "einstein.einsteinCarousel" },
+                { "type_id": "einstein.einsteinCarouselCategory" },
+                { "type_id": "einstein.einsteinCarouselProduct" },
+                { "type_id": "commerce_layouts.mobileGridLookBook" }
+            ]
+        }
+    ]
+}

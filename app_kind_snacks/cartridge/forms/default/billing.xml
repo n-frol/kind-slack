@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+    <field formid="shippingAddressUseAsBillingAddress" label="profile.billingSameAsShipping" type="boolean"
+           binding="shippingAddressUseAsBillingAddress" checked="true" />
+
+    <include formid="addressFields" name="address"/>
+
+    <field formid="paymentMethod" type="string" mandatory="true" />
+
+    <include formid="creditCardFields" name="creditCard"/>
+
+    <include formid="profileFields" name="profile"/>
+
+    <!--  Computop Payment Operator - Payment Methods  -->
+    <include formid="creditdirect" name="creditdirect"/>
+    <include formid="directdebitsepa" name="directdebitsepa"/>
+    <include formid="eps" name="eps"/>
+    <include formid="giropay" name="giropay"/>
+    <include formid="ideal" name="ideal"/>
+    <include formid="klarna" name="klarna"/>
+    <include formid="paygatechina" name="paygatechina"/>
+    <include formid="paymentoperatorcreditcard" name="paymentoperatorcreditcard"/>
+    <include formid="paymorrowbml" name="paymorrowbml"/>
+    <include formid="paymorrowsdd" name="paymorrowsdd"/>
+    <include formid="qiwi" name="qiwi"/>
+</form>

@@ -1,0 +1,1715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+
+    <type-extension type-id="Basket">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorRefNr">
+                <display-name xml:lang="x-default">Payment Operator RefNr</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayID">
+                <display-name xml:lang="x-default">Payment Operator Pay ID</display-name>
+                <description xml:lang="x-default">saves PayID for later referencing of paymorrow transaction</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <order-required-flag>true</order-required-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="CustomerPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorCCBrand">
+                <display-name xml:lang="x-default">PaymentOperator CC Brand</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡品牌</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCExpiry">
+                <display-name xml:lang="x-default">PaymentOperator CC Expiry date</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡有效期</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCIssuer">
+                <display-name xml:lang="x-default">PaymentOperator CC Issuer</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡发卡行</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCNr">
+                <display-name xml:lang="x-default">PaymentOperator Pseudo card number</display-name>
+                <display-name xml:lang="zh-CN">Computop 虚拟卡号</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorPaymentData">
+                <display-name xml:lang="x-default">PaymentOperator Payment Data</display-name>
+                <display-name xml:lang="zh-CN">Computop 支付数据</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayUErrorText">
+                <display-name xml:lang="x-default">PaymentOperator PayU ErrorText</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayUCodeExt">
+                <display-name xml:lang="x-default">PaymentOperator PayU CodeExt</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorRefNr">
+                <display-name xml:lang="x-default">Payment Operator RefNr</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayID">
+                <display-name xml:lang="x-default">Payment Operator Pay ID</display-name>
+                <description xml:lang="x-default">saves PayID for later referencing of paymorrow transaction</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="PaymentOperatorPayment">
+                <display-name xml:lang="x-default">PaymentOperator Payment</display-name>
+                <display-name xml:lang="zh-CN">Computop 支付</display-name>
+                <attribute attribute-id="paymentOperatorPaymentData"/>
+                <attribute attribute-id="paymentOperatorPayUErrorText"/>
+                <attribute attribute-id="paymentOperatorPayUCodeExt"/>
+                <attribute attribute-id="paymentOperatorPayID"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="CustomerAddress">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="houseNumber">
+                <display-name xml:lang="x-default">House Number</display-name>
+                <description xml:lang="x-default">Defines the house number</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Standard">
+                <display-name xml:lang="de-DE">Standard</display-name>
+                <display-name xml:lang="x-default">Standard Address</display-name>
+                <attribute attribute-id="ID" system="true"/>
+                <attribute attribute-id="title" system="true"/>
+                <attribute attribute-id="companyName" system="true"/>
+                <attribute attribute-id="salutation" system="true"/>
+                <attribute attribute-id="firstName" system="true"/>
+                <attribute attribute-id="secondName" system="true"/>
+                <attribute attribute-id="lastName" system="true"/>
+                <attribute attribute-id="suffix" system="true"/>
+                <attribute attribute-id="address1" system="true"/>
+                <attribute attribute-id="address2" system="true"/>
+                <attribute attribute-id="suite" system="true"/>
+                <attribute attribute-id="postBox" system="true"/>
+                <attribute attribute-id="city" system="true"/>
+                <attribute attribute-id="postalCode" system="true"/>
+                <attribute attribute-id="countryCode" system="true"/>
+                <attribute attribute-id="stateCode" system="true"/>
+                <attribute attribute-id="phone" system="true"/>
+                <attribute attribute-id="houseNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="OrderAddress">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="houseNumber">
+                <display-name xml:lang="x-default">House Number</display-name>
+                <description xml:lang="x-default">Defines the house number</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="Standard">
+                <display-name xml:lang="de-DE">Standard</display-name>
+                <display-name xml:lang="x-default">Standard Address</display-name>
+                <attribute attribute-id="title" system="true"/>
+                <attribute attribute-id="companyName" system="true"/>
+                <attribute attribute-id="salutation" system="true"/>
+                <attribute attribute-id="firstName" system="true"/>
+                <attribute attribute-id="secondName" system="true"/>
+                <attribute attribute-id="lastName" system="true"/>
+                <attribute attribute-id="suffix" system="true"/>
+                <attribute attribute-id="address1" system="true"/>
+                <attribute attribute-id="address2" system="true"/>
+                <attribute attribute-id="suite" system="true"/>
+                <attribute attribute-id="postBox" system="true"/>
+                <attribute attribute-id="city" system="true"/>
+                <attribute attribute-id="postalCode" system="true"/>
+                <attribute attribute-id="countryCode" system="true"/>
+                <attribute attribute-id="stateCode" system="true"/>
+                <attribute attribute-id="phone" system="true"/>
+                <attribute attribute-id="houseNumber"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <type-extension type-id="OrderPaymentInstrument">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorPayID">
+                <display-name xml:lang="x-default">Payment Operator Pay ID</display-name>
+                <description xml:lang="x-default">saves PayID for later referencing of paymorrow transaction</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCBrand">
+                <display-name xml:lang="x-default">PaymentOperator CC Brand</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡品牌</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCExpiry">
+                <display-name xml:lang="x-default">PaymentOperator CC Expiry date</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡有效期</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCIssuer">
+                <display-name xml:lang="x-default">PaymentOperator CC Issuer</display-name>
+                <display-name xml:lang="zh-CN">Computop 信用卡发卡行</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCCNr">
+                <display-name xml:lang="x-default">PaymentOperator Pseudo card number</display-name>
+                <display-name xml:lang="zh-CN">Computop 虚拟卡号</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorOTAccBank">
+                <display-name xml:lang="x-default">PaymentOperator online transfer bank name</display-name>
+                <display-name xml:lang="zh-CN">Computop 在线转账银行名称</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorOTAccIBAN">
+                <display-name xml:lang="x-default">PaymentOperator online transfer bank account number</display-name>
+                <display-name xml:lang="zh-CN">Computop 在线转账银行帐号</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorOTAccOwner">
+                <display-name xml:lang="x-default">PaymentOperator online transfer account owner</display-name>
+                <display-name xml:lang="zh-CN">Computop 在线转帐帐户持有人</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorECInterestAmount">
+                <display-name xml:lang="x-default">PaymentOperator easyCredit interest amount</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorECTechnicalTransactionID">
+                <display-name xml:lang="x-default">PaymentOperator easyCredit technical transaction ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorECTransactionID">
+                <display-name xml:lang="x-default">PaymentOperator easyCredit transaction ID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+    </type-extension>
+
+<type-extension type-id="Product">
+    <custom-attribute-definitions>
+        <attribute-definition attribute-id="paymentOperatorPaymorrowCategory">
+            <display-name xml:lang="x-default">accepted paymorrow categories</display-name>
+            <type>enum-of-string</type>
+            <localizable-flag>false</localizable-flag>
+            <site-specific-flag>false</site-specific-flag>
+            <mandatory-flag>false</mandatory-flag>
+            <visible-flag>false</visible-flag>
+            <externally-managed-flag>false</externally-managed-flag>
+            <order-required-flag>false</order-required-flag>
+            <externally-defined-flag>false</externally-defined-flag>
+            <value-definitions>
+                <value-definition>
+                    <display xml:lang="x-default">Parfümerie, Beauty</display>
+                    <value>BEAUTY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Heimwerker</display>
+                    <value>DIY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Garten</display>
+                    <value>GARDEN</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Spielwaren</display>
+                    <value>TOYS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Hobby &amp; Freizeit</display>
+                    <value>HOBBY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Bücher</display>
+                    <value>BOOKS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Zeitschriften</display>
+                    <value>MAGAZINES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Musik CDs, Platten etc. (nur physisch)</display>
+                    <value>MUSIC</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Gesundheitsartikel</display>
+                    <value>HEALTH</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Arzneimittel (nicht rezeptpflichtig)</display>
+                    <value>OTCDRUGS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Arzneimittel (verschreibungspflichtig)</display>
+                    <value>PRESCRIPTIONDRUGS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Haushaltsgeräte</display>
+                    <value>WHITEWARE</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Kleidung, Textilien</display>
+                    <value>CLOTHING</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Markenmode (Armani, )</display>
+                    <value>FASHION</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Schuhe</display>
+                    <value>SHOES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Accessoires</display>
+                    <value>ACCESSORIES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Lebensmittel</display>
+                    <value>FOOD</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Getränke (nicht alkoholisch)</display>
+                    <value>BEVERAGES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Getränke (alkoholisch)</display>
+                    <value>ALCOHOL</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Möbel</display>
+                    <value>FURNITURE</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Dekorationsartikel</display>
+                    <value>DECORATION</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Kunst</display>
+                    <value>ART</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Antiquitäten</display>
+                    <value>ANTIQUES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Werkzeuge</display>
+                    <value>TOOLS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Sonstiges</display>
+                    <value>MISC</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Consumer Electronic</display>
+                    <value>ELECTRONICS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Notebooks / Laptops / Netbooks etc.</display>
+                    <value>LAPTOPS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Computer / Workstation etc.</display>
+                    <value>COMPUTERS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Kameras</display>
+                    <value>CAMERAS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Flachbildschirme</display>
+                    <value>FLATSCREENS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Computer Software</display>
+                    <value>SOFTWARE</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Computer Spiele / Video Spiele</display>
+                    <value>COMPUTERGAMES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Schreibwaren</display>
+                    <value>STATIONERY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Sonstiger Bürobedarf</display>
+                    <value>OFFICESUPPLIES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Autozubehör</display>
+                    <value>CARACCESSORIES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Motorradzubehör</display>
+                    <value>BIKEACCESSORIES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Uhren</display>
+                    <value>WATCHES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Schmuck</display>
+                    <value>JEWELRY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Heimtierbedarf</display>
+                    <value>PETSUPPLIES</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Geschenkartikel</display>
+                    <value>GIFTS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Religionsartikel</display>
+                    <value>RELIGIOUS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Blumen / Pflanzen</display>
+                    <value>FLOWERS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Nischenprodukte</display>
+                    <value>NICHE</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Handwerksprodukte</display>
+                    <value>CRAFT</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Hochzeitsartikel</display>
+                    <value>WEDDING</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Sportartikel</display>
+                    <value>SPORTS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Ethnische Produkte</display>
+                    <value>ETHNIC</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Tabakprodukte</display>
+                    <value>TOBACCO</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Fotografie</display>
+                    <value>PHOTOGRAPHY</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Eintrittskarten etc.</display>
+                    <value>TICKETS</value>
+                </value-definition>
+                <value-definition>
+                    <display xml:lang="x-default">Filme (DVD, Videokassetten)</display>
+                    <value>MOVIES</value>
+                </value-definition>
+            </value-definitions>
+        </attribute-definition>
+    </custom-attribute-definitions>
+    <group-definitions>
+        <attribute-group group-id="PAYMENTOPERATOR">
+            <display-name xml:lang="x-default">Payment Operator</display-name>
+            <attribute attribute-id="paymentOperatorPaymorrowCategory"/>
+        </attribute-group>
+    </group-definitions>
+</type-extension>
+
+
+
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="paymentOperatorPaymorrowBillingSameAsShipping">
+                <display-name xml:lang="x-default">Payment Operator Paymorrow Billing Same As Shipping</display-name>
+                <description xml:lang="x-default">if "yes", paymorrow only allowed shipping address equals billing address</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaymorrowConfirmDataPolicy">
+                <display-name xml:lang="x-default">Payment Operator Paymorrow Confirm Data Policy</display-name>
+                <description xml:lang="x-default">if "yes", the customer will have to confirm paymorrow data policy in billing step (checkbox)</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaymorrowDeviceIDIframeUrl">
+                <display-name xml:lang="x-default">Payment Operator Paymorrow Device ID Iframe Url</display-name>
+                <description xml:lang="x-default">URL for iFrame integration and DeviceID transfer</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">https://test.paymorrow.net/perthResource/devicecheck/dc.html?session_id=</display>
+                        <value>TEST</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">https://paymorrow.net/perthResource/devicecheck/dc.html?session_id=</display>
+                        <value>LIVE</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaymorrowGatewayPath">
+                <display-name xml:lang="x-default">Payment Operator Paymorrow Gateway Path</display-name>
+                <description xml:lang="x-default">paymorrow.aspx</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>paymorrow.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorKoreaCCGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator KoreaC Gateway Path</display-name>
+                <description xml:lang="x-default">PaymentOperator KoreaCC Gateway Path</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>KoreaCC.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorBaseUrl">
+                <display-name xml:lang="x-default">PaymentOperator Base URL</display-name>
+                <description xml:lang="x-default">PaymentOperator Base URL</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">https://www.computop-paygate.com/</display>
+                        <value>https://www.computop-paygate.com/</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">https://asia.computop-paygate.com/</display>
+                        <value>https://asia.computop-paygate.com/</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMerchantID">
+                <display-name xml:lang="x-default">PaymentOperator Merchant ID</display-name>
+                <description xml:lang="x-default">PaymentOperator Merchant ID</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMerchantCode">
+                <display-name xml:lang="x-default">PaymentOperator Merchant Code</display-name>
+                <description xml:lang="x-default">PaymentOperator Merchant Code / Password</description>
+                <type>password</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorHMACKey">
+                <display-name xml:lang="x-default">PaymentOperator HMAC Key</display-name>
+                <description xml:lang="x-default">PaymentOperator HMAC Key</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorEtiID">
+                <display-name xml:lang="x-default">EtiID</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>17.1.0</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTestFlag">
+                <display-name xml:lang="x-default">OrderDesc override enabled</display-name>
+                <description xml:lang="x-default">If "Yes" the OrderDesc of the TransferObject will contain a String defined in paymentOperatorTestString instead of order data. This is needed for handling test data on Computop PaymentGate server side.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTestString">
+                <display-name xml:lang="x-default">OrderDesc override string</display-name>
+                <description xml:lang="x-default">Should contain a string like this:&#13;
+Test:0000 where 0000 can be replaced with a different number (must be 4 digits long) which represents an error code.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>Test:0000</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorProcessUnencryptedResponse">
+                <display-name xml:lang="x-default">Try to process unencrypted responses</display-name>
+                <description xml:lang="x-default">If "Yes" responses are processed also if they are unencrypted. This is for debugging reasons and should NOT be enabled on live systems.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <!-- Credit direct -->
+            <attribute-definition attribute-id="paymentOperatorCreditDirectGatewayPath">
+                <display-name xml:lang="x-default">Gateway Path for Credit direct</display-name>
+                <description xml:lang="x-default">Gateway Path for Credit direct</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>direct.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditDirect3dGatewayPath">
+                <display-name xml:lang="x-default">Gateway Path for Credit direct 3d</display-name>
+                <description xml:lang="x-default">Gateway Path for Credit direct 3d</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>direct3d.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardCaptureHours">
+                <display-name xml:lang="x-default">Credit Card Capture Time Period</display-name>
+                <display-name xml:lang="zh-CN">信用卡扣款时间段</display-name>
+                <description xml:lang="x-default">Credit Card Capture Time Period in hours (three digits)&#13;
+Mandatory if you select time-based capturing.</description>
+                <description xml:lang="zh-CN">若你选择基于时间扣款则信用卡扣款时间段强制以小时方式呈现（三位数）</description>
+                <type>int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>0</field-length>
+                <default-value>0</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardCaptureType">
+                <display-name xml:lang="x-default">Credit Card Capture Type</display-name>
+                <display-name xml:lang="zh-CN">信用卡扣款类别</display-name>
+                <description xml:lang="x-default">Credit Card Capture Type, with time based, set paymentOperatorCredittCardCaptureHours accordingly.</description>
+                <description xml:lang="zh-CN">信用卡扣款类别，基于时间，则对应按 信用卡扣款时间段 设定</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Auto</display>
+                        <value>auto</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Manual</display>
+                        <value>manual</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Time based capture (set hours)</display>
+                        <value>timeBased</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCard3DEnabled">
+                <display-name xml:lang="x-default">3D Secure Verification is Enabled</display-name>
+                <description xml:lang="x-default">If set to "No", 3D Secure verification is skipped, even if the card is enrolled for 3D Secure.</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>true</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardCapnEnabled">
+                <display-name xml:lang="x-default">CAPN enabled</display-name>
+                <description xml:lang="x-default">If "Yes" the customer / customer address data will be added to request</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount">
+                <display-name xml:lang="x-default">Amount used for credit card authorization in "My Account"</display-name>
+                <description xml:lang="x-default">If "paymentOperatorCustomerProfileCreditCardAuthorizeRequired" is "Yes", this fractionless amount ($1.00 = 100, $0.01 = 1) will be used for credit card authorization in "My Account".</description>
+                <type>int</type>
+                <mandatory-flag>true</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-value>1.0</min-value>
+                <default-value>1</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired">
+                <display-name xml:lang="x-default">Authorize required for credit card verification in "My Account"</display-name>
+                <description xml:lang="x-default">If "Yes", the customer's credit card will be authorized with a given amount before adding it to his account</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <!-- Credit card -->
+            <attribute-definition attribute-id="paymentOperatorCreditCardGatewayPath">
+                <display-name xml:lang="x-default">Credit Card payment gateway path</display-name>
+                <display-name xml:lang="zh-CN">信用卡支付网关路径</display-name>
+                <description xml:lang="x-default">Credit Card payment gateway path</description>
+                <description xml:lang="zh-CN">信用卡支付网关路径</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>paySSL.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardUseOldCards">
+                <display-name xml:lang="x-default">Use Old Credit Card data if saved</display-name>
+                <display-name xml:lang="zh-CN">若已保存，使用旧的信用卡数据</display-name>
+                <description xml:lang="x-default">If set to true, previously used pseudo credit card numbers are used for future payments</description>
+                <description xml:lang="zh-CN">若已设定，之前用过的虚拟信用卡号被用于未来的支付</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardXSLTTemplatePath">
+                <display-name xml:lang="x-default">XSLT template Path</display-name>
+                <display-name xml:lang="zh-CN">XSLT 模板路径</display-name>
+                <description xml:lang="x-default">XSLT template Path</description>
+                <description xml:lang="zh-CN">XSLT 模板路径</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardSellingPoint">
+                <display-name xml:lang="x-default">Credit Card Selling Point</display-name>
+                <display-name xml:lang="zh-CN">信用卡卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorCreditCardService">
+                <display-name xml:lang="x-default">Credit Card Service</display-name>
+                <display-name xml:lang="zh-CN">信用卡服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- ApplePay -->
+            <attribute-definition attribute-id="paymentOperatorApplePayGatewayPath">
+                <display-name xml:lang="x-default">Gateway Path for ApplePay</display-name>
+                <description xml:lang="x-default">Gateway Path for ApplePay</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>applepay.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorApplePayMerchantID">
+                <display-name xml:lang="x-default">MerchantID for ApplePay</display-name>
+                <description xml:lang="x-default">MerchantID for ApplePay - the same as configured under SitePreferencs -> ApplePay</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- Paypal -->
+            <attribute-definition attribute-id="paymentOperatorPayPalGatewayPath">
+                <display-name xml:lang="x-default">Gateway Path for PayPal</display-name>
+                <description xml:lang="x-default">Gateway Path for PayPal</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>PayPal.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayPalExpressCompletionGatewayPath">
+                <display-name xml:lang="x-default">Gateway Path for PayPal Express Completion</display-name>
+                <description xml:lang="x-default">Gateway Path for PayPal Express Completion</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>paypalComplete.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaypalCaptureType">
+                <display-name xml:lang="x-default">Capture Type for Paypal</display-name>
+                <description xml:lang="x-default">If this is set, parameter Txtype is mandatory and will be sent along the order.</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Manual</display>
+                        <value>manual</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Auto</display>
+                        <value>auto</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaypalTxtype">
+                <display-name xml:lang="x-default">Paypal Txtype</display-name>
+                <description xml:lang="x-default">This is a mandatory if Paypal capture type is set to manual.</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Order</display>
+                        <value>Order</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Auth</display>
+                        <value>Auth</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">BAID</display>
+                        <value>BAID</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+
+			<!-- Klarna -->
+			<attribute-definition attribute-id="paymentOperatorKlarnaGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator Klarna Gateway Path</display-name>
+                <description xml:lang="x-default">PaymentOperator Klarna Gateway Path</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>klarna.aspx</default-value>
+            </attribute-definition>
+			<attribute-definition attribute-id="paymentOperatorKlarnaAction">
+                <display-name xml:lang="x-default">PaymentOperator Klarna Action</display-name>
+				<display-name xml:lang="zh-CN">Computop Klarna 功能</display-name>
+                <description xml:lang="x-default">The set action mode for Klarna</description>
+                <description xml:lang="zh-CN">Klarna的设定功能模式</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>-1</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorKlarnaInvoiceFlag">
+                <display-name xml:lang="x-default">PaymentOperator Klarna Invoice Flag</display-name>
+				<display-name xml:lang="zh-CN">Computop Klarna 发票标识</display-name>
+                <description xml:lang="x-default">Enable invoice payment for Klarna</description>
+                <description xml:lang="zh-CN">启用Klarna的凭发票支付</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>0</default-value>
+            </attribute-definition>
+
+			<!-- Direct Debit Sepa -->
+			<attribute-definition attribute-id="paymentOperatorDirectDebitGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator DirectDebit Gateway Path</display-name>
+				<display-name xml:lang="zh-CN">Computop 直接借记网关路径</display-name>
+                <description xml:lang="x-default">PaymentOperator DirectDebit Gateway Path</description>
+                <description xml:lang="zh-CN">Computop 直接借记网关路径</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>edddirect.aspx</default-value>
+            </attribute-definition>
+			<attribute-definition attribute-id="paymentOperatorDirectDebitSellingPoint">
+                <display-name xml:lang="x-default">Direct Debit Selling Point</display-name>
+				<display-name xml:lang="zh-CN">直接借记卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorDirectDebitService">
+                <display-name xml:lang="x-default">Direct Debit Service</display-name>
+				<display-name xml:lang="zh-CN">直接借记服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+			<attribute-definition attribute-id="paymentOperatorDirectDebitCaptureHours">
+                <display-name xml:lang="x-default">PaymentOperator Direct Debit Capture Time Period</display-name>
+				<display-name xml:lang="zh-CN">Computop 直接借记扣款时间段</display-name>
+                <description xml:lang="x-default">PaymentOperator Direct Debit Capture Time Period in hours (three digits)&#13;
+Mandatory if you select time-based capturing.</description>
+                <description xml:lang="zh-CN">若你选择基于时间扣款，则Computop直接借记扣款时间段强制以小时方式呈现（三位数）</description>
+                <type>int</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <field-length>0</field-length>
+                <default-value>0</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorDirectDebitCaptureType">
+                <display-name xml:lang="x-default">PaymentOperator Direct Debit Capture Type</display-name>
+				<display-name xml:lang="zh-CN">Computop 直接借记扣款类别</display-name>
+                <description xml:lang="x-default">PaymentOperator Direct Debit Capture Type, with time based, set paymentOperatorDirectDebitCaptureHours accordingly.</description>
+                <description xml:lang="zh-CN">Computop 直接借记扣款类别，基于时间，则对应按 直接借记扣款时间段 设定</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition>
+                        <display xml:lang="x-default">Auto</display>
+                        <value>auto</value>
+                    </value-definition>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Manual</display>
+                        <value>manual</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Time based capture (set hours)</display>
+                        <value>timeBased</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+
+            <!-- Giropay -->
+            <attribute-definition attribute-id="paymentOperatorGiropayGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator Giropay Gateway Path</display-name>
+                <display-name xml:lang="zh-CN">Computop Giropay 网关路径</display-name>
+                <description xml:lang="x-default">PaymentOperator Giropay Gateway Path</description>
+                <description xml:lang="zh-CN">Computop Giropay 网关路径</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>giropay.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorGiropayVendor">
+                <display-name xml:lang="x-default">PaymentOperator Giropay Vendor</display-name>
+                <description xml:lang="x-default">Vendor that is using Giropay</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">CT</display>
+                        <value>CT</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">PPRO</display>
+                        <value>PPRO</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">EVO</display>
+                        <value>EVO</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorGiropaySellingPoint">
+                <display-name xml:lang="x-default">Giropay Selling Point</display-name>
+                <display-name xml:lang="zh-CN">Giropay 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorGiropayService">
+                <display-name xml:lang="x-default">Giropay Service</display-name>
+                <display-name xml:lang="zh-CN">Giropay 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- PostFinance -->
+            <attribute-definition attribute-id="paymentOperatorPostFinanceGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for PostFinance</display-name>
+                <display-name xml:lang="zh-CN">PostFinance网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>postfinance.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPostFinanceSellingPoint">
+                <display-name xml:lang="x-default">PostFinance Selling Point</display-name>
+                <display-name xml:lang="zh-CN">PostFinance 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPostFinanceService">
+                <display-name xml:lang="x-default">PostFinance Service</display-name>
+                <display-name xml:lang="zh-CN">PostFinance 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- TrustPay -->
+            <attribute-definition attribute-id="paymentOperatorTrustPayGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for TrustPay</display-name>
+                <display-name xml:lang="zh-CN">TrustPay网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>trustpay.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTrustPaySellingPoint">
+                <display-name xml:lang="x-default">TrustPay Selling Point</display-name>
+                <display-name xml:lang="zh-CN">TrustPay 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTrustPayService">
+                <display-name xml:lang="x-default">TrustPay Service</display-name>
+                <display-name xml:lang="zh-CN">TrustPay 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- POLi -->
+            <attribute-definition attribute-id="paymentOperatorPoliGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for POLi</display-name>
+                <display-name xml:lang="zh-CN">POLi网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>poli.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPoliSellingPoint">
+                <display-name xml:lang="x-default">POLi Selling Point</display-name>
+                <display-name xml:lang="zh-CN">POLi 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPoliService">
+                <display-name xml:lang="x-default">POLi Service</display-name>
+                <display-name xml:lang="zh-CN">POLi 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- Przelewy24 -->
+            <attribute-definition attribute-id="paymentOperatorPrzelewy24GatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for Przelewy24</display-name>
+                <display-name xml:lang="zh-CN">Przelewy24网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>p24.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPrzelewy24SellingPoint">
+                <display-name xml:lang="x-default">Przelewy24 Selling Point</display-name>
+                <display-name xml:lang="zh-CN">Przelewy24 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPrzelewy24Service">
+                <display-name xml:lang="x-default">Przelewy24 Service</display-name>
+                <display-name xml:lang="zh-CN">Przelewy24 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- QIWI -->
+            <attribute-definition attribute-id="paymentOperatorQiwiGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for Qiwi</display-name>
+                <display-name xml:lang="zh-CN">Qiwi网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>qiwi.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorQiwiSellingPoint">
+                <display-name xml:lang="x-default">Qiwi Selling Point</display-name>
+                <display-name xml:lang="zh-CN">Qiwi 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorQiwiService">
+                <display-name xml:lang="x-default">Qiwi Service</display-name>
+                <display-name xml:lang="zh-CN">Qiwi 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- Skrill -->
+            <attribute-definition attribute-id="paymentOperatorSkrillGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for Skrill</display-name>
+                <display-name xml:lang="zh-CN">Skrill网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>skrill.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorSkrillSellingPoint">
+                <display-name xml:lang="x-default">Skrill Selling Point</display-name>
+                <display-name xml:lang="zh-CN">Skrill 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorSkrillService">
+                <display-name xml:lang="x-default">Skrill Service</display-name>
+                <display-name xml:lang="zh-CN">Skrill 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+			<!-- Paygate China -->
+			<attribute-definition attribute-id="paymentOperatorPaygateChinaPayGateway">
+                <display-name xml:lang="x-default">Paygate China Gateway</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>China.aspx</default-value>
+            </attribute-definition>
+			<attribute-definition attribute-id="paymentOperatorPaygateChinaPayTypeObt">
+                <display-name xml:lang="x-default">Paygate China - PayType - Online Bank Transfer (E-Banking)</display-name>
+                <description xml:lang="x-default">Online Bank Transfer (OBT)</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Business-to-Consumer</display>
+                        <value>B2C</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Business-to-Business</display>
+                        <value>B2B</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaygateChinaPayTypePsp">
+                <display-name xml:lang="x-default">Paygate China - PayType - Payment Service Provider</display-name>
+                <description xml:lang="x-default">Payment Service Provider (PSP)</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">PSP Account</display>
+                        <value>ACC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Cross-border Settlement</display>
+                        <value>CBS</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaygateChinaObtList">
+                <display-name xml:lang="x-default">Paygate China OBT List</display-name>
+                <description xml:lang="x-default">list of bank identificators</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <select-multiple-flag>true</select-multiple-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Agriculture Bank of China</display>
+                        <value>ABC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bank of East Asia</display>
+                        <value>BEA</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bank of China</display>
+                        <value>BOC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Bohai Bank</display>
+                        <value>CBHB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Construction Bank</display>
+                        <value>CCB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Everbright Bank</display>
+                        <value>CEB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Industrial Bank Co. Ltd</display>
+                        <value>CIB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China CITIC Bank</display>
+                        <value>CITIC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Merchants Bank</display>
+                        <value>CMB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Minsheng Banking Corp. Ltd</display>
+                        <value>CMBC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bank of Communications</display>
+                        <value>COMM</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Zheshang Bank</display>
+                        <value>CZB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Evergrowing Bank</display>
+                        <value>EGB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">China Guangfa Bank</display>
+                        <value>GDB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Huaxia Bank</display>
+                        <value>HXB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Industrial and Commercial Bank of China</display>
+                        <value>ICBC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bank of Ningbo</display>
+                        <value>NBBANK</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Postal Savings Bank of China</display>
+                        <value>POSTGC</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Shenzhen Development Bank</display>
+                        <value>SDB</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Bank of Shanghai</display>
+                        <value>SHBANK</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Pingan Bank</display>
+                        <value>SPABANK</value>
+                    </value-definition>
+                       <value-definition>
+                        <display xml:lang="x-default">Shanghai Pudong Development Bank</display>
+                        <value>SPDB</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPaygateChinaPspList">
+                <display-name xml:lang="x-default">Paygate China PSP List</display-name>
+                <description xml:lang="x-default">list of bank identificators</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <select-multiple-flag>true</select-multiple-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Alipay</display>
+                        <value>ALP</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">ChinaPay</display>
+                        <value>CHP</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Tenpay</display>
+                        <value>TEN</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">YeePay</display>
+                        <value>YEE</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">99Bill</display>
+                        <value>99B</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+
+            <!-- iDEAL -->
+            <attribute-definition attribute-id="paymentOperatorIDealGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator iDEAL Gateway Path</display-name>
+                <description xml:lang="x-default">PaymentOperator iDEAL Gateway Path</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>ideal.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorUsePPRO">
+                <display-name xml:lang="x-default">Enable / disable usage of PPRO</display-name>
+                <description xml:lang="x-default">Enable / disable usage of PPRO</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <!-- Sofortüberweisung -->
+            <attribute-definition attribute-id="paymentOperatorOnlineTransferGatewayPath">
+                <display-name xml:lang="x-default">Gateway path for online transfer</display-name>
+                <description xml:lang="x-default">Gateway path for online transfer</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>sofort.aspx</default-value>
+            </attribute-definition>
+
+            <!-- MasterPass -->
+            <attribute-definition attribute-id="paymentOperatorMasterPassAcceptableCards">
+                <display-name xml:lang="x-default">Acceptable cards for MasterPass</display-name>
+                <description xml:lang="x-default">Comma separated list without blanks.&#13;
+Currently supported: master,amex,diners,discover,maestro,visa</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>master,amex,diners,discover,maestro,visa</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassAuthLevelBasicEnabled">
+                <display-name xml:lang="x-default">Enable basic 3D authentification MasterPass</display-name>
+                <description xml:lang="x-default">Use basic instead of advanced 3D authentification</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassRedirectGatewayPath">
+                <display-name xml:lang="x-default">Payment Operator MasterPass Redirect Gateway Path</display-name>
+                <description xml:lang="x-default">Gateway for MasterPass redirect process (Step 1 of 2)</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>MasterPass.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassTransactionGatewayPath">
+                <display-name xml:lang="x-default">Payment Operator MasterPass Transaction Gateway Path</display-name>
+                <description xml:lang="x-default">Gateway for MasterPass transaction process (Step 2 of 2)</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <default-value>directmp.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassRewardProgramEnabled">
+                <display-name xml:lang="x-default">Enable reward program data for MasterPass</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassShippingLocationProfileID">
+                <display-name xml:lang="x-default">Shipping location profile ID for MasterPass</display-name>
+                <description xml:lang="x-default">Could be US, CS, FR, MEX, NA, UK or an alphanumerical value ( Max 5 digits )</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorMasterPassSuppressShippingAddressEnabled">
+                <display-name xml:lang="x-default">Suppress shipping address on MasterPass page</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+
+            <!-- Alipay -->
+            <attribute-definition attribute-id="paymentOperatorAliPayGateway">
+                <display-name xml:lang="x-default">Alipay Gateway</display-name>
+                <display-name xml:lang="zh-CN">Alipay 网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>alipay.aspx</default-value>
+            </attribute-definition>
+
+            <!-- Bancontact -->
+            <attribute-definition attribute-id="paymentOperatorBancontactGatewayPath">
+                <display-name xml:lang="x-default">PaymentOperator Bancontact Gateway Path</display-name>
+                <description xml:lang="x-default">PaymentOperator Bancontact Gateway Path</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>bancontact.aspx</default-value>
+            </attribute-definition>
+
+            <!-- PayU CEE -->
+            <attribute-definition attribute-id="paymentOperatorPayUGateway">
+                <display-name xml:lang="x-default">PayU Gateway</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>payucee.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorPayUChannel">
+                <display-name xml:lang="x-default">PayU Channel (Country)</display-name>
+                <description xml:lang="x-default">2 Options: Turkey (TR), Romania (RO)</description>
+                <type>enum-of-string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <value-definitions>
+                    <value-definition default="true">
+                        <display xml:lang="x-default">Turkey</display>
+                        <value>TR</value>
+                    </value-definition>
+                    <value-definition>
+                        <display xml:lang="x-default">Romania</display>
+                        <value>RO</value>
+                    </value-definition>
+                </value-definitions>
+            </attribute-definition>
+
+            <!-- EPS -->
+            <attribute-definition attribute-id="paymentOperatorEpsGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for EPS</display-name>
+                <display-name xml:lang="zh-CN">EPS网关网址</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>eps.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorEpsSellingPoint">
+                <display-name xml:lang="x-default">EPS Selling Point</display-name>
+                <display-name xml:lang="zh-CN">EPS 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorEpsService">
+                <display-name xml:lang="x-default">EPS Service</display-name>
+                <display-name xml:lang="zh-CN">EPS 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- Teleingreso -->
+            <attribute-definition attribute-id="paymentOperatorTeleingresoGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for Teleingreso</display-name>
+                <display-name xml:lang="zh-CN">Teleingreso网址网关</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>teleingreso.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTeleingresoSellingPoint">
+                <display-name xml:lang="x-default">Teleingreso Selling Point</display-name>
+                <display-name xml:lang="zh-CN">Teleingreso 卖点</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorTeleingresoService">
+                <display-name xml:lang="x-default">Teleingreso Service</display-name>
+                <display-name xml:lang="zh-CN">Teleingreso 服务</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+            </attribute-definition>
+
+            <!-- easyCredit -->
+            <attribute-definition attribute-id="paymentOperatorEasyCreditRedirectGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for easyCredit redirect step</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>easyCredit.aspx</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="paymentOperatorEasyCreditDirectGatewayPath">
+                <display-name xml:lang="x-default">Gateway URL for easyCredit information and hire step</display-name>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+                <field-length>0</field-length>
+                <default-value>easyCreditDirect.aspx</default-value>
+            </attribute-definition>
+
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="PAYMENTOPERATOR_PAYMENTGATE">
+                <display-name xml:lang="x-default">Computop</display-name>
+                <display-name xml:lang="zh-CN">Computop 支付网关</display-name>
+                <description xml:lang="x-default">Paymentgate Configuration</description>
+                <attribute attribute-id="paymentOperatorBaseUrl"/>
+                <attribute attribute-id="paymentOperatorMerchantID"/>
+                <attribute attribute-id="paymentOperatorMerchantCode"/>
+                <attribute attribute-id="paymentOperatorHMACKey"/>
+                <attribute attribute-id="paymentOperatorEtiID"/>
+                <attribute attribute-id="paymentOperatorTestFlag"/>
+                <attribute attribute-id="paymentOperatorTestString"/>
+                <attribute attribute-id="paymentOperatorProcessUnencryptedResponse"/>
+                <attribute attribute-id="paymentOperatorCreditDirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditDirect3dGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditCardCaptureType"/>
+                <attribute attribute-id="paymentOperatorCreditCardCaptureHours"/>
+                <attribute attribute-id="paymentOperatorCreditCard3DEnabled"/>
+                <attribute attribute-id="paymentOperatorCreditCardCapnEnabled"/>
+                <attribute attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeRequired"/>
+                <attribute attribute-id="paymentOperatorCustomerProfileCreditCardAuthorizeAmount"/>
+                <attribute attribute-id="paymentOperatorCreditCardGatewayPath"/>
+                <attribute attribute-id="paymentOperatorCreditCardUseOldCards"/>
+                <attribute attribute-id="paymentOperatorCreditCardXSLTTemplatePath"/>
+                <attribute attribute-id="paymentOperatorCreditCardSellingPoint"/>
+                <attribute attribute-id="paymentOperatorCreditCardService"/>
+                <attribute attribute-id="paymentOperatorApplePayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorApplePayMerchantID"/>
+                <attribute attribute-id="paymentOperatorPayPalGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPayPalExpressCompletionGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaypalCaptureType"/>
+                <attribute attribute-id="paymentOperatorPaypalTxtype"/>
+				<attribute attribute-id="paymentOperatorKlarnaGatewayPath"/>
+				<attribute attribute-id="paymentOperatorKlarnaAction"/>
+                <attribute attribute-id="paymentOperatorKlarnaInvoiceFlag"/>
+				<attribute attribute-id="paymentOperatorDirectDebitGatewayPath"/>
+				<attribute attribute-id="paymentOperatorDirectDebitCaptureType"/>
+                <attribute attribute-id="paymentOperatorDirectDebitCaptureHours"/>
+                <attribute attribute-id="paymentOperatorDirectDebitSellingPoint"/>
+                <attribute attribute-id="paymentOperatorDirectDebitService"/>
+                <attribute attribute-id="paymentOperatorGiropayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorGiropaySellingPoint"/>
+                <attribute attribute-id="paymentOperatorGiropayService"/>
+                <attribute attribute-id="paymentOperatorGiropayVendor"/>
+                <attribute attribute-id="paymentOperatorIDealGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPostFinanceGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPostFinanceSellingPoint"/>
+                <attribute attribute-id="paymentOperatorPostFinanceService"/>
+                <attribute attribute-id="paymentOperatorTrustPayGatewayPath"/>
+                <attribute attribute-id="paymentOperatorTrustPaySellingPoint"/>
+                <attribute attribute-id="paymentOperatorTrustPayService"/>
+                <attribute attribute-id="paymentOperatorPoliGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPoliSellingPoint"/>
+                <attribute attribute-id="paymentOperatorPoliService"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24GatewayPath"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24SellingPoint"/>
+                <attribute attribute-id="paymentOperatorPrzelewy24Service"/>
+                <attribute attribute-id="paymentOperatorQiwiGatewayPath"/>
+                <attribute attribute-id="paymentOperatorQiwiSellingPoint"/>
+                <attribute attribute-id="paymentOperatorQiwiService"/>
+                <attribute attribute-id="paymentOperatorSkrillGatewayPath"/>
+                <attribute attribute-id="paymentOperatorSkrillSellingPoint"/>
+                <attribute attribute-id="paymentOperatorSkrillService"/>
+				<attribute attribute-id="paymentOperatorPaygateChinaPayGateway"/>
+				<attribute attribute-id="paymentOperatorPaygateChinaPayTypeObt"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPayTypePsp"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaObtList"/>
+                <attribute attribute-id="paymentOperatorPaygateChinaPspList"/>
+                <attribute attribute-id="paymentOperatorUsePPRO"/>
+                <attribute attribute-id="paymentOperatorOnlineTransferGatewayPath"/>
+                <attribute attribute-id="paymentOperatorMasterPassShippingLocationProfileID"/>
+                <attribute attribute-id="paymentOperatorMasterPassAcceptableCards"/>
+                <attribute attribute-id="paymentOperatorMasterPassRewardProgramEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassAuthLevelBasicEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassSuppressShippingAddressEnabled"/>
+                <attribute attribute-id="paymentOperatorMasterPassRedirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorMasterPassTransactionGatewayPath"/>
+                <attribute attribute-id="paymentOperatorAliPayGateway"/>
+                <attribute attribute-id="paymentOperatorBancontactGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPayUGateway"/>
+                <attribute attribute-id="paymentOperatorPayUChannel"/>
+                <attribute attribute-id="paymentOperatorEpsGatewayPath"/>
+                <attribute attribute-id="paymentOperatorEpsSellingPoint"/>
+                <attribute attribute-id="paymentOperatorEpsService"/>
+                <attribute attribute-id="paymentOperatorTeleingresoGatewayPath"/>
+                <attribute attribute-id="paymentOperatorTeleingresoSellingPoint"/>
+                <attribute attribute-id="paymentOperatorTeleingresoService"/>
+                <attribute attribute-id="paymentOperatorEasyCreditRedirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorEasyCreditDirectGatewayPath"/>
+                <attribute attribute-id="paymentOperatorKoreaCCGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaymorrowGatewayPath"/>
+                <attribute attribute-id="paymentOperatorPaymorrowDeviceIDIframeUrl"/>
+                <attribute attribute-id="paymentOperatorPaymorrowBillingSameAsShipping"/>
+                <attribute attribute-id="paymentOperatorPaymorrowConfirmDataPolicy"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+
+    <custom-type type-id="RefNoSequence">
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="ID">
+            <type>int</type>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="sequence">
+                <type>int</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="main">
+                <display-name xml:lang="x-default">PaymentOperator Counter</display-name>
+                <attribute attribute-id="sequence"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+
+</metadata>

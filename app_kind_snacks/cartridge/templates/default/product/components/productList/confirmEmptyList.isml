@@ -1,0 +1,47 @@
+<iscomment>
+    File: confirmEmptyList.isml
+    Description: This template is rendered as a result of BYOB-ConfirmEmpty. It
+    contains markup for a modal window for the user to confirm that
+    they would like to empty the current items from their BYOB box.
+    CSS Namespace: c-starter-combo-alert
+</iscomment>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<div class="modal-dialog st-modal__dialog c-starter-combo-alert fade show" role="alert">
+    <div class="modal-content st-modal__content c-starter-combo-alert__content">
+        <div class="modal-header st-modal__header delete-confirmation-header justify-content-end">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body st-modal__body">
+            <iscomment> Content Asset </iscomment>
+            <div class="c-starter-combo-alert__content-asset">
+                <isif condition="${!empty(pdict.isStarterCombo) && pdict.isStarterCombo === true}">
+
+                    <iscomment> Starter Combo Page </iscomment>
+                    <iscontentasset aid="byob-empty-your-box-combo"/>
+                <iselse/>
+
+                    <iscomment> Product Page </iscomment>
+                    <iscontentasset aid="${pdict.emptyPrompt}"/>
+                </isif>
+
+            </div>
+        </div>
+
+        <iscomment> Action Buttons </iscomment>
+        <div class="modal-footer st-modal__footer c-starter-combo-alert__footer">
+            <button type="button"
+                class="btn btn-primary js-byob-confirm-empty"
+                data-remove-url="${!empty(pdict.removeUrl) ? pdict.removeUrl : ''}"
+                data-add-url="${!empty(pdict.addUrl) ? pdict.addUrl : ''}"
+                data-is-starter-combo="${pdict.isStarterCombo || false}">
+
+                ${pdict.emptyButtonText}
+            </button>
+            <button type="button" class="btn btn-secondary js-byob-close-alert" data-dismiss="alert" aria-label="Cancel">
+                ${Resource.msg('button.byob.cancel', 'product', null)}
+            </button>
+        </div>
+    </div>
+</div>

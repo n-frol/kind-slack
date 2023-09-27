@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="instructions-order-confirmation">
+        <display-name xml:lang="x-default">instructions-order-confirmation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;div class="st-checkout-confirmation__info__item"&gt;&#13;
+    &lt;span class="order-thank-you-email-msg"&gt;An email with your order info will be sent to ${orderEmail}&lt;/span&gt;&#13;
+&lt;/div&gt;&#13;
+&lt;div class="st-checkout-confirmation__info__item"&gt;&#13;
+    &lt;span class="help-phone-number-label"&gt;Need Help? Call&lt;/span&gt;&#13;
+    &lt;span&gt;1-800-KND-HELP&lt;/span&gt;&#13;
+&lt;/div&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

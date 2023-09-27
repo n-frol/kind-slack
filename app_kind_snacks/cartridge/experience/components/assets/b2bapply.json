@@ -1,0 +1,16 @@
+{
+    "name": "Apply Form",
+    "description": "Apply Form",
+    "group": "Homepage",
+    "attribute_definition_groups": [
+      {
+        "id": "textcontent",
+        "name": "Text Content",
+        "description": "The content to show in this component",
+        "attribute_definitions": [
+        ]
+      }
+    ],
+    "region_definitions": []
+  }
+  

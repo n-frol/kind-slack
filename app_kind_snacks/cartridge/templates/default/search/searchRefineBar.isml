@@ -1,0 +1,85 @@
+<div class="refinement-bar c-refinement-bar js-refinement-bar col-12 col-md-3 no-padding" style="display:none">
+    <!--- Close button --->
+    <div class="c-refinement-bar__header filter-header" aria-label="Filter By">
+        <div class=" c-refinement-bar__header__bar header-bar d-md-none clearfix">
+            <div class="c-refinement-bar__header__bar__result-count pull-left d-md-none result-count">
+                <isif condition="${pdict.productSearch.isCategorySearch}">
+                    <isinclude template="search/resultsCount" />
+                </isif>
+            </div>
+            <button class="c-refinement-bar__header__bar__close pull-right close c-search-results__bar__filter-results col-12 no-border text-left">${Resource.msg('link.filters', 'search', null)}</button>
+
+            <button style="float:right !important; text-align:right !important;" class="c-refinement-bar__header__bar__close pull-right close c-search-results__bar__filter-results col-12 no-border text-left">
+            x</button>
+
+        </div>
+    </div>
+
+    <!--- Results count and Reset button --->
+
+    <div class="c-refinements refinements no-margin">
+        <isloop items="${pdict.productSearch.refinements}" var="refinement">
+            <isset name="isByobCategoryRefinement" value="${refinement.values[0].id === 'byob' ? true : false}" scope="page" />
+            <isset name="displayName" value="${refinement.displayName}" scope="page" />
+            <isif condition="${empty(displayName)}">
+                <isset name="displayName" value="${Resource.msg('label.refinement.generic', 'search', null)}"
+                    scope="page" />
+            </isif>
+
+            <div class="c-refinements__card collapsible-sm refinement-${displayName.toLowerCase().replace(/ /g, '-')}" aria-label="${displayName}" tabindex="0">
+                <div class="c-refinements__card__card-header js-accordion-header" >
+                    ${displayName}
+                    <span class="c-refinements__arrow"></span>
+                </div>
+                <div class="c-refinements__card__card-body js-accordion-body">
+                    <!--- CATEGORY REFINEMENTS --->
+                    <isif condition="${refinement.isCategoryRefinement}">
+                        <isset name="categories" value="${isByobCategoryRefinement ? refinement.values[0].subCategories : refinement.values}" scope="page" />
+                        <isinclude template="search/refinements/categories" />
+                    </isif>
+
+                    <!--- ATTRIBUTE REFINEMENTS --->
+                    <isif condition="${refinement.isAttributeRefinement}">
+                        <isinclude template="search/refinements/attributes" />
+                    </isif>
+
+                    <!--- PRICE REFINEMENTS --->
+                    <isif condition="${refinement.isPriceRefinement}">
+                        <isinclude template="search/refinements/prices" />
+                    </isif>
+                </div>
+            </div>
+        </isloop>
+        <isinclude template="widgets/cdpwidget" />
+    </div>
+    <isif condition="${pdict.productSearch.productIds.length > 0}">
+        <div class="c-refinement-bar__btn-box btn-box secondary-bar col-12 offset-sm-4 offset-md-0 col-sm-4 col-md-12">
+            <a class="c-refinement-bar__btn-box__btn reset" href="${pdict.productSearch.resetLink}">
+                ${Resource.msg('link.reset', 'search', null)}
+            </a>
+        </div>
+    </isif>
+
+</div>
+<div class="refinement-bar__overlay js-refinement-bar__overlay"></div>
+
+<style>
+    .refinement-bar {
+        overflow: inherit;
+    }
+</style>
+
+<style>
+@media screen and (max-width: 440px) {
+.modal-background {
+    display: none !important;
+}
+.refinement-bar {
+    margin-top:95px;
+    z-index: 2;
+}
+.header-bar button.close {
+    padding-left: 15px;
+}
+}
+</style>

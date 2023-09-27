@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences xmlns="http://www.demandware.com/xml/impex/preferences/2007-03-31">
+    <custom-preferences>
+        <all-instances>
+            <preference preference-id="loginRadiusIsEnabled">true</preference>
+            <preference preference-id="loginRadiusSiteName">kindsnacks-dev</preference>
+            <preference preference-id="loginRadiusUpdateProfile">true</preference>
+        </all-instances>
+        <development>
+            <preference preference-id="loginRadiusApiKey">4c67bb9f-3bc0-45e1-8c9f-c486aba5f5a3</preference>
+        </development>
+        <staging>
+            <preference preference-id="loginRadiusApiKey">4c67bb9f-3bc0-45e1-8c9f-c486aba5f5a3</preference>
+        </staging>
+    </custom-preferences>
+</preferences>
+

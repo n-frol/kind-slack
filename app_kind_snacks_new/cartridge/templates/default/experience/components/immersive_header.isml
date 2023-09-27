@@ -1,0 +1,369 @@
+<div class="immersive_header">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="full_width_immersive">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img src="${URLUtils.staticURL('/images/hero/hero-img.png')}" alt="immersive header" />
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="full_width_immersive">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img src="${URLUtils.staticURL('/images/hero/hero-img.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center">the way we grow food isn’t sustainable for the planet or a growing population</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide backgrounded">
+            <div class="full_width_immersive slide2 fullheight">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img class="immersive_slide2" src="${URLUtils.staticURL('/images/hero/hero-vid.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center leftalign">the way we grow food isn’t sustainable for the planet or a growing population</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide backgrounded">
+            <div class="full_width_immersive slide3 fullheight">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img class="immersive_slide3" src="${URLUtils.staticURL('/images/hero/hero-vid.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center leftalign">Could we solve it by being kinder to the soil?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide backgrounded">
+            <div class="full_width_immersive fullheight">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img class="immersive_slide4 img1" src="${URLUtils.staticURL('/images/hero/slide4left.png')}" alt="immersive header" />
+                <img class="immersive_slide4 img2" src="${URLUtils.staticURL('/images/hero/slide4mid.png')}" alt="immersive header" />
+                <img class="immersive_slide4 img3" src="${URLUtils.staticURL('/images/hero/slide4right.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center leftalign">By adding nutrients back in with farming practices, instead of chemicals?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide backgrounded">
+            <div class="full_width_immersive fullheight">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img class="immersive_slide5 img1" src="${URLUtils.staticURL('/images/hero/slide5left.png')}" alt="immersive header" />
+                <img class="immersive_slide5 img2" src="${URLUtils.staticURL('/images/hero/slide5mid.png')}" alt="immersive header" />
+                <img class="immersive_slide5 img3" src="${URLUtils.staticURL('/images/hero/slide5right.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center leftalign">and seeing what grows from there?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide backgrounded">
+            <div class="full_width_immersive slide6 fullheight">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img class="immersive_slide6" src="${URLUtils.staticURL('/images/hero/slide6.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center leftalign">and seeing what grows from there?</h1>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="full_width_immersive">
+                <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down" class="scroll_indicator_scroll">
+                    <img src="${URLUtils.staticURL('images/scroll.png')}" alt="scroll down" />
+                </a>
+                <img src="${URLUtils.staticURL('/images/hero/hero-img.png')}" alt="immersive header" />
+                <div class="text_immersive">
+                    <h1 class="text-center">welcome to KIND Almond Acres</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+</div>
+
+<script>
+    $(document).on("click", ".scroll_indicator_scroll", function() {
+        $('html,body').animate({ scrollTop: $(this).closest(".experience-component").prop("scrollHeight")}, 800);
+    });
+</script>
+
+<script>
+    const atest_slider = new Swiper('.immersive_header', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 0,
+        mousewheel: {
+            sensitivity: 1,
+            releaseOnEdges: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        pagination: {
+            el: ".swiper-pagination",
+            type: "progressbar" },
+        slidesPerView: "1",
+        preventInteractionOnTransition: true
+       });
+</script>
+
+<style>
+    .scroll_indicator_scroll {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        z-index: 999;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+    }
+    .scroll_indicator_scroll img {
+        height: 40px !important;
+        width: 100%;
+    }
+    @media screen and (max-width: 864px) {
+        .immersive_slide2 {
+            width: 80% !important;
+            height: 90vh !important;
+            position: relative;
+            top: 5vh;
+        }
+    }
+
+    .immersive_slide6 {
+        width: 85% !important;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 90vh !important;
+    }
+    .immersive_header img {
+        border-radius: 20px;
+    }
+    .immersive_slide5.img1 {
+        width: 360px;
+        height: 480px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+    .immersive_slide5.img2 {
+        width: 439px;
+        height: 411px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .immersive_slide5.img3 {
+        width: 360px;
+        height: 480px;
+        position: absolute;
+        left:0;
+        right:0;
+        bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and (max-width:864px) {
+        .immersive_slide4.img1 {
+            width: 80px !important;
+            height: 390px !important;
+            position: absolute;
+            top: 40% !important;
+            transform: translateY(-50%);
+            left: 0px !important;
+        }
+        .immersive_slide4.img2 {
+            width: 70px !important;
+            height: 330px !important;
+            position: absolute;
+            top: 170px !important;
+            transform: translateY(-50%);
+            right: 0px !important;
+            bottom: unset !important;
+        }
+        .immersive_slide4.img3 {
+            width: 200px !important;
+            height: 300px !important;
+            position: absolute;
+            top: 50%;
+            left: 50% !important;
+            transform: translate(-50%, -50%);
+        }
+        .immersive_slide5.img1, .immersive_slide5.img3 {
+            display: none;
+        }
+        .immersive_slide5.img2 {
+            width: 90vw;
+            height: 90vh;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    }
+    .immersive_slide4.img1 {
+        width: 220px;
+        height: 480px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0px;
+    }
+    .immersive_slide4.img2 {
+        width: 360px;
+        height: 480px;
+        position: absolute;
+        bottom: 40px;
+        right: -200px;
+    }
+    .immersive_slide4.img3 {
+        width: 360px;
+        height: 480px;
+        position: absolute;
+        left:0;
+        right:0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .full_width_immersive.fullheight {
+        height: 100vh;
+    }
+    .leftalign {
+        text-align: left;
+    }
+    .swiper-slide.backgrounded {
+        background: black;
+    }
+    .full_width_immersive.slide2 {
+        text-align: center;
+    }
+    @media screen and (min-width: 864px) {
+        .immersive_slide2 {
+            width: 50% !important;
+            margin: auto;
+        }
+    }
+    .full_width_immersive.slide3 {
+        text-align: center;
+    }
+    @media screen and (min-width: 864px) {
+        .immersive_slide3 {
+            width: 30% !important;
+            margin: auto;
+            height: 70vh !important;
+            top: 15vh;
+            position: relative;
+        }
+    }
+    @media screen and (max-width : 864px) {
+        .immersive_slide3 {
+            width: 50% !important;
+            margin: auto;
+            height: 60vh !important;
+            top: 20vh;
+            position: relative;
+        }
+    }
+    .icon_copy.large.immersive_button:after {
+        background: url(${URLUtils.staticURL('/images/play_button.png')}) no-repeat;
+    background-color: black;
+    border-radius: 50%;
+    background-position: center;
+    top: 1px;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    padding: 10px 40px 10px 10px !important;
+    }
+    .immersive_button {
+        background: white !important;
+        color: black !important;
+    }
+    .swiper-pagination-custom {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+    }
+    .swiper-pagination-custom li {
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        width: 24%;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .swiper-pagination-custom li:after {
+        content: '|';
+        position: relative;
+        bottom: -20px;
+        left: -7px;
+    }
+    .swiper-pagination-progressbar {
+        bottom: 0;
+        top: unset !important;
+    }
+    .full_width_immersive {
+        position: relative;
+    }
+    .text_immersive {
+        position: absolute;
+        bottom: 60px;
+        left: 60px;
+        color: white;
+        max-width: 550px;
+    }
+    .text_immersive h1 {
+        margin-bottom: 32px;
+        font-size: 48px;
+        line-height: 54px;
+        letter-spacing: -1px;
+    }
+    @media screen and (max-width: 864px) {
+        .text_immersive {
+            bottom: 20px !important;
+            left: 20px !important;
+        }
+        .immersive_button {
+            position: relative;
+            left: -10px;
+        }
+        .text_immersive h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            line-height: 42px;
+        }
+    }
+    .immersive_header {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
+    .immersive_header img, .immersive_header .swiper-slide {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+</style>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<promotions xmlns="http://www.demandware.com/xml/impex/promotion/2008-01-31">
+    <campaign campaign-id="testPromotionCampaign">
+        <description>Used for testing each scope of promotion (shipping, order, and line item).</description>
+        <enabled-flag>true</enabled-flag>
+        <campaign-scope>
+            <applicable-online/>
+        </campaign-scope>
+    </campaign>
+
+    <promotion promotion-id="testOrderPromo">
+        <enabled-flag>true</enabled-flag>
+        <archived-flag>false</archived-flag>
+        <searchable-flag>true</searchable-flag>
+        <exclusivity>no</exclusivity>
+        <name xml:lang="x-default">Test Order Promotion</name>
+        <callout-msg xml:lang="x-default">Order Level Promotion</callout-msg>
+        <order-promotion-rule>
+            <qualifying-products>
+                <included-products>
+                    <condition-group>
+                        <pricebook-condition operator="storefront price in (recursive)">
+                            <pricebook-id>kind-snacks-list-prices</pricebook-id>
+                        </pricebook-condition>
+                    </condition-group>
+                </included-products>
+            </qualifying-products>
+            <discount-only-qualifying-products>true</discount-only-qualifying-products>
+            <discounts condition-type="product-quantity">
+                <discount>
+                    <threshold>1</threshold>
+                    <percentage>20.0</percentage>
+                </discount>
+            </discounts>
+            <exclude-discounted-products>false</exclude-discounted-products>
+        </order-promotion-rule>
+    </promotion>
+
+    <promotion promotion-id="testProductPromo">
+        <enabled-flag>true</enabled-flag>
+        <archived-flag>false</archived-flag>
+        <searchable-flag>true</searchable-flag>
+        <exclusivity>no</exclusivity>
+        <name xml:lang="x-default">Test Product Level Promotion</name>
+        <callout-msg xml:lang="x-default">Test Product Level Promotion</callout-msg>
+        <product-promotion-rule>
+            <qualifying-products>
+                <included-products>
+                    <condition-group>
+                        <category-condition catalog-id="kind-snacks-storefront" operator="is equal">
+                            <category-id>kind-nut-bars</category-id>
+                        </category-condition>
+                    </condition-group>
+                </included-products>
+            </qualifying-products>
+            <bogo-discounts>
+                <bogo>
+                    <threshold>1</threshold>
+                    <percentage>50.0</percentage>
+                    <eligible-quantity>1</eligible-quantity>
+                </bogo>
+            </bogo-discounts>
+            <max-applications>1</max-applications>
+        </product-promotion-rule>
+    </promotion>
+
+    <promotion promotion-id="testShippingPromo">
+        <enabled-flag>true</enabled-flag>
+        <archived-flag>false</archived-flag>
+        <searchable-flag>false</searchable-flag>
+        <exclusivity>no</exclusivity>
+        <name xml:lang="x-default">Test Shipping Promotion</name>
+        <callout-msg xml:lang="x-default">Test Shipping Promotion</callout-msg>
+        <shipping-promotion-rule>
+            <qualifying-products>
+                <included-products>
+                    <condition-group>
+                        <category-condition catalog-id="kind-snacks-storefront" operator="is equal">
+                            <category-id>kind-nut-bars</category-id>
+                        </category-condition>
+                    </condition-group>
+                </included-products>
+            </qualifying-products>
+            <shipping-methods>
+                <method-id>001</method-id>
+            </shipping-methods>
+            <discounts condition-type="shipment-total">
+                <discount>
+                    <threshold>40.0</threshold>
+                    <free/>
+                </discount>
+            </discounts>
+            <max-applications>1</max-applications>
+        </shipping-promotion-rule>
+    </promotion>
+
+    <promotion-campaign-assignment promotion-id="testOrderPromo" campaign-id="testPromotionCampaign">
+        <qualifiers match-mode="all">
+            <customer-groups/>
+            <source-codes/>
+            <coupons/>
+        </qualifiers>
+        <coupons>
+            <coupon coupon-id="testOrderPromoCoupon"/>
+        </coupons>
+    </promotion-campaign-assignment>
+
+    <promotion-campaign-assignment promotion-id="testProductPromo" campaign-id="testPromotionCampaign">
+        <qualifiers match-mode="all">
+            <customer-groups/>
+            <source-codes/>
+            <coupons/>
+        </qualifiers>
+        <coupons>
+            <coupon coupon-id="testProductPromoCoupon"/>
+        </coupons>
+    </promotion-campaign-assignment>
+
+    <promotion-campaign-assignment promotion-id="testShippingPromo" campaign-id="testPromotionCampaign">
+        <qualifiers match-mode="all">
+            <customer-groups/>
+            <source-codes/>
+            <coupons/>
+        </qualifiers>
+        <coupons>
+            <coupon coupon-id="testShippingPromoCoupon"/>
+        </coupons>
+    </promotion-campaign-assignment>
+
+</promotions>

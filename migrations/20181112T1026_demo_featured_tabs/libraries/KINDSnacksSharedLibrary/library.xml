@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="sample_folder_2">
+        <display-name xml:lang="x-default">Sample Folder 2</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="kind-foundation">
+        <display-name xml:lang="x-default">KIND Foundation</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">rgb(97, 180, 228)</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">The KIND Foundation is a 501(c)(3) organization established by KIND that aims to foster kinder and more empathetic communities. Its mission is brought to life through a variety of programming meant to celebrate and inspire positive action. In 2016, through a program called KIND People, The KIND Foundation celebrated seven individuals transforming their communities through kindness with $1.1MM in prizes. In 2017, it will help mobilize young people to build kinder, more inclusive communities.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBodyColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND Foundation</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeadingColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;Learn More&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kindawesome">
+        <display-name xml:lang="x-default">#kindawesome</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#b4bf01</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">One of our favorite ways to spread and celebrate kindness is with #kindawesome cards. We hand out these cards when we see someone (friend, stranger or anyone in between!) doing a kind act. Each card has a special code, which the recipient can enter online to receive a token of KIND’s appreciation, as well as another #kindawesome card to pay it forward. We’ve found that the world is full of #kindawesomeness – you just have to be open to seeing it! Want to start spotting kindness with us?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">#kindawesome</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;Learn More&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="kind-acts">
+        <display-name xml:lang="x-default">KIND Acts</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">rgb(237, 170, 0);</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">At KIND, we spend a lot of time talking about what it means to be kind. From the healthy snacks we make to the way we work, live and give back, we are always focused on making the world a little kinder. In fact, 4 out of 5 team members say kindness is more top of mind for them since they joined KIND. Our goal is to keep that number rising! That’s why we empower all our team members to give back throughout the year – whether it’s through donated product, volunteer time or just doing the kind thing. To jump start your own kind activities, check out this weekly kind act tracker!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">KIND Acts</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;p&gt;&lt;a href="$url('Home-Show')$"&gt;Print Now&lt;/a&gt;&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

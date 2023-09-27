@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="chocolate">
+        <display-name xml:lang="x-default">Chocolate</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">who doesn't love a snack with chocolate?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Chocolate</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_chocolate_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'chocolate')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="fruit">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">think blueberry, cranberry, mango, apple and more!</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Fruit</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/flavor-banners/shop-by-flavor_fruit_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Search-Show', 'cid', 'fruit')$"&gt;See Products&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

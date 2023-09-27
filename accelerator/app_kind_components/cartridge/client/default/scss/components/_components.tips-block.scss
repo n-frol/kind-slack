@@ -1,0 +1,62 @@
+/* ============================================================================
+   Tips Block
+   ============================================================================ */
+
+/**
+ * Provides styles for the tips block component
+ */
+
+$ns: c-tips-block;
+
+.#{$ns} {
+    background-size: cover;
+    background-position: center center;
+
+    // Tips Block Wrapper
+    &__wrapper {
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+    }
+
+    // Tips Block Heading
+    &__heading {
+        font-size: 40px;
+        letter-spacing: -2px;
+        line-height: .9;
+        margin-bottom: 29px;
+    }
+
+    // Tips Block Body
+    &__body {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    // Tips Block Links {
+    &__links {
+        background-color: transparent;
+        border: none;
+        color: $black;
+        line-height: normal;
+        min-height: 0;
+        outline: none;
+        text-decoration: underline;
+        width: auto;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: transparent !important; // Important due to the strength of the button selectors
+            border: none !important; // Important due to the strength of the button selectors
+            color: $black;
+            outline: none;
+        }
+    }
+    &__tip {
+        cursor: pointer;
+        font-size: 24px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+}

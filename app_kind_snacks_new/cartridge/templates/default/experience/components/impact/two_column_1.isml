@@ -1,0 +1,108 @@
+<div class="impact_two_column_1_container">
+    <div class="impact_center marginme">
+        <div class="big">KIND <div class="small">impact report</div></div>
+        <div class="para paranomar">
+            a look at our collective impact <br />
+            - one act, one snack at a time.
+        </div>
+    </div>
+    <div>
+        <img src="${URLUtils.staticURL('/images/impact/grid3/Group 3277.png')}" alt="Impact Two Column 1 Image" />
+    </div>
+    <a target="_blank" href="${URLUtils.staticURL('/files/impactreport.pdf')}" class="primary dark red">Download PDF</a>
+</div>
+
+<style>
+    .impact_two_column_1_container .small {
+        font-size: 54px !important;
+        line-height: 64px !important;
+        margin-bottom: 30px;
+        font-family: main !important;
+    }
+    .primary.red {
+        position: absolute;
+        top: 20px !important;
+        right: 60px;
+        background: red !important;
+        color: white;
+        width: fit-content;
+    }
+    .primary.impact {
+        margin-bottom: 150px;
+        padding: 19px 70px !important;
+    }
+    .para {
+        margin-bottom: 32px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: main;
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 60px !important;
+    }
+    .big {
+        font-size: 140px;
+        line-height: 128px;
+        font-family: main;
+        letter-spacing: -1px;
+    }
+    .impact_two_column_1_container {
+        padding-top: 50px;
+        height: 700px;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background: #F5F5F5;
+        margin-bottom: 200px;
+        position: relative;
+    }
+    @media screen and (max-width: 440px) {
+        .paranomar {
+            margin-left: 0px !important;
+            padding-left: 0px !important;
+        }
+        .impact_two_column_1_container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: auto !important;
+            margin-bottom: 0px !important;
+        }
+        .impact_two_column_1_container div:first-child {
+            order: 2;
+        }
+        .impact_two_column_1_container div:last-child {
+            order: 1;
+            background: #F5F5F5;
+        }
+        .primary.impact {
+            margin-bottom: 20px !important;
+            position: relative;
+            left: -10px;
+        }
+        .impact_two_column_1_container .big .small {
+            font-size: 54px;
+            line-height: 61px;
+        }
+        .big {
+            font-size: 112px;
+            line-height: 101px;
+        }
+        .primary.red {
+            display: none;
+        }
+        .impact_two_column_1_container img {
+            height: auto !important;
+            width: 100% !important;
+        }
+        .impact_center {
+            align-self: center;
+            margin-left: 0px !important;
+        }
+    }
+    .impact_two_column_1_container img {
+        height: calc(100% + 100px);
+        width: 100%;
+        max-width: unset;
+        object-fit: contain !important;
+    }
+</style>

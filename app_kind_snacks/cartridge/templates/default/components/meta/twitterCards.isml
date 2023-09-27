@@ -1,0 +1,11 @@
+<iscomment> TEMPLATENAME: components/meta/twitterCards.isml </iscomment>
+<isset name="tc" value="${socialCards.twitter}" scope="page" />
+
+<iscomment> Twitter Card Meta Tags </iscomment>
+<meta name="twitter:url" content="${tc.URL}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${tc.title}" />
+<meta name="twitter:description" content="${tc.description}" />
+<meta name="twitter:image" content="${tc.image}" />
+<meta name="twitter:image:width" content="480" />
+<meta name="twitter:image:height" content="460" />

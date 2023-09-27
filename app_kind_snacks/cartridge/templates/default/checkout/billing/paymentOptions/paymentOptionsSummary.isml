@@ -1,0 +1,39 @@
+<div class="payment-details st-checkout-main__summary-details subtext"
+    data-pp-logo-url="${URLUtils.staticURL('/images/PP_logo_h_150x38.png')}"
+    data-pp-logo-alt="${Resource.msg('paymentmethod.paypal.alttext', 'paymentoperator', null)}">
+    <isloop items="${pdict.order.billing.payment.selectedPaymentInstruments}" var="payment" status="loopstatus">
+        <isif condition="${!empty(payment.paymentMethod)}">
+            <isif condition="${loopstatus.first}">
+                <!--- Payment information --->
+                <div class="summary-details">
+                    <h3 class="summary-section-label payment-info-label st-checkout-main__sub-title subtitle">${Resource.msg('label.order.payment.info', 'confirmation', null)}</h3>
+            </isif>
+            <isif condition="${payment.paymentMethod === 'CREDIT_CARD'}">
+                <isinclude template="checkout/billing/paymentOptions/creditCardSummary" />
+            <iselseif condition="${payment.paymentMethod === 'DW_APPLE_PAY'}">
+                <isinclude template="checkout/billing/paymentOptions/applePaySummary" />
+            <iselse>
+                <isscript>
+                    var methodTemplates = [
+                        'PAYMENTOPERATOR_CREDIT_DIRECT',
+                        'PAYMENTOPERATOR_EASYCREDIT',
+                        'PAYMENTOPERATOR_PAYPAL',
+                        'PAYMENTOPERATOR_PAYPALEXPRESS',
+                        'PayPal',
+                        'PAYONACCOUNT'
+                    ];
+                    var paymentTemplate;
+                    if (methodTemplates.indexOf(payment.paymentMethod) > -1) {
+                        paymentTemplate = 'checkout/billing/paymentOptions/paymentOperatorSummary/' + payment.paymentMethod.toUpperCase();
+                    }
+                </isscript>
+                <isif condition="${!empty(paymentTemplate)}">
+                    <isinclude template="${ paymentTemplate }" />
+                </isif>
+            </isif>
+            <isif condition="${loopstatus.last}">
+                </div>
+            </isif>
+        </isif>
+    </isloop>
+</div>

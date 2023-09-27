@@ -1,0 +1,56 @@
+
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+<div class="container s-slick position-relative">
+    <div class="c-byob-category-nav js-slider" data-infinite="true" data-slidestoshow="${pdict.prods.length < 5 ? pdict.prods.length : 5}"
+         data-slidestoscroll="5" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+         data-slidestoscroll-768="1" data-slidestoscroll-440="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3"
+         data-slidestoshow-768="2" data-slidestoshow-440="1" data-dots="true" data-mobiledots="false" data-arrows="true">
+        <isloop items="${pdict.prods}" var="p">
+            <isif condition="${p.brand != null}">
+                <isif condition="${p.name != null}">
+                    <div>
+                        <a href="${URLUtils.url('Product-Show', 'pid', p.ID)}">
+                    <img src="${responsiveImageUtils.getResponsiveImage(p.getImages('large')[0], 250, 250, "", "jpg").imageUrlDefault}" alt="${p.name}" />
+                    <div class="c-byob-category-nav__item__name namewithcaret">
+                        ${p.name}
+                    </div>
+                        </a>
+                    </div>
+                </isif>
+                <iselse>
+                    <isif condition="${p.displayName != null}">
+                        <div>
+                            <a href="${URLUtils.url('Search-Show', 'cgid', p.ID)}">
+                            <img src="${responsiveImageUtils.getResponsiveImage(p.custom.menu_image, 150).imageUrlDefault}" />
+                        <div class="c-byob-category-nav__item__name namewithcaret">
+                            ${p.displayName}
+                        </div>
+                            </a>
+                        </div>
+                    </isif>
+                </iselse>
+            </isif>
+        </isloop>
+    </div>
+    <div class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+        <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions that
+            imageCarousel.js won't have access to</iscomment>
+        <button
+            class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev d-none"
+            type="button" data-slide="prev">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+            <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+        </button>
+
+        <button
+            class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next d-none"
+            type="button" data-slide="next">
+                        <span
+                            class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+            <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+        </button>
+    </div>
+</div>

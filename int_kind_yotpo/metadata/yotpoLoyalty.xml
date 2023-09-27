@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Order">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="refundAmount">
+                <display-name xml:lang="x-default">Refund Amount</display-name>
+                <description xml:lang="x-default">That indicates the  refund amount </description>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+            <attribute-definition attribute-id="settlementAmount">
+                <display-name xml:lang="x-default">Settlement Amount</display-name>
+                <description xml:lang="x-default">That indicates the settlement amount </description>
+                <type>double</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="order">
+                <display-name xml:lang="x-default">Order</display-name>
+                <attribute attribute-id="refundAmount"/>
+                <attribute attribute-id="settlementAmount"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="yotpoLoyaltyApiKey">
+                <display-name xml:lang="x-default">x-api-key</display-name>
+                <description xml:lang="x-default">Your account API key can be found in the "Settings" section of your Yotpo loyalty admin.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="yotpoLoyaltyDebuggingEnabled">
+                <display-name xml:lang="x-default">Enable Service Loging</display-name>
+                <description xml:lang="x-default">Development purposes make sure is not enabled on production!</description>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="yotpoLoyaltyEnabled">
+                <display-name xml:lang="x-default">Enable Yotpo Loyalty</display-name>
+                <type>boolean</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <default-value>false</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="yotpoLoyaltyEndPointUrl">
+                <display-name xml:lang="x-default">Api end point url</display-name>
+                <description xml:lang="x-default">API endpoint</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="yotpoLoyaltyNewsletterActionName">
+                <display-name xml:lang="x-default">Newsletter Action Name</display-name>
+                <description xml:lang="x-default">The name of the action that was performed. This must match the name set for one of your Custom Action Campaigns.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+            <attribute-definition attribute-id="yotpoLoyaltyXguid">
+                <display-name xml:lang="x-default">x-guid</display-name>
+                <description xml:lang="x-default">The Globally Unique Identifier found in the "Settings" section of your Yotpo loyalty admin.</description>
+                <type>string</type>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+                <min-length>0</min-length>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="YotpoLoyalty">
+                <display-name xml:lang="x-default">Loyalty &amp; Referrals</display-name>
+                <attribute attribute-id="yotpoLoyaltyEndPointUrl"/>
+                <attribute attribute-id="yotpoLoyaltyXguid"/>
+                <attribute attribute-id="yotpoLoyaltyApiKey"/>
+                <attribute attribute-id="yotpoLoyaltyNewsletterActionName"/>
+                <attribute attribute-id="yotpoLoyaltyDebuggingEnabled"/>
+                <attribute attribute-id="yotpoLoyaltyEnabled"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

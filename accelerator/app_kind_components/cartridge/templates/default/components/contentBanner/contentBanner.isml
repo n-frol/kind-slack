@@ -1,0 +1,51 @@
+<isscript>
+    var GetResponsiveImage = require('app_kind_components/cartridge/scripts/util/responsiveImageUtils').getResponsiveImage;
+</isscript>
+
+<isif condition="${!empty(assetID) && (!empty(graphicalAsset.heading) || !empty(graphicalAsset.body)
+                || !empty(graphicalAsset.links))}">
+    <isinclude template="components/contentBanner/contentBanner_UI" />
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+        <div class="container c-content-banner__container">
+            <div class="row c-content-banner__row">
+    </isif>
+        <div class="c-content-banner ${assetID} th-kind-content-banner s-graphical-asset
+            <isif condition="${!empty(graphicalAsset.contentXPosition) && !empty(graphicalAsset.contentXPosition.value)}">c-content-banner--${graphicalAsset.contentXPosition.value}</isif>">
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                <div class="container c-content-banner__container">
+                    <div class="row c-content-banner__row">
+            </isif>
+                        <div class="c-content-banner__content">
+                            <isif condition="${!empty(graphicalAsset.heading)}">
+                                <div class="c-content-banner__heading">
+                                    <isprint value="${graphicalAsset.heading}" encoding="off" />
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(graphicalAsset.links)}">
+                                <div class="c-content-banner__links s-graphical-asset__links">
+
+                                    <isprint value="${graphicalAsset.links}" encoding="off" />
+                                </div>
+                            </isif>
+                        </div>
+                        <isif condition="${!empty(graphicalAsset.image)}">
+                            <isset name="responsiveImage" value="${GetResponsiveImage(graphicalAsset.image, 1096, null, '', 'jpg')}" scope="page" />
+                            <div class="c-content-banner__image__wrapper">
+                                <div class="c-content-banner__image__wrapper__inner">
+                                    <img class="c-content-banner__image" src="${responsiveImage.imageUrlDefault}"
+                                        srcset="${responsiveImage.imageUrlDefault},
+                                                        ${responsiveImage.imageUrlLarge} 2x"
+                                        alt="${graphicalAsset.heading ? graphicalAsset.heading : ''}" />
+                                </div>
+                            </div>
+                        </isif>
+            <isif condition="${empty(graphicalAsset.wrapper) || graphicalAsset.wrapper.value !== "contained"}">
+                    </div>
+                </div>
+            </isif>
+        </div>
+    <isif condition="${!empty(graphicalAsset.wrapper) && graphicalAsset.wrapper.value === "contained"}">
+            </div>
+        </div>
+    </isif>
+</isif>

@@ -1,0 +1,26 @@
+<isscript>
+var isObjectHas = Object.hasOwnProperty.call(pdict.results, 'productIds');
+var MAX_PRODUCTS = 3;
+var productCount = isObjectHas ? pdict.results.productIds.length <= MAX_PRODUCTS ? pdict.results.productIds.length : MAX_PRODUCTS : 0;
+
+</isscript>
+<ul>
+    <isif condition="${isObjectHas && productCount > 0}">
+        <isset name="counter" value="${0}">
+        <isloop items="${pdict.results.productIds}" var="productId" status="loopstate">
+            <isif condition="${loopstate.count <= productCount}">
+                <isscript>
+                    var product = dw.catalog.ProductMgr.getProduct(productId.productID);
+                </isscript>
+                <li>
+                    <a class="midmenu-suggest" href="${dw.web.URLUtils.url("Product-Show", "pid", productId.productID)}">
+                        ${product.name}
+                    </a>
+                </li>
+            </isif>
+        </isloop>
+    </isif>
+    <li class="suggestall">
+    <a style="text-transform:none;" href="${dw.web.URLUtils.url("Search-Show", "cgid", pdict.cat)}">Shop All </a>
+    </li>
+</ul>

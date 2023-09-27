@@ -1,0 +1,32 @@
+// ============================================================================
+// Clearfix
+// ============================================================================
+
+/// Mixin to drop micro clearfix into a selector. Further reading:
+/// http://www.cssmojo.com/the-very-latest-clearfix-reloaded/
+///
+/// @author PixelMEDIA (Jono Herrington)
+///
+/// @group Layout
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-clearfix();
+///   }
+///
+/// @example css - CSS Output
+///   .usage::after {
+///      content: "" !important;
+///      display: block !important;
+///      clear: both !important;
+///   }
+
+@mixin pxl-clearfix() {
+
+    &::after {
+        content: "" !important;
+        display: block !important;
+        clear: both !important;
+    }
+
+}

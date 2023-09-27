@@ -1,0 +1,59 @@
+<div class="bheader">
+<div class="bheadertext">
+    <div class="subtitle blue beyebrow">
+    <isprint value="${pdict.eyebrow}" encoding="off" />
+    </div>
+    <h2>
+    <isprint value="${pdict.header}" encoding="off" />
+    </h2>
+</div>
+</div>
+
+<style>
+    .bheader {
+        background: url("${pdict.image.src.desktop}");
+        height: 405px;
+        width: 100%;
+        max-width: 1500px;
+        display:flex;
+        align-items:center;
+    }
+
+    .bheader h2 {
+        line-height:48px;
+    }
+
+    .blue {
+        color: #5FB2E8;
+    }
+
+    .bheadertext {
+        padding-left:125px;
+        max-width:900px;
+    }
+
+    @media screen and (min-width:425px) and (max-width:780px) {
+        .bheadertext {
+            padding-left:25px;
+        }
+      }
+
+    @media screen and (max-width:425px) {
+        .bheader {
+            background: #ccc;
+            height: unset;
+            padding:10px;
+            line-height:32px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .bheadertext {
+            padding-top: 20px;
+            padding-left:5px;
+        }
+        .bheader h2 {
+            line-height:32px;
+        }
+    }
+</style>

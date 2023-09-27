@@ -1,0 +1,15 @@
+{
+  "name": "colorpicker",
+  "description": "colorpicker",
+  "resources": {
+      "scripts": [
+         "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js",
+         "https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js",
+         "/experience/editors/kind/js/colorpicker.js",
+          "/experience/editors/kind/colorpicker.js"
+      ],
+      "styles": [
+        "https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css"
+      ]
+  }
+}

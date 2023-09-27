@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+
+	<field formid="accountholdername" label="eps.accountholdername" type="string" mandatory="true"
+			missing-error="eps.accountholdernameerror"
+			range-error="eps.accountholdernameerror"/>
+
+	<field formid="iban" min-length="18" max-length="34"
+			label="eps.iban" type="string" mandatory="true"
+		   missing-error="eps.ibanerror"
+			value-error="eps.ibanerror"/>
+
+	<field formid="bic" min-length="8" max-length="11"
+			label="eps.bic" type="string" mandatory="true"
+		   missing-error="eps.bicerror"
+			value-error="eps.bicerror"/>
+
+</form>

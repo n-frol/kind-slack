@@ -1,0 +1,92 @@
+<div class="planet_grid_2">
+    <img class="mobile center" src="${URLUtils.staticURL('/images/impact/image 151.png')}" alt="Impact Planet 2 Image 1" />
+    <div class="griditem order2">
+        <img src="${URLUtils.staticURL('/images/impact/Frame 3055.png')}" alt="Impact Planet 2 Image 1" />
+    </div>
+    <div class="griditem">
+        <img class="desktop" src="${URLUtils.staticURL('/images/impact/image 151.png')}" alt="Impact Planet 2 Image 1" />
+        <div>
+        <div class="head">
+            a kinder way to grow food
+        </div>
+        <div class="copy">
+            It’s no secret that we love almonds. We use tens of millions of pounds of them in our snacks each year. We know regenerative agriculture (also called regen ag) in almonds is nascent, so helping to crack that nut could lower our emissions and lead the industry in a more sustainable direction.<br/><br/>
+            This April, we were proud to announce the <a class="normallink" href="/almonds.html">KIND Almond Acres Initiative</a>, a three-year, 500-acre pilot project to test regenerative agriculture practices and modern technologies on California almonds. At the KIND Almond Acres Initiative, we’re testing a unique combination of five different practices with the goal of increasing carbon and nutrients in the soil, reducing emissions, using less water, and supporting biodiversity. To make this happen, we’re working with key partners in the region and bringing our consumers along on this journey – providing transparency every step of the way.
+        </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    @media screen and (max-width: 440px) {
+        .griditem.order2 {
+            width: calc(100% - 40px) !important;
+            margin-left: 20px !important;
+            border-radius: 20px !important;
+        }
+        .center {
+            margin: auto !important;
+        }
+        .planet_grid_4 {
+            margin-left: 20px !important;
+            margin-right: 20px !important;
+            width: calc(100% - 40px) !important;
+        }
+        .planet_grid_4 .left img {
+            top: -100px !important;
+        }
+        .planet_grid_4 .griditem.left .head {
+            margin-top: 30px !important;
+        }
+        .planet_grid_3 .griditem {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .planet_grid_3 .griditem .copy {
+            text-align: left !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        .planet_grid_2 {
+            grid-template-columns: 1fr !important;
+            margin-top: 0px !important;
+            grid-gap: 40px !important;
+            width: 100% !important;
+            margin-left: 0px !important;
+            margin-top: 40px !important;
+            margin-bottom: 40px;
+        }
+        .planet_grid_2 .head, .planet_grid_2 .copy {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+    .planet_grid_2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 0px;
+        margin-top: 50px;
+        width: calc(100% - 120px);
+        margin-left: 60px;
+        padding-bottom: 50px;
+    }
+    .planet_grid_3 .copy {
+        font-family: main;
+    }
+    .planet_grid_2 .head {
+        font-size: 48px;
+        line-height: 54px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        margin-top: 30px;
+        font-family: main;
+    }
+    .planet_grid_2 .copy {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        font-family: medium;
+    }
+</style>

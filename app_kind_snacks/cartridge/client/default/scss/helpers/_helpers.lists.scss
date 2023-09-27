@@ -1,0 +1,95 @@
+// ============================================================================
+// Lists
+// ============================================================================
+
+// Mixin: pxl-list-flat()
+// ============================================================================
+
+/// Mixin to make an unordered or ordered list flat.
+///
+/// @author PixelMEDIA (Ralph Hansell / Jono Herrington)
+///
+/// @group Styling
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-list-flat();
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      list-style: none;
+///      margin-left: 0;
+///      padding-left: 0;
+///   }
+
+@mixin pxl-list-flat() {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+// Mixin: pxl-list-inline()
+// ============================================================================
+
+/// Mixin to make unordered or ordered list items inline.
+///
+/// @author PixelMEDIA (Ralph Hansell / Jono Herrington)
+///
+/// @group Styling
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-list-inline();
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      list-style: none;
+///      margin-left: 0;
+///      padding-left: 0;
+///   }
+///
+///   .usage > li {
+///      display: inline-block;
+///   }
+
+@mixin pxl-list-inline() {
+    @include pxl-list-flat();
+
+    & > li {
+        display: inline-block;
+    }
+
+}
+
+
+// Mixin: list-flex()
+// ============================================================================
+
+/// Mixin to make unordered or ordered list flat and display flex.
+///
+/// @author PixelMEDIA (Jono Herrington)
+///
+/// @group Styling
+///
+/// @example scss - Usage
+///   .usage {
+///      @include pxl-list-flex();
+///   }
+///
+/// @example css - CSS Output
+///   .usage {
+///      list-style: none;
+///      margin-left: 0;
+///      padding-left: 0;
+///      align-items: center;
+///      display: flex;
+///   }
+
+@mixin pxl-list-flex() {
+    @include pxl-list-flat();
+    align-items: center;
+    display: flex;
+}

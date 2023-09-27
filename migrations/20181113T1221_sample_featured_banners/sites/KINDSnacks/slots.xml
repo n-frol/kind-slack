@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slot-configurations xmlns="http://www.demandware.com/xml/impex/slot/2008-09-08">
+
+    <slot-configuration slot-id="folder-slot-c" context="folder" context-id="sample_folder_3" configuration-id="sample_featured-banner" default="true" assigned-to-site="true">
+        <template>slots/content/featuredBanner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <content-assets>
+                <content-asset content-id="kinds-promise"/>
+                <content-asset content-id="achieve-balance"/>
+            </content-assets>
+        </content>
+    </slot-configuration>
+
+</slot-configurations>

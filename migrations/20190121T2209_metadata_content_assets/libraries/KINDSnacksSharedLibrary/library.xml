@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+    <content content-id="cart-show">
+        <display-name xml:lang="x-default">Cart</display-name>
+        <description xml:lang="x-default">Shopping Cart</description>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="checkout-begin">
+        <display-name xml:lang="x-default">Checkout</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+    </content>
+
+    <content content-id="order-confirm">
+        <display-name xml:lang="x-default">Order Confirmation</display-name>
+        <online-flag>false</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+    </content>
+</library>

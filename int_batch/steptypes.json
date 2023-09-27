@@ -1,0 +1,1259 @@
+{
+  "step-types": {
+    "pipeline-step": [
+      {
+        "@type-id":"custom.batch.ExportOrders",
+        "pipeline":"BatchJobs-ExportOrders",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to export file",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filename to prepend to generated export",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ExportCustomers",
+        "pipeline":"BatchJobs-ExportCustomers",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to export file",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filename to prepend to generated export",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ExportPromotions",
+        "pipeline":"BatchJobs-ExportPromotions",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to export file",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filename to prepend to generated export",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ExportSourceCodes",
+        "pipeline":"BatchJobs-ExportSourceCodes",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to export file",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filename to prepend to generated export",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      }
+    ],
+    "script-module-step": [
+      {
+        "@type-id":"custom.batch.SendMail",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Email",
+        "function": "sendEmail",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "to",
+              "@description": "To Email",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "from",
+              "@description": "From email",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "subject",
+              "@description": "Subject",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportCatalogs",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importCatalog",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportInventoryLists",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importInventoryLists",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportPriceBooks",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importPriceBooks",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportCustomObjects",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importCustomObjects",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportGiftCertificates",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importGiftCertificates",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportContent",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importContent",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportKeyValueMappings",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importKeyValueMappings",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "mappingName",
+              "@description": "Key value mapping name to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "VALIDATION_ERROR",
+              "description": "Used on file validation error when file is skipped"
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for import"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.UploadFilesToS3",
+        "module": "int_batch/cartridge/scripts/batch/jobs/UploadFilesToS3",
+        "function": "uploadFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to upload files from",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to upload (i.e. Catalog-)",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "remotepath",
+              "@description": "Remote path on s3 consider files (default: default path on server for user or baseDir in service config)",
+              "@type": "string",
+              "@required": false
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for download"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.DownloadFilesFromS3",
+        "module": "int_batch/cartridge/scripts/batch/jobs/DownloadFilesFromS3",
+        "function": "downloadFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to download files to",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to download (i.e. Catalog-)",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "remotepath",
+              "@description": "Remote path on s3 consider files (default: default path on server for user or baseDir in service config)",
+              "@type": "string",
+              "@required": false
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for download"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.DownloadFilesFromFTP",
+        "module": "int_batch/cartridge/scripts/batch/jobs/DownloadFilesFromFTP",
+        "function": "downloadFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "servicename",
+              "@description": "Service name in BM Services to use for (s)FTP transfer",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to download files to",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to download (i.e. Catalog-)",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "remotepath",
+              "@description": "Remote path on s(FTP) server to consider files (default: default path on server for user or baseDir in service config)",
+              "@type": "string",
+              "@required": false
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for upload"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.UploadFilesToFTP",
+        "module": "int_batch/cartridge/scripts/batch/jobs/UploadFilesToFTP",
+        "function": "uploadFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "servicename",
+              "@description": "Service name in BM Services to use for (s)FTP transfer",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to upload files from",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to upload (i.e. Orders-)",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "remotepath",
+              "@description": "Remote path on s(FTP) server to place files (default: default path on server for user or baseDir in service config). This is appended to credential baseDir",
+              "@type": "string",
+              "@required": false
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for upload"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportTax",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importTax",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportShipping",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importShipping",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportCoupons",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importCoupons",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportSourceCodes",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importSourceCodes",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportPromotions",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importPromotions",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportCustomers",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importCustomers",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id":"custom.batch.ImportSlots",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Import",
+        "function": "importSlots",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to find files",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to import",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "importMode",
+              "@description": "Import Mode",
+              "@type": "string",
+              "@required": false,
+              "@default": "MERGE",
+              "@trim": true,
+              "enum-values": {
+                "value": [
+                  "MERGE",
+                  "REPLACE",
+                  "UPDATE",
+                  "DELETE"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.CleanupFiles",
+        "module": "int_batch/cartridge/scripts/batch/jobs/Cleanup",
+        "function": "cleanupFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "directory",
+              "@description": "Directory to cleanup",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "regexp",
+              "@description": "Regular express to match files for deletion",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "maxAgeDays",
+              "@description": "Files younger than this will not be considered for deletion",
+              "@type": "long"
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files are found for deletion"
+            }
+          ]
+        }
+      },
+      {
+        "@type-id": "custom.batch.UploadFilesToSFTP",
+        "module": "int_batch/cartridge/scripts/batch/jobs/xmlExports/uploadFilesToSFTP",
+        "function": "uploadFiles",
+        "parameters": {
+          "parameters": [
+            {
+              "@name": "servicename",
+              "@description": "Service name in BM Services to use for SFTP transfer",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "directory",
+              "@description": "Directory (within IMPEX/src) to upload files from",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "prefix",
+              "@description": "Prefix of filenames to upload (i.e. Orders-)",
+              "@type": "string",
+              "@required": true
+            },
+            {
+              "@name": "remotepath",
+              "@description": "Remote path on s(FTP) server to place files (default: default path on server for user or baseDir in service config). This is appended to credential baseDir",
+              "@type": "string",
+              "@required": false
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            },
+            {
+              "@code": "NO_FILES_FOUND",
+              "description": "Used when no files can be found for download"
+            }
+          ]
+        }
+      }
+    ],
+    "chunk-script-module-step": [
+      {
+        "@type-id":"custom.batch.adlucentProductFeed",
+        "@supports-organization-context": "false",
+        "chunk-size": 100,
+        "description": "Exports Products with custom attribute includeInProductFeed set as true",
+        "module": "int_batch/cartridge/scripts/batch/jobs/xmlExports/exportProducts",
+        "before-step-function":"beforeStep",
+        "total-count-function":"getTotalCount",
+        "read-function":"read",
+        "process-function":"process",
+        "write-function":"write",
+        "after-chunk-function":"afterChunk",
+        "after-step-function":"afterStep",
+        "parameters": {
+          "parameter": [
+            {
+              "@name": "directory",
+              "@description": "Subdirectory within the IMPEX directory to create the new export file in",
+              "@type": "string",
+              "@required": true
+            },{
+              "@name": "fileName",
+              "@description": "The name of the file to export with the current date appended to the end",
+              "@type": "string",
+              "@required": true
+            },{
+              "@name": "addTimeStampToFileName",
+              "@description": "Add the date to the filename",
+              "@type": "boolean",
+              "@required": true
+            },{
+              "@name": "jobName",
+              "@description": "The name of the job in lowercase (alducent or impact)",
+              "@type": "string",
+              "@required": true
+            }
+          ]
+        },
+        "status-codes": {
+          "status": [
+            {
+              "@code": "ERROR",
+              "description": "Used when an error occurred."
+            },
+            {
+              "@code": "OK",
+              "description": "Used when everything went well."
+            }
+          ]
+        }
+      },
+        {
+            "@type-id":"custom.batch.impactProductFeed",
+            "@supports-organization-context": "false",
+            "chunk-size": 100,
+            "description": "Exports Products with custom attribute includeInProductFeed set as true",
+            "module": "int_batch/cartridge/scripts/batch/jobs/xmlExports/exportProducts",
+            "before-step-function":"beforeStep",
+            "total-count-function":"getTotalCount",
+            "read-function":"read",
+            "process-function":"process",
+            "write-function":"write",
+            "after-chunk-function":"afterChunk",
+            "after-step-function":"afterStep",
+            "parameters": {
+                "parameter": [
+                    {
+                        "@name": "directory",
+                        "@description": "Subdirectory within the IMPEX directory to create the new export file in",
+                        "@type": "string",
+                        "@required": true
+                    },{
+                        "@name": "fileName",
+                        "@description": "The name of the file to export with the current date appended to the end",
+                        "@type": "string",
+                        "@required": true
+                    },{
+                        "@name": "addTimeStampToFileName",
+                        "@description": "Add the date to the filename",
+                        "@type": "boolean",
+                        "@required": true
+                    },{
+                        "@name": "jobName",
+                        "@description": "The name of the job in lowercase (alducent or impact)",
+                        "@type": "string",
+                        "@required": true
+                    }
+                ]
+            },
+            "status-codes": {
+                "status": [
+                    {
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when everything went well."
+                    }
+                ]
+            }
+        },
+        {
+            "@type-id":"custom.batch.facebookProductFeed",
+            "@supports-organization-context": "false",
+            "chunk-size": 100,
+            "description": "Exports Products with custom attribute includeInProductFeed set as true",
+            "module": "int_batch/cartridge/scripts/batch/jobs/facebook/exportProducts",
+            "before-step-function":"beforeStep",
+            "total-count-function":"getTotalCount",
+            "read-function":"read",
+            "process-function":"process",
+            "write-function":"write",
+            "after-chunk-function":"afterChunk",
+            "after-step-function":"afterStep",
+            "parameters": {
+                "parameter": [
+                    {
+                        "@name": "directory",
+                        "@description": "Subdirectory within the IMPEX directory to create the new export file in",
+                        "@type": "string",
+                        "@required": true
+                    },{
+                        "@name": "prefix",
+                        "@description": "The name of the file to export with the current date appended to the end",
+                        "@type": "string",
+                        "@required": true
+                    }
+                ]
+            },
+            "status-codes": {
+                "status": [
+                    {
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when everything went well."
+                    }
+                ]
+            }
+        }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+<div class="impact_two_column_1_container_welcome mobileme noreorder" style="background: white;">
+    <div class="impact_center">
+        <img class="fullwidth" src="${URLUtils.staticURL('/images/impact/Group 3188.png')}" alt="Impact Two Column 1 Image" />
+    </div>
+    <div class="impact_center">
+        <div class="big comm yesmargin">transforming our wrappers for good</div>
+        <div class="para yesmargin">
+            The <a class="normallink" href="/snackgiveback.html">KIND Snack & Give Back</a> project is a multi-year program designed to inspire kindness and empathy. Through the project, we wear our heart on our wrapper by showcasing custom designs and elevating communities that haven't received their fair share of kindness. We donate $50,000 annually to each non-profit supporting a community in need and partner with the organization on meaningful activations throughout the year. In 2022, we proudly welcomed Legacies Alive and FoodCorps as new partners and reaffirmed our longstanding partnership with The Ali Forney Center.
+        </div>
+    </div>
+</div>
+<style>
+    @media screen and (max-width: 440px) {
+        .big.comm.yesmargin, .impact_two_column_1_container_welcome.mobileme .yesmargin {
+            margin-left: 20px !important;
+        }
+    }
+    .noreorder div:first-child {
+        order: 1 !important;
+    }
+    .noreorder div:last-child {
+        order: 2 !important;
+    }
+    .big.comm {
+        font-size: 48px;
+        line-height: 54px;
+        margin-bottom: 30px;
+    }
+    .bluearea {
+        background: #61B3E4;
+        padding: 31px 46px;
+        position: relative;
+        border-radius: 20px;
+    }
+    .orange_para {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+        position: relative;
+        left: 90px;
+        width: 80%;
+    }
+    .bluearea img {
+        position: absolute;
+        left: -10px;
+        top: -40px;
+        z-index: 10;
+    }
+    .fullwidth {
+        width: 100%;
+    }
+    .primary.red {
+        position: absolute;
+        top: 0px;
+        right: 60px;
+        background: red !important;
+        color: white;
+        width: fit-content;
+    }
+    .primary.impact {
+        margin-bottom: 150px;
+    }
+    .impact_two_column_1_container_welcome .para {
+        margin-bottom: 90px;
+        font-size: 18px;
+        line-height: 24px;
+        font-family: medium;
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 60px;
+    }
+    .big.welcome {
+        font-size: 72px;
+        line-height: 58px;
+        font-family: main;
+        letter-spacing: -1px;
+        margin-bottom: 30px;
+    }
+    .impact_two_column_1_container_welcome {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        background: white;
+        margin-bottom: 80px;
+        position: relative;
+        width: calc(100% - 120px);
+        grid-gap: 160px;
+    }
+    .impact_two_column_1_container_welcome div {
+
+    }
+    @media screen and (max-width: 440px) {
+        .impact_two_column_1_container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: auto !important;
+            margin-bottom: 0px !important;
+        }
+        .impact_two_column_1_container div:first-child {
+            order: 2;
+        }
+        .impact_two_column_1_container div:last-child {
+            order: 1;
+            background: #F5F5F5;
+        }
+        .primary.impact {
+            margin-bottom: 20px !important;
+            position: relative;
+            left: -10px;
+        }
+        .big {
+            font-size: 112px;
+            line-height: 101px;
+        }
+        .primary.red {
+            display: none;
+        }
+        .impact_two_column_1_container img {
+            height: auto !important;
+            width: 100% !important;
+        }
+    }
+    .impact_center {
+        align-self: center;
+        margin-left: 0px !important;
+    }
+    .impact_two_column_1_container img {
+        height: calc(100% + 100px);
+        width: 100%;
+        max-width: unset;
+        object-fit: cover;
+    }
+</style>

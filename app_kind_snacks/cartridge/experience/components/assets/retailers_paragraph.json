@@ -1,0 +1,45 @@
+{
+  "name": "Retailers Page Paragraph",
+  "description": "Retailers Page Paragraph",
+  "group": "Retailers",
+  "attribute_definition_groups": [
+    {
+      "id": "retailers_paragraph",
+      "name": "Retailers Paragraph",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "left_text",
+          "name": "Left Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "right_text",
+          "name": "Right Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "bottom_text",
+          "name": "Bottom Text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "image_grid_content_asset",
+          "name": "Image Grid Content Asset ID",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "paragraph_pattern",
+          "name": "Paragraph Pattern",
+          "type": "image",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

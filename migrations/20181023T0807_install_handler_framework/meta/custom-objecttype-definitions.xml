@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="CommunicationHandlers">
+        <display-name xml:lang="x-default">Communication Handlers</display-name>
+        <description xml:lang="x-default">Configuration for Communication Handlers</description>
+        <staging-mode>source-to-target</staging-mode>
+        <storage-scope>site</storage-scope>
+        <key-definition attribute-id="instanceType">
+            <type>string</type>
+            <min-length>0</min-length>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="configJson">
+                <display-name xml:lang="x-default">Handler Configuration JSON</display-name>
+                <description xml:lang="x-default">Configuration JSON object for Communication Handlers</description>
+                <type>text</type>
+                <localizable-flag>false</localizable-flag>
+                <mandatory-flag>false</mandatory-flag>
+                <externally-managed-flag>false</externally-managed-flag>
+            </attribute-definition>
+        </attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="default">
+                <display-name xml:lang="x-default">Default</display-name>
+                <attribute attribute-id="instanceType"/>
+                <attribute attribute-id="configJson"/>
+            </attribute-group>
+        </group-definitions>
+    </custom-type>
+</metadata>

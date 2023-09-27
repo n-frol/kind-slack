@@ -1,0 +1,66 @@
+/* ============================================================================
+Cart: Coupon Display
+============================================================================ */
+
+/**
+ * Styles for display of Cart Coupon
+*/
+$ns: c-cart-coupon-display;
+
+.#{$ns} {
+    /**
+     * use !important - in global style this class has chain of parent classes
+    */
+    border: 0 !important;
+    margin-bottom: 20px;
+    padding: 0 !important;
+
+    &__code {
+        font-family: $font-family-primary;
+        font-size: 12px !important;
+        letter-spacing: 1.5px;
+        line-height: 16px;
+        text-transform: uppercase;
+
+        &__applied,
+        &__not-applied {
+            margin-left: 10px;
+        }
+        &__applied {
+            border: 1px solid $success;
+                border-top: 0;
+                border-left: 0;
+            display: inline-block;
+            height: 9px;
+            margin-top: 1px;
+            transform: rotate(45deg);
+            vertical-align: top;
+            width: 6px;
+        }
+        &__remove-btn {
+            border-radius: 50%;
+            color: $grey7;
+            cursor: pointer;
+            font-size: 20px;
+            height: 20px;
+            line-height: 10px;
+            min-height: 20px;
+            min-width: 20px;
+            padding: 0;
+                padding-bottom: 5px;
+            text-align: center;
+            width: 20px;
+            &:focus {
+                outline: none !important;
+            }
+        }
+    }
+    &__relationship {
+        color: $promo-red;
+        font-size: 14px !important;
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+        list-style-type: none;
+        padding-left: 0 !important;
+    }
+}

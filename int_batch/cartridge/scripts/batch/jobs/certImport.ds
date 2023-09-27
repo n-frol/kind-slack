@@ -1,0 +1,8 @@
+importPackage( dw.io );
+
+function execute()
+{
+    var f : File = new File(File.IMPEX +"/certs/qqqq.png");
+    f.createNewFile();
+    return PIPELET_NEXT;
+}

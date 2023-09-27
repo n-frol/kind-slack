@@ -1,0 +1,117 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/layout.css');
+    assets.addCss('/css/pagedesigner-bootstrap.min.css');
+    var theid = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+</isscript>
+<div style="margin:auto; text-align:center; background: ${pdict.bg}">
+    <h2 class="testhead">${pdict.head}</h2>
+    <div style="margin:auto; max-width:930px; width:90%; margin-bottom:30px;">${pdict.copy}</div>
+    <div class="byob-category-nav__wrap carousel-homepage-byob careerslider">
+        <div class="container s-slick position-relative">
+            <div class="c-byob-category-nav js-slider" data-infinite="true" data-slidestoshow="3"
+                data-slidestoscroll="${pdict.slidescount}" data-slidestoscroll-1200="5" data-slidestoscroll-1024="3"
+                data-slidestoscroll-768="1" data-slidestoshow-1200="5" data-slidestoshow-1024="3" data-slidestoshow-440="1" data-slidestoscroll-440="1"
+                data-slidestoshow-768="2" data-dots="true" data-arrows="true" data-border="true">
+                <div class="testimonial">
+                    <isprint value="${pdict.regions.column1.setClassName(" region region_landscape - small " + pdict.id).render()}" encoding="off" />                
+                </div>
+                <div class="testimonial">
+                    <isprint value="${pdict.regions.column2.setClassName(" region region_landscape - small " + pdict.id).render()}" encoding="off" />
+                </div>
+                <div class="testimonial">
+                    <isprint value="${pdict.regions.column3.setClassName(" region region_landscape - small " + pdict.id).render()}" encoding="off" />
+                </div>
+            </div>
+            <div
+                class="js-slider__controls c-byob-category-nav__slider__controls c-slick-slider__controls controls-black">
+                <iscomment>Hide arrows here so jQuery can get them. Allows for generating buttons using SFRA functions
+                    that
+                    imageCarousel.js won't have access to</iscomment>
+                <button
+                    class="carousel-control-prev js-slider__controls__prev c-slick-slider__controls__arrow c-byob-category-nav__slider__controls__arrow c-slick-slider__controls__prev c-slick-slider__controls__arrow--byob c-slick-slider__controls__prev--home slick-prev"
+                    type="button" data-slide="prev">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__prev-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__prev-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+                </button>
+
+                <button
+                    class="carousel-control-next js-slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next c-slick-slider__controls__arrow--byob c-slick-slider__controls__next--home c-byob-category-nav__slider__controls__arrow slick-next"
+                    type="button" data-slide="next">
+                    <span
+                        class="c-slick-slider__controls__arrow-inner c-slick-slider__controls__next-inner c-slick-slider__controls__arrow-inner--byob c-slick-slider__controls__next-inner--byob c-byob-category-nav__slider__controls__arrow"></span>
+                    <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function showreadmore(c) {
+$(c).hide();
+$(c).parent().children(".readmoretext").show();
+}
+
+</script>
+
+<style>
+div.slick-active .js-slider {
+    border-right: 1px solid #000000;
+}
+
+div.slick-active + div.slick-active + div.slick-active .js-slider {
+    border-right: 0;
+}
+
+.border-right--no {
+  border-right: 0;
+}
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+div.slick-active + div.slick-active .js-slider {
+    border-right: 0;
+}    top: 310px;
+}
+@media screen and (max-width: 440px) {
+div.slick-active .js-slider {
+    border-right: 0;
+}    top: 310px;
+}
+</style>
+
+<style>
+.carousel-homepage-byob .s-slick .slick-list {
+    padding-bottom: 0px;
+}
+.testhead {
+    font-size:30px;
+}
+.c-slick-slider__controls__next {
+    top: 350px !important;
+    right: 15px !important;
+    display:none;
+}
+.c-slick-slider__controls__prev {
+    top: 350px !important;
+    left: 15px !important;
+    display:none;
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.carousel-homepage-byob .c-slick-slider__controls__prev, .carousel-homepage-byob .c-slick-slider__controls__next {
+    top: 310px;
+}
+}
+@media screen and (max-width: 440px) {
+.carousel-homepage-byob .c-slick-slider__controls__prev {
+    top: 310px;
+    left: 20px !important;
+}
+.carousel-homepage-byob .c-slick-slider__controls__next {
+    top: 310px;
+    right: 20px !important;
+}
+}
+</style>

@@ -1,0 +1,73 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<nav class="navbar st-primary-nav__navbar navbar-expand-md bg-inverse col-12">
+    <div class="close-menu st-primary-nav__close-menu clearfix d-lg-none">
+        <div class="back">
+            <a href="${'#0'}" class="st-primary-nav__close-menu__link" role="button">
+                ${Resource.msg('link.header.menu.back', 'common', null)}
+            </a>
+        </div>
+    </div>
+    <div class="menu-group st-primary-nav__menu-group" aria-label="Main menu" role="navigation">
+        <ul class="nav navbar-nav st-primary-nav__menu" role="menu">
+            <li class="nav-item dropdown st-primary-nav__item st-shop-navigation js-shop-nav" role="menuitem">
+                <span class="nav-link st-primary-nav__link dropdown-toggle st-primary-nav__dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">${Resource.msg('global.header.shop', 'common', null)}</span>
+                <div class="dropdown-menu st-primary-nav__dropdown st-shop-navigation__menu s-shop-navigation__menu js-shop-navigation__menu" role="menu" aria-hidden="true">
+                    <div class="container st-shop-navigation__menu__container js-shop-navigation__menu__container">
+                        <div class="row st-shop-navigation__menu__row">
+                            <div class="c-featured-nav s-featured-nav hidden-md-down">
+                            <isif condition="${dw.system.Site.getCurrent().name === "Kind B2B"}" >
+                                    <iscontentasset aid="featured-navigation-b2b" />
+                                <iselse>
+                                    <iscontentasset aid="featured-navigation" />
+                                </isif>
+                            </div>
+
+                            <ul class="c-top-level-cat-nav st-shop-navigation__menu__list">
+                                <isif condition="${pdict.categories}">
+
+                                    <isscript>
+                                        var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+                                    </isscript>
+
+                                    <isloop items="${pdict.categories}" var="category">
+                                        <li class="nav-item" role="menuitem">
+                                            <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" role="button" class="nav-link st-shop-navigation__menu__link c-top-level-cat-nav__link">
+                                                <isset name="catObject" value="${dw.catalog.CatalogMgr.getCategory(category.id)}" scope="page" />
+                                                <isset name="catThumb" value="${URLUtils.staticURL('images/noimagelarge.png')}" scope="page" />
+                                                <isset name="catThumbSrcset" value="" scope="page" />
+
+                                                <isif condition="${!empty(catObject) && !empty(catObject.thumbnail)}">
+                                                    <isset name="responsiveImg" value="${responsiveImageUtils.getResponsiveImage(catObject.thumbnail, 135, 270, '', 'jpg')}" scope="page" />
+                                                    <isset name="catThumb" value="${responsiveImg.imageUrlDefault}" scope="page" />
+                                                    <isset name="catThumbSrcset" value="${responsiveImg.imageUrlDefault + ', ' + responsiveImg.imageUrlLarge + ' 2x'}" scope="page" />
+                                                </isif>
+
+                                                <img src="${catThumb}" class="c-top-level-cat-nav__link__img" alt="${category.name}" <isif condition="${!empty(catThumbSrcset)}">srcset="${catThumbSrcset}"</isif> /><br />
+                                                <span class="c-top-level-cat-nav__link__label">${category.name}</span>
+                                            </a>
+                                        </li>
+                                    </isloop>
+                                </isif>
+                            </ul>
+                            <div class="s-secondary-shop-nav d-lg-none">
+                                <iscontentasset aid="shop-secondary-navigation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <div class="s-header-nav js-header-nav">
+            <isif condition="${dw.system.Site.getCurrent().name === "Kind B2B"}" >
+                <iscontentasset aid="header-navigation-b2b" />
+            <iselseif condition="${dw.system.Site.getCurrent().name === "KIND Snacks"}"/>
+                <iscontentasset aid="header-navigation-kind-snacks" />
+            <iselse>
+                <iscontentasset aid="header-navigation" />
+            </isif>
+            </div>
+            <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />
+            <isinclude url="${URLUtils.url('Page-Locale', 'mobile', true)}" />
+        </ul>
+    </div>
+</nav>

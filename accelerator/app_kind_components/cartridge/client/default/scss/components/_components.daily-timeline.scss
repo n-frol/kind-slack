@@ -1,0 +1,101 @@
+/* ============================================================================
+   Daily Timeline
+   ============================================================================ */
+
+/**
+ * Provides styles for the daily timeline component
+ */
+
+// !imporatant used to overwrite ugly bootstrap or a class that has chain of parent classes
+
+$ns: c-daily-timeline;
+.#{$ns} {
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    &__entry {
+        // Adjust the start point for the anchor without actually moving the content
+        margin-top: -150px;
+        padding-top: 150px;
+
+        @include media-breakpoint-up(lg) {
+            // Adjust the start point for the anchor without actually moving the content
+            margin-top: -100px;
+            padding-top: 100px;
+        }
+    }
+    // Create a stronger selector
+    & &__row {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    &__icon {
+        max-width: 30px;
+    }
+    &__timeline {
+        display: flex;
+            align-items: center;
+        flex: 0 1 100%;
+        height: 28px;
+        max-width: 100%;
+        margin-left: 35px;
+        margin-right: 35px;
+        position: relative;
+
+        &__line {
+            background-color: $black;
+            display: inline-block;
+            height: 2px;
+            width: 100%;
+        }
+        &__links {
+            display: flex;
+                align-items: center;
+                justify-content: space-between;
+            height: 100%;
+            position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+            transform: translateY(-50%);
+        }
+        &__link {
+            display: flex;
+                align-items: center;
+                justify-content: center;
+            height: 100%;
+            width: 7px;
+
+            &::after {
+                background-color: $black;
+                border-radius: 100%;
+                content: '';
+                display: inline-block;
+                height: 7px;
+                max-width: 100%;
+                width: 100%;
+            }
+
+            &--selected {
+                cursor: default;
+                overflow: visible;
+
+                &::after {
+                    background-color: $grey6;
+                    box-shadow: 0 3px 8px 0 rgba(0,0,0,.25);
+                    flex: 0 0 24px;
+                    height: 24px;
+                    max-width: 24px;
+                }
+
+                &:hover {
+                    cursor: default;
+
+                    &::after {
+                        filter: drop-shadow(0 4px 8px #222);
+                    }
+                }
+            }
+        }
+    }
+}

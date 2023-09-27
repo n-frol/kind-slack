@@ -1,0 +1,18 @@
+<script>
+  (function() {
+    if (!window.PWR_INCLUDE) {
+      var d = document;
+      var t = 'script';
+      var i = function(src) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.src = src;
+        s.parentNode.insertBefore(g, s);
+      }
+      i('https://ui.powerreviews.com/stable/4.0/ui.js');
+      i("${URLUtils.https('PowerReviews-Config.js')}");
+      i("${URLUtils.httpsStatic('/js/powerreviews.js')}");
+      window.PWR_INCLUDE = true;
+    }
+  })();
+</script>

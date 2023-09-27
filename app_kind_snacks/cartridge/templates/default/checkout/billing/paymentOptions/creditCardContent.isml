@@ -1,0 +1,22 @@
+<!--- applicable credit cards--->
+<isscript>
+    var formHelpers = require('/int_computop/cartridge/scripts/computop/helpers/formHelpers');
+    var customerPaymentInstruments = pdict.customer.customerPaymentInstruments
+    var filteredData = formHelpers.filterApplePayPaymentInstrument(customerPaymentInstruments);
+</isscript>
+
+<div class="tab-pane credit-card-content" id="credit-card-content" role="tabpanel">
+    <iscomment>
+        The default credit card form is hidden, but it still needs to be
+        rendered on the page for the Payment Operator credit card payment method
+        (PAYMENTOPERATOR_CREDIT_DIRECT) to work properly.
+    </iscomment>
+    <fieldset class="credit-card-form checkout-hidden">
+        <isinclude template="checkout/billing/creditCardForm" />
+        <isif condition="${pdict.customer.registeredUser}">
+            <button class="btn btn-block cancel-new-payment btn-outline-primary c-form-elements__btn ${pdict.customer.registeredUser && filteredData.length ? '' : 'checkout-hidden'}" type="button">
+                ${Resource.msg('button.back.to.stored.payments', 'checkout', null)}
+            </button>
+        </isif>
+    </fieldset>
+</div>

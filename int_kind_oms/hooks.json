@@ -1,0 +1,8 @@
+{
+    "hooks": [
+        {
+            "name": "app.kind.oms.update.payment.summary",
+            "script": "./cartridge/scripts/hooks/paymentSummary"
+        }
+    ]
+}

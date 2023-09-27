@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="footer-column-1">
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h3&gt;&lt;a class="title" href="#"&gt;Shop&lt;/a&gt;&lt;/h3&gt;&#13;
+                &lt;ul class="menu-footer content"&gt;&#13;
+                &lt;li&gt;&lt;a href="#" title="Shop All Products"&gt;Shop All&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;li&gt;&lt;a href="https://wholesale.kindsnacks.com/customer/account/login/" title="Wholesale" target="_blank"&gt;Wholesale&lt;/a&gt;&lt;/li&gt; &lt;!-- UPDATE WHEN WE HAVE THE PAGE/CONTENT --&gt;&#13;
+                &lt;/ul&gt;&lt;!-- END: footer_about --&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

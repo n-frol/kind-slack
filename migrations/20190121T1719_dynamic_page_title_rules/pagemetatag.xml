@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page-meta-tags xmlns="http://www.demandware.com/xml/impex/pagemetatag/2016-08-22">
+    <page-meta-tag-rules>
+        <product-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="pdp-title" meta-tag-id="title">
+                <rule xml:lang="x-default">${IF Product.pageTitle THEN Product.pageTitle ELSE Product.name} ${Product.custom.productType} | ${Site.displayName}</rule>
+            </page-meta-tag-rule>
+        </product-detail-page-meta-tag-rules>
+        <product-listing-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="plp-title" meta-tag-id="title">
+                <description>Page Title or Category Slug &amp; Site Name</description>
+                <rule xml:lang="x-default">${IF Category.pageTitle THEN Category.pageTitle ELSE Category.custom.categorySlug AND(' | ') Site.displayName }</rule>
+            </page-meta-tag-rule>
+        </product-listing-page-meta-tag-rules>
+        <content-detail-page-meta-tag-rules>
+            <page-meta-tag-rule rule-id="cdp-title" meta-tag-id="title">
+                <description>Content Detail Page Dynamic Page Titles</description>
+                <rule xml:lang="x-default">${IF Content.pageTitle THEN Content.pageTitle ELSE Content.name} | ${Site.displayName}</rule>
+            </page-meta-tag-rule>
+        </content-detail-page-meta-tag-rules>
+    </page-meta-tag-rules>
+</page-meta-tags>

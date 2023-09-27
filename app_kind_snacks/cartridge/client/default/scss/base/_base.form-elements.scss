@@ -1,0 +1,338 @@
+/* ============================================================================
+   Form Elements
+   ============================================================================ */
+
+/**
+ * Form element styles for text, radio, checkbox, select, and textarea fields.
+ * This also includes label styles.
+ */
+
+/**
+ * 1. Enforces input to be block level
+ * 2. Bases form elements at 16px to avoid mobile zoom
+ * 3. Enables tranitions between default and focus states
+ * 4. Makes inputs responsive
+ * 5. Replaces browser default focus
+ */
+
+ // Radio button label placeholders so they can be used by other elements in other contexts if needed
+.notop {
+    margin-top: 0px !important;
+}
+ %radio-label-styles {
+    color: $primary;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    margin-bottom: 18px;
+    padding-left: 28px;
+    position: relative;
+
+    &:hover {
+        color: $grey4;
+    }
+
+    &::before {
+        background: transparent;
+        border-radius: 50%;
+        border: 2px solid $primary;
+        content: '';
+        height: 16px;
+        position: absolute;
+            left: 0px;
+            top: 3px;
+        width: 16px;
+    }
+
+    &::after {
+        background: $primary;
+        border-radius: 50%;
+        content: '';
+        height: 8px;
+        position: absolute;
+            left: 4px;
+            top: 7px;
+        transition: all 0.2s ease;
+        width: 8px;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    &.label--large {
+        font-family: $font-family-secondary;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        padding-left: 36px;
+        padding-top: 5px;
+        text-transform: none;
+
+        @include media-breakpoint-up(md) {
+            line-height: 1.75;
+        }
+
+        &::before {
+            height: 24px;
+            width: 24px;
+        }
+        &::after {
+            height: 16px;
+            width: 16px;
+        }
+    }
+}
+%radio-label-styles--checked {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select,
+.custom-select, // Working against webpack:///./node_modules/bootstrap/scss/_forms.scss
+.form-control { // Working against webpack:///./node_modules/bootstrap/scss/_custom-forms.scss
+    border: 2px solid $primary;
+    border-radius: 0px;
+    display: block; /* [1] */
+    font-family: $font-family-primary;
+    font-size: 16px; // iOS zoom fix
+    font-weight: 400;
+    min-height: 48px;
+    padding: 0 10px;
+    transition: $transition-primary; /* [3] */
+    width: 100%; /* [4] */
+
+    @include media-breakpoint-up(md) {
+        font-size: 14px; /* [2] */
+    }
+
+    &:focus {
+        border-color: $primary; /* [5] */
+        box-shadow: none;
+        outline: 0;
+    }
+
+    &:disabled {
+        border-color: $grey3;
+        color: $grey3;
+        background-color: $white;
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+    .form-caption {
+        padding-top: 6px;
+    }
+}
+
+// Custom Select
+@supports (appearance: none) {
+    select, .knd-custom-select {
+        appearance: none;
+        position: relative;
+
+        &::after {
+            color: $primary;
+            content: "\f107";
+            font-family: FontAwesome;
+            font-size: 16px;
+            pointer-events: none;
+            position: absolute;
+                top: 6px;
+                right: 20px;
+        }
+    }
+}
+
+// Bootstrap block-level help text in forms
+.form-text {
+    background-color: lightgray; /* [1] */
+    color: $grey7;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+select {
+    font-family: $font-family-primary;
+    padding-right: 0px; // For IE
+
+    &.custom-select {
+        &--white {
+            @supports (appearance: none) {
+                @include background-svg($svg-arrow-down-white);
+            }
+        }
+    }
+}
+
+/**
+ * 1. Creates separtation between input and label text
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: 12px; /* [1] */
+
+    + label:hover::before {
+        border-color: $grey4;
+    }
+}
+
+.form-check {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+// Custom Radio Buttons
+[type="radio"] {
+    position: absolute;
+        left: -9999px;
+
+    + label {
+        @extend %radio-label-styles;
+    }
+
+    &:checked + label::after {
+            @extend %radio-label-styles--checked;
+    }
+
+}
+
+// Extend bootstrap wrapper class
+.form-check {
+    line-height: 1.4;
+    margin-bottom: 18px;
+
+    input[type="radio"] + label {
+        margin-bottom: 0;
+    }
+    .form-caption {
+        display: block;
+    }
+}
+
+// Custom Checkboxes
+[type="checkbox"] {
+    position: absolute;
+        left: -9999px;
+
+    + label {
+        color: $primary;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 24px;
+        margin-bottom: 20px;
+        padding-left: 28px;
+        position: relative;
+
+        &:hover {
+            color: $grey4;
+        }
+    }
+
+    + label::before {
+        background: transparent;
+        border: 2px solid $primary;
+        content: '';
+        display: inline-block;
+        height: 16px;
+        padding-left: 0;
+        position: absolute;
+            left: 0px;
+            top: 3px;
+        width: 16px;
+    }
+
+    + label::after {
+        background: $primary;
+        content: '';
+        height: 8px;
+        position: absolute;
+            left: 4px;
+            top: 7px;
+        transition: all 0.2s ease;
+        width: 8px;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    &:checked + label::after {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/**
+ * 1. Separates labels from body text
+ */
+
+label,
+.form-control-label {
+    color: $primary;
+    font-family: $font-family-primary;
+    font-size: 14px;
+    font-weight: 700; /* [1] */
+    letter-spacing: -0.3px;
+    line-height: normal;
+    margin-bottom: 12px;
+    text-transform: lowercase;
+}
+
+
+textarea {
+    border-radius: 0px;
+    border: 2px solid gray;
+    display: block; /* [1] */
+    font-family: $font-family-primary;
+    font-size: 14px; /* [2] */
+    font-weight: 400;
+    padding: 10px;
+    transition: $transition-primary; /* [3] */
+    width: 100%; /* [4] */
+
+    &:focus {
+        border-color: $primary; /* [5] */
+        outline: 0;
+    }
+
+    &:disabled {
+        opacity: .5;
+
+        &:hover {
+            cursor: not-allowed;
+        }
+
+    }
+
+}
+
+
+fieldset {
+    border: 0;
+    @media screen and (max-width:440px) {
+        overflow-x: hidden;
+    }
+}
+
+input {
+    font-family: $font-family-primary;
+    color: $primary;
+}
+
+.form-caption {
+    display: inline-block;
+    font-family: $font-family-primary;
+    font-size: 12px;
+    text-transform: lowercase;
+}

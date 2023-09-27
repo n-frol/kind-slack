@@ -1,0 +1,93 @@
+{
+    "name": "Header",
+    "description": "Header",
+    "group": "headers",
+    "attribute_definition_groups": [
+        {
+            "id": "item_definition",
+            "name": "Item Definition",
+            "description": "Item Definition",
+            "attribute_definitions": [
+                {
+                    "id": "style",
+                    "name": "Style",
+                    "type": "enum",
+                    "values": ["stacked", "sidebyside", "single"],
+                    "required": false
+                },
+                {
+                    "id": "header",
+                    "name": "Header",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "background",
+                    "name": "Background Color",
+                    "type": "custom",
+                    "editor_definition": {
+                        "type": "kind.colorpicker"
+                    },
+                    "required": false
+                },
+                {
+                    "id": "headersize",
+                    "name": "Header Font Size",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "headerlh",
+                    "name": "Header Line Height",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "headersizemobile",
+                    "name": "Header Font Size Mobile",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "headerlhm",
+                    "name": "Header Line Height Mobile",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "descriptionsize",
+                    "name": "Desc Font Size",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "descriptionsizemobile",
+                    "name": "Desc Font Size Mobile",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "desclh",
+                    "name": "Desc Line Height",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "desclhm",
+                    "name": "Desc Line Height Mobile",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": [
+    ]
+}
+

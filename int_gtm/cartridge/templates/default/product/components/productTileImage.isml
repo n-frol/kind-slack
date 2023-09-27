@@ -1,0 +1,53 @@
+<isscript>
+    var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+</isscript>
+
+<div class="c-product-tile__image-container image-container">
+    <isset name="imgSrc" value="" scope="page" />
+    <isset name="imgSrcset" value="" scope="page" />
+    <isset name="quickShopBadgePushTrigger" value="${dw.system.Site.current.getCustomPreferenceValue('quickShopBadgePushTrigger')}" scope="page" />
+
+    <isif condition="${!empty(pdict.responsiveImages && false)}">
+        <isset name="imageIndex" value="${product.tileIndex}" scope="page" />
+        <isset name="responsiveImg" value="${pdict.responsiveImages[imageIndex]}" scope="page" />
+        <isset name="imgSrc" value="${responsiveImg.imageUrlDefault}" scope="page" />
+        <isset name="imgSrcset" value="${responsiveImg.imageUrlDefault + ', ' + responsiveImg.imageUrlLarge + ' 2x'}" scope="page" />
+        <isset name="hoverImage" value="${null}" scope="page" />
+        <isif condition="${product.tileHoverEnable && pdict.responsiveImages.length > 1 && pdict.responsiveImages[1] != null}">
+            <isset name="hoverImageIndex" value="${product.tileHoverIndex}" scope="page" />
+            <isset name="hoverImage" value="${pdict.responsiveImages[hoverImageIndex]}" scope="page" />
+            <isset name="hoverImageSrc" value="${hoverImage.imageUrlDefault}" scope="page" />
+            <isset name="hoverImageSrcSet" value="${hoverImage.imageUrlDefault + ', ' + hoverImage.imageUrlLarge + ' 2x'}" scope="page" />
+        </isif>
+    <iselse>
+        <isset name="imgSrc" value="${URLUtils.staticURL('images/noimagemedium.jpg')}" scope="page" />
+    </isif>
+
+
+    <img class="c-product-tile__image-container__image tile-image"
+        src="${imgSrc}"
+        <isif condition="${hoverImage != null}">
+        data-hover="${hoverImageSrc}"
+        data-hoversrcset="${hoverImageSrcSet}"
+        data-origsrc="${imgSrc}"
+        data-origsrcset="${imgSrcset}"
+        </isif>
+        <isif condition="${!empty(imgSrcset)}">
+        srcset="${imgSrcset}"
+        </isif>
+        itemprop="image"
+        alt="${!empty(product.images) && !empty(product.images.large) && !empty(product.images.large[0]) ? product.images.large[0].alt : product.productName}"
+        title="${!empty(product.images) && !empty(product.images.large) && !empty(product.images.large[0]) ? product.images.large[0].title : product.productName}" />
+    <isif condition="${pdict.display.showQuickView}">
+        <button class="c-product-tile__image-container__quickview quickview btn btn-primary"
+        data-link="${pdict.urls.quickView}"
+        data-is-blocked-access="${!empty(product.isBlockedAccess) && product.isBlockedAccess}"
+        data-impulse-upsell="${product.impulseUpsell || false}"
+        data-gtm-badge-name="${pdict.display.badge && !empty(product.raw.custom.badge.value) && !product.outOfStock
+        && quickShopBadgePushTrigger.indexOf(product.raw.custom.badge.value) > -1 ? product.raw.custom.badge.displayValue : null}"
+        title="${Resource.msg('button.quickview', 'common', null)}"
+        type="button">
+            <isprint value="${Resource.msg('button.quickview', 'common', null)}" encoding="off" />
+        </button>
+    </isif>
+</div>

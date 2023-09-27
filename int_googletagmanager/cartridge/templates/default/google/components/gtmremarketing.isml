@@ -1,0 +1,145 @@
+<isset name="criteoEnabled" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerCriteoEnabled')}" scope="page">
+<isset name="adwordsEnabled" value="${dw.system.Site.current.getCustomPreferenceValue('googleTagManagerAdwordsEnabled')}" scope="page">
+<script>
+	function getCookie(cname) {
+		var name = cname + "=",
+			ca = document.cookie.split(';'),
+			i,
+			c,
+			ca_length = ca.length;
+		for (i = 0; i < ca_length; i += 1) {
+			c = ca[i];
+			while (c.charAt(0) === ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) !== -1) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+</script>
+
+<isif condition="${pdict.pagetype === 'homepage'}">
+	<isif condition="${criteoEnabled}">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'PageType': 'HomePage'
+		});
+	</script>
+	</isif>
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'google_tag_params': {
+					ecomm_pagetype: 'home'
+				}
+			});
+		</script>
+	</isif>
+<iselseif condition="${pdict.pagetype === 'category'}">
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			var pathname = window.location.pathname;
+			dataLayer.push({
+				'google_tag_params': {
+					ecomm_pagetype: 'category',
+					ecomm_category: '${pdict.category}'
+				}
+			});
+		</script>
+	</isif>
+<iselseif condition="${pdict.pagetype === 'searchresults'}">
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				google_tag_params: {
+					ecomm_pagetype: 'searchresults'
+				}
+			});
+		</script>
+	</isif>
+<iselseif condition="${pdict.pagetype === 'product' && !empty(pdict.product)}">
+	<isif condition="${criteoEnabled}">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'PageType': 'ProductPage',
+			'ProductID':  <isprint value="${JSON.stringify(pdict.product.ID)}" encoding="off">
+		});
+	</script>
+	</isif>
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				google_tag_params: {
+					ecomm_pagetype: 'product',
+					ecomm_prodid: <isprint value="${JSON.stringify(pdict.product.id)}" encoding="off">,
+                    ecomm_pname: <isprint value="${JSON.stringify(pdict.product.productName)}" encoding="off">,
+                <isif condition="${!empty(pdict.product.category)}">
+                    ecomm_category: <isprint value="${JSON.stringify(pdict.product.category.id)}" encoding="off">,
+                </isif>
+				<isif condition="${!empty(pdict.product.price.sales)}">
+					ecomm_totalvalue: ${pdict.product.price.sales.value}
+				<iselseif condition="${!empty(pdict.product.price.list)}">
+					ecomm_totalvalue: ${pdict.product.price.list.value}
+				</isif>
+				}
+			});
+		</script>
+	</isif>
+<iselseif condition="${pdict.pagetype === 'cart' && !empty(pdict.items)}">
+	<isscript>
+		var productIDs = [];
+        var productNames = [];
+		var productList = [];
+		for (var i=0; i<pdict.items.length; i++) {
+			var pli = pdict.items[i];
+			productIDs.push(pli.productId);
+			productList.push({id: pli.productId, price: pli.proratedPrice.decimal, quantity: pli.quantity});
+            productNames.push(pli.productName);
+		}
+	</isscript>
+	<isif condition="${criteoEnabled}">
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		dataLayer.push({
+			'PageType': 'BasketPage',
+			'ProductBasketProducts':  <isprint value="${JSON.stringify(productList)}" encoding="off">
+		});
+	</script>
+	</isif>
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				google_tag_params: {
+					ecomm_pagetype: 'cart',
+					ecomm_prodid: <isprint value="${JSON.stringify(productIDs)}" encoding="off">,
+                    ecomm_pname: <isprint value="${JSON.stringify(productNames)}" encoding="off">,
+					ecomm_totalvalue: ${pdict.totals.subTotal.replace('$', '').replace(',', '')}
+				}
+			});
+		</script>
+	</isif>
+
+<iselseif condition="${pdict.pagetype === 'purchase' && !empty(pdict.lineitemcontainer)}">
+	<iscomment>Handled in googletagmanagerpurchase.isml</iscomment>
+<iselse>
+	<isif condition="${adwordsEnabled}">
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				google_tag_params: {
+					ecomm_pagetype: 'other'
+				}
+			});
+		</script>
+	</isif>
+</isif>
+

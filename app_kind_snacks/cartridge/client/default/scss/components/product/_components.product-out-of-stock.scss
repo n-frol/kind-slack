@@ -1,0 +1,32 @@
+/* ============================================================================
+PDP Out of Stock
+============================================================================ */
+
+/**
+ * Establish styles for the out of stock block on the PDP.
+ */
+
+$ns: c-product-out-of-stock;
+
+.#{$ns} {
+    &__message {
+        font-size: 14px;
+        margin: 10px 0 0;
+        line-height: 1.2;
+    }
+    &.boxed {
+        border: 2px solid $primary;
+        padding: 24px 18px 20px;
+        width: 100%;
+    
+        @include media-breakpoint-up(md) {
+            padding: 32px 28px 22px;
+        }
+    
+        &__message {
+            letter-spacing: .2px;
+            margin-bottom: 10px;
+            text-transform: lowercase;
+        }
+    }
+}

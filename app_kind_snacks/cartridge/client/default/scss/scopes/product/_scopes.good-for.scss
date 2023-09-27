@@ -1,0 +1,58 @@
+/* ============================================================================
+Product "Good For"
+============================================================================ */
+
+/**
+ * Establishes a scope and styles HTML elements from the product detail goodFor
+ */
+
+$ns: s-product-good-for;
+
+.#{$ns} {
+    ul {
+        display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        line-height: 2.3;
+        list-style: none;
+
+        @include media-breakpoint-up(md) {
+            line-height: 1.8;
+        }
+    }
+    li {
+        letter-spacing: .4px;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        &:not(:first-child) {
+            @include media-breakpoint-up(md) {
+                margin-top: -3px;
+            }
+        }
+        &::after {
+            content: ',';
+            padding-left: 4px;
+        }
+        &:first-child,
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+
+        strong {
+            flex: 0 0 74px;
+            font-family: $font-family-primary;
+            font-size: 18px;
+            letter-spacing: -0.5px;
+            line-height: 1.33;
+            text-transform: inherit;
+        }
+        a {
+            border-bottom: 2px solid $primary;
+            padding-bottom: 4px;
+            text-decoration: none;
+        }
+    }
+}

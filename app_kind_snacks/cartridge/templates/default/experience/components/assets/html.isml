@@ -1,0 +1,25 @@
+<isif condition="${pdict.width == "Railed"}">
+    <div class="container">
+        <isprint value="${pdict.html}" encoding="off" />
+    </div>
+    <iselse>
+    <div class="fullscreen">
+        <isprint value="${pdict.html}" encoding="off" />
+    </div>
+</isif>
+<style>
+    .fullscreen {
+        width: 100%;
+        padding:0px;
+    }
+    .purehtml-center {
+        display: flex !important;
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .region:before {
+        content: unset;
+    }
+</style>

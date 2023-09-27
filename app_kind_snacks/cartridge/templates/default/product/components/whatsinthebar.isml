@@ -1,0 +1,60 @@
+<isif condition="${!empty(product.featuredAssets)}">
+    <isscript>
+        var responsiveImageUtils = require('*/cartridge/scripts/util/responsiveImageUtils');
+    </isscript>
+
+    <div class="s-slick">
+        <div class="c-product-witb__slider js-slider" <isinclude template="product/components/slickSliderData" sf-toolkit="off">>
+            <isloop items="${product.featuredAssets}" var="assetId">
+                <isset name="asset" value="${dw.content.ContentMgr.getContent(assetId)}" scope="page" />
+
+                <isif condition="${empty(asset)}">
+                    <iscontinue>
+                </isif>
+
+                <div class="c-product-witb__slide">
+                    <div class="c-product-witb__slide__inner">
+                        <div class="c-product-witb__slide__content">
+                            <isif condition="${!empty(asset.custom.graphicalAssetEyebrow)}">
+                                <div class="c-product-witb__slide__content__eyebrow">
+                                    ${asset.custom.graphicalAssetEyebrow}
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(asset.custom.graphicalAssetHeading)}">
+                                <h3 class="c-product-witb__slide__content__heading">${asset.custom.graphicalAssetHeading}</h3>
+                            </isif>
+                            <isif condition="${!empty(asset.custom.graphicalAssetBody)}">
+                                <div class="c-product-witb__slide__content__body">
+                                    ${asset.custom.graphicalAssetBody}
+                                </div>
+                            </isif>
+                        </div>
+                        <div class="c-product-witb__slide__image__wrap">
+                            <isset name="image" value="${asset.custom.graphicalAssetImage}" scope="page" />
+
+                            <isif condition="${!empty(image)}">
+                                <isset name="responsiveImageNormal" value="${responsiveImageUtils.getResponsiveImage(image, 798, null, '', 'jpg')}" scope="page" />
+                                <isset name="responsiveImageSmall" value="${responsiveImageUtils.getResponsiveImage(image, 375, '', 'jpg')}" scope="page" />
+
+
+                                <img src="${responsiveImageNormal.imageUrlDefault}"  class="c-product-witb__slide__image" alt="${image.title}"
+                                srcset="${responsiveImageSmall.imageUrlDefault + ' 375w, ' + responsiveImageSmall.imageUrlLarge + ' 750w, ' + responsiveImageNormal.imageUrlDefault + ' 798w, ' + responsiveImageNormal.imageUrlLarge + ' 1596w'}" />
+                            </isif>
+                        </div>
+                    </div>
+                </div>
+            </isloop>
+        </div>
+        <div class="c-product-witb__slider__controls c-slick-slider__controls js-slider__controls controls-black">
+            <iscomment>Hide arrows here so jQuery can get them.  Allows for generating buttons using SFRA functions that imageCarousel.js won't have access to</iscomment>
+            <button class="carousel-control-prev c-product-witb__slider__controls__arrow c-product-witb__slider__controls__prev c-slick-slider__controls__arrow c-slick-slider__controls__prev js-slider__controls__prev slick-prev d-none" type="button" data-slide="prev">
+                <span class="sr-only">${Resource.msg('button.previous', 'common', null)}</span>
+            </button>
+
+            <button class="carousel-control-next c-product-witb__slider__controls__arrow c-product-witb__slider__controls__next c-slick-slider__controls__arrow c-slick-slider__controls__next js-slider__controls__next slick-next d-none" type="button" data-slide="next">
+                <span class="sr-only">${Resource.msg('button.next', 'common', null)}</span>
+            </button>
+
+        </div>
+    </div>
+</isif>

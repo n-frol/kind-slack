@@ -1,0 +1,653 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+<div class="header_pin" style="height: 125vh; width: 100vw;">
+    <div class="container_immersiveheader immersivecontainer" id="immersiveheader">
+    <section class="panel" data-pin="true">
+        <div class="panel_wrapper">
+            <a style="${pdict.opacity}" href="javascript:void(0)" aria-label="scroll down to next section" class="scroll_indicator_scroll">
+                <svg class="svgpause" width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30 59C46.0163 59 59 46.0163 59 30C59 13.9837 46.0163 1 30 1C13.9837 1 1 13.9837 1 30C1 46.0163 13.9837 59 30 59ZM30 60C46.5685 60 60 46.5685 60 30C60 13.4315 46.5685 0 30 0C13.4315 0 0 13.4315 0 30C0 46.5685 13.4315 60 30 60Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M37.3445 34.3431L30.9805 40.7071C30.59 41.0976 29.9569 41.0976 29.5663 40.7071L23.2024 34.3431C22.8118 33.9526 22.8118 33.3195 23.2024 32.9289C23.5929 32.5384 24.2261 32.5384 24.6166 32.9289L29.2734 37.5858L29.2734 22H31.2734L31.2734 37.5858L35.9303 32.9289C36.3208 32.5384 36.954 32.5384 37.3445 32.9289C37.735 33.3195 37.735 33.9526 37.3445 34.3431Z" fill="white"/>
+                </svg>
+            </a>
+            <div class="image_gradient ${pdict.theme}"></div>
+            <video alt="kind orchard video" class="full_image immersive_video" playsinline autoplay muted loop>
+                <source media="all and (max-width: 440px" src="${pdict.full_image.httpsURL}" type="video/mp4">
+                <source src="${pdict.full_image.httpsURL}" type="video/mp4">
+            </video>
+            <button class="buttonPlay" aria-label="Play" style="display:none">
+                <svg class="svgplay" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="17.5" fill="black" fill-opacity="0.01" stroke="#FEFEFE"/>
+                    <path d="M24.1211 18L15.4811 24.2354L15.4811 11.7646L24.1211 18Z" fill="white"/>
+                </svg>            </button>
+            <button class="buttonPause" aria-label="Pause">
+                <svg class="svgpause" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <circle cx="18" cy="18" r="17.5" fill="black" fill-opacity="0.01" stroke="#FEFEFE"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14 12C14.5523 12 15 12.4477 15 13V23C15 23.5523 14.5523 24 14 24C13.4477 24 13 23.5523 13 23V13C13 12.4477 13.4477 12 14 12Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.668 12C22.2203 12 22.668 12.4477 22.668 13V23C22.668 23.5523 22.2203 24 21.668 24C21.1157 24 20.668 23.5523 20.668 23V13C20.668 12.4477 21.1157 12 21.668 12Z" fill="white"/>
+                </svg>
+            </button>
+            <div class="slide-in-text text1">
+                the way we grow food isn’t sustainable for the planet or a growing population
+            </div>
+            <div class="slide-in-text text2">
+                could we help by being kinder to the soil?
+            </div>
+            <div class="slide-in-text text3">
+                by testing how we grow our #1 ingredient more sustainably on a living, learning lab
+            </div>
+            <div class="slide-in-text text4">
+                taking best practices from regenerative agriculture and combining them with new technology?
+            </div>
+            <div class="slide-in-text text5">
+                welcome to the KIND Almond Acres Initiative
+                <div class="movedownnow" style="clear:both">
+                    <a class="youtubemodal primary light play" style="text-decoration: none; right: unset; padding: 3px 20px;"
+                       href="javascript:void(0)">WATCH VIDEO
+                        <svg class="playwhite" width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20.3935 8C17.0276 8 16.6055 8.01383 15.2836 8.0722C13.9645 8.13047 13.0636 8.33336 12.2752 8.62995C11.4603 8.93662 10.7691 9.34696 10.0801 10.0141C9.39112 10.6812 8.96733 11.3505 8.65064 12.1396C8.34425 12.9028 8.13478 13.7751 8.07453 15.0524C8.01424 16.3323 8 16.741 8 20C8 23.259 8.01424 23.6677 8.07453 24.9476C8.13478 26.2249 8.34425 27.0972 8.65064 27.8604C8.96736 28.6495 9.39116 29.3188 10.0801 29.9859C10.7691 30.653 11.4603 31.0634 12.2752 31.3701C13.0636 31.6666 13.9645 31.8695 15.2836 31.9278C16.6055 31.9862 17.0276 32 20.3935 32C23.7593 32 24.1814 31.9862 25.5033 31.9278C26.8224 31.8695 27.7233 31.6666 28.5116 31.3701C29.3266 31.0634 30.0177 30.653 30.7068 29.9859C31.3958 29.3188 31.8196 28.6495 32.1363 27.8604C32.4426 27.0972 32.6521 26.2249 32.7123 24.9476C32.7726 23.6677 32.7869 23.259 32.7869 20C32.7869 16.741 32.7726 16.3323 32.7123 15.0524C32.6521 13.7751 32.4426 12.9028 32.1363 12.1396C31.8196 11.3505 31.3958 10.6812 30.7068 10.0141C30.0177 9.34696 29.3266 8.93662 28.5116 8.62995C27.7233 8.33336 26.8224 8.13047 25.5033 8.0722C24.1814 8.01383 23.7593 8 20.3935 8ZM20.3935 10.1621C23.7026 10.1621 24.0946 10.1744 25.4015 10.2321C26.6098 10.2855 27.266 10.481 27.7027 10.6453C28.2813 10.863 28.6941 11.123 29.1277 11.5429C29.5615 11.9629 29.83 12.3626 30.0549 12.9227C30.2246 13.3456 30.4265 13.981 30.4816 15.151C30.5412 16.4163 30.5538 16.7959 30.5538 20C30.5538 23.2041 30.5412 23.5837 30.4816 24.849C30.4265 26.019 30.2246 26.6544 30.0549 27.0772C29.83 27.6374 29.5615 28.0371 29.1277 28.457C28.6941 28.877 28.2812 29.137 27.7028 29.3547C27.266 29.519 26.6098 29.7145 25.4015 29.7679C24.0948 29.8256 23.7029 29.8379 20.3934 29.8379C17.084 29.8379 16.6921 29.8256 15.3854 29.7678C14.1771 29.7145 13.5208 29.519 13.0842 29.3547C12.5056 29.137 12.0928 28.877 11.6591 28.457C11.2255 28.0371 10.9569 27.6374 10.732 27.0773C10.5623 26.6544 10.3604 26.019 10.3053 24.849C10.2457 23.5837 10.233 23.2041 10.233 20C10.233 16.7959 10.2457 16.4163 10.3053 15.151C10.3604 13.981 10.5623 13.3456 10.732 12.9228C10.9569 12.3626 11.2255 11.9629 11.6591 11.543C12.0928 11.123 12.5057 10.863 13.0841 10.6453C13.5208 10.481 14.1771 10.2855 15.3854 10.2321C16.6923 10.1744 17.0843 10.1621 20.3934 10.1621" fill="white"/>
+                            <path d="M20.3877 24C18.106 24 16.2565 22.2091 16.2565 20C16.2565 17.7908 18.106 15.9999 20.3877 15.9999C22.6692 15.9999 24.5188 17.7908 24.5188 20C24.5188 22.2091 22.6692 24 20.3877 24ZM20.3877 13.8378C16.8728 13.8378 14.0234 16.5967 14.0234 20C14.0234 23.4032 16.8728 26.1621 20.3877 26.1621C23.9025 26.1621 26.7518 23.4032 26.7518 20C26.7518 16.5967 23.9025 13.8378 20.3877 13.8378ZM28.4905 13.5943C28.4905 14.3896 27.8246 15.0343 27.0033 15.0343C26.182 15.0343 25.5161 14.3896 25.5161 13.5943C25.5161 12.799 26.182 12.1543 27.0033 12.1543C27.8246 12.1543 28.4905 12.799 28.4905 13.5943Z" fill="white"/>
+                            <circle cx="20" cy="20" r="20" fill="white"/>
+                            <path d="M26.8008 20L17.2008 26.9282L17.2008 13.0718L26.8008 20Z" fill="black"/>
+                        </svg>
+                        <svg class="playblack" width="39" height="41" viewBox="0 0 39 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="19.3333" cy="20.3104" rx="19.3333" ry="20" fill="black"/>
+                            <path d="M25.9072 20.3104L16.6272 27.2386L16.6272 13.3822L25.9072 20.3104Z" fill="white"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <img src="${pdict.left_image.src.desktop}" alt="${pdict.left_image.alt}" class="upperleft rounded1" />
+            <img src="${pdict.right_image.src.desktop}" alt="${pdict.right_image.alt}" class="upperright rounded1" />
+            <img src="${pdict.mid_image.src.desktop}" alt="${pdict.mid_image.alt}" class="uppermid rounded1" />
+            <div class="slide5mid rounded1" data-img="${pdict.mid_image2.src.desktop}" />
+    </section>
+</div>
+</div>
+
+<div class="ytmodal" style="position:fixed; top: 0; left:0; display: none;">
+    <div class="modalpadding">
+        <iframe id="youtube-iframe" class="youtube-iframe" width="100%" height="90%" src="https://www.youtube.com/embed/UV8pz0lr19A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="close_flyout">
+            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"> <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" fill="white"></path> </svg>
+        </div>
+    </div>
+</div>
+
+<style>
+    .rounded1 {
+        border-radius: 20px;
+    }
+</style>
+
+<script>
+    $(".youtubemodal").on("click", function() {
+        var clone = jQuery(".ytmodal").find(".modalpadding").clone();
+        jQuery(".modal_content").html(clone);
+        jQuery(".full_modal").show();
+        jQuery(".modal_content").show();
+        jQuery(".modal_content").css("transform", "none");
+        jQuery(".modal_content").css("left", "0");
+        jQuery(".modal_content").css("top", "0");
+        jQuery(".modal_content").css("width", "100vw");
+        jQuery(".modal_content").css("height", "100vh");
+    });
+    $(document).on('click', '.close_flyout', function() {
+        jQuery(".full_modal").hide();
+        jQuery(".modal_content").hide();
+        console.log("closing frame");
+        $('.youtube-iframe').each(function(index) {
+            console.log("kill video");
+            $(this).attr('src', $(this).attr('src'));
+            return false;
+        });
+    });
+</script>
+
+<style>
+    .closemodal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 100000;
+    }
+    .modalpadding {
+        padding: 60px;
+        background: rgba(0,0,0,.5);
+    }
+    .modal_content {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100000;
+    }
+    html, body {
+        overflow: initial !important;
+    }
+    .row {
+        margin: 0px !important;
+    }
+    .image_gradient {
+        z-index: 1;
+    }
+    .primary.play .playwhite {
+        display: none;
+    }
+    .primary.play .playblack {
+        display: inline-block;
+        right: -40px;
+        position: relative;
+        top: 0px;
+    }
+    .movedownnow a {
+        text-decoration: none !important;
+        text-align: left;
+        padding-left: 35px !important;
+    }
+    @media screen and (max-width: 440px) {
+        .playblack {
+            float: right;
+            right: 10px;
+            left: unset !important;
+        }
+        .scroll_indicator_scroll {
+            right: 20px !important ;
+        }
+        .buttonPause, .buttonPlay {
+            top: 100px !important;
+            left: 20px !important;
+        }
+        .primary.play .playblack, .primary.play .playwhite {
+            right: -10px !important;
+        }
+    }
+    .primary.play:hover .playwhite {
+        display: inline-block;
+        right: -40px;
+        position: relative;
+    }
+    .primary.play:hover .playblack {
+        display: none;
+        text-decoration: none;
+    }
+
+    .buttonPause, .buttonPlay {
+        z-index: 555;
+        position: absolute;
+        top: 100px;
+        left: 60px;
+        width: unset;
+        background: none;
+    }
+    .buttonPause, .buttonPlay:hover {
+        background: none;
+        background-color: transparent !important;
+    }
+    .movedownnow {
+        right: unset;
+        position: relative;
+        top: 20px;
+    }
+    .primary.play {
+        background: white !important;
+        color: black !important;
+        width: 250px;
+        padding: 3px 40px;
+    }
+    @media screen and (min-width: 700px) {
+        .primary.play {
+            width: 250px !important;
+            padding: 3px 40px;
+        }
+    }
+    .primary.play:hover {
+        background: black !important;
+        color: white !important;
+    }
+    @media screen and (max-width: 864px) {
+        .primary.play {
+            width: 100%;
+            padding: 10px 20px !important;
+            text-decoration: none;
+        }
+        .slide-in-text {
+            width: 70%;
+        }
+    }
+    .movedownnow {
+        right: unset;
+        position: relative;
+        top: 20px;
+    }
+    .dynamic_link.play {
+        background: white !important;
+        color: black !important;
+        width: 210px;
+    }
+    .scroll_indicator_scroll {
+        position: absolute;
+        bottom: 60px;
+        right: 60px;
+        z-index: 10000;
+    }
+    .experience-component {
+        width: 100vw;
+    }
+    .container_immersiveheader .panel img {
+        object-fit: cover;
+    }
+    .upperleft {
+        position: absolute;
+        left: -380px;
+        top: 60px;
+    }
+    .upperright {
+        opacity: 0;
+        position: absolute;
+        right: -300px;
+        bottom: 60px;
+        min-width: 290px;
+        height: 440px;
+        width: 440px;
+    }
+    .uppermid {
+        opacity: 0;
+        top: -500px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .panel_wrapper {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        text-align: center;
+        background: black;
+    }
+    @media screen and (max-width: 440px) {
+        .panel_wrapper {
+            height: 90vh;
+        }
+        .full_image {
+            max-height: 90vh !important;
+        }
+    }
+    .full_image {
+        height: 100vh;
+        width: 100vw;
+        margin: auto;
+        object-fit: cover;
+        position: relative;
+    }
+    .panel {
+        width: 100vw;
+        height: 100%;
+        position: relative;
+    }
+    .container_immersiveheader {
+         overscroll-behavior: none;
+         width: 100vw;
+         height: 100%;
+         display: flex;
+         flex-wrap: nowrap;
+         font-family: main;
+         overflow: hidden !important;
+     }
+    @media screen and (max-width: 440px) {
+        .container_immersiveheader {
+            height: 80%;
+        }
+        .slide-in-text {
+            font-size: 36px !important;
+            line-height: 42px !important;
+        }
+    }
+
+    .panel {
+        flex-direction: column;
+        width: 100%;
+        display: flex;
+    }
+    .slide-in-text {
+        position: absolute;
+        bottom: 60px;
+        left: -680px;
+        color: white;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 54px;
+        max-width: 650px;
+        text-align: left;
+        z-index: 50;
+    }
+    .pl-2, .px-2 {
+        padding: 0px !important;
+    }
+    body {
+        position: relative;
+    }
+    .st-global-footer__wrapper {
+        padding-bottom: 36px !important;
+    }
+</style>
+
+<script>
+    var v = document.getElementsByClassName('immersive_video')[0];
+    var play = document.getElementsByClassName('buttonPlay')[0];
+    var pause = document.getElementsByClassName('buttonPause')[0];
+    document.getElementsByClassName('buttonPlay')[0].addEventListener('click',function(e){
+        v.play();
+        play.style.display = "none";
+        pause.style.display = "block";
+    },true);
+    /* pause button */
+    document.getElementsByClassName('buttonPause')[0].addEventListener('click',function(e){
+        v.pause();
+        pause.style.display = "none";
+        play.style.display = "block";
+    },true);
+
+    function toggleVideo(player)
+    {
+        player.paused ? player.play() : player.pause();
+        if (player.paused) {
+            play.style.display = "block";
+            pause.style.display = "none";
+        } else {
+            play.style.display = "none";
+            pause.style.display = "block";
+        }
+    }
+
+    $(".col-12").removeClass("px-2");
+    $(document).on("click", ".scroll_indicator_scroll", function() {
+        gsap.to(window, {scrollTo: ".experience-assets-dynamic_introduction"}, false);
+        //$('html,body').animate({ scrollTop: $(this).closest(".experience-component").prop("scrollHeight") + scrolldist}, 800);
+    });
+
+    let sections = gsap.utils.toArray(".panel");
+    const stopPanel = sections.findIndex((section) => section.dataset.pin);
+    let scrolldist = 2000;
+    let mm = gsap.matchMedia();
+
+    mm.add("(max-width: 863px)", () => {
+    const tlmobile = gsap.timeline({
+        defaults: {
+            ease: "none"
+        },
+        scrollTrigger: {
+            trigger: ".header_pin",
+            pin: true,
+            scrub: true,
+            disableUserInteraction: true,
+            pinSpacing: true,
+            ease: 'none',
+            end: "+=3800",
+        }
+    })
+        .to(sections, {
+            xPercent: -(100 * stopPanel),
+            duration: stopPanel,
+        })
+        .to(".slide-in-text.text1", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 0)
+        .to(".full_image", {
+            width: "80vw", height: "80vh", top: "10vh",
+            duration: 1
+        }, 2)
+        .to(".slide-in-text.text1", {
+            opacity: 0, y: 0, x: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 4)
+        .to(".slide-in-text.text2", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 6)
+        .to(".full_image", {
+            width: "40vw", height: "70vh", top: "15vh",
+            duration: 1
+        }, 6)
+        .to(".slide-in-text.text2", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 8)
+        .to(".full_image", {
+            opacity: 0,
+            duration: 1
+        }, 8)
+        .to(".upperleft", {
+            opacity: 1, y: 0, x: 40,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".upperright", {
+            opacity: 1, y: 0, x: -130, bottom: 560,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".uppermid", {
+            opacity: 1, y: 800, scale:.8, x: 0, opacity: 1,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".slide-in-text.text3", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".slide-in-text.text3", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 12)
+        .to(".upperleft", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 12)
+        .to(".uppermid", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 12)
+        .to(".slide-in-text.text4", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 14)
+        .to(".upperright", {
+            opacity: 1, width: "50vh", height: "90vh", bottom: 0, top: 0, right: 0, x: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 14)
+        .to(".full_image", {
+            width: "100vw", height: "90vh", top: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 18)
+        .to(".upperright", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".full_image", {
+            opacity: 1,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".slide-in-text.text4", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".slide-in-text.text5", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".scroll_indicator_scroll", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+    });
+
+    mm.add("(min-width: 864px)", () => {
+    const tl = gsap.timeline({
+        defaults: {
+            ease: "none"
+        },
+        scrollTrigger: {
+            trigger: ".container_immersiveheader",
+            pin: true,
+            scrub: 5,
+            end: "+=4000",
+            onEnter: function () {
+                $(".buttonPause, .buttonPlay").css("top", "180px");
+            },
+        }
+    })
+        .to(sections, {
+            xPercent: -(100 * stopPanel),
+            duration: stopPanel,
+        })
+        .to(".slide-in-text.text1", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 0)
+        .to(".full_image", {
+            width: "50vw",
+            duration: 1
+        }, 2)
+        .to(".slide-in-text.text1", {
+            opacity: 0, y: 0, x: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 4)
+        .to(".slide-in-text.text2", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 6)
+        .to(".full_image", {
+            width: "30vw", height: "80vh", top: "10vh",
+            duration: 1
+        }, 6)
+        .to(".slide-in-text.text2", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 8)
+        .to(".full_image", {
+            opacity: 0,
+            duration: 1
+        }, 8)
+        .to(".upperleft", {
+            opacity: 1, y: 0, x: 240,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".upperright", {
+            opacity: 1, y: 0, x: -290, bottom: 60,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".uppermid", {
+            opacity: 1, y: 500, x: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".slide-in-text.text3", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 10)
+        .to(".slide-in-text.text3", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 12)
+        .to(".upperleft", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 12)
+        .to(".slide-in-text.text4", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 14)
+        .to(".upperright", {
+            opacity: 1, y: 0, top: 0, width: 440, height: 440,
+            ease: "power2.out",
+            duration: 1
+        }, 14)
+        .to(".uppermid", {
+            opacity: 1, left: "-65vw", top: -440,
+            ease: "power2.out",
+            duration: 1
+        }, 14)
+        .to(".upperleft", {
+            opacity: 1, left: "20vw", top: "45vh",
+            ease: "power2.out",
+            duration: 1
+        }, 16)
+        .to(".upperright", {
+            opacity: 1, y: 0, top: 0, width: "90vw", height: "90vh",
+            ease: "power2.out",
+            duration: 1
+        }, 18)
+        .to(".uppermid", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 18)
+        .to(".upperleft", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 18)
+        .to(".full_image", {
+            width: "100vw", height: "100vh", top: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 18)
+        .to(".upperright", {
+            opacity: 0,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".full_image", {
+            opacity: 1,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".slide-in-text.text4", {
+            opacity: 0, y: 0, x: -720,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(".slide-in-text.text5", {
+            opacity: 1, y: 0, x: 720,
+            ease: "power2.out",
+            duration: 1
+        }, 20)
+        .to(sections, {
+            xPercent: -(100 * (sections.length - 1)),
+            duration: sections.length - stopPanel,
+        });
+    });
+</script>

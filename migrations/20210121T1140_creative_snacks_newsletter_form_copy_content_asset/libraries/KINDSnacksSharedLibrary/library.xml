@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="newsletter-form-copy-cs">
+        <display-name xml:lang="x-default">Newsletter Form Copy CS</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;h2&gt;Join Our Cluster&lt;/h2&gt;&#13;
+&#13;
+&lt;p&gt;Just real people craving delicious snacks that are simply better for you.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="nonfat-milk-powder">
+        <display-name xml:lang="x-default">nonfat milk powder</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">evaporated skim milk</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="ingredients-n">
+                <position>9.0</position>
+            </classification-link>
+        </folder-links>
+    </content>
+
+</library>

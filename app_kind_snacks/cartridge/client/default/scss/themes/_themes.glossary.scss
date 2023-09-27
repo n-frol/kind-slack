@@ -1,0 +1,30 @@
+/* ============================================================================
+   Glossary
+   ============================================================================ */
+
+/**
+ * Styles the KIND theme for the glossary component
+ */
+
+ $ns: th-kind-glossary;
+ $component: c-glossary;
+ 
+ .#{$ns} {
+ 
+     // Marketing Banner Component
+     &.#{$component} {
+ 
+         .#{$component} {
+
+             &__starts-with {
+                font-family: $font-family-primary;
+             }
+
+             &__component {
+                 &__name {
+                    font-family: $font-family-primary;
+                 }
+             }
+         }
+     }
+    }

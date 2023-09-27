@@ -1,0 +1,86 @@
+<isscript>
+var LoginRadius = require('*/cartridge/models/loginRadius');
+var loginRadius = new LoginRadius();
+var loginRadiusForwardingURL = URLUtils.url('Account-Show');
+var resetpass = URLUtils.https('LoginRadius-PasswordResetForm');
+pdict.loginRadiusForwardingURL = loginRadiusForwardingURL;
+pdict.loginRadius = loginRadius;
+</isscript>
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/login.css');
+assets.addJs('/js/login.js');
+    </isscript>
+<isinclude template="/components/modules" sf-toolkit="off" />
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <isinclude sf-toolkit="off" template="/common/scripts" />
+        <isinclude template="/common/htmlHead" />
+        <isactivedatahead/>
+
+        <isscript>
+            // Check if no css variables variable not set to prevent error
+            var cssVars = typeof cssVars === 'undefined' ? '' : cssVars;
+        </isscript>
+        <isif condition="${!empty(cssVars)}">
+            <style>
+                :root {
+                    <isprint value="${cssVars}" encoding="off" />
+                }
+            </style>
+        </isif>
+ <iscomment> Canonical Links </iscomment>
+        <isif condition="${!empty(pdict.canonicalURL)}">
+            <link rel="canonical" href="${pdict.canonicalURL}" />
+        </isif>
+    </head>
+    <body data-brand="${Resource.msg('global.brandname', 'common', null)}" class="
+        ${!empty(pdict.isBYOB) && pdict.isBYOB ? 'byob-page' : ''} 
+        ${dw.system.Site.getCurrent().ID === 'CreativeSnacks' ? 'creative-snacks' : ''}">
+        <isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+        <isif condition="${siteID === " kind_b2b" || siteID === "KINDSnacks"}">
+            <isinclude template="common/gtm/gtmNoScript" />
+        </isif>
+    <isif condition="${session.isCustomerAuthenticated()}">
+         <div 
+                id="swell-customer-identification"
+                data-authenticated="true"
+                data-email="${session.customer.profile.email}"
+                data-id="${session.customer.profile.customerNo}"
+                data-tags=""
+                style="display:none;"
+             ></div>
+    </isif>
+
+    
+    <isif condition="${dw.system.Site.getCurrent().name == "Kind B2B"}">
+<div id="loginmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginmodal">
+ <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title request-password-title">Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+ <isinclude template="/loginradius/login" />
+            </div>
+        </div>
+    </div>
+</div>
+</isif>
+        <div class="page ${pdict.action.toLowerCase()}" data-action="${pdict.action}" data-querystring="${pdict.queryString}" >
+            <isinclude template="/components/header/pageHeader" />
+            <isreplace/>
+            <isinclude template="/components/footer/pageFooter" />
+        </div>
+        <div class="error-messaging"></div>
+        <div class="modal-background js-modal-background"></div>
+        <iscontentasset aid="cookie_hint" />
+        <isinclude url="${URLUtils.url('ConsentTracking-Check')}"/>
+        <isinclude template="components/footer/jiracollector" />
+    </body>
+</html>

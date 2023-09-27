@@ -1,0 +1,6 @@
+<isscript>
+    var GraphicalAssetUtils = require("~/cartridge/scripts/util/graphicalAssetUtils");
+</isscript>
+<isloop items="${slotcontent.content}" var="contentAsset" status="loopstatus">
+    <isprint value="${contentAsset.custom.body}" encoding="off" />
+</isloop>

@@ -1,0 +1,101 @@
+/* ============================================================================
+Site Footer
+============================================================================ */
+
+/**
+ * Establish styles for the site footer and non-component elements within
+ */
+
+// !important used to overwrite bootstrap
+
+$ns: st-global-footer;
+
+.#{$ns} {
+    $footer-padding-top-lg: 114px;
+
+    color: $white;
+    font-family: $font-family-primary;
+    text-transform: lowercase;
+    text-decoration: none;
+
+    &__wrapper {
+        background-color: $primary;
+        padding-bottom: 36px;
+
+        @include media-breakpoint-down(md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: $footer-padding-top-lg !important;
+        }
+
+        &--secondary {
+            background-color: $grey7;
+            padding-top: 36px;
+            padding-bottom: 36px;
+        }
+    }
+
+    &__logo-wrapper {
+        @include media-breakpoint-up(lg) {
+            padding-right: 36px;
+            position: relative;
+        }
+    }
+
+    &__logo {
+        margin-left: auto;
+        margin-right: auto;
+        position: static !important; // Override page level style
+
+        @include media-breakpoint-up(lg) {
+            margin-left: 0;
+            position: absolute !important;
+                left: ($grid-gutter-width / 2) !important;
+                top: -$footer-padding-top-lg !important; // Sit flush with edge of footer
+        }
+
+        &-img {
+            width: 75px;
+            padding-bottom: 21px;
+
+            @include media-breakpoint-up(lg) {
+                padding-bottom: 24px;
+                width: 100px;
+            }
+        }
+
+    }
+
+    &__utility {
+        display: flex;
+            align-items: center;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-start;
+            margin-top: 30px;
+            padding-top: 35px;
+        }
+
+        &::before {
+            @include media-breakpoint-up(lg) {
+                background-color: $grey4;
+                content:'';
+                height: 1px;
+                position: absolute;
+                    left: calc(50% - 50vw);
+                    top: 0;
+                width: 100vw;
+            }
+        }
+
+        li + li {
+            margin-left: 6px;
+        }
+
+    }
+}
+

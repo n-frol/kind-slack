@@ -1,0 +1,24 @@
+{
+    "name": "Creator Experience",
+    "description": "Renders Creator Experience",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "data",
+            "name": "Creator Experience",
+            "description": "To embed an experience, enter its ID in the text box below.",
+            "attribute_definitions": [
+                {
+                    "id": "experienceId",
+                    "name": "Experience ID",
+                    "type": "custom",
+                    "required": true,
+                    "editor_definition": {
+                      "type": "creator.creatorpicker"
+                    }
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

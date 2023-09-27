@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <folder folder-id="benefits">
+        <display-name xml:lang="x-default">Benefits</display-name>
+        <online-flag>true</online-flag>
+        <template>rendering/folder/globalFolder</template>
+        <parent>root</parent>
+        <page-attributes/>
+    </folder>
+
+    <content content-id="benefit_0gTransFat">
+        <display-name xml:lang="x-default">0g Trans Fat</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">0g Trans Fat</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_no-trans-fat_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', '0g trans fat')$"&gt;find other 0g trans fat snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_100WholeGrain">
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">100% Whole Grains</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_whole-grains_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Home-Show')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_5gSugarOrLess">
+        <display-name xml:lang="x-default">5g Sugar or Less</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;you want something sweet but probably not 40g of sugar sweet...&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">5g Sugar or Less</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_low-sugar_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', '5g sugar or less)$"&gt;find other 5g sugar or less snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_glutenFree">
+        <display-name xml:lang="x-default">Gluten Free</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Gluten Free</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_gluten-free_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_goodSourceOfFiber">
+        <display-name xml:lang="x-default">Good Source of Fiber</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Good Source of Fiber</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_fiber_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'good source of fiber')$"&gt;find other good source of fiber snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_goodSourceOfProtein">
+        <display-name xml:lang="x-default">Good Source of Protein</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Good Source of Protein</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_protein_updated_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'good source of fiber')$"&gt;find other good source of fiber snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_kosher">
+        <display-name xml:lang="x-default">Kosher</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Kosher</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_kosher_updated_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_lowFat">
+        <display-name xml:lang="x-default">Low Fat</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Low Fat</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_low-fat_20180515-Update_1.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_lowGlycemicIndex">
+        <display-name xml:lang="x-default">Low Glycemic Index</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Low Glycemic Index</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_low-glycemic-index_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'low glycemic index')$"&gt;find other low glycemic index snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_lowSodium">
+        <display-name xml:lang="x-default">Low Sodium</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Low Sodium</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_low-sodium_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+            <custom-attribute attribute-id="link">&lt;a href="$url('Search-Show', 'q', 'low sodium')$"&gt;find other low sodium snacks&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_noAddedSugar">
+        <display-name xml:lang="x-default">No Added Sugar</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">No Added Sugar</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_low-fat_20180515-Update_1.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_nonGmo">
+        <display-name xml:lang="x-default">No Genetically Engineered Ingredients</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">No Genetically Engineered Ingredients</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_non-gmo_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_nutFreeRecipe">
+        <display-name xml:lang="x-default">Nut Free Recipe</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Nut Free Recipe</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_nut-free_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+        <folder-links>
+            <classification-link folder-id="benefits"/>
+        </folder-links>
+    </content>
+
+    <content content-id="benefit_sample-1">
+        <display-name xml:lang="x-default">Sample 1</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>false</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="body" xml:lang="x-default">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus quam.&lt;/p&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefit_vegan">
+        <display-name xml:lang="x-default">Vegan</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#fff</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Vegan</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/benefits-grid/shop-by-benefits_vegan_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;View All&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+    <content content-id="benefits-content-grid">
+        <display-name xml:lang="x-default">Benefits</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBody">See all the different benefits KIND products have to offer.</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">Benefits</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/contentGrid/homepage_shop-by_benefits_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetURL">$url('Search-ShowContent', 'fdid', 'benefits')$</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

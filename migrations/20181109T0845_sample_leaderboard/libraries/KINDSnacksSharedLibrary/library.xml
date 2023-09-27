@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.demandware.com/xml/impex/library/2006-10-31" library-id="KINDSnacksSharedLibrary">
+
+    <content content-id="sample_leaderboard">
+        <display-name xml:lang="x-default">Sample Leaderboard</display-name>
+        <online-flag>true</online-flag>
+        <searchable-flag>true</searchable-flag>
+        <page-attributes/>
+        <custom-attributes>
+            <custom-attribute attribute-id="graphicalAssetBackgroundColor">#f2f2f2</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetBody">try our snacks in a variety of flavors</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetContentXPosition">right</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetHeading">hungry yet?</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetImage">images/about-us_description-w-link_bar-fan_opt.png</custom-attribute>
+            <custom-attribute attribute-id="graphicalAssetLinks">&lt;a href="$url('Home-Show')$"&gt;Shop Now&lt;/a&gt;</custom-attribute>
+        </custom-attributes>
+    </content>
+
+</library>

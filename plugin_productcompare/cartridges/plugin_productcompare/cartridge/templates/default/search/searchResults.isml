@@ -1,0 +1,15 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/search.js');
+        assets.addCss('/css/search.css');
+    </isscript>
+
+<isset name="siteID" value="${dw.system.Site.getCurrent().ID}" scope="page" />
+    <isset name="catId" value="${dw.catalog.CatalogMgr.getCategory(pdict.category)}" scope="page" />
+    <isinclude template="search/components/catHeader" />
+
+    <isinclude template="rendering/search/searchResultsNoDecoratorV2" />
+    <isinclude template="product/compareBar" />
+
+</isdecorate>
