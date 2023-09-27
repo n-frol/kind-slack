@@ -19,53 +19,13 @@ server.prepend('MiniCart', function (req, res, next) {
     next();
 });
 
-/**
- * Cart-Show : The Cart-Show endpoint renders the cart page with the current basket
- * @name ChangeUp/Cart-Show
- * @function
- * @memberof Cart
- */
- server.prepend('Show', function (req, res, next) {
-    var BasketMgr = require('dw/order/BasketMgr');
-    var Transaction = require('dw/system/Transaction');
-    var basketCalculationHelpers = require('*/cartridge/scripts/helpers/basketCalculationHelpers');
-    var currentBasket = BasketMgr.getCurrentBasket();
-    var donationPLI = null;
-    if (currentBasket) {
-        Transaction.wrap(function () {
-            donationPLI = currentBasket.getProductLineItems('changeup-donation');
-            if (donationPLI && donationPLI.length) {
-                currentBasket.removeProductLineItem(donationPLI[0]);
-                basketCalculationHelpers.calculateTotals(currentBasket);
-            }
-
+server.append('MiniCartShow', function (req, res, next) {
+    var config = require('~/cartridge/models/config').getConfig();
+        res.setViewData({
+            changeup: {
+                config: config
+               }
         });
-    }
-    next();
-});
-
-/**
- * Cart-MiniCartShow : The Cart-MiniCartShow is responsible for getting the basket and showing the contents when you hover over minicart in header
- * @name ChangeUp/Cart-MiniCartShow
- * @function
- * @memberof Cart
- */
-server.prepend('MiniCartShow', function (req, res, next) {
-    var BasketMgr = require('dw/order/BasketMgr');
-    var Transaction = require('dw/system/Transaction');
-    var basketCalculationHelpers = require('*/cartridge/scripts/helpers/basketCalculationHelpers');
-    var currentBasket = BasketMgr.getCurrentBasket();
-    var donationPLI = null;
-    if (currentBasket) {
-        Transaction.wrap(function () {
-            donationPLI = currentBasket.getProductLineItems('changeup-donation');
-            if (donationPLI && donationPLI.length) {
-                currentBasket.removeProductLineItem(donationPLI[0]);
-                basketCalculationHelpers.calculateTotals(currentBasket);
-            }
-
-        });
-    }
     next();
 });
 
@@ -89,15 +49,17 @@ server.append('RemoveProductLineItem', function (req, res, next) {
         next();
     }
 
-    var isProductLineItemFound = true;
+    var isProductLineItemFound = false;
     var bonusProductsUUIDs = [];
 
     Transaction.wrap(function () {
         if (req.querystring.pid && req.querystring.uuid) {
             var productLineItems = currentBasket.getAllProductLineItems();
-
+            if(req.querystring.pid) {
+                currentBasket.custom.changeupAgreedToDonate = false;
+            }
             // if there's 1 remaining product
-            if(productLineItems.length == 1) {
+            if(productLineItems.length == 1){
                 var item = productLineItems[0];
 
                 // if remaining product is changeup-donation, then it is removed from basket
@@ -106,9 +68,6 @@ server.append('RemoveProductLineItem', function (req, res, next) {
                     currentBasket.removeProductLineItem(item);
                     isProductLineItemFound = true;
                 }
-            }
-            if(productLineItems.length == 0) {
-                isProductLineItemFound = true;
             }
         }
         basketCalculationHelpers.calculateTotals(currentBasket);
@@ -121,12 +80,23 @@ server.append('RemoveProductLineItem', function (req, res, next) {
             toBeDeletedUUIDs: bonusProductsUUIDs
         };
         res.json(basketModelPlus);
-    } else {
-        res.setStatusCode(500);
-        res.json({ errorMessage: Resource.msg('error.cannot.remove.product', 'cart', null) });
     }
 
     next();
 });
+
+server.append(
+    'Show',
+    server.middleware.https,
+    function (req, res, next) {
+        var config = require('~/cartridge/models/config').getConfig();
+        res.setViewData({
+            changeup: {
+                config: config
+               }
+        });
+        next();
+    }
+);
 
 module.exports = server.exports();

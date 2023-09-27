@@ -2,21 +2,6 @@
 
 <isdecorate template="application/MenuFrame">
 
-<isscript>
-   var ContentMgr = require('dw/content/ContentMgr');
-
-    pdict.pages = {
-     'changeup-donation-confirmation-merchant': ContentMgr.getContent("changeup-donation-confirmation-merchant"),
-     'changeup-donation-confirmation-customer': ContentMgr.getContent("changeup-donation-confirmation-customer"),
-     'changeup-donation-confirmation-match': ContentMgr.getContent("changeup-donation-confirmation-match"),
-     'changeup-donation-submessage-merchant': ContentMgr.getContent("changeup-donation-submessage-merchant"),
-     'changeup-donation-submessage-customer': ContentMgr.getContent("changeup-donation-submessage-customer"),
-     'changeup-donation-submessage-match': ContentMgr.getContent("changeup-donation-submessage-match"),
-     'changeup-charity-selector-header': ContentMgr.getContent("changeup-charity-selector-header"),
-     'changeup-charity-selector-merchant-statement': ContentMgr.getContent("changeup-charity-selector-merchant-statement"),
-     'changeup-charity-supersize-header': ContentMgr.getContent("changeup-charity-supersize-header")
-   }
-</isscript>
   <script defer src="${URLUtils.httpsStatic('js_v2/libs.js')}"></script>
   <script defer src="${URLUtils.httpsStatic('js_v2/app.js')}"></script>
   <script defer src="${URLUtils.httpsStatic('js_v2/tags.js')}" type="riot/tag"></script>
@@ -26,54 +11,133 @@
 
   <input type="hidden" id="cfg_save_url" value="${URLUtils.https('ChangeUp-SaveConfig')}" />
   <input type="hidden" id="cfg_search_url" value="${URLUtils.https('ChangeUp-CharitySearch')}" />
+  <input type="hidden" id="cfg_upload_icon" value="${URLUtils.https('ChangeUp-UploadNewIcon')}" />
+  <input type="hidden" id="cfg_search_url_categories" value="${URLUtils.https('ChangeUp-CategorySearch')}" />
+  <input type="hidden" id="cfg_update_url" value="${URLUtils.https('ChangeUp-ProductUpdateDonation')}" />
   <input type="hidden" id="cfg_verified_charity_flag" value="${pdict.config && pdict.config['verified_charity_flag'] || ''}" />
   <input type="hidden" id="cfg_category_exclusions" value="${pdict.config && JSON.stringify(pdict.config['category_exclusions']) || ''}" />
   <input type="hidden" id="cfg_customer_search_toggle" value="${pdict.config && pdict.config['customer_search_toggle'] || ''}" />
+  <input type="hidden" id="cfg_customer_search_toggle_salesUplift" value="${pdict.config && pdict.config['customer_search_toggle_salesUplift'] || ''}" />
+  <input type="hidden" id="cfg_donation_type_salesUplift" value="${pdict.config && pdict.config['donation_type_salesUplift'] || ''}" />
+  <input type="hidden" id="cfg_donation_type_checkout" value="${pdict.config && pdict.config['donation_type_checkout'] || ''}" />
   <input type="hidden" id="cfg_default_charity" value="${pdict.config && JSON.stringify(pdict.config['default_charity']) || ''}" />
+  <input type="hidden" id="cfg_default_charity_salesUplift" value="${pdict.config && JSON.stringify(pdict.config['default_charity_salesUplift']) || ''}" />
   <input type="hidden" id="cfg_featured_charities" value="${pdict.config && JSON.stringify(pdict.config['featured_charities']) || ''}" />
+  <input type="hidden" id="cfg_donation_type" value="${pdict.config && pdict.config['splashPage'] || ''}" />
+  <input type="hidden" id="cfg_disabledButton" value="${pdict.config && pdict.config['disabledButton'] || ''}" />
   <input type="hidden" id="cfg_donation_type_actor" value="${pdict.config && pdict.config['donation_type_actor'] || ''}" />
   <input type="hidden" id="cfg_donation_type_option" value="${pdict.config && pdict.config['donation_type_option'] || ''}" />
+  <input type="hidden" id="cfg_donation_type_option_salesUplift" value="${pdict.config && pdict.config['donation_type_option_salesUplift'] || ''}" />
   <input type="hidden" id="cfg_donation_type_amount" value="${pdict.config && pdict.config['donation_type_amount'] || ''}" />
   <input type="hidden" id="cfg_donation_display_type" value="${pdict.config && pdict.config['donation_display_type'] || ''}" />
   <input type="hidden" id="cfg_total_donations_toggle" value="${(pdict.config && (pdict.config['total_donations_toggle'] != undefined || pdict.config['total_donations_toggle'] !=null )) ? pdict.config['total_donations_toggle'] : ''}" />
   <input type="hidden" id="cfg_total_donations_start" value="${pdict.config && pdict.config['total_donations_start'] || ''}" />
   <input type="hidden" id="cfg_total_donations_min" value="${pdict.config && pdict.config['total_donations_min'] || ''}" />
   <input type="hidden" id="cfg_show_charities_at_checkout" value="${pdict.config && pdict.config['show_charities_at_checkout'] || ''}" />
+  <input type="hidden" id="cfg_show_charities_at_sales_uplift" value="${pdict.config && pdict.config['show_charities_at_sales_uplift'] || ''}" />
   <input type="hidden" id="cfg_supersize_toggle" value="${(pdict.config && (pdict.config['supersize_toggle'] != undefined || pdict.config['supersize_toggle'] !=null )) ? pdict.config['supersize_toggle'] : ''}" />
   <input type="hidden" id="cfg_supersize_option" value="${pdict.config && pdict.config['supersize_option'] || ''}" />
+  <input type="hidden" id="cfg_applicable_products" value="${pdict.config && pdict.config['applicable_products'] || ''}" />
+  <input type="hidden" id="cfg_salesuplift_donation" value="${pdict.config && pdict.config['salesuplift_donation'] || ''}" />
+  <input type="hidden" id="cfg_sales_uplift_modal" value="${pdict.config && pdict.config['sales_uplift_modal'] || ''}" />
+  <input type="hidden" id="cfg_donation_confirmation_merchant" value="${pdict.config && pdict.config['donation_confirmation_merchant'] || ''}" />
+  <input type="hidden" id="cfg_donation_confirmation_customer" value="${pdict.config && pdict.config['donation_confirmation_customer'] || ''}" />
+  <input type="hidden" id="cfg_donation_confirmation_match" value="${pdict.config && pdict.config['donation_confirmation_match'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_merchant" value="${pdict.config && pdict.config['donation_submessage_merchant'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_customer" value="${pdict.config && pdict.config['donation_submessage_customer'] || ''}" />
+
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_a" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_b" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_b_m" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_c" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_d" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_merchant_d_m" value="${pdict.config && pdict.config['donation_submessage_roundup_merchant_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_a" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_b" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_b_m" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_c" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_d" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_customer_d_m" value="${pdict.config && pdict.config['donation_submessage_roundup_customer_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_a" value="${pdict.config && pdict.config['donation_submessage_roundup_match_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_b" value="${pdict.config && pdict.config['donation_submessage_roundup_match_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_b_m" value="${pdict.config && pdict.config['donation_submessage_roundup_match_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_c" value="${pdict.config && pdict.config['donation_submessage_roundup_match_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_d" value="${pdict.config && pdict.config['donation_submessage_roundup_match_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_roundup_match_d_m" value="${pdict.config && pdict.config['donation_submessage_roundup_match_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_a" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_b" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_b_m" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_c" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_d" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_merchant_d_m" value="${pdict.config && pdict.config['donation_submessage_fixed_merchant_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_a" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_b" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_b_m" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_c" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_d" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_customer_d_m" value="${pdict.config && pdict.config['donation_submessage_fixed_customer_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_a" value="${pdict.config && pdict.config['donation_submessage_fixed_match_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_b" value="${pdict.config && pdict.config['donation_submessage_fixed_match_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_b_m" value="${pdict.config && pdict.config['donation_submessage_fixed_match_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_c" value="${pdict.config && pdict.config['donation_submessage_fixed_match_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_d" value="${pdict.config && pdict.config['donation_submessage_fixed_match_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_fixed_match_d_m" value="${pdict.config && pdict.config['donation_submessage_fixed_match_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_a" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_b" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_b_m" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_c" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_d" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_merchant_d_m" value="${pdict.config && pdict.config['donation_submessage_percentage_merchant_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_a" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_b" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_b_m" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_c" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_d" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_customer_d_m" value="${pdict.config && pdict.config['donation_submessage_percentage_customer_d_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_a" value="${pdict.config && pdict.config['donation_submessage_percentage_match_a'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_b" value="${pdict.config && pdict.config['donation_submessage_percentage_match_b'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_b_m" value="${pdict.config && pdict.config['donation_submessage_percentage_match_b_m'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_c" value="${pdict.config && pdict.config['donation_submessage_percentage_match_c'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_d" value="${pdict.config && pdict.config['donation_submessage_percentage_match_d'] || ''}" />
+  <input type="hidden" id="cfg_donation_submessage_percentage_match_d_m" value="${pdict.config && pdict.config['donation_submessage_percentage_match_d_m'] || ''}" />
+  
+  <input type="hidden" id="cfg_donation_submessage_match" value="${pdict.config && pdict.config['donation_submessage_match'] || ''}" />
+  <input type="hidden" id="cfg_charity_selector_header" value="${pdict.config && pdict.config['charity_selector_header'] || ''}" />
+  <input type="hidden" id="cfg_selector_merchant_statement" value="${pdict.config && pdict.config['selector_merchant_statement'] || ''}" />
+  <input type="hidden" id="cfg_charity_supersize_header" value="${pdict.config && pdict.config['charity_supersize_header'] || ''}" />
+  <input type="hidden" id="cfg_sales_uplift_description" value="${pdict.config && pdict.config['sales_uplift_description'] || ''}" />
+  <input type="hidden" id="cfg_sales_uplift_headline" value="${pdict.config && pdict.config['sales_uplift_headline'] || ''}" />
+  <input type="hidden" id="cfg_sales_uplift_description_customer" value="${pdict.config && pdict.config['sales_uplift_description_customer'] || ''}" />
+  <input type="hidden" id="cfg_charity_chose_merchant" value="${pdict.config && pdict.config['charity_chose_merchant'] || ''}" />
+  <input type="hidden" id="cfg_show_charities_description" value="${pdict.config && pdict.config['show_charities_description'] || ''}" />
+  <input type="hidden" id="cfg_show_charities_description_salesuplift" value="${pdict.config && pdict.config['show_charities_description_salesuplift'] || ''}" />
+  <input type="hidden" id="cfg_show_charity_search_toggle" value="${pdict.config && pdict.config['show_charity_search_toggle'] || ''}" />
+  <input type="hidden" id="cfg_category_search" value="${pdict.config && pdict.config['category_search'] || ''}" />
+  <input type="hidden" id="cfg_activeCategories" value="${pdict.config && pdict.config['activeCategories'] || ''}" />
+  <input type="hidden" id="cfg_inactiveCategories" value="${pdict.config && pdict.config['inactiveCategories'] || ''}" />
+  <input type="hidden" id="cfg_modaldescription1" value="${pdict.config && pdict.config['modaldescription1'] || ''}" />
+  <input type="hidden" id="cfg_modaldescription2" value="${pdict.config && pdict.config['modaldescription2'] || ''}" />
+  <input type="hidden" id="cfg_modaldescription3" value="${pdict.config && pdict.config['modaldescription3'] || ''}" />
+  <input type="hidden" id="cfg_logoColor" value="${pdict.config && pdict.config['logoColor'] || ''}" />
+  <input type="hidden" id="cfg_logoClass" value="${pdict.config && pdict.config['logoClass'] || ''}" />
+  <input type="hidden" id="cfg_logoMerchant" value="${pdict.config && pdict.config['logoMerchant'] || ''}" />
 
   <input type="hidden" id="cfg_supersize_options" value="${pdict.supersize_options && pdict.supersize_options['options'] || ''}" />
+  <input type="hidden" id="cfg_supersize_options_salesuplift" value="${pdict.supersize_options && pdict.supersize_options['optionSalesUplift'] || ''}" />
 
-  <input type="hidden" id="cfg_supersize_single_option_value" value="${pdict.config && pdict.config.supersize.single['value'] || ''}" />
 
   <input type="hidden" id="cfg_supersize_three_options_one_value" value="${pdict.config && pdict.config.supersize.three['value_one'] || ''}" />
   <input type="hidden" id="cfg_supersize_three_options_two_value" value="${pdict.config && pdict.config.supersize.three['value_two'] || ''}" />
   <input type="hidden" id="cfg_supersize_three_options_three_value" value="${pdict.config && pdict.config.supersize.three['value_three'] || ''}" />
 
-  <input type="hidden" id="cfg_supersize_two_plus_option_one_value" value="${pdict.config && pdict.config.supersize.two_plus['value_one'] || ''}" />
-  <input type="hidden" id="cfg_supersize_two_plus_option_two_value" value="${pdict.config && pdict.config.supersize.two_plus['value_two'] || ''}" />
-  <input type="hidden" id="cfg_supersize_two_plus_option_plus_value" value="${pdict.config && pdict.config.supersize.two_plus['value_plus'] || ''}" />
 
-  <input type="hidden" id="pages-changeup-donation-confirmation-merchant" value="${pdict.pages['changeup-donation-confirmation-merchant'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-donation-confirmation-customer" value="${pdict.pages['changeup-donation-confirmation-customer'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-donation-confirmation-match" value="${pdict.pages['changeup-donation-confirmation-match'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-merchant" value="${pdict.pages['changeup-donation-submessage-merchant'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-customer" value="${pdict.pages['changeup-donation-submessage-customer'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-match" value="${pdict.pages['changeup-donation-submessage-match'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-charity-selector-header" value="${pdict.pages['changeup-charity-selector-header'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-charity-selector-merchant-statement" value="${pdict.pages['changeup-charity-selector-merchant-statement'].custom.body || ''}" />
-  <input type="hidden" id="pages-changeup-charity-supersize-header" value="${pdict.pages['changeup-charity-supersize-header'].custom.body || ''}" />
-
-
-  <input type="hidden" id="pages-changeup-donation-confirmation-merchant-uuid" value="${pdict.pages['changeup-donation-confirmation-merchant'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-donation-confirmation-customer-uuid" value="${pdict.pages['changeup-donation-confirmation-customer'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-donation-confirmation-match-uuid" value="${pdict.pages['changeup-donation-confirmation-match'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-merchant-uuid" value="${pdict.pages['changeup-donation-submessage-merchant'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-customer-uuid" value="${pdict.pages['changeup-donation-submessage-customer'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-donation-submessage-match-uuid" value="${pdict.pages['changeup-donation-submessage-match'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-charity-selector-header-uuid" value="${pdict.pages['changeup-charity-selector-header'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-charity-selector-merchant-statement-uuid" value="${pdict.pages['changeup-charity-selector-merchant-statement'].getUUID() || ''}" />
-  <input type="hidden" id="pages-changeup-charity-supersize-header-uuid" value="${pdict.pages['changeup-charity-supersize-header'].getUUID() || ''}" />
+  <input type="hidden" id="cfg_charity_chose" value="${pdict.config && pdict.config['charity_chose'] || ''}" />
+  <input type="hidden" id="cfg_default_charity_salesMerchant" value="${pdict.config && JSON.stringify(pdict.config['default_charity_salesMerchant']) || ''}" />
+  <input type="hidden" id="cfg_default_charity_salesCustomer" value="${pdict.config && JSON.stringify(pdict.config['default_charity_salesCustomer']) || ''}" />
+  <input type="hidden" id="cfg_default_charity_salesMerchantplus" value="${pdict.config && JSON.stringify(pdict.config['default_charity_salesMerchantplus']) || ''}" />
+  <input type="hidden" id="cfg_featured_merchant" value="${pdict.config && JSON.stringify(pdict.config['featured_merchant']) || ''}" />
+  <input type="hidden" id="cfg_featured_customer" value="${pdict.config && JSON.stringify(pdict.config['featured_customer']) || ''}" />
+  <input type="hidden" id="cfg_featured_merchantplus" value="${pdict.config && JSON.stringify(pdict.config['featured_merchantplus']) || ''}" />
 
 
   <app id="app-wrap" style="display: none">
@@ -81,14 +145,89 @@
     <header-bar
       store={store}
       header="${Resource.msg('dashboard.header', 'dashboard', null)}"
+      checkout="${Resource.msg('dashboard.headercheckout', 'dashboard', null)}"
+      salesuplift="${Resource.msg('dashboard.headersalesuplift', 'dashboard', null)}"
       help="${Resource.msg('dashboard.emaillink', 'dashboard', null)}"
-      phone="${Resource.msg('dashboard.phonelink', 'dashboard', null)}"></header-bar>
+      phone="${Resource.msg('dashboard.phonelink', 'dashboard', null)}"
+      savesettings="${Resource.msg('dashboard.savesettings', 'dashboard', null)}"
+      savesettingsbtn="${Resource.msg('dashboard.savesettingsbtn', 'dashboard', null)}">
+      ></header-bar>
 
     <div id="page-wrapper">
-
-      <div id="dashboard-wrap">
+          <div id="splash-page">
+          <splash-page
+          store={store}
+          splashtitle ="${Resource.msg('dashboard.splashTitle','dashboard',null)}"
+          checkoutitle = "${Resource.msg('dashboard.splashCheckoutTitle','dashboard',null)}"
+          checkoutproduct = "${Resource.msg('dashboard.splashCheckoutProduct','dashboard',null)}"
+          checkoutsub = "${Resource.msg('dashboard.splashCheckoutSub','dashboard',null)}"
+          checkoutexample = "${Resource.msg('dashboard.splashCheckoutExample','dashboard',null)}"
+          checkoutdonate = "${Resource.msg('dashboard.splashCheckoutDonate','dashboard',null)}"
+          checkoutdonate2 = "${Resource.msg('dashboard.splashCheckoutDonate2','dashboard',null)}"
+          checkoutdonatesub = "${Resource.msg('dashboard.splashCheckoutDonateSub','dashboard',null)}"
+          checkoutbutton = "${Resource.msg('dashboard.splashCheckoutButton','dashboard',null)}"
+          salestitle = "${Resource.msg('dashboard.splashSalesUpliftTitlte','dashboard',null)}"
+          salesproduct = "${Resource.msg('dashboard.splashSalesUpliftProduct','dashboard',null)}"
+          salessub = "${Resource.msg('dashboard.splashSalesUpliftSub','dashboard',null)}"
+          salesexample = "${Resource.msg('dashboard.splashSalesUpliftExample','dashboard',null)}"
+          salesdonate = "${Resource.msg('dashboard.splashSalesUpliftDonate','dashboard',null)}"
+          salesdonatesub = "${Resource.msg('dashboard.splashSalesUpliftDonateSub','dashboard',null)}"
+          salespowered = "${Resource.msg('dashboard.splashSalesUpliftPowered','dashboard',null)}"
+          salesbutton = "${Resource.msg('dashboard.splashSalesUpliftButton','dashboard',null)}"
+          checkoutdescription = "${Resource.msg('dashboard.splashcheckoutdescription','dashboard',null)}"
+          checkoutname= "${Resource.msg('dashboard.splashcheckoutname','dashboard',null)}"
+          salesdescription1 = "${Resource.msg('dashboard.splashsalesdescription1','dashboard',null)}"
+          salesdescription2 = "${Resource.msg('dashboard.splashsalesdescription2','dashboard',null)}"
+          salesdescriptionname = "${Resource.msg('dashboard.splashsalesdescriptionname','dashboard',null)}"
+          salesdescription3 = "${Resource.msg('dashboard.splashsalesdescription3','dashboard',null)}"
+          ></splash-page>
+          </div>
+          <div id="categoryResult">
+          <category-result
+          store={store}
+          categorytitle = "${Resource.msg('dashboard.categorytitle','dashboard', null)}"
+          categorysub = "${Resource.msg('dashboard.categorysub','dashboard', null)}"
+          categorysearch = "${Resource.msg('dashboard.categorysearch','dashboard', null)}"
+          categorytable1 = "${Resource.msg('dashboard.categorytable1','dashboard', null)}"
+          categorytable2 = "${Resource.msg('dashboard.categorytable2','dashboard', null)}"
+          categoryclose = "${Resource.msg('dashboard.categoryclose','dashboard', null)}"
+          categoriesactive="${Resource.msg('dashboard.suproductsactivecategories','dashboard',null)}"
+          categoriesavalible="${Resource.msg('dashboard.suproductsavaliblecategories','dashboard',null)}"
+          ></category-result>
+          </div>
+          <div id="dashboard-wrap">
 
           <div id="notify-box"></div>
+          
+    
+          <charity-donationtype-checkout
+            store={store}
+            donatontypesub ="${Resource.msg('dashboard.donationtypesub','dashboard',null)}"
+            donationtypecheckout ="${Resource.msg('dashboard.donationtypecheckoutheader','dashboard',null)}"
+            checkoutactivate ="${Resource.msg('dashboard.donationtypecheckoutactivate','dashboard',null)}"
+            tooltip="${Resource.msg('dashboard.tooltipformat', 'dashboard', null)}"
+            ></charity-donationtype-checkout>  
+
+          <charity-donationtype-salesuplift
+            store={store}
+            donationheader="${Resource.msg('dashboard.donationtypeselect','dashboard',null)}"
+            donatontypesub ="${Resource.msg('dashboard.SalesUpliftSub','dashboard',null)}"
+            donationtypesales ="${Resource.msg('dashboard.donationtypesalesheader','dashboard',null)}"
+            donationtypesalestext ="${Resource.msg('dashboard.donationtypesalestext','dashboard',null)}"
+            salesactivate = "${Resource.msg('dashboard.donationtypecheckoutactivate', 'dashboard',null)}"
+            tooltip = "${Resource.msg('dashboard.tooltipsales','dashboard',null)}"
+            ></charity-donationtype-salesuplift>
+
+          <charity-chose
+            store={store}
+            chosetitle = "${Resource.msg('dashboard.chosestitle','dashboard',null)}"
+            chosesmerchant = "${Resource.msg('dashboard.chosesmerchant','dashboard',null)}"
+            chosecustomer = "${Resource.msg('dashboard.chosecustomer','dashboard',null)}"
+            chosemerchantplus = "${Resource.msg('dashboard.chosemerchantplus','dashboard',null)}"
+            chosecustomersub = "${Resource.msg('dashboard.chosecustomersub','dashboard',null)}"
+            chosemerchantplussub = "${Resource.msg('dashboard.chosemerchantplussub','dashboard',null)}"
+            chosetooltip = "${Resource.msg('dashboard.chosetooltip','dashboard',null)}"
+          ></charity-chose>  
 
           <charity-actor
             store={store}
@@ -124,7 +263,13 @@
             featuredcharities="${Resource.msg('dashboard.featuredcharities', 'dashboard', null)}"
             nofeaturedcharities="${Resource.msg('dashboard.nofeaturedcharities', 'dashboard', null)}"
             charitypickernote="${Resource.msg('dashboard.nofeaturedcharities', 'dashboard', null)}"
-            tooltip="${Resource.msg('dashboard.tooltipsearch', 'dashboard', null)}"></charity-search>
+            tooltip="${Resource.msg('dashboard.tooltipsearch', 'dashboard', null)}"
+            searchsub1 = "${Resource.msg('dashboard.charitysearchsub1','dashboard', null)}"
+            searchdonation = "${Resource.msg('dashboard.searchdonation','dashboard', null)}"
+            searchdonation0 = "${Resource.msg('dashboard.searchdonation0','dashboard', null)}"
+            searchdonation1 = "${Resource.msg('dashboard.searchdonation1','dashboard', null)}"
+            hovertitle = "${Resource.msg('dashboard.hovertitle','dashboard', null)}"
+            ></charity-search>
 
           <charity-checkoutpages
             store={store}
@@ -136,25 +281,25 @@
             showcharitiesatcheckout="${Resource.msg('dashboard.showcharitiesatcheckout', 'dashboard', null)}"
             tooltip="${Resource.msg('dashboard.tooltipcheckout', 'dashboard', null)}"
             supersizetoogle="${Resource.msg('dashboardSupersize.toogle', 'dashboard', null)}"
-            supersizesingleoption="${Resource.msg('dashboardSupersize.singleoption', 'dashboard', null)}"
-            supersizesingleoptionsub="${Resource.msg('dashboardSupersize.singleoption.sub', 'dashboard', null)}"
             supersizethreeoptions="${Resource.msg('dashboardSupersize.threeoptions', 'dashboard', null)}"
             supersizethreeoptionssub="${Resource.msg('dashboardSupersize.threeoptions.sub', 'dashboard', null)}"
-            supersizetwoplusoptions="${Resource.msg('dashboardSupersize.twoplusoptions', 'dashboard', null)}"
-            supersizetwoplusoptionssub="${Resource.msg('dashboardSupersize.twoplusoptions.sub', 'dashboard', null)}"
-            supersizetwoplusoptionsfixed="${Resource.msg('dashboardSupersize.twoplusoptions.fixed', 'dashboard', null)}"></charity-checkoutpages>
+            texttitle0="${Resource.msg('dashboard.edittextlink', 'dashboard', null)}"
+            texttitle1="${Resource.msg('dashboard.linetext6', 'dashboard', null)}">
+            </charity-checkoutpages>
 
           <charity-editpages
             store={store}
             customizetext="${Resource.msg('dashboard.customizetext', 'dashboard', null)}"
             customizetextfield="${Resource.msg('dashboard.customizetextfield', 'dashboard', null)}"
             customizetextfield2="${Resource.msg('dashboard.customizetextfield2', 'dashboard', null)}"
+            linetext0="${Resource.msg('dashboard.linetext0', 'dashboard', null)}"
             linetext1="${Resource.msg('dashboard.linetext1', 'dashboard', null)}"
             linetext2="${Resource.msg('dashboard.linetext2', 'dashboard', null)}"
             linetext3="${Resource.msg('dashboard.linetext3', 'dashboard', null)}"
             linetext4="${Resource.msg('dashboard.linetext4', 'dashboard', null)}"
             linetext5="${Resource.msg('dashboard.linetext5', 'dashboard', null)}"
             linetext6="${Resource.msg('dashboard.linetext6', 'dashboard', null)}"
+            linetext7="${Resource.msg('dashboard.linetext7', 'dashboard', null)}"
             edittextlink="${Resource.msg('dashboard.edittextlink', 'dashboard', null)}"
             tooltip="${Resource.msg('dashboard.tooltiptext', 'dashboard', null)}"></charity-editpages>
             
@@ -170,16 +315,96 @@
 
             ></charity-supersize>
 
+          <charity-sucharitysearch
+            store={store}
+            salesupliftcharity ="${Resource.msg('dashboard.salesupliftcharity','dashboard',null)}"
+            searchcharitysalesuplift = "${Resource.msg('dashboard.searchcharitysalesuplift','dashboard',null)}"
+            searchcharitysalesuplifttext0 = "${Resource.msg('dashboard.searchcharitysalesuplifttext0','dashboard',null)}"
+            defaultcharitysalesuplift="${Resource.msg('dashboard.defaultcharitysalesuplift', 'dashboard', null)}"
+            hovertitlesalesuplift= "${Resource.msg('dashboard.hovertitle','dashboard',null)}"
+            placeholderempty0= "${Resource.msg('dashboard.placeholderempty0', 'dashboard', null)}"
+            placeholderempty1= "${Resource.msg('dashboard.placeholderempty1', 'dashboard', null)}"
+            placeholderempty2= "${Resource.msg('dashboard.placeholderempty2', 'dashboard', null)}"
+            ></charity-sucharitysearch>
+
+            <charity-displaylogos
+              store={store}
+              logotitle = "${Resource.msg('dashboard.displaytitle','dashboard',null)}"
+              charitylogo = "${Resource.msg('dashboard.displaycharity','dashboard',null)}"
+              universallogo = "${Resource.msg('dashboard.displayuniversal','dashboard',null)}"
+              nonelogo = "${Resource.msg('dashboard.displaynone','dashboard',null)}"
+              logotool = "${Resource.msg('dashboard.displaytitle','dashboard',null)}"
+              selector = "${Resource.msg('dashboard.displayselector', 'dashboard', null)}"
+              upload = "${Resource.msg('dashboard.dislpayupload', 'dashboard', null)}"
+              browse = "${Resource.msg('dashboard.displaybrowse', 'dashboard', null)}"
+              length = "${Resource.msg('dashboard.displaylength', 'dashboard', null)}"
+
+            ></charity-displaylogos>
+
+          <charity-supercentage
+            store={store}
+            percentage ="${Resource.msg('dashboard.salesupliftpercentage','dashboard',null)}"
+            percentagesub ="${Resource.msg('dashboard.salesupliftpercentagesub','dashboard',null)}"
+            percentageselection ="${Resource.msg('dashboard.salesupliftpercentageselection','dashboard',null)}"></charity-supercentage>  
+
+          <charity-suproducts
+            store={store}
+            products ="${Resource.msg('dashboard.salesupliftproducts','dashboard',null)}"
+            productssub ="${Resource.msg('dashboard.salesupliftproductssub','dashboard',null)}"
+            productsall ="${Resource.msg('dashboard.salesupliftproductsall','dashboard',null)}"
+            productscertain ="${Resource.msg('dashboard.salesupliftproductscertain','dashboard',null)}"
+            productsidsearch ="${Resource.msg('dashboard.salesupliftproductsidsearch','dashboard',null)}"
+            productgroup = "${Resource.msg('dashboard.salesupliftgroup','dashboard',null)}"
+            productfound = "${Resource.msg('dashboard.salesupliftproducttablefound','dashboard',null)}"
+            productactivate = "${Resource.msg('dashboard.salesupliftproducttableactivate','dashboard',null)}"
+            productdeactivate = "${Resource.msg('dashboard.salesupliftproducttabledeactivate','dashboard',null)}"
+            productclear = "${Resource.msg('dashboard.salesupliftproducttableclear','dashboard',null)}"
+            productscategorysearch ="${Resource.msg('dashboard.salesupliftproductscategorysearch','dashboard',null)}"
+            productdisable ="${Resource.msg('dashboard.salesupliftproductsdisable','dashboard',null)}"
+            productsactivetitle ="${Resource.msg('dashboard.suproductsproducttitle','dashboard',null)}"
+            productsactive ="${Resource.msg('dashboard.suproductsactiveproducts','dashboard',null)}"
+            productsavalible="${Resource.msg('dashboard.suproductsavalibleproducts','dashboard',null)}"
+            productsedit="${Resource.msg('dashboard.suproductseditproducts','dashboard',null)}"
+            categoriestitle="${Resource.msg('dashboard.suproductscategorytitle','dashboard',null)}"
+            categoriesactive="${Resource.msg('dashboard.suproductsactivecategories','dashboard',null)}"
+            categoriesavalible="${Resource.msg('dashboard.suproductsavaliblecategories','dashboard',null)}"
+            categoriesedit="${Resource.msg('dashboard.suproductseditcategories','dashboard',null)}"
+            ></charity-suproducts>
+
+          <charity-sucustomtext
+            store={store}
+            salescustomizetext = "${Resource.msg('dashboard.salesupliftcustomizetext','dashboard',null)}"
+            salescustomizetextsub = "${Resource.msg('dashboard.salesupliftcustomizetextsub','dashboard',null)}"
+            salescustomizetextsub2 = "${Resource.msg('dashboard.salesupliftcustomizetextsub2','dashboard',null)}"
+            linetextsu0 = "${Resource.msg('dashboard.linetextsu0','dashboard',null)}"
+            linetextsu1 = "${Resource.msg('dashboard.linetextsu1','dashboard',null)}"
+            linetextsu2 = "${Resource.msg('dashboard.linetextsu2','dashboard',null)}"
+            linetextsu3 = "${Resource.msg('dashboard.linetextsu3','dashboard',null)}"
+            linetextsu4 = "${Resource.msg('dashboard.linetextsu4','dashboard',null)}"
+            linetextsu5 = "${Resource.msg('dashboard.linetextsu5','dashboard',null)}"
+            edittextlink="${Resource.msg('dashboard.edittextlink', 'dashboard', null)}"
+            ></charity-sucustomtext>
+
           <charity-save
             store={store}
+            savesettingsuplift = "${Resource.msg('dashboard.salesupliftsave','dashboard',null)}"
             savesettings="${Resource.msg('dashboard.savesettings', 'dashboard', null)}"
             savesettingsbtn="${Resource.msg('dashboard.savesettingsbtn', 'dashboard', null)}"></charity-save>
 
       </div>
 
-      <div id="checkout-wrap">
+      <div id="charityModal">
+        <charity-msg
+          store={store}
+          charitymsg = "${Resource.msg('dashboard.charitymsg','dashboard', null)}"
+          charitymsgtitle = "${Resource.msg('dashboard.charitymsgtitle','dashboard', null)}"
+          charitymsgbtn = "${Resource.msg('dashboard.charitymsgbtn','dashboard', null)}"
+          ></charity-msg>
+      </div>
 
+      <div id="checkout-wrap">
         <checkout-preview
+          previewmsg="${Resource.msg('dashboard.previews', 'dashboard', null)}"
           samplecheckoutscreen="${Resource.msg('dashboard.samplecheckoutscreen', 'dashboard', null)}"
           productdescription="${Resource.msg('dashboard.productdescription', 'dashboard', null)}"
           taxdescription="${Resource.msg('dashboard.taxdescription', 'dashboard', null)}"
@@ -193,6 +418,7 @@
           choosecharitydescription="${Resource.msg('dashboard.choosecharitydescription', 'dashboard', null)}"
           donatedtodatedescription="${Resource.msg('dashboard.donatedtodatedescription', 'dashboard', null)}"
           totaldescription="${Resource.msg('dashboard.totaldescription', 'dashboard', null)}"
+          donationdescription="${Resource.msg('dashboard.donationdescription', 'dashboard', null)}"
           store={store}
           supersize="${Resource.msg('dashboard.samplecheckoutscree.supersize', 'dashboard', null)}"></checkout-preview>
 
@@ -207,6 +433,36 @@
           thankyoufavorites="${Resource.msg('dashboard.thankyoufavorites', 'dashboard', null)}"
           thankyouclickhere="${Resource.msg('dashboard.thankyouclickhere', 'dashboard', null)}"></thankyou-preview>
 
+        <salesuplift-preview
+          store={store}
+          samplepage = "${Resource.msg('dashboard.previewpagenotice', 'dashboard', null)}"
+          carttitle = "${Resource.msg('dashboard.previewcarttitle','dashboard',null)}"
+          product = "${Resource.msg('dashboard.previewcartproduct','dashboard',null)}"
+          color = "${Resource.msg('dashboard.previewcartcolor','dashboard',null)}"
+          size = "${Resource.msg('dashboard.previewsize','dashboard',null)}"
+          preview = "${Resource.msg('dashboard.previewpowered','dashboard',null)}"></salesuplift-preview>
+
+        <modal-preview
+          store={store}
+          samplemodal = "${Resource.msg('dashboard.previewmodal', 'dashboard', null)}"
+          header = "${Resource.msg('dashboard.previewmodalheader','dashboard',null)}"
+          header2 = "${Resource.msg('dashboard.previewmodalheader2','dashboard',null)}"
+          preview = "${Resource.msg('dashboard.previewpowered','dashboard',null)}"
+          modaldescription1 = "${Resource.msg('dashboard.modaldescription1','dashboard',null)}"
+          modaldescription2 = "${Resource.msg('dashboard.modaldescription2','dashboard',null)}"
+          modaldescription3 = "${Resource.msg('dashboard.modaldescription3','dashboard',null)}"
+          modalcustomer = "${Resource.msg('dashboard.modalcustomer', 'dashboard', null)}"
+          ></modal-preview>  
+        
+        <page-donation-preview
+          store={store}
+          samplepage = "${Resource.msg('dashboard.previewproductpagenotice', 'dashboard', null)}"
+          carttitle = "${Resource.msg('dashboard.previewcarttitle','dashboard',null)}"
+          product = "${Resource.msg('dashboard.previewcartproduct','dashboard',null)}"
+          color = "${Resource.msg('dashboard.previewcartcolor','dashboard',null)}"
+          size = "${Resource.msg('dashboard.previewsize','dashboard',null)}"
+          preview = "${Resource.msg('dashboard.previewpowered','dashboard',null)}"></page-donation-preview>
+          
       </div>
 
     </div>
@@ -214,4 +470,5 @@
   </app>
 
  <script defer src="${URLUtils.httpsStatic('js/dashboardv2_supersize.js')}"></script>
+ <script defer src="${URLUtils.httpsStatic('js/dashboardv2_donated.js')}"></script>
 </isdecorate>

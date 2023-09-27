@@ -1,0 +1,218 @@
+.salesuplift-donation {
+  display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 66% 34%;
+    -ms-grid-rows: 23% 64% 13%;
+    border-radius: 0.1875em;
+    padding: 0.625em 1.25em;
+
+  .donation-title {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    font-size: 20px;
+  }
+  .donation-container {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    .donation-description {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 120%;
+      color: #000000;
+      word-break: break-word;
+      margin-right: 12px;
+      div:first-child {
+        display: contents;
+      }
+      p {
+        display: contents;
+      }
+      .learn-btn {
+        color: #000 !important;
+        font-weight: 600;
+      }
+    }
+  }
+  .donation-logo {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    height: 50px;
+    width: 50px;
+
+    .pdp-hover{
+      left: -40%;
+      &::after{
+        left: 64%;
+      }
+    }
+
+  }
+  .powered {
+    grid-row: 3;
+    grid-column: 1;
+    content: url("../images/powered-by-changeup-grey.svg");
+    width: 120px;
+  }
+  .btn {
+    padding: 0px;
+  }
+}
+
+.blockquote-footer {
+  &::before {
+    content: none;
+  }
+}
+.salesuplift-donation-nogrid {
+  box-sizing: border-box;
+  border-radius: 0.1875em;
+  padding: 0.625em 1.25em;
+  .donation-container {
+    font-size: 14px;
+    .donation-description {
+      word-wrap: break-word;
+      div:first-child {
+        display: contents;
+      }
+      p {
+        display: contents;
+      }
+      .learn-btn {
+        color: #000 !important;
+        font-weight: 600;
+      }
+    }
+  }
+  .powered {
+    font-size: 14px;
+    content: url("../images/powered-by-changeup-grey.svg");
+  }
+  .btn {
+    padding: 0px;
+  }
+}
+
+.donation-modal {
+  font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    word-break: break-word;
+}
+.donation-text{
+  margin: 10px 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    word-break: break-word;
+}
+.donate-title {
+  color: #02263D;
+    margin: 25px 0 10px 0;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.description-modal {
+  font-size: 15px;
+  color: #808080;
+}
+.info-icon {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background: inherit;
+
+  .icon {
+    border-radius: 1.25rem;
+    background-color: #444;
+    width: 1.5625rem;
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: 100%;
+    padding: 0.312rem;
+    border-radius: 0.1875rem;
+    background-color: #444;
+    color: rgb(255, 255, 255);
+    font-size: 0.928rem;
+    min-width: 20rem;
+    max-width: 15rem;
+    transform: translate(-50%, -1.25em/2);
+    left: 50%;
+    margin-left: 4px;
+    animation: fade-in 0.5s linear forwards;
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: " ";
+      position: absolute;
+      display: block;
+      height: 1.25em;
+      left: 0;
+      bottom: -1.25em;
+      width: 100%;
+    }
+
+    &::after {
+      content: " ";
+      height: 0;
+      left: 50%;
+      margin-left: -13px;
+      position: absolute;
+      width: 0;
+    }
+  }
+}
+.powered-modal{
+  content: url("../images/powered-by-changeup-grey.svg");
+  width: 122px;
+  height: 45px;
+  margin: 0 39%;
+}
+.charity-image{
+  width: 50px;
+  height: 50px;
+}
+.corazonA{
+  background: url("../images/corazonPng.png") no-repeat  center;
+  width: 50px;
+  height: 50px;
+}
+.corazonB{
+  background: url("../images/corazonPngB.png") no-repeat  center;
+  border: none;
+  width: 50px;
+  height: 50px;
+}
+.tambor{
+  background: url("../images/tambor.png") no-repeat  center;
+  border: 1px solid #e2e2e2;
+  width: 50px;
+  height: 50px;
+}
+.merchantIcon{
+  background-color:#e4e8ed;
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  border: 1px solid #e2e2e2;
+}

@@ -1,9 +1,6 @@
-<!----------------------------------------------------------------------------------->
-<!-- Load Static Assets -->
-<!----------------------------------------------------------------------------------->
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
-    
+
     /////////////////////////////////////////////
     //            CHANGEUP INJECTION           //
     /////////////////////////////////////////////
@@ -14,12 +11,9 @@
     }
 </isscript>
 
-
 <!-- =========================================== -->
 <!--             CHANGEUP INJECTION              -->
 <!-- =========================================== -->
-<isif condition="${prefs.widgetChangeUpEnable}">
-    <isinclude template="changeUp/donationConfirmationWidget" />
-    <iselse/>
-    <isinclude template="changeUp/donationconfirmation" />
+<isif condition="${prefs.changeupEnabled}">
+    <isinclude template="changeUp/salesdescription" />
 </isif>

@@ -1,67 +1,81 @@
 <iscontent type="text/html" charset="utf-8" />
 <isinclude template="components/modules" />
-<isif condition="${pdict.changeup && pdict.changeup.agreedToDonate}">
-    <div id="changeup-charity-selection-wrapper" class="changeup-charity-selection-wrapper" data-sendurl="${URLUtils.https('ChangeUp-SendIt')}" data-orderno="${pdict.order.orderNumber}">
-        <div id="header-wrapper" class="header-wrapper">
-            <div id="selection-header" class="header changeupheader">
-                <isprint value="${ContentMgr.getContent("changeup-charity-selector-header").custom.body}" encoding="off" />
-                <span class="donation-amount">${pdict.changeup.amount}</span>
+<isif condition="${pdict.changeup}">
+    <div id="changeup-charity-selection-wrapper" data-sendurl="${URLUtils.https('ChangeUp-SendIt')}" data-orderno="${pdict.order.orderNumber}">
+    <isif condition="${(pdict.changeup.config.donation_type_checkout && pdict.changeup.agreedToDonate)}">
+ 
+        <div id="header-wrapper">
+            <div id="selection-header" class="header">
+            ${(pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_merchant_c : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_merchant_c : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_merchant_c :pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_customer_c : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_customer_c : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_customer_c : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_match_c : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_match_c : pdict.changeup.config.donation_submessage_percentage_match_c ).replace('$X.XX', pdict.changeup.config.donation_display_type == 'actual' ? pdict.changeup.amount : pdict.changeup.percentOfTotal)}
             </div>
-            <iscomment> <div id="timer-wrapper">
-                <span class="timer-text">${Resource.msg('selection.timer', 'changeup', null)}</span>
-                <span id="timer"></span>
-                <i class="icon-clock2" aria-hidden="true"></i>
-            </div> </iscomment>
         </div>
-        <div class="merchant_statement" id="merchant-statement-wrapper">
-        <isprint value="${ContentMgr.getContent("changeup-charity-selector-merchant-statement").custom.body}" encoding="off" />
-        </div>
+    
+        <isif condition="${pdict.changeup.config.featured_charities.length > 0}">
+		    <div id="merchant-statement-wrapper">${pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_merchant_d_m : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_merchant_d_m : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_merchant_d_m :pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_customer_d_m : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_customer_d_m : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_customer_d_m : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_match_d_m : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_match_d_m : pdict.changeup.config.donation_submessage_percentage_match_d_m }
+		    </div>	
+		<iselse/>
+		    <div id="merchant-statement-wrapper">${pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_merchant_d : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_merchant_d : pdict.changeup.config.donation_type_actor == 'merchant' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_merchant_d :pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_customer_d : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_customer_d : pdict.changeup.config.donation_type_actor == 'customer' && pdict.changeup.config.donation_type_option == 'percentage' ? pdict.changeup.config.donation_submessage_percentage_customer_d : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'roundup' ? pdict.changeup.config.donation_submessage_roundup_match_d : pdict.changeup.config.donation_type_actor == 'match' && pdict.changeup.config.donation_type_option == 'fixed' ? pdict.changeup.config.donation_submessage_fixed_match_d : pdict.changeup.config.donation_submessage_percentage_match_d }
+		    </div>	
+		</isif>	 
+
         <div id="selection-wrapper">
             <p id="merchant-statement"></p>
             <div id="selector-wrapper">
                 <div id="charity-tiles-wrapper">
                     <div id="featured-tiles-wrapper">
                         <p class="fav-text">
-                        	<span>
-                                <isslot id="changeup-order-confirmation" description="ChangeUp copy on Order Confirmation page" context="global" />
-                                </span>
+                            <span>
+                                <isprint value="${Resource.msg('selection.ourfavorites', 'changeup', '')}" /></span>
+                            <isprint value="${Resource.msg('selection.ourfavorites.click', 'changeup', '')}" />
                         </p>
-                        <ul id="charity-tiles" class="charity-tiles">
+                        <ul id="charity-tiles">
                             <li class="tile default selected">
-                                <div class="tile-content">
-                                    <isif condition="${!empty(pdict.changeup.config.default_charity.logo) && !empty(pdict.changeup.config.default_charity.logo.url)}">
-			                            <img class="charity-img" src="${pdict.changeup.config.default_charity.logo.url}" alt="${pdict.changeup.config.default_charity.display}" />
-			                        <iselse/>
-			                        	<div class="image-placeholder"> </div>
-			                        </isif>
-                                    <p class="charity-name">${pdict.changeup.config.default_charity.name}</p>
+                                <div class="tile-content info-icon">
+                                    <isif condition="${!empty(pdict.changeup.config.default_charity.logo)}">
+                                        <img src="${pdict.changeup.config.default_charity.logo}" alt="${pdict.changeup.config.default_charity.display}" />
+                                        <iselse/>
+                                            <div class="image-placeholder"> </div>
+                                    </isif>
+                                        <p class="charity-name">${pdict.changeup.config.default_charity.name}</p>
+                                        <isif condition="${pdict.changeup.config.show_charities_description && pdict.changeup.config.default_charity.mission_statment != null}">
+								<span class="tooltip d-none first-item">${pdict.changeup.config.default_charity.mission_statment}</span>
+							</isif>
                                 </div>
                                 <button class="charity-select hide" data-uuid="${pdict.changeup.config.default_charity.uuid}" data-charityname="${pdict.changeup.config.default_charity.display}">${Resource.msg('selection.sendit', 'changeup', null)}</button>
                             </li>
                             <isloop items="${pdict.changeup.config.featured_charities}" var="charity" status="loopstatus">
                                 <li class="tile featured">
-                                    <div class="tile-content">
-                                        <isif condition="${!empty(charity.logo) && !empty(charity.logo.url)}">
-				                            <img class="charity-img" src="${charity.logo.url}" alt="${charity.display}" />
-				                        <iselse/>
-				                        	<div class="image-placeholder"> </div>
-				                        </isif>
-                                        <p class="charity-name">${charity.name}</p>
+                                    <div class="tile-content info-icon">
+                                        <isif condition="${!empty(charity.logo)}">
+                                            <img src="${charity.logo}" alt="${charity.display}" />
+                                            <iselse/>
+                                            <div class="image-placeholder"> </div>
+                                        </isif>
+                                            <p class="charity-name">${charity.name}</p>
+                                            <isif condition="${pdict.changeup.config.show_charities_description && charity.mission_statment != null}">
+								<span class="tooltip d-none">${charity.mission_statment}</span>
+							</isif>
                                     </div>
-                                    <button class="charity-select" data-uuid="${charity.uuid}" data-charityname="${charity.display}">${Resource.msg('selection.sendit', 'changeup', null)}</button>
+                                        <button class="charity-select" data-uuid="${charity.uuid}" data-charityname="${charity.display}">${Resource.msg('selection.sendit', 'changeup', null)}</button>
                                 </li>
                             </isloop>
                         </ul>
                     </div>
-                    <isif condition="${pdict.changeup.config.customer_search_toggle}">
-                        <div id="search-tile-wrapper" style="display:none;">
+
+                    <iscomment> SEARCH CHARITY DONATED-AT-CHECKOUT </iscomment>
+                    <isif condition="${pdict.changeup.config.donation_type_checkout && pdict.changeup.config.show_charity_search_toggle}">
+                        <div id="search-tile-wrapper">
                             <p class="fav-text">
-                            	<span><isprint value="${Resource.msg('selection.oryourfavorite', 'changeup', null)}"/></span>
-                            	<isprint value="${Resource.msg('selection.oryourfavorite.type', 'changeup', null)}"/>
+                                <span>
+                                    <isprint value="${Resource.msg('selection.oryourfavorite', 'changeup', null)}" />
+                                </span>
+                                <isprint value="${Resource.msg('selection.oryourfavorite.type', 'changeup', null)}" />
                             </p>
                             <div id="search-tile" class="tile">
                                 <div id="search-box">
-                                    <input type="text" id="search" data-url="${URLUtils.https('ChangeUp-CharitySearch')}" placeholder="${Resource.msg('selection.searchplaceholder', 'changeup', null)}" />
+                                    <input type="text" id="search"
+                                        data-url="${URLUtils.https('ChangeUp-CharitySearch')}"
+                                        placeholder="${Resource.msg('selection.searchplaceholder', 'changeup', null)}" />
                                     <i class="icon-search" aria-hidden="true"></i>
                                 </div>
                                 <button class="charity-select search" disabled>${Resource.msg('selection.sendit', 'changeup', null)}</button>
@@ -71,116 +85,89 @@
                 </div>
             </div>
         </div>
-        <div id="timer-end-content-wrapper" class="hidden">
-            <div class="header nobackground">
-                <isprint value="${Resource.msg('selection.donation', 'changeup', '')}"/>
-                
-            </div>
-            <div class="merchant-statement">
-                <iscontentasset aid="changeup-timer-submit-merchant-statement" />
+
+        <iselse/>
+
+        <iscomment> PRODUCT PAGE DONATIONS </iscomment>
+        <isif condition="${pdict.changeup.config.donation_type_salesUplift}">
+
+        <div id="header-wrapper">
+            <div id="selection-header" class="header">
+                We donated ${pdict.changeup.amountSalesUplift} of your purchase to:
             </div>
         </div>
+
+        <div id="selection-wrapper">
+            <p id="merchant-statement"></p>
+            <div id="selector-wrapper">
+                <div id="charity-tiles-wrapper">
+                    <div id="featured-tiles-wrapper">
+                        <ul id="charity-tiles">
+                            <li class="tile default selected">
+                                <div class="tile-content info-icon">
+                                    <isif condition="${pdict.changeup.config.show_charities_at_sales_uplift == 'charity'}">
+                                        <img src="${pdict.changeup.config.default_charity.logo}" class="charity-image img-fluid img-thumbnail rounded-circle" alt="${pdict.changeup.config.default_charity.display}" id="charity-logo" />
+                                    <iselse/>
+                                        <isif condition="${pdict.changeup.config.logoClass != 'merchantIcon'}">
+                                            <img src=" " alt="" class="charity-image img-fluid img-thumbnail rounded-circle p-0 ${pdict.changeup.config.logoClass}" style="background-color: ${pdict.changeup.config.logoColor};  background-size: ${pdict.changeup.config.logoClass === 'corazonB' ? 'cover':''} " id="charity-logo" />
+                                        <iselse/>
+                                            <img src="${pdict.changeup.config.logoMerchant}" alt= "" class="charity-image rounded-circle p-0 ${pdict.changeup.config.logoClass}" id="charity-logo" />
+                                        </isif>
+                                    </isif>
+                                    <p class="charity-name">${pdict.changeup.config.default_charity.name}</p>
+                                    <isif condition="${pdict.changeup.config.show_charities_description_salesuplift && pdict.changeup.config.default_charity.mission_statment != null}">
+                                        <span class="tooltip d-none first-item">${pdict.changeup.config.default_charity.mission_statment}</span>
+                                    </isif>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </isif>
+    </isif>
+        <div id="timer-end-content-wrapper" class="hidden">
+            <div class="header">
+                <isif condition="${(pdict.changeup.config.donation_type_checkout && pdict.changeup.agreedToDonate)}">
+                    <span class="donation-amount">
+                        <isprint value="${pdict.changeup.config.donation_display_type == 'actual' ? pdict.changeup.amount : pdict.changeup.percentOfTotal}" />
+                    </span>
+                <iselse/>
+                    <span class="donation-amount">
+                        <isprint value="${pdict.changeup.amountSalesUplift}" /></span>
+                </isif>
+                <isprint value="${Resource.msg('selection.donation', 'changeup', '')}" />
+                <isprint value="${Resource.msg('selection.donation.contribution', 'changeup', '')}" />
+                <isif condition="${(pdict.changeup.config.donation_type_checkout && pdict.changeup.agreedToDonate)}">
+                    <span id="sendit-charity-name">
+                        <isprint value="${pdict.changeup.config.default_charity.display}" /></span>
+                <iselse/>
+                    <span id="sendit-charity-name">
+                        <isprint value="${pdict.changeup.config.default_charity_salesUplift.display}" /></span>
+                </isif>
+            </div>
+            <iscomment> <div class="merchant-statement">
+                <iscontentasset aid="changeup-timer-submit-merchant-statement" />
+            </div> </iscomment>
+        </div>
         <div id="send-it-content-wrapper" class="hidden">
-            <div class="header nobackground">
-                <isprint value="${Resource.msg('selection.donation', 'changeup', '')}"/>
-                <span class="donation-amount"><isprint value="${pdict.changeup.config.donation_display_type == 'actual' ? pdict.changeup.amount : pdict.changeup.percentOfTotal}"></span>
-               
+            <div class="header">
+                <isprint value="${Resource.msg('selection.donation', 'changeup', '')}" />
+                    <isif condition="${(pdict.changeup.config.donation_type_checkout && pdict.changeup.agreedToDonate)}">
+                        <span class="donation-amount">
+                            <isprint value="${pdict.changeup.config.donation_display_type == 'actual' ? pdict.changeup.amount : pdict.changeup.percentOfTotal}" />
+                        </span>
+                    <iselse/>
+                        <span class="donation-amount">
+                            <isprint value="${pdict.changeup.amountSalesUplift}" /></span>
+                    </isif>
+                    <isprint value="${Resource.msg('selection.donation.contribution', 'changeup', '')}" />
+                        <span id="sendit-charity-name"></span>
             </div>
-            <div class="merchant-statement">
+            <iscomment> <div class="merchant-statement">
                 <iscontentasset aid="changeup-sendit-submit-merchant-statement" />
-            </div>
+            </div> </iscomment>
         </div>
     </div>
 </isif>
-
-<style>
-.charity-tiles .tile{
-    width: 6.85em !important;
-    cursor: pointer;
-}
-.charity-select {
-    border-radius: 0px !important;
-}
-.fav-text {
-    margin-bottom:0px !important;
-    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif !important;
-font-size: 16px !important;
-font-style: normal;
-font-weight: 700;
-line-height: 19px;
-letter-spacing: 0em !important;
-text-align: left;
-line-height: normal !important;
-}
-.nobackground {
-    background: white !important;
-    color:black !important;
-}
-.merchant_statement {
-    display:none;
-}
-.header-wrapper {
-    border: 0px !important;
-    padding-bottom: 0px !important;
-}
-.selected .charity-img {
-    border: 3px solid black !important;
-}
-.charity-img, .image-placeholder {
-    height: 7em !important;
-    width: 7em !important;
-    border-radius: 50%;
-    border: 1.5px solid black;
-}
-.selected .tile-content {
-    border: none !important;
-}
-.charity-select {
-    background: black !important;
-    color:white !important;
-    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif !important;
-    font-size: 12px !important;
-    font-weight: 700 !important;
-    letter-spacing: 1.5px !important;
-    line-height: 40px !important;
-    min-height: 52px !important;
-    padding: 1px 6px;
-}
-.changeup-charity-selection-wrapper {
-    background:none !important;
-    color:black !important;
-    padding: 0px !important;
-}
-.timer-end {
-    background: none !important;
-    color: black !important;
-}
-.donation-amount { display: none !important; color:black !important; }
-.header-wrapper {
-    display:block !important;
-}
-.changeupheader {
-    background: none !important;
-    color: black !important;
-    font-family: "HelveticaNeue-Bold", Helvetica, sans-serif !important;
-font-size: 24px !important;
-font-style: normal;
-font-weight: 700;
-line-height: 29px;
-letter-spacing: 0em !important;
-text-align: left;
-margin-bottom:0px !important;
-}
-.tile-content {
-    background: none !important;
-}
-.tile-content .charity-name {
-font-family: Georgia !important;
-font-size: 14px !important;
-font-style: normal !important;
-font-weight: 400 !important;
-line-height: 16px !important;
-letter-spacing: 0em !important;
-text-align: center;
-}
-</style>

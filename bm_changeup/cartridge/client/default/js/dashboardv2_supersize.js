@@ -5,7 +5,11 @@ jQuery(document).ready(function ($) {
 
     function populateSelectInitFirstOption(options, selector, selectedValueSelector) {
         $.each(options, function (i, item) {
-            var amount = '$' + parseFloat(item, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+            if (selector == 'salesuplift_percentage') {
+                var amount = parseFloat(item, 10).toFixed(1).replace(/(\d)(?=(\d{3})+\.)/g, "1,").toString() + '%';
+            } else {
+                var amount = '$' + parseFloat(item, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+            }
             $('#' + selector).append($('<option>', {
                 value: item,
                 text: amount
@@ -99,20 +103,13 @@ jQuery(document).ready(function ($) {
         }
     }
 
-    var checkExist_supersize_single_option = setInterval(function () {
-        if ($('#supersize_single_option').length) {
-            var supersize_options = $('#cfg_supersize_options').val();
-            var array_sp_options = supersize_options.split(',');
-            populateSelectInitFirstOption(array_sp_options, 'supersize_single_option', 'cfg_supersize_single_option_value');
-            if ($('#cfg_supersize_single_option_value').val() != '' && $('#cfg_supersize_single_option_value').val() != null && $('#cfg_supersize_single_option_value').val() != 'null' && $('#cfg_supersize_single_option_value').val() != undefined && $('#cfg_supersize_single_option_value').val() != 'undefined') {
-                updateDonationButtons('single', $('#cfg_supersize_single_option_value').val(), '', '');
-            } else {
-                updateDonationButtons('single', $('#supersize_single_option').val(), '', '');
-            }
-            $('#supersize_single_option').on('change', function () {
-                updateDonationButtons('single', $(this).val(), '', '');
-            });
-            clearInterval(checkExist_supersize_single_option);
+
+    var checkExist_supersize_single_option_2 = setInterval(function () {
+        if ($('#salesuplift_percentage').length) {
+            var supersize_options_salesuplift = $('#cfg_supersize_options_salesuplift').val();
+            var array_sp_options = supersize_options_salesuplift.split(',');
+            populateSelectInitFirstOption(array_sp_options, 'salesuplift_percentage', 'cfg_salesuplift_donation');
+            clearInterval(checkExist_supersize_single_option_2);
         }
     }, 100);
 
@@ -169,178 +166,50 @@ jQuery(document).ready(function ($) {
         }
     }, 100);
 
-    var checkExist_supersize_two_plus_option_one = setInterval(function () {
-        if ($('#supersize_two_plus_option_one').length) {
-            var supersize_options = $('#cfg_supersize_options').val();
-            var array_sp_options = supersize_options.split(',');
-            populateSelectInitFirstOption(array_sp_options, 'supersize_two_plus_option_one', 'cfg_supersize_two_plus_option_one_value');
-            if ($('#cfg_supersize_two_plus_option_one_value').val() != '' && $('#cfg_supersize_two_plus_option_one_value').val() != null && $('#cfg_supersize_two_plus_option_one_value').val() != 'null' && $('#cfg_supersize_two_plus_option_one_value').val() != undefined && $('#cfg_supersize_two_plus_option_one_value').val() != 'undefined') {
-                updateDonationButtons('two_plus', $('#cfg_supersize_two_plus_option_one_value').val(), '', '');
-            } else {
-                updateDonationButtons('two_plus', $('#supersize_two_plus_option_one').val(), '', '');
-            }
-            $('#supersize_two_plus_option_one').on('change', function () {
-                populateSelects(array_sp_options, 'supersize_two_plus_option_one', 'supersize_two_plus_option_two', 'supersize_two_plus_option_plus');
-                updateDonationButtons('two_plus', $(this).val(), $('#supersize_two_plus_option_two').val(), $('#supersize_two_plus_option_plus').val());
-
-            });
-            clearInterval(checkExist_supersize_two_plus_option_one);
-        }
-    }, 100);
-
-    var checkExist_supersize_two_plus_option_two = setInterval(function () {
-        if ($('#supersize_two_plus_option_two').length) {
-            var supersize_options = $('#cfg_supersize_options').val();
-            var array_sp_options = supersize_options.split(',');
-            populateSelectInit(array_sp_options, 'supersize_two_plus_option_two', 'cfg_supersize_two_plus_option_two_value', 'supersize_two_plus_option_one');
-            if ($('#cfg_supersize_two_plus_option_one_value').val() != '' && $('#cfg_supersize_two_plus_option_one_value').val() != null && $('#cfg_supersize_two_plus_option_one_value').val() != 'null' && $('#cfg_supersize_two_plus_option_one_value').val() != undefined && $('#cfg_supersize_two_plus_option_one_value').val() != 'undefined') {
-                updateDonationButtons('two_plus', '', $('#cfg_supersize_two_plus_option_two_value').val(), '');
-            } else {
-                updateDonationButtons('two_plus', '', $('#supersize_two_plus_option_two').val(), '');
-            }
-            $('#supersize_two_plus_option_two').on('change', function () {
-                populateSelects(array_sp_options, 'supersize_two_plus_option_two', 'supersize_two_plus_option_plus', '');
-                updateDonationButtons('two_plus', '', $(this).val(), '');
-            });
-            clearInterval(checkExist_supersize_two_plus_option_two);
-        }
-    }, 100);
-
-    var checkExist_supersize_two_plus_option_plus = setInterval(function () {
-        if ($('#supersize_two_plus_option_plus').length) {
-            var supersize_options = $('#cfg_supersize_options').val();
-            var array_sp_options = supersize_options.split(',');
-            populateSelectInit(array_sp_options, 'supersize_two_plus_option_plus', '', 'supersize_two_plus_option_two');
-            populateSelectInit(array_sp_options, 'two_plus_plus', '', 'supersize_two_plus_option_two');
-            $('#supersize_two_plus_option_plus').get(0).dispatchEvent(new Event('change'));
-            var values = '';
-            $('#supersize_two_plus_option_plus option').each(function () {
-                values = values + $(this).val() + ',';
-            });
-            values = values.substring(0, values.length - 1);
-            $('#input_supersize_two_plus_value_plus').val(values);
-            clearInterval(checkExist_supersize_two_plus_option_plus);
-        }
-    }, 100);
-
     var checkExist_supersize_toggle = setInterval(function () {
         if ($('#supersize_toggle').length) {
             if ($('#cfg_supersize_toggle').val() == 'true') {
                 $('.supersize-section').show();
-
+                $('.supersize_divider').removeClass('d-none');
+                $('.three-options').removeClass('d-none');
             } else {
                 $('.supersize-section').hide();
+                $('.supersize_divider').addClass('d-none');
+                    $('.three-options').addClass('d-none');
             }
             $('#supersize_toggle').on('click', function () {
                 if ($(this).prop('checked')) {
                     $('.supersize-section').hide("slow");
                     $('.supersize_divider').addClass('d-none');
-                    $('.single-option').addClass('d-none');
                     $('.three-options').addClass('d-none');
-                    $('.two-plus-options').addClass('d-none');
+                    $('.text-supersize-option').addClass('d-none');
                 } else {
                     $('.supersize-section').show("slow");
                     $('.supersize_divider').removeClass('d-none');
-                    supersizeOptionsChange($('input[name="supersize_option"]:checked').val());
-                }
-            });
-            $('.sp-div').on('click', function () {
-                if ($('#supersize_toggle').prop('checked') == false) {
-                    $('.supersize-section').hide("slow");
-                    $('.supersize_divider').addClass('d-none');
-                    $('.single-option').addClass('d-none');
-                    $('.three-options').addClass('d-none');
-                    $('.two-plus-options').addClass('d-none');
-                } else if($('#supersize_toggle').prop('checked') == 'checked') {
-                    $('.supersize-section').show("slow");
-                    $('.supersize_divider').removeClass('d-none');
-                    supersizeOptionsChange($('input[name="supersize_option"]:checked').val());
+                    $('.three-options').removeClass('d-none');
+                    $('.text-supersize-option').removeClass('d-none');
+                    
                 }
             });
             clearInterval(checkExist_supersize_toggle);
         }
     }, 100);
 
-    var checkExist_supersize_options_sample = setInterval(function () {
-        if ($('.single-option').length && $('.three-options').length && $('.two-plus-options').length) {
-            var option_class = $('input[name="supersize_option"]:checked').val();
-            if ($('#cfg_supersize_toggle').val() == 'true') {
-                $('.supersize_divider').removeClass('d-none');
-                supersizeOptionsChange(option_class);
-            } else {
-                $('.supersize_divider').addClass('d-none');
-                $('.single-option').addClass('d-none');
-                $('.three-options').addClass('d-none');
-                $('.two-plus-options').addClass('d-none');
-            }
-            $('.radio-wrap').on('click', function () {
-                supersizeOptionsChange($(this).find('input[name="supersize_option"]').val());
-            });
-            clearInterval(checkExist_supersize_options_sample);
-        }
-    }, 100);
 
-    function supersizeOptionsChange(option_class) {
-        switch (option_class) {
-            case 'single':
-                $('.single-option').removeClass('d-none');
-                $('.three-options').addClass('d-none');
-                $('.two-plus-options').addClass('d-none');
-                break;
 
-            case 'three':
-                $('.single-option').addClass('d-none');
-                $('.three-options').removeClass('d-none');
-                $('.two-plus-options').addClass('d-none');
-                break;
-
-            case 'two_plus':
-                $('.single-option').addClass('d-none');
-                $('.three-options').addClass('d-none');
-                $('.two-plus-options').removeClass('d-none');
-                break;
-        }
-    }
 
     function updateDonationButtons(option, value1, value2, value3) {
-        switch (option) {
-            case 'single':
-                var amount = '$' + parseFloat(value1, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                $('.single-option .supersize-donation .main-quantity').text(amount);
-                break;
-
-            case 'three':
-                if (value1 != '') {
-                    var amount1 = '$' + parseFloat(value1, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                    $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_one').text(amount1);
-
-                }
-                if (value2 != '') {
-                    var amount2 = '$' + parseFloat(value2, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                    $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_two').text(amount2);
-
-                }
-                if (value3 != '') {
-                    var amount3 = '$' + parseFloat(value3, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                    $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_three').text(amount3);
-
-                }
-
-                break;
-
-            case 'two_plus':
-                if (value1 != '') {
-                    var amount1 = '$' + parseFloat(value1, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                    $('.two-plus-options .supersize-donation .available-options .supersize-btn-group button#two_plus_one').text(amount1);
-
-                }
-                if (value2 != '') {
-                    var amount2 = '$' + parseFloat(value2, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
-                    $('.two-plus-options .supersize-donation .available-options .supersize-btn-group button#two_plus_two').text(amount2);
-
-                }
-                break;
+        if (value1 != '') {
+            var amount1 = '$' + parseFloat(value1, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+            $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_one').text(amount1);
+            }
+        if (value2 != '') {
+            var amount2 = '$' + parseFloat(value2, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+            $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_two').text(amount2);
+        }
+        if (value3 != '') {
+            var amount3 = '$' + parseFloat(value3, 10).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,").toString();
+            $('.three-options .supersize-donation .available-options .supersize-btn-group button#three_three').text(amount3);
         }
     }
-
 });

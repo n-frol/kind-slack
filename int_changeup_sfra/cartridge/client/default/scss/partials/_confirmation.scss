@@ -42,6 +42,7 @@
     padding: 1.25em 6.25em;
     margin: 3.125em 0;
     font-size: 0.9em;
+    word-break: break-word;
 
     .hidden {
         display: none;
@@ -178,6 +179,14 @@
             .charity-name {
                 min-height: 3em;
             }
+
+            .first-item {
+                left: 70%;
+                &::after{
+                    left: 44%;
+                }
+            }
+
         }
     }
 

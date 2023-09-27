@@ -17,6 +17,9 @@
      	<pipeline name="ChangeUp-Dashboard" />
 			<pipeline name="ChangeUp-Dashboardv2" />
 			<pipeline name="ChangeUp-CharitySearch" />
+			<pipeline name="ChangeUp-CategorySearch" />
+			<pipeline name="ChangeUp-ProductUpdateDonation" />
+			<pipeline name="ChangeUp-UploadNewIcon" />
 			<pipeline name="ChangeUp-SaveConfig" />
 		</sub-pipelines>
 		<icon>images/logo.png</icon>

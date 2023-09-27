@@ -1,0 +1,69 @@
+<script>
+// listen for widget actions here
+window.readyChangeUp = false;
+var body = document.querySelector('body');
+function handleClick(event) {
+  window.readyChangeUp = true;
+}
+body.addEventListener('click', handleClick);
+
+window.addEventListener('changeup-donate-checkout', function(event) {
+  console.log(window.readyChangeUp);
+  if(window.readyChangeUp){
+    var causeId = event?.detail?.causeId ? event?.detail?.causeId :'';
+    var supersize_value = null;
+    console.log(event?.detail);
+
+    document.querySelectorAll(".chup-supersize-buttons button").forEach(button => {
+        if (button.style.backgroundColor == 'rgb(72, 187, 120)'){
+          supersize_value = parseFloat(button.innerHTML[1].trim()) ? parseFloat(button.innerHTML[1].trim()): 0;
+        }
+    });
+
+    fetch("${URLUtils.https('ChangeUp-UpdateWidgetDonation')}", {
+      "body": "{\"decision\":true,\"supersize_value\":"+supersize_value+",\"user_donation\":"+event?.detail?.userDonationAmount+",\"causeId\":\""+causeId+"\"}",
+      "method": "POST",
+    }).then((response ) => {
+      if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Error en la solicitud");
+        }
+      //
+    }).then(jsonResponse => {
+          var $cache = {
+            checkbox: $('#donation-checkbox'),
+            donationTotal: $('#donation-total'),
+            productsTotal: $('.order-product-summary .grand-total-price')
+        };
+            $('body').on('checkout:updateCheckoutView', (e, data) => {
+            if(!data.supersize){
+                if (data.order.changeup && data.order.changeup.amount) {
+                    $cache.donationTotal.text(data.order.changeup.amount || '-');
+                }
+            }
+            if(data.renderedTemplate) {
+              document.querySelector('.order-product-summary').outerHTML =data.renderedTemplate;
+            }
+            if (data.order.totals.donationTotalAmount) {
+                $('.donation-item').removeClass('d-none');
+                $('.donation-total').text(data.order.totals.donationTotalAmount);
+            }else{
+                $('.donation-item').addClass('d-none');
+            }
+        
+        });
+        $('body').trigger('checkout:updateCheckoutView', jsonResponse);
+      }).catch(error => {
+        console.log(error);
+      });
+  }
+});
+</script>
+<div
+    data-island="changeup-donate-checkout"
+    data-subtotal="${pdict.changeup.grossWithoutDonation}"
+    data-widget="${prefs.widgetId}"
+    data-client="${prefs.widgetChangeUpClient}">
+</div>
+<script async src="https://widget-staging.changeup.com/changeup-donate-checkout.js"></script>

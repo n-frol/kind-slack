@@ -1,0 +1,80 @@
+ <div class="modal fade" id='learnMore${product.id}' tabindex="-1" role="dialog" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center font-weight-bold pt-1 donate-title">${Resource.msg('salesuplift.titledonation', 'changeup', '')} <b
+              id="percentage">${pdict.changeup.salesuplift_donation}</b>${Resource.msg('salesuplift.percentage', 'changeup', '')}</div>
+          <div class="text-center pt-4">
+            <ul class="list-inline">
+              <li class="list-inline-item donation-modal">
+                <isif condition="${pdict.changeup.charity_chose != 'customer'}">
+                  <p class="donation_amount">
+                    ${pdict.changeup.sales_uplift_description.split('$X.XX')[0].replace('_charity_', defaultCharity.name)}
+                    <isif condition="${pdict.changeup.sales_uplift_description.split('$X.XX')[1] != null}">
+                      <b class="su_donation_modal"></b>
+                      ${pdict.changeup.sales_uplift_description.split('$X.XX')[1].indexOf('_charity_') == -1 ? pdict.changeup
+                    .sales_uplift_description.split('$X.XX')[1] : pdict.changeup.sales_uplift_description.split('$X.XX')[1].replace(
+                      '_charity_', defaultCharity.name)}
+                    </isif>
+                <iselse/>
+                  </p>
+                  <p class="donation_amount">${pdict.changeup.sales_uplift_description_customer.split('$X.XX')[0]} <b
+                      class="su_donation_modal"></b>
+                    ${pdict.changeup.sales_uplift_description_customer.split('$X.XX')[1]}</p>
+                </isif>
+              </li>
+            </ul>
+          </div>
+          <div class="donation-confirmation text-center">
+          <div class="info-icon">
+            <isif condition="${pdict.changeup.show_charities_at_sales_uplift == 'charity'}">
+              <picture>
+                <img src="${defaultCharity.logo}" class="charity-image img-fluid img-thumbnail rounded-circle"
+                  alt="${defaultCharity.logo}" />
+            <iselse/>
+                <isif condition="${pdict.changeup.show_charities_at_sales_uplift == 'universal'}">
+                  <isif condition="${pdict.changeup.logoClass != 'merchantIcon'}">
+                    <img src=" " alt= "" class="charity-image img-fluid img-thumbnail rounded-circle p-0 ${pdict.changeup.logoClass}"
+                      style="background-color: ${pdict.changeup.logoColor}" id="charity-logo-modal" />
+                <iselse/>
+                    <img src="${pdict.changeup.logoMerchant}" alt= "" class="charity-image rounded-circle p-0 ${pdict.changeup.logoClass}"
+                     id="charity-logo-modal" />
+                  </isif>
+                </isif>
+              </picture>
+             
+               
+            </isif>
+             <isif condition="${pdict.changeup.show_charities_description_salesuplift && defaultCharity.mission_statment != null}">
+            <span class="tooltip d-none">
+            ${defaultCharity.mission_statment}
+          </span>
+          </isif>
+</div>
+            <isif condition="${pdict.changeup.charity_chose != 'customer'}">
+              <div class="text-center pt-3">
+                <b> ${defaultCharity.name} </b>
+              </div>
+              <div class="text-center pt-2 description-modal">
+                <b> ${defaultCharity.display} </b>
+              </div>
+          <iselse/>
+
+            </isif>
+          </div>
+
+          <div class="text-center pt-3 pb-3 donation-text">
+            ${pdict.changeup.sales_uplift_modal}
+            <br>
+            ${pdict.changeup.modaldescription1}
+            <br>
+            ${pdict.changeup.modaldescription2}
+            <br>
+            ${pdict.changeup.modaldescription3}
+          </div>
+          <div class="dropdown-divider"></div>
+          <div class="blockquote-footer mb-3 powered-modal text-center"></div>
+        </div>
+      </div>
+    </div>
+  </div>

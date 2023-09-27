@@ -53,7 +53,7 @@ function search(queryObj) {
         var orgs = JSON.parse(result.object.text);
 
         for (var idx = 0; idx < orgs.length; idx++) {
-            var id = (orgs[idx].id != undefined && orgs[idx].id != null && orgs[idx].id != '') ? orgs[idx].id : '""';
+            var id = (orgs[idx].benevity_id != undefined && orgs[idx].benevity_id != null && orgs[idx].benevity_id != '') ? orgs[idx].benevity_id : '""';
             var name = (orgs[idx].attributes.name != undefined && orgs[idx].attributes.name != null && orgs[idx].attributes.name != '') ? orgs[idx].attributes.name : '""';
             var city = (orgs[idx].attributes.city != undefined && orgs[idx].attributes.city != null  && orgs[idx].attributes.city != '') ? orgs[idx].attributes.city : '""';
             var state = (orgs[idx].attributes.state != undefined && orgs[idx].attributes.state != null &&  orgs[idx].attributes.state != '')  ? orgs[idx].attributes.state : '';

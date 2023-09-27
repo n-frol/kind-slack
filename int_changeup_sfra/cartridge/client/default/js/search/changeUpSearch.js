@@ -25,4 +25,27 @@ function search(query, $input, cb) {
 }
 
 module.exports = function () {
+    var autocomplete = require('autocomplete.js');
+    var $wrapper = $('#search-tile-wrapper');
+    var $searchInput = $wrapper.find('#search');
+    var $button = $wrapper.find('.charity-select');
+
+    autocomplete($searchInput[0], {
+        hint: false,
+        minLength: 3
+    }, [{
+        source: function (query, cb) {
+            search(query, $searchInput, cb);
+        },
+        displayKey: function (suggestion) {
+            return suggestion.name + ' - ' + suggestion.location;
+        },
+        debounce: 500
+    }])
+    .on('autocomplete:selected', function (event, suggestion, dataset, context) { // eslint-disable-line no-unused-vars
+        $button.data('uuid', suggestion.uuid);
+        $button.data('charityname', suggestion.display);
+
+        $button.prop('disabled', false);
+    });
 };

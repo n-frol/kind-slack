@@ -11,15 +11,20 @@
     if (prefs.changeupEnabled) {
         assets.addCss('/css/changeUp.css');
         assets.addJs('/js/changeUp.js');
-    }
+    } 
 </isscript>
-
 
 <!-- =========================================== -->
 <!--             CHANGEUP INJECTION              -->
 <!-- =========================================== -->
-<isif condition="${prefs.widgetChangeUpEnable}">
-    <isinclude template="changeUp/donationConfirmationWidget" />
-    <iselse/>
-    <isinclude template="changeUp/donationconfirmation" />
+<isif condition="${prefs.changeupEnabled}">
+    <!--- DonationLine--->    
+    <div class="row leading-lines donation-item ${pdict.order.totals.donationTotalAmount ? '' : 'd-none'}">
+    <div class="col-6 start-lines">
+        <p class="order-donation-label"><span>${Resource.msg('label.order.donation','changeup', null)}</span></p>
+    </div>
+    <div class="col-6 end-lines">
+        <p class="text-right"><span class="donation-total">${pdict.order.totals.donationTotalAmount}</span></p>
+    </div>
+    </div>
 </isif>

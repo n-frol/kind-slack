@@ -1,0 +1,22 @@
+<isif condition="${pdict.changeup.config.donation_type_salesUplift && pdict.changeup.config.donation_type_option_salesUplift == 'all' && pdict.changeup.config.charity_chose != 'customer'}">
+  <isif condition="${pdict.changeup.charity_chose == 'merchant'}">
+         <isset name="defaultCharity" value="${pdict.changeup.config.default_charity_salesMerchant}" scope="page" /> 
+      <iselse/>
+        <isif condition="${pdict.changeup.charity_chose == 'merchantplus'}">
+          <isset name="defaultCharity" value="${pdict.changeup.config.default_charity_salesMerchantplus}" scope="page" />
+      </isif>
+      </isif>
+  <div class="row salesuplift-donation-nogrid border border-grey mt-3">
+        <div class="list-inline font-weight-bold pt-1 donation-title"> ${Resource.msg('salesuplift.titledonation', 'changeup', '')}
+        <b id="percentage">${pdict.changeup.config.salesuplift_donation}</b>${Resource.msg('salesuplift.percentage', 'changeup', '')}
+        to ${defaultCharity.name}.
+        </div>
+        <div class="donation-container">
+          <div class="donation-description">
+          <p>
+            
+            </p>
+          </div>
+        </div>
+      </div>
+</isif>

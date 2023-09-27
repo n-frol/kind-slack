@@ -8,12 +8,20 @@ module.exports = function () {
     };
 
     $cache.checkbox.on('click keydown', function (e) {
+        let supersize_value = null;
+        let selected_org_uuid = document.querySelector('input[name=selected_carity]:checked').value;
+
         if (e.type === 'keydown' && e.keyCode !== 32) {
             return;
         }
         e.preventDefault();
         $(this).toggleClass('checked');
 
+        $('.donation-button-group').children().each(function () {
+            if($(this).hasClass('active')){
+                supersize_value = $(this).data('value');
+            }
+        });
         $.ajax({
             url: $(this).data('url'),
             method: 'post',
@@ -22,8 +30,6 @@ module.exports = function () {
             },
             data: JSON.stringify({
                 decision: $(this).hasClass('checked'),
-                zip: $(".shippingZipCode").val(),
-                phone: $(".shippingPhoneNumber").val(),
                 shippingForm_firtsName: $('.shippingFirstName').val(),
                 shippingForm_lastName: $('.shippingLastName').val(),
                 shippingForm_addressOne: $('.shippingAddressOne').val(),
@@ -31,7 +37,9 @@ module.exports = function () {
                 shippingForm_countryCode: $('.shippingCountry').val(),
                 shippingForm_phone: $('.shippingPhoneNumber').val(),
                 shippingForm_zipCode: $('.shippingZipCode').val(),
-                shippingForm_city: $('.shippingAddressCity').val()
+                shippingForm_city: $('.shippingAddressCity').val(),
+                selected_org_uuid: selected_org_uuid,
+                supersize_value: supersize_value
             })
         })
         .done((data) => {
@@ -48,8 +56,11 @@ module.exports = function () {
             }
         }
 
-        if ($cache.productsTotal.length) {
-            $cache.productsTotal.text(data.order.totals.subTotal);
+        if (data.order.totals.donationTotalAmount) {
+            $('.donation-item').removeClass('d-none');
+            $('.donation-total').text(data.order.totals.donationTotalAmount);
+        }else{
+            $('.donation-item').addClass('d-none');
         }
     });
 };

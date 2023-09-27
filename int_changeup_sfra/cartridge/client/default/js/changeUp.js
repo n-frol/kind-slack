@@ -1,8 +1,9 @@
 var processInclude = require('./util');
 
-$(window).on('load', function () {
+$(document).ready(function () {
     processInclude(require('./checkout/changeUpCheckout'));
     processInclude(require('./confirmation/changeUpConfirmation'));
-    //processInclude(require('./search/changeUpSearch'));
+    processInclude(require('./search/changeUpSearch'));
     processInclude(require('./checkout/changeUpCheckoutSupersize'));
+    processInclude(require('./page/details'));
 });

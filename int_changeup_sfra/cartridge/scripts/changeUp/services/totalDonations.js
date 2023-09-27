@@ -38,18 +38,16 @@ function getService() {
 function getTotalDonationsToDate(config) {
     var total = '';
     var result = null;
+    var start = 0;
 
     if (config.total_donations_toggle !== true) {
         return '';
     }
 
-    // need to test for session.custom so the unit test doesnt blow up
-    if (session.custom && session.custom.total_donation) {
-        total = session.custom.total_donation;
-    } else {
-        result = getService().call();
-        if (result && result.ok) {
-            var resultObj;
+    result = getService().call();
+
+    if (result && result.ok) {
+        var resultObj;
             try {
                 resultObj = JSON.parse(result.object.text);
             } catch (e) {
@@ -59,29 +57,26 @@ function getTotalDonationsToDate(config) {
             if (resultObj.data && resultObj.data.total_cents) {
                 var totalCents = resultObj.data.total_cents;
                 total = (totalCents / 100).toFixed(2);
-
-                // need to test for session.custom so the unit test doesn't blow up
-                if (session.custom) {
-                    session.custom.total_donation = total;
-                }
             }
-        } else if (result && result.errorMessage) {
-            Logger.error('total_donations error: ' + result.errorMessage);
+    } else if (result && result.errorMessage) {
+        Logger.error('total_donations error: ' + result.errorMessage);
         }
-    }
 
     if (total) {
         var totalVal = Number(total);
-       
-        var start = 0;
         if (config.total_donations_start) {
-            start = Number(config.total_donations_start);
+            var formatValue = config.total_donations_start.toString().replace(/,/g, '');
+            start = Number(formatValue);
         }
 
-        if (start > totalVal) {
-            return '';
-        }
+        totalVal += start;
         total = totalVal.toFixed(2);
+    } else {
+        if (config.total_donations_start) {
+            var formatValue = config.total_donations_start.toString().replace(/,/g, '');
+            start = Number(formatValue);
+        }
+        total = start;
     }
 
     return total;

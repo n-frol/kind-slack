@@ -18,8 +18,6 @@
 <!-- =========================================== -->
 <!--             CHANGEUP INJECTION              -->
 <!-- =========================================== -->
-<isif condition="${prefs.widgetChangeUpEnable}">
-    <isinclude template="changeUp/donationConfirmationWidget" />
-    <iselse/>
-    <isinclude template="changeUp/donationconfirmation" />
+<isif condition="${prefs.changeupEnabled}">
+    <isinclude template="changeUp/minicart" />
 </isif>

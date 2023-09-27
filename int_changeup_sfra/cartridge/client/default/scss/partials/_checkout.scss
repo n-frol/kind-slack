@@ -11,6 +11,7 @@ $checkbox-background-color: #8693a3;
     margin-bottom: 1.25em;
     background: $box-background-color;
     border: 0.0625em solid $box-border-color;
+    word-break: break-word;
 
     #donation-confirmation-supersize {
         padding: 0.625em 1.25em;
@@ -303,19 +304,6 @@ $checkbox-background-color: #8693a3;
             }
         }
 
-        .charity-image {
-            grid-column-start: 2;
-            grid-row-start: 1;
-            grid-row-end: span 3;
-            padding: 5px;
-            display: grid;
-
-            img {
-                width: 4.688em;
-                height: 4.688em;
-                align-self: center;
-            }
-        }
 
         .donation-messages {
             line-height: 1.1;
@@ -367,9 +355,14 @@ $checkbox-background-color: #8693a3;
             padding: 0;
             margin: 0;
             text-align: center;
+            
+            label {
+                border: 1px solid black;
+                border-radius: 10px;
+            }
 
             .tile {
-                width: 4.688em;
+                width: 7em;
                 padding: 0.313em;
 
                 img,
@@ -378,6 +371,7 @@ $checkbox-background-color: #8693a3;
                     width: 4.063em;
                     background: white;
                     margin-bottom: 0.3125em;
+                    border-radius: 50%;
                 }
 
                 .charity-name {

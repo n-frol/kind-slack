@@ -1,7 +1,7 @@
 {
   "name": "bm_changeup",
-  "version": "21.1.0",
-  "description": "New overlay cartridge",
+  "version": "21.3.0",
+  "description": "Sales Uplift Features",
   "main": "index.js",
   "scripts": {
     "lint": "sgmf-scripts --lint js && sgmf-scripts --lint css",

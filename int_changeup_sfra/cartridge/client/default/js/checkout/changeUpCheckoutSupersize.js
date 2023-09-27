@@ -126,15 +126,12 @@ module.exports = function () {
 
     });
 
-    $('body').on('checkout:updateCheckoutView', (e, data) => {
-        if ($cache.productsTotal.length) {
-            $cache.productsTotal.text(data.order.totals.grandTotal);
-        }
-    });
 };
 
 
 function requestUpdateDonationConfirmation(supersize_value, element_url){
+    let selected_org_uuid = document.querySelector('input[name=selected_carity]:checked').value;
+
     $.ajax({
         url: element_url,
         method: 'post',
@@ -151,12 +148,23 @@ function requestUpdateDonationConfirmation(supersize_value, element_url){
             shippingForm_phone: $('.shippingPhoneNumber').val(),
             shippingForm_zipCode: $('.shippingZipCode').val(),
             shippingForm_city: $('.shippingAddressCity').val(),
-            supersize_value: supersize_value
+            supersize_value: (supersize_value) ? supersize_value : 0,
+            selected_org_uuid: selected_org_uuid
+
         })
     })
     .done((data) => {
         if (data.order && data.customer) {
             $('body').trigger('checkout:updateCheckoutView', data);
+        }
+    });
+
+    $('body').on('checkout:updateCheckoutView', (e, data) => {
+        if (data.order.totals.donationTotalAmount) {
+            $('.donation-item').removeClass('d-none');
+            $('.donation-total').text(data.order.totals.donationTotalAmount);
+        }else{
+            $('.donation-item').addClass('d-none');
         }
     });
 }

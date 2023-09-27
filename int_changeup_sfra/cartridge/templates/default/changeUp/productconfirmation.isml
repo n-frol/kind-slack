@@ -1,0 +1,58 @@
+<isinclude template="components/modules" />
+<isif condition="${pdict.changeup.config.charity_chose && pdict.changeup.config.charity_chose == 'merchant'}">
+  <isset name="defaultCharity" value="${pdict.changeup.config.default_charity}" scope="page" />
+</isif>
+<div class="row salesuplift-donation border border-grey mt-3 m-1">
+  <div class="list-inline font-weight-bold pt-1 donation-title"> 
+    ${pdict.changeup.config.sales_uplift_headline_formatted}
+  </div>
+
+  <div class="donation-container">
+    <div class="donation-description">
+      <isif condition="${pdict.changeup.config.charity_chose != 'customer'}">
+        <p class="donation_amount">
+          ${pdict.changeup.config.sales_uplift_description.split('$X.XX')[0].replace('_charity_', defaultCharity.name)}
+          <isif condition="${pdict.changeup.config.sales_uplift_description.split('$X.XX')[1] != null}">
+            <b class="su_donation">${pdict.changeup.amountSalesUplift}</b>
+              ${pdict.changeup.config.sales_uplift_description.split('$X.XX')[1].indexOf('_charity_') == -1 ? pdict.changeup
+            .sales_uplift_description.split('$X.XX')[1] : pdict.changeup.config.sales_uplift_description.split('$X.XX')[1].replace(
+              '_charity_', defaultCharity.name)}
+          </isif>
+          <iselse/>
+          </p>
+          <p class="donation_amount">${pdict.changeup.config.sales_uplift_description_customer.split('$X.XX')[0]} <b
+              class="su_donation"></b> ${pdict.changeup.config.sales_uplift_description_customer.split('$X.XX')[1]}</p>
+      </isif>
+      <iscomment> <p><a class="learn-btn" data-toggle="modal" href="${'#learnMore' + product.id}"
+        <u>${Resource.+msg('salesuplift.learnmore', 'changeup', '')}</a>
+      </p> </iscomment>
+      </div>
+  </div>
+
+  <isif condition="${pdict.changeup.config.show_charities_at_sales_uplift != 'none'}">
+    <iscomment> LOGO </iscomment>
+    <div class="donation-logo text-center info-icon">
+      <picture>
+        <isif condition="${pdict.changeup.config.show_charities_at_sales_uplift == 'charity'}">
+          <img src="${defaultCharity.logo}" class="charity-image img-fluid img-thumbnail rounded-circle"
+            alt="${defaultCharity.logo}" id="charity-logo" />
+        <iselse/>
+        <isif condition="${pdict.changeup.config.logoClass != 'merchantIcon'}">
+            <img src=" " alt="" class="charity-image img-fluid img-thumbnail rounded-circle p-0 ${pdict.changeup.config.logoClass}"
+              style="background-color: ${pdict.changeup.config.logoColor}" id="charity-logo" />
+        <iselse/>
+            <img src="${pdict.changeup.config.logoMerchant}" alt= "" class="charity-image rounded-circle p-0 ${pdict.changeup.config.logoClass}"
+              id="charity-logo" />
+        </isif>
+        </isif>
+      </picture>
+      <isif condition="${pdict.changeup.config.show_charities_description_salesuplift && defaultCharity.mission_statment != null}">
+        <span class="tooltip d-none pdp-hover">
+        ${defaultCharity.mission_statment}
+      </span>
+      </isif>
+    </div>
+  </isif>
+  <div class="blockquote-footer mb-3 powered"></div>   
+</div> 
+<isinclude template="changeUp/modal" /> 

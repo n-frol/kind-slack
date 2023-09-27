@@ -3,6 +3,8 @@
 var path = require('path');
 var webpack = require('sgmf-scripts').webpack;
 var ExtractTextPlugin = require('sgmf-scripts')['extract-text-webpack-plugin'];
+var jsFiles = require('sgmf-scripts').createJsPath();
+var scssFiles = require('sgmf-scripts').createScssPath();
 
 var bootstrapPackages = {
     Alert: 'exports-loader?Alert!bootstrap/js/src/alert',
@@ -21,11 +23,9 @@ var bootstrapPackages = {
 module.exports = [{
     mode: 'production',
     name: 'js',
-    entry: {
-        changeUp: './int_changeup_sfra/cartridge/client/default/js/changeUp.js'
-    },
+    entry: jsFiles,
     output: {
-        path: path.resolve('./cartridge/static/default/js'),
+        path: path.resolve('./cartridges/int_changeup_sfra/cartridge/static/'),
         filename: '[name].js'
     },
     module: {
@@ -47,9 +47,9 @@ module.exports = [{
 }, {
     mode: 'none',
     name: 'scss',
-    entry: './int_changeup_sfra/cartridge/client/default/scss/changeUp.scss',
+    entry: scssFiles,
     output: {
-        path: path.resolve('./cartridge/static/default/css'),
+        path: path.resolve('./cartridges/int_changeup_sfra/cartridge/static'),
         filename: '[name].css'
     },
     module: {
